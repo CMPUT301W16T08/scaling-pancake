@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="720"
+   height="1280"
+   viewBox="0 0 720.00001 1280"
+   id="svg4360"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="viewProfile.svg">
+  <defs
+     id="defs4362" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.35"
+     inkscape:cx="-447.85714"
+     inkscape:cy="520"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     units="px"
+     inkscape:window-width="1366"
+     inkscape:window-height="705"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata4365">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,227.63784)">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:78.11466217px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="88.88166"
+       y="138.65701"
+       id="text3390"
+       sodipodi:linespacing="125%"
+       transform="scale(0.67497649,1.4815331)"><tspan
+         sodipodi:role="line"
+         id="tspan3392"
+         x="88.88166"
+         y="138.65701">Username: username</tspan></text>
+    <text
+       transform="scale(0.67497649,1.4815331)"
+       sodipodi:linespacing="125%"
+       id="text4329"
+       y="241.26578"
+       x="92.29409"
+       style="font-style:normal;font-weight:normal;font-size:78.11466217px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         y="241.26578"
+         x="92.29409"
+         id="tspan4331"
+         sodipodi:role="line">Email: e@mail.com</tspan></text>
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:2.19883943;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect3394"
+       width="346.59836"
+       height="103.19717"
+       x="195.27223"
+       y="442.69504"
+       onclick="window.location='editProfile.svg'" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:90.19098663px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="257.49509"
+       y="550.39282"
+       id="text4204"
+       sodipodi:linespacing="125%"
+       transform="scale(1.0567913,0.94626063)"
+       onclick="window.location='editProfile.svg'"><tspan
+         sodipodi:role="line"
+         id="tspan4206"
+         x="257.49509"
+         y="550.39282">Edit</tspan></text>
+    <rect
+       onclick="window.location='homePage.svg'"
+       y="576.28687"
+       x="199.87883"
+       height="103.19717"
+       width="346.59836"
+       id="rect4354"
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:2.19883943;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <text
+       transform="scale(1.0567913,0.94626063)"
+       sodipodi:linespacing="125%"
+       id="text4356"
+       y="697.02509"
+       x="243.01219"
+       style="font-style:normal;font-weight:normal;font-size:90.19098663px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       onclick="window.location='homePage.svg'"><tspan
+         y="697.02509"
+         x="243.01219"
+         id="tspan4358"
+         sodipodi:role="line">Back</tspan></text>
+  </g>
+</svg>

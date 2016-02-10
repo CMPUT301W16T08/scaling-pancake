@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="720"
+   height="1280"
+   viewBox="0 0 203.2 361.24444"
+   id="svg4302"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="createProfile.svg">
+  <defs
+     id="defs4304" />
+  <sodipodi:namedview
+     inkscape:document-units="mm"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.43415836"
+     inkscape:cx="-179.11069"
+     inkscape:cy="805.57424"
+     inkscape:current-layer="layer1"
+     id="namedview4306"
+     showgrid="false"
+     units="px"
+     inkscape:window-width="1366"
+     inkscape:window-height="705"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata4308">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,151.24442)">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:22.04569244px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="20.251383"
+       y="-4.9843073"
+       id="text3390"
+       sodipodi:linespacing="125%"
+       transform="scale(0.67497649,1.4815331)"><tspan
+         sodipodi:role="line"
+         id="tspan3392"
+         x="20.251383"
+         y="-4.9843073">Username: _________</tspan></text>
+    <text
+       transform="scale(0.67497649,1.4815331)"
+       sodipodi:linespacing="125%"
+       id="text4329"
+       y="23.974163"
+       x="21.214445"
+       style="font-style:normal;font-weight:normal;font-size:22.04569244px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         y="23.974163"
+         x="21.214445"
+         id="tspan4331"
+         sodipodi:role="line">Email: _________</tspan></text>
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.62056136;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect3394"
+       width="97.817757"
+       height="29.124535"
+       x="51.848003"
+       y="59.57848"
+       onclick="window.location='logIn.svg'" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:25.45390129px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="61.1908"
+       y="87.113464"
+       id="text4204"
+       sodipodi:linespacing="125%"
+       transform="scale(1.0567913,0.94626063)"
+       onclick="window.location='logIn.svg'"><tspan
+         sodipodi:role="line"
+         id="tspan4206"
+         x="61.1908"
+         y="87.113464">Enter</tspan></text>
+    <rect
+       onclick="window.location='logIn.svg'"
+       y="97.281044"
+       x="53.14809"
+       height="29.124535"
+       width="97.817757"
+       id="rect4354"
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.62056136;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <text
+       transform="scale(1.0567913,0.94626063)"
+       sodipodi:linespacing="125%"
+       id="text4356"
+       y="127.64419"
+       x="65.496582"
+       style="font-style:normal;font-weight:normal;font-size:25.45390129px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       onclick="window.location='logIn.svg'"><tspan
+         y="127.64419"
+         x="65.496582"
+         id="tspan4358"
+         sodipodi:role="line">Back</tspan></text>
+  </g>
+</svg>
