@@ -54,4 +54,46 @@ public class BidTest extends ActivityInstrumentationTestCase2 {
         bid.setAccepted();
         assertTrue(bid.getAccepted());
     }
+    
+    // test use case 11: ViewCurrentBidsAsBorrower
+    public void testViewCurrentBidsAsBorrower(){
+ 	// ViewCurrentBidsAsBorrower should return an ArrayList of Instruments
+ 
+    ArrayList<Instrument> result;
+  	Instrument ins1 = new Instrument(“owner1”, “guitar,1”);
+  	Instrument ins2 = new Instrument(“owner2”, “guitar,2”);
+  	ins1.setStatus(“bidded”);
+  	ins2.setStatus(“bidded”);
+ 
+  	result = ViewCurrentBidsAsBorrower(“borrower1”);
+  	assertEquals(result.size(),0);
+ 
+  	BidOnInstrument(“borrower1”,ins1,10);
+  	BidOnInstrument(“borrower2”,ins2,10.5);
+    result = ViewCurrentBidsAsBorrower(“borrower1”);
+    assertEquals(result.size(),2);
+    assertTrue(result.contains(ins1));
+    assertTrue(result.contains(ins2));
+    }
+    
+    // test use case 12: ViewCurrentBidsAsOwner
+    public testViewCurrentBidsAsOwner(){
+    // ViewCurrentBidsAsOwner should return an ArrayList of Instruments
+ 
+    ArrayList<Instrument> result;
+  	Instrument ins1 = new Instrument(“owner1”, “guitar,1”);
+  	Instrument ins2 = new Instrument(“owner1”, “guitar,2”);
+ 
+    result = ViewCurrentBidsAsOwner(“owner1”);
+  	assertEquals(result.size(),0);
+ 
+  	ins1.setStatus(“bidded”);
+  	ins2.setStatus(“bidded”);
+ 
+  	result = ViewCurrentBidsAsOwner(“owner1”);
+    assertEquals(result.size(),2);
+    assertTrue(result.contains(ins1));
+    assertTrue(result.contains(ins2));
+    }
+    
 }
