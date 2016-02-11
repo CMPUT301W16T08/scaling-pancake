@@ -130,7 +130,7 @@ public class InstrumentTest extends ActivityInstrumentationTestCase2 {
         assertEquals(returnedBid.getBidAmount(), 2.00f);
     }
     
-    // test use case 9: SearchForInstruments
+    // test use case US 04.01.01: SearchForInstruments
     public testSeachForInstruments(){
         // SearchForInstruments should return an ArrayList of instruments
         ArrayList<instrument> totalList;
@@ -157,7 +157,7 @@ public class InstrumentTest extends ActivityInstrumentationTestCase2 {
       	assertEquals(result.size(),0);
   	}
   	
-  	// test use case 10: BidOnInstrument
+  	// test use case US 05.01.01: BidOnInstrument
     public testBidOnInstrument(){
         // BidOnInstrument should return true if the bid is successful
  
