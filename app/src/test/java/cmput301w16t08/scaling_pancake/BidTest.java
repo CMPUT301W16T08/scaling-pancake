@@ -55,7 +55,7 @@ public class BidTest extends ActivityInstrumentationTestCase2 {
         assertTrue(bid.getAccepted());
     }
     
-    // test use case 11: ViewCurrentBidsAsBorrower
+    // test use case US 05.02.01: ViewCurrentBidsAsBorrower
     public void testViewCurrentBidsAsBorrower(){
         // ViewCurrentBidsAsBorrower should return an ArrayList of Instruments
  
@@ -76,7 +76,7 @@ public class BidTest extends ActivityInstrumentationTestCase2 {
         assertTrue(result.contains(ins2));
     }
     
-    // test use case 12: ViewCurrentBidsAsOwner
+    // test use case US 05.04.01: ViewCurrentBidsAsOwner
     public testViewCurrentBidsAsOwner(){
         // ViewCurrentBidsAsOwner should return an ArrayList of Instruments
      
