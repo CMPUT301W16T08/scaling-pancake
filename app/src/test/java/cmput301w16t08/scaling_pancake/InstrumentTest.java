@@ -156,8 +156,8 @@ public class InstrumentTest extends ActivityInstrumentationTestCase2 {
       	result = SearchForInstruments(totalList,”piano”);
       	assertEquals(result.size(),0);
   	}
-  	
-  	// test use case US 05.01.01: BidOnInstrument
+
+    // test use case US 05.01.01: BidOnInstrument
     public testBidOnInstrument(){
         // BidOnInstrument should return true if the bid is successful
  
