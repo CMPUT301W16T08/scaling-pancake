@@ -225,5 +225,16 @@ public class InstrumentTest extends ActivityInstrumentationTestCase2 {
         assertTrue(BidOnInstrument(“borrower1”,ins2,11));
         assertFalse(BidOnInstrument(“borrower1”,ins3,11.5));
     }
+    
+    public void testDeleteInstrument()
+    {
+        InstrumentList instrumentList = new InstrumentList();
+
+        Instrument instrument = new Instrument();
+
+        instrumentList.addNewInstrument(instrument);
+
+        assertTrue(instrumentList.haveInstrument(instrument));
+    }
 
 }
