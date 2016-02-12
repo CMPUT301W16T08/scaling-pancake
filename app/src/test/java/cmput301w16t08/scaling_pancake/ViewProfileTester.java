@@ -9,15 +9,12 @@ import android.widget.TextView;
 /**
  * Created by dan on 10/02/16.
  */
-public class ViewProfileTester extends ActivityInstrumentationTestCase2
-{
-    public ViewProfileTester()
-    {
+public class ViewProfileTester extends ActivityInstrumentationTestCase2 {
+    public ViewProfileTester() {
         super(ViewProfileActivity.class);
     }
 
-    public void testViewProfile()
-    {
+    public void testViewProfile() {
         Intent intent = new Intent();
 
         setActivityIntent(intent);
