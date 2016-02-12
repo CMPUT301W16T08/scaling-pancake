@@ -236,6 +236,7 @@ public class InstrumentTest extends ActivityInstrumentationTestCase2 {
 
         assertTrue(instrumentList.haveInstrument(instrument));
     }
+    // test use case US 06.02.01: view owned but being borrowed item as an owner
     public void testListofOwnedItem {
         ArrayList<Instrument> result;
         Instrument i1 = new Instrument(“Owner1”, “guitar1”);
@@ -254,6 +255,7 @@ public class InstrumentTest extends ActivityInstrumentationTestCase2 {
         assertTrue(result.contains(ins3));
         assertTrue(result.contains(ins4));
     }
+    // test use case US 06.01.01: view borrowed item as a borrower
     public void testListofBorrowedItem{
         ArrayList<Instrument> result;
         Instrument i1 = new Instrument(“borrower1”, “guitar1”);
