@@ -272,8 +272,27 @@ public class InstrumentTest extends ActivityInstrumentationTestCase2 {
         assertEquals(result.size(),3);
         assertTrue(result.contains(ins2));
         assertTrue(result.contains(ins3));
-        assertTrue(result.contains(ins4));    }
-}
+        assertTrue(result.contains(ins4));    
+        
+   }
+   // test use case US 07.01.01: set borrowed item available
+    public void testMarkReturnedItem {
+        ArrayList<Instrument> result;
+        
+        //false means being borrowed true means available
+        Instrument i1 = new Instrument(“Owner1”, “guitar1”, false);
+        
+        result = listofOwnedItem(“Owner1”);
+        assertEquals(result.size(),1);
+
+        result = markReturnedItem(“Owner1”);
+
+
+        assertEquals(result.size(),0);
+        
+        
+    }
+
 
 
 }
