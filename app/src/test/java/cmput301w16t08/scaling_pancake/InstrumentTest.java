@@ -129,4 +129,48 @@ public class InstrumentTest extends ActivityInstrumentationTestCase2 {
         assertEquals(returnedBidder.getEmail(), "Bidder2 email");
         assertEquals(returnedBid.getBidAmount(), 2.00f);
     }
+    
+    // test use case US 04.01.01: SearchForInstruments
+    public testSeachForInstruments(){
+        // SearchForInstruments should return an ArrayList of instruments
+        ArrayList<instrument> totalList;
+        ArrayList<instrument> result;
+        Instrument ins1 = new Instrument(“owner1”,“guitar,red,1999”);
+        Instrument ins2 = new Instrument(“owner2”, “guitar,red,2000”);
+        Instrument ins3 = new Instrument(“owner3”, “guitar,blue,2001”);
+        Instrument ins4 = new Instrument(“owner4”, “guitar,red,2002”);
+        Instrument ins5 = new Instrument(“owner5”, “guitar,yellow,2003”);
+        
+        totalList.add(ins1);
+        totalList.add(ins2);
+        totalList.add(ins3);
+        totalList.add(ins4);
+        totalList.add(ins5);
+              	
+      	result = SearchForInstruments(totalList,”guitar, red”);
+      	assertEquals(result.size(),3);
+      	assertTrue(result.contains(ins1));
+      	assertTrue(result.contains(ins2));
+      	assertTrue(result.contains(ins4));
+ 
+      	result = SearchForInstruments(totalList,”piano”);
+      	assertEquals(result.size(),0);
+  	}
+
+    // test use case US 05.01.01: BidOnInstrument
+    public testBidOnInstrument(){
+        // BidOnInstrument should return true if the bid is successful
+ 
+        Instrument ins1 = new Instrument(“owner1”, “guitar,1”);
+        Instrument ins2 = new Instrument(“owner2”, “guitar,2”);
+        Instrument ins3 = new Instrument(“owner3”, “guitar,3”);
+ 
+        ins1.setStatus(“available”);
+        ins2.setStatus(“bidded”);
+        ins3.setStatus(“borrowed”);
+        assertTrue(BidOnInstrument(“borrower1”,ins1, 10.5));
+        assertTrue(BidOnInstrument(“borrower1”,ins2,11));
+        assertFalse(BidOnInstrument(“borrower1”,ins3,11.5));
+    }
+
 }
