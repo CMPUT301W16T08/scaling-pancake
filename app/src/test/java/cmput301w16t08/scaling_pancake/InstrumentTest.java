@@ -239,5 +239,44 @@ public class InstrumentTest extends ActivityInstrumentationTestCase2 {
 
         assertTrue(instrumentList.haveInstrument(instrument));
     }
+    // test use case US 06.02.01: view owned but being borrowed item as an owner
+    public void testListofOwnedItem {
+        ArrayList<Instrument> result;
+        Instrument i1 = new Instrument(“Owner1”, “guitar1”);
+        Instrument i2 = new Instrument(“Owner2”, “guitar2”);
+        Instrument i3 = new Instrument(“Owner2”, “piano1”);
+        Instrument i4 = new Instrument(“Owner2”, “piano2”);
+//check for the empty list
+        result = listofOwnedItem(“Owner3”);
+        assertEquals(result.size(),0);
+
+        result = listofOwnedItem(“Owner2”);
+
+
+        assertEquals(result.size(),3);
+        assertTrue(result.contains(ins2));
+        assertTrue(result.contains(ins3));
+        assertTrue(result.contains(ins4));
+    }
+    // test use case US 06.01.01: view borrowed item as a borrower
+    public void testListofBorrowedItem{
+        ArrayList<Instrument> result;
+        Instrument i1 = new Instrument(“borrower1”, “guitar1”);
+        Instrument i2 = new Instrument(“borrower2”, “guitar2”);
+        Instrument i3 = new Instrument(“borrower2”, “piano1”);
+        Instrument i4 = new Instrument(“borrower2”, “piano2”);
+        //check for the empty list
+        result = listofBorrowedItem(“borrower3”);
+        assertEquals(result.size(),0);
+        
+        result = listofBorrowedItem(“borrrower2”);
+        
+        
+        assertEquals(result.size(),3);
+        assertTrue(result.contains(ins2));
+        assertTrue(result.contains(ins3));
+        assertTrue(result.contains(ins4));    }
+}
+
 
 }
