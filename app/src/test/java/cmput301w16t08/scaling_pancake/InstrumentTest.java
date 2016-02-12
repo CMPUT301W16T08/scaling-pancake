@@ -7,6 +7,56 @@ public class InstrumentTest extends ActivityInstrumentationTestCase2 {
         super(Instrument.class);
     }
 
+    public void testAddInstrument(){
+        // Test use case 01.01.01 (Add instruments)
+        
+        // Create a new owner, give them some intruments
+        User owner = new User ("David", "david@gmail.com");
+        owner.addInstrument("Trumpet", "Brass instrument");
+        owner.addInstrument("Piano", "Grand piano");
+        owner.addInstrument("Piano", "upright piano");
+        ArrayList<Instruments> instruments = owner.getInstruments();
+
+        // Check we have the right amount of instruments
+        assertEquals(instruments.size(), 3);
+    }
+    
+        public void testViewInstrument(){
+        // Test use case 01.03.01
+
+        // Create a new owner, give them some instruments
+        User owner = new User ("David", "david@gmail.com");
+        owner.addInstrument("Trumpet", "Brass instrument");
+        owner.addInstrument("Piano", "Grand piano");
+        owner.addInstrument("Piano", "upright piano");
+        ArrayList<Instruments> instruments = owner.getInstruments();
+        
+        // Check that we have the correct descriptions:
+        instrument = instruments.get(0);
+        assertEquals(instrument.getName(), "Trumpet");
+        instrument.instruments.get(1);
+        assertEquals(instrument.getDescription("Grand piano");
+
+
+    }
+    
+        public void testEditInstrument(){
+        // Test use case 01.04.01
+
+        // Create a new owner, give them an instrument
+        User owner = new User ("David", "david@gmail.com");
+        owner.addInstrument("Trumpet", "Brass instrument");
+        ArrayList<Instruments> instruments = owner.getInstruments();
+        Instrument instrument = instruments.get(0);
+
+        //Owner edits their instrument
+        instrument.setName("Flute");
+        assertEquals(instrument.getName(), "Flute");
+        instrument.setDescription("Made of tin");
+        assertEquals(instrument.getDescription(), "Made of tin");
+    }
+
+
     public void testGetStatus() {
         User owner = new User("Owner", "Owner email");
         User bidder1 = new User("Bidder1", "Bidder1 email");
