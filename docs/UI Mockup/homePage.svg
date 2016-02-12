@@ -25,9 +25,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.43415836"
+     inkscape:zoom="0.30699632"
      inkscape:cx="-96.305785"
-     inkscape:cy="655.76898"
+     inkscape:cy="769.32716"
      inkscape:current-layer="layer1"
      id="namedview4230"
      showgrid="false"
@@ -59,62 +59,54 @@
        id="rect4252"
        width="92.415115"
        height="46.584957"
-       x="58.319023"
-       y="-117.44099"
+       x="56.480419"
+       y="-87.104034"
        onclick="window.location='viewProfile.svg'" />
     <rect
-       y="-56.178726"
-       x="58.319023"
+       y="-25.841772"
+       x="56.480419"
        height="46.584957"
        width="92.415115"
        id="rect4254"
        style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.63404739;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        onclick="window.location='viewOwnedInstruments.svg'" />
-    <rect
-       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.63404739;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       id="rect4256"
-       width="92.415115"
-       height="46.584957"
-       x="57.190697"
-       y="4.5007777"
-       onclick="window.location='viewBids.svg'" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:20.72882462px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="118.37891"
-       y="-46.732727"
+       x="115.22369"
+       y="-29.054825"
        id="text4258"
        sodipodi:linespacing="125%"
        transform="scale(0.58271843,1.7160947)"
        onclick="window.location='viewProfile.svg'"><tspan
          sodipodi:role="line"
          id="tspan4260"
-         x="118.37891"
-         y="-46.732727">View Profile</tspan></text>
+         x="115.22369"
+         y="-29.054825">View Profile</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:18.43798828px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="144.6633"
-       y="-8.2469091"
+       x="140.64764"
+       y="5.6431155"
        id="text4262"
        sodipodi:linespacing="125%"
        transform="scale(0.45785824,2.1840821)"
        onclick="window.location='viewOwnedInstruments.svg'"><tspan
          sodipodi:role="line"
          id="tspan4264"
-         x="144.6633"
-         y="-8.2469091">View Instruments</tspan></text>
+         x="140.64764"
+         y="5.6431155">View Instruments</tspan></text>
     <rect
-       y="65.833725"
-       x="57.190697"
+       y="35.066502"
+       x="56.65218"
        height="46.584957"
        width="92.415115"
        id="rect4266"
        style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.63404739;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        onclick="window.location='searchInstruments.svg'" />
     <rect
-       y="123.44367"
-       x="56.860222"
+       y="94.626579"
+       x="56.971752"
        height="46.584957"
        width="92.415115"
        id="rect4268"
@@ -122,42 +114,29 @@
        onclick="window.location='logIn.svg'" />
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:21.2064209px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="104.38828"
-       y="26.779852"
-       id="text4270"
-       sodipodi:linespacing="125%"
-       transform="scale(0.66439395,1.5051311)"
-       onclick="window.location='viewBids.svg'"><tspan
-         sodipodi:role="line"
-         id="tspan4272"
-         x="104.38828"
-         y="26.779852">View Bids</tspan></text>
-    <text
-       xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:17.23187256px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="166.39641"
-       y="43.333939"
+       x="165.09804"
+       y="30.572811"
        id="text4274"
        sodipodi:linespacing="125%"
        transform="scale(0.41476376,2.411011)"
        onclick="window.location='searchInstruments.svg'"><tspan
          sodipodi:role="line"
          id="tspan4276"
-         x="166.39641"
-         y="43.333939">Search Instruments</tspan></text>
+         x="165.09804"
+         y="30.572811">Search Instruments</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:27.75594711px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="84.929558"
-       y="137.87051"
+       x="85.057816"
+       y="112.81148"
        id="text4278"
        sodipodi:linespacing="125%"
        transform="scale(0.8695895,1.1499679)"
        onclick="window.location='logIn.svg'"><tspan
          sodipodi:role="line"
          id="tspan4280"
-         x="84.929558"
-         y="137.87051">Back</tspan></text>
+         x="85.057816"
+         y="112.81148">Back</tspan></text>
   </g>
 </svg>

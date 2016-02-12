@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="720"
+   height="1280"
+   viewBox="0 0 719.99999 1280"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="searchInstruments.svg">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.25"
+     inkscape:cx="-308.87895"
+     inkscape:cy="1004.4331"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     units="px"
+     width="720mm"
+     inkscape:window-width="1366"
+     inkscape:window-height="705"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,227.6378)">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="189.90868"
+       y="252.3214"
+       id="text3346"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3348"
+         x="189.90868"
+         y="252.3214" /></text>
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot3350"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       transform="translate(0,-3483.0709)"><flowRegion
+         id="flowRegion3352"><rect
+           id="rect3354"
+           width="711.1474"
+           height="185.86807"
+           x="218.19295"
+           y="1860.5492" /></flowRegion><flowPara
+         id="flowPara3356" /></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot3358"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       transform="matrix(3.6198681,0,0,10.516184,-898.68128,-21215.911)"><flowRegion
+         id="flowRegion3360"><rect
+           id="rect3362"
+           width="634.37579"
+           height="218.19295"
+           x="339.41125"
+           y="1852.4679" /></flowRegion><flowPara
+         id="flowPara3364" /></flowRoot>    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:78.11465454px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="94.969421"
+       y="215.21771"
+       id="text3390"
+       sodipodi:linespacing="125%"
+       transform="scale(0.67497649,1.4815331)"><tspan
+         sodipodi:role="line"
+         id="tspan3392"
+         x="94.969421"
+         y="215.21771">Search: _________</tspan></text>
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:2.19883943;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect3394"
+       width="346.59836"
+       height="103.19717"
+       x="191.12758"
+       y="385.6008"
+       onclick="window.location='searchResults.svg'" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:81.16571808px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="249.3317"
+       y="443.73428"
+       id="text4204"
+       sodipodi:linespacing="125%"
+       transform="scale(0.95103984,1.0514807)"
+       onclick="window.location='searchResults.svg'"><tspan
+         sodipodi:role="line"
+         id="tspan4206"
+         x="249.3317"
+         y="443.73428">Search</tspan></text>
+    <rect
+       onclick="window.location='homePage.svg'"
+       y="519.60083"
+       x="191.12758"
+       height="103.19717"
+       width="346.59836"
+       id="rect4222"
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:2.19883943;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:84.102211px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="247.59271"
+       y="628.43341"
+       id="text4210"
+       sodipodi:linespacing="125%"
+       transform="scale(1.051249,0.95124941)"
+       onclick="window.location='homePage.svg'"><tspan
+         sodipodi:role="line"
+         id="tspan4212"
+         x="247.59271"
+         y="628.43341">Back</tspan></text>
+  </g>
+</svg>

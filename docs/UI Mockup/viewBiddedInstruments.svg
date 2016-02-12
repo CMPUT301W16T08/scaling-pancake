@@ -25,9 +25,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.35"
-     inkscape:cx="513.20948"
-     inkscape:cy="577.81072"
+     inkscape:zoom="0.49497475"
+     inkscape:cx="94.474935"
+     inkscape:cy="741.7869"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -45,7 +45,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -77,7 +77,7 @@
        cy="-144.7807"
        rx="25.714285"
        ry="24.285715"
-       onclick="window.location='viewBurrowedInstruments.svg'" />
+       onclick="window.location='viewBorrowedInstruments.svg'" />
     <circle
        style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:5.42418242;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="path3362"
@@ -107,7 +107,7 @@
          sodipodi:role="line"
          id="tspan4170"
          x="270.46201"
-         y="-153.774">Burrowed</tspan></text>
+         y="-153.774">Borrowed</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:34.22995758px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -143,17 +143,13 @@
        sodipodi:linespacing="125%"
        transform="scale(0.91865409,1.088549)"><tspan
          sodipodi:role="line"
-         id="tspan4190"
          x="295.78943"
-         y="-55.288528">Description: Test description</tspan><tspan
+         y="-55.288528"
+         id="tspan4194">Description: Small keyboard with</tspan><tspan
          sodipodi:role="line"
          x="295.78943"
-         y="-24.102974"
-         id="tspan4192">test description test description</tspan><tspan
-         sodipodi:role="line"
-         x="295.78943"
-         y="7.0825872"
-         id="tspan4194">test description test description</tspan></text>
+         y="-24.102968"
+         id="tspan3718">stand.</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:34.62313843px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -219,18 +215,14 @@
        x="295.78943"
        style="font-style:normal;font-weight:normal;font-size:24.94844818px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"><tspan
+         id="tspan4228"
          y="219.39375"
          x="295.78943"
-         id="tspan4224"
-         sodipodi:role="line">Description: Test description</tspan><tspan
-         id="tspan4226"
-         y="250.5793"
+         sodipodi:role="line">Description: I have a freshly</tspan><tspan
+         y="250.57932"
          x="295.78943"
-         sodipodi:role="line">test description test description</tspan><tspan
-         id="tspan4228"
-         y="281.76489"
-         x="295.78943"
-         sodipodi:role="line">test description test description</tspan></text>
+         sodipodi:role="line"
+         id="tspan3725">cleaned flute available anytime.</tspan></text>
     <text
        transform="scale(0.99532813,1.0046938)"
        sodipodi:linespacing="125%"
@@ -275,90 +267,6 @@
          id="tspan4248"
          sodipodi:role="line">Photo</tspan></text>
     <rect
-       style="fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:4.72916889;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       id="rect4250"
-       width="646.76843"
-       height="270.9917"
-       x="40.760895"
-       y="503.00113" />
-    <rect
-       style="fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       id="rect4252"
-       width="169.70563"
-       height="129.29953"
-       x="69.18058"
-       y="517.27863" />
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:24.94844818px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="295.78943"
-       y="497.78799"
-       id="text4254"
-       sodipodi:linespacing="125%"
-       transform="scale(0.91865409,1.088549)"><tspan
-         sodipodi:role="line"
-         id="tspan4256"
-         x="295.78943"
-         y="497.78799">Description: Test description</tspan><tspan
-         sodipodi:role="line"
-         x="295.78943"
-         y="528.97351"
-         id="tspan4258">test description test description</tspan><tspan
-         sodipodi:role="line"
-         x="295.78943"
-         y="560.15906"
-         id="tspan4260">test description test description</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:34.62313843px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="270.81839"
-       y="643.63599"
-       id="text4262"
-       sodipodi:linespacing="125%"
-       transform="scale(0.99532813,1.0046938)"><tspan
-         sodipodi:role="line"
-         id="tspan4264"
-         x="270.81839"
-         y="643.63599">Username:</tspan></text>
-    <rect
-       style="fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       id="rect4266"
-       width="165.66502"
-       height="62.629459"
-       x="277.27203"
-       y="701.12634"
-       onclick="window.location='viewBiddedInstrument.svg'" />
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="311.61722"
-       y="745.57306"
-       id="text4268"
-       sodipodi:linespacing="125%"
-       onclick="window.location='viewBiddedInstrument.svg'"><tspan
-         sodipodi:role="line"
-         id="tspan4270"
-         x="311.61722"
-         y="745.57306">View</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="95.44455"
-       y="594.05023"
-       id="text4278"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan4280"
-         x="95.44455"
-         y="594.05023">Photo</tspan></text>
-    <rect
-       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       id="rect4282"
-       width="723.26923"
-       height="143.44167"
-       x="0"
-       y="912.96112" />
-    <rect
        y="941.05353"
        x="270.19531"
        height="91.297447"
@@ -391,7 +299,7 @@
          y="46.408669"
          x="467.45132"
          id="tspan3462"
-         sodipodi:role="line">User1</tspan></text>
+         sodipodi:role="line">User2</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:34.62313843px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -404,20 +312,7 @@
          sodipodi:role="line"
          id="tspan3466"
          x="466.01605"
-         y="344.29614">User1</tspan></text>
-    <text
-       transform="scale(0.99532813,1.0046938)"
-       sodipodi:linespacing="125%"
-       id="text3468"
-       y="643.72754"
-       x="465.2984"
-       style="font-style:normal;font-weight:normal;font-size:34.62313843px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       xml:space="preserve"
-       onclick="window.location='viewUserProfile.svg'"><tspan
-         y="643.72754"
-         x="465.2984"
-         id="tspan3470"
-         sodipodi:role="line">User2</tspan></text>
+         y="344.29614">User2</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:34.62313843px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -442,17 +337,5 @@
          x="270.81839"
          id="tspan3478"
          sodipodi:role="line">Bid: 4.50$/hr</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:34.62313843px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="270.81839"
-       y="679.8316"
-       id="text3480"
-       sodipodi:linespacing="125%"
-       transform="scale(0.99532813,1.0046938)"><tspan
-         sodipodi:role="line"
-         id="tspan3482"
-         x="270.81839"
-         y="679.8316">Bid: 10.00$/hr </tspan></text>
   </g>
 </svg>

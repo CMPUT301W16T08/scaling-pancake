@@ -15,7 +15,7 @@
    id="svg3348"
    version="1.1"
    inkscape:version="0.91 r13725"
-   sodipodi:docname="viewBurrowedInstruments.svg">
+   sodipodi:docname="viewBorrowedInstruments.svg">
   <defs
      id="defs3350" />
   <sodipodi:namedview
@@ -25,9 +25,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.35"
-     inkscape:cx="363.38491"
-     inkscape:cy="553.34443"
+     inkscape:zoom="0.49497475"
+     inkscape:cx="60.092899"
+     inkscape:cy="506.89405"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -45,7 +45,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -107,7 +107,7 @@
          sodipodi:role="line"
          id="tspan4170"
          x="267.96136"
-         y="-170.09651">Burrowed</tspan></text>
+         y="-170.09651">Borrowed</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:34.22995758px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -143,17 +143,17 @@
        sodipodi:linespacing="125%"
        transform="scale(0.91865409,1.088549)"><tspan
          sodipodi:role="line"
-         id="tspan4190"
          x="292.67929"
-         y="-68.412155">Description: Test description</tspan><tspan
+         y="-68.412155"
+         id="tspan4194">Description: I have a nice big</tspan><tspan
          sodipodi:role="line"
          x="292.67929"
-         y="-37.226597"
-         id="tspan4192">test description test description</tspan><tspan
+         y="-37.226593"
+         id="tspan3589">piano available anytime but needs</tspan><tspan
          sodipodi:role="line"
          x="292.67929"
-         y="-6.041038"
-         id="tspan4194">test description test description</tspan></text>
+         y="-6.0410347"
+         id="tspan3591">to be picked up and dropped off.</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:34.62313843px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -173,7 +173,7 @@
        height="62.629459"
        x="274.41489"
        y="84.789803"
-       onclick="window.location='viewBurrowedInstrument.svg'" />
+       onclick="window.location='viewBorrowedInstrument.svg'" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -181,7 +181,7 @@
        y="129.23648"
        id="text4204"
        sodipodi:linespacing="125%"
-       onclick="window.location='viewBurrowedInstrument.svg'"><tspan
+       onclick="window.location='viewBorrowedInstrument.svg'"><tspan
          sodipodi:role="line"
          id="tspan4206"
          x="308.76007"
@@ -219,18 +219,14 @@
        x="292.67929"
        style="font-style:normal;font-weight:normal;font-size:24.94844818px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"><tspan
+         id="tspan4228"
          y="206.27013"
          x="292.67929"
-         id="tspan4224"
-         sodipodi:role="line">Description: Test description</tspan><tspan
-         id="tspan4226"
+         sodipodi:role="line">Description: Red electric guitar</tspan><tspan
          y="237.45569"
          x="292.67929"
-         sodipodi:role="line">test description test description</tspan><tspan
-         id="tspan4228"
-         y="268.64124"
-         x="292.67929"
-         sodipodi:role="line">test description test description</tspan></text>
+         sodipodi:role="line"
+         id="tspan3598">and amp available on weekends.</tspan></text>
     <text
        transform="scale(0.99532813,1.0046938)"
        sodipodi:linespacing="125%"
@@ -250,7 +246,7 @@
        width="165.66502"
        id="rect4234"
        style="fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       onclick="window.location='viewBurrowedInstrument.svg'" />
+       onclick="window.location='viewBorrowedInstrument.svg'" />
     <text
        sodipodi:linespacing="125%"
        id="text4236"
@@ -258,7 +254,7 @@
        x="308.76007"
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"
-       onclick="window.location='viewBurrowedInstrument.svg'"><tspan
+       onclick="window.location='viewBorrowedInstrument.svg'"><tspan
          y="428.24167"
          x="308.76007"
          id="tspan4238"
@@ -297,17 +293,17 @@
        sodipodi:linespacing="125%"
        transform="scale(0.91865409,1.088549)"><tspan
          sodipodi:role="line"
-         id="tspan4256"
          x="292.67929"
-         y="484.66437">Description: Test description</tspan><tspan
+         y="484.66437"
+         id="tspan4260">Description: I have a 10-piece</tspan><tspan
          sodipodi:role="line"
          x="292.67929"
          y="515.84991"
-         id="tspan4258">test description test description</tspan><tspan
+         id="tspan3605">drum-set available anytime. Needs</tspan><tspan
          sodipodi:role="line"
          x="292.67929"
          y="547.03546"
-         id="tspan4260">test description test description</tspan></text>
+         id="tspan3607">pickup and drop off.</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:34.62313843px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -327,7 +323,7 @@
        height="62.629459"
        x="274.41489"
        y="686.84064"
-       onclick="window.location='viewBurrowedInstrument.svg'" />
+       onclick="window.location='viewBorrowedInstrument.svg'" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -335,7 +331,7 @@
        y="731.28735"
        id="text4268"
        sodipodi:linespacing="125%"
-       onclick="window.location='viewBurrowedInstrument.svg'"><tspan
+       onclick="window.location='viewBorrowedInstrument.svg'"><tspan
          sodipodi:role="line"
          id="tspan4270"
          x="308.76007"
@@ -351,13 +347,6 @@
          id="tspan4280"
          x="92.58741"
          y="579.76453">Photo</tspan></text>
-    <rect
-       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       id="rect4282"
-       width="723.26923"
-       height="143.44167"
-       x="0"
-       y="912.96112" />
     <rect
        y="941.05353"
        x="270.19531"
@@ -391,7 +380,7 @@
          y="40.233166"
          x="466.61057"
          id="tspan3462"
-         sodipodi:role="line">User1</tspan></text>
+         sodipodi:role="line">User2</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:34.62313843px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -404,7 +393,7 @@
          sodipodi:role="line"
          id="tspan3466"
          x="465.17529"
-         y="338.12064">User1</tspan></text>
+         y="338.12064">User2</tspan></text>
     <text
        transform="scale(0.99532813,1.0046938)"
        sodipodi:linespacing="125%"
@@ -418,5 +407,15 @@
          x="464.45764"
          id="tspan3470"
          sodipodi:role="line">User2</tspan></text>
-  </g>
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot3629"
+       style="fill:black;stroke:none;stroke-opacity:1;stroke-width:1px;stroke-linejoin:miter;stroke-linecap:butt;fill-opacity:1;font-family:sans-serif;font-style:normal;font-weight:normal;font-size:40px;line-height:125%;letter-spacing:0px;word-spacing:0px"><flowRegion
+         id="flowRegion3631"><rect
+           id="rect3633"
+           width="220.21326"
+           height="72.73098"
+           x="424.26407"
+           y="146.60884" /></flowRegion><flowPara
+         id="flowPara3635"></flowPara></flowRoot>  </g>
 </svg>

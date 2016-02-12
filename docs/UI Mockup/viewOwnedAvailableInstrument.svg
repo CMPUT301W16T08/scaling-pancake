@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="720"
+   height="1280"
+   viewBox="0 0 720.00001 1280"
+   id="svg3406"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="viewOwnedAvailableInstrument.svg">
+  <defs
+     id="defs3408" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.35"
+     inkscape:cx="-461.71429"
+     inkscape:cy="520"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     units="px"
+     inkscape:window-width="1366"
+     inkscape:window-height="705"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata3411">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,227.63784)">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:54.8963089px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="64.501778"
+       y="-37.242245"
+       id="text3414"
+       sodipodi:linespacing="125%"
+       transform="scale(0.70536645,1.4177028)"><tspan
+         sodipodi:role="line"
+         x="64.501778"
+         y="-37.242245"
+         id="tspan3518">Description: I have a brown</tspan><tspan
+         sodipodi:role="line"
+         x="64.501778"
+         y="31.378141"
+         id="tspan4978">4-string base in great condition.</tspan><tspan
+         sodipodi:role="line"
+         x="64.501778"
+         y="99.998528"
+         id="tspan4980">Available anytime.</tspan></text>
+    <rect
+       style="fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:6.75453377;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect4266"
+       width="182.53546"
+       height="103.73207"
+       x="56.192661"
+       y="904.78186"
+       onclick="window.location='viewOwnedInstruments.svg'" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:54.03627014px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="115.29231"
+       y="800.07526"
+       id="text4268"
+       sodipodi:linespacing="125%"
+       onclick="window.location='viewOwnedInstruments.svg'"
+       transform="scale(0.8156259,1.2260523)"><tspan
+         sodipodi:role="line"
+         id="tspan4270"
+         x="115.29231"
+         y="800.07526">Back</tspan></text>
+    <rect
+       y="904.78186"
+       x="495.55765"
+       height="103.73207"
+       width="182.53546"
+       id="rect4272"
+       style="fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:6.75453377;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       onclick="window.location='viewOwnedInstruments.svg'" />
+    <text
+       sodipodi:linespacing="125%"
+       id="text4274"
+       y="800.73608"
+       x="633.31134"
+       style="font-style:normal;font-weight:normal;font-size:54.03627014px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       transform="scale(0.8156259,1.2260523)"
+       onclick="window.location='viewOwnedInstruments.svg'"><tspan
+         y="800.73608"
+         x="633.31134"
+         id="tspan4276"
+         sodipodi:role="line">Delete</tspan></text>
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect3520"
+       width="617.14288"
+       height="457.14285"
+       x="51.42857"
+       y="183.79074" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:101.17794037px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="290.07257"
+       y="353.96829"
+       id="text3522"
+       sodipodi:linespacing="125%"
+       transform="scale(0.77504648,1.2902452)"><tspan
+         sodipodi:role="line"
+         id="tspan3524"
+         x="290.07257"
+         y="353.96829">PHOTO</tspan></text>
+    <rect
+       onclick="window.location='editInstrument.svg'"
+       y="904.78186"
+       x="277.40549"
+       height="103.73207"
+       width="182.53546"
+       id="rect4982"
+       style="fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:6.75453377;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <text
+       transform="scale(0.84036821,1.1899546)"
+       onclick="window.location='editInstrument.svg'"
+       sodipodi:linespacing="125%"
+       id="text4984"
+       y="826.65308"
+       x="377.61029"
+       style="font-style:normal;font-weight:normal;font-size:61.87252426px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         y="826.65308"
+         x="377.61029"
+         id="tspan4986"
+         sodipodi:role="line">Edit</tspan></text>
+  </g>
+</svg>

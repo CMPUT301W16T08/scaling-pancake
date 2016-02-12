@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="720"
+   height="1280"
+   viewBox="0 0 720.00001 1280"
+   id="svg3406"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="viewOwnedBiddedInstrument.svg">
+  <defs
+     id="defs3408" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.35"
+     inkscape:cx="-434.39894"
+     inkscape:cy="503.52323"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     units="px"
+     inkscape:window-width="1366"
+     inkscape:window-height="705"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata3411">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,227.63784)">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:53.77893829px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="63.941814"
+       y="-39.026356"
+       id="text3414"
+       sodipodi:linespacing="125%"
+       transform="scale(0.71372154,1.4011067)"><tspan
+         sodipodi:role="line"
+         x="63.941814"
+         y="-39.026356"
+         id="tspan3518">Description: I have a brand new</tspan><tspan
+         sodipodi:role="line"
+         x="63.941814"
+         y="43.611839"
+         id="tspan3500">clarinet. Availabe on Tuesdays</tspan><tspan
+         sodipodi:role="line"
+         x="63.941814"
+         y="126.25004"
+         id="tspan3502">and Thursdays.</tspan></text>
+    <rect
+       style="fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:7.8998661;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect4266"
+       width="221.61382"
+       height="116.87245"
+       x="445.33676"
+       y="876.78314"
+       onclick="window.location='viewOwnedInstruments.svg'" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:63.19892883px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="580.24817"
+       y="814.99323"
+       id="text4268"
+       sodipodi:linespacing="125%"
+       onclick="window.location='viewOwnedInstruments.svg'"
+       transform="scale(0.84667403,1.1810921)"><tspan
+         sodipodi:role="line"
+         id="tspan4270"
+         x="580.24817"
+         y="814.99323">Back</tspan></text>
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect3520"
+       width="617.14288"
+       height="457.14285"
+       x="51.42857"
+       y="183.79074" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:101.17794037px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="290.07257"
+       y="353.96829"
+       id="text3522"
+       sodipodi:linespacing="125%"
+       transform="scale(0.77504648,1.2902452)"><tspan
+         sodipodi:role="line"
+         id="tspan3524"
+         x="290.07257"
+         y="353.96829">PHOTO</tspan></text>
+    <rect
+       onclick="window.location='viewBids.svg'"
+       y="873.92603"
+       x="65.336754"
+       height="116.87245"
+       width="221.61382"
+       id="rect3538"
+       style="fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:7.8998661;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <text
+       transform="scale(0.84667403,1.1810921)"
+       onclick="window.location='viewBids.svg'"
+       sodipodi:linespacing="125%"
+       id="text3540"
+       y="812.57416"
+       x="131.43321"
+       style="font-style:normal;font-weight:normal;font-size:63.19892883px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         y="812.57416"
+         x="131.43321"
+         id="tspan3542"
+         sodipodi:role="line">Bids</tspan></text>
+  </g>
+</svg>

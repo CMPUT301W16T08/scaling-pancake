@@ -25,9 +25,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.35"
-     inkscape:cx="-554.28571"
-     inkscape:cy="540"
+     inkscape:zoom="0.49497475"
+     inkscape:cx="-250.84357"
+     inkscape:cy="835.74404"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -45,7 +45,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -76,7 +76,7 @@
        cy="-141.92355"
        rx="25.714285"
        ry="24.285715"
-       onclick="window.location='viewBurrowedInstruments.svg'" />
+       onclick="window.location='viewBorrowedInstruments.svg'" />
     <circle
        style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:5.42418242;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="path3362"
@@ -106,7 +106,7 @@
          sodipodi:role="line"
          id="tspan4170"
          x="270.46201"
-         y="-150.50949">Burrowed</tspan></text>
+         y="-150.50949">Borrowed</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:34.22995758px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -142,17 +142,17 @@
        sodipodi:linespacing="125%"
        transform="scale(0.91865409,1.088549)"><tspan
          sodipodi:role="line"
-         id="tspan4190"
          x="295.78943"
-         y="-52.663803">Description: Test description</tspan><tspan
+         y="-52.663803"
+         id="tspan4194">Description: I have a brown</tspan><tspan
          sodipodi:role="line"
          x="295.78943"
-         y="-21.478249"
-         id="tspan4192">test description test description</tspan><tspan
+         y="-21.478243"
+         id="tspan4913">4-string base in great condition.</tspan><tspan
          sodipodi:role="line"
          x="295.78943"
-         y="9.7073135"
-         id="tspan4194">test description test description</tspan></text>
+         y="9.7073174"
+         id="tspan4915">Available anytime.</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:34.62313843px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -192,14 +192,15 @@
        width="165.66502"
        id="rect4208"
        style="fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       onclick="" />
+       onclick="window.location='editInstrument.svg'" />
     <text
        sodipodi:linespacing="125%"
        id="text4210"
        y="148.39964"
        x="515.66803"
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       xml:space="preserve"><tspan
+       xml:space="preserve"
+       onclick="window.location='editInstrument.svg'"><tspan
          y="148.39964"
          x="515.66803"
          id="tspan4212"
@@ -237,18 +238,18 @@
        x="295.78943"
        style="font-style:normal;font-weight:normal;font-size:24.94844818px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"><tspan
+         id="tspan4228"
          y="222.01848"
          x="295.78943"
-         id="tspan4224"
-         sodipodi:role="line">Description: Test description</tspan><tspan
-         id="tspan4226"
-         y="253.20403"
+         sodipodi:role="line">Description: I have a brown</tspan><tspan
+         y="253.20404"
          x="295.78943"
-         sodipodi:role="line">test description test description</tspan><tspan
-         id="tspan4228"
-         y="284.38962"
+         sodipodi:role="line"
+         id="tspan4938">violin in okay condition.</tspan><tspan
+         y="284.38959"
          x="295.78943"
-         sodipodi:role="line">test description test description</tspan></text>
+         sodipodi:role="line"
+         id="tspan4940">Available anytime.</tspan></text>
     <text
        transform="scale(0.99532813,1.0046938)"
        sodipodi:linespacing="125%"
@@ -281,25 +282,6 @@
          x="311.61722"
          id="tspan4238"
          sodipodi:role="line">View</tspan></text>
-    <rect
-       style="fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       id="rect4240"
-       width="165.66502"
-       height="62.629459"
-       x="475.26193"
-       y="400.93777"
-       onclick="" />
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="515.66803"
-       y="447.40475"
-       id="text4242"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan4244"
-         x="515.66803"
-         y="447.40475">Edit</tspan></text>
     <text
        sodipodi:linespacing="125%"
        id="text4246"
@@ -334,17 +316,17 @@
        sodipodi:linespacing="125%"
        transform="scale(0.91865409,1.088549)"><tspan
          sodipodi:role="line"
-         id="tspan4256"
          x="295.78943"
-         y="500.41272">Description: Test description</tspan><tspan
+         y="500.41272"
+         id="tspan4947">Description: I have a brand new</tspan><tspan
          sodipodi:role="line"
          x="295.78943"
          y="531.59827"
-         id="tspan4258">test description test description</tspan><tspan
+         id="tspan4949">clarinet. Availabe on Tuesdays</tspan><tspan
          sodipodi:role="line"
          x="295.78943"
          y="562.78381"
-         id="tspan4260">test description test description</tspan></text>
+         id="tspan4957">and Thursdays.</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:34.62313843px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -377,25 +359,6 @@
          id="tspan4270"
          x="311.61722"
          y="748.43024">View</tspan></text>
-    <rect
-       y="703.98352"
-       x="475.26193"
-       height="62.629459"
-       width="165.66502"
-       id="rect4272"
-       style="fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       onclick="" />
-    <text
-       sodipodi:linespacing="125%"
-       id="text4274"
-       y="750.4505"
-       x="515.66803"
-       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       xml:space="preserve"><tspan
-         y="750.4505"
-         x="515.66803"
-         id="tspan4276"
-         sodipodi:role="line">Edit</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -407,13 +370,6 @@
          id="tspan4280"
          x="95.44455"
          y="596.90741">Photo</tspan></text>
-    <rect
-       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       id="rect4282"
-       width="723.26923"
-       height="143.44167"
-       x="0"
-       y="912.96112" />
     <rect
        y="943.07385"
        x="445.96185"
@@ -436,7 +392,7 @@
          x="543.60242"
          y="894.13263">Back</tspan></text>
     <rect
-       onclick="window.location='newInstrument.svg'"
+       onclick="window.location='addInstrument.svg'"
        style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1.26269388;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect3403"
        width="187.01772"
@@ -444,7 +400,7 @@
        x="97.390427"
        y="940.21674" />
     <text
-       onclick="window.location='newInstrument.svg'"
+       onclick="window.location='addInstrument.svg'"
        transform="scale(0.85733009,1.1664119)"
        sodipodi:linespacing="125%"
        id="text3405"
@@ -456,5 +412,25 @@
          x="153.06606"
          id="tspan3407"
          sodipodi:role="line">New</tspan></text>
-  </g>
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot4917"
+       style="fill:black;stroke:none;stroke-opacity:1;stroke-width:1px;stroke-linejoin:miter;stroke-linecap:butt;fill-opacity:1;font-family:sans-serif;font-style:normal;font-weight:normal;font-size:40px;line-height:125%;letter-spacing:0px;word-spacing:0px"><flowRegion
+         id="flowRegion4919"><rect
+           id="rect4921"
+           width="54.548237"
+           height="54.548237"
+           x="426.28436"
+           y="176.91342" /></flowRegion><flowPara
+         id="flowPara4923" /></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot4925"
+       style="fill:black;stroke:none;stroke-opacity:1;stroke-width:1px;stroke-linejoin:miter;stroke-linecap:butt;fill-opacity:1;font-family:sans-serif;font-style:normal;font-weight:normal;font-size:40px;line-height:125%;letter-spacing:0px;word-spacing:0px"><flowRegion
+         id="flowRegion4927"><rect
+           id="rect4929"
+           width="40.406101"
+           height="52.527931"
+           x="438.40622"
+           y="178.93373" /></flowRegion><flowPara
+         id="flowPara4931" /></flowRoot>  </g>
 </svg>

@@ -26,7 +26,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.49497475"
-     inkscape:cx="241.22047"
+     inkscape:cx="7.8752337"
      inkscape:cy="591.83173"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
@@ -85,7 +85,7 @@
        height="103.19717"
        x="195.27223"
        y="442.69504"
-       onclick="window.location='editProfile.svg'" />
+       onclick="window.location='viewProfile.svg'" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:59.67313766px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -94,13 +94,13 @@
        id="text4204"
        sodipodi:linespacing="125%"
        transform="scale(0.66654775,1.5002676)"
-       onclick="window.location='editProfile.svg'"><tspan
+       onclick="window.location='viewProfile.svg'"><tspan
          sodipodi:role="line"
          id="tspan4206"
          x="340.61261"
          y="350.61234">Enter Changes</tspan></text>
     <rect
-       onclick="window.location='homePage.svg'"
+       onclick="window.location='viewProfile.svg'"
        y="576.28687"
        x="199.87883"
        height="103.19717"
@@ -115,7 +115,7 @@
        x="243.01219"
        style="font-style:normal;font-weight:normal;font-size:90.19098663px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"
-       onclick="window.location='homePage.svg'"><tspan
+       onclick="window.location='viewProfile.svg'"><tspan
          y="697.02509"
          x="243.01219"
          id="tspan4358"
