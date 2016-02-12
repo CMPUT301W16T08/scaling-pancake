@@ -45,6 +45,7 @@ public class InstrumentTest extends ActivityInstrumentationTestCase2 {
         assertEquals(returnedBorrower.getEmail(), "Bidder1 email");
     }
 
+    // test use case US 05.05.01: ViewBidsOnInstrument
     public void testGetBids() {
         User owner = new User("Owner", "Owner email");
         User bidder1 = new User("Bidder1", "Bidder1 email");
@@ -88,6 +89,7 @@ public class InstrumentTest extends ActivityInstrumentationTestCase2 {
         assertEquals(returnedOwnerThroughInstrument2.getEmail(), "Owner email");
     }
 
+    // test use case US 05.06.01: AcceptBidOnInstrument
     public void testAcceptBid() {
         User owner = new User("Owner", "Owner email");
         User bidder1 = new User("Bidder1", "Bidder1 email");
@@ -111,6 +113,7 @@ public class InstrumentTest extends ActivityInstrumentationTestCase2 {
         assertEquals(returnedBid.getBidAmount(), 2.00f);
     }
 
+    // test use case US 05.07.01: DeclineBidOnInstrument
     public void testDeclineBid() {
         User owner = new User("Owner", "Owner email");
         User bidder1 = new User("Bidder1", "Bidder1 email");
