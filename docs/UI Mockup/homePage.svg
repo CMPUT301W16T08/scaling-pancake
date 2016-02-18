@@ -45,7 +45,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -59,12 +59,12 @@
        id="rect4252"
        width="92.415115"
        height="46.584957"
-       x="56.480419"
-       y="-87.104034"
-       onclick="window.location='viewProfile.svg'" />
+       x="55.561119"
+       y="-56.767078"
+       onclick="window.location='addInstrument.svg'" />
     <rect
-       y="-25.841772"
-       x="56.480419"
+       y="4.4951825"
+       x="55.561119"
        height="46.584957"
        width="92.415115"
        id="rect4254"
@@ -72,41 +72,41 @@
        onclick="window.location='viewOwnedInstruments.svg'" />
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:20.72882462px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="115.22369"
-       y="-29.054825"
+       style="font-style:normal;font-weight:normal;font-size:18.92581177px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="125.11052"
+       y="-10.534669"
        id="text4258"
        sodipodi:linespacing="125%"
-       transform="scale(0.58271843,1.7160947)"
-       onclick="window.location='viewProfile.svg'"><tspan
+       transform="scale(0.5148624,1.9422665)"
+       onclick="window.location='addInstrument.svg'"><tspan
          sodipodi:role="line"
          id="tspan4260"
-         x="115.22369"
-         y="-29.054825">View Profile</tspan></text>
+         x="125.11052"
+         y="-10.534669">Add Instrument</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:18.43798828px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="140.64764"
-       y="5.6431155"
+       x="138.63982"
+       y="19.53314"
        id="text4262"
        sodipodi:linespacing="125%"
        transform="scale(0.45785824,2.1840821)"
        onclick="window.location='viewOwnedInstruments.svg'"><tspan
          sodipodi:role="line"
          id="tspan4264"
-         x="140.64764"
-         y="5.6431155">View Instruments</tspan></text>
+         x="138.63982"
+         y="19.53314">View Instruments</tspan></text>
     <rect
-       y="35.066502"
-       x="56.65218"
+       y="65.403458"
+       x="55.73288"
        height="46.584957"
        width="92.415115"
        id="rect4266"
        style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.63404739;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        onclick="window.location='searchInstruments.svg'" />
     <rect
-       y="94.626579"
-       x="56.971752"
+       y="124.96353"
+       x="56.052452"
        height="46.584957"
        width="92.415115"
        id="rect4268"
@@ -115,28 +115,49 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:17.23187256px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="165.09804"
-       y="30.572811"
+       x="162.88159"
+       y="43.155479"
        id="text4274"
        sodipodi:linespacing="125%"
        transform="scale(0.41476376,2.411011)"
        onclick="window.location='searchInstruments.svg'"><tspan
          sodipodi:role="line"
          id="tspan4276"
-         x="165.09804"
-         y="30.572811">Search Instruments</tspan></text>
+         x="162.88159"
+         y="43.155479">Search Instruments</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:27.75594711px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="85.057816"
-       y="112.81148"
+       x="84.000648"
+       y="139.19217"
        id="text4278"
        sodipodi:linespacing="125%"
        transform="scale(0.8695895,1.1499679)"
        onclick="window.location='logIn.svg'"><tspan
          sodipodi:role="line"
          id="tspan4280"
-         x="85.057816"
-         y="112.81148">Back</tspan></text>
+         x="84.000648"
+         y="139.19217">Back</tspan></text>
+    <rect
+       onclick="window.location='viewProfile.svg'"
+       y="-114.68308"
+       x="55.561119"
+       height="46.584957"
+       width="92.415115"
+       id="rect3353"
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.63404739;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <text
+       onclick="window.location='viewProfile.svg'"
+       transform="scale(0.58271843,1.7160947)"
+       sodipodi:linespacing="125%"
+       id="text3355"
+       y="-45.125645"
+       x="113.64608"
+       style="font-style:normal;font-weight:normal;font-size:20.72882462px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         y="-45.125645"
+         x="113.64608"
+         id="tspan3357"
+         sodipodi:role="line">View Profile</tspan></text>
   </g>
 </svg>

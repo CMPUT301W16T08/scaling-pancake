@@ -26,8 +26,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.49497475"
-     inkscape:cx="-250.84357"
-     inkscape:cy="835.74404"
+     inkscape:cx="56.193618"
+     inkscape:cy="788.76547"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -45,7 +45,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -371,8 +371,8 @@
          x="95.44455"
          y="596.90741">Photo</tspan></text>
     <rect
-       y="943.07385"
-       x="445.96185"
+       y="892.56622"
+       x="272.21561"
        height="91.297447"
        width="187.01772"
        id="rect4268"
@@ -381,37 +381,16 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:55.2754631px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="543.60242"
-       y="894.13263"
+       x="346.97787"
+       y="849.50183"
        id="text4278-7"
        sodipodi:linespacing="125%"
        transform="scale(0.88364468,1.1316766)"
        onclick="window.location='homePage.svg'"><tspan
          sodipodi:role="line"
          id="tspan4280-5"
-         x="543.60242"
-         y="894.13263">Back</tspan></text>
-    <rect
-       onclick="window.location='addInstrument.svg'"
-       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1.26269388;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       id="rect3403"
-       width="187.01772"
-       height="91.297447"
-       x="97.390427"
-       y="940.21674" />
-    <text
-       onclick="window.location='addInstrument.svg'"
-       transform="scale(0.85733009,1.1664119)"
-       sodipodi:linespacing="125%"
-       id="text3405"
-       y="869.8291"
-       x="153.06606"
-       style="font-style:normal;font-weight:normal;font-size:63.56325531px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       xml:space="preserve"><tspan
-         y="869.8291"
-         x="153.06606"
-         id="tspan3407"
-         sodipodi:role="line">New</tspan></text>
+         x="346.97787"
+         y="849.50183">Back</tspan></text>
     <flowRoot
        xml:space="preserve"
        id="flowRoot4917"
