@@ -61,6 +61,33 @@ public class User {
         this.borrowedInstruments.addInstrument(instrument);
     }
 
+    public void editOwnedInstrument(Instrument instrument, String name, String description) {
+        if (this.ownedInstruments.containsInstrument(instrument)) {
+            instrument.setName(name);
+            instrument.setDescription(description);
+            if (!this.ownedInstruments.containsInstrument(instrument)) {
+                throw new RuntimeException();
+            }
+        }
+        else {
+            throw new RuntimeException();
+        }
+    }
+
+    public void editOwnedInstrument(int index, String name, String description) {
+        if (index < this.ownedInstruments.size()) {
+            Instrument instrument = this.ownedInstruments.getInstrument(index);
+            instrument.setName(name);
+            instrument.setDescription(description);
+            if (!this.ownedInstruments.containsInstrument(instrument)) {
+                throw new RuntimeException();
+            }
+        }
+        else {
+            throw new RuntimeException();
+        }
+    }
+
     public void deleteOwnedInstrument(Instrument instrument) {
         if (this.ownedInstruments.containsInstrument(instrument)) {
             this.ownedInstruments.removeInstrument(instrument);
