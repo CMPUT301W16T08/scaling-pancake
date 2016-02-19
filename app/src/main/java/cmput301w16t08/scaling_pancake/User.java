@@ -8,13 +8,16 @@ import java.util.ArrayList;
 public class User {
     private String name;
     private String email;
-    private ArrayList<Instrument> ownedInstruments = new ArrayList<Instrument>();
-    private ArrayList<Instrument> borrowedInstruments = new ArrayList<Instrument>();
-    private ArrayList<Bid> bids = new ArrayList<Bid>();
+    private InstrumentList ownedInstruments;
+    private InstrumentList borrowedInstruments;
+    private BidList bids;
 
     public User(String name, String email) {
         this.name = name;
         this.email = email;
+        this.ownedInstruments = new InstrumentList();
+        this.borrowedInstruments = new InstrumentList();
+        this.bids = new BidList();
     }
 
     public String getName() {
@@ -33,45 +36,59 @@ public class User {
         this.email = email;
     }
 
-    public ArrayList<Instrument> getOwnedInstruments() {
-        return ownedInstruments;
+    public InstrumentList getOwnedInstruments() {
+        return this.ownedInstruments;
     }
 
-    public ArrayList<Instrument> getBorrowedInstruments() {
-        return borrowedInstruments;
+    public InstrumentList getBorrowedInstruments() {
+        return this.borrowedInstruments;
     }
 
-    public ArrayList<Instrument> getOwnedBiddedInstruments() {
-        //TODO: add method body
+    public BidList getBids() {
+        return this.bids;
     }
 
-    public ArrayList<Instrument> getBiddedInstruments() {
-        //TODO: add method body
+    public void addOwnedInstrument(Instrument instrument) {
+        this.ownedInstruments.addInstrument(instrument);
     }
 
-    public ArrayList<Bid> getBids() {
-        return bids;
-    }
-
-
-    public void addInstrument(Instrument instrument) {
-        this.ownedInstruments.add(instrument);
-    }
-
-    public void addInstrument(String name, String description) {
+    public void addOwnedInstrument(String name, String description) {
         Instrument instrument = new Instrument(this, name, description);
-        this.ownedInstruments.add(instrument);
+        this.ownedInstruments.addInstrument(instrument);
     }
 
-    public void deleteInstrument(Instrument instrument) {
-        this.ownedInstruments.remove(instrument);
+    public void addBorrowedInstrument(Instrument instrument) {
+        this.borrowedInstruments.addInstrument(instrument);
     }
 
-    public void acceptBid(Bid bid) {
-        //TODO: add method body
+    public void deleteOwnedInstrument(Instrument instrument) {
+        if (this.ownedInstruments.containsInstrument(instrument)) {
+            this.ownedInstruments.removeInstrument(instrument);
+        }
+        else {
+            throw new RuntimeException();
+        }
     }
 
-    public void declineBid(Bid bid) {
-        //TODO: add method body
+    public void deleteBorrowedInstrument(Instrument instrument) {
+        if (this.ownedInstruments.containsInstrument(instrument)) {
+            this.borrowedInstruments.removeInstrument(instrument);
+        }
+        else {
+            throw new RuntimeException();
+        }
+    }
+
+    public void addBid(Bid bid) {
+        this.bids.addBid(bid);
+    }
+
+    public void deleteBid(Bid bid) {
+        if (this.bids.containsBid(bid)) {
+            this.bids.removeBid(bid);
+        }
+        else {
+            throw new RuntimeException();
+        }
     }
 }
