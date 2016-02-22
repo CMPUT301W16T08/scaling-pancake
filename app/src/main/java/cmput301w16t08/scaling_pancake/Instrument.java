@@ -64,11 +64,18 @@ public class Instrument {
 
     public void addBid(Bid bid) {
         this.bids.addBid(bid);
+        bid.getBidder().addBid(bid);
+        this.setStatus("bidded");
     }
 
     public void acceptBid(Bid bid) {
         if (this.bids.containsBid(bid)) {
             bid.setAccepted();
+            for (int i = 0; i < this.bids.size(); i++) {
+                if (!(this.bids.getBid(i) == bid)) {
+                    this.bids.getBid(i).getBidder().deleteBid(this.bids.getBid(i));
+                }
+            }
             this.bids.clearBids();
             this.bids.addBid(bid);
             this.setStatus("borrowed");
@@ -83,6 +90,11 @@ public class Instrument {
         if (index < this.bids.size()) {
             Bid bid = this.bids.getBid(index);
             bid.setAccepted();
+            for (int i = 0; i < this.bids.size(); i++) {
+                if (!(this.bids.getBid(i) == bid)) {
+                    this.bids.getBid(i).getBidder().deleteBid(this.bids.getBid(i));
+                }
+            }
             this.bids.clearBids();
             this.bids.addBid(bid);
             this.setStatus("borrowed");
@@ -96,6 +108,9 @@ public class Instrument {
     public void declineBid(Bid bid) {
         if (this.bids.containsBid(bid)) {
             this.bids.removeBid(bid);
+            if (this.bids.size() == 0) {
+                this.setStatus("available");
+            }
         }
         else {
             throw new RuntimeException();
@@ -105,6 +120,9 @@ public class Instrument {
     public void declineBid(int index) {
         if (index < this.bids.size()) {
             this.bids.removeBid(this.bids.getBid(index));
+            if (this.bids.size() == 0) {
+                this.setStatus("available");
+            }
         }
         else {
             throw new RuntimeException();

@@ -1,4 +1,5 @@
 
+
 import android.content.Intent;
 import android.test.ActivityInstrumentationTestCase2;
 import android.test.UiThreadTest;
@@ -30,3 +31,4 @@ public class CreateProfileTester extends ActivityInstrumentationTestCase2 {
                 ((EditText) epa.findViewById(R.id.create_profile_username_tv)).getText().toString());
     }
 }
+
