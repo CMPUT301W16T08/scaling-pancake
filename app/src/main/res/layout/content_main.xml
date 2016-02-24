@@ -12,8 +12,47 @@
     tools:context="cmput301w16t08.scaling_pancake.MainActivity"
     tools:showIn="@layout/activity_main">
 
-    <TextView
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:layout_centerInParent="true"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/startscreen_username_et"
+            android:hint="@string/username_prompt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="2dp"
+            android:background="@drawable/grey_rounded_border"/>
+
+        <Button
+            android:id="@+id/startscreen_login_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/login"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="2dp"
+            android:background="@drawable/btn_selector"/>
+
+        <TextView
+            android:id="@+id/startscreen_word_or_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="2dp"
+            android:text="@string/word_or"/>
+
+        <Button
+            android:id="@+id/startscreen_createprofile_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/createprofile"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="2dp"
+            android:background="@drawable/btn_selector"/>
+    </LinearLayout>
+
+
 </RelativeLayout>
