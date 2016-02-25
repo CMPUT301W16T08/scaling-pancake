@@ -4,7 +4,11 @@
     <string name="title_activity_view_profile">ViewProfileActivity</string>
     <string name="title_activity_edit_profile">EditProfileActivity</string>
     <string name="username_prompt">Enter Username</string>
+    <string name="email_prompt">Enter Email</string>
     <string name="word_or">or</string>
     <string name="login">Login</string>
     <string name="createprofile">Create Profile</string>
+    <string name="title_activity_create_profile">CreateProfileActivity</string>
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
 </resources>

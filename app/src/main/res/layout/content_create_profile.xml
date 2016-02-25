@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,31 +10,42 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="cmput301w16t08.scaling_pancake.MainActivity"
-    tools:showIn="@layout/activity_main">
+    tools:context="cmput301w16t08.scaling_pancake.CreateProfileActivity"
+    tools:showIn="@layout/activity_create_profile">
 
     <LinearLayout
+        android:id="@+id/createprofile_et_shell"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:orientation="vertical">
 
-        <EditText
-            android:id="@+id/startscreen_username_et"
-            android:hint="@string/username_prompt"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="2dp"
-            android:layout_marginBottom="2dp"
-            android:background="@drawable/grey_rounded_border"/>
+    <EditText
+        android:id="@+id/createprofile_username_et"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="2dp"
+        android:hint="@string/username_prompt"
+        android:background="@drawable/grey_rounded_border"/>
+
+    <EditText
+        android:id="@+id/createprofile_email_et"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="2dp"
+        android:inputType="textEmailAddress"
+        android:hint="@string/email_prompt"
+        android:background="@drawable/grey_rounded_border"/>
 
         <Button
-            android:id="@+id/startscreen_login_button"
+            android:id="@+id/createprofile_save_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/login"
             android:layout_marginTop="2dp"
             android:layout_marginBottom="2dp"
+            android:text="@string/save"
             android:background="@drawable/btn_selector"/>
 
         <TextView
@@ -45,15 +57,17 @@
             android:text="@string/word_or"/>
 
         <Button
-            android:id="@+id/startscreen_createprofile_button"
-            android:onClick="createProfile"
+            android:id="@+id/createprofile_cancel_button"
+            android:onClick="cancel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/createprofile"
             android:layout_marginTop="2dp"
             android:layout_marginBottom="2dp"
+            android:text="@string/cancel"
             android:background="@drawable/btn_selector"/>
+
     </LinearLayout>
+
 
 
 </RelativeLayout>
