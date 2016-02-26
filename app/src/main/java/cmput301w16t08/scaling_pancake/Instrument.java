@@ -12,6 +12,7 @@ public class Instrument {
     private User owner;
     private User borrowedBy;
     private BidList bids;
+    private String id;
 
     public Instrument(User owner, String name, String description) {
         this.name = name;
@@ -20,6 +21,7 @@ public class Instrument {
         this.status = "available";
         this.borrowedBy = null;
         this.bids = new BidList();
+        this.id = "";
     }
 
     public String getStatus() {
@@ -127,5 +129,13 @@ public class Instrument {
         else {
             throw new RuntimeException();
         }
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 }

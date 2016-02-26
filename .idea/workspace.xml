@@ -6,7 +6,7 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="No Filters" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8c17772a-cbc4-476d-b4a8-2d03ddec66d2" name="Default" comment="" />
@@ -41,10 +41,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="12" column="39" selection-start-line="12" selection-start-column="39" selection-end-line="12" selection-end-column="39" />
-              <folding>
-                <element signature="e#381#399#0" expanded="true" />
-                <element signature="e#1328#1367#0" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -59,13 +56,118 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ElasticsearchController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ElasticsearchController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/ElasticsearchController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7039338">
-              <caret line="20" column="24" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+              <folding>
+                <element signature="docComment;class#ElasticsearchController#0" expanded="false" />
+                <element signature="class#CreateUserTask#0;class#ElasticsearchController#0" expanded="false" />
+                <element signature="method#doInBackground#0;class#CreateUserTask#0;class#ElasticsearchController#0" expanded="false" />
+                <element signature="class#GetUserTask#0;class#ElasticsearchController#0" expanded="false" />
+                <element signature="method#doInBackground#0;class#GetUserTask#0;class#ElasticsearchController#0" expanded="false" />
+                <element signature="e#957#1027#0" expanded="false" />
+                <element signature="class#GetInstrumentsTask#0;class#ElasticsearchController#0" expanded="false" />
+                <element signature="method#doInBackground#0;class#GetInstrumentsTask#0;class#ElasticsearchController#0" expanded="false" />
+                <element signature="class#AddInstrumentTask#0;class#ElasticsearchController#0" expanded="false" />
+                <element signature="method#doInBackground#0;class#AddInstrumentTask#0;class#ElasticsearchController#0" expanded="false" />
+                <element signature="method#onPostExecute#0;class#AddInstrumentTask#0;class#ElasticsearchController#0" expanded="false" />
+                <element signature="class#EditInstrumentTask#0;class#ElasticsearchController#0" expanded="false" />
+                <element signature="method#doInBackground#0;class#EditInstrumentTask#0;class#ElasticsearchController#0" expanded="false" />
+                <element signature="method#onPostExecute#0;class#EditInstrumentTask#0;class#ElasticsearchController#0" expanded="false" />
+                <element signature="class#EditUserTask#0;class#ElasticsearchController#0" expanded="false" />
+                <element signature="method#doInBackground#0;class#EditUserTask#0;class#ElasticsearchController#0" expanded="false" />
+                <element signature="method#onPostExecute#0;class#EditUserTask#0;class#ElasticsearchController#0" expanded="false" />
+                <element signature="class#DeleteUserTask#0;class#ElasticsearchController#0" expanded="false" />
+                <element signature="method#doInBackground#0;class#DeleteUserTask#0;class#ElasticsearchController#0" expanded="false" />
+                <element signature="method#onPostExecute#0;class#DeleteUserTask#0;class#ElasticsearchController#0" expanded="false" />
+                <element signature="class#DeleteInstrumentTask#0;class#ElasticsearchController#0" expanded="false" />
+                <element signature="method#doInBackground#0;class#DeleteInstrumentTask#0;class#ElasticsearchController#0" expanded="false" />
+                <element signature="method#onPostExecute#0;class#DeleteInstrumentTask#0;class#ElasticsearchController#0" expanded="false" />
+                <element signature="method#verifyClient#0;class#ElasticsearchController#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AsyncTask.java" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/AppData/Local/Android/sdk/sources/android-23/android/os/AsyncTask.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="179" column="53" selection-start-line="179" selection-start-column="53" selection-end-line="179" selection-end-column="53" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="docComment;class#AsyncTask#0" expanded="false" />
+                <element signature="class#9056:9279" expanded="false" />
+                <element signature="method#newThread#0;class#9056:9279" expanded="false" />
+                <element signature="docComment;field#THREAD_POOL_EXECUTOR#0;class#AsyncTask#0" expanded="false" />
+                <element signature="docComment;field#SERIAL_EXECUTOR#0;class#AsyncTask#0" expanded="false" />
+                <element signature="class#SerialExecutor#0;class#AsyncTask#0" expanded="false" />
+                <element signature="method#execute#0;class#SerialExecutor#0;class#AsyncTask#0" expanded="false" />
+                <element signature="method#scheduleNext#0;class#SerialExecutor#0;class#AsyncTask#0" expanded="false" />
+                <element signature="docComment;class#Status#0;class#AsyncTask#0" expanded="false" />
+                <element signature="class#Status#0;class#AsyncTask#0" expanded="false" />
+                <element signature="docComment;field#PENDING#0;class#Status#0;class#AsyncTask#0" expanded="false" />
+                <element signature="docComment;field#RUNNING#0;class#Status#0;class#AsyncTask#0" expanded="false" />
+                <element signature="docComment;field#FINISHED#0;class#Status#0;class#AsyncTask#0" expanded="false" />
+                <element signature="method#getHandler#0;class#AsyncTask#0" expanded="false" />
+                <element signature="docComment;method#setDefaultExecutor#0;class#AsyncTask#0" expanded="false" />
+                <element signature="docComment;method#AsyncTask#0;class#AsyncTask#0" expanded="false" />
+                <element signature="method#AsyncTask#0;class#AsyncTask#0" expanded="false" />
+                <element signature="class#12651:13251" expanded="false" />
+                <element signature="method#done#0;class#12651:13251" expanded="false" />
+                <element signature="method#postResultIfNotInvoked#0;class#AsyncTask#0" expanded="false" />
+                <element signature="method#postResult#0;class#AsyncTask#0" expanded="false" />
+                <element signature="docComment;method#getStatus#0;class#AsyncTask#0" expanded="false" />
+                <element signature="docComment;method#doInBackground#0;class#AsyncTask#0" expanded="false" />
+                <element signature="docComment;method#onPreExecute#0;class#AsyncTask#0" expanded="false" />
+                <element signature="method#onPreExecute#0;class#AsyncTask#0" expanded="false" />
+                <element signature="docComment;method#onPostExecute#0;class#AsyncTask#0" expanded="false" />
+                <element signature="e#15152#15192#0" expanded="false" />
+                <element signature="method#onPostExecute#0;class#AsyncTask#0" expanded="false" />
+                <element signature="docComment;method#onProgressUpdate#0;class#AsyncTask#0" expanded="false" />
+                <element signature="e#15561#15601#0" expanded="false" />
+                <element signature="method#onProgressUpdate#0;class#AsyncTask#0" expanded="false" />
+                <element signature="docComment;method#onCancelled#0;class#AsyncTask#0" expanded="false" />
+                <element signature="e#16247#16286#0" expanded="false" />
+                <element signature="docComment;method#onCancelled#1;class#AsyncTask#0" expanded="false" />
+                <element signature="method#onCancelled#1;class#AsyncTask#0" expanded="false" />
+                <element signature="docComment;method#isCancelled#0;class#AsyncTask#0" expanded="false" />
+                <element signature="docComment;method#cancel#0;class#AsyncTask#0" expanded="false" />
+                <element signature="method#cancel#0;class#AsyncTask#0" expanded="false" />
+                <element signature="docComment;method#get#0;class#AsyncTask#0" expanded="false" />
+                <element signature="method#get#0;class#AsyncTask#0" expanded="false" />
+                <element signature="docComment;method#get#1;class#AsyncTask#0" expanded="false" />
+                <element signature="method#get#1;class#AsyncTask#0" expanded="false" />
+                <element signature="docComment;method#execute#0;class#AsyncTask#0" expanded="false" />
+                <element signature="method#execute#0;class#AsyncTask#0" expanded="false" />
+                <element signature="docComment;method#executeOnExecutor#0;class#AsyncTask#0" expanded="false" />
+                <element signature="method#executeOnExecutor#0;class#AsyncTask#0" expanded="false" />
+                <element signature="docComment;method#execute#1;class#AsyncTask#0" expanded="false" />
+                <element signature="docComment;method#publishProgress#0;class#AsyncTask#0" expanded="false" />
+                <element signature="method#publishProgress#0;class#AsyncTask#0" expanded="false" />
+                <element signature="method#finish#0;class#AsyncTask#0" expanded="false" />
+                <element signature="class#InternalHandler#0;class#AsyncTask#0" expanded="false" />
+                <element signature="e#26090#26151#0" expanded="false" />
+                <element signature="method#handleMessage#0;class#InternalHandler#0;class#AsyncTask#0" expanded="false" />
+                <element signature="class#WorkerRunnable#0;class#AsyncTask#0" expanded="false" />
+                <element signature="class#AsyncTaskResult#0;class#AsyncTask#0" expanded="false" />
+                <element signature="method#AsyncTaskResult#0;class#AsyncTaskResult#0;class#AsyncTask#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ElasticsearchControllerTest.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/androidTest/java/cmput301w16t08/scaling_pancake/ElasticsearchControllerTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.45617172">
+              <caret line="15" column="56" selection-start-line="15" selection-start-column="56" selection-end-line="15" selection-end-column="56" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#295#296#0" expanded="true" />
+                <element signature="e#347#348#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -1638,7 +1740,10 @@
       <list>
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/ElasticsearchUserController.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/User.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/Instrument.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/ElasticsearchController.java" />
+        <option value="$PROJECT_DIR$/app/src/androidTest/java/cmput301w16t08/scaling_pancake/ElasticsearchControllerTest.java" />
       </list>
     </option>
   </component>
@@ -1646,10 +1751,10 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-1345" />
-    <option name="y" value="17" />
-    <option name="width" value="1364" />
-    <option name="height" value="726" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -1674,7 +1779,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -1778,8 +1882,39 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scaling-pancake" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scaling-pancake" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="androidTest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scaling_pancake" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="AndroidView">
         <subPane>
@@ -1983,37 +2118,37 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1345" y="17" width="1364" height="726" extended-state="0" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.13536379" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.13969335" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32879046" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24962178" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24962178" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32879046" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -2025,38 +2160,11 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/EditProfileActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.136612">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="12" column="39" selection-start-line="12" selection-start-column="39" selection-end-line="12" selection-end-column="39" />
-          <folding>
-            <element signature="e#381#399#0" expanded="true" />
-            <element signature="e#1328#1367#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2070,10 +2178,222 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/ElasticsearchController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7039338">
-          <caret line="20" column="24" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="docComment;class#ElasticsearchController#0" expanded="false" />
+            <element signature="class#CreateUserTask#0;class#ElasticsearchController#0" expanded="false" />
+            <element signature="method#doInBackground#0;class#CreateUserTask#0;class#ElasticsearchController#0" expanded="false" />
+            <element signature="class#GetUserTask#0;class#ElasticsearchController#0" expanded="false" />
+            <element signature="method#doInBackground#0;class#GetUserTask#0;class#ElasticsearchController#0" expanded="false" />
+            <element signature="e#957#1027#0" expanded="false" />
+            <element signature="class#GetInstrumentsTask#0;class#ElasticsearchController#0" expanded="false" />
+            <element signature="method#doInBackground#0;class#GetInstrumentsTask#0;class#ElasticsearchController#0" expanded="false" />
+            <element signature="class#AddInstrumentTask#0;class#ElasticsearchController#0" expanded="false" />
+            <element signature="method#doInBackground#0;class#AddInstrumentTask#0;class#ElasticsearchController#0" expanded="false" />
+            <element signature="method#onPostExecute#0;class#AddInstrumentTask#0;class#ElasticsearchController#0" expanded="false" />
+            <element signature="class#EditInstrumentTask#0;class#ElasticsearchController#0" expanded="false" />
+            <element signature="method#doInBackground#0;class#EditInstrumentTask#0;class#ElasticsearchController#0" expanded="false" />
+            <element signature="method#onPostExecute#0;class#EditInstrumentTask#0;class#ElasticsearchController#0" expanded="false" />
+            <element signature="class#EditUserTask#0;class#ElasticsearchController#0" expanded="false" />
+            <element signature="method#doInBackground#0;class#EditUserTask#0;class#ElasticsearchController#0" expanded="false" />
+            <element signature="method#onPostExecute#0;class#EditUserTask#0;class#ElasticsearchController#0" expanded="false" />
+            <element signature="class#DeleteUserTask#0;class#ElasticsearchController#0" expanded="false" />
+            <element signature="method#doInBackground#0;class#DeleteUserTask#0;class#ElasticsearchController#0" expanded="false" />
+            <element signature="method#onPostExecute#0;class#DeleteUserTask#0;class#ElasticsearchController#0" expanded="false" />
+            <element signature="class#DeleteInstrumentTask#0;class#ElasticsearchController#0" expanded="false" />
+            <element signature="method#doInBackground#0;class#DeleteInstrumentTask#0;class#ElasticsearchController#0" expanded="false" />
+            <element signature="method#onPostExecute#0;class#DeleteInstrumentTask#0;class#ElasticsearchController#0" expanded="false" />
+            <element signature="method#verifyClient#0;class#ElasticsearchController#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/EditProfileActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.136612">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="12" column="39" selection-start-line="12" selection-start-column="39" selection-end-line="12" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/androidTest/java/cmput301w16t08/scaling_pancake/ApplicationTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.21288015">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/androidTest/java/cmput301w16t08/scaling_pancake/BidTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.030411448">
+          <caret line="7" column="24" selection-start-line="5" selection-start-column="29" selection-end-line="8" selection-end-column="5" />
+          <folding>
+            <element signature="e#182#183#0" expanded="false" />
+            <element signature="e#214#215#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5527728">
+          <caret line="21" column="21" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
+          <folding>
+            <element signature="e#3850#3851#0" expanded="true" />
+            <element signature="e#3875#3876#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/Instrument.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6994633">
+          <caret line="23" column="21" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
+          <folding>
+            <element signature="e#3348#3349#0" expanded="true" />
+            <element signature="e#3373#3374#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Android/sdk/sources/android-23/android/os/AsyncTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="179" column="53" selection-start-line="179" selection-start-column="53" selection-end-line="179" selection-end-column="53" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="docComment;class#AsyncTask#0" expanded="false" />
+            <element signature="class#9056:9279" expanded="false" />
+            <element signature="method#newThread#0;class#9056:9279" expanded="false" />
+            <element signature="docComment;field#THREAD_POOL_EXECUTOR#0;class#AsyncTask#0" expanded="false" />
+            <element signature="docComment;field#SERIAL_EXECUTOR#0;class#AsyncTask#0" expanded="false" />
+            <element signature="class#SerialExecutor#0;class#AsyncTask#0" expanded="false" />
+            <element signature="method#execute#0;class#SerialExecutor#0;class#AsyncTask#0" expanded="false" />
+            <element signature="method#scheduleNext#0;class#SerialExecutor#0;class#AsyncTask#0" expanded="false" />
+            <element signature="docComment;class#Status#0;class#AsyncTask#0" expanded="false" />
+            <element signature="class#Status#0;class#AsyncTask#0" expanded="false" />
+            <element signature="docComment;field#PENDING#0;class#Status#0;class#AsyncTask#0" expanded="false" />
+            <element signature="docComment;field#RUNNING#0;class#Status#0;class#AsyncTask#0" expanded="false" />
+            <element signature="docComment;field#FINISHED#0;class#Status#0;class#AsyncTask#0" expanded="false" />
+            <element signature="method#getHandler#0;class#AsyncTask#0" expanded="false" />
+            <element signature="docComment;method#setDefaultExecutor#0;class#AsyncTask#0" expanded="false" />
+            <element signature="docComment;method#AsyncTask#0;class#AsyncTask#0" expanded="false" />
+            <element signature="method#AsyncTask#0;class#AsyncTask#0" expanded="false" />
+            <element signature="class#12651:13251" expanded="false" />
+            <element signature="method#done#0;class#12651:13251" expanded="false" />
+            <element signature="method#postResultIfNotInvoked#0;class#AsyncTask#0" expanded="false" />
+            <element signature="method#postResult#0;class#AsyncTask#0" expanded="false" />
+            <element signature="docComment;method#getStatus#0;class#AsyncTask#0" expanded="false" />
+            <element signature="docComment;method#doInBackground#0;class#AsyncTask#0" expanded="false" />
+            <element signature="docComment;method#onPreExecute#0;class#AsyncTask#0" expanded="false" />
+            <element signature="method#onPreExecute#0;class#AsyncTask#0" expanded="false" />
+            <element signature="docComment;method#onPostExecute#0;class#AsyncTask#0" expanded="false" />
+            <element signature="e#15152#15192#0" expanded="false" />
+            <element signature="method#onPostExecute#0;class#AsyncTask#0" expanded="false" />
+            <element signature="docComment;method#onProgressUpdate#0;class#AsyncTask#0" expanded="false" />
+            <element signature="e#15561#15601#0" expanded="false" />
+            <element signature="method#onProgressUpdate#0;class#AsyncTask#0" expanded="false" />
+            <element signature="docComment;method#onCancelled#0;class#AsyncTask#0" expanded="false" />
+            <element signature="e#16247#16286#0" expanded="false" />
+            <element signature="docComment;method#onCancelled#1;class#AsyncTask#0" expanded="false" />
+            <element signature="method#onCancelled#1;class#AsyncTask#0" expanded="false" />
+            <element signature="docComment;method#isCancelled#0;class#AsyncTask#0" expanded="false" />
+            <element signature="docComment;method#cancel#0;class#AsyncTask#0" expanded="false" />
+            <element signature="method#cancel#0;class#AsyncTask#0" expanded="false" />
+            <element signature="docComment;method#get#0;class#AsyncTask#0" expanded="false" />
+            <element signature="method#get#0;class#AsyncTask#0" expanded="false" />
+            <element signature="docComment;method#get#1;class#AsyncTask#0" expanded="false" />
+            <element signature="method#get#1;class#AsyncTask#0" expanded="false" />
+            <element signature="docComment;method#execute#0;class#AsyncTask#0" expanded="false" />
+            <element signature="method#execute#0;class#AsyncTask#0" expanded="false" />
+            <element signature="docComment;method#executeOnExecutor#0;class#AsyncTask#0" expanded="false" />
+            <element signature="method#executeOnExecutor#0;class#AsyncTask#0" expanded="false" />
+            <element signature="docComment;method#execute#1;class#AsyncTask#0" expanded="false" />
+            <element signature="docComment;method#publishProgress#0;class#AsyncTask#0" expanded="false" />
+            <element signature="method#publishProgress#0;class#AsyncTask#0" expanded="false" />
+            <element signature="method#finish#0;class#AsyncTask#0" expanded="false" />
+            <element signature="class#InternalHandler#0;class#AsyncTask#0" expanded="false" />
+            <element signature="e#26090#26151#0" expanded="false" />
+            <element signature="method#handleMessage#0;class#InternalHandler#0;class#AsyncTask#0" expanded="false" />
+            <element signature="class#WorkerRunnable#0;class#AsyncTask#0" expanded="false" />
+            <element signature="class#AsyncTaskResult#0;class#AsyncTask#0" expanded="false" />
+            <element signature="method#AsyncTaskResult#0;class#AsyncTaskResult#0;class#AsyncTask#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/ElasticsearchController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding>
+            <element signature="docComment;class#ElasticsearchController#0" expanded="false" />
+            <element signature="class#CreateUserTask#0;class#ElasticsearchController#0" expanded="false" />
+            <element signature="method#doInBackground#0;class#CreateUserTask#0;class#ElasticsearchController#0" expanded="false" />
+            <element signature="class#GetUserTask#0;class#ElasticsearchController#0" expanded="false" />
+            <element signature="method#doInBackground#0;class#GetUserTask#0;class#ElasticsearchController#0" expanded="false" />
+            <element signature="e#957#1027#0" expanded="false" />
+            <element signature="class#GetInstrumentsTask#0;class#ElasticsearchController#0" expanded="false" />
+            <element signature="method#doInBackground#0;class#GetInstrumentsTask#0;class#ElasticsearchController#0" expanded="false" />
+            <element signature="class#AddInstrumentTask#0;class#ElasticsearchController#0" expanded="false" />
+            <element signature="method#doInBackground#0;class#AddInstrumentTask#0;class#ElasticsearchController#0" expanded="false" />
+            <element signature="method#onPostExecute#0;class#AddInstrumentTask#0;class#ElasticsearchController#0" expanded="false" />
+            <element signature="class#EditInstrumentTask#0;class#ElasticsearchController#0" expanded="false" />
+            <element signature="method#doInBackground#0;class#EditInstrumentTask#0;class#ElasticsearchController#0" expanded="false" />
+            <element signature="method#onPostExecute#0;class#EditInstrumentTask#0;class#ElasticsearchController#0" expanded="false" />
+            <element signature="class#EditUserTask#0;class#ElasticsearchController#0" expanded="false" />
+            <element signature="method#doInBackground#0;class#EditUserTask#0;class#ElasticsearchController#0" expanded="false" />
+            <element signature="method#onPostExecute#0;class#EditUserTask#0;class#ElasticsearchController#0" expanded="false" />
+            <element signature="class#DeleteUserTask#0;class#ElasticsearchController#0" expanded="false" />
+            <element signature="method#doInBackground#0;class#DeleteUserTask#0;class#ElasticsearchController#0" expanded="false" />
+            <element signature="method#onPostExecute#0;class#DeleteUserTask#0;class#ElasticsearchController#0" expanded="false" />
+            <element signature="class#DeleteInstrumentTask#0;class#ElasticsearchController#0" expanded="false" />
+            <element signature="method#doInBackground#0;class#DeleteInstrumentTask#0;class#ElasticsearchController#0" expanded="false" />
+            <element signature="method#onPostExecute#0;class#DeleteInstrumentTask#0;class#ElasticsearchController#0" expanded="false" />
+            <element signature="method#verifyClient#0;class#ElasticsearchController#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/androidTest/java/cmput301w16t08/scaling_pancake/ElasticsearchControllerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.45617172">
+          <caret line="15" column="56" selection-start-line="15" selection-start-column="56" selection-end-line="15" selection-end-column="56" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#295#296#0" expanded="true" />
+            <element signature="e#347#348#0" expanded="true" />
           </folding>
         </state>
       </provider>

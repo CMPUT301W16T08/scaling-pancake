@@ -11,6 +11,7 @@ public class User {
     private InstrumentList ownedInstruments;
     private InstrumentList borrowedInstruments;
     private BidList bids;
+    private String id;
 
     public User(String name, String email) {
         this.name = name;
@@ -18,6 +19,7 @@ public class User {
         this.ownedInstruments = new InstrumentList();
         this.borrowedInstruments = new InstrumentList();
         this.bids = new BidList();
+        this.id = "";
     }
 
     public String getName() {
@@ -127,5 +129,13 @@ public class User {
         else {
             throw new RuntimeException();
         }
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 }

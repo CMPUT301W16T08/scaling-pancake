@@ -12,17 +12,22 @@ import com.searchly.jestdroid.JestDroidClient;
 public class ElasticsearchController {
     private static JestDroidClient client;
 
-    public static class CreateUserTask extends AsyncTask<String, Void, User> {
+    public static class CreateUserTask extends AsyncTask<User, Void, Boolean> {
+        public boolean isSucceeded = false;
         @Override
-        protected User doInBackground(String... strings) {
-            // NOTE: only EVER called with one string (the username to create a profile for)
-            // returns null if username already in use
+        protected Boolean doInBackground(User... users) {
             verifyClient();
             return null;
         }
+
+        @Override
+        protected void onPostExecute(Boolean result) {
+            if (result) { isSucceeded = true;}
+        }
     }
+
     public static class GetUserTask extends AsyncTask<String, Void, User> {
-        // also used for logging in (check that the user exists)
+        public boolean isSucceeded = false;
          @Override
         protected User doInBackground(String... strings) {
              // NOTE: only EVER called with one string (the username to search for)
@@ -33,6 +38,7 @@ public class ElasticsearchController {
     }
 
     public static class GetInstrumentsTask extends AsyncTask<String, Void, InstrumentList> {
+        public boolean isSucceeded = false;
         @Override
         protected InstrumentList doInBackground(String... strings) {
             // each string is a separate keyword
@@ -41,32 +47,88 @@ public class ElasticsearchController {
         }
     }
 
-    public static class AddInstrumentTask extends AsyncTask<Instrument, Void, Void> {
+    public static class AddInstrumentTask extends AsyncTask<Instrument, Void, Boolean> {
+        public boolean isSucceeded = false;
         @Override
-        protected Void doInBackground(Instrument... instruments) {
+        protected Boolean doInBackground(Instrument... instruments) {
             verifyClient();
             return null;
         }
-    }
 
-    public static class EditInstrumentTask extends AsyncTask<Instrument, Void, Void> {
         @Override
-        protected Void doInBackground(Instrument... instruments) {
-            verifyClient();
-            return null;
+        protected void onPostExecute(Boolean result) {
+            if (result) {
+                isSucceeded = true;
+            }
         }
     }
 
-    public static class EditUserTask extends AsyncTask<Instrument, Void, Void> {
+    public static class EditInstrumentTask extends AsyncTask<Instrument, Void, Boolean> {
+        public boolean isSucceeded = false;
         @Override
-        protected Void doInBackground(Instrument... instruments) {
+        protected Boolean doInBackground(Instrument... instruments) {
             verifyClient();
             return null;
+        }
+
+        @Override
+        protected void onPostExecute(Boolean result) {
+            if (result) {
+                isSucceeded = true;
+            }
+        }
+    }
+
+    public static class EditUserTask extends AsyncTask<User, Void, Boolean> {
+        public boolean isSucceeded = false;
+        @Override
+        protected Boolean doInBackground(User... users) {
+            verifyClient();
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Boolean result) {
+            if (result) {
+                isSucceeded = true;
+            }
+        }
+    }
+
+    public static class DeleteUserTask extends AsyncTask<User, Void, Boolean> {
+        public boolean isSucceeded = false;
+        @Override
+        protected Boolean doInBackground(User... users) {
+            verifyClient();
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Boolean result) {
+            if (result) {
+                isSucceeded = true;
+            }
+        }
+    }
+
+    public static class DeleteInstrumentTask extends AsyncTask<Instrument, Void, Boolean> {
+        public boolean isSucceeded = false;
+        @Override
+        protected Boolean doInBackground(Instrument... instruments) {
+            verifyClient();
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Boolean result) {
+            if (result) {
+                isSucceeded = true;
+            }
         }
     }
 
     public static void verifyClient() {
-        if(client == null) {
+        if (client == null) {
             // TODO: Put this URL somewhere it makes sense (e.g. class variable?)
             DroidClientConfig.Builder builder = new DroidClientConfig.Builder("http://cmput301.softwareprocess.es:8080");
             DroidClientConfig config = builder.build();
