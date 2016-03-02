@@ -11,12 +11,15 @@ import android.widget.Button;
 public class MenuActivity extends AppCompatActivity {
 
     // set up our global controller
-    final Controller controller = (Controller) getApplicationContext();
+    private static Controller controller;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
+
+        controller = (Controller) getApplicationContext();
+
 
         // link views in xml to these variables
         final Button viewProfileButton = (Button) findViewById(R.id.menu_view_profile_button);

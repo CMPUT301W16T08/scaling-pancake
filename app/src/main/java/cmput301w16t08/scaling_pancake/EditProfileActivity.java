@@ -5,10 +5,14 @@ import android.support.v7.app.AppCompatActivity;
 
 public class EditProfileActivity extends AppCompatActivity {
 
+    private static Controller controller;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_profile);
+
+        controller = (Controller) getApplicationContext();
     }
 
 }
