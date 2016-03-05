@@ -80,8 +80,7 @@ public class User {
             if (!this.ownedInstruments.containsInstrument(instrument)) {
                 throw new RuntimeException();
             }
-        }
-        else {
+        } else {
             throw new RuntimeException();
         }
     }
@@ -94,8 +93,7 @@ public class User {
             if (!this.ownedInstruments.containsInstrument(instrument)) {
                 throw new RuntimeException();
             }
-        }
-        else {
+        } else {
             throw new RuntimeException();
         }
     }
@@ -103,8 +101,7 @@ public class User {
     public void deleteOwnedInstrument(Instrument instrument) {
         if (this.ownedInstruments.containsInstrument(instrument)) {
             this.ownedInstruments.removeInstrument(instrument);
-        }
-        else {
+        } else {
             throw new RuntimeException();
         }
     }
@@ -112,8 +109,7 @@ public class User {
     public void deleteBorrowedInstrument(Instrument instrument) {
         if (this.ownedInstruments.containsInstrument(instrument)) {
             this.borrowedInstruments.removeInstrument(instrument);
-        }
-        else {
+        } else {
             throw new RuntimeException();
         }
     }
@@ -125,8 +121,7 @@ public class User {
     public void deleteBid(Bid bid) {
         if (this.bids.containsBid(bid)) {
             this.bids.removeBid(bid);
-        }
-        else {
+        } else {
             throw new RuntimeException();
         }
     }

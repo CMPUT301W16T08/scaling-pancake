@@ -36,58 +36,26 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ElasticsearchControllerTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/androidTest/java/cmput301w16t08/scaling_pancake/ElasticsearchControllerTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="153" column="0" selection-start-line="153" selection-start-column="0" selection-end-line="153" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#315#316#0" expanded="true" />
-                <element signature="e#367#368#0" expanded="true" />
-                <element signature="method#testCreateUserTask#0;class#ElasticsearchControllerTest#0" expanded="false" />
-                <element signature="method#testAddInstrumentTask#0;class#ElasticsearchControllerTest#0" expanded="false" />
-                <element signature="method#testGetInstrumentsTask#0;class#ElasticsearchControllerTest#0" expanded="false" />
-                <element signature="method#testEditInstrumentTask#0;class#ElasticsearchControllerTest#0" expanded="false" />
-                <element signature="method#testEditUserTask#0;class#ElasticsearchControllerTest#0" expanded="false" />
-                <element signature="method#testDeleteUserTask#0;class#ElasticsearchControllerTest#0" expanded="false" />
-                <element signature="method#testDeleteInstrumentTask#0;class#ElasticsearchControllerTest#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ElasticsearchController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ElasticsearchController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/ElasticsearchController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.59749556">
-              <caret line="62" column="88" selection-start-line="62" selection-start-column="88" selection-end-line="62" selection-end-column="88" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="64" column="23" selection-start-line="64" selection-start-column="23" selection-end-line="64" selection-end-column="23" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="docComment;class#ElasticsearchController#0" expanded="false" />
                 <element signature="class#CreateUserTask#0;class#ElasticsearchController#0" expanded="false" />
-                <element signature="method#doInBackground#0;class#CreateUserTask#0;class#ElasticsearchController#0" expanded="false" />
-                <element signature="class#GetUserTask#0;class#ElasticsearchController#0" expanded="false" />
-                <element signature="method#doInBackground#0;class#GetUserTask#0;class#ElasticsearchController#0" expanded="false" />
-                <element signature="e#846#916#0" expanded="false" />
                 <element signature="class#GetInstrumentTask#0;class#ElasticsearchController#0" expanded="false" />
-                <element signature="method#doInBackground#0;class#GetInstrumentTask#0;class#ElasticsearchController#0" expanded="false" />
-                <element signature="e#1238#1308#0" expanded="false" />
+                <element signature="e#2987#3057#0" expanded="false" />
                 <element signature="class#GetInstrumentsTask#0;class#ElasticsearchController#0" expanded="false" />
-                <element signature="method#doInBackground#0;class#GetInstrumentsTask#0;class#ElasticsearchController#0" expanded="false" />
                 <element signature="class#AddInstrumentTask#0;class#ElasticsearchController#0" expanded="false" />
                 <element signature="method#doInBackground#0;class#AddInstrumentTask#0;class#ElasticsearchController#0" expanded="false" />
                 <element signature="class#EditInstrumentTask#0;class#ElasticsearchController#0" expanded="false" />
-                <element signature="method#doInBackground#0;class#EditInstrumentTask#0;class#ElasticsearchController#0" expanded="false" />
                 <element signature="class#EditUserTask#0;class#ElasticsearchController#0" expanded="false" />
-                <element signature="method#doInBackground#0;class#EditUserTask#0;class#ElasticsearchController#0" expanded="false" />
                 <element signature="class#DeleteUserTask#0;class#ElasticsearchController#0" expanded="false" />
-                <element signature="method#doInBackground#0;class#DeleteUserTask#0;class#ElasticsearchController#0" expanded="false" />
                 <element signature="class#DeleteInstrumentTask#0;class#ElasticsearchController#0" expanded="false" />
                 <element signature="method#doInBackground#0;class#DeleteInstrumentTask#0;class#ElasticsearchController#0" expanded="false" />
                 <element signature="class#SearchInstrumentsTask#0;class#ElasticsearchController#0" expanded="false" />
-                <element signature="method#doInBackground#0;class#SearchInstrumentsTask#0;class#ElasticsearchController#0" expanded="false" />
-                <element signature="method#verifyClient#0;class#ElasticsearchController#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -106,7 +74,49 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="Deserializer.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/Deserializer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.21288015">
+              <caret line="7" column="27" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DeserializerTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/androidTest/java/cmput301w16t08/scaling_pancake/DeserializerTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="81" column="47" selection-start-line="81" selection-start-column="47" selection-end-line="81" selection-end-column="47" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#testDeserializeBid#0;class#DeserializerTest#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Serializer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/Serializer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="4" column="3" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
+              <folding>
+                <element signature="method#serializeInstrument#0;class#Serializer#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="GradleLocalSettings">
     <option name="availableProjects">
@@ -1303,7 +1313,7 @@
     <option name="modificationStamps">
       <map>
         <entry key="$PROJECT_DIR$" value="2912717708304" />
-        <entry key="C:\Users\William\Desktop\projects\scaling-pancake" value="4369333111017" />
+        <entry key="C:\Users\William\Desktop\projects\scaling-pancake" value="4369937624073" />
       </map>
     </option>
     <option name="projectBuildClasspath">
@@ -1665,14 +1675,23 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/MenuActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/CreateProfileActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/EditProfileActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/ViewProfileActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/MainActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/ElasticsearchController.java" />
         <option value="$PROJECT_DIR$/app/src/androidTest/java/cmput301w16t08/scaling_pancake/ElasticsearchControllerTest.java" />
+        <option value="$PROJECT_DIR$/app/src/androidTest/java/cmput301w16t08/scaling_pancake/DeserializeTest.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/Bid.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/User.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/Deserializer.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/ElasticsearchController.java" />
+        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/app/build.gradle" />
+        <option value="$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/Serializer.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/Instrument.java" />
+        <option value="$PROJECT_DIR$/app/src/androidTest/java/cmput301w16t08/scaling_pancake/SerializerTest.java" />
+        <option value="$PROJECT_DIR$/app/src/androidTest/java/cmput301w16t08/scaling_pancake/DeserializerTest.java" />
       </list>
     </option>
   </component>
@@ -1682,6 +1701,9 @@
         <option name="mavenHome" value="Bundled (Maven 3)" />
       </MavenGeneralSettings>
     </option>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState />
   </component>
   <component name="NamedScopeManager">
     <order />
@@ -1716,8 +1738,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
       <pane id="AndroidView">
         <subPane>
           <PATH>
@@ -1728,6 +1748,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -1874,13 +1896,13 @@
     <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="Galaxy_Nexus_API_18" />
     <property name="FullScreen" value="false" />
   </component>
-  <component name="RunManager" selected="Android Tests.ElasticsearchControl...">
-    <configuration default="false" name="testEditInstrument...()" type="AndroidTestRunConfigurationType" factoryName="Android Tests" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Android Tests.testDeserializeIns...()">
+    <configuration default="false" name="testSerializeBid()" type="AndroidTestRunConfigurationType" factoryName="Android Tests" temporary="true" nameIsGenerated="true">
       <module name="app" />
       <option name="TESTING_TYPE" value="3" />
       <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
-      <option name="METHOD_NAME" value="testEditInstrumentTask" />
-      <option name="CLASS_NAME" value="cmput301w16t08.scaling_pancake.ElasticsearchControllerTest" />
+      <option name="METHOD_NAME" value="testSerializeBid" />
+      <option name="CLASS_NAME" value="cmput301w16t08.scaling_pancake.SerializerTest" />
       <option name="PACKAGE_NAME" value="" />
       <option name="EXTRA_OPTIONS" value="" />
       <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
@@ -1895,12 +1917,12 @@
       <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
       <method />
     </configuration>
-    <configuration default="false" name="testEditUserTask()" type="AndroidTestRunConfigurationType" factoryName="Android Tests" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="testSerializeUser()" type="AndroidTestRunConfigurationType" factoryName="Android Tests" temporary="true" nameIsGenerated="true">
       <module name="app" />
       <option name="TESTING_TYPE" value="3" />
       <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
-      <option name="METHOD_NAME" value="testEditUserTask" />
-      <option name="CLASS_NAME" value="cmput301w16t08.scaling_pancake.ElasticsearchControllerTest" />
+      <option name="METHOD_NAME" value="testSerializeUser" />
+      <option name="CLASS_NAME" value="cmput301w16t08.scaling_pancake.SerializerTest" />
       <option name="PACKAGE_NAME" value="" />
       <option name="EXTRA_OPTIONS" value="" />
       <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
@@ -1915,12 +1937,12 @@
       <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
       <method />
     </configuration>
-    <configuration default="false" name="testDeleteUserTask...()" type="AndroidTestRunConfigurationType" factoryName="Android Tests" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="testDeserializeBid...()" type="AndroidTestRunConfigurationType" factoryName="Android Tests" temporary="true" nameIsGenerated="true">
       <module name="app" />
       <option name="TESTING_TYPE" value="3" />
       <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
-      <option name="METHOD_NAME" value="testDeleteUserTask" />
-      <option name="CLASS_NAME" value="cmput301w16t08.scaling_pancake.ElasticsearchControllerTest" />
+      <option name="METHOD_NAME" value="testDeserializeBid" />
+      <option name="CLASS_NAME" value="cmput301w16t08.scaling_pancake.DeserializerTest" />
       <option name="PACKAGE_NAME" value="" />
       <option name="EXTRA_OPTIONS" value="" />
       <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
@@ -1935,12 +1957,12 @@
       <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
       <method />
     </configuration>
-    <configuration default="false" name="testDeleteInstrume...()" type="AndroidTestRunConfigurationType" factoryName="Android Tests" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="testDeserializeIns...()" type="AndroidTestRunConfigurationType" factoryName="Android Tests" temporary="true" nameIsGenerated="true">
       <module name="app" />
       <option name="TESTING_TYPE" value="3" />
       <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
-      <option name="METHOD_NAME" value="testDeleteInstrumentTask" />
-      <option name="CLASS_NAME" value="cmput301w16t08.scaling_pancake.ElasticsearchControllerTest" />
+      <option name="METHOD_NAME" value="testDeserializeInstrument" />
+      <option name="CLASS_NAME" value="cmput301w16t08.scaling_pancake.DeserializerTest" />
       <option name="PACKAGE_NAME" value="" />
       <option name="EXTRA_OPTIONS" value="" />
       <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
@@ -1955,12 +1977,12 @@
       <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
       <method />
     </configuration>
-    <configuration default="false" name="ElasticsearchControl..." type="AndroidTestRunConfigurationType" factoryName="Android Tests" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="testDeserializeUse...()" type="AndroidTestRunConfigurationType" factoryName="Android Tests" temporary="true" nameIsGenerated="true">
       <module name="app" />
-      <option name="TESTING_TYPE" value="2" />
+      <option name="TESTING_TYPE" value="3" />
       <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="CLASS_NAME" value="cmput301w16t08.scaling_pancake.ElasticsearchControllerTest" />
+      <option name="METHOD_NAME" value="testDeserializeUser" />
+      <option name="CLASS_NAME" value="cmput301w16t08.scaling_pancake.DeserializerTest" />
       <option name="PACKAGE_NAME" value="" />
       <option name="EXTRA_OPTIONS" value="" />
       <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
@@ -2119,19 +2141,19 @@
     </configuration>
     <list size="6">
       <item index="0" class="java.lang.String" itemvalue="Android Application.app" />
-      <item index="1" class="java.lang.String" itemvalue="Android Tests.testEditInstrument...()" />
-      <item index="2" class="java.lang.String" itemvalue="Android Tests.testEditUserTask()" />
-      <item index="3" class="java.lang.String" itemvalue="Android Tests.testDeleteUserTask...()" />
-      <item index="4" class="java.lang.String" itemvalue="Android Tests.testDeleteInstrume...()" />
-      <item index="5" class="java.lang.String" itemvalue="Android Tests.ElasticsearchControl..." />
+      <item index="1" class="java.lang.String" itemvalue="Android Tests.testSerializeBid()" />
+      <item index="2" class="java.lang.String" itemvalue="Android Tests.testSerializeUser()" />
+      <item index="3" class="java.lang.String" itemvalue="Android Tests.testDeserializeBid...()" />
+      <item index="4" class="java.lang.String" itemvalue="Android Tests.testDeserializeIns...()" />
+      <item index="5" class="java.lang.String" itemvalue="Android Tests.testDeserializeUse...()" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Android Tests.ElasticsearchControl..." />
-        <item index="1" class="java.lang.String" itemvalue="Android Tests.testDeleteInstrume...()" />
-        <item index="2" class="java.lang.String" itemvalue="Android Tests.testDeleteUserTask...()" />
-        <item index="3" class="java.lang.String" itemvalue="Android Tests.testEditUserTask()" />
-        <item index="4" class="java.lang.String" itemvalue="Android Tests.testEditInstrument...()" />
+        <item index="0" class="java.lang.String" itemvalue="Android Tests.testDeserializeIns...()" />
+        <item index="1" class="java.lang.String" itemvalue="Android Tests.testDeserializeUse...()" />
+        <item index="2" class="java.lang.String" itemvalue="Android Tests.testDeserializeBid...()" />
+        <item index="3" class="java.lang.String" itemvalue="Android Tests.testSerializeUser()" />
+        <item index="4" class="java.lang.String" itemvalue="Android Tests.testSerializeBid()" />
       </list>
     </recent_temporary>
     <configuration name="&lt;template&gt;" type="Applet" default="true" selected="false">
@@ -2175,32 +2197,32 @@
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32879046" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17887564" sideWeight="0.49546143" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.43441227" sideWeight="0.49546143" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39863715" sideWeight="0.49546143" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.7052811" sideWeight="0.5045386" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32879046" sideWeight="0.5030257" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32879046" sideWeight="0.5030257" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24962178" sideWeight="0.50743496" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32879046" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32879046" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32980332" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24962178" sideWeight="0.49256507" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32879046" sideWeight="0.4969743" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24962178" sideWeight="0.49256507" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.40715504" sideWeight="0.4969743" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -2209,11 +2231,11 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.0834753" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24962178" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -2232,8 +2254,8 @@
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
@@ -2250,12 +2272,55 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="6" />
+      <breakpoints-dialog>
+        <breakpoints-dialog />
+      </breakpoints-dialog>
+      <option name="time" value="17" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/MainActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/Serializer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="4" column="3" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
+          <folding>
+            <element signature="method#serializeInstrument#0;class#Serializer#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/androidTest/java/cmput301w16t08/scaling_pancake/ElasticsearchControllerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="10" column="42" selection-start-line="10" selection-start-column="41" selection-end-line="10" selection-end-column="81" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/ElasticsearchController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="64" column="23" selection-start-line="64" selection-start-column="23" selection-end-line="64" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="docComment;class#ElasticsearchController#0" expanded="false" />
+            <element signature="class#CreateUserTask#0;class#ElasticsearchController#0" expanded="false" />
+            <element signature="class#GetInstrumentTask#0;class#ElasticsearchController#0" expanded="false" />
+            <element signature="e#2987#3057#0" expanded="false" />
+            <element signature="class#GetInstrumentsTask#0;class#ElasticsearchController#0" expanded="false" />
+            <element signature="class#AddInstrumentTask#0;class#ElasticsearchController#0" expanded="false" />
+            <element signature="method#doInBackground#0;class#AddInstrumentTask#0;class#ElasticsearchController#0" expanded="false" />
+            <element signature="class#EditInstrumentTask#0;class#ElasticsearchController#0" expanded="false" />
+            <element signature="class#EditUserTask#0;class#ElasticsearchController#0" expanded="false" />
+            <element signature="class#DeleteUserTask#0;class#ElasticsearchController#0" expanded="false" />
+            <element signature="class#DeleteInstrumentTask#0;class#ElasticsearchController#0" expanded="false" />
+            <element signature="method#doInBackground#0;class#DeleteInstrumentTask#0;class#ElasticsearchController#0" expanded="false" />
+            <element signature="class#SearchInstrumentsTask#0;class#ElasticsearchController#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/androidTest/java/cmput301w16t08/scaling_pancake/SerializerTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -2263,11 +2328,84 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/Bid.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="17" column="35" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/Deserializer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="7" column="27" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/androidTest/java/cmput301w16t08/scaling_pancake/DeserializerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="10" column="5" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#testDeserializeBid#0;class#DeserializerTest#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/Serializer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding>
+            <element signature="method#serializeInstrument#0;class#Serializer#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/Instrument.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="89" column="0" selection-start-line="89" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
+          <folding>
+            <element signature="e#1239#1240#0" expanded="true" />
+            <element signature="e#1283#1284#0" expanded="true" />
+            <element signature="e#1315#1316#0" expanded="true" />
+            <element signature="e#1347#1348#0" expanded="true" />
+            <element signature="method#declineBid#0;class#Instrument#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="74" column="0" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
+          <folding>
+            <element signature="docComment;class#User#0" expanded="false" />
+            <element signature="method#addOwnedInstrument#1;class#User#0" expanded="false" />
+            <element signature="method#addBorrowedInstrument#0;class#User#0" expanded="false" />
+            <element signature="method#editOwnedInstrument#0;class#User#0" expanded="false" />
+            <element signature="method#editOwnedInstrument#1;class#User#0" expanded="false" />
+            <element signature="method#deleteOwnedInstrument#0;class#User#0" expanded="false" />
+            <element signature="method#deleteBorrowedInstrument#0;class#User#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/MenuActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="13" column="41" selection-start-line="13" selection-start-column="41" selection-end-line="13" selection-end-column="41" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2283,7 +2421,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="20" column="58" selection-start-line="20" selection-start-column="58" selection-end-line="20" selection-end-column="58" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2291,9 +2428,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="14" column="58" selection-start-line="14" selection-start-column="58" selection-end-line="14" selection-end-column="58" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2301,9 +2435,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2311,7 +2442,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2319,9 +2449,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2329,26 +2456,23 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="17" column="47" selection-start-line="17" selection-start-column="47" selection-end-line="17" selection-end-column="47" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_create_profile.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.41698113">
           <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-          <folding />
         </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/btn_pressed.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.09123435">
           <caret line="3" column="36" selection-start-line="3" selection-start-column="36" selection-end-line="3" selection-end-column="36" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2356,7 +2480,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2364,39 +2487,33 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.4490566">
           <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/content_main.xml">
       <provider editor-type-id="android-designer">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/content_main.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.545283">
           <caret line="17" column="44" selection-start-line="17" selection-start-column="44" selection-end-line="17" selection-end-column="44" />
-          <folding />
         </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/EditProfileActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2404,15 +2521,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.45617172">
           <caret line="20" column="58" selection-start-line="20" selection-start-column="58" selection-end-line="20" selection-end-column="58" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.57781756">
-          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2420,6 +2528,121 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.21288015">
           <caret line="13" column="41" selection-start-line="13" selection-start-column="41" selection-end-line="13" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/InstrumentList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.21288015">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/androidTest/java/cmput301w16t08/scaling_pancake/UserTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3251366">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/app/src/include/jest-droid-2.0.1-SNAPSHOT.jar!/io/searchbox/client/JestResult.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.34962407">
+          <caret line="124" column="24" selection-start-line="124" selection-start-column="24" selection-end-line="124" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Android/sdk/sources/android-23/java/lang/Object.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="4.137746">
+          <caret line="222" column="0" selection-start-line="222" selection-start-column="0" selection-end-line="222" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Android/sdk/sources/android-23/org/json/JSONObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.36314848">
+          <caret line="583" column="13" selection-start-line="583" selection-start-column="13" selection-end-line="583" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/androidTest/java/cmput301w16t08/scaling_pancake/ElasticsearchControllerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="10" column="42" selection-start-line="10" selection-start-column="41" selection-end-line="10" selection-end-column="81" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.9259257">
+          <caret line="26" column="31" selection-start-line="26" selection-start-column="31" selection-end-line="26" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Android/sdk/sources/android-23/android/test/TestPrinter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3323077">
+          <caret line="101" column="0" selection-start-line="101" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Android/sdk/sources/android-23/android/test/ActivityInstrumentationTestCase2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3323077">
+          <caret line="162" column="0" selection-start-line="162" selection-start-column="0" selection-end-line="162" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Android/sdk/sources/android-23/android/test/InstrumentationTestCase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3323077">
+          <caret line="217" column="0" selection-start-line="217" selection-start-column="0" selection-end-line="217" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Android/sdk/sources/android-23/android/test/AndroidTestRunner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="4.4061537">
+          <caret line="190" column="0" selection-start-line="190" selection-start-column="0" selection-end-line="190" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/AppData/Local/Android/sdk/platforms/android-23/android.jar!/junit/framework/Assert.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.30872482">
+          <caret line="49" column="19" selection-start-line="49" selection-start-column="19" selection-end-line="49" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.38177875">
+          <caret line="74" column="0" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
+          <folding>
+            <element signature="docComment;class#User#0" expanded="false" />
+            <element signature="method#addOwnedInstrument#1;class#User#0" expanded="false" />
+            <element signature="method#addBorrowedInstrument#0;class#User#0" expanded="false" />
+            <element signature="method#editOwnedInstrument#0;class#User#0" expanded="false" />
+            <element signature="method#editOwnedInstrument#1;class#User#0" expanded="false" />
+            <element signature="method#deleteOwnedInstrument#0;class#User#0" expanded="false" />
+            <element signature="method#deleteBorrowedInstrument#0;class#User#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/Bid.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.008130081">
+          <caret line="17" column="35" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
           <folding />
         </state>
       </provider>
@@ -2435,80 +2658,85 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/InstrumentList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.21288015">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/androidTest/java/cmput301w16t08/scaling_pancake/UserTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3251366">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3251366">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/androidTest/java/cmput301w16t08/scaling_pancake/ElasticsearchControllerTest.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/Instrument.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="153" column="0" selection-start-line="153" selection-start-column="0" selection-end-line="153" selection-end-column="0" />
+          <caret line="93" column="16" selection-start-line="93" selection-start-column="16" selection-end-line="93" selection-end-column="16" />
+          <folding>
+            <element signature="e#1239#1240#0" expanded="true" />
+            <element signature="e#1283#1284#0" expanded="true" />
+            <element signature="e#1315#1316#0" expanded="true" />
+            <element signature="e#1347#1348#0" expanded="true" />
+            <element signature="method#declineBid#0;class#Instrument#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/Serializer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="4" column="3" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
+          <folding>
+            <element signature="method#serializeInstrument#0;class#Serializer#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/androidTest/java/cmput301w16t08/scaling_pancake/DeserializerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="81" column="47" selection-start-line="81" selection-start-column="47" selection-end-line="81" selection-end-column="47" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#315#316#0" expanded="true" />
-            <element signature="e#367#368#0" expanded="true" />
-            <element signature="method#testCreateUserTask#0;class#ElasticsearchControllerTest#0" expanded="false" />
-            <element signature="method#testAddInstrumentTask#0;class#ElasticsearchControllerTest#0" expanded="false" />
-            <element signature="method#testGetInstrumentsTask#0;class#ElasticsearchControllerTest#0" expanded="false" />
-            <element signature="method#testEditInstrumentTask#0;class#ElasticsearchControllerTest#0" expanded="false" />
-            <element signature="method#testEditUserTask#0;class#ElasticsearchControllerTest#0" expanded="false" />
-            <element signature="method#testDeleteUserTask#0;class#ElasticsearchControllerTest#0" expanded="false" />
-            <element signature="method#testDeleteInstrumentTask#0;class#ElasticsearchControllerTest#0" expanded="false" />
+            <element signature="method#testDeserializeBid#0;class#DeserializerTest#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/androidTest/java/cmput301w16t08/scaling_pancake/SerializerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5313059">
+          <caret line="29" column="69" selection-start-line="29" selection-start-column="69" selection-end-line="29" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="14" column="40" selection-start-line="14" selection-start-column="40" selection-end-line="14" selection-end-column="40" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/ElasticsearchController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.59749556">
-          <caret line="62" column="88" selection-start-line="62" selection-start-column="88" selection-end-line="62" selection-end-column="88" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="64" column="23" selection-start-line="64" selection-start-column="23" selection-end-line="64" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="docComment;class#ElasticsearchController#0" expanded="false" />
             <element signature="class#CreateUserTask#0;class#ElasticsearchController#0" expanded="false" />
-            <element signature="method#doInBackground#0;class#CreateUserTask#0;class#ElasticsearchController#0" expanded="false" />
-            <element signature="class#GetUserTask#0;class#ElasticsearchController#0" expanded="false" />
-            <element signature="method#doInBackground#0;class#GetUserTask#0;class#ElasticsearchController#0" expanded="false" />
-            <element signature="e#846#916#0" expanded="false" />
             <element signature="class#GetInstrumentTask#0;class#ElasticsearchController#0" expanded="false" />
-            <element signature="method#doInBackground#0;class#GetInstrumentTask#0;class#ElasticsearchController#0" expanded="false" />
-            <element signature="e#1238#1308#0" expanded="false" />
+            <element signature="e#2987#3057#0" expanded="false" />
             <element signature="class#GetInstrumentsTask#0;class#ElasticsearchController#0" expanded="false" />
-            <element signature="method#doInBackground#0;class#GetInstrumentsTask#0;class#ElasticsearchController#0" expanded="false" />
             <element signature="class#AddInstrumentTask#0;class#ElasticsearchController#0" expanded="false" />
             <element signature="method#doInBackground#0;class#AddInstrumentTask#0;class#ElasticsearchController#0" expanded="false" />
             <element signature="class#EditInstrumentTask#0;class#ElasticsearchController#0" expanded="false" />
-            <element signature="method#doInBackground#0;class#EditInstrumentTask#0;class#ElasticsearchController#0" expanded="false" />
             <element signature="class#EditUserTask#0;class#ElasticsearchController#0" expanded="false" />
-            <element signature="method#doInBackground#0;class#EditUserTask#0;class#ElasticsearchController#0" expanded="false" />
             <element signature="class#DeleteUserTask#0;class#ElasticsearchController#0" expanded="false" />
-            <element signature="method#doInBackground#0;class#DeleteUserTask#0;class#ElasticsearchController#0" expanded="false" />
             <element signature="class#DeleteInstrumentTask#0;class#ElasticsearchController#0" expanded="false" />
             <element signature="method#doInBackground#0;class#DeleteInstrumentTask#0;class#ElasticsearchController#0" expanded="false" />
             <element signature="class#SearchInstrumentsTask#0;class#ElasticsearchController#0" expanded="false" />
-            <element signature="method#doInBackground#0;class#SearchInstrumentsTask#0;class#ElasticsearchController#0" expanded="false" />
-            <element signature="method#verifyClient#0;class#ElasticsearchController#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/Deserializer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.21288015">
+          <caret line="7" column="27" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
+          <folding />
         </state>
       </provider>
     </entry>

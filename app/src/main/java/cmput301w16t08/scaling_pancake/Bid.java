@@ -9,6 +9,7 @@ public class Bid {
     private User bidder;
     private float bidAmount;
     private boolean accepted;
+    private String id;
 
     public Bid(Instrument instrument, User owner, User bidder, float bidAmount) {
         this.instrument = instrument;
@@ -40,5 +41,13 @@ public class Bid {
 
     public void setAccepted() {
         this.accepted = true;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 }

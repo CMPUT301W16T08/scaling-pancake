@@ -74,9 +74,7 @@ public class Instrument {
         if (this.bids.containsBid(bid)) {
             bid.setAccepted();
             for (int i = 0; i < this.bids.size(); i++) {
-                if (!(this.bids.getBid(i) == bid)) {
-                    this.bids.getBid(i).getBidder().deleteBid(this.bids.getBid(i));
-                }
+                this.bids.getBid(i).getBidder().deleteBid(this.bids.getBid(i));
             }
             this.bids.clearBids();
             this.bids.addBid(bid);
@@ -93,9 +91,7 @@ public class Instrument {
             Bid bid = this.bids.getBid(index);
             bid.setAccepted();
             for (int i = 0; i < this.bids.size(); i++) {
-                if (!(this.bids.getBid(i) == bid)) {
-                    this.bids.getBid(i).getBidder().deleteBid(this.bids.getBid(i));
-                }
+                this.bids.getBid(i).getBidder().deleteBid(this.bids.getBid(i));
             }
             this.bids.clearBids();
             this.bids.addBid(bid);

@@ -2,6 +2,7 @@ package cmput301w16t08.scaling_pancake;
 
 import android.test.ActivityInstrumentationTestCase2;
 
+import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
 
 /**
@@ -19,7 +20,7 @@ public class ElasticsearchControllerTest extends ActivityInstrumentationTestCase
         task1.execute(user);
         ElasticsearchController.GetUserTask task2 = new ElasticsearchController.GetUserTask();
         task2.execute("testuser1");
-        User user2 = null;
+        ArrayList<User> user2 = null;
         try {
             user2 = task2.get();
         } catch (InterruptedException e) {
@@ -28,6 +29,7 @@ public class ElasticsearchControllerTest extends ActivityInstrumentationTestCase
             e.printStackTrace();
         }
         assertNotNull(user2);
+        assertTrue(user2.contains(user));
 
         // delete the test user
         ElasticsearchController.DeleteUserTask task3 = new ElasticsearchController.DeleteUserTask();
@@ -137,7 +139,7 @@ public class ElasticsearchControllerTest extends ActivityInstrumentationTestCase
         task2.execute(user);
         ElasticsearchController.GetUserTask task3 = new ElasticsearchController.GetUserTask();
         task3.execute("change");
-        User user2 = null;
+        ArrayList<User> user2 = null;
         try {
             user2 = task3.get();
         } catch (InterruptedException e) {
@@ -146,6 +148,7 @@ public class ElasticsearchControllerTest extends ActivityInstrumentationTestCase
             e.printStackTrace();
         }
         assertNotNull(user2);
+        assertTrue(user2.contains(user));
 
         // delete the test user
         ElasticsearchController.DeleteUserTask task4 = new ElasticsearchController.DeleteUserTask();
@@ -156,23 +159,13 @@ public class ElasticsearchControllerTest extends ActivityInstrumentationTestCase
         User user = new User("testuser1", "testemail1");
         ElasticsearchController.CreateUserTask task1 = new ElasticsearchController.CreateUserTask();
         task1.execute(user);
-        ElasticsearchController.GetUserTask task2 = new ElasticsearchController.GetUserTask();
-        task2.execute("testuser1");
-        User user2 = null;
-        try {
-            user2 = task2.get();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        } catch (ExecutionException e) {
-            e.printStackTrace();
-        }
-        assertNotNull(user2);
 
         // delete the test user
         ElasticsearchController.DeleteUserTask task3 = new ElasticsearchController.DeleteUserTask();
         task3.execute(user);
         ElasticsearchController.GetUserTask task4 = new ElasticsearchController.GetUserTask();
         task4.execute("testuser1");
+        ArrayList<User> user2 = null;
         try {
             // passing previous assertion means user2 is not null before this assertion
             user2 = task4.get();
@@ -181,7 +174,7 @@ public class ElasticsearchControllerTest extends ActivityInstrumentationTestCase
         } catch (ExecutionException e) {
             e.printStackTrace();
         }
-        assertNull(user2);
+        assertFalse(user2.contains(user));
     }
 
     public void testDeleteInstrumentTask() {
