@@ -48,6 +48,12 @@ public class InstrumentList {
         }
     }
 
+    public ArrayList<Instrument> getArray()
+    {
+        /* Accessor method for the  adapters to link with the arraylist. */
+        return instruments;
+    }
+
     public void clearInstruments() {
         this.instruments.clear();
     }

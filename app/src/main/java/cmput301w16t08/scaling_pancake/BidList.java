@@ -48,6 +48,12 @@ public class BidList {
         }
     }
 
+    public ArrayList<Bid> getArray()
+    {
+        /* Accessor method for the  adapters to link with the arraylist. */
+        return bids;
+    }
+
     public void clearBids() {
         this.bids.clear();
     }
