@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="cmput301w16t08.scaling_pancake.InstrumentListActivity"
+    tools:showIn="@layout/activity_instrument_list">
+
+    <LinearLayout
+        android:id="@+id/instrumentlistactivity_spinner_shell"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="2dp">
+        <Spinner
+            android:id="@+id/instrumentlistactivity_category_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </Spinner>
+    </LinearLayout>
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/instrumentlistactivity_spinner_shell"
+        android:id="@android:id/list"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="5.0dp"
+        android:drawSelectorOnTop="true"/>
+
+    <RelativeLayout
+        android:id="@android:id/empty"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Nothing to show."
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:textColorHighlight="#f44545"
+            android:layout_centerInParent="true"
+            android:gravity="center_vertical|center_horizontal"/>
+
+        </RelativeLayout>
+
+</RelativeLayout>

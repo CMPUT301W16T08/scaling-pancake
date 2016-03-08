@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="instrument_status_array">
+        <item>Owned</item>
+        <item>Borrowed</item>
+        <item>My Bids</item>
+    </string-array>
+</resources>
