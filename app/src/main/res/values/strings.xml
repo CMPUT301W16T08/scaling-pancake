@@ -17,4 +17,10 @@
     <string name="add_instruments">Add Instruments</string>
     <string name="view_instruments">View Instruments</string>
     <string name="search_instruments">Search Instruments</string>
+    <string name="title_activity_add_instrument">AddInstrumentActivity</string>
+    <string name="description">Description:</string>
+    <string name="add_photo">Add Photo</string>
+    <string name="confirm">confirm</string>
+    <string name="add">add</string>
+    <string name="instrument_name">name</string>
 </resources>

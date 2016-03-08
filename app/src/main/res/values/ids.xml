@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="addInstrument_addPhoto_et" type="id">Add Photo</item>
+    <item name="addInstrument_description_et" type="id">description</item>
+    <item name="addInstrument_name_et" type="id">addInstrument_name_et</item>
+</resources>

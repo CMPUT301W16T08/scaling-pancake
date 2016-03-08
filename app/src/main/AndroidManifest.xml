@@ -32,11 +32,15 @@
         <activity
             android:name=".CreateProfileActivity"
             android:label="@string/title_activity_create_profile"
-            android:theme="@style/MyTheme"/>
+            android:theme="@style/MyTheme" />
         <activity
             android:name=".MenuActivity"
             android:label="@string/title_activity_menu"
-            android:theme="@style/MyTheme"/>
+            android:theme="@style/MyTheme" />
+        <activity
+            android:name=".AddInstrumentActivity"
+            android:label="@string/title_activity_add_instrument"
+            android:theme="@style/MyTheme" />
     </application>
 
 </manifest>

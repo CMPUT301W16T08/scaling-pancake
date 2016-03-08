@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,8 +10,8 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="cmput301w16t08.scaling_pancake.MainActivity"
-    tools:showIn="@layout/activity_main">
+    tools:context="cmput301w16t08.scaling_pancake.AddInstrumentActivity"
+    tools:showIn="@layout/activity_add_instrument">
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -19,42 +20,51 @@
         android:orientation="vertical">
 
         <EditText
-            android:id="@+id/startscreen_username_et"
-            android:hint="@string/username_prompt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:hint="@string/instrument_name"
+            android:id="@id/addInstrument_name_et"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="2dp"
+            android:background="@drawable/grey_rounded_border"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/description"
+            android:id="@id/addInstrument_description_et"
             android:layout_marginTop="2dp"
             android:layout_marginBottom="2dp"
             android:background="@drawable/grey_rounded_border"/>
 
         <Button
-            android:id="@+id/startscreen_login_button"
-            android:onClick="logIn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/login"
+            android:onClick="addPhoto"
+            android:text="@string/add_photo"
+            android:id="@+id/addInstrument_addPhoto_button"
             android:layout_marginTop="2dp"
             android:layout_marginBottom="2dp"
-            android:background="@drawable/btn_selector"/>
-
-        <TextView
-            android:id="@+id/startscreen_word_or_tv"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="2dp"
-            android:layout_marginBottom="2dp"
-            android:text="@string/word_or"/>
+            android:background="@drawable/btn_selector" />
 
         <Button
-            android:id="@+id/startscreen_createprofile_button"
-            android:onClick="createProfile"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/createprofile"
+            android:text="@string/confirm"
+            android:onClick="confirm"
+            android:id="@+id/addInstrument_confirm_button"
             android:layout_marginTop="2dp"
             android:layout_marginBottom="2dp"
-            android:background="@drawable/btn_selector"/>
+            android:background="@drawable/btn_selector" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/cancel"
+            android:onClick="addInstrumentCancel"
+            android:id="@+id/addInstrument_cancel_button"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="2dp"
+            android:background="@drawable/btn_selector" />
     </LinearLayout>
-
-
 </RelativeLayout>

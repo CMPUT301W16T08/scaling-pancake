@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -19,35 +20,27 @@ public class MainActivity extends AppCompatActivity {
 
         controller = (Controller) getApplicationContext();
 
-        // link views in xml to these variables
-        final EditText userinput = (EditText) findViewById(R.id.startscreen_username_et);
-        final Button loginButton = (Button) findViewById(R.id.startscreen_login_button);
-        final Button createButton = (Button) findViewById(R.id.startscreen_createprofile_button);
-        
-
-        // if user click on the login button
-//        loginButton.setOnClickListener(
-//            new Button.OnClickListener(){
-//                @Override
-//                public void onClick(View v) {
-//                    // store user name
-//                    String userName = userinput.getText().toString();
-//
-//                    if (controller.login(userName)){
-//                        // if username is right
-//                        menu(v);
-//                    }else {
-//                        // if username does not exist
-//                        //TODO: give user a message
-//                    }
-//                }
-//        });
     }
 
     public void createProfile(View view) {
         Intent intent = new Intent(this, CreateProfileActivity.class);
 
         startActivity(intent);
+    }
+
+    public void logIn(View view){
+        EditText userinput = (EditText) findViewById(R.id.startscreen_username_et);
+
+        // store user name
+        String userName = userinput.getText().toString();
+
+        if (controller.login(userName)) {
+            // if username is right
+            menu(view);
+        } else {
+            // if username does not exist
+            Toast.makeText(MainActivity.this, "wrong username", Toast.LENGTH_LONG).show();
+        }
     }
 
     public void menu(View view){

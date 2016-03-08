@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -13,40 +14,50 @@
     tools:showIn="@layout/activity_menu">
 
     <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="58dp">
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical">
 
         <Button
             android:layout_width="200dp"
             android:layout_height="wrap_content"
+            android:onClick="viewProfile"
             android:text="@string/view_profile"
             android:id="@+id/menu_view_profile_button"
-            android:layout_gravity="center_horizontal" />
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="2dp"
+            android:background="@drawable/btn_selector" />
 
         <Button
-            android:layout_width="200dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/add_instruments"
+            android:onClick="addInstruments"
             android:id="@+id/menu_add_instruments_button"
-            android:layout_gravity="center_horizontal" />
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="2dp"
+            android:background="@drawable/btn_selector" />
 
         <Button
-            android:layout_width="200dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/view_instruments"
+            android:onClick="viewInstruments"
             android:id="@+id/menu_view_instruments_button"
-            android:layout_gravity="center_horizontal" />
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="2dp"
+            android:background="@drawable/btn_selector" />
 
         <Button
-            android:layout_width="200dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/search_instruments"
+            android:onClick="searchInstruments"
             android:id="@+id/menu_search_instruments_button"
-            android:layout_gravity="center_horizontal" />
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="2dp"
+            android:background="@drawable/btn_selector"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -55,10 +66,13 @@
             android:layout_gravity="center_horizontal" />
 
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/back"
+            android:onClick="logout"
             android:id="@+id/menu_back_button"
-            android:layout_gravity="center_horizontal" />
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="2dp"
+            android:background="@drawable/btn_selector"/>
     </LinearLayout>
 </RelativeLayout>

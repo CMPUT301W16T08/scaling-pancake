@@ -1,5 +1,6 @@
 package cmput301w16t08.scaling_pancake;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -20,12 +21,29 @@ public class MenuActivity extends AppCompatActivity {
 
         controller = (Controller) getApplicationContext();
 
+    }
 
-        // link views in xml to these variables
-        final Button viewProfileButton = (Button) findViewById(R.id.menu_view_profile_button);
-        final Button addInsButton = (Button) findViewById(R.id.menu_add_instruments_button);
-        final Button viewInsButton = (Button) findViewById(R.id.menu_view_instruments_button);
-        final Button searchInsButton = (Button) findViewById(R.id.menu_search_instruments_button);
+    public void viewProfile(View view){
+
+    }
+
+    public void addInstruments(View view){
+        Intent intent = new Intent(this, AddInstrumentActivity.class);
+
+        startActivity(intent);
+    }
+
+    public void viewInstruments(View view){
+
+    }
+
+    public void searchInstruments(View view){
+
+    }
+
+    public void logout(View view){
+        controller.logout();
+        finish();
     }
 
 }
