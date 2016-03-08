@@ -1,14 +1,11 @@
 package cmput301w16t08.scaling_pancake;
 
 import android.os.AsyncTask;
+import android.util.Log;
 
 import com.searchly.jestdroid.DroidClientConfig;
 import com.searchly.jestdroid.JestClientFactory;
 import com.searchly.jestdroid.JestDroidClient;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -25,16 +22,18 @@ import io.searchbox.core.SearchResult;
 public class ElasticsearchController {
     private static JestDroidClient client;
     private static String url = "http://cmput301.softwareprocess.es:8080";
-    private static String index = "CMPUT301W16T08";
+    private static String index = "cmput301w16t08";
 
     public static class CreateUserTask extends AsyncTask<User, Void, Void> {
         @Override
         protected Void doInBackground(User... users) {
             verifyClient();
-            Index ind = new Index.Builder(users[0].toString()).index(index).type("user").build();
+            Serializer serializer = new Serializer();
+            Index ind = new Index.Builder(serializer.serializeUser(users[0])).index(index).type("user").id(users[0].getId()).build();
             try {
                 DocumentResult result = client.execute(ind);
                 if (result.isSucceeded()) {
+                    Log.d("ESC", "CreateUserTask completed.");
                     users[0].setId(result.getId());
                 } else {
                     throw new RuntimeException("adding new user failed");
@@ -46,73 +45,53 @@ public class ElasticsearchController {
         }
     }
 
-    public static class GetUserTask extends AsyncTask<String, Void, ArrayList<User>> {
+    public static class GetUserTask extends AsyncTask<String, Void, ArrayList<String>> {
          @Override
-        protected ArrayList<User> doInBackground(String... strings) {
-             // NOTE: only EVER called with one string (the username to search for)
+        protected ArrayList<String> doInBackground(String... strings) {
+             // NOTE: only EVER called with one string (the id to search for)
              // returns an empty list if no users with that name found
-             // can return more then 1 user if they both start with the search string
              verifyClient();
-
-             ArrayList<User> user = new ArrayList<User>();
-             String string = "{\"query\" : {\"filtered\" : {\"query\" : {\"match_all\" : {}}," +
-                     "\"filter\" : {\"term\" : {\"name\" : " + strings[0] + "}}}}}";
+             String string = "{\"query\": {\"match\": {\"id\": \"" + strings[0] + "\"}}}";
              Search search = new Search.Builder(string).addIndex(index).addType("user").build();
 
+             ArrayList<String> returnedStrings = null;
              try {
                  SearchResult result = client.execute(search);
                  if (result.isSucceeded()) {
-                     //user = ElasticsearchController.stringToUserArrayList((ArrayList<String>) result.getSourceAsStringList());
+                     Log.d("ESC", "GetUserTask completed.");
+                     returnedStrings = (ArrayList) result.getSourceAsStringList();
                  } else {
                      throw new RuntimeException("search did not succeed");
                  }
              } catch (IOException e) {
-                 e.printStackTrace();
+                 throw new RuntimeException("search did not succeed");
              }
-             return user;
+             return returnedStrings;
          }
     }
 
-    public static class GetInstrumentTask extends AsyncTask<Instrument, Void, Instrument> {
-        @Override
-        protected Instrument doInBackground(Instrument... instruments) {
+    public static class GetUserByNameTask extends AsyncTask<String, Void, ArrayList<String>> {
+        protected  ArrayList<String> doInBackground(String... strings) {
             // NOTE: only EVER called with one string (the username to search for)
-            // returns null if user cannot be found
+            // returns an empty list if no users with that name found
+            // may return more then one item if 2 usernames start with the string
             verifyClient();
-            return null;
-        }
-    }
+            String string = "{\"query\": {\"match\": {\"name\": \"" + strings[0] + "\"}}}";
+            Search search = new Search.Builder(string).addIndex(index).addType("user").build();
 
-    public static class GetInstrumentsTask extends AsyncTask<User, Void, InstrumentList> {
-        @Override
-        protected InstrumentList doInBackground(User... users) {
-            // each string is a separate keyword
-            verifyClient();
-            return null;
-        }
-    }
-
-    public static class AddInstrumentTask extends AsyncTask<Instrument, Void, Void> {
-        @Override
-        protected Void doInBackground(Instrument... instruments) {
-            verifyClient();
-            return null;
-        }
-    }
-
-    public static class EditInstrumentTask extends AsyncTask<Instrument, Void, Void> {
-        @Override
-        protected Void doInBackground(Instrument... instruments) {
-            verifyClient();
-            return null;
-        }
-    }
-
-    public static class EditUserTask extends AsyncTask<User, Void, Void> {
-        @Override
-        protected Void doInBackground(User... users) {
-            verifyClient();
-            return null;
+            ArrayList<String> returnedStrings = null;
+            try {
+                SearchResult result = client.execute(search);
+                if (result.isSucceeded()) {
+                    Log.d("ESC", "GetUserByNameTask completed.");
+                    returnedStrings = (ArrayList) result.getSourceAsStringList();
+                } else {
+                    throw new RuntimeException("search did not succeed");
+                }
+            } catch (IOException e) {
+                throw new RuntimeException("search did not succeed");
+            }
+            return returnedStrings;
         }
     }
 
@@ -129,17 +108,29 @@ public class ElasticsearchController {
         }
     }
 
-    public static class DeleteInstrumentTask extends AsyncTask<Instrument, Void, Void> {
+    public static class UpdateUserTask extends AsyncTask<User, Void, Void> {
         @Override
-        protected Void doInBackground(Instrument... instruments) {
+        protected Void doInBackground(User... users) {
+            Serializer serializer = new Serializer();
             verifyClient();
+            Index ind = new Index.Builder(serializer.serializeUser(users[0])).index(index).type("user").id(users[0].getId()).build();
+            try {
+                DocumentResult result = client.execute(ind);
+                if (result.isSucceeded()) {
+                    Log.d("ESC", "UpdateUserTask completed.");
+                } else {
+                    throw new RuntimeException("UpdateUserTask not completed");
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
             return null;
         }
     }
 
-    public static class SearchInstrumentsTask extends AsyncTask<String, Void, InstrumentList> {
+    public static class SearchInstrumentsTask extends AsyncTask<String, Void, ArrayList<String>> {
         @Override
-        protected InstrumentList doInBackground(String... strings) {
+        protected ArrayList<String> doInBackground(String... strings) {
             // each string is a separate keyword
             verifyClient();
             return null;

@@ -1,3 +1,4 @@
+/*
 
 package cmput301w16t08.scaling_pancake;
 
@@ -59,3 +60,4 @@ public class BidTest extends ActivityInstrumentationTestCase2 {
 
 }
 
+*/

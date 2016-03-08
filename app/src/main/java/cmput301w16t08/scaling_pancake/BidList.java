@@ -17,7 +17,12 @@ public class BidList {
     }
 
     public boolean containsBid(Bid bid) {
-        return this.bids.contains(bid);
+        for (int i = 0; i < this.bids.size(); i++) {
+            if (this.bids.get(i).getId().equals(bid.getId())) {
+                return true;
+            }
+        }
+        return false;
     }
 
     public void addBid(Bid bid) {

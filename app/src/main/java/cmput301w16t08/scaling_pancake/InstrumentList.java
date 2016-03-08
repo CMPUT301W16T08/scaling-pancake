@@ -17,7 +17,12 @@ public class InstrumentList {
     }
 
     public boolean containsInstrument(Instrument instrument) {
-        return this.instruments.contains(instrument);
+        for (int i = 0; i < this.instruments.size(); i++) {
+            if (this.instruments.get(i).getId().equals(instrument.getId())) {
+                return true;
+            }
+        }
+        return false;
     }
 
     public void addInstrument(Instrument instrument) {

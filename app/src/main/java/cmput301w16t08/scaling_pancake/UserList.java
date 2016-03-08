@@ -17,7 +17,12 @@ public class UserList {
     }
 
     public boolean containsUser(User user) {
-        return this.users.contains(user);
+        for (int i = 0; i < this.users.size(); i++) {
+            if (this.users.get(i).getId().equals(user.getId())) {
+                return true;
+            }
+        }
+        return false;
     }
 
     public void addUser(User user) {

