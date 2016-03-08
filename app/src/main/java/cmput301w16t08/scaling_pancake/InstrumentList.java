@@ -25,15 +25,34 @@ public class InstrumentList {
         return false;
     }
 
+    public boolean containsInstrument(String id) {
+        for (int i = 0; i < this.instruments.size(); i++) {
+            if (this.instruments.get(i).getId().equals(id)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public void addInstrument(Instrument instrument) {
         this.instruments.add(instrument);
     }
 
     public void removeInstrument(Instrument instrument) {
-        if (this.instruments.contains(instrument)) {
-            this.instruments.remove(instrument);
-        } else {
-            throw new RuntimeException();
+        for (int i = 0; i < this.instruments.size(); i++) {
+            if (instrument.getId().equals(this.instruments.get(i).getId())) {
+                this.instruments.remove(i);
+                return;
+            }
+        }
+    }
+
+    public void removeInstrument(String id) {
+        for (int i = 0; i < this.instruments.size(); i++) {
+            if (id.equals(this.instruments.get(i).getId())) {
+                this.instruments.remove(i);
+                return;
+            }
         }
     }
 
@@ -51,6 +70,15 @@ public class InstrumentList {
         } else {
             throw new RuntimeException();
         }
+    }
+
+    public Instrument getInstrument(String id) {
+        for (int i = 0; i < this.instruments.size(); i++) {
+            if (id.equals(this.instruments.get(i).getId())) {
+                return this.instruments.get(i);
+            }
+        }
+        throw new RuntimeException();
     }
 
     public void clearInstruments() {

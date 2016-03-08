@@ -178,7 +178,7 @@ public class Controller extends Application {
 
     public void addInstrument(String name, String description) {
         // adds an instrument to the current logged in user
-        Instrument instrument = new Instrument(this.currentUser.getName(), name, description);
+        Instrument instrument = new Instrument(this.currentUser.getId(), name, description);
         this.currentUser.addOwnedInstrument(instrument);
         ElasticsearchController.UpdateUserTask updateUserTask = new ElasticsearchController.UpdateUserTask();
         updateUserTask.execute(this.currentUser);
@@ -224,23 +224,128 @@ public class Controller extends Application {
         return null;
     }
 
-    /*public void makeBidOnInstrument(Instrument instrument, float amount) {
+    public void makeBidOnInstrument(Instrument instrument, float amount) {
         // current logged in user makes a bid on a instrument
-        Bid bid = new Bid(instrument, instrument.getOwner(), this.currentUser, amount);
-        instrument.addBid(bid);
+
+        // load the user that owns the instrument
+        ElasticsearchController.GetUserTask getUserTask = new ElasticsearchController.GetUserTask();
+        getUserTask.execute(instrument.getOwnerId());
+        ArrayList<String> users = null;
+        try {
+            users = getUserTask.get();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+        User user = new Deserializer().deserializeUser(users.get(0));
+
+        // make the bid and update both users
+        if (user.getOwnedInstruments().containsInstrument(instrument)) {
+            Bid bid = new Bid(instrument.getId(), user.getId(), this.currentUser.getId(), amount);
+            user.getOwnedInstruments().getInstrument(instrument.getId()).addBid(bid);
+            this.currentUser.addBid(bid);
+        } else {
+            throw new RuntimeException("Instrument not found");
+        }
+        ElasticsearchController.UpdateUserTask updateUserTask1 = new ElasticsearchController.UpdateUserTask();
+        ElasticsearchController.UpdateUserTask updateUserTask2 = new ElasticsearchController.UpdateUserTask();
+        updateUserTask1.execute(user);
+        updateUserTask2.execute(this.currentUser);
     }
 
-    public void acceptBidOnInstrument(Instrument instrument, Bid bid) {
+    public void acceptBidOnInstrument(Bid bid) {
         // current logged in user accepts a bid on an instrument
+        if (!this.currentUser.getOwnedInstruments().containsInstrument(bid.getInstrumentId())) {
+            throw new RuntimeException("logged in user does not own instrument");
+        }
+        if (!this.currentUser.getOwnedInstruments().getInstrument(bid.getInstrumentId()).getBids().containsBid(bid)) {
+            throw new RuntimeException("instrument does not contain that bid");
+        }
+        Instrument instrument = this.currentUser.getOwnedInstruments().getInstrument(bid.getInstrumentId());
+
+        // get the bidder
+        ElasticsearchController.GetUserTask getUserTask = new ElasticsearchController.GetUserTask();
+        getUserTask.execute(bid.getBidderId());
+        ArrayList<String> users = null;
+        try {
+            users = getUserTask.get();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+        User bidder = new Deserializer().deserializeUser(users.get(0));
+
+        // remove all bids
+        for (int i = 0; i < instrument.getBids().size(); i++) {
+                // get the bidder
+            ElasticsearchController.GetUserTask getUserTask1 = new ElasticsearchController.GetUserTask();
+            getUserTask1.execute(instrument.getBids().getBid(i).getBidderId());
+            users = null;
+            try {
+                users = getUserTask.get();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            } catch (ExecutionException e) {
+                e.printStackTrace();
+            }
+            User bidder1 = new Deserializer().deserializeUser(users.get(0));
+
+            // remove the bid and update user
+            bidder1.deleteBid(instrument.getBids().getBid(i));
+            ElasticsearchController.UpdateUserTask updateUserTask = new ElasticsearchController.UpdateUserTask();
+            updateUserTask.execute(bidder1);
+        }
+
+        // update both users
         instrument.acceptBid(bid);
-        this.instruments.removeInstrument(instrument);
-        bid.getBidder().addBorrowedInstrument(instrument);
-        bid.getBidder().deleteBid(bid);
+        ElasticsearchController.GetUserTask getUserTask1 = new ElasticsearchController.GetUserTask();
+        getUserTask1.execute(bidder.getId());
+        try {
+            users = getUserTask1.get();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+        bidder = new Deserializer().deserializeUser(users.get(0));
+        bidder.addBorrowedInstrument(instrument);
+        ElasticsearchController.UpdateUserTask updateUserTask1 = new ElasticsearchController.UpdateUserTask();
+        ElasticsearchController.UpdateUserTask updateUserTask2 = new ElasticsearchController.UpdateUserTask();
+        updateUserTask1.execute(bidder);
+        updateUserTask2.execute(this.currentUser);
     }
 
-    public void declineBidOnInstrument(Instrument instrument, Bid bid) {
+    public void declineBidOnInstrument(Bid bid) {
         // current logged in user declines a bid on an instrument
-        instrument.declineBid(bid);
-        bid.getBidder().deleteBid(bid);
-    }*/
+        if (!this.currentUser.getOwnedInstruments().containsInstrument(bid.getInstrumentId())) {
+            throw new RuntimeException("logged in user does not own instrument");
+        }
+        if (!this.currentUser.getOwnedInstruments().getInstrument(bid.getInstrumentId()).getBids().containsBid(bid)) {
+            throw new RuntimeException("instrument does not contain that bid");
+        }
+        Instrument instrument = this.currentUser.getOwnedInstruments().getInstrument(bid.getInstrumentId());
+
+        // get the bidder
+        ElasticsearchController.GetUserTask getUserTask = new ElasticsearchController.GetUserTask();
+        getUserTask.execute(bid.getBidderId());
+        ArrayList<String> users = null;
+        try {
+            users = getUserTask.get();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+        User bidder = new Deserializer().deserializeUser(users.get(0));
+
+        // remove the bid and update users
+        bidder.deleteBid(bid);
+        this.currentUser.getOwnedInstruments().getInstrument(bid.getInstrumentId()).getBids().removeBid(bid);
+        ElasticsearchController.UpdateUserTask updateUserTask1 = new ElasticsearchController.UpdateUserTask();
+        ElasticsearchController.UpdateUserTask updateUserTask2 = new ElasticsearchController.UpdateUserTask();
+        updateUserTask1.execute(bidder);
+        updateUserTask2.execute(this.currentUser);
+    }
 }

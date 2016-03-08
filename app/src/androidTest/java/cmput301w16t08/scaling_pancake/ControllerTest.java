@@ -15,8 +15,18 @@ public class ControllerTest extends ActivityInstrumentationTestCase2 {
         // also tests login and getCurrentUser
         Controller controller = new Controller();
         assertNull(controller.getCurrentUser());
-        controller.createUser("user", "email");
-        controller.login("user");
+        assertTrue(controller.createUser("user", "email"));
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        assertTrue(controller.login("user"));
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         User user = controller.getCurrentUser();
         assertEquals("user", user.getName());
         assertEquals("email", user.getEmail());
@@ -29,9 +39,23 @@ public class ControllerTest extends ActivityInstrumentationTestCase2 {
     public void testDeleteUser() {
         Controller controller = new Controller();
         assertNull(controller.getCurrentUser());
-        controller.createUser("user", "email");
-        controller.login("user");
-
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        assertTrue(controller.createUser("user", "email")); ;
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        assertTrue(controller.login("user"));
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         ElasticsearchController.GetUserTask getUserTask = new ElasticsearchController.GetUserTask();
         getUserTask.execute(controller.getCurrentUser().getId());
         ArrayList<String> users = null;
@@ -47,8 +71,13 @@ public class ControllerTest extends ActivityInstrumentationTestCase2 {
         assertEquals(user.getName(), "user");
 
         controller.deleteUser();
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         ElasticsearchController.GetUserTask getUserTask1 = new ElasticsearchController.GetUserTask();
-        getUserTask.execute(user.getId());
+        getUserTask1.execute(user.getId());
         try {
             users = getUserTask1.get();
         } catch (InterruptedException e) {
@@ -61,20 +90,50 @@ public class ControllerTest extends ActivityInstrumentationTestCase2 {
 
     public void testLogout() {
         Controller controller = new Controller();
-        controller.createUser("user", "email");
-        controller.login("user");
+        assertTrue(controller.createUser("user", "email")); ;
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        assertTrue(controller.login("user"));
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         assertNotNull(controller.getCurrentUser());
         controller.logout();
         assertNull(controller.getCurrentUser());
         controller.login("user");
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         controller.deleteUser();
     }
 
     public void testEditCurrentUser() {
         Controller controller = new Controller();
-        controller.createUser("user", "email");
-        controller.login("user");
+        assertTrue(controller.createUser("user", "email")); ;
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        assertTrue(controller.login("user"));
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         assertTrue(controller.editCurrentUser("edit1", "edit2"));
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         ElasticsearchController.GetUserTask getUserTask = new ElasticsearchController.GetUserTask();
         getUserTask.execute(controller.getCurrentUser().getId());
         ArrayList<String> users = null;
@@ -95,8 +154,18 @@ public class ControllerTest extends ActivityInstrumentationTestCase2 {
     public void testGetCurrentUsersOwnedInstruments() {
         Controller controller = new Controller();
         assertNull(controller.getCurrentUsersOwnedInstruments());
-        controller.createUser("user", "email");
-        controller.login("user");
+        assertTrue(controller.createUser("user", "email")); ;
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        assertTrue(controller.login("user"));
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         assertNotNull(controller.getCurrentUsersOwnedInstruments());
         controller.deleteUser();
     }
@@ -104,8 +173,18 @@ public class ControllerTest extends ActivityInstrumentationTestCase2 {
     public void testGetCurrentUsersOwnedBorrowedInstruments() {
         Controller controller = new Controller();
         assertNull(controller.getCurrentUsersOwnedBorrowedInstruments());
-        controller.createUser("user", "email");
-        controller.login("user");
+        assertTrue(controller.createUser("user", "email")); ;
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        assertTrue(controller.login("user"));
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         assertNotNull(controller.getCurrentUsersOwnedBorrowedInstruments());
         controller.deleteUser();
     }
@@ -113,8 +192,18 @@ public class ControllerTest extends ActivityInstrumentationTestCase2 {
     public void testGetCurrentUsersBorrowedInstruments() {
         Controller controller = new Controller();
         assertNull(controller.getCurrentUsersBorrowedInstruments());
-        controller.createUser("user", "email");
-        controller.login("user");
+        assertTrue(controller.createUser("user", "email")); ;
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        assertTrue(controller.login("user"));
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         assertNotNull(controller.getCurrentUsersBorrowedInstruments());
         controller.deleteUser();
     }
@@ -122,8 +211,18 @@ public class ControllerTest extends ActivityInstrumentationTestCase2 {
     public void testGetCurrentUsersBiddedInstruments() {
         Controller controller = new Controller();
         assertNull(controller.getCurrentUsersBiddedInstruments());
-        controller.createUser("user", "email");
-        controller.login("user");
+        assertTrue(controller.createUser("user", "email")); ;
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        assertTrue(controller.login("user"));
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         assertNotNull(controller.getCurrentUsersBiddedInstruments());
         controller.deleteUser();
     }
@@ -131,16 +230,36 @@ public class ControllerTest extends ActivityInstrumentationTestCase2 {
     public void testGetCurrentUsersBids() {
         Controller controller = new Controller();
         assertNull(controller.getCurrentUsersBids());
-        controller.createUser("user", "email");
-        controller.login("user");
+        assertTrue(controller.createUser("user", "email")); ;
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        assertTrue(controller.login("user"));
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         assertNotNull(controller.getCurrentUsersBids());
         controller.deleteUser();
     }
 
     public void testAddInstrument() {
         Controller controller = new Controller();
-        controller.createUser("user", "email");
-        controller.login("user");
+        assertTrue(controller.createUser("user", "email")); ;
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        assertTrue(controller.login("user"));
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         User user = controller.getCurrentUser();
         Instrument instrument = new Instrument(user.getId(), "name", "description");
         InstrumentList instruments = controller.getCurrentUsersOwnedInstruments();
@@ -168,22 +287,47 @@ public class ControllerTest extends ActivityInstrumentationTestCase2 {
         assertEquals("name", user.getOwnedInstruments().getInstrument(0).getName());
         assertEquals("description", user.getOwnedInstruments().getInstrument(0).getDescription());
         assertEquals("available", user.getOwnedInstruments().getInstrument(0).getStatus());
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         controller.deleteUser();
     }
 
     public void testEditInstrument() {
         Controller controller = new Controller();
-        controller.createUser("user", "email");
-        controller.login("user");
+        assertTrue(controller.createUser("user", "email")); ;
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        assertTrue(controller.login("user"));
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         User user = controller.getCurrentUser();
         Instrument instrument = new Instrument(user.getName(), "name", "description");
         controller.addInstrument(instrument);
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         controller.editInstrument(instrument, "edit1", "edit2");
         InstrumentList instruments = controller.getCurrentUsersOwnedInstruments();
         instrument = instruments.getInstrument(0);
         assertEquals("edit1", instrument.getName());
         assertEquals("edit2", instrument.getDescription());
 
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         ElasticsearchController.GetUserTask getUserTask = new ElasticsearchController.GetUserTask();
         getUserTask.execute(user.getId());
         ArrayList<String> users = null;
@@ -198,20 +342,40 @@ public class ControllerTest extends ActivityInstrumentationTestCase2 {
         assertEquals(user.getOwnedInstruments().size(), 1);
         assertEquals("edit1", user.getOwnedInstruments().getInstrument(0).getName());
         assertEquals("edit2", user.getOwnedInstruments().getInstrument(0).getDescription());
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         controller.deleteUser();
     }
 
     public void testDeleteInstrument() {
         Controller controller = new Controller();
-        controller.createUser("user", "email");
-        controller.login("user");
+        assertTrue(controller.createUser("user", "email")); ;
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        assertTrue(controller.login("user"));
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         User user = controller.getCurrentUser();
         Instrument instrument1 = new Instrument(user.getId(), "name1", "description1");
         Instrument instrument2 = new Instrument(user.getId(), "name2", "description2");
         controller.addInstrument(instrument1);
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         controller.addInstrument(instrument2);
         try {
-            Thread.sleep(2000);
+            Thread.sleep(3000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -221,6 +385,11 @@ public class ControllerTest extends ActivityInstrumentationTestCase2 {
         assertEquals("name2", instrument.getName());
         assertEquals("description2", instrument.getDescription());
 
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         ElasticsearchController.GetUserTask getUserTask = new ElasticsearchController.GetUserTask();
         getUserTask.execute(user.getId());
         ArrayList<String> users = null;
@@ -235,6 +404,11 @@ public class ControllerTest extends ActivityInstrumentationTestCase2 {
         assertEquals(user.getOwnedInstruments().size(), 1);
         assertEquals("name2", user.getOwnedInstruments().getInstrument(0).getName());
         assertEquals("description2", user.getOwnedInstruments().getInstrument(0).getDescription());
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         controller.deleteUser();
     }
 
@@ -243,85 +417,279 @@ public class ControllerTest extends ActivityInstrumentationTestCase2 {
         //TODO: search instruments test
     }
 
-/*    public void testMakeBidOnInstrument() {
+    public void testMakeBidOnInstrument() {
         Controller controller = new Controller();
         controller.createUser("owner", "email1");
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         controller.login("owner");
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         User user1 = controller.getCurrentUser();
         controller.addInstrument("name", "description");
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         controller.logout();
         controller.createUser("bidder", "email2");
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         controller.login("bidder");
-
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        controller.makeBidOnInstrument(user1.getOwnedInstruments().getInstrument(0), 1);
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        ElasticsearchController.GetUserTask getUserTask = new ElasticsearchController.GetUserTask();
+        getUserTask.execute(user1.getId());
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        ArrayList<String> users = null;
+        try {
+            users = getUserTask.get();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+        User user2 = new Deserializer().deserializeUser(users.get(0));
+        assertEquals(user2.getOwnedInstruments().getInstrument(0).getBids().size(), 1);
+        ElasticsearchController.GetUserTask  getUserTask1 = new ElasticsearchController.GetUserTask();
+        getUserTask1.execute(controller.getCurrentUser().getId());
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        try {
+            users = getUserTask1.get();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+        user2 = new Deserializer().deserializeUser(users.get(0));
+        assertEquals(user2.getBids().size(), 1);
+        controller.deleteUser();
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        controller.login("owner");
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        controller.deleteUser();
     }
 
     public void testAcceptBidOnInstrument() {
         Controller controller = new Controller();
-        controller.createUser("owner", "email");
+        controller.createUser("owner", "email1");
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         controller.login("owner");
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        User user1 = controller.getCurrentUser();
         controller.addInstrument("name", "description");
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         controller.logout();
         controller.createUser("bidder", "email2");
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         controller.login("bidder");
-        Instrument instrument = controller.getInstrumentList().getInstrument(0);
-        controller.makeBidOnInstrument(instrument, 1.00f);
-        controller.makeBidOnInstrument(instrument, 2.00f);
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        controller.makeBidOnInstrument(user1.getOwnedInstruments().getInstrument(0), 1);
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        controller.makeBidOnInstrument(user1.getOwnedInstruments().getInstrument(0), 2);
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         controller.logout();
         controller.login("owner");
-        assertEquals(2, controller.getCurrentUsersOwnedInstruments().getInstrument(0).getBids().size());
-        instrument = controller.getCurrentUsersOwnedInstruments().getInstrument(0);
-        Bid bid = instrument.getBids().getBid(0);
-        controller.acceptBidOnInstrument(instrument, bid);
-
-        // make sure all other bids are declined and instrument is set to borrowed
-        assertEquals("borrowed", controller.getCurrentUsersOwnedInstruments().getInstrument(0).getStatus());
-        assertEquals(1, controller.getCurrentUsersOwnedInstruments().getInstrument(0).getBids().size());
-        assertEquals(1.00f, controller.getCurrentUsersOwnedInstruments().getInstrument(0).getBids().getBid(0).getBidAmount());
-
-        // make sure the instrument is removed from the complete list of non borrowed instruments
-        assertEquals(0, controller.getInstrumentList().size());
-
-        // make sure the instrument is added to the bidders borrowed instrument list and removed from
-        // list of bidded instruments
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        controller.acceptBidOnInstrument(controller.getCurrentUsersOwnedInstruments().getInstrument(0).getBids().getBid(0));
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        assertEquals(controller.getCurrentUsersOwnedBorrowedInstruments().size(), 1);
+        assertEquals(controller.getCurrentUsersOwnedInstruments().size(), 1);
+        assertEquals(controller.getCurrentUsersOwnedInstruments().getInstrument(0).getBids().getBid(0).getBidAmount(), 1.0f);
         controller.logout();
         controller.login("bidder");
-        assertEquals(1, controller.getCurrentUsersBorrowedInstruments().size());
-        assertEquals(0, controller.getCurrentUsersBids().size());
-        assertEquals(0, controller.getCurrentUsersBiddedInstruments().size());
-        assertEquals("borrowed", controller.getCurrentUsersBorrowedInstruments().getInstrument(0).getStatus());
-        assertEquals(1, controller.getCurrentUsersBorrowedInstruments().getInstrument(0).getBids().size());
-        assertEquals(1.00f, controller.getCurrentUsersBorrowedInstruments().getInstrument(0).getBids().getBid(0).getBidAmount());
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        assertEquals(controller.getCurrentUsersBids().size(), 0);
+        assertEquals(controller.getCurrentUsersBorrowedInstruments().size(), 1);
+        assertEquals(controller.getCurrentUsersBorrowedInstruments().getInstrument(0).getBids().getBid(0).getBidAmount(), 1.0f);
+
+        controller.deleteUser();
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        controller.login("owner");
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        controller.deleteUser();
     }
 
     public void testDeclineBidOnInstrument() {
         Controller controller = new Controller();
-        controller.createUser("owner", "email");
+        controller.createUser("owner", "email1");
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         controller.login("owner");
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        User user1 = controller.getCurrentUser();
         controller.addInstrument("name", "description");
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         controller.logout();
         controller.createUser("bidder", "email2");
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         controller.login("bidder");
-        User bidder = controller.getCurrentUser();
-        Instrument instrument = controller.getInstrumentList().getInstrument(0);
-        controller.makeBidOnInstrument(instrument, 1.00f);
-        controller.makeBidOnInstrument(instrument, 2.00f);
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        controller.makeBidOnInstrument(user1.getOwnedInstruments().getInstrument(0), 1);
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        controller.makeBidOnInstrument(user1.getOwnedInstruments().getInstrument(0), 2);
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        User user2 = controller.getCurrentUser();
         controller.logout();
         controller.login("owner");
-        assertEquals(2, controller.getCurrentUsersOwnedInstruments().getInstrument(0).getBids().size());
-        instrument = controller.getCurrentUsersOwnedInstruments().getInstrument(0);
-        Bid bid = instrument.getBids().getBid(0);
-        controller.declineBidOnInstrument(instrument, bid);
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        controller.declineBidOnInstrument(controller.getCurrentUsersOwnedInstruments().getInstrument(0).getBids().getBid(0));
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        assertEquals(controller.getCurrentUsersOwnedBorrowedInstruments().size(), 0);
+        assertEquals(controller.getCurrentUsersOwnedInstruments().size(), 1);
 
-        // make sure only 1 bid left and instrument still has status bidded
-        assertEquals(1, instrument.getBids().size());
-        assertEquals("bidded", instrument.getStatus());
-        assertEquals(2.00f, instrument.getBids().getBid(0).getBidAmount());
-
-        // make sure the bid is deleted from the bidders list of bids
         controller.logout();
         controller.login("bidder");
-        assertEquals(1, controller.getCurrentUsersBids().size());
-        assertEquals(1, controller.getCurrentUsersBiddedInstruments().size());
-        assertEquals(2.00f, controller.getCurrentUsersBids().getBid(0).getBidAmount());
-    }*/
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        assertEquals(controller.getCurrentUsersBids().size(), 1);
+        assertEquals(controller.getCurrentUsersBorrowedInstruments().size(), 0);
+        assertEquals(controller.getCurrentUsersBids().getBid(0).getBidAmount(), 2.0f);
+
+        controller.logout();
+        controller.login("owner");
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        assertEquals(controller.getCurrentUsersOwnedInstruments().size(), 1);
+        assertEquals(controller.getCurrentUsersOwnedBorrowedInstruments().size(), 0);
+        assertEquals(controller.getCurrentUsersOwnedInstruments().getInstrument(0).getBids().getBid(0).getBidAmount(), 2.0f);
+
+        controller.deleteUser();
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        controller.login("bidder");
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        controller.deleteUser();
+    }
 }
