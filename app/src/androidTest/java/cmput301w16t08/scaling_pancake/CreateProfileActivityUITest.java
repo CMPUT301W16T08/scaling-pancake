@@ -66,7 +66,8 @@ public class CreateProfileActivityUITest extends ActivityInstrumentationTestCase
 
         ((Button) activity.findViewById(R.id.createprofile_cancel_button)).performClick();
 
-        //TODO: check if the is changed back to MainActivity
+        //check if the is changed back to MainActivity
+        assertTrue(activity.isFinishing());
 
     }
 }
