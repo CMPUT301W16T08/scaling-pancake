@@ -41,7 +41,9 @@ public class ViewProfileActivity extends AppCompatActivity {
         Intent intent = new Intent(this, EditProfileActivity.class);
         startActivity(intent);
     }
-    public void cancelViewProfile(View view){
-        finish();
+    public void goToMainMenu(View view){
+        Intent intent = new Intent(this,MenuActivity.class);
+        startActivity(intent);
+
     }
 }

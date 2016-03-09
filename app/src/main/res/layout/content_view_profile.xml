@@ -38,11 +38,11 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/view_profile_cancel_button"
-        android:onClick="cancelViewProfile"
+        android:id="@+id/view_profile_back_button"
+        android:onClick="goToMainMenu"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/cancel"
+        android:text="@string/main_menu"
         android:background="@drawable/btn_selector"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
@@ -55,7 +55,7 @@
         android:layout_height="wrap_content"
         android:text="@string/edit_profile"
         android:background="@drawable/btn_selector"
-        android:layout_above="@+id/view_profile_cancel_button"
+        android:layout_above="@+id/view_profile_back_button"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
 
