@@ -308,44 +308,18 @@ public class Controller extends Application {
         }
         Instrument instrument = this.currentUser.getOwnedInstruments().getInstrument(bid.getInstrumentId());
 
-        // get the bidder
-        ElasticsearchController.GetUserTask getUserTask = new ElasticsearchController.GetUserTask();
-        getUserTask.execute(bid.getBidderId());
-        ArrayList<String> users = null;
-        try {
-            users = getUserTask.get();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        } catch (ExecutionException e) {
-            e.printStackTrace();
-        }
-        User bidder = new Deserializer().deserializeUser(users.get(0));
-
         // remove all bids
         for (int i = 0; i < instrument.getBids().size(); i++) {
-                // get the bidder
-            ElasticsearchController.GetUserTask getUserTask1 = new ElasticsearchController.GetUserTask();
-            getUserTask1.execute(instrument.getBids().getBid(i).getBidderId());
-            users = null;
-            try {
-                users = getUserTask.get();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            } catch (ExecutionException e) {
-                e.printStackTrace();
+            if (!instrument.getBids().getBid(i).getId().equals(bid.getId())) {
+                declineBidOnInstrument(instrument.getBids().getBid(i));
             }
-            User bidder1 = new Deserializer().deserializeUser(users.get(0));
-
-            // remove the bid and update user
-            bidder1.deleteBid(instrument.getBids().getBid(i));
-            ElasticsearchController.UpdateUserTask updateUserTask = new ElasticsearchController.UpdateUserTask();
-            updateUserTask.execute(bidder1);
         }
 
         // update both users
         instrument.acceptBid(bid);
+        ArrayList<String> users = new ArrayList<String>();
         ElasticsearchController.GetUserTask getUserTask1 = new ElasticsearchController.GetUserTask();
-        getUserTask1.execute(bidder.getId());
+        getUserTask1.execute(bid.getBidderId());
         try {
             users = getUserTask1.get();
         } catch (InterruptedException e) {
@@ -353,8 +327,9 @@ public class Controller extends Application {
         } catch (ExecutionException e) {
             e.printStackTrace();
         }
-        bidder = new Deserializer().deserializeUser(users.get(0));
+        User bidder = new Deserializer().deserializeUser(users.get(0));
         bidder.addBorrowedInstrument(instrument);
+        bidder.deleteBid(bid);
         ElasticsearchController.UpdateUserTask updateUserTask1 = new ElasticsearchController.UpdateUserTask();
         ElasticsearchController.UpdateUserTask updateUserTask2 = new ElasticsearchController.UpdateUserTask();
         updateUserTask1.execute(bidder);
