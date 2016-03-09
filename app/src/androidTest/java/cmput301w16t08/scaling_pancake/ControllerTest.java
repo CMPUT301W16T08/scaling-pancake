@@ -36,6 +36,58 @@ public class ControllerTest extends ActivityInstrumentationTestCase2 {
         controller.deleteUser();
     }
 
+    public void testGetUserByName() {
+        Controller controller = new Controller();
+        assertTrue(controller.createUser("user", "email"));
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        controller.login("user");
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        User user = controller.getUserByName("user");
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        assertEquals(user.getId(), controller.getCurrentUser().getId());
+        assertEquals(user.getName(), controller.getCurrentUser().getName());
+        controller.deleteUser();
+    }
+
+    public void testGetUserById() {
+        Controller controller = new Controller();
+        assertTrue(controller.createUser("user", "email"));
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        controller.login("user");
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        User user = controller.getUserById(controller.getCurrentUser().getId());
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        assertEquals(user.getId(), controller.getCurrentUser().getId());
+        assertEquals(user.getName(), controller.getCurrentUser().getName());
+        controller.deleteUser();
+    }
+
     public void testDeleteUser() {
         Controller controller = new Controller();
         assertNull(controller.getCurrentUser());

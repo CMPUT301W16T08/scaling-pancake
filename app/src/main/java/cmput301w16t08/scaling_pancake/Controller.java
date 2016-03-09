@@ -21,6 +21,50 @@ public class Controller extends Application {
         return this.currentUser;
     }
 
+    public User getUserByName(String username) {
+        // returns the found user or null if not found
+        ArrayList<String> users = null;
+        Deserializer deserializer = new Deserializer();
+        ElasticsearchController.GetUserByNameTask getUserByNameTask = new ElasticsearchController.GetUserByNameTask();
+        getUserByNameTask.execute(username);
+        try {
+            users = getUserByNameTask.get();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+        for (int i = 0; i < users.size(); i++) {
+            User user = deserializer.deserializeUser(users.get(i));
+            if (user.getName().equals(username)) {
+                return user;
+            }
+        }
+        return null;
+    }
+
+    public User getUserById(String id) {
+        // returns the found user or null if not found
+        ArrayList<String> users = null;
+        Deserializer deserializer = new Deserializer();
+        ElasticsearchController.GetUserTask getUserTask = new ElasticsearchController.GetUserTask();
+        getUserTask.execute(id);
+        try {
+            users = getUserTask.get();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+        for (int i = 0; i < users.size(); i++) {
+            User user = deserializer.deserializeUser(users.get(i));
+            if (user.getId().equals(id)) {
+                return user;
+            }
+        }
+        return null;
+    }
+
     public boolean createUser(String username, String email) {
         // returns true if successfully created
         // returns false if username in use
