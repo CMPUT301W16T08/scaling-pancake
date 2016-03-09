@@ -6,12 +6,16 @@
     <string name="title_activity_instrumentlist">InstrumentListActivity</string>
     <string name="username_prompt">Enter Username</string>
     <string name="email_prompt">Enter Email</string>
+    <string name="username_label">Username: </string>
+    <string name="email_label">Email: </string>
     <string name="word_or">or</string>
     <string name="login">Login</string>
     <string name="status">Status: </string>
     <string name="createprofile">Create Profile</string>
     <string name="title_activity_create_profile">CreateProfileActivity</string>
     <string name="save">Save</string>
+    <string name="save_changes">Save Changes</string>
+    <string name="edit_profile">Edit Profile</string>
     <string name="cancel">Cancel</string>
     <string name="view">View</string>
     <string name="edit">Edit</string>

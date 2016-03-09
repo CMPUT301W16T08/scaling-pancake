@@ -76,6 +76,27 @@ public class Controller extends Application {
         return true;
     }
 
+    public boolean editCurrentUserName(String username){
+        // returns true with successful edit
+        // returns false if username already in use
+
+        for (int i = 0; i < this.users.size(); i++) {
+            if (this.users.getUser(i).getName().equals(username)) {
+                if (!(this.users.getUser(i) == this.currentUser)) {
+                    return false;
+                }
+            }
+        }
+        this.currentUser.setName(username);
+        return true;
+    }
+
+    public boolean editCurrentUserEmail(String email){
+        this.currentUser.setEmail(email);
+        return true;
+    }
+
+
     public InstrumentList getCurrentUsersOwnedInstruments() {
         // returns all instruments owned by the logged in user or null if not logged in
         if (this.currentUser == null) {

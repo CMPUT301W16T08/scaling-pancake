@@ -24,7 +24,8 @@ public class MenuActivity extends AppCompatActivity {
     }
 
     public void viewProfile(View view){
-
+        Intent intent = new Intent(this, ViewProfileActivity.class);
+        startActivity(intent);
     }
 
     public void addInstruments(View view){

@@ -14,20 +14,70 @@
 
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/linearLayout">
 
         <TextView
             android:id="@+id/view_profile_username_tv"
             android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content" />
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:textSize="28sp"
+            android:text="@string/username_label"/>
 
         <TextView
             android:id="@+id/view_profile_email_tv"
             android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content" />
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:textSize="24sp"
+            android:text="@string/email_label"/>
+
 
     </LinearLayout>
+
+    <Button
+        android:id="@+id/view_profile_cancel_button"
+        android:onClick="cancelViewProfile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/cancel"
+        android:background="@drawable/btn_selector"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:id="@+id/edit_profile_button"
+        android:onClick="launchEditProfile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/edit_profile"
+        android:background="@drawable/btn_selector"
+        android:layout_above="@+id/view_profile_cancel_button"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+
+    <TextView
+        android:id="@+id/username_textView"
+        android:text=""
+        android:textSize="28sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/linearLayout"
+        android:layout_toRightOf="@+id/linearLayout"
+        android:layout_toEndOf="@+id/linearLayout" />
+
+    <TextView
+        android:id="@+id/email_textView"
+        android:text=""
+        android:textSize="24sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/username_textView"
+        android:layout_alignLeft="@+id/username_textView"
+        android:layout_alignStart="@+id/username_textView" />
 
 </RelativeLayout>
