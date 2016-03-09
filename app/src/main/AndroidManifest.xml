@@ -16,17 +16,15 @@
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
-        <activity android:name=".InstrumentListActivity"
-                  android:label="@string/title_activity_instrumentlist"
-                  android:theme="@style/MyTheme">
-        </activity>
-
+        <activity
+            android:name=".InstrumentListActivity"
+            android:label="@string/title_activity_instrumentlist"
+            android:theme="@style/MyTheme" />
         <activity
             android:name=".ViewProfileActivity"
             android:label="@string/title_activity_view_profile"
@@ -47,6 +45,24 @@
             android:name=".AddInstrumentActivity"
             android:label="@string/title_activity_add_instrument"
             android:theme="@style/MyTheme" />
+        <activity
+            android:name=".SearchInstrumentsActivity"
+            android:label="@string/title_activity_search_instruments"
+            android:parentActivityName=".MenuActivity"
+            android:theme="@style/MyTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="cmput301w16t08.scaling_pancake.MenuActivity" />
+        </activity>
+        <activity
+            android:name=".DisplaySearchResultsActivity"
+            android:label="@string/title_activity_display_search_results"
+            android:parentActivityName=".SearchInstrumentsActivity"
+            android:theme="@style/MyTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="cmput301w16t08.scaling_pancake.SearchInstrumentsActivity" />
+        </activity>
     </application>
 
 </manifest>

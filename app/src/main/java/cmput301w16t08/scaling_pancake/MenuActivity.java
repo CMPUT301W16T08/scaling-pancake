@@ -39,7 +39,8 @@ public class MenuActivity extends AppCompatActivity {
     }
 
     public void searchInstruments(View view){
-
+        Intent intent = new Intent(this, SearchInstrumentsActivity.class);
+        startActivity(intent);
     }
 
     public void logout(View view){

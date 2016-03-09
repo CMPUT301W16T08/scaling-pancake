@@ -21,6 +21,7 @@
     <string name="edit">Edit</string>
     <string name="title_activity_menu">MenuActivity</string>
     <string name="back">Back</string>
+    <string name="search">Search</string>
     <string name="view_profile">View Profile</string>
     <string name="add_instruments">Add Instruments</string>
     <string name="view_instruments">View Instruments</string>
@@ -32,4 +33,6 @@
     <string name="add">add</string>
     <string name="instrument_name">name</string>
     <string name="main_menu">Main Menu</string>
+    <string name="title_activity_search_instruments">SearchInstrumentsActivity</string>
+    <string name="title_activity_display_search_results">DisplaySearchResults</string>
 </resources>
