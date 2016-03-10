@@ -264,27 +264,14 @@ public class Controller extends Application {
         }
         Instrument instrument = this.currentUser.getOwnedInstruments().getInstrument(bid.getInstrumentId());
 
-        // get the bidder
-        ElasticsearchController.GetUserTask getUserTask = new ElasticsearchController.GetUserTask();
-        getUserTask.execute(bid.getBidderId());
-        ArrayList<String> users = null;
-        try {
-            users = getUserTask.get();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        } catch (ExecutionException e) {
-            e.printStackTrace();
-        }
-        User bidder = new Deserializer().deserializeUser(users.get(0));
-
         // remove all bids
         for (int i = 0; i < instrument.getBids().size(); i++) {
                 // get the bidder
             ElasticsearchController.GetUserTask getUserTask1 = new ElasticsearchController.GetUserTask();
             getUserTask1.execute(instrument.getBids().getBid(i).getBidderId());
-            users = null;
+            ArrayList<String> users = null;
             try {
-                users = getUserTask.get();
+                users = getUserTask1.get();
             } catch (InterruptedException e) {
                 e.printStackTrace();
             } catch (ExecutionException e) {
@@ -301,7 +288,8 @@ public class Controller extends Application {
         // update both users
         instrument.acceptBid(bid);
         ElasticsearchController.GetUserTask getUserTask1 = new ElasticsearchController.GetUserTask();
-        getUserTask1.execute(bidder.getId());
+        getUserTask1.execute(bid.getBidderId());
+        ArrayList<String> users = null;
         try {
             users = getUserTask1.get();
         } catch (InterruptedException e) {
@@ -309,7 +297,7 @@ public class Controller extends Application {
         } catch (ExecutionException e) {
             e.printStackTrace();
         }
-        bidder = new Deserializer().deserializeUser(users.get(0));
+        User bidder = new Deserializer().deserializeUser(users.get(0));
         bidder.addBorrowedInstrument(instrument);
         ElasticsearchController.UpdateUserTask updateUserTask1 = new ElasticsearchController.UpdateUserTask();
         ElasticsearchController.UpdateUserTask updateUserTask2 = new ElasticsearchController.UpdateUserTask();

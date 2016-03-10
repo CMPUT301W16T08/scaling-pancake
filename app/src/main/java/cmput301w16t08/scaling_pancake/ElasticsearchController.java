@@ -29,7 +29,7 @@ public class ElasticsearchController {
         protected Void doInBackground(User... users) {
             verifyClient();
             Serializer serializer = new Serializer();
-            Index ind = new Index.Builder(serializer.serializeUser(users[0])).index(index).type("user").id(users[0].getId()).build();
+            Index ind = new Index.Builder(serializer.serializeUser(users[0])).index(index).type("user").id(users[0].getId()).refresh(true).build();
             try {
                 DocumentResult result = client.execute(ind);
                 if (result.isSucceeded()) {
@@ -100,7 +100,7 @@ public class ElasticsearchController {
         protected Void doInBackground(User... users) {
             verifyClient();
             try {
-                client.execute(new Delete.Builder(users[0].getId()).index(index).type("user").build());
+                client.execute(new Delete.Builder(users[0].getId()).index(index).type("user").refresh(true).build());
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -113,7 +113,7 @@ public class ElasticsearchController {
         protected Void doInBackground(User... users) {
             Serializer serializer = new Serializer();
             verifyClient();
-            Index ind = new Index.Builder(serializer.serializeUser(users[0])).index(index).type("user").id(users[0].getId()).build();
+            Index ind = new Index.Builder(serializer.serializeUser(users[0])).index(index).type("user").id(users[0].getId()).refresh(true).build();
             try {
                 DocumentResult result = client.execute(ind);
                 if (result.isSucceeded()) {

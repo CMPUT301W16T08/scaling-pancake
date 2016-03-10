@@ -16,16 +16,11 @@ public class ElasticsearchControllerTest extends ActivityInstrumentationTestCase
         super(ElasticsearchController.class);
     }
 
-    // test also covers GetUserTask() and GetUserByNamaTask()
+    // test also covers GetUserTask() and GetUserByNameTask()
     public void testCreateUserTask() {
         User user = new User("testuser1", "testemail1");
         ElasticsearchController.CreateUserTask task1 = new ElasticsearchController.CreateUserTask();
         task1.execute(user);
-        try {
-            Thread.sleep(3000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
 
         // GetUserTask()
         ElasticsearchController.GetUserTask task2 = new ElasticsearchController.GetUserTask();
@@ -76,19 +71,9 @@ public class ElasticsearchControllerTest extends ActivityInstrumentationTestCase
         ElasticsearchController.CreateUserTask task1 = new ElasticsearchController.CreateUserTask();
         task1.execute(user);
         user.addOwnedInstrument("testinstrument1", "testdescription1");
-        try {
-            Thread.sleep(3000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
         Log.d("ESC", "UpdateUserTask starting...");
         ElasticsearchController.UpdateUserTask task3 = new ElasticsearchController.UpdateUserTask();
         task3.execute(user);
-        try {
-            Thread.sleep(3000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
         Log.d("ESC", "GetUserTask starting...");
         ElasticsearchController.GetUserTask task4 = new ElasticsearchController.GetUserTask();
         task4.execute(user.getId());
