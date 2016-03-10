@@ -43,31 +43,51 @@ public class CreateProfileActivityUITest extends ActivityInstrumentationTestCase
     @UiThreadTest
     public void testCreateProfile() {
         Controller controller = (Controller) activity.getApplicationContext();
+        User testUser = new User("admin","admin@123.com");
 
+        controller.createUser(testUser.getName(),testUser.getEmail());
 
-        //TODO: i need arrayadapter here
-        createProfile("admin","admin@123.com");
-        //TODO: check userlist is increated by 1
-
-        //TODO: check the last element in userlist is the one we created
-
-        //TODO: check the if the activity changes back to Mainactivity ????
-        //assertEquals(getActivity() ,MainActivity.class);
-
-        createProfile("admin", "admin@123.com");
+        /* click on button if the user is already there */
+        createProfile(testUser.getName(), testUser.getEmail());
         //TODO: check no element is added to userlist
 
-        //TODO: check if there is a toast popup ????????
+        //check this activity is still running
+        assertFalse(activity.isFinishing());
+
+        //make sure this is no such user
+        controller.getUserList().removeUser(controller.getUserList().size()-1);
+        //assertFalse(controller.getUserList().containsUser(testUser));
+
+        // create a new profile, click on profile button
+        createProfile(testUser.getName(), testUser.getEmail());
+
+        //check the user is in userlist now
+        //assertTrue(controller.getUserList().containsUser(testUser));
+
+        //make sure this activity ends already
+        assertTrue(activity.isFinishing());
+
+
     }
 
     @UiThreadTest
     public void testCancelButton(){
 
-
+        assertFalse(activity.isFinishing());
         ((Button) activity.findViewById(R.id.createprofile_cancel_button)).performClick();
-
-        //check if the is changed back to MainActivity
+        //check if this activity ends
         assertTrue(activity.isFinishing());
+
+        // button in MainActivity:
+        boolean flag = true;
+        /*while(flag){
+            Button loginButton = (Button) getActivity().findViewById(R.id.startscreen_login_button);
+            if(loginButton != null){
+                flag = false;
+            }
+        }*/
+
+        //assertTrue(loginButton.isShown());
 
     }
 }

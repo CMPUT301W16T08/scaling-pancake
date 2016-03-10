@@ -37,7 +37,7 @@ public class Controller extends Application {
         // returns false if username in use
         User user = new User(username, email);
         for (int i = 0; i < this.users.size(); i++) {
-            if (this.users.getUser(0).getName().equals(username)) {
+            if (this.users.getUser(i).getName().equals(username)) {
                 return false;
             }
         }

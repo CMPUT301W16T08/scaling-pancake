@@ -15,8 +15,8 @@ public class MainActivityUITest extends ActivityInstrumentationTestCase2 {
     Activity activity;
     EditText username;
 
-    public MainActivityUITest(Class activityClass) {
-        super(activityClass);
+    public MainActivityUITest() {
+        super(MainActivity.class);
     }
 
     //setup global variables
@@ -38,13 +38,25 @@ public class MainActivityUITest extends ActivityInstrumentationTestCase2 {
     public void testLogin(){
         Controller controller = (Controller) activity.getApplicationContext();
 
+        // login with an unknown username
         login("admin");
         //TODO: check toast
 
-        controller.createUser("admin","email here");
+        // login with a correct username
+        controller.createUser("admin", "email here");
         login("admin");
         //TODO: check we are switched to MenuActivity
+        // i don't know how to do this still
     }
 
     //TODO: test createProfile button
+    @UiThreadTest
+    public void testCreateProfile(){
+        Controller controller = (Controller) activity.getApplicationContext();
+
+        // click on createProfile button
+        ((Button) activity.findViewById(R.id.startscreen_createprofile_button)).performClick();
+
+        //TODO: check if another activity is launched
+    }
 }

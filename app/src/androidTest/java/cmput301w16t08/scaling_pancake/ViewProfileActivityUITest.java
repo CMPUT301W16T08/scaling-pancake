@@ -9,8 +9,8 @@ import android.widget.TextView;
 /**
  * Created by dan on 10/02/16.
  */
-public class ViewProfileTester extends ActivityInstrumentationTestCase2 {
-    public ViewProfileTester() {
+public class ViewProfileActivityUITest extends ActivityInstrumentationTestCase2 {
+    public ViewProfileActivityUITest() {
         super(ViewProfileActivity.class);
     }
 
