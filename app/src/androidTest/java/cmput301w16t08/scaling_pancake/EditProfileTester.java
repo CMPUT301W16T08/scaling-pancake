@@ -21,13 +21,13 @@ public class EditProfileTester extends ActivityInstrumentationTestCase2 {
         String testUserName = "username";
         String testEmail = "email";
 
-        ((EditText) epa.findViewById(R.id.edit_profile_email_tv)).setText(testEmail);
-        ((EditText) epa.findViewById(R.id.edit_profile_username_tv)).setText(testUserName);
+        ((EditText) epa.findViewById(R.id.edit_profile_email_et)).setText(testEmail);
+        ((EditText) epa.findViewById(R.id.edit_profile_username_et)).setText(testUserName);
 
         assertEquals(testUserName,
-                ((EditText) epa.findViewById(R.id.edit_profile_username_tv)).getText().toString());
+                ((EditText) epa.findViewById(R.id.edit_profile_email_et)).getText().toString());
 
         assertEquals(testUserName,
-                ((EditText) epa.findViewById(R.id.edit_profile_username_tv)).getText().toString());
+                ((EditText) epa.findViewById(R.id.edit_profile_username_et)).getText().toString());
     }
 }
