@@ -17,8 +17,14 @@ public class ViewProfileActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_profile);
         controller = (Controller) getApplicationContext();
-        User user = controller.getCurrentUser();
-
+        User current_user = controller.getCurrentUser();
+        Intent intent = getIntent();
+        String user_id = intent.getStringExtra("user_id");
+        if (!(current_user.getId().equals(user_id))){
+            View edit_button = findViewById(R.id.edit_profile_button);
+            edit_button.setVisibility(View.GONE);
+        }
+        User user = controller.getUserById(user_id);
         setUsernameTextView(user);
         setEmailTextView(user);
     }

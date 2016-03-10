@@ -25,6 +25,7 @@ public class MenuActivity extends AppCompatActivity {
 
     public void viewProfile(View view){
         Intent intent = new Intent(this, ViewProfileActivity.class);
+        intent.putExtra("user_id", controller.getCurrentUser().getId());
         startActivity(intent);
     }
 
