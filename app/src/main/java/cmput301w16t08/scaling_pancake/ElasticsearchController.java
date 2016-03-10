@@ -130,6 +130,19 @@ public class ElasticsearchController {
         }
     }
 
+    public static class DeleteUserByIdTask extends AsyncTask<String, Void, Void> {
+        @Override
+        protected Void doInBackground(String... strings) {
+            verifyClient();
+            try {
+                client.execute(new Delete.Builder(strings[0]).index(index).type("user").refresh(true).build());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            return null;
+        }
+    }
+
     public static class UpdateUserTask extends AsyncTask<User, Void, Void> {
         @Override
         protected Void doInBackground(User... users) {
