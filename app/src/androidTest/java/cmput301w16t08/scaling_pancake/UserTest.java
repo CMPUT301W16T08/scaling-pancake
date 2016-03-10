@@ -66,6 +66,7 @@ public class UserTest extends ActivityInstrumentationTestCase2 {
         InstrumentList instruments = user.getOwnedBorrowedInstruments();
         assertEquals(instruments.size(), 0);
         borrower.addBid(new Bid(user.getOwnedInstruments().getInstrument(0).getId(), user.getId(), borrower.getId(), 1));
+        user.getOwnedInstruments().getInstrument(0).addBid(borrower.getBids().getBid(0));
         user.getOwnedInstruments().getInstrument(0).acceptBid(0);
         instruments = user.getOwnedBorrowedInstruments();
         assertEquals(instruments.size(), 1);

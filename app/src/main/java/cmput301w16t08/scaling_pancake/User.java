@@ -117,7 +117,7 @@ public class User {
     }
 
     public void deleteBorrowedInstrument(Instrument instrument) {
-        if (this.ownedInstruments.containsInstrument(instrument)) {
+        if (this.borrowedInstruments.containsInstrument(instrument)) {
             this.borrowedInstruments.removeInstrument(instrument);
         } else {
             throw new RuntimeException();

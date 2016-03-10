@@ -98,7 +98,7 @@ public class ElasticsearchController {
     public static class GetUserByInstrumentId extends AsyncTask<String, Void, ArrayList<String>> {
         protected ArrayList<String> doInBackground(String... strings) {
             verifyClient();
-            String string = "{\"query\": {\"must\": [{ \"nested\": {\"path\": \"ownedInstruments\", \"query\": {\"match\": {\"id\": \"" + strings[0] + "\"}}}}]}}";
+            String string = "{\"query\": { \"nested\": {\"path\": \"ownedInstruments\", \"query\": {\"match\": {\"ownedInstruments.id\": \"" + strings[0] + "\"}}}}}";
             Search search = new Search.Builder(string).addIndex(index).addType("user").build();
 
             ArrayList<String> returnedStrings = null;

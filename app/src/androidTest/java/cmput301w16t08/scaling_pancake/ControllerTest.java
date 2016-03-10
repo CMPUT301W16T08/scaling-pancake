@@ -178,6 +178,50 @@ public class ControllerTest extends ActivityInstrumentationTestCase2 {
         controller.deleteUser();
     }
 
+    public void testEditCurrentUserName() {
+        Controller controller = new Controller();
+        assertTrue(controller.createUser("user", "email")); ;
+        assertTrue(controller.login("user"));
+        assertTrue(controller.editCurrentUserName("edit1"));
+        ElasticsearchController.GetUserTask getUserTask = new ElasticsearchController.GetUserTask();
+        getUserTask.execute(controller.getCurrentUser().getId());
+        ArrayList<String> users = null;
+        try {
+            users = getUserTask.get();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+        Deserializer deserializer = new Deserializer();
+        User user = deserializer.deserializeUser(users.get(0));
+        assertEquals(user.getName(), "edit1");
+        assertEquals(user.getEmail(), "email");
+        controller.deleteUser();
+    }
+
+    public void testEditCurrentUserEmail() {
+        Controller controller = new Controller();
+        assertTrue(controller.createUser("user", "email")); ;
+        assertTrue(controller.login("user"));
+        assertTrue(controller.editCurrentUserEmail("edit1"));
+        ElasticsearchController.GetUserTask getUserTask = new ElasticsearchController.GetUserTask();
+        getUserTask.execute(controller.getCurrentUser().getId());
+        ArrayList<String> users = null;
+        try {
+            users = getUserTask.get();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+        Deserializer deserializer = new Deserializer();
+        User user = deserializer.deserializeUser(users.get(0));
+        assertEquals(user.getName(), "user");
+        assertEquals(user.getEmail(), "edit1");
+        controller.deleteUser();
+    }
+
     // Use case: US 01.02.01 Get owned instruments
     public void testGetCurrentUsersOwnedInstruments() {
         Controller controller = new Controller();
@@ -302,9 +346,9 @@ public class ControllerTest extends ActivityInstrumentationTestCase2 {
             e.printStackTrace();
         }
         User u = new Deserializer().deserializeUser(users.get(0));
-        assertEquals(user.getOwnedInstruments().size(), 1);
-        assertEquals("edit1", user.getOwnedInstruments().getInstrument(0).getName());
-        assertEquals("edit2", user.getOwnedInstruments().getInstrument(0).getDescription());
+        assertEquals(u.getOwnedInstruments().size(), 1);
+        assertEquals("edit1", u.getOwnedInstruments().getInstrument(0).getName());
+        assertEquals("edit2", u.getOwnedInstruments().getInstrument(0).getDescription());
         controller.deleteUser();
     }
 
