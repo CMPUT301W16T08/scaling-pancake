@@ -11,6 +11,7 @@ public class ControllerTest extends ActivityInstrumentationTestCase2 {
         super(Controller.class);
     }
 
+    // Use case: US 03.01.01 Profile with unique username and contact info
     public void testCreateUser() {
         // also tests login and getCurrentUser
         Controller controller = new Controller();
@@ -26,6 +27,7 @@ public class ControllerTest extends ActivityInstrumentationTestCase2 {
         controller.deleteUser();
     }
 
+    // Use case: US 03.03.01 Get user by username
     public void testGetUserByName() {
         Controller controller = new Controller();
         assertTrue(controller.createUser("user", "email"));
@@ -121,6 +123,7 @@ public class ControllerTest extends ActivityInstrumentationTestCase2 {
         controller.deleteUser();
     }
 
+    // Use case: US 03.02.01 Edit contact information
     public void testEditCurrentUser() {
         Controller controller = new Controller();
         assertTrue(controller.createUser("user", "email")); ;
@@ -143,6 +146,7 @@ public class ControllerTest extends ActivityInstrumentationTestCase2 {
         controller.deleteUser();
     }
 
+    // Use case: US 01.02.01 Get owned instruments
     public void testGetCurrentUsersOwnedInstruments() {
         Controller controller = new Controller();
         assertNull(controller.getCurrentUsersOwnedInstruments());
@@ -152,6 +156,7 @@ public class ControllerTest extends ActivityInstrumentationTestCase2 {
         controller.deleteUser();
     }
 
+    // Use case: US 06.02.01 Get owned borrowed instruments
     public void testGetCurrentUsersOwnedBorrowedInstruments() {
         Controller controller = new Controller();
         assertNull(controller.getCurrentUsersOwnedBorrowedInstruments());
@@ -161,6 +166,7 @@ public class ControllerTest extends ActivityInstrumentationTestCase2 {
         controller.deleteUser();
     }
 
+    // Use case: US 06.01.01 Get borrowed instruments
     public void testGetCurrentUsersBorrowedInstruments() {
         Controller controller = new Controller();
         assertNull(controller.getCurrentUsersBorrowedInstruments());
@@ -170,6 +176,7 @@ public class ControllerTest extends ActivityInstrumentationTestCase2 {
         controller.deleteUser();
     }
 
+    // Use case: US 05.04.01 Get current users owned bidded instruments
     public void testGetCurrentUsersBiddedInstruments() {
         Controller controller = new Controller();
         assertNull(controller.getCurrentUsersBiddedInstruments());
@@ -179,6 +186,7 @@ public class ControllerTest extends ActivityInstrumentationTestCase2 {
         controller.deleteUser();
     }
 
+    // Use case: US 05.02.01 Get current users pending bids
     public void testGetCurrentUsersBids() {
         Controller controller = new Controller();
         assertNull(controller.getCurrentUsersBids());
@@ -188,6 +196,7 @@ public class ControllerTest extends ActivityInstrumentationTestCase2 {
         controller.deleteUser();
     }
 
+    // Use case: US 01.01.01 Add an instrument
     public void testAddInstrument() {
         Controller controller = new Controller();
         assertTrue(controller.createUser("user", "email")); ;
@@ -222,6 +231,7 @@ public class ControllerTest extends ActivityInstrumentationTestCase2 {
         controller.deleteUser();
     }
 
+    // Use case: US 01.04.01 Edit an instrument
     public void testEditInstrument() {
         Controller controller = new Controller();
         assertTrue(controller.createUser("user", "email")); ;
@@ -252,6 +262,7 @@ public class ControllerTest extends ActivityInstrumentationTestCase2 {
         controller.deleteUser();
     }
 
+    // Use case: US 01.05.01 Delete an instrument
     public void testDeleteInstrument() {
         Controller controller = new Controller();
         assertTrue(controller.createUser("user", "email")); ;
@@ -284,11 +295,13 @@ public class ControllerTest extends ActivityInstrumentationTestCase2 {
         controller.deleteUser();
     }
 
-    // Test use case 04.01.01
+    // Use case: US 04.01.01 Search instruments
+    // Use case: US 04.02.01 Get search results
     public void testSearchInstruments() {
         //TODO: search instruments test
     }
 
+    // Use case: US 05.01.01 Make bid on instrument
     public void testMakeBidOnInstrument() {
         Controller controller = new Controller();
         controller.createUser("owner", "email1");
@@ -327,6 +340,7 @@ public class ControllerTest extends ActivityInstrumentationTestCase2 {
         controller.deleteUser();
     }
 
+    // Use case: US 05.06.01 Accept bid on instrument
     public void testAcceptBidOnInstrument() {
         Controller controller = new Controller();
         controller.createUser("owner", "email1");
@@ -355,6 +369,7 @@ public class ControllerTest extends ActivityInstrumentationTestCase2 {
         controller.deleteUser();
     }
 
+    // Use case: US 05.07.01 Decline bid on instrument
     public void testDeclineBidOnInstrument() {
         Controller controller = new Controller();
         controller.createUser("owner", "email1");

@@ -151,6 +151,37 @@ public class Controller extends Application {
         return true;
     }
 
+    public boolean editCurrentUserName(String username) {
+        ArrayList<String> users = null;
+        Deserializer deserializer = new Deserializer();
+        ElasticsearchController.GetUserByNameTask getUserByNameTask = new ElasticsearchController.GetUserByNameTask();
+        getUserByNameTask.execute(username);
+        try {
+            users = getUserByNameTask.get();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+        for (int i = 0; i < users.size(); i++) {
+            User user = deserializer.deserializeUser(users.get(i));
+            if (user.getName().equals(username)) {
+                return false;
+            }
+        }
+        this.currentUser.setName(username);
+        ElasticsearchController.UpdateUserTask updateUserTask = new ElasticsearchController.UpdateUserTask();
+        updateUserTask.execute(this.currentUser);
+        return true;
+    }
+
+    public boolean editCurrentUserEmail(String email) {
+        this.currentUser.setEmail(email);
+        ElasticsearchController.UpdateUserTask updateUserTask = new ElasticsearchController.UpdateUserTask();
+        updateUserTask.execute(this.currentUser);
+        return true;
+    }
+
     public InstrumentList getCurrentUsersOwnedInstruments() {
         // returns all instruments owned by the logged in user or null if not logged in
         if (this.currentUser == null) {
