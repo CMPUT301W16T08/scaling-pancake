@@ -96,6 +96,11 @@ public class Controller extends Application {
         this.currentUser = null;
     }
 
+    public void deleteUserById(String id) {
+        ElasticsearchController.DeleteUserByIdTask deleteUserTask = new ElasticsearchController.DeleteUserByIdTask();
+        deleteUserTask.execute(id);
+    }
+
     public boolean login(String username) {
         // returns true with successful login
         // returns false if username not in use

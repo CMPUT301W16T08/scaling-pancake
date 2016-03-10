@@ -112,6 +112,38 @@ public class ControllerTest extends ActivityInstrumentationTestCase2 {
         assertEquals(users.size(), 0);
     }
 
+    public void testDeleteUserById() {
+        Controller controller = new Controller();
+        assertNull(controller.getCurrentUser());
+        assertTrue(controller.createUser("user", "email")); ;
+        assertTrue(controller.login("user"));
+        ElasticsearchController.GetUserTask getUserTask = new ElasticsearchController.GetUserTask();
+        getUserTask.execute(controller.getCurrentUser().getId());
+        ArrayList<String> users = null;
+        try {
+            users = getUserTask.get();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+        assertNotSame(users.size(), 0);
+        User user = new Deserializer().deserializeUser(users.get(0));
+        assertEquals(user.getName(), "user");
+
+        controller.deleteUserById(controller.getCurrentUser().getId());
+        ElasticsearchController.GetUserTask getUserTask1 = new ElasticsearchController.GetUserTask();
+        getUserTask1.execute(user.getId());
+        try {
+            users = getUserTask1.get();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+        assertEquals(users.size(), 0);
+    }
+
     public void testLogout() {
         Controller controller = new Controller();
         assertTrue(controller.createUser("user", "email")); ;
