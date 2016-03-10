@@ -15,9 +15,9 @@ import android.widget.TextView;
  */
 public class BiddedInstrumentsAdapter extends ArrayAdapter
 {
-    public BiddedInstrumentsAdapter(Context context, BidList bidList)
+    public BiddedInstrumentsAdapter(Controller controller, BidList bidList)
     {
-        super(context, 0, bidList.getArray());
+        super(controller, 0, bidList.getArray());
     }
 
     @Override
@@ -50,8 +50,8 @@ public class BiddedInstrumentsAdapter extends ArrayAdapter
         TextView username = (TextView) convertView.findViewById(R.id.bidded_instrument_list_item_username_tv);
         TextView bidAmount = (TextView) convertView.findViewById(R.id.bidded_instrument_list_item_bid_tv);
 
-        description.setText(bid.getInstrument().getDescription());
-        username.setText(String.format("Owner: %s", bid.getInstrument().getOwner().getName()));
+        description.setText(((Controller)getContext()).getInstrumentById(bid.getInstrumentId()).getDescription());
+        username.setText(String.format("Owner: %s", ((Controller) getContext()).getUserById(bid.getOwnerId()).getName()));
         bidAmount.setText(String.format("Bid: %.2f/hr", bid.getBidAmount()));
 
         return convertView;

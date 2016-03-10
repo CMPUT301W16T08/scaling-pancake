@@ -24,7 +24,8 @@
         <activity
             android:name=".InstrumentListActivity"
             android:label="@string/title_activity_instrumentlist"
-            android:theme="@style/MyTheme" />
+            android:theme="@style/MyTheme" >
+            </activity>
         <activity
             android:name=".ViewProfileActivity"
             android:label="@string/title_activity_view_profile"

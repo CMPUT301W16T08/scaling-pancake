@@ -16,9 +16,6 @@ public class InstrumentListActivity extends ListActivity implements AdapterView.
     private BorrowedInstrumentAdapter borrowedInstrumentAdapter;
     private BiddedInstrumentsAdapter biddedInstrumentsAdapter;
 
-    private Instrument instrument;
-    private InstrumentList instrumentList;
-
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -27,11 +24,11 @@ public class InstrumentListActivity extends ListActivity implements AdapterView.
 
         controller = (Controller) getApplicationContext();
 
-        biddedInstrumentsAdapter = new BiddedInstrumentsAdapter(getApplicationContext(),
+        biddedInstrumentsAdapter = new BiddedInstrumentsAdapter(controller,
                 controller.getCurrentUsersBids());
-        ownedInstrumentAdapter = new OwnedInstrumentAdapter(getApplicationContext(),
+        ownedInstrumentAdapter = new OwnedInstrumentAdapter(controller,
                 controller.getCurrentUsersOwnedInstruments());
-        borrowedInstrumentAdapter = new BorrowedInstrumentAdapter(getApplicationContext(),
+        borrowedInstrumentAdapter = new BorrowedInstrumentAdapter(controller,
                 controller.getCurrentUsersBorrowedInstruments());
 
         setListAdapter(ownedInstrumentAdapter);
@@ -80,5 +77,11 @@ public class InstrumentListActivity extends ListActivity implements AdapterView.
     public void onNothingSelected(AdapterView<?> parent)
     {
 
+    }
+
+    public void back(View view)
+    {
+        /* Leave the instrument list view and return to the menu. */
+        finish();
     }
 }
