@@ -1,34 +1,46 @@
 package cmput301w16t08.scaling_pancake;
 
+import java.util.UUID;
+
 /**
  * Created by William on 2016-02-12.
  */
 public class Bid {
-    private Instrument instrument;
-    private User owner;
-    private User bidder;
+    private String instrument;
+    private String ownerId;
+    private String bidderId;
     private float bidAmount;
     private boolean accepted;
     private String id;
 
-    public Bid(Instrument instrument, User owner, User bidder, float bidAmount) {
+    public Bid(String instrument, String owner, String bidder, float bidAmount) {
         this.instrument = instrument;
-        this.owner = owner;
-        this.bidder = bidder;
+        this.ownerId = owner;
+        this.bidderId = bidder;
         this.bidAmount = bidAmount;
         this.accepted = false;
+        this.id = UUID.randomUUID().toString();
     }
 
-    public Instrument getInstrument() {
+    public Bid(String instrument, String owner, String bidder, float bidAmount, String id) {
+        this.instrument = instrument;
+        this.ownerId = owner;
+        this.bidderId = bidder;
+        this.bidAmount = bidAmount;
+        this.accepted = false;
+        this.id = id;
+    }
+
+    public String getInstrumentId() {
         return instrument;
     }
 
-    public User getOwner() {
-        return owner;
+    public String getOwnerId() {
+        return ownerId;
     }
 
-    public User getBidder() {
-        return bidder;
+    public String getBidderId() {
+        return bidderId;
     }
 
     public float getBidAmount() {
@@ -45,9 +57,5 @@ public class Bid {
 
     public String getId() {
         return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
     }
 }

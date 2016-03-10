@@ -12,40 +12,69 @@ public class InstrumentTest extends ActivityInstrumentationTestCase2 {
 
     public void testGetStatus() {
         User owner = new User("Owner", "Owner email");
-        User bidder1 = new User("Bidder1", "Bidder1 email");
-        Instrument instrument = new Instrument(owner, "name", "Description");
-        Bid bid1 = new Bid(instrument, owner, bidder1, 1.00f);
+        Instrument instrument = new Instrument(owner.getId(), "name", "Description");
         assertEquals(instrument.getStatus(), "available");
-        instrument.addBid(bid1);
+    }
+
+    // Use case: US 02.01.01 Status of available, bidded, and borrowed
+    public void testSetStatus() {
+        User owner = new User("Owner", "Owner email");
+        Instrument instrument = new Instrument(owner.getId(), "name", "Description");
+        assertEquals(instrument.getStatus(), "available");
+        instrument.setStatus("bidded");
         assertEquals(instrument.getStatus(), "bidded");
-        instrument.acceptBid(0);
+        instrument.setStatus("borrowed");
         assertEquals(instrument.getStatus(), "borrowed");
+    }
+
+    public void testGetName() {
+        User owner = new User("Owner", "Owner email");
+        Instrument instrument = new Instrument(owner.getId(), "name", "Description");
+        assertEquals(instrument.getName(), "name");
+    }
+
+    public void testSetName() {
+        User owner = new User("Owner", "Owner email");
+        Instrument instrument = new Instrument(owner.getId(), "name", "Description");
+        assertEquals(instrument.getName(), "name");
+        instrument.setName("edit");
+        assertEquals(instrument.getName(), "edit");
     }
 
     public void testGetDescription() {
         User owner = new User("Owner", "Owner email");
-        Instrument instrument = new Instrument(owner, "name", "Description");
+        Instrument instrument = new Instrument(owner.getId(), "name", "Description");
         assertEquals(instrument.getDescription(), "Description");
     }
 
-    public void testGetOwner() {
+    public void testSetDescription() {
         User owner = new User("Owner", "Owner email");
-        Instrument instrument = new Instrument(owner, "name", "Description");
-        User returnedOwner = instrument.getOwner();
-        assertEquals(returnedOwner.getName(), "Owner");
-        assertEquals(returnedOwner.getEmail(), "Owner email");
+        Instrument instrument = new Instrument(owner.getId(), "name", "Description");
+        assertEquals(instrument.getDescription(), "Description");
+        instrument.setDescription("edit");
+        assertEquals(instrument.getDescription(), "edit");
     }
 
-    public void testGetBorrowedBy() {
+    public void testGetOwnerId() {
+        User owner = new User("Owner", "Owner email");
+        Instrument instrument = new Instrument(owner.getId(), "name", "Description");
+        assertEquals(instrument.getOwnerId(), owner.getId());
+    }
+
+    public void testGetBorrowedById() {
         User owner = new User("Owner", "Owner email");
         User bidder1 = new User("Bidder1", "Bidder1 email");
-        Instrument instrument = new Instrument(owner, "name", "Description");
-        Bid bid1 = new Bid(instrument, owner, bidder1, 1.00f);
-        instrument.addBid(bid1);
-        instrument.acceptBid(0);
-        User returnedBorrower = instrument.getBorrowedBy();
-        assertEquals(returnedBorrower.getName(), "Bidder1");
-        assertEquals(returnedBorrower.getEmail(), "Bidder1 email");
+        Instrument instrument = new Instrument(owner.getId(), "name", "Description");
+        instrument.setBorrowedBy(bidder1.getId());
+        assertEquals(instrument.getBorrowedById(), bidder1.getId());
+    }
+
+    public void testSetBorrowedBy() {
+        User owner = new User("Owner", "Owner email");
+        User bidder1 = new User("Bidder1", "Bidder1 email");
+        Instrument instrument = new Instrument(owner.getId(), "name", "Description");
+        instrument.setBorrowedBy(bidder1.getId());
+        assertEquals(instrument.getBorrowedById(), bidder1.getId());
     }
 
     // test use case US 05.05.01: ViewBidsOnInstrument
@@ -53,9 +82,9 @@ public class InstrumentTest extends ActivityInstrumentationTestCase2 {
         User owner = new User("Owner", "Owner email");
         User bidder1 = new User("Bidder1", "Bidder1 email");
         User bidder2 = new User("Bidder2", "Bidder2 email");
-        Instrument instrument = new Instrument(owner, "name", "Description");
-        Bid bid1 = new Bid(instrument, owner, bidder1, 1.00f);
-        Bid bid2 = new Bid(instrument, owner, bidder2, 2.00f);
+        Instrument instrument = new Instrument(owner.getId(), "name", "Description");
+        Bid bid1 = new Bid(instrument.getId(), owner.getId(), bidder1.getId(), 1.00f);
+        Bid bid2 = new Bid(instrument.getId(), owner.getId(), bidder2.getId(), 2.00f);
         BidList returnedBids = instrument.getBids();
         assertEquals(returnedBids.size(), 0);
         instrument.addBid(bid1);
@@ -65,31 +94,75 @@ public class InstrumentTest extends ActivityInstrumentationTestCase2 {
 
         // Test first bid
         Bid returnedBid1 = returnedBids.getBid(0);
-        User returnedOwner1 = returnedBid1.getOwner();
-        User returnedBidder1 = returnedBid1.getBidder();
-        Instrument returnedInstrument1 = returnedBid1.getInstrument();
-        assertEquals(returnedOwner1.getName(), "Owner");
-        assertEquals(returnedOwner1.getEmail(), "Owner email");
-        assertEquals(returnedBidder1.getName(), "Bidder1");
-        assertEquals(returnedBidder1.getEmail(), "Bidder1 email");
-        assertEquals(returnedInstrument1.getDescription(), "Description");
-        User returnedOwnerThroughInstrument1 = returnedInstrument1.getOwner();
-        assertEquals(returnedOwnerThroughInstrument1.getName(), "Owner");
-        assertEquals(returnedOwnerThroughInstrument1.getEmail(), "Owner email");
+        assertEquals(returnedBid1.getOwnerId(), owner.getId());
+        assertEquals(returnedBid1.getBidderId(), bidder1.getId());
+        assertEquals(returnedBid1.getInstrumentId(), instrument.getId());
+        assertEquals(returnedBid1.getId(), bid1.getId());
+        assertEquals(returnedBid1.getBidAmount(), bid1.getBidAmount());
 
         // Test second bid
         Bid returnedBid2 = returnedBids.getBid(1);
-        User returnedOwner2 = returnedBid2.getOwner();
-        User returnedBidder2 = returnedBid2.getBidder();
-        Instrument returnedInstrument2 = returnedBid2.getInstrument();
-        assertEquals(returnedOwner2.getName(), "Owner");
-        assertEquals(returnedOwner2.getEmail(), "Owner email");
-        assertEquals(returnedBidder2.getName(), "Bidder2");
-        assertEquals(returnedBidder2.getEmail(), "Bidder2 email");
-        assertEquals(returnedInstrument2.getDescription(), "Description");
-        User returnedOwnerThroughInstrument2 = returnedInstrument2.getOwner();
-        assertEquals(returnedOwnerThroughInstrument2.getName(), "Owner");
-        assertEquals(returnedOwnerThroughInstrument2.getEmail(), "Owner email");
+        assertEquals(returnedBid2.getOwnerId(), owner.getId());
+        assertEquals(returnedBid2.getBidderId(), bidder2.getId());
+        assertEquals(returnedBid2.getInstrumentId(), instrument.getId());
+        assertEquals(returnedBid2.getId(), bid2.getId());
+        assertEquals(returnedBid2.getBidAmount(), bid2.getBidAmount());
+    }
+
+    public void testAddBid() {
+        User owner = new User("Owner", "Owner email");
+        User bidder1 = new User("Bidder1", "Bidder1 email");
+        Instrument instrument = new Instrument(owner.getId(), "name", "Description");
+        Bid bid1 = new Bid(instrument.getId(), owner.getId(), bidder1.getId(), 1.00f);
+        BidList returnedBids = instrument.getBids();
+        assertEquals(returnedBids.size(), 0);
+        instrument.addBid(bid1);
+        assertEquals(returnedBids.size(), 1);
+        assertEquals(instrument.getStatus(), "bidded");
+
+        Bid returnedBid1 = returnedBids.getBid(0);
+        assertEquals(returnedBid1.getOwnerId(), owner.getId());
+        assertEquals(returnedBid1.getBidderId(), bidder1.getId());
+        assertEquals(returnedBid1.getInstrumentId(), instrument.getId());
+        assertEquals(returnedBid1.getId(), bid1.getId());
+        assertEquals(returnedBid1.getBidAmount(), bid1.getBidAmount());
+    }
+
+    public void testAcceptBid() {
+        User owner = new User("Owner", "Owner email");
+        User bidder1 = new User("Bidder1", "Bidder1 email");
+        User bidder2 = new User("Bidder2", "Bidder2 email");
+        Instrument instrument = new Instrument(owner.getId(), "name", "Description");
+        Bid bid1 = new Bid(instrument.getId(), owner.getId(), bidder1.getId(), 1.00f);
+        Bid bid2 = new Bid(instrument.getId(), owner.getId(), bidder2.getId(), 2.00f);
+        instrument.addBid(bid1);
+        instrument.addBid(bid2);
+        instrument.acceptBid(bid2);
+
+        BidList returnedBids = instrument.getBids();
+        assertEquals(instrument.getStatus(), "borrowed");
+        assertEquals(returnedBids.size(), 1);
+        assertEquals(returnedBids.getBid(0).getId(), bid2.getId());
+    }
+
+    public void testDeclineBid() {
+        User owner = new User("Owner", "Owner email");
+        User bidder1 = new User("Bidder1", "Bidder1 email");
+        User bidder2 = new User("Bidder2", "Bidder2 email");
+        Instrument instrument = new Instrument(owner.getId(), "name", "Description");
+        Bid bid1 = new Bid(instrument.getId(), owner.getId(), bidder1.getId(), 1.00f);
+        Bid bid2 = new Bid(instrument.getId(), owner.getId(), bidder2.getId(), 2.00f);
+        instrument.addBid(bid1);
+        instrument.addBid(bid2);
+        instrument.declineBid(bid2);
+        assertEquals(instrument.getStatus(), "bidded");
+
+        BidList returnedBids = instrument.getBids();
+        assertEquals(returnedBids.size(), 1);
+        assertEquals(returnedBids.getBid(0).getId(), bid1.getId());
+
+        instrument.declineBid(bid1);
+        assertEquals(instrument.getStatus(), "available");
     }
 }
 

@@ -17,7 +17,21 @@ public class BidList {
     }
 
     public boolean containsBid(Bid bid) {
-        return this.bids.contains(bid);
+        for (int i = 0; i < this.bids.size(); i++) {
+            if (this.bids.get(i).getId().equals(bid.getId())) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean containsBid(String id) {
+        for (int i = 0; i < this.bids.size(); i++) {
+            if (this.bids.get(i).getId().equals(id)) {
+                return true;
+            }
+        }
+        return false;
     }
 
     public void addBid(Bid bid) {
@@ -25,11 +39,13 @@ public class BidList {
     }
 
     public void removeBid(Bid bid) {
-        if (this.bids.contains(bid)) {
-            this.bids.remove(bid);
-        } else {
-            throw new RuntimeException();
+        for (int i = 0; i < this.bids.size(); i++) {
+            if (this.bids.get(i).getId().equals(bid.getId())) {
+                this.bids.remove(i);
+                return;
+            }
         }
+        throw new RuntimeException();
     }
 
     public void removeBid(int index) {
@@ -40,6 +56,16 @@ public class BidList {
         }
     }
 
+    public void removeBid(String id) {
+        for (int i = 0; i < this.bids.size(); i++) {
+            if (this.bids.get(i).getId().equals(id)) {
+                this.bids.remove(i);
+                return;
+            }
+        }
+        throw new RuntimeException();
+    }
+
     public Bid getBid(int index) {
         if (index < this.bids.size()) {
             return this.bids.get(index);
@@ -48,10 +74,18 @@ public class BidList {
         }
     }
 
-    public ArrayList<Bid> getArray()
-    {
+    public ArrayList<Bid> getArray() {
         /* Accessor method for the  adapters to link with the arraylist. */
         return bids;
+    }
+
+    public Bid getBid(String id) {
+        for (int i = 0; i < this.bids.size(); i++) {
+            if (this.bids.get(i).getId().equals(id)) {
+                return this.bids.get(i);
+            }
+        }
+        throw new RuntimeException();
     }
 
     public void clearBids() {

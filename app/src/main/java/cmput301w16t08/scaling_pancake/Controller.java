@@ -2,29 +2,18 @@ package cmput301w16t08.scaling_pancake;
 
 import android.app.Application;
 
+import java.util.ArrayList;
+import java.util.concurrent.ExecutionException;
+
 /**
  * Created by William on 2016-02-19.
  */
 public class Controller extends Application {
-    private UserList users;
-    private InstrumentList instruments;
     private User currentUser;
 
     public Controller() {
         super();
-        this.users = new UserList();
-        this.instruments = new InstrumentList();
         this.currentUser = null;
-    }
-
-    public UserList getUserList() {
-        // returns a list of all the users
-        return this.users;
-    }
-
-    public InstrumentList getInstrumentList() {
-        // returns a list of all non borrowed instruments
-        return this.instruments;
     }
 
     public User getCurrentUser() {
@@ -32,25 +21,99 @@ public class Controller extends Application {
         return this.currentUser;
     }
 
+    public User getUserByName(String username) {
+        // returns the found user or null if not found
+        ArrayList<String> users = null;
+        Deserializer deserializer = new Deserializer();
+        ElasticsearchController.GetUserByNameTask getUserByNameTask = new ElasticsearchController.GetUserByNameTask();
+        getUserByNameTask.execute(username);
+        try {
+            users = getUserByNameTask.get();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+        for (int i = 0; i < users.size(); i++) {
+            User user = deserializer.deserializeUser(users.get(i));
+            if (user.getName().equals(username)) {
+                return user;
+            }
+        }
+        return null;
+    }
+
+    public User getUserById(String id) {
+        // returns the found user or null if not found
+        ArrayList<String> users = null;
+        Deserializer deserializer = new Deserializer();
+        ElasticsearchController.GetUserTask getUserTask = new ElasticsearchController.GetUserTask();
+        getUserTask.execute(id);
+        try {
+            users = getUserTask.get();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+        for (int i = 0; i < users.size(); i++) {
+            User user = deserializer.deserializeUser(users.get(i));
+            if (user.getId().equals(id)) {
+                return user;
+            }
+        }
+        return null;
+    }
+
     public boolean createUser(String username, String email) {
         // returns true if successfully created
         // returns false if username in use
-        User user = new User(username, email);
-        for (int i = 0; i < this.users.size(); i++) {
-            if (this.users.getUser(0).getName().equals(username)) {
+        ArrayList<String> users = null;
+        Deserializer deserializer = new Deserializer();
+        ElasticsearchController.GetUserByNameTask getUserByNameTask = new ElasticsearchController.GetUserByNameTask();
+        getUserByNameTask.execute(username);
+        try {
+            users = getUserByNameTask.get();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+        for (int i = 0; i < users.size(); i++) {
+            User user = deserializer.deserializeUser(users.get(i));
+            if (user.getName().equals(username)) {
                 return false;
             }
         }
-        this.users.addUser(user);
+        ElasticsearchController.CreateUserTask createUserTask = new ElasticsearchController.CreateUserTask();
+        createUserTask.execute(new User(username, email));
         return true;
+    }
+
+    public void deleteUser() {
+        ElasticsearchController.DeleteUserTask deleteUserTask = new ElasticsearchController.DeleteUserTask();
+        deleteUserTask.execute(this.currentUser);
+        this.currentUser = null;
     }
 
     public boolean login(String username) {
         // returns true with successful login
         // returns false if username not in use
-        for (int i = 0; i < this.users.size(); i++) {
-            if (this.users.getUser(i).getName().equals(username)) {
-                this.currentUser = this.users.getUser(i);
+        ArrayList<String> users = null;
+        Deserializer deserializer = new Deserializer();
+        ElasticsearchController.GetUserByNameTask getUserByNameTask = new ElasticsearchController.GetUserByNameTask();
+        getUserByNameTask.execute(username);
+        try {
+            users = getUserByNameTask.get();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+        for (int i = 0; i < users.size(); i++) {
+            User user = deserializer.deserializeUser(users.get(i));
+            if (user.getName().equals(username)) {
+                this.currentUser = user;
                 return true;
             }
         }
@@ -64,38 +127,60 @@ public class Controller extends Application {
     public boolean editCurrentUser(String username, String email) {
         // returns true with successful edit
         // returns false if username already in use
-        for (int i = 0; i < this.users.size(); i++) {
-            if (this.users.getUser(i).getName().equals(username)) {
-                if (!(this.users.getUser(i) == this.currentUser)) {
-                    return false;
-                }
+        ArrayList<String> users = null;
+        Deserializer deserializer = new Deserializer();
+        ElasticsearchController.GetUserByNameTask getUserByNameTask = new ElasticsearchController.GetUserByNameTask();
+        getUserByNameTask.execute(username);
+        try {
+            users = getUserByNameTask.get();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+        for (int i = 0; i < users.size(); i++) {
+            User user = deserializer.deserializeUser(users.get(i));
+            if (user.getName().equals(username)) {
+                return false;
             }
         }
         this.currentUser.setName(username);
         this.currentUser.setEmail(email);
+        ElasticsearchController.UpdateUserTask updateUserTask = new ElasticsearchController.UpdateUserTask();
+        updateUserTask.execute(this.currentUser);
         return true;
     }
 
-    public boolean editCurrentUserName(String username){
-        // returns true with successful edit
-        // returns false if username already in use
-
-        for (int i = 0; i < this.users.size(); i++) {
-            if (this.users.getUser(i).getName().equals(username)) {
-                if (!(this.users.getUser(i) == this.currentUser)) {
-                    return false;
-                }
+    public boolean editCurrentUserName(String username) {
+        ArrayList<String> users = null;
+        Deserializer deserializer = new Deserializer();
+        ElasticsearchController.GetUserByNameTask getUserByNameTask = new ElasticsearchController.GetUserByNameTask();
+        getUserByNameTask.execute(username);
+        try {
+            users = getUserByNameTask.get();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+        for (int i = 0; i < users.size(); i++) {
+            User user = deserializer.deserializeUser(users.get(i));
+            if (user.getName().equals(username)) {
+                return false;
             }
         }
         this.currentUser.setName(username);
+        ElasticsearchController.UpdateUserTask updateUserTask = new ElasticsearchController.UpdateUserTask();
+        updateUserTask.execute(this.currentUser);
         return true;
     }
 
-    public boolean editCurrentUserEmail(String email){
+    public boolean editCurrentUserEmail(String email) {
         this.currentUser.setEmail(email);
+        ElasticsearchController.UpdateUserTask updateUserTask = new ElasticsearchController.UpdateUserTask();
+        updateUserTask.execute(this.currentUser);
         return true;
     }
-
 
     public InstrumentList getCurrentUsersOwnedInstruments() {
         // returns all instruments owned by the logged in user or null if not logged in
@@ -128,9 +213,25 @@ public class Controller extends Application {
             return null;
         }
         InstrumentList instruments = new InstrumentList();
-        BidList bids = this.getCurrentUsersBids();
-        for (int i = 0; i < bids.size(); i++) {
-            instruments.addInstrument(bids.getBid(i).getInstrument());
+        for (int i = 0; i < this.getCurrentUsersBids().size(); i++) {
+            ArrayList<String> users = null;
+            Deserializer deserializer = new Deserializer();
+            ElasticsearchController.GetUserTask getUserTask = new ElasticsearchController.GetUserTask();
+            getUserTask.execute(this.getCurrentUsersBids().getBid(i).getOwnerId());
+            try {
+                users = getUserTask.get();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            } catch (ExecutionException e) {
+                e.printStackTrace();
+            }
+            User user = deserializer.deserializeUser(users.get(0));
+            for (int j = 0; j < user.getOwnedInstruments().size(); j++) {
+                if (user.getOwnedInstruments().getInstrument(i).getId().equals(
+                        this.getCurrentUsersBids().getBid(i).getInstrumentId())) {
+                    instruments.addInstrument(user.getOwnedInstruments().getInstrument(i));
+                }
+            }
         }
         return instruments;
     }
@@ -143,23 +244,47 @@ public class Controller extends Application {
         return this.currentUser.getBids();
     }
 
+    public Instrument getInstrumentById(String id) {
+        ElasticsearchController.GetUserByInstrumentId getUserByInstrumentId = new ElasticsearchController.GetUserByInstrumentId();
+        getUserByInstrumentId.execute(id);
+        ArrayList<String> users = null;
+        try {
+            users = getUserByInstrumentId.get();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+        User user = new Deserializer().deserializeUser(users.get(0));
+        for (int i = 0; i < user.getOwnedInstruments().size(); i++) {
+            if (user.getOwnedInstruments().getInstrument(i).getId().equals(id)) {
+                return user.getOwnedInstruments().getInstrument(i);
+            }
+        }
+        return null;
+    }
+
     public void addInstrument(Instrument instrument) {
         // adds an instrument to the current logged in user
         this.currentUser.addOwnedInstrument(instrument);
-        this.instruments.addInstrument(instrument);
+        ElasticsearchController.UpdateUserTask updateUserTask = new ElasticsearchController.UpdateUserTask();
+        updateUserTask.execute(this.currentUser);
     }
 
     public void addInstrument(String name, String description) {
         // adds an instrument to the current logged in user
-        Instrument instrument = new Instrument(this.currentUser, name, description);
+        Instrument instrument = new Instrument(this.currentUser.getId(), name, description);
         this.currentUser.addOwnedInstrument(instrument);
-        this.instruments.addInstrument(instrument);
+        ElasticsearchController.UpdateUserTask updateUserTask = new ElasticsearchController.UpdateUserTask();
+        updateUserTask.execute(this.currentUser);
     }
 
     public void editInstrument(Instrument instrument, String name, String description) {
         // edits an instrument from the current logged in user
         instrument.setName(name);
         instrument.setDescription(description);
+        ElasticsearchController.UpdateUserTask updateUserTask = new ElasticsearchController.UpdateUserTask();
+        updateUserTask.execute(this.currentUser);
     }
 
     public void editInstrument(int index, String name, String description) {
@@ -167,19 +292,23 @@ public class Controller extends Application {
         Instrument instrument = this.currentUser.getOwnedInstruments().getInstrument(index);
         instrument.setName(name);
         instrument.setDescription(description);
+        ElasticsearchController.UpdateUserTask updateUserTask = new ElasticsearchController.UpdateUserTask();
+        updateUserTask.execute(this.currentUser);
     }
 
     public void deleteInstrument(Instrument instrument) {
         // deletes an instrument owned by the current logged in user
         this.currentUser.deleteOwnedInstrument(instrument);
-        this.instruments.removeInstrument(instrument);
+        ElasticsearchController.UpdateUserTask updateUserTask = new ElasticsearchController.UpdateUserTask();
+        updateUserTask.execute(this.currentUser);
     }
 
     public void deleteInstrument(int index) {
         // deletes an instrument owned by the current logged in user
         Instrument instrument = this.currentUser.getOwnedInstruments().getInstrument(index);
         this.currentUser.deleteOwnedInstrument(instrument);
-        this.instruments.removeInstrument(instrument);
+        ElasticsearchController.UpdateUserTask updateUserTask = new ElasticsearchController.UpdateUserTask();
+        updateUserTask.execute(this.currentUser);
     }
 
     public InstrumentList searchInstruments(String keywords) {
@@ -187,26 +316,119 @@ public class Controller extends Application {
         // words can be separated by a space and an empty string will return
         // all instruments in the database
         //TODO: add search instrument functionality
-        return this.instruments;
+        return null;
     }
 
     public void makeBidOnInstrument(Instrument instrument, float amount) {
         // current logged in user makes a bid on a instrument
-        Bid bid = new Bid(instrument, instrument.getOwner(), this.currentUser, amount);
-        instrument.addBid(bid);
+
+        // load the user that owns the instrument
+        ElasticsearchController.GetUserTask getUserTask = new ElasticsearchController.GetUserTask();
+        getUserTask.execute(instrument.getOwnerId());
+        ArrayList<String> users = null;
+        try {
+            users = getUserTask.get();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+        User user = new Deserializer().deserializeUser(users.get(0));
+
+        // make the bid and update both users
+        if (user.getOwnedInstruments().containsInstrument(instrument)) {
+            Bid bid = new Bid(instrument.getId(), user.getId(), this.currentUser.getId(), amount);
+            user.getOwnedInstruments().getInstrument(instrument.getId()).addBid(bid);
+            this.currentUser.addBid(bid);
+        } else {
+            throw new RuntimeException("Instrument not found");
+        }
+        ElasticsearchController.UpdateUserTask updateUserTask1 = new ElasticsearchController.UpdateUserTask();
+        ElasticsearchController.UpdateUserTask updateUserTask2 = new ElasticsearchController.UpdateUserTask();
+        updateUserTask1.execute(user);
+        updateUserTask2.execute(this.currentUser);
     }
 
-    public void acceptBidOnInstrument(Instrument instrument, Bid bid) {
+    public void acceptBidOnInstrument(Bid bid) {
         // current logged in user accepts a bid on an instrument
+        if (!this.currentUser.getOwnedInstruments().containsInstrument(bid.getInstrumentId())) {
+            throw new RuntimeException("logged in user does not own instrument");
+        }
+        if (!this.currentUser.getOwnedInstruments().getInstrument(bid.getInstrumentId()).getBids().containsBid(bid)) {
+            throw new RuntimeException("instrument does not contain that bid");
+        }
+        Instrument instrument = this.currentUser.getOwnedInstruments().getInstrument(bid.getInstrumentId());
+
+        // remove all bids
+        for (int i = 0; i < instrument.getBids().size(); i++) {
+            // get the bidder
+            ElasticsearchController.GetUserTask getUserTask1 = new ElasticsearchController.GetUserTask();
+            getUserTask1.execute(instrument.getBids().getBid(i).getBidderId());
+            ArrayList<String> users = null;
+            try {
+                users = getUserTask1.get();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            } catch (ExecutionException e) {
+                e.printStackTrace();
+            }
+            User bidder1 = new Deserializer().deserializeUser(users.get(0));
+
+            // remove the bid and update user
+            bidder1.deleteBid(instrument.getBids().getBid(i));
+            ElasticsearchController.UpdateUserTask updateUserTask = new ElasticsearchController.UpdateUserTask();
+            updateUserTask.execute(bidder1);
+        }
+
+        // update both users
         instrument.acceptBid(bid);
-        this.instruments.removeInstrument(instrument);
-        bid.getBidder().addBorrowedInstrument(instrument);
-        bid.getBidder().deleteBid(bid);
+        ElasticsearchController.GetUserTask getUserTask1 = new ElasticsearchController.GetUserTask();
+        getUserTask1.execute(bid.getBidderId());
+        ArrayList<String> users = null;
+        try {
+            users = getUserTask1.get();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+        User bidder = new Deserializer().deserializeUser(users.get(0));
+        bidder.addBorrowedInstrument(instrument);
+        ElasticsearchController.UpdateUserTask updateUserTask1 = new ElasticsearchController.UpdateUserTask();
+        ElasticsearchController.UpdateUserTask updateUserTask2 = new ElasticsearchController.UpdateUserTask();
+        updateUserTask1.execute(bidder);
+        updateUserTask2.execute(this.currentUser);
     }
 
-    public void declineBidOnInstrument(Instrument instrument, Bid bid) {
+    public void declineBidOnInstrument(Bid bid) {
         // current logged in user declines a bid on an instrument
-        instrument.declineBid(bid);
-        bid.getBidder().deleteBid(bid);
+        if (!this.currentUser.getOwnedInstruments().containsInstrument(bid.getInstrumentId())) {
+            throw new RuntimeException("logged in user does not own instrument");
+        }
+        if (!this.currentUser.getOwnedInstruments().getInstrument(bid.getInstrumentId()).getBids().containsBid(bid)) {
+            throw new RuntimeException("instrument does not contain that bid");
+        }
+        Instrument instrument = this.currentUser.getOwnedInstruments().getInstrument(bid.getInstrumentId());
+
+        // get the bidder
+        ElasticsearchController.GetUserTask getUserTask = new ElasticsearchController.GetUserTask();
+        getUserTask.execute(bid.getBidderId());
+        ArrayList<String> users = null;
+        try {
+            users = getUserTask.get();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+        User bidder = new Deserializer().deserializeUser(users.get(0));
+
+        // remove the bid and update users
+        bidder.deleteBid(bid);
+        this.currentUser.getOwnedInstruments().getInstrument(bid.getInstrumentId()).getBids().removeBid(bid);
+        ElasticsearchController.UpdateUserTask updateUserTask1 = new ElasticsearchController.UpdateUserTask();
+        ElasticsearchController.UpdateUserTask updateUserTask2 = new ElasticsearchController.UpdateUserTask();
+        updateUserTask1.execute(bidder);
+        updateUserTask2.execute(this.currentUser);
     }
 }
