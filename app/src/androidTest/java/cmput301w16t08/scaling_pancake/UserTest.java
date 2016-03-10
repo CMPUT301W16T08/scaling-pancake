@@ -1,14 +1,15 @@
 /*
+
 package cmput301w16t08.scaling_pancake;
 
 import android.test.ActivityInstrumentationTestCase2;
 
-import java.util.ArrayList;
 
 */
 /**
  * Created by William on 2016-02-21.
  *//*
+
 
 
 public class UserTest extends ActivityInstrumentationTestCase2 {
@@ -243,4 +244,5 @@ public class UserTest extends ActivityInstrumentationTestCase2 {
         assertEquals("available", instrument.getStatus());
     }
 }
+
 */

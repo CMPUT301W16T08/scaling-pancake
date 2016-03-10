@@ -23,13 +23,29 @@ public class InstrumentTest extends ActivityInstrumentationTestCase2 {
         assertEquals(instrument.getStatus(), "borrowed");
     }
 
+    public void testSetStatus() {
+
+    }
+
+    public void testGetName() {
+
+    }
+
+    public void testSetName() {
+
+    }
+
     public void testGetDescription() {
         User owner = new User("Owner", "Owner email");
         Instrument instrument = new Instrument(owner, "name", "Description");
         assertEquals(instrument.getDescription(), "Description");
     }
 
-    public void testGetOwner() {
+    public void testSetDescription() {
+
+    }
+
+    public void testGetOwnerId() {
         User owner = new User("Owner", "Owner email");
         Instrument instrument = new Instrument(owner, "name", "Description");
         User returnedOwner = instrument.getOwner();
@@ -37,7 +53,7 @@ public class InstrumentTest extends ActivityInstrumentationTestCase2 {
         assertEquals(returnedOwner.getEmail(), "Owner email");
     }
 
-    public void testGetBorrowedBy() {
+    public void testGetBorrowedById() {
         User owner = new User("Owner", "Owner email");
         User bidder1 = new User("Bidder1", "Bidder1 email");
         Instrument instrument = new Instrument(owner, "name", "Description");
@@ -47,6 +63,10 @@ public class InstrumentTest extends ActivityInstrumentationTestCase2 {
         User returnedBorrower = instrument.getBorrowedBy();
         assertEquals(returnedBorrower.getName(), "Bidder1");
         assertEquals(returnedBorrower.getEmail(), "Bidder1 email");
+    }
+
+    public void testSetBorrowedBy() {
+
     }
 
     // test use case US 05.05.01: ViewBidsOnInstrument
@@ -91,6 +111,22 @@ public class InstrumentTest extends ActivityInstrumentationTestCase2 {
         User returnedOwnerThroughInstrument2 = returnedInstrument2.getOwner();
         assertEquals(returnedOwnerThroughInstrument2.getName(), "Owner");
         assertEquals(returnedOwnerThroughInstrument2.getEmail(), "Owner email");
+    }
+
+    public void testAddBid() {
+
+    }
+
+    public void testAcceptBid() {
+
+    }
+
+    public void testDeclineBid() {
+
+    }
+
+    public void testGetId() {
+
     }
 }
 
