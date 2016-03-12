@@ -1,12 +1,14 @@
-package cmput301w16t08.scaling_pancake;
+package Activites;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import cmput301w16t08.scaling_pancake.Controller;
+import cmput301w16t08.scaling_pancake.R;
 
 public class MainActivity extends AppCompatActivity {
 

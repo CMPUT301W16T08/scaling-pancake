@@ -2,13 +2,12 @@ package cmput301w16t08.scaling_pancake;
 
 import android.app.Activity;
 import android.app.Instrumentation;
-import android.content.Intent;
 import android.test.ActivityInstrumentationTestCase2;
 import android.test.UiThreadTest;
 import android.widget.Button;
 import android.widget.EditText;
 
-
+import Activites.CreateProfileActivity;
 
 
 public class CreateProfileActivityUITest extends ActivityInstrumentationTestCase2 {

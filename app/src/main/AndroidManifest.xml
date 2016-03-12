@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/MyTheme">
         <activity
-            android:name=".MainActivity"
+            android:name="Activites.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -22,47 +22,47 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".InstrumentListActivity"
+            android:name="Activites.InstrumentListActivity"
             android:label="@string/title_activity_instrumentlist"
             android:theme="@style/MyTheme" >
             </activity>
         <activity
-            android:name=".ViewProfileActivity"
+            android:name="Activites.ViewProfileActivity"
             android:label="@string/title_activity_view_profile"
             android:theme="@style/MyTheme" />
         <activity
-            android:name=".EditProfileActivity"
+            android:name="Activites.EditProfileActivity"
             android:label="@string/title_activity_edit_profile"
             android:theme="@style/MyTheme" />
         <activity
-            android:name=".CreateProfileActivity"
+            android:name="Activites.CreateProfileActivity"
             android:label="@string/title_activity_create_profile"
             android:theme="@style/MyTheme" />
         <activity
-            android:name=".MenuActivity"
+            android:name="Activites.MenuActivity"
             android:label="@string/title_activity_menu"
             android:theme="@style/MyTheme" />
         <activity
-            android:name=".AddInstrumentActivity"
+            android:name="Activites.AddInstrumentActivity"
             android:label="@string/title_activity_add_instrument"
             android:theme="@style/MyTheme" />
         <activity
-            android:name=".SearchInstrumentsActivity"
+            android:name="Activites.SearchInstrumentsActivity"
             android:label="@string/title_activity_search_instruments"
-            android:parentActivityName=".MenuActivity"
+            android:parentActivityName="Activites.MenuActivity"
             android:theme="@style/MyTheme">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="cmput301w16t08.scaling_pancake.MenuActivity" />
+                android:value="Activites.MenuActivity" />
         </activity>
         <activity
-            android:name=".DisplaySearchResultsActivity"
+            android:name="Activites.DisplaySearchResultsActivity"
             android:label="@string/title_activity_display_search_results"
-            android:parentActivityName=".SearchInstrumentsActivity"
+            android:parentActivityName="Activites.SearchInstrumentsActivity"
             android:theme="@style/MyTheme">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="cmput301w16t08.scaling_pancake.SearchInstrumentsActivity" />
+                android:value="Activites.SearchInstrumentsActivity" />
         </activity>
     </application>
 

@@ -6,6 +6,8 @@ import android.test.ViewAsserts;
 import android.view.View;
 import android.widget.TextView;
 
+import Activites.ViewProfileActivity;
+
 /**
  * Created by dan on 10/02/16.
  */

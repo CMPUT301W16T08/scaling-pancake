@@ -5,6 +5,8 @@ import android.test.ActivityInstrumentationTestCase2;
 import android.test.UiThreadTest;
 import android.widget.EditText;
 
+import Activites.EditProfileActivity;
+
 public class EditProfileTester extends ActivityInstrumentationTestCase2 {
     public EditProfileTester() {
         super(EditProfileActivity.class);

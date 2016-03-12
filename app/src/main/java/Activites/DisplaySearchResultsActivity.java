@@ -1,4 +1,4 @@
-package cmput301w16t08.scaling_pancake;
+package Activites;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -6,6 +6,8 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+
+import cmput301w16t08.scaling_pancake.R;
 
 public class DisplaySearchResultsActivity extends AppCompatActivity {
 

@@ -1,4 +1,4 @@
-package cmput301w16t08.scaling_pancake;
+package Activites;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -7,6 +7,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.EditText;
+
+import cmput301w16t08.scaling_pancake.Controller;
+import cmput301w16t08.scaling_pancake.R;
 
 public class AddInstrumentActivity extends AppCompatActivity {
 
