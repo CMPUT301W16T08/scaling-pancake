@@ -26,8 +26,7 @@ public class SearchInstrumentsActivity extends AppCompatActivity {
     }
 
     public void goToMainMenu(View view){
-        Intent intent = new Intent(this, MenuActivity.class);
-        startActivity(intent);
+        finish();
     }
 
 }
