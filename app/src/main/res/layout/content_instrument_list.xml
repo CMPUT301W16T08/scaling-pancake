@@ -15,15 +15,30 @@
 
     <LinearLayout
         android:id="@+id/instrumentlistactivity_spinner_shell"
+        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_marginTop="2dp"
         android:layout_marginBottom="2dp">
+        <Button
+            android:id="@+id/instrumentlistactivity_back_button"
+            android:onClick="back"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/back"
+            android:textColor="#000000"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="2dp"
+            android:background="@drawable/btn_selector"/>
         <Spinner
             android:id="@+id/instrumentlistactivity_category_spinner"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_weight="3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="2dp">
         </Spinner>
     </LinearLayout>
 

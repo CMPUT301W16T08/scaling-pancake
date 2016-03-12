@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
 
     // set up our global controller
     private static Controller controller;
+    public final static int createprofile_requestcode = 99;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
     public void createProfile(View view) {
         Intent intent = new Intent(this, CreateProfileActivity.class);
 
-        startActivity(intent);
+        startActivityForResult(intent, createprofile_requestcode);
     }
 
     public void logIn(View view){
@@ -49,6 +50,25 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, MenuActivity.class);
 
         startActivity(intent);
+    }
+
+    @Override
+    protected void onActivityResult (int requestCode, int resultCode, Intent data)
+    {
+        /* Handle data returned from secondary activity */
+        switch(requestCode)
+        {
+            /* Add more cases if needed in the future. */
+            case createprofile_requestcode:
+            {
+                if(data != null && data.hasExtra("login") && data.getBooleanExtra("login", false))
+                {
+                    /* New user was created; start MenuActivity immediately */
+                    Intent intent = new Intent(this, MenuActivity.class);
+                    startActivity(intent);
+                }
+            }
+        }
     }
 
 }

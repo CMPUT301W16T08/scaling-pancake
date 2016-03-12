@@ -34,26 +34,26 @@ public class ViewProfileActivity extends AppCompatActivity {
     }
 
     public void setUsernameTextView(User user) {
-        TextView usernameTextView = (TextView) findViewById(R.id.username_textView);
+        TextView usernameTextView = (TextView) findViewById(R.id.view_profile_username_tv);
         String name = user.getName();
 
-        Log.d(TAG, name);
-        usernameTextView.setText(name);
+        usernameTextView.append(name);
     }
 
     public void setEmailTextView(User user){
-        TextView emailTextView = (TextView) findViewById(R.id.email_textView);
+        TextView emailTextView = (TextView) findViewById(R.id.view_profile_email_tv);
         String email = user.getEmail();
-        emailTextView.setText(email);
+        emailTextView.append(email);
     }
 
     public void launchEditProfile(View view){
         Intent intent = new Intent(this, EditProfileActivity.class);
-        startActivity(intent);
-    }
-    public void goToMainMenu(View view){
-        Intent intent = new Intent(this,MenuActivity.class);
+
         startActivity(intent);
 
+        finish();
+    }
+    public void goToMainMenu(View view){
+        finish();
     }
 }

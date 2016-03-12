@@ -13,7 +13,7 @@
     tools:showIn="@layout/activity_view_profile">
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:id="@+id/linearLayout">
@@ -21,18 +21,26 @@
         <TextView
             android:id="@+id/view_profile_username_tv"
             android:layout_weight="1"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="0dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="2dp"
             android:textSize="28sp"
-            android:text="@string/username_label"/>
+            android:textColor="#000000"
+            android:text="@string/username_label"
+            android:background="@drawable/grey_rounded_border"/>
 
         <TextView
             android:id="@+id/view_profile_email_tv"
             android:layout_weight="1"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:textSize="24sp"
-            android:text="@string/email_label"/>
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="2dp"
+            android:textSize="28sp"
+            android:textColor="#000000"
+            android:text="@string/email_label"
+            android:background="@drawable/grey_rounded_border"/>
 
 
     </LinearLayout>
@@ -42,6 +50,8 @@
         android:onClick="goToMainMenu"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="2dp"
         android:text="@string/main_menu"
         android:background="@drawable/btn_selector"
         android:layout_alignParentBottom="true"
@@ -53,31 +63,12 @@
         android:onClick="launchEditProfile"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="2dp"
         android:text="@string/edit_profile"
         android:background="@drawable/btn_selector"
         android:layout_above="@+id/view_profile_back_button"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
-
-
-    <TextView
-        android:id="@+id/username_textView"
-        android:text=""
-        android:textSize="28sp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/linearLayout"
-        android:layout_toRightOf="@+id/linearLayout"
-        android:layout_toEndOf="@+id/linearLayout" />
-
-    <TextView
-        android:id="@+id/email_textView"
-        android:text=""
-        android:textSize="24sp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/username_textView"
-        android:layout_alignLeft="@+id/username_textView"
-        android:layout_alignStart="@+id/username_textView" />
 
 </RelativeLayout>
