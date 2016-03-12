@@ -3,6 +3,9 @@ package cmput301w16t08.scaling_pancake;
 
 import android.test.ActivityInstrumentationTestCase2;
 
+import cmput301w16t08.scaling_pancake.models.Bid;
+import cmput301w16t08.scaling_pancake.models.Instrument;
+
 public class BidTest extends ActivityInstrumentationTestCase2 {
     public BidTest() {
         super(Bid.class);

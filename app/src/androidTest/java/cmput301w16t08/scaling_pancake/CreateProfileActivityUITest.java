@@ -7,7 +7,8 @@ import android.test.UiThreadTest;
 import android.widget.Button;
 import android.widget.EditText;
 
-import Activites.CreateProfileActivity;
+import cmput301w16t08.scaling_pancake.activities.CreateProfileActivity;
+import cmput301w16t08.scaling_pancake.controllers.Controller;
 
 
 public class CreateProfileActivityUITest extends ActivityInstrumentationTestCase2 {

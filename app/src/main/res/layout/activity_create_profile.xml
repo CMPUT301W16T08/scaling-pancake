@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="Activites.CreateProfileActivity">
+    tools:context=".activities.CreateProfileActivity">
 
 
     <include layout="@layout/content_create_profile"/>

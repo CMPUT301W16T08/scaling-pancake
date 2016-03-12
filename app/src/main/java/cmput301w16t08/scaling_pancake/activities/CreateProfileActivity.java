@@ -1,4 +1,4 @@
-package Activites;
+package cmput301w16t08.scaling_pancake.activities;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -6,7 +6,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import cmput301w16t08.scaling_pancake.Controller;
+import cmput301w16t08.scaling_pancake.controllers.Controller;
 import cmput301w16t08.scaling_pancake.R;
 
 public class CreateProfileActivity extends AppCompatActivity

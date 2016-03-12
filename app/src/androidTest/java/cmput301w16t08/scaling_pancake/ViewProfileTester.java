@@ -6,7 +6,7 @@ import android.test.ViewAsserts;
 import android.view.View;
 import android.widget.TextView;
 
-import Activites.ViewProfileActivity;
+import cmput301w16t08.scaling_pancake.activities.ViewProfileActivity;
 
 /**
  * Created by dan on 10/02/16.

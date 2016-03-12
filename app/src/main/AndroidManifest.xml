@@ -5,14 +5,14 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:name=".Controller"
+        android:name=".controllers.Controller"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/MyTheme">
         <activity
-            android:name="Activites.MainActivity"
+            android:name=".activities.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -22,47 +22,47 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="Activites.InstrumentListActivity"
+            android:name=".activities.InstrumentListActivity"
             android:label="@string/title_activity_instrumentlist"
             android:theme="@style/MyTheme" >
             </activity>
         <activity
-            android:name="Activites.ViewProfileActivity"
+            android:name=".activities.ViewProfileActivity"
             android:label="@string/title_activity_view_profile"
             android:theme="@style/MyTheme" />
         <activity
-            android:name="Activites.EditProfileActivity"
+            android:name=".activities.EditProfileActivity"
             android:label="@string/title_activity_edit_profile"
             android:theme="@style/MyTheme" />
         <activity
-            android:name="Activites.CreateProfileActivity"
+            android:name=".activities.CreateProfileActivity"
             android:label="@string/title_activity_create_profile"
             android:theme="@style/MyTheme" />
         <activity
-            android:name="Activites.MenuActivity"
+            android:name=".activities.MenuActivity"
             android:label="@string/title_activity_menu"
             android:theme="@style/MyTheme" />
         <activity
-            android:name="Activites.AddInstrumentActivity"
+            android:name=".activities.AddInstrumentActivity"
             android:label="@string/title_activity_add_instrument"
             android:theme="@style/MyTheme" />
         <activity
-            android:name="Activites.SearchInstrumentsActivity"
+            android:name=".activities.SearchInstrumentsActivity"
             android:label="@string/title_activity_search_instruments"
-            android:parentActivityName="Activites.MenuActivity"
+            android:parentActivityName=".activities.MenuActivity"
             android:theme="@style/MyTheme">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="Activites.MenuActivity" />
+                android:value=".activities.MenuActivity" />
         </activity>
         <activity
-            android:name="Activites.DisplaySearchResultsActivity"
+            android:name=".activities.DisplaySearchResultsActivity"
             android:label="@string/title_activity_display_search_results"
-            android:parentActivityName="Activites.SearchInstrumentsActivity"
+            android:parentActivityName=".activities.SearchInstrumentsActivity"
             android:theme="@style/MyTheme">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="Activites.SearchInstrumentsActivity" />
+                android:value=".activities.SearchInstrumentsActivity" />
         </activity>
     </application>
 

@@ -1,17 +1,16 @@
-package Activites;
+package cmput301w16t08.scaling_pancake.activities;
 
 import android.app.ListActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
-import cmput301w16t08.scaling_pancake.BiddedInstrumentsAdapter;
-import cmput301w16t08.scaling_pancake.BorrowedInstrumentAdapter;
-import cmput301w16t08.scaling_pancake.Controller;
-import cmput301w16t08.scaling_pancake.OwnedInstrumentAdapter;
+import cmput301w16t08.scaling_pancake.adapters.BiddedInstrumentsAdapter;
+import cmput301w16t08.scaling_pancake.adapters.BorrowedInstrumentAdapter;
+import cmput301w16t08.scaling_pancake.controllers.Controller;
+import cmput301w16t08.scaling_pancake.adapters.OwnedInstrumentAdapter;
 import cmput301w16t08.scaling_pancake.R;
 
 public class InstrumentListActivity extends ListActivity implements AdapterView.OnItemSelectedListener

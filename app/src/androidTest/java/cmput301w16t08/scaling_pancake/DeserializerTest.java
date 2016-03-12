@@ -2,6 +2,12 @@ package cmput301w16t08.scaling_pancake;
 
 import android.test.ActivityInstrumentationTestCase2;
 
+import cmput301w16t08.scaling_pancake.models.Bid;
+import cmput301w16t08.scaling_pancake.models.Instrument;
+import cmput301w16t08.scaling_pancake.models.User;
+import cmput301w16t08.scaling_pancake.util.Deserializer;
+import cmput301w16t08.scaling_pancake.util.Serializer;
+
 public class DeserializerTest extends ActivityInstrumentationTestCase2 {
     public DeserializerTest() {
         super(Deserializer.class);

@@ -1,6 +1,9 @@
-package cmput301w16t08.scaling_pancake;
+package cmput301w16t08.scaling_pancake.models;
 
 import java.util.UUID;
+
+import cmput301w16t08.scaling_pancake.models.Bid;
+import cmput301w16t08.scaling_pancake.models.BidList;
 
 /**
  * Created by William on 2016-02-12.

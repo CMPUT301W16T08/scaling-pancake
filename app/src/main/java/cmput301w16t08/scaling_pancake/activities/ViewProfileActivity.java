@@ -1,4 +1,4 @@
-package Activites;
+package cmput301w16t08.scaling_pancake.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,9 +7,9 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
-import cmput301w16t08.scaling_pancake.Controller;
+import cmput301w16t08.scaling_pancake.controllers.Controller;
 import cmput301w16t08.scaling_pancake.R;
-import cmput301w16t08.scaling_pancake.User;
+import cmput301w16t08.scaling_pancake.models.User;
 
 
 public class ViewProfileActivity extends AppCompatActivity {

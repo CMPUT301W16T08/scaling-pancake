@@ -5,7 +5,7 @@ import android.test.ActivityInstrumentationTestCase2;
 import android.test.UiThreadTest;
 import android.widget.EditText;
 
-import Activites.EditProfileActivity;
+import cmput301w16t08.scaling_pancake.activities.EditProfileActivity;
 
 public class EditProfileTester extends ActivityInstrumentationTestCase2 {
     public EditProfileTester() {

@@ -1,4 +1,4 @@
-package Activites;
+package cmput301w16t08.scaling_pancake.activities;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;

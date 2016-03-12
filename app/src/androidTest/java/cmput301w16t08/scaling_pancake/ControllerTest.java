@@ -5,6 +5,13 @@ import android.test.ActivityInstrumentationTestCase2;
 import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
 
+import cmput301w16t08.scaling_pancake.controllers.Controller;
+import cmput301w16t08.scaling_pancake.controllers.ElasticsearchController;
+import cmput301w16t08.scaling_pancake.models.Instrument;
+import cmput301w16t08.scaling_pancake.models.InstrumentList;
+import cmput301w16t08.scaling_pancake.models.User;
+import cmput301w16t08.scaling_pancake.util.Deserializer;
+
 
 public class ControllerTest extends ActivityInstrumentationTestCase2 {
     public ControllerTest() {

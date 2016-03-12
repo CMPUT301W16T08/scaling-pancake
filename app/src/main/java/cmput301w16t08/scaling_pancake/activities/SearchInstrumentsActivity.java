@@ -1,4 +1,4 @@
-package Activites;
+package cmput301w16t08.scaling_pancake.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
