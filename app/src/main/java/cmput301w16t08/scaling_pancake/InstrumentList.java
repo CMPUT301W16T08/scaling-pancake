@@ -17,7 +17,21 @@ public class InstrumentList {
     }
 
     public boolean containsInstrument(Instrument instrument) {
-        return this.instruments.contains(instrument);
+        for (int i = 0; i < this.instruments.size(); i++) {
+            if (this.instruments.get(i).getId().equals(instrument.getId())) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean containsInstrument(String id) {
+        for (int i = 0; i < this.instruments.size(); i++) {
+            if (this.instruments.get(i).getId().equals(id)) {
+                return true;
+            }
+        }
+        return false;
     }
 
     public void addInstrument(Instrument instrument) {
@@ -25,10 +39,20 @@ public class InstrumentList {
     }
 
     public void removeInstrument(Instrument instrument) {
-        if (this.instruments.contains(instrument)) {
-            this.instruments.remove(instrument);
-        } else {
-            throw new RuntimeException();
+        for (int i = 0; i < this.instruments.size(); i++) {
+            if (instrument.getId().equals(this.instruments.get(i).getId())) {
+                this.instruments.remove(i);
+                return;
+            }
+        }
+    }
+
+    public void removeInstrument(String id) {
+        for (int i = 0; i < this.instruments.size(); i++) {
+            if (id.equals(this.instruments.get(i).getId())) {
+                this.instruments.remove(i);
+                return;
+            }
         }
     }
 
@@ -48,10 +72,17 @@ public class InstrumentList {
         }
     }
 
-    public ArrayList<Instrument> getArray()
-    {
+    public ArrayList<Instrument> getArray() {
         /* Accessor method for the  adapters to link with the arraylist. */
         return instruments;
+    }
+    public Instrument getInstrument(String id) {
+        for (int i = 0; i < this.instruments.size(); i++) {
+            if (id.equals(this.instruments.get(i).getId())) {
+                return this.instruments.get(i);
+            }
+        }
+        throw new RuntimeException();
     }
 
     public void clearInstruments() {

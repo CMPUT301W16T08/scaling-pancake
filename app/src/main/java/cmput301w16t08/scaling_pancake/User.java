@@ -1,6 +1,7 @@
 package cmput301w16t08.scaling_pancake;
 
 import java.util.ArrayList;
+import java.util.UUID;
 
 /**
  * Created by William on 2016-02-12.
@@ -19,7 +20,16 @@ public class User {
         this.ownedInstruments = new InstrumentList();
         this.borrowedInstruments = new InstrumentList();
         this.bids = new BidList();
-        this.id = "";
+        this.id = UUID.randomUUID().toString();
+    }
+
+    public User(String name, String email, String id) {
+        this.name = name;
+        this.email = email;
+        this.ownedInstruments = new InstrumentList();
+        this.borrowedInstruments = new InstrumentList();
+        this.bids = new BidList();
+        this.id = id;
     }
 
     public String getName() {
@@ -65,7 +75,7 @@ public class User {
     }
 
     public void addOwnedInstrument(String name, String description) {
-        Instrument instrument = new Instrument(this, name, description);
+        Instrument instrument = new Instrument(this.getId(), name, description);
         this.ownedInstruments.addInstrument(instrument);
     }
 

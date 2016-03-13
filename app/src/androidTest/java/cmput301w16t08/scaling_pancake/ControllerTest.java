@@ -2,116 +2,208 @@ package cmput301w16t08.scaling_pancake;
 
 import android.test.ActivityInstrumentationTestCase2;
 
-/**
- * Created by William on 2016-02-21.
- */
+import java.util.ArrayList;
+import java.util.concurrent.ExecutionException;
+
+
 public class ControllerTest extends ActivityInstrumentationTestCase2 {
     public ControllerTest() {
         super(Controller.class);
     }
 
-    public void testGetCurrentUser() {
-        Controller controller = new Controller();
-        assertNull(controller.getCurrentUser());
-        controller.createUser("user", "email");
-        controller.login("user");
-        User user = controller.getCurrentUser();
-        assertEquals("user", user.getName());
-        assertEquals("email", user.getEmail());
-    }
-
+    // Use case: US 03.01.01 Profile with unique username and contact info
     public void testCreateUser() {
+        // also tests login and getCurrentUser
         Controller controller = new Controller();
-        assertTrue(controller.createUser("user", "email"));
-        UserList users = controller.getUserList();
-        User user = users.getUser(0);
-        assertEquals("user", user.getName());
-        assertEquals("email", user.getEmail());
-        assertFalse(controller.createUser("user", "email"));
-    }
-
-    public void testLogin() {
-        Controller controller = new Controller();
-        controller.createUser("user", "email");
         assertNull(controller.getCurrentUser());
-        assertFalse(controller.login("j"));
+        assertTrue(controller.createUser("user", "email"));
         assertTrue(controller.login("user"));
         User user = controller.getCurrentUser();
         assertEquals("user", user.getName());
         assertEquals("email", user.getEmail());
+        controller.logout();
+        assertFalse(controller.createUser("user", "email2"));
+        controller.login("user");
+        controller.deleteUser();
+    }
+
+    // Use case: US 03.03.01 Get user by username
+    public void testGetUserByName() {
+        Controller controller = new Controller();
+        assertTrue(controller.createUser("user", "email"));
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        controller.login("user");
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        User user = controller.getUserByName("user");
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        assertEquals(user.getId(), controller.getCurrentUser().getId());
+        assertEquals(user.getName(), controller.getCurrentUser().getName());
+        controller.deleteUser();
+    }
+
+    public void testGetUserById() {
+        Controller controller = new Controller();
+        assertTrue(controller.createUser("user", "email"));
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        controller.login("user");
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        User user = controller.getUserById(controller.getCurrentUser().getId());
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        assertEquals(user.getId(), controller.getCurrentUser().getId());
+        assertEquals(user.getName(), controller.getCurrentUser().getName());
+        controller.deleteUser();
+    }
+
+    public void testDeleteUser() {
+        Controller controller = new Controller();
+        assertNull(controller.getCurrentUser());
+        assertTrue(controller.createUser("user", "email")); ;
+        assertTrue(controller.login("user"));
+        ElasticsearchController.GetUserTask getUserTask = new ElasticsearchController.GetUserTask();
+        getUserTask.execute(controller.getCurrentUser().getId());
+        ArrayList<String> users = null;
+        try {
+            users = getUserTask.get();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+        assertNotSame(users.size(), 0);
+        User user = new Deserializer().deserializeUser(users.get(0));
+        assertEquals(user.getName(), "user");
+
+        controller.deleteUser();
+        ElasticsearchController.GetUserTask getUserTask1 = new ElasticsearchController.GetUserTask();
+        getUserTask1.execute(user.getId());
+        try {
+            users = getUserTask1.get();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+        assertEquals(users.size(), 0);
     }
 
     public void testLogout() {
         Controller controller = new Controller();
-        controller.createUser("user", "email");
-        controller.login("user");
+        assertTrue(controller.createUser("user", "email")); ;
+        assertTrue(controller.login("user"));
         assertNotNull(controller.getCurrentUser());
         controller.logout();
         assertNull(controller.getCurrentUser());
+        controller.login("user");
+        controller.deleteUser();
     }
 
+    // Use case: US 03.02.01 Edit contact information
     public void testEditCurrentUser() {
         Controller controller = new Controller();
-        controller.createUser("user", "email");
-        controller.createUser("user2", "email2");
-        controller.login("user");
+        assertTrue(controller.createUser("user", "email")); ;
+        assertTrue(controller.login("user"));
         assertTrue(controller.editCurrentUser("edit1", "edit2"));
-        User user = controller.getCurrentUser();
-        assertEquals("edit1", user.getName());
-        assertEquals("edit2", user.getEmail());
-        assertFalse(controller.editCurrentUser("user2", "email"));
-        assertEquals("edit1", user.getName());
-        assertEquals("edit2", user.getEmail());
+        ElasticsearchController.GetUserTask getUserTask = new ElasticsearchController.GetUserTask();
+        getUserTask.execute(controller.getCurrentUser().getId());
+        ArrayList<String> users = null;
+        try {
+            users = getUserTask.get();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+        Deserializer deserializer = new Deserializer();
+        User user = deserializer.deserializeUser(users.get(0));
+        assertEquals(user.getName(), "edit1");
+        assertEquals(user.getEmail(), "edit2");
+        controller.deleteUser();
     }
 
+    // Use case: US 01.02.01 Get owned instruments
     public void testGetCurrentUsersOwnedInstruments() {
         Controller controller = new Controller();
         assertNull(controller.getCurrentUsersOwnedInstruments());
-        controller.createUser("user", "email");
-        controller.login("user");
+        assertTrue(controller.createUser("user", "email")); ;
+        assertTrue(controller.login("user"));
         assertNotNull(controller.getCurrentUsersOwnedInstruments());
+        controller.deleteUser();
     }
 
+    // Use case: US 06.02.01 Get owned borrowed instruments
     public void testGetCurrentUsersOwnedBorrowedInstruments() {
         Controller controller = new Controller();
         assertNull(controller.getCurrentUsersOwnedBorrowedInstruments());
-        controller.createUser("user", "email");
-        controller.login("user");
+        assertTrue(controller.createUser("user", "email")); ;
+        assertTrue(controller.login("user"));
         assertNotNull(controller.getCurrentUsersOwnedBorrowedInstruments());
+        controller.deleteUser();
     }
 
+    // Use case: US 06.01.01 Get borrowed instruments
     public void testGetCurrentUsersBorrowedInstruments() {
         Controller controller = new Controller();
         assertNull(controller.getCurrentUsersBorrowedInstruments());
-        controller.createUser("user", "email");
-        controller.login("user");
+        assertTrue(controller.createUser("user", "email")); ;
+        assertTrue(controller.login("user"));
         assertNotNull(controller.getCurrentUsersBorrowedInstruments());
+        controller.deleteUser();
     }
 
+    // Use case: US 05.04.01 Get current users owned bidded instruments
     public void testGetCurrentUsersBiddedInstruments() {
         Controller controller = new Controller();
         assertNull(controller.getCurrentUsersBiddedInstruments());
-        controller.createUser("user", "email");
-        controller.login("user");
+        assertTrue(controller.createUser("user", "email")); ;
+        assertTrue(controller.login("user"));
         assertNotNull(controller.getCurrentUsersBiddedInstruments());
+        controller.deleteUser();
     }
 
+    // Use case: US 05.02.01 Get current users pending bids
     public void testGetCurrentUsersBids() {
         Controller controller = new Controller();
         assertNull(controller.getCurrentUsersBids());
-        controller.createUser("user", "email");
-        controller.login("user");
+        assertTrue(controller.createUser("user", "email")); ;
+        assertTrue(controller.login("user"));
         assertNotNull(controller.getCurrentUsersBids());
+        controller.deleteUser();
     }
 
+    // Use case: US 01.01.01 Add an instrument
     public void testAddInstrument() {
         Controller controller = new Controller();
-        controller.createUser("user", "email");
-        controller.login("user");
+        assertTrue(controller.createUser("user", "email")); ;
+        assertTrue(controller.login("user"));
         User user = controller.getCurrentUser();
-        Instrument instrument = new Instrument(user, "name", "description");
+        Instrument instrument = new Instrument(user.getId(), "name", "description");
         InstrumentList instruments = controller.getCurrentUsersOwnedInstruments();
-        assertEquals(0, controller.getInstrumentList().size());
         assertEquals(0, instruments.size());
         controller.addInstrument(instrument);
         instruments = controller.getCurrentUsersOwnedInstruments();
@@ -121,45 +213,45 @@ public class ControllerTest extends ActivityInstrumentationTestCase2 {
         assertEquals("description", instrument.getDescription());
         assertEquals("available", instrument.getStatus());
 
-        // make sure it was added to the complete instrument list
-        instruments = controller.getInstrumentList();
-        assertEquals(1, instruments.size());
-        instrument = instruments.getInstrument(0);
-        assertEquals("name", instrument.getName());
-        assertEquals("description", instrument.getDescription());
-        assertEquals("available", instrument.getStatus());
+        ElasticsearchController.GetUserTask getUserTask = new ElasticsearchController.GetUserTask();
+        getUserTask.execute(user.getId());
+        ArrayList<String> users = null;
+        try {
+            users = getUserTask.get();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+        User u = new Deserializer().deserializeUser(users.get(0));
+        assertEquals(user.getOwnedInstruments().size(), 1);
+        assertEquals("name", user.getOwnedInstruments().getInstrument(0).getName());
+        assertEquals("description", user.getOwnedInstruments().getInstrument(0).getDescription());
+        assertEquals("available", user.getOwnedInstruments().getInstrument(0).getStatus());
+        controller.deleteUser();
     }
 
-    public void testAddInstrument1() {
+    public void testGetInstrumentById() {
         Controller controller = new Controller();
-        controller.createUser("user", "email");
-        controller.login("user");
-        InstrumentList instruments = controller.getCurrentUsersOwnedInstruments();
-        assertEquals(0, controller.getInstrumentList().size());
-        assertEquals(0, instruments.size());
-        controller.addInstrument("name", "description");
-        instruments = controller.getCurrentUsersOwnedInstruments();
-        assertEquals(1, instruments.size());
-        Instrument instrument = instruments.getInstrument(0);
-        assertEquals("name", instrument.getName());
-        assertEquals("description", instrument.getDescription());
-        assertEquals("available", instrument.getStatus());
-
-        // make sure it was added to the complete instrument list
-        instruments = controller.getInstrumentList();
-        assertEquals(1, instruments.size());
-        instrument = instruments.getInstrument(0);
-        assertEquals("name", instrument.getName());
-        assertEquals("description", instrument.getDescription());
-        assertEquals("available", instrument.getStatus());
+        assertTrue(controller.createUser("user", "email")); ;
+        assertTrue(controller.login("user"));
+        User user = controller.getCurrentUser();
+        Instrument instrument = new Instrument(user.getName(), "name", "description");
+        controller.addInstrument(instrument);
+        Instrument instrument2 = controller.getInstrumentById(instrument.getId());
+        assertEquals(instrument.getId(), instrument2.getId());
+        assertEquals(instrument.getOwnerId(), instrument2.getOwnerId());
+        assertEquals(instrument.getName(), instrument2.getName());
+        controller.deleteUser();
     }
 
+    // Use case: US 01.04.01 Edit an instrument
     public void testEditInstrument() {
         Controller controller = new Controller();
-        controller.createUser("user", "email");
-        controller.login("user");
+        assertTrue(controller.createUser("user", "email")); ;
+        assertTrue(controller.login("user"));
         User user = controller.getCurrentUser();
-        Instrument instrument = new Instrument(user, "name", "description");
+        Instrument instrument = new Instrument(user.getName(), "name", "description");
         controller.addInstrument(instrument);
         controller.editInstrument(instrument, "edit1", "edit2");
         InstrumentList instruments = controller.getCurrentUsersOwnedInstruments();
@@ -167,201 +259,163 @@ public class ControllerTest extends ActivityInstrumentationTestCase2 {
         assertEquals("edit1", instrument.getName());
         assertEquals("edit2", instrument.getDescription());
 
-        // make sure the complete list of instruments was also updated
-        instruments = controller.getInstrumentList();
-        instrument = instruments.getInstrument(0);
-        assertEquals("edit1", instrument.getName());
-        assertEquals("edit2", instrument.getDescription());
+        ElasticsearchController.GetUserTask getUserTask = new ElasticsearchController.GetUserTask();
+        getUserTask.execute(user.getId());
+        ArrayList<String> users = null;
+        try {
+            users = getUserTask.get();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+        User u = new Deserializer().deserializeUser(users.get(0));
+        assertEquals(user.getOwnedInstruments().size(), 1);
+        assertEquals("edit1", user.getOwnedInstruments().getInstrument(0).getName());
+        assertEquals("edit2", user.getOwnedInstruments().getInstrument(0).getDescription());
+        controller.deleteUser();
     }
 
-    public void testEditInstrument1() {
-        Controller controller = new Controller();
-        controller.createUser("user", "email");
-        controller.login("user");
-        User user = controller.getCurrentUser();
-        Instrument instrument = new Instrument(user, "name", "description");
-        controller.addInstrument(instrument);
-        controller.editInstrument(0, "edit1", "edit2");
-        InstrumentList instruments = controller.getCurrentUsersOwnedInstruments();
-        instrument = instruments.getInstrument(0);
-        assertEquals("edit1", instrument.getName());
-        assertEquals("edit2", instrument.getDescription());
-
-        // make sure the complete list of instruments was also updated
-        instruments = controller.getInstrumentList();
-        instrument = instruments.getInstrument(0);
-        assertEquals("edit1", instrument.getName());
-        assertEquals("edit2", instrument.getDescription());
-    }
-
+    // Use case: US 01.05.01 Delete an instrument
     public void testDeleteInstrument() {
         Controller controller = new Controller();
-        controller.createUser("user", "email");
-        controller.login("user");
+        assertTrue(controller.createUser("user", "email")); ;
+        assertTrue(controller.login("user"));
         User user = controller.getCurrentUser();
-        Instrument instrument1 = new Instrument(user, "name1", "description1");
-        Instrument instrument2 = new Instrument(user, "name2", "description2");
+        Instrument instrument1 = new Instrument(user.getId(), "name1", "description1");
+        Instrument instrument2 = new Instrument(user.getId(), "name2", "description2");
         controller.addInstrument(instrument1);
         controller.addInstrument(instrument2);
         controller.deleteInstrument(instrument1);
+        assertEquals(controller.getCurrentUsersOwnedInstruments().size(), 1);
         Instrument instrument = controller.getCurrentUsersOwnedInstruments().getInstrument(0);
         assertEquals("name2", instrument.getName());
         assertEquals("description2", instrument.getDescription());
 
-        // make sure the complete insturment list is updated as well
-        instrument = controller.getInstrumentList().getInstrument(0);
-        assertEquals("name2", instrument.getName());
-        assertEquals("description2", instrument.getDescription());
+        ElasticsearchController.GetUserTask getUserTask = new ElasticsearchController.GetUserTask();
+        getUserTask.execute(user.getId());
+        ArrayList<String> users = null;
+        try {
+            users = getUserTask.get();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+        User u = new Deserializer().deserializeUser(users.get(0));
+        assertEquals(user.getOwnedInstruments().size(), 1);
+        assertEquals("name2", user.getOwnedInstruments().getInstrument(0).getName());
+        assertEquals("description2", user.getOwnedInstruments().getInstrument(0).getDescription());
+        controller.deleteUser();
     }
 
-    public void testDeleteInstrument1() {
-        Controller controller = new Controller();
-        controller.createUser("user", "email");
-        controller.login("user");
-        User user = controller.getCurrentUser();
-        Instrument instrument1 = new Instrument(user, "name1", "description1");
-        Instrument instrument2 = new Instrument(user, "name2", "description2");
-        controller.addInstrument(instrument1);
-        controller.addInstrument(instrument2);
-        controller.deleteInstrument(0);
-        Instrument instrument = controller.getCurrentUsersOwnedInstruments().getInstrument(0);
-        assertEquals("name2", instrument.getName());
-        assertEquals("description2", instrument.getDescription());
-
-        // make sure the complete insturment list is updated as well
-        instrument = controller.getInstrumentList().getInstrument(0);
-        assertEquals("name2", instrument.getName());
-        assertEquals("description2", instrument.getDescription());
-    }
-
-    // Test use case 04.01.01
+    // Use case: US 04.01.01 Search instruments
+    // Use case: US 04.02.01 Get search results
     public void testSearchInstruments() {
         //TODO: search instruments test
     }
 
+    // Use case: US 05.01.01 Make bid on instrument
     public void testMakeBidOnInstrument() {
         Controller controller = new Controller();
         controller.createUser("owner", "email1");
         controller.login("owner");
+        User user1 = controller.getCurrentUser();
         controller.addInstrument("name", "description");
         controller.logout();
         controller.createUser("bidder", "email2");
         controller.login("bidder");
-        Instrument instrument = controller.getInstrumentList().getInstrument(0);
-        controller.makeBidOnInstrument(instrument, 1.00f);
-        assertEquals("bidded", instrument.getStatus());
-
-        // make sure bid list connected to instrument is updated
-        BidList bids = instrument.getBids();
-        assertEquals(1, bids.size());
-        Bid bid = bids.getBid(0);
-        assertEquals(1.00f, bid.getBidAmount());
-        assertEquals("owner", bid.getOwner().getName());
-        assertEquals("email1", bid.getOwner().getEmail());
-        assertEquals("bidder", bid.getBidder().getName());
-        assertEquals("email2", bid.getBidder().getEmail());
-        assertEquals("name", bid.getInstrument().getName());
-        assertEquals("description", bid.getInstrument().getDescription());
-
-        // make sure bid is added to bidders list of bids
-        bids = controller.getCurrentUsersBids();
-        assertEquals(1, bids.size());
-        bid = bids.getBid(0);
-        assertEquals(1.00f, bid.getBidAmount());
-        assertEquals("owner", bid.getOwner().getName());
-        assertEquals("email1", bid.getOwner().getEmail());
-        assertEquals("bidder", bid.getBidder().getName());
-        assertEquals("email2", bid.getBidder().getEmail());
-        assertEquals("name", bid.getInstrument().getName());
-        assertEquals("description", bid.getInstrument().getDescription());
-
-        // make sure instrument is added to bidders list of bidded instruments
-        InstrumentList instruments = controller.getCurrentUsersBiddedInstruments();
-        assertEquals(1, instruments.size());
-        assertEquals("bidded", instruments.getInstrument(0).getStatus());
-        assertEquals("owner", instruments.getInstrument(0).getOwner().getName());
-        assertEquals("email1", instruments.getInstrument(0).getOwner().getEmail());
-        assertEquals(1, instruments.getInstrument(0).getBids().size());
-
-        // make sure instrument in owners list of owned instruments is updated
-        controller.logout();
+        controller.makeBidOnInstrument(user1.getOwnedInstruments().getInstrument(0), 1);
+        ElasticsearchController.GetUserTask getUserTask = new ElasticsearchController.GetUserTask();
+        getUserTask.execute(user1.getId());
+        ArrayList<String> users = null;
+        try {
+            users = getUserTask.get();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+        User user2 = new Deserializer().deserializeUser(users.get(0));
+        assertEquals(user2.getOwnedInstruments().getInstrument(0).getBids().size(), 1);
+        ElasticsearchController.GetUserTask  getUserTask1 = new ElasticsearchController.GetUserTask();
+        getUserTask1.execute(controller.getCurrentUser().getId());
+        try {
+            users = getUserTask1.get();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+        user2 = new Deserializer().deserializeUser(users.get(0));
+        assertEquals(user2.getBids().size(), 1);
+        controller.deleteUser();
         controller.login("owner");
-        instruments = controller.getCurrentUsersOwnedInstruments();
-        assertEquals(1, instruments.size());
-        assertEquals("bidded", instruments.getInstrument(0).getStatus());
-        assertEquals(1, instruments.getInstrument(0).getBids().size());
-        assertEquals(1.00f, instruments.getInstrument(0).getBids().getBid(0).getBidAmount());
-        assertEquals("bidder", instruments.getInstrument(0).getBids().getBid(0).getBidder().getName());
-        assertEquals("email2", instruments.getInstrument(0).getBids().getBid(0).getBidder().getEmail());
+        controller.deleteUser();
     }
 
+    // Use case: US 05.06.01 Accept bid on instrument
     public void testAcceptBidOnInstrument() {
         Controller controller = new Controller();
-        controller.createUser("owner", "email");
+        controller.createUser("owner", "email1");
         controller.login("owner");
+        User user1 = controller.getCurrentUser();
         controller.addInstrument("name", "description");
         controller.logout();
         controller.createUser("bidder", "email2");
         controller.login("bidder");
-        Instrument instrument = controller.getInstrumentList().getInstrument(0);
-        controller.makeBidOnInstrument(instrument, 1.00f);
-        controller.makeBidOnInstrument(instrument, 2.00f);
+        controller.makeBidOnInstrument(user1.getOwnedInstruments().getInstrument(0), 1);
+        controller.makeBidOnInstrument(user1.getOwnedInstruments().getInstrument(0), 2);
         controller.logout();
         controller.login("owner");
-        assertEquals(2, controller.getCurrentUsersOwnedInstruments().getInstrument(0).getBids().size());
-        instrument = controller.getCurrentUsersOwnedInstruments().getInstrument(0);
-        Bid bid = instrument.getBids().getBid(0);
-        controller.acceptBidOnInstrument(instrument, bid);
-
-        // make sure all other bids are declined and instrument is set to borrowed
-        assertEquals("borrowed", controller.getCurrentUsersOwnedInstruments().getInstrument(0).getStatus());
-        assertEquals(1, controller.getCurrentUsersOwnedInstruments().getInstrument(0).getBids().size());
-        assertEquals(1.00f, controller.getCurrentUsersOwnedInstruments().getInstrument(0).getBids().getBid(0).getBidAmount());
-
-        // make sure the instrument is removed from the complete list of non borrowed instruments
-        assertEquals(0, controller.getInstrumentList().size());
-
-        // make sure the instrument is added to the bidders borrowed instrument list and removed from
-        // list of bidded instruments
+        controller.acceptBidOnInstrument(controller.getCurrentUsersOwnedInstruments().getInstrument(0).getBids().getBid(0));
+        assertEquals(controller.getCurrentUsersOwnedBorrowedInstruments().size(), 1);
+        assertEquals(controller.getCurrentUsersOwnedInstruments().size(), 1);
+        assertEquals(controller.getCurrentUsersOwnedInstruments().getInstrument(0).getBids().getBid(0).getBidAmount(), 1.0f);
         controller.logout();
         controller.login("bidder");
-        assertEquals(1, controller.getCurrentUsersBorrowedInstruments().size());
-        assertEquals(0, controller.getCurrentUsersBids().size());
-        assertEquals(0, controller.getCurrentUsersBiddedInstruments().size());
-        assertEquals("borrowed", controller.getCurrentUsersBorrowedInstruments().getInstrument(0).getStatus());
-        assertEquals(1, controller.getCurrentUsersBorrowedInstruments().getInstrument(0).getBids().size());
-        assertEquals(1.00f, controller.getCurrentUsersBorrowedInstruments().getInstrument(0).getBids().getBid(0).getBidAmount());
+        assertEquals(controller.getCurrentUsersBids().size(), 0);
+        assertEquals(controller.getCurrentUsersBorrowedInstruments().size(), 1);
+        assertEquals(controller.getCurrentUsersBorrowedInstruments().getInstrument(0).getBids().getBid(0).getBidAmount(), 1.0f);
+
+        controller.deleteUser();
+        controller.login("owner");
+        controller.deleteUser();
     }
 
+    // Use case: US 05.07.01 Decline bid on instrument
     public void testDeclineBidOnInstrument() {
         Controller controller = new Controller();
-        controller.createUser("owner", "email");
+        controller.createUser("owner", "email1");
         controller.login("owner");
+        User user1 = controller.getCurrentUser();
         controller.addInstrument("name", "description");
         controller.logout();
         controller.createUser("bidder", "email2");
         controller.login("bidder");
-        User bidder = controller.getCurrentUser();
-        Instrument instrument = controller.getInstrumentList().getInstrument(0);
-        controller.makeBidOnInstrument(instrument, 1.00f);
-        controller.makeBidOnInstrument(instrument, 2.00f);
+        controller.makeBidOnInstrument(user1.getOwnedInstruments().getInstrument(0), 1);
+        controller.makeBidOnInstrument(user1.getOwnedInstruments().getInstrument(0), 2);
+        User user2 = controller.getCurrentUser();
         controller.logout();
         controller.login("owner");
-        assertEquals(2, controller.getCurrentUsersOwnedInstruments().getInstrument(0).getBids().size());
-        instrument = controller.getCurrentUsersOwnedInstruments().getInstrument(0);
-        Bid bid = instrument.getBids().getBid(0);
-        controller.declineBidOnInstrument(instrument, bid);
+        controller.declineBidOnInstrument(controller.getCurrentUsersOwnedInstruments().getInstrument(0).getBids().getBid(0));
+        assertEquals(controller.getCurrentUsersOwnedBorrowedInstruments().size(), 0);
+        assertEquals(controller.getCurrentUsersOwnedInstruments().size(), 1);
 
-        // make sure only 1 bid left and instrument still has status bidded
-        assertEquals(1, instrument.getBids().size());
-        assertEquals("bidded", instrument.getStatus());
-        assertEquals(2.00f, instrument.getBids().getBid(0).getBidAmount());
-
-        // make sure the bid is deleted from the bidders list of bids
         controller.logout();
         controller.login("bidder");
-        assertEquals(1, controller.getCurrentUsersBids().size());
-        assertEquals(1, controller.getCurrentUsersBiddedInstruments().size());
-        assertEquals(2.00f, controller.getCurrentUsersBids().getBid(0).getBidAmount());
+        assertEquals(controller.getCurrentUsersBids().size(), 1);
+        assertEquals(controller.getCurrentUsersBorrowedInstruments().size(), 0);
+        assertEquals(controller.getCurrentUsersBids().getBid(0).getBidAmount(), 2.0f);
+
+        controller.logout();
+        controller.login("owner");
+        assertEquals(controller.getCurrentUsersOwnedInstruments().size(), 1);
+        assertEquals(controller.getCurrentUsersOwnedBorrowedInstruments().size(), 0);
+        assertEquals(controller.getCurrentUsersOwnedInstruments().getInstrument(0).getBids().getBid(0).getBidAmount(), 2.0f);
+
+        controller.deleteUser();
+        controller.login("bidder");
+        controller.deleteUser();
     }
 }

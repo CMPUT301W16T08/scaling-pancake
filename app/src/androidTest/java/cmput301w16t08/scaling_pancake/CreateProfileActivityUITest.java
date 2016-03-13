@@ -55,7 +55,7 @@ public class CreateProfileActivityUITest extends ActivityInstrumentationTestCase
         assertFalse(activity.isFinishing());
 
         //make sure this is no such user
-        controller.getUserList().removeUser(controller.getUserList().size()-1);
+        controller.deleteUser();
         //assertFalse(controller.getUserList().containsUser(testUser));
 
         // create a new profile, click on profile button

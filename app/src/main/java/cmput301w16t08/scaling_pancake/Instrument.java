@@ -1,6 +1,6 @@
 package cmput301w16t08.scaling_pancake;
 
-import java.util.ArrayList;
+import java.util.UUID;
 
 /**
  * Created by William on 2016-02-12.
@@ -9,19 +9,29 @@ public class Instrument {
     private String status;
     private String name;
     private String description;
-    private User owner;
-    private User borrowedBy;
+    private String ownerId;
+    private String borrowedById;
     private BidList bids;
     private String id;
 
-    public Instrument(User owner, String name, String description) {
+    public Instrument(String owner, String name, String description) {
         this.name = name;
         this.description = description;
-        this.owner = owner;
+        this.ownerId = owner;
         this.status = "available";
-        this.borrowedBy = null;
+        this.borrowedById = null;
         this.bids = new BidList();
-        this.id = "";
+        this.id = UUID.randomUUID().toString();
+    }
+
+    public Instrument(String owner, String name, String description, String id) {
+        this.name = name;
+        this.description = description;
+        this.ownerId = owner;
+        this.status = "available";
+        this.borrowedById = null;
+        this.bids = new BidList();
+        this.id = id;
     }
 
     public String getStatus() {
@@ -48,16 +58,16 @@ public class Instrument {
         this.description = description;
     }
 
-    public User getOwner() {
-        return owner;
+    public String getOwnerId() {
+        return ownerId;
     }
 
-    public User getBorrowedBy() {
-        return borrowedBy;
+    public String getBorrowedById() {
+        return borrowedById;
     }
 
-    public void setBorrowedBy(User borrowedBy) {
-        this.borrowedBy = borrowedBy;
+    public void setBorrowedBy(String borrowedBy) {
+        this.borrowedById = borrowedBy;
     }
 
     public BidList getBids() {
@@ -66,20 +76,16 @@ public class Instrument {
 
     public void addBid(Bid bid) {
         this.bids.addBid(bid);
-        bid.getBidder().addBid(bid);
         this.setStatus("bidded");
     }
 
     public void acceptBid(Bid bid) {
         if (this.bids.containsBid(bid)) {
             bid.setAccepted();
-            for (int i = 0; i < this.bids.size(); i++) {
-                this.bids.getBid(i).getBidder().deleteBid(this.bids.getBid(i));
-            }
             this.bids.clearBids();
             this.bids.addBid(bid);
             this.setStatus("borrowed");
-            this.setBorrowedBy(bid.getBidder());
+            this.setBorrowedBy(bid.getBidderId());
         }
         else {
             throw new RuntimeException();
@@ -90,13 +96,10 @@ public class Instrument {
         if (index < this.bids.size()) {
             Bid bid = this.bids.getBid(index);
             bid.setAccepted();
-            for (int i = 0; i < this.bids.size(); i++) {
-                this.bids.getBid(i).getBidder().deleteBid(this.bids.getBid(i));
-            }
             this.bids.clearBids();
             this.bids.addBid(bid);
             this.setStatus("borrowed");
-            this.setBorrowedBy(bid.getBidder());
+            this.setBorrowedBy(bid.getBidderId());
         }
         else {
             throw new RuntimeException();
@@ -129,9 +132,5 @@ public class Instrument {
 
     public String getId() {
         return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
     }
 }
