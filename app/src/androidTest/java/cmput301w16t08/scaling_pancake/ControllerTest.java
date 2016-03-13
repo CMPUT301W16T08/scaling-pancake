@@ -5,6 +5,13 @@ import android.test.ActivityInstrumentationTestCase2;
 import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
 
+import cmput301w16t08.scaling_pancake.controllers.Controller;
+import cmput301w16t08.scaling_pancake.controllers.ElasticsearchController;
+import cmput301w16t08.scaling_pancake.models.Instrument;
+import cmput301w16t08.scaling_pancake.models.InstrumentList;
+import cmput301w16t08.scaling_pancake.models.User;
+import cmput301w16t08.scaling_pancake.util.Deserializer;
+
 
 public class ControllerTest extends ActivityInstrumentationTestCase2 {
     public ControllerTest() {
@@ -112,6 +119,38 @@ public class ControllerTest extends ActivityInstrumentationTestCase2 {
         assertEquals(users.size(), 0);
     }
 
+    public void testDeleteUserById() {
+        Controller controller = new Controller();
+        assertNull(controller.getCurrentUser());
+        assertTrue(controller.createUser("user", "email")); ;
+        assertTrue(controller.login("user"));
+        ElasticsearchController.GetUserTask getUserTask = new ElasticsearchController.GetUserTask();
+        getUserTask.execute(controller.getCurrentUser().getId());
+        ArrayList<String> users = null;
+        try {
+            users = getUserTask.get();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+        assertNotSame(users.size(), 0);
+        User user = new Deserializer().deserializeUser(users.get(0));
+        assertEquals(user.getName(), "user");
+
+        controller.deleteUserById(controller.getCurrentUser().getId());
+        ElasticsearchController.GetUserTask getUserTask1 = new ElasticsearchController.GetUserTask();
+        getUserTask1.execute(user.getId());
+        try {
+            users = getUserTask1.get();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+        assertEquals(users.size(), 0);
+    }
+
     public void testLogout() {
         Controller controller = new Controller();
         assertTrue(controller.createUser("user", "email")); ;
@@ -143,6 +182,50 @@ public class ControllerTest extends ActivityInstrumentationTestCase2 {
         User user = deserializer.deserializeUser(users.get(0));
         assertEquals(user.getName(), "edit1");
         assertEquals(user.getEmail(), "edit2");
+        controller.deleteUser();
+    }
+
+    public void testEditCurrentUserName() {
+        Controller controller = new Controller();
+        assertTrue(controller.createUser("user", "email")); ;
+        assertTrue(controller.login("user"));
+        assertTrue(controller.editCurrentUserName("edit1"));
+        ElasticsearchController.GetUserTask getUserTask = new ElasticsearchController.GetUserTask();
+        getUserTask.execute(controller.getCurrentUser().getId());
+        ArrayList<String> users = null;
+        try {
+            users = getUserTask.get();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+        Deserializer deserializer = new Deserializer();
+        User user = deserializer.deserializeUser(users.get(0));
+        assertEquals(user.getName(), "edit1");
+        assertEquals(user.getEmail(), "email");
+        controller.deleteUser();
+    }
+
+    public void testEditCurrentUserEmail() {
+        Controller controller = new Controller();
+        assertTrue(controller.createUser("user", "email")); ;
+        assertTrue(controller.login("user"));
+        assertTrue(controller.editCurrentUserEmail("edit1"));
+        ElasticsearchController.GetUserTask getUserTask = new ElasticsearchController.GetUserTask();
+        getUserTask.execute(controller.getCurrentUser().getId());
+        ArrayList<String> users = null;
+        try {
+            users = getUserTask.get();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+        Deserializer deserializer = new Deserializer();
+        User user = deserializer.deserializeUser(users.get(0));
+        assertEquals(user.getName(), "user");
+        assertEquals(user.getEmail(), "edit1");
         controller.deleteUser();
     }
 
@@ -270,9 +353,9 @@ public class ControllerTest extends ActivityInstrumentationTestCase2 {
             e.printStackTrace();
         }
         User u = new Deserializer().deserializeUser(users.get(0));
-        assertEquals(user.getOwnedInstruments().size(), 1);
-        assertEquals("edit1", user.getOwnedInstruments().getInstrument(0).getName());
-        assertEquals("edit2", user.getOwnedInstruments().getInstrument(0).getDescription());
+        assertEquals(u.getOwnedInstruments().size(), 1);
+        assertEquals("edit1", u.getOwnedInstruments().getInstrument(0).getName());
+        assertEquals("edit2", u.getOwnedInstruments().getInstrument(0).getDescription());
         controller.deleteUser();
     }
 

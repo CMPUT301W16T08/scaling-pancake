@@ -1,4 +1,4 @@
-package cmput301w16t08.scaling_pancake;
+package cmput301w16t08.scaling_pancake.models;
 
 import java.util.UUID;
 

@@ -7,6 +7,10 @@ import android.util.Log;
 import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
 
+import cmput301w16t08.scaling_pancake.controllers.ElasticsearchController;
+import cmput301w16t08.scaling_pancake.models.User;
+import cmput301w16t08.scaling_pancake.util.Deserializer;
+
 /**
  * Created by William on 2016-02-25.
  */
@@ -107,7 +111,27 @@ public class ElasticsearchControllerTest extends ActivityInstrumentationTestCase
         task4.execute(user.getId());
         ArrayList<String> user2 = null;
         try {
-            // passing previous assertion means user2 is not null before this assertion
+            user2 = task4.get();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+        assertTrue(user2.size() == 0);
+    }
+
+    public void testDeleteUserByIdTask() {
+        User user = new User("testuser1", "testemail1");
+        ElasticsearchController.CreateUserTask task1 = new ElasticsearchController.CreateUserTask();
+        task1.execute(user);
+
+        // delete the test user
+        ElasticsearchController.DeleteUserByIdTask task3 = new ElasticsearchController.DeleteUserByIdTask();
+        task3.execute(user.getId());
+        ElasticsearchController.GetUserTask task4 = new ElasticsearchController.GetUserTask();
+        task4.execute(user.getId());
+        ArrayList<String> user2 = null;
+        try {
             user2 = task4.get();
         } catch (InterruptedException e) {
             e.printStackTrace();

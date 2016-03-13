@@ -1,4 +1,4 @@
-package cmput301w16t08.scaling_pancake;
+package cmput301w16t08.scaling_pancake.controllers;
 
 import android.os.AsyncTask;
 import android.util.Log;
@@ -10,6 +10,8 @@ import com.searchly.jestdroid.JestDroidClient;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import cmput301w16t08.scaling_pancake.util.Serializer;
+import cmput301w16t08.scaling_pancake.models.User;
 import io.searchbox.core.Delete;
 import io.searchbox.core.DocumentResult;
 import io.searchbox.core.Index;
@@ -98,7 +100,7 @@ public class ElasticsearchController {
     public static class GetUserByInstrumentId extends AsyncTask<String, Void, ArrayList<String>> {
         protected ArrayList<String> doInBackground(String... strings) {
             verifyClient();
-            String string = "{\"query\": {\"must\": [{ \"nested\": {\"path\": \"ownedInstruments\", \"query\": {\"match\": {\"id\": \"" + strings[0] + "\"}}}}]}}";
+            String string = "{\"query\": { \"nested\": {\"path\": \"ownedInstruments\", \"query\": {\"match\": {\"ownedInstruments.id\": \"" + strings[0] + "\"}}}}}";
             Search search = new Search.Builder(string).addIndex(index).addType("user").build();
 
             ArrayList<String> returnedStrings = null;
@@ -123,6 +125,19 @@ public class ElasticsearchController {
             verifyClient();
             try {
                 client.execute(new Delete.Builder(users[0].getId()).index(index).type("user").refresh(true).build());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            return null;
+        }
+    }
+
+    public static class DeleteUserByIdTask extends AsyncTask<String, Void, Void> {
+        @Override
+        protected Void doInBackground(String... strings) {
+            verifyClient();
+            try {
+                client.execute(new Delete.Builder(strings[0]).index(index).type("user").refresh(true).build());
             } catch (IOException e) {
                 e.printStackTrace();
             }

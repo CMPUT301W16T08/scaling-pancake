@@ -1,4 +1,4 @@
-package cmput301w16t08.scaling_pancake;
+package cmput301w16t08.scaling_pancake.adapters;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -10,13 +10,18 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import cmput301w16t08.scaling_pancake.controllers.Controller;
+import cmput301w16t08.scaling_pancake.models.Instrument;
+import cmput301w16t08.scaling_pancake.models.InstrumentList;
+import cmput301w16t08.scaling_pancake.R;
+
 /**
- * Created by dan on 02/03/16.
+ * Created by dan on 06/03/16.
  */
-public class OwnedInstrumentAdapter extends ArrayAdapter
+public class BorrowedInstrumentAdapter extends ArrayAdapter
 {
 
-    public OwnedInstrumentAdapter(Context context, InstrumentList instrumentList)
+    public BorrowedInstrumentAdapter(Context context, InstrumentList instrumentList)
     {
         super(context, 0, instrumentList.getArray());
     }
@@ -28,7 +33,7 @@ public class OwnedInstrumentAdapter extends ArrayAdapter
 
         if (convertView == null)
         {
-            convertView = LayoutInflater.from(getContext()).inflate(R.layout.owned_instrument_list_item, parent, false);
+            convertView = LayoutInflater.from(getContext()).inflate(R.layout.borrowed_instrument_list_item, parent, false);
         }
 
         /* Get the thumbnail going */
@@ -38,7 +43,7 @@ public class OwnedInstrumentAdapter extends ArrayAdapter
             /* In the future, the specific image will be retrieved. For now mothra is a placeholder */
             final Bitmap bitmap = BitmapFactory.decodeResource(getContext().getResources(),
                     R.drawable.mothra, options);
-            ImageView thumbnail = (ImageView) convertView.findViewById(R.id.owned_instrument_list_item_thumbnail);
+            ImageView thumbnail = (ImageView) convertView.findViewById(R.id.borrowed_instrument_list_item_thumbnail);
             thumbnail.setImageBitmap(bitmap);
         }
         catch (Exception e)
@@ -47,11 +52,11 @@ public class OwnedInstrumentAdapter extends ArrayAdapter
         }
 
         /* Add the description and status */
-        TextView description = (TextView) convertView.findViewById(R.id.owned_instrument_list_item_description_tv);
-        TextView status = (TextView) convertView.findViewById(R.id.owned_instrument_list_item_status_tv);
+        TextView description = (TextView) convertView.findViewById(R.id.borrowed_instrument_list_item_description_tv);
+        TextView username = (TextView) convertView.findViewById(R.id.borrowed_instrument_list_item_username_tv);
 
         description.setText(instrument.getDescription());
-        status.setText(String.format("Status: %s", instrument.getStatus()));
+        username.setText(String.format("Username: %s", ((Controller) getContext()).getUserById(instrument.getOwnerId()).getName()));
 
         return convertView;
     }

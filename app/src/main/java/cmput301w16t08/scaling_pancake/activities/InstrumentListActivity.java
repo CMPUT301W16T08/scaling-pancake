@@ -1,12 +1,17 @@
-package cmput301w16t08.scaling_pancake;
+package cmput301w16t08.scaling_pancake.activities;
 
 import android.app.ListActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+
+import cmput301w16t08.scaling_pancake.adapters.BiddedInstrumentsAdapter;
+import cmput301w16t08.scaling_pancake.adapters.BorrowedInstrumentAdapter;
+import cmput301w16t08.scaling_pancake.controllers.Controller;
+import cmput301w16t08.scaling_pancake.adapters.OwnedInstrumentAdapter;
+import cmput301w16t08.scaling_pancake.R;
 
 public class InstrumentListActivity extends ListActivity implements AdapterView.OnItemSelectedListener
 {
@@ -16,9 +21,6 @@ public class InstrumentListActivity extends ListActivity implements AdapterView.
     private BorrowedInstrumentAdapter borrowedInstrumentAdapter;
     private BiddedInstrumentsAdapter biddedInstrumentsAdapter;
 
-    private Instrument instrument;
-    private InstrumentList instrumentList;
-
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -27,11 +29,11 @@ public class InstrumentListActivity extends ListActivity implements AdapterView.
 
         controller = (Controller) getApplicationContext();
 
-        biddedInstrumentsAdapter = new BiddedInstrumentsAdapter(getApplicationContext(),
+        biddedInstrumentsAdapter = new BiddedInstrumentsAdapter(controller,
                 controller.getCurrentUsersBids());
-        ownedInstrumentAdapter = new OwnedInstrumentAdapter(getApplicationContext(),
+        ownedInstrumentAdapter = new OwnedInstrumentAdapter(controller,
                 controller.getCurrentUsersOwnedInstruments());
-        borrowedInstrumentAdapter = new BorrowedInstrumentAdapter(getApplicationContext(),
+        borrowedInstrumentAdapter = new BorrowedInstrumentAdapter(controller,
                 controller.getCurrentUsersBorrowedInstruments());
 
         setListAdapter(ownedInstrumentAdapter);
@@ -80,5 +82,11 @@ public class InstrumentListActivity extends ListActivity implements AdapterView.
     public void onNothingSelected(AdapterView<?> parent)
     {
 
+    }
+
+    public void back(View view)
+    {
+        /* Leave the instrument list view and return to the menu. */
+        finish();
     }
 }

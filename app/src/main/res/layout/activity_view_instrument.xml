@@ -6,10 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context=".activities.CreateProfileActivity">
+    tools:context="cmput301w16t08.scaling_pancake.activities.ViewInstrumentActivity">
 
-
-    <include layout="@layout/content_create_profile"/>
-
+    <include layout="@layout/content_view_instrument"/>
 
 </android.support.design.widget.CoordinatorLayout>

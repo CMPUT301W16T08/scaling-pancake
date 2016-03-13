@@ -1,6 +1,8 @@
-package cmput301w16t08.scaling_pancake;
+package cmput301w16t08.scaling_pancake.models;
 
 import java.util.ArrayList;
+
+import cmput301w16t08.scaling_pancake.models.User;
 
 /**
  * Created by William on 2016-02-19.

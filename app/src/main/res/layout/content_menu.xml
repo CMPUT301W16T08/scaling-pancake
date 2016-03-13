@@ -10,7 +10,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="cmput301w16t08.scaling_pancake.MenuActivity"
+    tools:context=".activities.MenuActivity"
     tools:showIn="@layout/activity_menu">
 
     <LinearLayout
@@ -68,7 +68,7 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/back"
+            android:text="@string/logout"
             android:onClick="logout"
             android:id="@+id/menu_back_button"
             android:layout_marginTop="2dp"

@@ -1,9 +1,16 @@
-package cmput301w16t08.scaling_pancake;
+package cmput301w16t08.scaling_pancake.controllers;
 
 import android.app.Application;
 
 import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
+
+import cmput301w16t08.scaling_pancake.models.Bid;
+import cmput301w16t08.scaling_pancake.models.BidList;
+import cmput301w16t08.scaling_pancake.util.Deserializer;
+import cmput301w16t08.scaling_pancake.models.Instrument;
+import cmput301w16t08.scaling_pancake.models.InstrumentList;
+import cmput301w16t08.scaling_pancake.models.User;
 
 /**
  * Created by William on 2016-02-19.
@@ -94,6 +101,11 @@ public class Controller extends Application {
         ElasticsearchController.DeleteUserTask deleteUserTask = new ElasticsearchController.DeleteUserTask();
         deleteUserTask.execute(this.currentUser);
         this.currentUser = null;
+    }
+
+    public void deleteUserById(String id) {
+        ElasticsearchController.DeleteUserByIdTask deleteUserTask = new ElasticsearchController.DeleteUserByIdTask();
+        deleteUserTask.execute(id);
     }
 
     public boolean login(String username) {

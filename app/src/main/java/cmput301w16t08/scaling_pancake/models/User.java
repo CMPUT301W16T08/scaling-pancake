@@ -1,7 +1,11 @@
-package cmput301w16t08.scaling_pancake;
+package cmput301w16t08.scaling_pancake.models;
 
-import java.util.ArrayList;
 import java.util.UUID;
+
+import cmput301w16t08.scaling_pancake.models.Bid;
+import cmput301w16t08.scaling_pancake.models.BidList;
+import cmput301w16t08.scaling_pancake.models.Instrument;
+import cmput301w16t08.scaling_pancake.models.InstrumentList;
 
 /**
  * Created by William on 2016-02-12.
@@ -117,7 +121,7 @@ public class User {
     }
 
     public void deleteBorrowedInstrument(Instrument instrument) {
-        if (this.ownedInstruments.containsInstrument(instrument)) {
+        if (this.borrowedInstruments.containsInstrument(instrument)) {
             this.borrowedInstruments.removeInstrument(instrument);
         } else {
             throw new RuntimeException();

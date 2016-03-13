@@ -3,6 +3,12 @@ package cmput301w16t08.scaling_pancake;
 
 import android.test.ActivityInstrumentationTestCase2;
 
+import cmput301w16t08.scaling_pancake.models.Bid;
+import cmput301w16t08.scaling_pancake.models.BidList;
+import cmput301w16t08.scaling_pancake.models.Instrument;
+import cmput301w16t08.scaling_pancake.models.InstrumentList;
+import cmput301w16t08.scaling_pancake.models.User;
+
 public class UserTest extends ActivityInstrumentationTestCase2 {
     public UserTest() {
         super(User.class);
@@ -66,6 +72,7 @@ public class UserTest extends ActivityInstrumentationTestCase2 {
         InstrumentList instruments = user.getOwnedBorrowedInstruments();
         assertEquals(instruments.size(), 0);
         borrower.addBid(new Bid(user.getOwnedInstruments().getInstrument(0).getId(), user.getId(), borrower.getId(), 1));
+        user.getOwnedInstruments().getInstrument(0).addBid(borrower.getBids().getBid(0));
         user.getOwnedInstruments().getInstrument(0).acceptBid(0);
         instruments = user.getOwnedBorrowedInstruments();
         assertEquals(instruments.size(), 1);

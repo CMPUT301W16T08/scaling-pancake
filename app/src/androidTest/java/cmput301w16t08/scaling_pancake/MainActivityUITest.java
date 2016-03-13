@@ -7,6 +7,8 @@ import android.test.UiThreadTest;
 import android.widget.Button;
 import android.widget.EditText;
 
+import cmput301w16t08.scaling_pancake.controllers.Controller;
+
 /**
  * Created by Aaron on 3/2/2016.
  */
