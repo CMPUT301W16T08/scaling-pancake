@@ -1,14 +1,23 @@
 package cmput301w16t08.scaling_pancake;
 
 import android.app.Activity;
+import android.app.ActivityManager;
 import android.app.Instrumentation;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.test.ActivityInstrumentationTestCase2;
 import android.test.UiThreadTest;
+import android.view.Menu;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.robotium.solo.Solo;
+
 import cmput301w16t08.scaling_pancake.activities.CreateProfileActivity;
+import cmput301w16t08.scaling_pancake.activities.MainActivity;
+import cmput301w16t08.scaling_pancake.activities.MenuActivity;
 import cmput301w16t08.scaling_pancake.controllers.Controller;
+import cmput301w16t08.scaling_pancake.models.User;
 
 
 public class CreateProfileActivityUITest extends ActivityInstrumentationTestCase2 {
@@ -49,25 +58,28 @@ public class CreateProfileActivityUITest extends ActivityInstrumentationTestCase
 
         /* click on button if the user is already there */
         createProfile(testUser.getName(), testUser.getEmail());
-        //TODO: check no element is added to userlist
 
         //check this activity is still running
         assertFalse(activity.isFinishing());
 
         //make sure this is no such user
-        controller.deleteUser();
-        //assertFalse(controller.getUserList().containsUser(testUser));
+
+        User u = controller.getUserByName(testUser.getName());
+        controller.deleteUserById(u.getId());
+        assertNull(controller.getUserByName(testUser.getName()));
 
         // create a new profile, click on profile button
         createProfile(testUser.getName(), testUser.getEmail());
 
         //check the user is in userlist now
-        //assertTrue(controller.getUserList().containsUser(testUser));
+        assertNotNull(controller.getUserByName(testUser.getName()));
 
         //make sure this activity ends already
         assertTrue(activity.isFinishing());
 
-
+        //clear the test data: delete the user
+        User n = controller.getUserByName(testUser.getName());
+        controller.deleteUserById(n.getId());
     }
 
     @UiThreadTest
@@ -75,19 +87,10 @@ public class CreateProfileActivityUITest extends ActivityInstrumentationTestCase
 
         assertFalse(activity.isFinishing());
         ((Button) activity.findViewById(R.id.createprofile_cancel_button)).performClick();
+
         //check if this activity ends
         assertTrue(activity.isFinishing());
 
-        // button in MainActivity:
-        boolean flag = true;
-        /*while(flag){
-            Button loginButton = (Button) getActivity().findViewById(R.id.startscreen_login_button);
-            if(loginButton != null){
-                flag = false;
-            }
-        }*/
-
-        //assertTrue(loginButton.isShown());
 
     }
 }

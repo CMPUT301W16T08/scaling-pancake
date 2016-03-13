@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import cmput301w16t08.scaling_pancake.controllers.Controller;
 import cmput301w16t08.scaling_pancake.R;
@@ -33,9 +34,13 @@ public class AddInstrumentActivity extends AppCompatActivity {
         String name = nameET.getText().toString();
         String description = descriptionET.getText().toString();
 
-        controller.addInstrument(name,description);
+        if ((!name.equals("")) && (!description.equals(""))) {
+            controller.addInstrument(name, description);
+            finish();
+        } else {
+            Toast.makeText(AddInstrumentActivity.this, "Both Name and Description are required", Toast.LENGTH_LONG).show();
+        }
 
-        finish();
     }
 
     public void addInstrumentCancel(View view){

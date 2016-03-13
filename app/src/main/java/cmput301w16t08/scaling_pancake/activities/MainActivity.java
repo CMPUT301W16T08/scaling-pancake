@@ -1,6 +1,7 @@
 package cmput301w16t08.scaling_pancake.activities;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -24,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
         controller = (Controller) getApplicationContext();
 
     }
+
 
     public void createProfile(View view) {
         Intent intent = new Intent(this, CreateProfileActivity.class);
@@ -66,6 +68,7 @@ public class MainActivity extends AppCompatActivity {
                     /* New user was created; start MenuActivity immediately */
                     Intent intent = new Intent(this, MenuActivity.class);
                     startActivity(intent);
+
                 }
             }
         }
