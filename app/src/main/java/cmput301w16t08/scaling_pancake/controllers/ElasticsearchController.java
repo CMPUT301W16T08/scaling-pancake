@@ -1,4 +1,4 @@
-package cmput301w16t08.scaling_pancake;
+package cmput301w16t08.scaling_pancake.controllers;
 
 import android.os.AsyncTask;
 import android.util.Log;
@@ -10,6 +10,8 @@ import com.searchly.jestdroid.JestDroidClient;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import cmput301w16t08.scaling_pancake.util.Serializer;
+import cmput301w16t08.scaling_pancake.models.User;
 import io.searchbox.core.Delete;
 import io.searchbox.core.DocumentResult;
 import io.searchbox.core.Index;

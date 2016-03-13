@@ -7,6 +7,10 @@ import android.util.Log;
 import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
 
+import cmput301w16t08.scaling_pancake.controllers.ElasticsearchController;
+import cmput301w16t08.scaling_pancake.models.User;
+import cmput301w16t08.scaling_pancake.util.Deserializer;
+
 /**
  * Created by William on 2016-02-25.
  */

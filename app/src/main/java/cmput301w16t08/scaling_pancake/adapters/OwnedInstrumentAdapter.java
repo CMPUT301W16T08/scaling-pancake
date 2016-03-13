@@ -1,4 +1,4 @@
-package cmput301w16t08.scaling_pancake;
+package cmput301w16t08.scaling_pancake.adapters;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -9,6 +9,10 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import cmput301w16t08.scaling_pancake.models.Instrument;
+import cmput301w16t08.scaling_pancake.models.InstrumentList;
+import cmput301w16t08.scaling_pancake.R;
 
 /**
  * Created by dan on 02/03/16.

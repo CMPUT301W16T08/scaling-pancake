@@ -1,4 +1,4 @@
-package cmput301w16t08.scaling_pancake;
+package cmput301w16t08.scaling_pancake.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,6 +6,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
+
+import cmput301w16t08.scaling_pancake.controllers.Controller;
+import cmput301w16t08.scaling_pancake.R;
+import cmput301w16t08.scaling_pancake.models.User;
 
 
 public class ViewProfileActivity extends AppCompatActivity {
@@ -30,26 +34,26 @@ public class ViewProfileActivity extends AppCompatActivity {
     }
 
     public void setUsernameTextView(User user) {
-        TextView usernameTextView = (TextView) findViewById(R.id.username_textView);
+        TextView usernameTextView = (TextView) findViewById(R.id.view_profile_username_tv);
         String name = user.getName();
 
-        Log.d(TAG, name);
-        usernameTextView.setText(name);
+        usernameTextView.append(name);
     }
 
     public void setEmailTextView(User user){
-        TextView emailTextView = (TextView) findViewById(R.id.email_textView);
+        TextView emailTextView = (TextView) findViewById(R.id.view_profile_email_tv);
         String email = user.getEmail();
-        emailTextView.setText(email);
+        emailTextView.append(email);
     }
 
     public void launchEditProfile(View view){
         Intent intent = new Intent(this, EditProfileActivity.class);
-        startActivity(intent);
-    }
-    public void goToMainMenu(View view){
-        Intent intent = new Intent(this,MenuActivity.class);
+
         startActivity(intent);
 
+        finish();
+    }
+    public void goToMainMenu(View view){
+        finish();
     }
 }

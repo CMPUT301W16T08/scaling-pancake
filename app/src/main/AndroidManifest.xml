@@ -1,68 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="cmput301w16t08.scaling_pancake">
+<manifest package="cmput301w16t08.scaling_pancake"
+          xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
-        android:name=".Controller"
+        android:name=".controllers.Controller"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/MyTheme">
         <activity
-            android:name=".MainActivity"
+            android:name=".activities.MainActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/MyTheme">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
         <activity
-            android:name=".InstrumentListActivity"
+            android:name=".activities.InstrumentListActivity"
             android:label="@string/title_activity_instrumentlist"
-            android:theme="@style/MyTheme" >
-            </activity>
-        <activity
-            android:name=".ViewProfileActivity"
-            android:label="@string/title_activity_view_profile"
-            android:theme="@style/MyTheme" />
-        <activity
-            android:name=".EditProfileActivity"
-            android:label="@string/title_activity_edit_profile"
-            android:theme="@style/MyTheme" />
-        <activity
-            android:name=".CreateProfileActivity"
-            android:label="@string/title_activity_create_profile"
-            android:theme="@style/MyTheme" />
-        <activity
-            android:name=".MenuActivity"
-            android:label="@string/title_activity_menu"
-            android:theme="@style/MyTheme" />
-        <activity
-            android:name=".AddInstrumentActivity"
-            android:label="@string/title_activity_add_instrument"
-            android:theme="@style/MyTheme" />
-        <activity
-            android:name=".SearchInstrumentsActivity"
-            android:label="@string/title_activity_search_instruments"
-            android:parentActivityName=".MenuActivity"
             android:theme="@style/MyTheme">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="cmput301w16t08.scaling_pancake.MenuActivity" />
         </activity>
         <activity
-            android:name=".DisplaySearchResultsActivity"
-            android:label="@string/title_activity_display_search_results"
-            android:parentActivityName=".SearchInstrumentsActivity"
+            android:name=".activities.ViewProfileActivity"
+            android:label="@string/title_activity_view_profile"
+            android:theme="@style/MyTheme"/>
+        <activity
+            android:name=".activities.EditProfileActivity"
+            android:label="@string/title_activity_edit_profile"
+            android:theme="@style/MyTheme"/>
+        <activity
+            android:name=".activities.CreateProfileActivity"
+            android:label="@string/title_activity_create_profile"
+            android:theme="@style/MyTheme"/>
+        <activity
+            android:name=".activities.MenuActivity"
+            android:label="@string/title_activity_menu"
+            android:theme="@style/MyTheme"/>
+        <activity
+            android:name=".activities.AddInstrumentActivity"
+            android:label="@string/title_activity_add_instrument"
+            android:theme="@style/MyTheme"/>
+        <activity
+            android:name=".activities.SearchInstrumentsActivity"
+            android:label="@string/title_activity_search_instruments"
+            android:parentActivityName=".activities.MenuActivity"
             android:theme="@style/MyTheme">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="cmput301w16t08.scaling_pancake.SearchInstrumentsActivity" />
+                android:value=".activities.MenuActivity"/>
+        </activity>
+        <activity
+            android:name=".activities.DisplaySearchResultsActivity"
+            android:label="@string/title_activity_display_search_results"
+            android:parentActivityName=".activities.SearchInstrumentsActivity"
+            android:theme="@style/MyTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.SearchInstrumentsActivity"/>
+        </activity>
+        <activity
+            android:name=".activities.ViewInstrumentActivity"
+            android:label="@string/title_activity_view_instrument"
+            android:theme="@style/MyTheme">
         </activity>
     </application>
 
