@@ -316,13 +316,36 @@ public class Controller extends Application {
         updateUserTask.execute(this.currentUser);
     }
 
-    public InstrumentList searchInstruments(String keywords) {
+/*    public InstrumentList searchInstruments(String keywords) {
         // returns a list of instruments that contain the words in keywords
-        // words can be separated by a space and an empty string will return
-        // all instruments in the database
-        //TODO: add search instrument functionality
-        return null;
-    }
+        // words can be separated by a space
+        ElasticsearchController.SearchInstrumentsTask searchInstrumentsTask = new ElasticsearchController.SearchInstrumentsTask();
+        searchInstrumentsTask.execute(keywords);
+        ArrayList<String> usrs = null;
+        try {
+            usrs = searchInstrumentsTask.get();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+        InstrumentList instruments = new InstrumentList();
+        for (int i = 0; i < usrs.size(); i++) {
+            User user = new Deserializer().deserializeUser(usrs.get(i));
+            for (int j = 0; j < user.getOwnedInstruments().size(); j++) {
+                if (user.getOwnedInstruments().getInstrument(j).getStatus().equals("borrowed")) {
+                    continue;
+                }
+                String string1 = keywords.toLowerCase();
+                String string2 = user.getOwnedInstruments().getInstrument(j).getName().toLowerCase();
+                String string3 = user.getOwnedInstruments().getInstrument(j).getDescription().toLowerCase();
+                if (string2.contains(string1) || string3.contains(string1)) {
+                    instruments.addInstrument(user.getOwnedInstruments().getInstrument(j));
+                }
+            }
+        }
+        return instruments;
+    }*/
 
     public void makeBidOnInstrument(Instrument instrument, float amount) {
         // current logged in user makes a bid on a instrument

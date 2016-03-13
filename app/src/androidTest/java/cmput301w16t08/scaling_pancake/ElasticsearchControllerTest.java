@@ -64,7 +64,6 @@ public class ElasticsearchControllerTest extends ActivityInstrumentationTestCase
         task4.execute(user);
     }
 
-    // test also covers GetInstrumentTask()
     public void testUpdateUserTask() {
         User user = new User("testuser1", "testemail1");
         Log.d("ESC", "CreateUserTask starting...");

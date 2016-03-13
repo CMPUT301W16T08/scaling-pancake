@@ -163,14 +163,29 @@ public class ElasticsearchController {
         }
     }
 
-    public static class SearchInstrumentsTask extends AsyncTask<String, Void, ArrayList<String>> {
+/*    public static class SearchInstrumentsTask extends AsyncTask<String, Void, ArrayList<String>> {
         @Override
         protected ArrayList<String> doInBackground(String... strings) {
-            // each string is a separate keyword
+            // only one string containing all the keywords separated by spaces should be entered
             verifyClient();
-            return null;
+            String string = "{\"query\": { \"nested\": {\"path\": \"ownedInstruments\", \"query\": \"bool\" : {\"should\" : [{\"match\": {\"ownedInstruments.description\": \"" + strings[0] + "\"}}, {\"match\": {\"ownedInstruments.name\": \"" + strings[0] + "\"}}]}}}}";
+            Search search = new Search.Builder(string).addIndex(index).addType("user").build();
+
+            ArrayList<String> returnedStrings = null;
+            try {
+                SearchResult result = client.execute(search);
+                if (result.isSucceeded()) {
+                    Log.d("ESC", "GetUserTask completed.");
+                    returnedStrings = (ArrayList) result.getSourceAsStringList();
+                } else {
+                    throw new RuntimeException("search did not succeed");
+                }
+            } catch (IOException e) {
+                throw new RuntimeException("search did not succeed");
+            }
+            return returnedStrings;
         }
-    }
+    }*/
 
     public static void verifyClient() {
         if (client == null) {
