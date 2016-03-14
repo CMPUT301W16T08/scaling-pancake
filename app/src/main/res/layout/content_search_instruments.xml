@@ -44,7 +44,8 @@
             android:onClick="goToMainMenu"
             android:layout_marginTop="2dp"
             android:layout_marginBottom="2dp"
-            android:background="@drawable/btn_selector"/>
+            android:background="@drawable/btn_selector"
+            android:id="@+id/search_instrument_back_button" />
 
     </LinearLayout>
 
