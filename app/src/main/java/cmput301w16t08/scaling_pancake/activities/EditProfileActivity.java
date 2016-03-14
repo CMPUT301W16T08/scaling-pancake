@@ -22,7 +22,8 @@ public class EditProfileActivity extends AppCompatActivity {
     }
 
     public void save_profile_changes(View view){
-        // http://stackoverflow.com/questions/6290531/check-if-edittext-is-empty
+        /* Flags */
+        boolean usernameChanged = false, emailChanged = false;
 
         /* Obtain username string from edittext. */
         EditText txtUsername = (EditText) findViewById(R.id.edit_profile_username_et);
@@ -32,30 +33,45 @@ public class EditProfileActivity extends AppCompatActivity {
         EditText txtEmail = (EditText) findViewById(R.id.edit_profile_email_et);
         String strEmail = txtEmail.getText().toString();
 
-        if (TextUtils.isEmpty(strUsername))
+        if (!TextUtils.isEmpty(strUsername))
         {
-            /* Empty Input */
-            Toast.makeText(controller, "Username cannot be empty.", Toast.LENGTH_SHORT).show();
-            return;
+            /* Username data entered */
+            usernameChanged = true;
         }
 
-        if(TextUtils.isEmpty(strEmail))
+        if(!TextUtils.isEmpty(strEmail))
         {
-            /* Empty Input */
-            Toast.makeText(controller, "Email cannot be empty.", Toast.LENGTH_SHORT).show();
-            return;
+            /* Email data changed */
+            emailChanged = true;
         }
 
-        if(controller.editCurrentUser(strUsername, strEmail))
+        if(usernameChanged)
         {
-            /* Good input. */
+            /* If Data was entered in username field and username not taken */
+            if(controller.editCurrentUserName(strUsername))
+            {
+                /* change email as well if requested */
+                if(emailChanged)
+                {
+                    controller.editCurrentUserEmail(strEmail);
+                }
+                Toast.makeText(controller, "Changes saved!", Toast.LENGTH_SHORT).show();
+                finish();
+            }
+            else
+            {
+                /* Controller indicated this username already exists. */
+                Toast.makeText(controller, "Username is already taken.", Toast.LENGTH_SHORT).show();
+                return;
+            }
+        }
+
+        /* Username unchanged but email changed */
+        if(emailChanged)
+        {
+            controller.editCurrentUserEmail(strEmail);
             Toast.makeText(controller, "Changes saved!", Toast.LENGTH_SHORT).show();
             finish();
-        }
-        else
-        {
-            /* Controller indicated this username already exists. */
-            Toast.makeText(controller, "Username is already taken.", Toast.LENGTH_SHORT).show();
         }
     }
 

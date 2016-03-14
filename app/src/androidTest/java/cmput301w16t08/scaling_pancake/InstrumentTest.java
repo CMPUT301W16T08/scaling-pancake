@@ -68,7 +68,8 @@ public class InstrumentTest extends ActivityInstrumentationTestCase2 {
         User owner = new User("Owner", "Owner email");
         User bidder1 = new User("Bidder1", "Bidder1 email");
         Instrument instrument = new Instrument(owner.getId(), "name", "Description");
-        instrument.setBorrowedBy(bidder1.getId());
+        instrument.setBorrowedById(bidder1.getId());
+        instrument.setStatus("borrowed");
         assertEquals(instrument.getBorrowedById(), bidder1.getId());
     }
 
@@ -76,7 +77,8 @@ public class InstrumentTest extends ActivityInstrumentationTestCase2 {
         User owner = new User("Owner", "Owner email");
         User bidder1 = new User("Bidder1", "Bidder1 email");
         Instrument instrument = new Instrument(owner.getId(), "name", "Description");
-        instrument.setBorrowedBy(bidder1.getId());
+        instrument.setBorrowedById(bidder1.getId());
+        instrument.setStatus("borrowed");
         assertEquals(instrument.getBorrowedById(), bidder1.getId());
     }
 

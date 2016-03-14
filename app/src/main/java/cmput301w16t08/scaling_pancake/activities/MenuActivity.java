@@ -1,6 +1,7 @@
 package cmput301w16t08.scaling_pancake.activities;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -9,7 +10,6 @@ import cmput301w16t08.scaling_pancake.controllers.Controller;
 import cmput301w16t08.scaling_pancake.R;
 
 public class MenuActivity extends AppCompatActivity {
-
     // set up our global controller
     private static Controller controller;
 
@@ -19,8 +19,8 @@ public class MenuActivity extends AppCompatActivity {
         setContentView(R.layout.activity_menu);
 
         controller = (Controller) getApplicationContext();
-
     }
+
 
     public void viewProfile(View view){
         Intent intent = new Intent(this, ViewProfileActivity.class);

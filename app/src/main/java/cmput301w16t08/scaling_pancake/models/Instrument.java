@@ -143,6 +143,7 @@ public class Instrument {
      */
     public void setBorrowedById(String borrowedBy) {
         this.borrowedById = borrowedBy;
+        this.status = "borrowed";
     }
 
     /**

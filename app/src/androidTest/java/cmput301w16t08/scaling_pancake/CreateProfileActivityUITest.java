@@ -1,14 +1,23 @@
 package cmput301w16t08.scaling_pancake;
 
 import android.app.Activity;
+import android.app.ActivityManager;
 import android.app.Instrumentation;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.test.ActivityInstrumentationTestCase2;
 import android.test.UiThreadTest;
+import android.view.Menu;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.robotium.solo.Solo;
+
 import cmput301w16t08.scaling_pancake.activities.CreateProfileActivity;
+import cmput301w16t08.scaling_pancake.activities.MainActivity;
+import cmput301w16t08.scaling_pancake.activities.MenuActivity;
 import cmput301w16t08.scaling_pancake.controllers.Controller;
+import cmput301w16t08.scaling_pancake.models.User;
 
 
 public class CreateProfileActivityUITest extends ActivityInstrumentationTestCase2 {
@@ -43,31 +52,45 @@ public class CreateProfileActivityUITest extends ActivityInstrumentationTestCase
     @UiThreadTest
     public void testCreateProfile() {
         Controller controller = (Controller) activity.getApplicationContext();
+        User testUser = new User("admin","admin@123.com");
 
+        controller.createUser(testUser.getName(),testUser.getEmail());
 
-        //TODO: i need arrayadapter here
-        createProfile("admin","admin@123.com");
-        //TODO: check userlist is increated by 1
+        /* click on button if the user is already there */
+        createProfile(testUser.getName(), testUser.getEmail());
 
-        //TODO: check the last element in userlist is the one we created
+        //check this activity is still running
+        assertFalse(activity.isFinishing());
 
-        //TODO: check the if the activity changes back to Mainactivity ????
-        //assertEquals(getActivity() ,MainActivity.class);
+        //make sure this is no such user
 
-        createProfile("admin", "admin@123.com");
-        //TODO: check no element is added to userlist
+        User u = controller.getUserByName(testUser.getName());
+        controller.deleteUserById(u.getId());
+        assertNull(controller.getUserByName(testUser.getName()));
 
-        //TODO: check if there is a toast popup ????????
+        // create a new profile, click on profile button
+        createProfile(testUser.getName(), testUser.getEmail());
+
+        //check the user is in userlist now
+        assertNotNull(controller.getUserByName(testUser.getName()));
+
+        //make sure this activity ends already
+        assertTrue(activity.isFinishing());
+
+        //clear the test data: delete the user
+        User n = controller.getUserByName(testUser.getName());
+        controller.deleteUserById(n.getId());
     }
 
     @UiThreadTest
     public void testCancelButton(){
 
-
+        assertFalse(activity.isFinishing());
         ((Button) activity.findViewById(R.id.createprofile_cancel_button)).performClick();
 
-        //check if the is changed back to MainActivity
+        //check if this activity ends
         assertTrue(activity.isFinishing());
+
 
     }
 }
