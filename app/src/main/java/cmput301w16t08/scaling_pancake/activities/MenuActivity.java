@@ -9,6 +9,19 @@ import android.view.View;
 import cmput301w16t08.scaling_pancake.controllers.Controller;
 import cmput301w16t08.scaling_pancake.R;
 
+/**
+ * The <code>MenuActivity</code> provides a set of options for the user to click on.
+ * Each option navigates to a corresponding <code>Activity</code>.
+ * This is the main "dashboard" of the application.
+ *
+ * @author cmput301w16t08
+ * @see ViewProfileActivity
+ * @see SearchInstrumentsActivity
+ * @see InstrumentListActivity
+ * @see AddInstrumentActivity
+ * @see Controller
+ *
+ */
 public class MenuActivity extends AppCompatActivity {
     // set up our global controller
     private static Controller controller;
