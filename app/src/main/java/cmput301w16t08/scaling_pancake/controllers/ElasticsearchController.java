@@ -19,13 +19,26 @@ import io.searchbox.core.Search;
 import io.searchbox.core.SearchResult;
 
 /**
- * Created by William on 2016-02-25.
+ * <code>ElasticsearchController</code> is a class containing classes that deal with saving <code>User</code>s
+ * using elasticsearch. All nested classes extend <code>AsyncTask</code> and are thus run ASYNCHRONOUSLY.
+ *
+ * <code>ElasticsearchController</code> should only be used within the <code>Controller</code>.
+ *
+ * @author William
+ * @see User
+ * @see Controller
  */
 public class ElasticsearchController {
     private static JestDroidClient client;
     private static String url = "http://cmput301.softwareprocess.es:8080";
     private static String index = "cmput301w16t08";
 
+    /**
+     * <code>CreateUserTask</code> is meant to save a new <code>User</code>
+     *
+     * @see User
+     * @see Serializer
+     */
     public static class CreateUserTask extends AsyncTask<User, Void, Void> {
         @Override
         protected Void doInBackground(User... users) {
@@ -47,6 +60,15 @@ public class ElasticsearchController {
         }
     }
 
+    /**
+     * <code>GetUserTask</code> is meant to search for the <code>User</code> with the supplied id
+     * Returns an <code>ArrayList</code> of JSON strings that can be translated into <code>User</code>s
+     * using the <code>Deserializer</code> class.
+     * The returned <code>ArrayList</code> should only contain 1 <code>User</code> (due to unique ids).
+     *
+     * @see User
+     * @see cmput301w16t08.scaling_pancake.util.Deserializer
+     */
     public static class GetUserTask extends AsyncTask<String, Void, ArrayList<String>> {
          @Override
         protected ArrayList<String> doInBackground(String... strings) {
@@ -72,6 +94,16 @@ public class ElasticsearchController {
          }
     }
 
+    /**
+     * <code>GetUserByNameTask</code> is meant to search for the <code>User</code> with the supplied username
+     * Returns an <code>ArrayList</code> of JSON strings that can be translated into <code>User</code>s
+     * using the <code>Deserializer</code> class.
+     * The returned <code>ArrayList</code> may contain more then 1 <code>User</code> (due to other <code>User</code>s
+     * having usernames that begin the same).
+     *
+     * @see User
+     * @see cmput301w16t08.scaling_pancake.util.Deserializer
+     */
     public static class GetUserByNameTask extends AsyncTask<String, Void, ArrayList<String>> {
         protected  ArrayList<String> doInBackground(String... strings) {
             // NOTE: only EVER called with one string (the username to search for)
@@ -97,7 +129,17 @@ public class ElasticsearchController {
         }
     }
 
-    public static class GetUserByInstrumentId extends AsyncTask<String, Void, ArrayList<String>> {
+    /**
+     * <code>GetUserByInstrumentIdTask</code> is meant to search for the <code>User</code> that owns the supplied
+     * <code>Instrument</code>. Returns an <code>ArrayList</code> of JSON strings that can be translated
+     * into <code>User</code>s using the <code>Deserializer</code> class.
+     * The returned <code>ArrayList</code> should only contain 1 <code>User</code> (due to unique instrument ids).
+     *
+     * @see User
+     * @see cmput301w16t08.scaling_pancake.models.Instrument
+     * @see cmput301w16t08.scaling_pancake.util.Deserializer
+     */
+    public static class GetUserByInstrumentIdTask extends AsyncTask<String, Void, ArrayList<String>> {
         protected ArrayList<String> doInBackground(String... strings) {
             verifyClient();
             String string = "{\"query\": { \"nested\": {\"path\": \"ownedInstruments\", \"query\": {\"match\": {\"ownedInstruments.id\": \"" + strings[0] + "\"}}}}}";
@@ -119,6 +161,11 @@ public class ElasticsearchController {
         }
     }
 
+    /**
+     * <code>DeleteUserTask</code> is meant to delete a <code>User</code>
+     *
+     * @see User
+     */
     public static class DeleteUserTask extends AsyncTask<User, Void, Void> {
         @Override
         protected Void doInBackground(User... users) {
@@ -132,6 +179,11 @@ public class ElasticsearchController {
         }
     }
 
+    /**
+     * <code>DeleteUserByIdTask</code> is meant to delete the <code>User</code> with the supplied id
+     *
+     * @see User
+     */
     public static class DeleteUserByIdTask extends AsyncTask<String, Void, Void> {
         @Override
         protected Void doInBackground(String... strings) {
@@ -145,6 +197,13 @@ public class ElasticsearchController {
         }
     }
 
+    /**
+     * <code>UpdateUserTask</code> is meant to update the index of the <code>User</code> to reflect
+     * any new changes
+     *
+     * @see User
+     * @see Serializer
+     */
     public static class UpdateUserTask extends AsyncTask<User, Void, Void> {
         @Override
         protected Void doInBackground(User... users) {
@@ -165,7 +224,16 @@ public class ElasticsearchController {
         }
     }
 
-/*    public static class SearchInstrumentsTask extends AsyncTask<String, Void, ArrayList<String>> {
+ /*   *//**
+     * <code>SearchInstrumentsTask</code> is meant to search all the <code>Instrument</code>s already saved
+     * and find the ones containing the keywords that are separated by a space in the supplied string.
+     * Returns an <code>ArrayList</code> of JSON strings, that can be translated using the <code>Deserializer</code>
+     * class, corresponding to the <code>User</code>s that own the instruments.
+     *
+     * @see User
+     * @see cmput301w16t08.scaling_pancake.models.Instrument
+     *//*
+    public static class SearchInstrumentsTask extends AsyncTask<String, Void, ArrayList<String>> {
         @Override
         protected ArrayList<String> doInBackground(String... strings) {
             // only one string containing all the keywords separated by spaces should be entered
