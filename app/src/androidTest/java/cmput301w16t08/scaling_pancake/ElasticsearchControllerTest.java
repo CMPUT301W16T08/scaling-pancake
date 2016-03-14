@@ -165,6 +165,64 @@ public class ElasticsearchControllerTest extends ActivityInstrumentationTestCase
     }
 
     public void testSearchInstrumentsTask() {
-        //TODO: add test
+        User user = new User("testuser01", "testemail01");
+        ElasticsearchController.CreateUserTask task1 = new ElasticsearchController.CreateUserTask();
+        task1.execute(user);
+        user.addOwnedInstrument("name01", "key");
+        // to show even if 2 instruments from the same user satisfy the search, the user only gets returned once
+        // add another instrument with same description
+        user.addOwnedInstrument("name02", "key");
+        ElasticsearchController.UpdateUserTask task2 = new ElasticsearchController.UpdateUserTask();
+        task2.execute(user);
+        User user2 = new User("testuser02", "testemail02");
+        ElasticsearchController.CreateUserTask task3 = new ElasticsearchController.CreateUserTask();
+        task3.execute(user2);
+        user2.addOwnedInstrument("name03", "keyword");
+        ElasticsearchController.UpdateUserTask task4 = new ElasticsearchController.UpdateUserTask();
+        task4.execute(user2);
+
+        ElasticsearchController.SearchInstrumentsTask task5 = new ElasticsearchController.SearchInstrumentsTask();
+        task5.execute("There should not be an instrument containing this string");
+        ArrayList<String> users = null;
+        try {
+            users = task5.get();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+        assertNotNull(users);
+        assertEquals(users.size(), 0);
+
+        ElasticsearchController.SearchInstrumentsTask task6 = new ElasticsearchController.SearchInstrumentsTask();
+        task6.execute("keyword");
+        users = null;
+        try {
+            users = task6.get();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+        assertNotNull(users);
+        assertEquals(users.size(), 1);
+
+        ElasticsearchController.SearchInstrumentsTask task7 = new ElasticsearchController.SearchInstrumentsTask();
+        task7.execute("key");
+        users = null;
+        try {
+            users = task7.get();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+        assertNotNull(users);
+        assertEquals(users.size(), 2);
+
+        ElasticsearchController.DeleteUserTask task8 = new ElasticsearchController.DeleteUserTask();
+        task8.execute(user);
+        ElasticsearchController.DeleteUserTask task9 = new ElasticsearchController.DeleteUserTask();
+        task9.execute(user2);
     }
 }

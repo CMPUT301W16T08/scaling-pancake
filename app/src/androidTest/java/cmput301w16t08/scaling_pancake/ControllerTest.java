@@ -395,7 +395,35 @@ public class ControllerTest extends ActivityInstrumentationTestCase2 {
     // Use case: US 04.01.01 Search instruments
     // Use case: US 04.02.01 Get search results
     public void testSearchInstruments() {
-        //TODO: search instruments test
+        Controller controller = new Controller();
+        controller.createUser("user01", "email01");
+        controller.createUser("user02", "email02");
+        controller.createUser("user03", "email03");
+        controller.login("user01");
+        controller.addInstrument("name01", "description01");
+        controller.logout();
+        controller.login("user02");
+        controller.addInstrument("name02", "description02");
+        controller.logout();
+        controller.login("user03");
+        InstrumentList instruments = controller.searchInstruments("hhfkdlsajfsajkfds");
+        assertEquals(instruments.size(), 0);
+        instruments = controller.searchInstruments("description01");
+        assertEquals(instruments.size(), 1);
+        assertEquals(instruments.getInstrument(0).getName(), "name01");
+        instruments = controller.searchInstruments("name01");
+        assertEquals(instruments.size(), 1);
+        assertEquals(instruments.getInstrument(0).getName(), "name01");
+        instruments = controller.searchInstruments("description");
+        assertEquals(instruments.size(), 2);
+        instruments = controller.searchInstruments("name");
+        assertEquals(instruments.size(), 2);
+
+        controller.deleteUser();
+        controller.login("user02");
+        controller.deleteUser();
+        controller.login("user01");
+        controller.deleteUser();
     }
 
     // Use case: US 05.01.01 Make bid on instrument

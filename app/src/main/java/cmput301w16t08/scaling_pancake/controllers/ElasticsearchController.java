@@ -34,7 +34,7 @@ public class ElasticsearchController {
     private static String index = "cmput301w16t08";
 
     /**
-     * <code>CreateUserTask</code> is meant to save a new <code>User</code>
+     * <code>CreateUserTask</code> is used to save a new <code>User</code>
      *
      * @see User
      * @see Serializer
@@ -61,7 +61,7 @@ public class ElasticsearchController {
     }
 
     /**
-     * <code>GetUserTask</code> is meant to search for the <code>User</code> with the supplied id
+     * <code>GetUserTask</code> is used to search for the <code>User</code> with the supplied id
      * Returns an <code>ArrayList</code> of JSON strings that can be translated into <code>User</code>s
      * using the <code>Deserializer</code> class.
      * The returned <code>ArrayList</code> should only contain 1 <code>User</code> (due to unique ids).
@@ -95,7 +95,7 @@ public class ElasticsearchController {
     }
 
     /**
-     * <code>GetUserByNameTask</code> is meant to search for the <code>User</code> with the supplied username
+     * <code>GetUserByNameTask</code> is used to search for the <code>User</code> with the supplied username
      * Returns an <code>ArrayList</code> of JSON strings that can be translated into <code>User</code>s
      * using the <code>Deserializer</code> class.
      * The returned <code>ArrayList</code> may contain more then 1 <code>User</code> (due to other <code>User</code>s
@@ -130,7 +130,7 @@ public class ElasticsearchController {
     }
 
     /**
-     * <code>GetUserByInstrumentIdTask</code> is meant to search for the <code>User</code> that owns the supplied
+     * <code>GetUserByInstrumentIdTask</code> is used to search for the <code>User</code> that owns the supplied
      * <code>Instrument</code>. Returns an <code>ArrayList</code> of JSON strings that can be translated
      * into <code>User</code>s using the <code>Deserializer</code> class.
      * The returned <code>ArrayList</code> should only contain 1 <code>User</code> (due to unique instrument ids).
@@ -162,7 +162,7 @@ public class ElasticsearchController {
     }
 
     /**
-     * <code>DeleteUserTask</code> is meant to delete a <code>User</code>
+     * <code>DeleteUserTask</code> is used to delete a <code>User</code>
      *
      * @see User
      */
@@ -180,7 +180,7 @@ public class ElasticsearchController {
     }
 
     /**
-     * <code>DeleteUserByIdTask</code> is meant to delete the <code>User</code> with the supplied id
+     * <code>DeleteUserByIdTask</code> is used to delete the <code>User</code> with the supplied id
      *
      * @see User
      */
@@ -198,7 +198,7 @@ public class ElasticsearchController {
     }
 
     /**
-     * <code>UpdateUserTask</code> is meant to update the index of the <code>User</code> to reflect
+     * <code>UpdateUserTask</code> is used to update the index of the <code>User</code> to reflect
      * any new changes
      *
      * @see User
@@ -224,21 +224,21 @@ public class ElasticsearchController {
         }
     }
 
- /*   *//**
-     * <code>SearchInstrumentsTask</code> is meant to search all the <code>Instrument</code>s already saved
+    /**
+     * <code>SearchInstrumentsTask</code> is used to search all the <code>Instrument</code>s already saved
      * and find the ones containing the keywords that are separated by a space in the supplied string.
      * Returns an <code>ArrayList</code> of JSON strings, that can be translated using the <code>Deserializer</code>
      * class, corresponding to the <code>User</code>s that own the instruments.
      *
      * @see User
      * @see cmput301w16t08.scaling_pancake.models.Instrument
-     *//*
+     */
     public static class SearchInstrumentsTask extends AsyncTask<String, Void, ArrayList<String>> {
         @Override
         protected ArrayList<String> doInBackground(String... strings) {
             // only one string containing all the keywords separated by spaces should be entered
             verifyClient();
-            String string = "{\"query\": { \"nested\": {\"path\": \"ownedInstruments\", \"query\": \"bool\" : {\"should\" : [{\"match\": {\"ownedInstruments.description\": \"" + strings[0] + "\"}}, {\"match\": {\"ownedInstruments.name\": \"" + strings[0] + "\"}}]}}}}";
+            String string = "{\"query\": { \"nested\": {\"path\": \"ownedInstruments\", \"query\": {\"bool\" : {\"should\" : [{\"match_phrase_prefix\": {\"ownedInstruments.description\": { \"query\": \"" + strings[0] + "\", \"slop\": 3}}}, {\"match_phrase_prefix\": {\"ownedInstruments.name\": { \"query\": \"" + strings[0] + "\", \"slop\": 3}}}]}}}}}";
             Search search = new Search.Builder(string).addIndex(index).addType("user").build();
 
             ArrayList<String> returnedStrings = null;
@@ -255,7 +255,7 @@ public class ElasticsearchController {
             }
             return returnedStrings;
         }
-    }*/
+    }
 
     public static void verifyClient() {
         if (client == null) {
