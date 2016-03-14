@@ -15,7 +15,13 @@ import cmput301w16t08.scaling_pancake.controllers.Controller;
 import cmput301w16t08.scaling_pancake.R;
 
 /**
- * Created by dan on 06/03/16.
+ * Provides a custom adapter for <code>Instruments</code> that have been bidded on by the
+ * currently logged in user. Populates the <code>InstrumentListActivity</code> when the
+ * "My Bids" option is chosen from the spinner.
+ *
+ * @author dan
+ * @see cmput301w16t08.scaling_pancake.models.Instrument
+ * @see Bid
  */
 public class BiddedInstrumentsAdapter extends ArrayAdapter
 {
@@ -24,6 +30,13 @@ public class BiddedInstrumentsAdapter extends ArrayAdapter
         super(controller, 0, bidList.getArray());
     }
 
+    /**
+     * Handles assignment to different fields unique to this list type.
+     * @param position
+     * @param convertView
+     * @param parent
+     * @return
+     */
     @Override
     public View getView(int position, View convertView, ViewGroup parent)
     {
@@ -35,19 +48,19 @@ public class BiddedInstrumentsAdapter extends ArrayAdapter
         }
 
         /* Get the thumbnail going */
-        try
-        {
-            final BitmapFactory.Options options = new BitmapFactory.Options();
-            /* In the future, the specific image will be retrieved. For now mothra is a placeholder */
-            final Bitmap bitmap = BitmapFactory.decodeResource(getContext().getResources(),
-                    R.drawable.mothra, options);
-            ImageView thumbnail = (ImageView) convertView.findViewById(R.id.bidded_instrument_list_item_thumbnail);
-            thumbnail.setImageBitmap(bitmap);
-        }
-        catch (Exception e)
-        {
-            e.printStackTrace();
-        }
+//        try
+//        {
+//            final BitmapFactory.Options options = new BitmapFactory.Options();
+//            /* In the future, the specific image will be retrieved. For now mothra is a placeholder */
+//            final Bitmap bitmap = BitmapFactory.decodeResource(getContext().getResources(),
+//                    R.drawable.mothra, options);
+//            ImageView thumbnail = (ImageView) convertView.findViewById(R.id.bidded_instrument_list_item_thumbnail);
+//            thumbnail.setImageBitmap(bitmap);
+//        }
+//        catch (Exception e)
+//        {
+//            e.printStackTrace();
+//        }
 
         /* Add the description and status */
         TextView description = (TextView) convertView.findViewById(R.id.bidded_instrument_list_item_description_tv);

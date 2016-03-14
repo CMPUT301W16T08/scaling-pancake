@@ -9,6 +9,14 @@ import android.widget.Toast;
 import cmput301w16t08.scaling_pancake.controllers.Controller;
 import cmput301w16t08.scaling_pancake.R;
 
+/**
+ * Presents a view to the user that allows them to add an <code>Instrument</code>
+ * to their profile.
+ *
+ * @author cmput301w16t08
+ * @see Controller
+ * @see cmput301w16t08.scaling_pancake.models.Instrument
+ */
 public class AddInstrumentActivity extends AppCompatActivity {
 
     // set up our global controller
@@ -23,10 +31,18 @@ public class AddInstrumentActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * To be filled out in project part 5.
+     * @param view
+     */
     public void addPhoto(View view){
 
     }
 
+    /**
+     * Sends new <code>Instrument</code> data to the controller.
+     * @param view
+     */
     public void confirm(View view){
         EditText nameET = (EditText) findViewById(R.id.addInstrument_name_et);
         EditText descriptionET = (EditText) findViewById(R.id.addInstrument_description_et);

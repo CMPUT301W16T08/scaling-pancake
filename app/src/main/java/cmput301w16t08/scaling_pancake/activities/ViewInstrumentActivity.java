@@ -9,6 +9,12 @@ import android.view.View;
 
 import cmput301w16t08.scaling_pancake.R;
 
+/**
+ * This view will be completed for project part 5.
+ *
+ *
+ * @author dan
+ */
 public class ViewInstrumentActivity extends AppCompatActivity
 {
 

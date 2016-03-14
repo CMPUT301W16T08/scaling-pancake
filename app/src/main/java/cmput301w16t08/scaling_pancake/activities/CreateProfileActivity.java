@@ -11,6 +11,12 @@ import android.widget.Toast;
 import cmput301w16t08.scaling_pancake.controllers.Controller;
 import cmput301w16t08.scaling_pancake.R;
 
+/**
+ * Presents a view to the user that allows them to create a new profile.
+ *
+ * @author cmput301w16t08
+ * @see Controller
+ */
 public class CreateProfileActivity extends AppCompatActivity
 {
 
@@ -25,6 +31,10 @@ public class CreateProfileActivity extends AppCompatActivity
         controller = (Controller) getApplicationContext();
     }
 
+    /**
+     * Returns to the login screen without creating a profile.
+     * @param view
+     */
     public void cancel(View view)
     {
         /* Indicate to the MainActivity that create profile was cancelled. */
@@ -37,6 +47,10 @@ public class CreateProfileActivity extends AppCompatActivity
         finish();
     }
 
+    /**
+     * Sends data to controller to be evaluated and stored.
+     * @param view
+     */
     public void save(View view){
 
         EditText nameET = (EditText) findViewById(R.id.createprofile_username_et);

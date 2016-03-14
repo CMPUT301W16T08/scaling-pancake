@@ -9,6 +9,11 @@ import android.view.View;
 
 import cmput301w16t08.scaling_pancake.R;
 
+/**
+ * Provides a view container for the results of an <code>ElasticSearch</code>
+ *
+ * @author cmput301w16t08
+ */
 public class DisplaySearchResultsActivity extends AppCompatActivity {
 
     @Override

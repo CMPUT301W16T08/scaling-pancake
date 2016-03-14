@@ -6,12 +6,12 @@
               android:background="@drawable/grey_rounded_border">
 
     <!-- Mothra is used as a placeholder until image functionality is added to the model class-->
-    <ImageView
-        android:id="@+id/borrowed_instrument_list_item_thumbnail"
-        android:layout_weight="1"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:contentDescription="@drawable/mothra"/>
+    <!--<ImageView-->
+        <!--android:id="@+id/borrowed_instrument_list_item_thumbnail"-->
+        <!--android:layout_weight="1"-->
+        <!--android:layout_width="0dp"-->
+        <!--android:layout_height="50dp"-->
+        <!--android:contentDescription="@drawable/mothra"/>-->
 
     <LinearLayout
         android:orientation="vertical"

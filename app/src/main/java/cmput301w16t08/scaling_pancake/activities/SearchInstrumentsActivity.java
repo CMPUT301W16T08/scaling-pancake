@@ -8,6 +8,11 @@ import android.widget.EditText;
 
 import cmput301w16t08.scaling_pancake.R;
 
+/**
+ * Provides a search bar for the user to makes queries.
+ *
+ * @author cmput301w16t08
+ */
 public class SearchInstrumentsActivity extends AppCompatActivity {
 
     @Override
@@ -16,6 +21,10 @@ public class SearchInstrumentsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_search_instruments);
     }
 
+    /**
+     * Navigate to the <code>DisplaySearchResultsActivity</code>
+     * @param view
+     */
     public void display_search_results(View view){
         EditText txtSearchTerm = (EditText) findViewById(R.id.search_instrument_et);
         String strSearchTerm = txtSearchTerm.getText().toString();
@@ -25,6 +34,10 @@ public class SearchInstrumentsActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    /**
+     * Return to the <code>MenuActivity</code>
+     * @param view
+     */
     public void goToMainMenu(View view){
         finish();
     }

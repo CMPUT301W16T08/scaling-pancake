@@ -10,6 +10,13 @@ import android.widget.Toast;
 import cmput301w16t08.scaling_pancake.R;
 import cmput301w16t08.scaling_pancake.controllers.Controller;
 
+/**
+ * Allows the user to modify their existing profile.
+ *
+ * @author cmput301w16t08
+ * @see cmput301w16t08.scaling_pancake.models.User
+ * @see Controller
+ */
 public class EditProfileActivity extends AppCompatActivity {
 
     private static Controller controller;
@@ -21,6 +28,11 @@ public class EditProfileActivity extends AppCompatActivity {
         controller = (Controller) getApplicationContext();
     }
 
+    /**
+     * Verify that the data is valid with the <code>Controller</code> and display
+     * a message if it is not.
+     * @param view
+     */
     public void save_profile_changes(View view){
         /* Flags */
         boolean usernameChanged = false, emailChanged = false;
@@ -75,6 +87,10 @@ public class EditProfileActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Return to the <code>MenuActivity</code> without making any changes.
+     * @param view
+     */
     public void cancel_profile_changes(View view)
     {
         finish();

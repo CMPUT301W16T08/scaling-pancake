@@ -10,12 +10,18 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import cmput301w16t08.scaling_pancake.models.Bid;
 import cmput301w16t08.scaling_pancake.models.Instrument;
 import cmput301w16t08.scaling_pancake.models.InstrumentList;
 import cmput301w16t08.scaling_pancake.R;
 
 /**
- * Created by dan on 02/03/16.
+ * Provides a custom adapter for <code>Instruments</code> that are owned by the
+ * currently logged in user. Populates the <code>InstrumentListActivity</code> when the
+ * "Owned" option is chosen from the spinner.
+ *
+ * @author dan
+ * @see Instrument
  */
 public class OwnedInstrumentAdapter extends ArrayAdapter
 {
@@ -25,6 +31,13 @@ public class OwnedInstrumentAdapter extends ArrayAdapter
         super(context, 0, instrumentList.getArray());
     }
 
+    /**
+     * Handles assignment to different fields unique to this list type.
+     * @param position
+     * @param convertView
+     * @param parent
+     * @return
+     */
     @Override
     public View getView(int position, View convertView, ViewGroup parent)
     {
@@ -36,19 +49,19 @@ public class OwnedInstrumentAdapter extends ArrayAdapter
         }
 
         /* Get the thumbnail going */
-        try
-        {
-            final BitmapFactory.Options options = new BitmapFactory.Options();
-            /* In the future, the specific image will be retrieved. For now mothra is a placeholder */
-            final Bitmap bitmap = BitmapFactory.decodeResource(getContext().getResources(),
-                    R.drawable.mothra, options);
-            ImageView thumbnail = (ImageView) convertView.findViewById(R.id.owned_instrument_list_item_thumbnail);
-            thumbnail.setImageBitmap(bitmap);
-        }
-        catch (Exception e)
-        {
-            e.printStackTrace();
-        }
+//        try
+//        {
+//            final BitmapFactory.Options options = new BitmapFactory.Options();
+//            /* In the future, the specific image will be retrieved. For now mothra is a placeholder */
+//            final Bitmap bitmap = BitmapFactory.decodeResource(getContext().getResources(),
+//                    R.drawable.mothra, options);
+//            ImageView thumbnail = (ImageView) convertView.findViewById(R.id.owned_instrument_list_item_thumbnail);
+//            thumbnail.setImageBitmap(bitmap);
+//        }
+//        catch (Exception e)
+//        {
+//            e.printStackTrace();
+//        }
 
         /* Add the description and status */
         TextView description = (TextView) convertView.findViewById(R.id.owned_instrument_list_item_description_tv);

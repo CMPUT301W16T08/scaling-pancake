@@ -34,19 +34,30 @@ public class MenuActivity extends AppCompatActivity {
         controller = (Controller) getApplicationContext();
     }
 
-
+    /**
+     * Navigate to the <code>ViewProfileActivity</code>
+     * @param view
+     */
     public void viewProfile(View view){
         Intent intent = new Intent(this, ViewProfileActivity.class);
         intent.putExtra("user_id", controller.getCurrentUser().getId());
         startActivity(intent);
     }
 
+    /**
+     * Navigate to the <code>AddInstrumentActivity</code>
+     * @param view
+     */
     public void addInstruments(View view){
         Intent intent = new Intent(this, AddInstrumentActivity.class);
 
         startActivity(intent);
     }
 
+    /**
+     * Navigate to the <code>InstrumentListActivity</code>
+     * @param view
+     */
     public void viewInstruments(View view)
     {
         Intent intent = new Intent(this, InstrumentListActivity.class);
@@ -59,6 +70,10 @@ public class MenuActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    /**
+     * Log the user out and return to the login screen
+     * @param view
+     */
     public void logout(View view){
         controller.logout();
         finish();
