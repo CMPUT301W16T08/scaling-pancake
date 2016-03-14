@@ -8,6 +8,8 @@ import android.test.UiThreadTest;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.robotium.solo.Solo;
+
 import cmput301w16t08.scaling_pancake.activities.EditProfileActivity;
 import cmput301w16t08.scaling_pancake.controllers.Controller;
 import cmput301w16t08.scaling_pancake.models.User;
@@ -20,17 +22,23 @@ public class EditProfileActivityUITest extends ActivityInstrumentationTestCase2{
     Activity activity;
     EditText username;
     EditText email;
+    Solo solo;
 
     public EditProfileActivityUITest(){
         super(EditProfileActivity.class);
     }
 
     public void setUp() throws Exception{
-        super.setUp();
+        //super.setUp();
         instrumentation = getInstrumentation();
         activity = getActivity();
         username = (EditText) activity.findViewById(R.id.edit_profile_username_et);
         email = (EditText) activity.findViewById(R.id.edit_profile_email_et);
+        solo = new Solo(getInstrumentation(),getActivity());
+    }
+
+    public void tearUp(){
+        solo.finishOpenedActivities();
     }
 
     // login as admin

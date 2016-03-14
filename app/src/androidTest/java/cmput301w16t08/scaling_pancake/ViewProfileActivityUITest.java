@@ -30,7 +30,7 @@ public class ViewProfileActivityUITest extends ActivityInstrumentationTestCase2 
         solo = new Solo(getInstrumentation(),getActivity());
 
         // login
-        Controller controller = (Controller) getActivity().getApplicationContext();
+        Controller controller = (Controller) this.getInstrumentation().getTargetContext().getApplicationContext();
         controller.createUser("admin","admin@test.com");
         controller.login("admin");
     }
