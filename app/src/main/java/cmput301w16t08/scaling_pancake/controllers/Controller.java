@@ -493,7 +493,7 @@ public class Controller extends Application {
         updateUserTask.execute(this.currentUser);
     }
 
-/*    *//**
+    /**
      * Searches for any non-borrowed <code>Instrument</code>s that contain the keywords in the
      * supplied string. Returns an <code>InstrumentList</code> containing the <code>Instrument</code>s
      * that were found
@@ -502,7 +502,7 @@ public class Controller extends Application {
      * @return the list of found instruments
      * @see InstrumentList
      * @see Instrument
-     *//*
+     */
     public InstrumentList searchInstruments(String keywords) {
         ElasticsearchController.SearchInstrumentsTask searchInstrumentsTask = new ElasticsearchController.SearchInstrumentsTask();
         searchInstrumentsTask.execute(keywords);
@@ -526,11 +526,19 @@ public class Controller extends Application {
                 String string3 = user.getOwnedInstruments().getInstrument(j).getDescription().toLowerCase();
                 if (string2.contains(string1) || string3.contains(string1)) {
                     instruments.addInstrument(user.getOwnedInstruments().getInstrument(j));
+                } else {
+                    String[] strings = string1.split("\\s+");
+                    for (int k = 0; k < strings.length; k++) {
+                        if (string2.contains(strings[k]) || string3.contains(strings[k])) {
+                            instruments.addInstrument(user.getOwnedInstruments().getInstrument(j));
+                            break;
+                        }
+                    }
                 }
             }
         }
         return instruments;
-    }*/
+    }
 
     /**
      * The currently logged in <code>User</code> makes a <code>Bid</code> on the supplied

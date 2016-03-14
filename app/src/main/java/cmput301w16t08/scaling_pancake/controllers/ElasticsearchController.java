@@ -224,7 +224,7 @@ public class ElasticsearchController {
         }
     }
 
- /*   *//**
+    /**
      * <code>SearchInstrumentsTask</code> is meant to search all the <code>Instrument</code>s already saved
      * and find the ones containing the keywords that are separated by a space in the supplied string.
      * Returns an <code>ArrayList</code> of JSON strings, that can be translated using the <code>Deserializer</code>
@@ -232,13 +232,13 @@ public class ElasticsearchController {
      *
      * @see User
      * @see cmput301w16t08.scaling_pancake.models.Instrument
-     *//*
+     */
     public static class SearchInstrumentsTask extends AsyncTask<String, Void, ArrayList<String>> {
         @Override
         protected ArrayList<String> doInBackground(String... strings) {
             // only one string containing all the keywords separated by spaces should be entered
             verifyClient();
-            String string = "{\"query\": { \"nested\": {\"path\": \"ownedInstruments\", \"query\": \"bool\" : {\"should\" : [{\"match\": {\"ownedInstruments.description\": \"" + strings[0] + "\"}}, {\"match\": {\"ownedInstruments.name\": \"" + strings[0] + "\"}}]}}}}";
+            String string = "{\"query\": { \"nested\": {\"path\": \"ownedInstruments\", \"query\": {\"bool\" : {\"should\" : [{\"match_phrase_prefix\": {\"ownedInstruments.description\": { \"query\": \"" + strings[0] + "\", \"slop\": 3}}}, {\"match_phrase_prefix\": {\"ownedInstruments.name\": { \"query\": \"" + strings[0] + "\", \"slop\": 3}}}]}}}}}";
             Search search = new Search.Builder(string).addIndex(index).addType("user").build();
 
             ArrayList<String> returnedStrings = null;
@@ -255,7 +255,7 @@ public class ElasticsearchController {
             }
             return returnedStrings;
         }
-    }*/
+    }
 
     public static void verifyClient() {
         if (client == null) {

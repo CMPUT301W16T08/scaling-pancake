@@ -38,38 +38,119 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ViewProfileActivityUITest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/androidTest/java/cmput301w16t08/scaling_pancake/ViewProfileActivityUITest.java">
+      <file leaf-file-name="ElasticsearchControllerTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/androidTest/java/cmput301w16t08/scaling_pancake/ElasticsearchControllerTest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="87" column="0" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#782#783#0" expanded="true" />
-                <element signature="e#823#824#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="InstrumentListTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/androidTest/java/cmput301w16t08/scaling_pancake/InstrumentListTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+              <caret line="176" column="47" selection-start-line="176" selection-start-column="47" selection-end-line="176" selection-end-column="47" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="InstrumentTest.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/androidTest/java/cmput301w16t08/scaling_pancake/InstrumentTest.java">
+      <file leaf-file-name="Controller.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/controllers/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.2986112">
-              <caret line="10" column="70" selection-start-line="10" selection-start-column="70" selection-end-line="10" selection-end-column="70" />
+            <state vertical-scroll-proportion="0.7356948">
+              <caret line="505" column="61" selection-start-line="505" selection-start-column="61" selection-end-line="505" selection-end-column="61" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="docComment;class#Controller#0" expanded="false" />
+                <element signature="docComment;method#Controller#0;class#Controller#0" expanded="false" />
+                <element signature="method#Controller#0;class#Controller#0" expanded="false" />
+                <element signature="docComment;method#getCurrentUser#0;class#Controller#0" expanded="false" />
+                <element signature="docComment;method#getUserByName#0;class#Controller#0" expanded="false" />
+                <element signature="method#getUserByName#0;class#Controller#0" expanded="false" />
+                <element signature="docComment;method#getUserById#0;class#Controller#0" expanded="false" />
+                <element signature="method#getUserById#0;class#Controller#0" expanded="false" />
+                <element signature="docComment;method#createUser#0;class#Controller#0" expanded="false" />
+                <element signature="method#createUser#0;class#Controller#0" expanded="false" />
+                <element signature="docComment;method#deleteUser#0;class#Controller#0" expanded="false" />
+                <element signature="method#deleteUser#0;class#Controller#0" expanded="false" />
+                <element signature="docComment;method#deleteUserById#0;class#Controller#0" expanded="false" />
+                <element signature="method#deleteUserById#0;class#Controller#0" expanded="false" />
+                <element signature="docComment;method#login#0;class#Controller#0" expanded="false" />
+                <element signature="method#login#0;class#Controller#0" expanded="false" />
+                <element signature="docComment;method#logout#0;class#Controller#0" expanded="false" />
+                <element signature="docComment;method#editCurrentUser#0;class#Controller#0" expanded="false" />
+                <element signature="method#editCurrentUser#0;class#Controller#0" expanded="false" />
+                <element signature="docComment;method#editCurrentUserName#0;class#Controller#0" expanded="false" />
+                <element signature="method#editCurrentUserName#0;class#Controller#0" expanded="false" />
+                <element signature="docComment;method#editCurrentUserEmail#0;class#Controller#0" expanded="false" />
+                <element signature="method#editCurrentUserEmail#0;class#Controller#0" expanded="false" />
+                <element signature="docComment;method#getCurrentUsersOwnedInstruments#0;class#Controller#0" expanded="false" />
+                <element signature="method#getCurrentUsersOwnedInstruments#0;class#Controller#0" expanded="false" />
+                <element signature="docComment;method#getCurrentUsersOwnedBorrowedInstruments#0;class#Controller#0" expanded="false" />
+                <element signature="method#getCurrentUsersOwnedBorrowedInstruments#0;class#Controller#0" expanded="false" />
+                <element signature="docComment;method#getCurrentUsersBorrowedInstruments#0;class#Controller#0" expanded="false" />
+                <element signature="method#getCurrentUsersBorrowedInstruments#0;class#Controller#0" expanded="false" />
+                <element signature="docComment;method#getCurrentUsersBiddedInstruments#0;class#Controller#0" expanded="false" />
+                <element signature="method#getCurrentUsersBiddedInstruments#0;class#Controller#0" expanded="false" />
+                <element signature="docComment;method#getCurrentUsersBids#0;class#Controller#0" expanded="false" />
+                <element signature="method#getCurrentUsersBids#0;class#Controller#0" expanded="false" />
+                <element signature="docComment;method#getInstrumentById#0;class#Controller#0" expanded="false" />
+                <element signature="method#getInstrumentById#0;class#Controller#0" expanded="false" />
+                <element signature="docComment;method#addInstrument#0;class#Controller#0" expanded="false" />
+                <element signature="method#addInstrument#0;class#Controller#0" expanded="false" />
+                <element signature="docComment;method#addInstrument#1;class#Controller#0" expanded="false" />
+                <element signature="method#addInstrument#1;class#Controller#0" expanded="false" />
+                <element signature="docComment;method#editInstrument#0;class#Controller#0" expanded="false" />
+                <element signature="method#editInstrument#0;class#Controller#0" expanded="false" />
+                <element signature="docComment;method#editInstrument#1;class#Controller#0" expanded="false" />
+                <element signature="method#editInstrument#1;class#Controller#0" expanded="false" />
+                <element signature="docComment;method#deleteInstrument#0;class#Controller#0" expanded="false" />
+                <element signature="method#deleteInstrument#0;class#Controller#0" expanded="false" />
+                <element signature="docComment;method#deleteInstrument#1;class#Controller#0" expanded="false" />
+                <element signature="method#deleteInstrument#1;class#Controller#0" expanded="false" />
+                <element signature="docComment;method#searchInstruments#0;class#Controller#0" expanded="false" />
+                <element signature="method#searchInstruments#0;class#Controller#0" expanded="false" />
+                <element signature="docComment;method#makeBidOnInstrument#0;class#Controller#0" expanded="false" />
+                <element signature="method#makeBidOnInstrument#0;class#Controller#0" expanded="false" />
+                <element signature="docComment;method#acceptBidOnInstrument#0;class#Controller#0" expanded="false" />
+                <element signature="method#acceptBidOnInstrument#0;class#Controller#0" expanded="false" />
+                <element signature="docComment;method#declineBidOnInstrument#0;class#Controller#0" expanded="false" />
+                <element signature="method#declineBidOnInstrument#0;class#Controller#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ControllerTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/androidTest/java/cmput301w16t08/scaling_pancake/ControllerTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="413" column="61" selection-start-line="413" selection-start-column="61" selection-end-line="413" selection-end-column="61" />
+              <folding>
+                <element signature="method#testCreateUser#0;class#ControllerTest#0" expanded="false" />
+                <element signature="method#testGetUserByName#0;class#ControllerTest#0" expanded="false" />
+                <element signature="method#testGetUserById#0;class#ControllerTest#0" expanded="false" />
+                <element signature="method#testDeleteUser#0;class#ControllerTest#0" expanded="false" />
+                <element signature="method#testDeleteUserById#0;class#ControllerTest#0" expanded="false" />
+                <element signature="method#testLogout#0;class#ControllerTest#0" expanded="false" />
+                <element signature="method#testEditCurrentUser#0;class#ControllerTest#0" expanded="false" />
+                <element signature="method#testEditCurrentUserName#0;class#ControllerTest#0" expanded="false" />
+                <element signature="method#testEditCurrentUserEmail#0;class#ControllerTest#0" expanded="false" />
+                <element signature="method#testGetCurrentUsersOwnedInstruments#0;class#ControllerTest#0" expanded="false" />
+                <element signature="method#testGetCurrentUsersOwnedBorrowedInstruments#0;class#ControllerTest#0" expanded="false" />
+                <element signature="method#testGetCurrentUsersBorrowedInstruments#0;class#ControllerTest#0" expanded="false" />
+                <element signature="method#testGetCurrentUsersBiddedInstruments#0;class#ControllerTest#0" expanded="false" />
+                <element signature="method#testGetCurrentUsersBids#0;class#ControllerTest#0" expanded="false" />
+                <element signature="method#testAddInstrument#0;class#ControllerTest#0" expanded="false" />
+                <element signature="method#testGetInstrumentById#0;class#ControllerTest#0" expanded="false" />
+                <element signature="method#testEditInstrument#0;class#ControllerTest#0" expanded="false" />
+                <element signature="method#testDeleteInstrument#0;class#ControllerTest#0" expanded="false" />
+                <element signature="method#testAcceptBidOnInstrument#0;class#ControllerTest#0" expanded="false" />
+                <element signature="method#testDeclineBidOnInstrument#0;class#ControllerTest#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ElasticsearchController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/controllers/ElasticsearchController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="240" column="262" selection-start-line="240" selection-start-column="262" selection-end-line="240" selection-end-column="262" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -1640,7 +1721,6 @@
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/User.java" />
         <option value="$PROJECT_DIR$/app/src/androidTest/java/cmput301w16t08/scaling_pancake/UserTest.java" />
-        <option value="$PROJECT_DIR$/app/src/androidTest/java/cmput301w16t08/scaling_pancake/ControllerTest.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/ElasticsearchController.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/Controller.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/models/UserList.java" />
@@ -1650,12 +1730,13 @@
         <option value="$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/models/User.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/util/Serializer.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/util/Deserializer.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/controllers/Controller.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/controllers/ElasticsearchController.java" />
-        <option value="$PROJECT_DIR$/app/src/androidTest/java/cmput301w16t08/scaling_pancake/ElasticsearchControllerTest.java" />
         <option value="$PROJECT_DIR$/app/src/androidTest/java/cmput301w16t08/scaling_pancake/InstrumentTest.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/models/Instrument.java" />
         <option value="$PROJECT_DIR$/app/src/androidTest/java/cmput301w16t08/scaling_pancake/ViewProfileActivityUITest.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/controllers/ElasticsearchController.java" />
+        <option value="$PROJECT_DIR$/app/src/androidTest/java/cmput301w16t08/scaling_pancake/ElasticsearchControllerTest.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/controllers/Controller.java" />
+        <option value="$PROJECT_DIR$/app/src/androidTest/java/cmput301w16t08/scaling_pancake/ControllerTest.java" />
       </list>
     </option>
   </component>
@@ -1672,8 +1753,8 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -1701,9 +1782,41 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scratches" />
-      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scaling-pancake" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scaling-pancake" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scaling-pancake" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scaling-pancake" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scaling-pancake" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="AndroidView">
         <subPane>
           <PATH>
@@ -1753,43 +1866,37 @@
               <option name="myItemId" value="java" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
             </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="ProjectPane">
-        <subPane>
-          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="scaling-pancake" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+              <option name="myItemId" value="scaling_pancake" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="scaling-pancake" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scaling-pancake" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scaling-pancake" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scaling-pancake" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scaling_pancake" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1799,50 +1906,10 @@
     <property name="android.project.structure.proportion" value="0.15" />
     <property name="recentsLimit" value="5" />
     <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="emulator-5554" />
-    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="AVD_GalaxyNexus_ToolsForApacheCordova" />
+    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="Galaxy_Nexus_API_18" />
     <property name="FullScreen" value="false" />
   </component>
-  <component name="RunManager" selected="Android Tests.testTextField()">
-    <configuration default="false" name="testMakeBidOnInstr...()" type="AndroidTestRunConfigurationType" factoryName="Android Tests" temporary="true" nameIsGenerated="true">
-      <module name="app" />
-      <option name="TESTING_TYPE" value="3" />
-      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
-      <option name="METHOD_NAME" value="testMakeBidOnInstrument" />
-      <option name="CLASS_NAME" value="cmput301w16t08.scaling_pancake.ControllerTest" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="EXTRA_OPTIONS" value="" />
-      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
-      <option name="PREFERRED_AVD" value="" />
-      <option name="CLEAR_LOGCAT" value="false" />
-      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
-      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
-      <option name="FORCE_STOP_RUNNING_APP" value="true" />
-      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
-      <option name="PREFERRED_AVD" value="" />
-      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
-      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
-      <method />
-    </configuration>
-    <configuration default="false" name="testAcceptBidOnIns...()" type="AndroidTestRunConfigurationType" factoryName="Android Tests" temporary="true" nameIsGenerated="true">
-      <module name="app" />
-      <option name="TESTING_TYPE" value="3" />
-      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
-      <option name="METHOD_NAME" value="testAcceptBidOnInstrument" />
-      <option name="CLASS_NAME" value="cmput301w16t08.scaling_pancake.ControllerTest" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="EXTRA_OPTIONS" value="" />
-      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
-      <option name="PREFERRED_AVD" value="" />
-      <option name="CLEAR_LOGCAT" value="false" />
-      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
-      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
-      <option name="FORCE_STOP_RUNNING_APP" value="true" />
-      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
-      <option name="PREFERRED_AVD" value="" />
-      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
-      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Android Tests.testSearchInstrume...() (1)">
     <configuration default="false" name="testDeclineBidOnIn...()" type="AndroidTestRunConfigurationType" factoryName="Android Tests" temporary="true" nameIsGenerated="true">
       <module name="app" />
       <option name="TESTING_TYPE" value="3" />
@@ -1889,6 +1956,46 @@
       <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
       <option name="METHOD_NAME" value="testTextField" />
       <option name="CLASS_NAME" value="cmput301w16t08.scaling_pancake.ViewProfileActivityUITest" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="EXTRA_OPTIONS" value="" />
+      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <method />
+    </configuration>
+    <configuration default="false" name="testSearchInstrume...()" type="AndroidTestRunConfigurationType" factoryName="Android Tests" temporary="true" nameIsGenerated="true">
+      <module name="app" />
+      <option name="TESTING_TYPE" value="3" />
+      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
+      <option name="METHOD_NAME" value="testSearchInstrumentsTask" />
+      <option name="CLASS_NAME" value="cmput301w16t08.scaling_pancake.ElasticsearchControllerTest" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="EXTRA_OPTIONS" value="" />
+      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <method />
+    </configuration>
+    <configuration default="false" name="testSearchInstrume...() (1)" type="AndroidTestRunConfigurationType" factoryName="Android Tests" temporary="true" nameIsGenerated="true">
+      <module name="app" />
+      <option name="TESTING_TYPE" value="3" />
+      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
+      <option name="METHOD_NAME" value="testSearchInstruments" />
+      <option name="CLASS_NAME" value="cmput301w16t08.scaling_pancake.ControllerTest" />
       <option name="PACKAGE_NAME" value="" />
       <option name="EXTRA_OPTIONS" value="" />
       <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
@@ -2068,19 +2175,19 @@
     <list size="7">
       <item index="0" class="java.lang.String" itemvalue="Android Tests.testChangeName()" />
       <item index="1" class="java.lang.String" itemvalue="Android Application.app" />
-      <item index="2" class="java.lang.String" itemvalue="Android Tests.testMakeBidOnInstr...()" />
-      <item index="3" class="java.lang.String" itemvalue="Android Tests.testAcceptBidOnIns...()" />
-      <item index="4" class="java.lang.String" itemvalue="Android Tests.testDeclineBidOnIn...()" />
-      <item index="5" class="java.lang.String" itemvalue="Android Tests.ViewProfileActivityU..." />
-      <item index="6" class="java.lang.String" itemvalue="Android Tests.testTextField()" />
+      <item index="2" class="java.lang.String" itemvalue="Android Tests.testDeclineBidOnIn...()" />
+      <item index="3" class="java.lang.String" itemvalue="Android Tests.ViewProfileActivityU..." />
+      <item index="4" class="java.lang.String" itemvalue="Android Tests.testTextField()" />
+      <item index="5" class="java.lang.String" itemvalue="Android Tests.testSearchInstrume...()" />
+      <item index="6" class="java.lang.String" itemvalue="Android Tests.testSearchInstrume...() (1)" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Android Tests.testTextField()" />
-        <item index="1" class="java.lang.String" itemvalue="Android Tests.ViewProfileActivityU..." />
-        <item index="2" class="java.lang.String" itemvalue="Android Tests.testDeclineBidOnIn...()" />
-        <item index="3" class="java.lang.String" itemvalue="Android Tests.testAcceptBidOnIns...()" />
-        <item index="4" class="java.lang.String" itemvalue="Android Tests.testMakeBidOnInstr...()" />
+        <item index="0" class="java.lang.String" itemvalue="Android Tests.testSearchInstrume...() (1)" />
+        <item index="1" class="java.lang.String" itemvalue="Android Tests.testSearchInstrume...()" />
+        <item index="2" class="java.lang.String" itemvalue="Android Tests.testTextField()" />
+        <item index="3" class="java.lang.String" itemvalue="Android Tests.ViewProfileActivityU..." />
+        <item index="4" class="java.lang.String" itemvalue="Android Tests.testDeclineBidOnIn...()" />
       </list>
     </recent_temporary>
     <configuration name="&lt;template&gt;" type="Applet" default="true" selected="false">
@@ -2119,38 +2226,38 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32879046" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.47359455" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32814237" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28731343" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32980332" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28620103" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35775128" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32980332" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32879046" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28668684" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3270869" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -2166,11 +2273,41 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="13" />
+      <option name="time" value="14" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/app/src/androidTest/java/cmput301w16t08/scaling_pancake/ViewProfileActivityUITest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="87" column="0" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#782#783#0" expanded="true" />
+            <element signature="e#823#824#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/androidTest/java/cmput301w16t08/scaling_pancake/InstrumentListTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/androidTest/java/cmput301w16t08/scaling_pancake/InstrumentTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/androidTest/java/cmput301w16t08/scaling_pancake/ControllerTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -2194,8 +2331,6 @@
             <element signature="method#testGetInstrumentById#0;class#ControllerTest#0" expanded="false" />
             <element signature="method#testEditInstrument#0;class#ControllerTest#0" expanded="false" />
             <element signature="method#testDeleteInstrument#0;class#ControllerTest#0" expanded="false" />
-            <element signature="method#testSearchInstruments#0;class#ControllerTest#0" expanded="false" />
-            <element signature="method#testMakeBidOnInstrument#0;class#ControllerTest#0" expanded="false" />
             <element signature="method#testAcceptBidOnInstrument#0;class#ControllerTest#0" expanded="false" />
             <element signature="method#testDeclineBidOnInstrument#0;class#ControllerTest#0" expanded="false" />
           </folding>
@@ -2240,13 +2375,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.21288015">
           <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Android/sdk/sources/android-23/java/lang/String.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33273703">
-          <caret line="1480" column="19" selection-start-line="1480" selection-start-column="19" selection-end-line="1480" selection-end-column="19" />
         </state>
       </provider>
     </entry>
@@ -2330,13 +2458,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/controllers/ElasticsearchController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="257" column="7" selection-start-line="257" selection-start-column="7" selection-end-line="257" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/activities/AddInstrumentActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.18579236">
@@ -2372,41 +2493,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/controllers/Controller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="634" column="35" selection-start-line="634" selection-start-column="35" selection-end-line="634" selection-end-column="35" />
-          <folding>
-            <element signature="docComment;method#Controller#0;class#Controller#0" expanded="false" />
-            <element signature="method#Controller#0;class#Controller#0" expanded="false" />
-            <element signature="method#getUserByName#0;class#Controller#0" expanded="false" />
-            <element signature="method#getUserById#0;class#Controller#0" expanded="false" />
-            <element signature="method#createUser#0;class#Controller#0" expanded="false" />
-            <element signature="method#deleteUser#0;class#Controller#0" expanded="false" />
-            <element signature="method#deleteUserById#0;class#Controller#0" expanded="false" />
-            <element signature="method#login#0;class#Controller#0" expanded="false" />
-            <element signature="method#editCurrentUser#0;class#Controller#0" expanded="false" />
-            <element signature="method#editCurrentUserName#0;class#Controller#0" expanded="false" />
-            <element signature="method#editCurrentUserEmail#0;class#Controller#0" expanded="false" />
-            <element signature="method#getCurrentUsersOwnedInstruments#0;class#Controller#0" expanded="false" />
-            <element signature="method#getCurrentUsersOwnedBorrowedInstruments#0;class#Controller#0" expanded="false" />
-            <element signature="method#getCurrentUsersBorrowedInstruments#0;class#Controller#0" expanded="false" />
-            <element signature="method#getCurrentUsersBiddedInstruments#0;class#Controller#0" expanded="false" />
-            <element signature="method#getCurrentUsersBids#0;class#Controller#0" expanded="false" />
-            <element signature="method#getInstrumentById#0;class#Controller#0" expanded="false" />
-            <element signature="method#addInstrument#0;class#Controller#0" expanded="false" />
-            <element signature="method#addInstrument#1;class#Controller#0" expanded="false" />
-            <element signature="method#editInstrument#0;class#Controller#0" expanded="false" />
-            <element signature="method#editInstrument#1;class#Controller#0" expanded="false" />
-            <element signature="method#deleteInstrument#0;class#Controller#0" expanded="false" />
-            <element signature="method#deleteInstrument#1;class#Controller#0" expanded="false" />
-            <element signature="method#makeBidOnInstrument#0;class#Controller#0" expanded="false" />
-            <element signature="method#acceptBidOnInstrument#0;class#Controller#0" expanded="false" />
-            <element signature="method#declineBidOnInstrument#0;class#Controller#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/androidTest/java/cmput301w16t08/scaling_pancake/CreateProfileActivityUITest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -2425,7 +2511,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2456,13 +2541,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.23224044">
           <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/androidTest/java/cmput301w16t08/scaling_pancake/ElasticsearchControllerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.44262296">
-          <caret line="142" column="29" selection-start-line="142" selection-start-column="29" selection-end-line="142" selection-end-column="29" />
         </state>
       </provider>
     </entry>
@@ -2532,10 +2610,75 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/androidTest/java/cmput301w16t08/scaling_pancake/AddInstrumentActivityUITest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.43972445">
+          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/androidTest/java/cmput301w16t08/scaling_pancake/InstrumentTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3256705">
+          <caret line="22" column="19" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/androidTest/java/cmput301w16t08/scaling_pancake/InstrumentListTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.16283526">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/androidTest/java/cmput301w16t08/scaling_pancake/ViewProfileActivityUITest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8045977">
+          <caret line="87" column="0" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#782#783#0" expanded="true" />
+            <element signature="e#823#824#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/controllers/ElasticsearchController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="240" column="262" selection-start-line="240" selection-start-column="262" selection-end-line="240" selection-end-column="262" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/androidTest/java/cmput301w16t08/scaling_pancake/ElasticsearchControllerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="176" column="47" selection-start-line="176" selection-start-column="47" selection-end-line="176" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Android/sdk/sources/android-23/java/lang/String.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33242506">
+          <caret line="1390" column="20" selection-start-line="1390" selection-start-column="20" selection-end-line="1390" selection-end-column="20" />
+          <folding>
+            <element signature="e#50307#50308#0" expanded="true" />
+            <element signature="e#50357#50358#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/androidTest/java/cmput301w16t08/scaling_pancake/ControllerTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.4833524">
-          <caret line="504" column="0" selection-start-line="504" selection-start-column="0" selection-end-line="504" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="413" column="61" selection-start-line="413" selection-start-column="61" selection-end-line="413" selection-end-column="61" />
           <folding>
             <element signature="method#testCreateUser#0;class#ControllerTest#0" expanded="false" />
             <element signature="method#testGetUserByName#0;class#ControllerTest#0" expanded="false" />
@@ -2555,48 +2698,72 @@
             <element signature="method#testGetInstrumentById#0;class#ControllerTest#0" expanded="false" />
             <element signature="method#testEditInstrument#0;class#ControllerTest#0" expanded="false" />
             <element signature="method#testDeleteInstrument#0;class#ControllerTest#0" expanded="false" />
-            <element signature="method#testSearchInstruments#0;class#ControllerTest#0" expanded="false" />
-            <element signature="method#testMakeBidOnInstrument#0;class#ControllerTest#0" expanded="false" />
             <element signature="method#testAcceptBidOnInstrument#0;class#ControllerTest#0" expanded="false" />
             <element signature="method#testDeclineBidOnInstrument#0;class#ControllerTest#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/androidTest/java/cmput301w16t08/scaling_pancake/AddInstrumentActivityUITest.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/controllers/Controller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.43972445">
-          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/androidTest/java/cmput301w16t08/scaling_pancake/ViewProfileActivityUITest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="87" column="0" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.7356948">
+          <caret line="505" column="61" selection-start-line="505" selection-start-column="61" selection-end-line="505" selection-end-column="61" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#782#783#0" expanded="true" />
-            <element signature="e#823#824#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/androidTest/java/cmput301w16t08/scaling_pancake/InstrumentListTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/androidTest/java/cmput301w16t08/scaling_pancake/InstrumentTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.2986112">
-          <caret line="10" column="70" selection-start-line="10" selection-start-column="70" selection-end-line="10" selection-end-column="70" />
-          <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="docComment;class#Controller#0" expanded="false" />
+            <element signature="docComment;method#Controller#0;class#Controller#0" expanded="false" />
+            <element signature="method#Controller#0;class#Controller#0" expanded="false" />
+            <element signature="docComment;method#getCurrentUser#0;class#Controller#0" expanded="false" />
+            <element signature="docComment;method#getUserByName#0;class#Controller#0" expanded="false" />
+            <element signature="method#getUserByName#0;class#Controller#0" expanded="false" />
+            <element signature="docComment;method#getUserById#0;class#Controller#0" expanded="false" />
+            <element signature="method#getUserById#0;class#Controller#0" expanded="false" />
+            <element signature="docComment;method#createUser#0;class#Controller#0" expanded="false" />
+            <element signature="method#createUser#0;class#Controller#0" expanded="false" />
+            <element signature="docComment;method#deleteUser#0;class#Controller#0" expanded="false" />
+            <element signature="method#deleteUser#0;class#Controller#0" expanded="false" />
+            <element signature="docComment;method#deleteUserById#0;class#Controller#0" expanded="false" />
+            <element signature="method#deleteUserById#0;class#Controller#0" expanded="false" />
+            <element signature="docComment;method#login#0;class#Controller#0" expanded="false" />
+            <element signature="method#login#0;class#Controller#0" expanded="false" />
+            <element signature="docComment;method#logout#0;class#Controller#0" expanded="false" />
+            <element signature="docComment;method#editCurrentUser#0;class#Controller#0" expanded="false" />
+            <element signature="method#editCurrentUser#0;class#Controller#0" expanded="false" />
+            <element signature="docComment;method#editCurrentUserName#0;class#Controller#0" expanded="false" />
+            <element signature="method#editCurrentUserName#0;class#Controller#0" expanded="false" />
+            <element signature="docComment;method#editCurrentUserEmail#0;class#Controller#0" expanded="false" />
+            <element signature="method#editCurrentUserEmail#0;class#Controller#0" expanded="false" />
+            <element signature="docComment;method#getCurrentUsersOwnedInstruments#0;class#Controller#0" expanded="false" />
+            <element signature="method#getCurrentUsersOwnedInstruments#0;class#Controller#0" expanded="false" />
+            <element signature="docComment;method#getCurrentUsersOwnedBorrowedInstruments#0;class#Controller#0" expanded="false" />
+            <element signature="method#getCurrentUsersOwnedBorrowedInstruments#0;class#Controller#0" expanded="false" />
+            <element signature="docComment;method#getCurrentUsersBorrowedInstruments#0;class#Controller#0" expanded="false" />
+            <element signature="method#getCurrentUsersBorrowedInstruments#0;class#Controller#0" expanded="false" />
+            <element signature="docComment;method#getCurrentUsersBiddedInstruments#0;class#Controller#0" expanded="false" />
+            <element signature="method#getCurrentUsersBiddedInstruments#0;class#Controller#0" expanded="false" />
+            <element signature="docComment;method#getCurrentUsersBids#0;class#Controller#0" expanded="false" />
+            <element signature="method#getCurrentUsersBids#0;class#Controller#0" expanded="false" />
+            <element signature="docComment;method#getInstrumentById#0;class#Controller#0" expanded="false" />
+            <element signature="method#getInstrumentById#0;class#Controller#0" expanded="false" />
+            <element signature="docComment;method#addInstrument#0;class#Controller#0" expanded="false" />
+            <element signature="method#addInstrument#0;class#Controller#0" expanded="false" />
+            <element signature="docComment;method#addInstrument#1;class#Controller#0" expanded="false" />
+            <element signature="method#addInstrument#1;class#Controller#0" expanded="false" />
+            <element signature="docComment;method#editInstrument#0;class#Controller#0" expanded="false" />
+            <element signature="method#editInstrument#0;class#Controller#0" expanded="false" />
+            <element signature="docComment;method#editInstrument#1;class#Controller#0" expanded="false" />
+            <element signature="method#editInstrument#1;class#Controller#0" expanded="false" />
+            <element signature="docComment;method#deleteInstrument#0;class#Controller#0" expanded="false" />
+            <element signature="method#deleteInstrument#0;class#Controller#0" expanded="false" />
+            <element signature="docComment;method#deleteInstrument#1;class#Controller#0" expanded="false" />
+            <element signature="method#deleteInstrument#1;class#Controller#0" expanded="false" />
+            <element signature="docComment;method#searchInstruments#0;class#Controller#0" expanded="false" />
+            <element signature="method#searchInstruments#0;class#Controller#0" expanded="false" />
+            <element signature="docComment;method#makeBidOnInstrument#0;class#Controller#0" expanded="false" />
+            <element signature="method#makeBidOnInstrument#0;class#Controller#0" expanded="false" />
+            <element signature="docComment;method#acceptBidOnInstrument#0;class#Controller#0" expanded="false" />
+            <element signature="method#acceptBidOnInstrument#0;class#Controller#0" expanded="false" />
+            <element signature="docComment;method#declineBidOnInstrument#0;class#Controller#0" expanded="false" />
+            <element signature="method#declineBidOnInstrument#0;class#Controller#0" expanded="false" />
           </folding>
         </state>
       </provider>
