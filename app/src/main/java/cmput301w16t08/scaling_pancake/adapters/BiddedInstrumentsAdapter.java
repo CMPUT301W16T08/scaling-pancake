@@ -35,7 +35,7 @@ public class BiddedInstrumentsAdapter extends ArrayAdapter
      * @param position
      * @param convertView
      * @param parent
-     * @return
+     * @return the view
      */
     @Override
     public View getView(int position, View convertView, ViewGroup parent)
