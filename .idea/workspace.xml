@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="ANALYZE_TEST_SOURCES" value="false" />
+  </component>
   <component name="AndroidLayouts">
     <shared>
       <config />
@@ -38,10 +41,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ElasticsearchControllerTest.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ElasticsearchControllerTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/androidTest/java/cmput301w16t08/scaling_pancake/ElasticsearchControllerTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.40599456">
+            <state vertical-scroll-proportion="0.0">
               <caret line="182" column="0" selection-start-line="182" selection-start-column="0" selection-end-line="182" selection-end-column="0" />
               <folding />
             </state>
@@ -145,12 +148,33 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ElasticsearchController.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ElasticsearchController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/controllers/ElasticsearchController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="240" column="262" selection-start-line="240" selection-start-column="262" selection-end-line="240" selection-end-column="262" />
-              <folding />
+            <state vertical-scroll-proportion="0.80318093">
+              <caret line="270" column="0" selection-start-line="270" selection-start-column="0" selection-end-line="270" selection-end-column="0" />
+              <folding>
+                <element signature="docComment;class#ElasticsearchController#0" expanded="false" />
+                <element signature="class#CreateUserTask#0;class#ElasticsearchController#0" expanded="false" />
+                <element signature="method#doInBackground#0;class#CreateUserTask#0;class#ElasticsearchController#0" expanded="false" />
+                <element signature="class#GetUserTask#0;class#ElasticsearchController#0" expanded="false" />
+                <element signature="method#doInBackground#0;class#GetUserTask#0;class#ElasticsearchController#0" expanded="false" />
+                <element signature="e#2837#2901#0" expanded="false" />
+                <element signature="class#GetUserByNameTask#0;class#ElasticsearchController#0" expanded="false" />
+                <element signature="method#doInBackground#0;class#GetUserByNameTask#0;class#ElasticsearchController#0" expanded="false" />
+                <element signature="e#4525#4595#0" expanded="false" />
+                <element signature="class#GetUserByInstrumentIdTask#0;class#ElasticsearchController#0" expanded="false" />
+                <element signature="method#doInBackground#0;class#GetUserByInstrumentIdTask#0;class#ElasticsearchController#0" expanded="false" />
+                <element signature="class#DeleteUserTask#0;class#ElasticsearchController#0" expanded="false" />
+                <element signature="method#doInBackground#0;class#DeleteUserTask#0;class#ElasticsearchController#0" expanded="false" />
+                <element signature="class#DeleteUserByIdTask#0;class#ElasticsearchController#0" expanded="false" />
+                <element signature="method#doInBackground#0;class#DeleteUserByIdTask#0;class#ElasticsearchController#0" expanded="false" />
+                <element signature="class#UpdateUserTask#0;class#ElasticsearchController#0" expanded="false" />
+                <element signature="method#doInBackground#0;class#UpdateUserTask#0;class#ElasticsearchController#0" expanded="false" />
+                <element signature="class#SearchInstrumentsTask#0;class#ElasticsearchController#0" expanded="false" />
+                <element signature="method#doInBackground#0;class#SearchInstrumentsTask#0;class#ElasticsearchController#0" expanded="false" />
+                <element signature="method#verifyClient#0;class#ElasticsearchController#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -1733,10 +1757,10 @@
         <option value="$PROJECT_DIR$/app/src/androidTest/java/cmput301w16t08/scaling_pancake/InstrumentTest.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/models/Instrument.java" />
         <option value="$PROJECT_DIR$/app/src/androidTest/java/cmput301w16t08/scaling_pancake/ViewProfileActivityUITest.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/controllers/ElasticsearchController.java" />
         <option value="$PROJECT_DIR$/app/src/androidTest/java/cmput301w16t08/scaling_pancake/ElasticsearchControllerTest.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/controllers/Controller.java" />
         <option value="$PROJECT_DIR$/app/src/androidTest/java/cmput301w16t08/scaling_pancake/ControllerTest.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/controllers/ElasticsearchController.java" />
       </list>
     </option>
   </component>
@@ -1824,6 +1848,10 @@
               <option name="myItemId" value="scaling-pancake" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Gradle Scripts" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidBuildScriptsGroupNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -1891,6 +1919,42 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="controllers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scaling-pancake" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scaling_pancake" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="activities" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scaling-pancake" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="manifests" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidManifestsGroupNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -2251,7 +2315,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28668684" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3270869" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.09540034" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -2351,16 +2415,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9047619">
-          <caret line="21" column="28" selection-start-line="21" selection-start-column="28" selection-end-line="21" selection-end-column="28" />
-          <folding>
-            <element signature="e#392#410#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Android/sdk/sources/android-23/android/os/AsyncTask.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -2455,13 +2509,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="106" column="29" selection-start-line="106" selection-start-column="29" selection-end-line="106" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/activities/AddInstrumentActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.18579236">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -2641,14 +2688,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/controllers/ElasticsearchController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="240" column="262" selection-start-line="240" selection-start-column="262" selection-end-line="240" selection-end-column="262" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Android/sdk/sources/android-23/java/lang/String.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33242506">
@@ -2753,11 +2792,64 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8380282">
+          <caret line="21" column="28" selection-start-line="21" selection-start-column="28" selection-end-line="21" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/activities/AddInstrumentActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.1332008">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/androidTest/java/cmput301w16t08/scaling_pancake/ElasticsearchControllerTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.40599456">
+        <state vertical-scroll-proportion="0.0">
           <caret line="182" column="0" selection-start-line="182" selection-start-column="0" selection-end-line="182" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/controllers/ElasticsearchController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.80318093">
+          <caret line="270" column="0" selection-start-line="270" selection-start-column="0" selection-end-line="270" selection-end-column="0" />
+          <folding>
+            <element signature="docComment;class#ElasticsearchController#0" expanded="false" />
+            <element signature="class#CreateUserTask#0;class#ElasticsearchController#0" expanded="false" />
+            <element signature="method#doInBackground#0;class#CreateUserTask#0;class#ElasticsearchController#0" expanded="false" />
+            <element signature="class#GetUserTask#0;class#ElasticsearchController#0" expanded="false" />
+            <element signature="method#doInBackground#0;class#GetUserTask#0;class#ElasticsearchController#0" expanded="false" />
+            <element signature="e#2837#2901#0" expanded="false" />
+            <element signature="class#GetUserByNameTask#0;class#ElasticsearchController#0" expanded="false" />
+            <element signature="method#doInBackground#0;class#GetUserByNameTask#0;class#ElasticsearchController#0" expanded="false" />
+            <element signature="e#4525#4595#0" expanded="false" />
+            <element signature="class#GetUserByInstrumentIdTask#0;class#ElasticsearchController#0" expanded="false" />
+            <element signature="method#doInBackground#0;class#GetUserByInstrumentIdTask#0;class#ElasticsearchController#0" expanded="false" />
+            <element signature="class#DeleteUserTask#0;class#ElasticsearchController#0" expanded="false" />
+            <element signature="method#doInBackground#0;class#DeleteUserTask#0;class#ElasticsearchController#0" expanded="false" />
+            <element signature="class#DeleteUserByIdTask#0;class#ElasticsearchController#0" expanded="false" />
+            <element signature="method#doInBackground#0;class#DeleteUserByIdTask#0;class#ElasticsearchController#0" expanded="false" />
+            <element signature="class#UpdateUserTask#0;class#ElasticsearchController#0" expanded="false" />
+            <element signature="method#doInBackground#0;class#UpdateUserTask#0;class#ElasticsearchController#0" expanded="false" />
+            <element signature="class#SearchInstrumentsTask#0;class#ElasticsearchController#0" expanded="false" />
+            <element signature="method#doInBackground#0;class#SearchInstrumentsTask#0;class#ElasticsearchController#0" expanded="false" />
+            <element signature="method#verifyClient#0;class#ElasticsearchController#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
