@@ -5,9 +5,25 @@ import cmput301w16t08.scaling_pancake.models.Instrument;
 import cmput301w16t08.scaling_pancake.models.User;
 
 /**
- * Created by William on 2016-03-03.
+ * <code>Serializer</code> is a class meant to translate between <code>User</code>s,
+ * <code>Instrument</code>s, and <code>Bid</code>s, and JSON strings that can be used by
+ * the <code>ElasticsearchController</code>.
+ *
+ * @author William
+ * @see User
+ * @see Instrument
+ * @see Bid
+ * @see cmput301w16t08.scaling_pancake.controllers.ElasticsearchController
  */
 public class Serializer {
+    /**
+     * Translates a <code>User</code> into a JSON string
+     * Calls <code>serializeInstrument()</code> to translate owned and borrowed instruments
+     * Calls <code>serializeBid()</code> to translate bids
+     *
+     * @param user the user to translate
+     * @return the JSON string
+     */
     public String serializeUser(User user) {
         String string = "{\"name\" : \"" + user.getName() +
                 "\", \"email\" : \"" + user.getEmail() +
@@ -40,6 +56,13 @@ public class Serializer {
         return string;
     }
 
+    /**
+     * Translates a <code>Instrument</code> into a JSON string
+     * Calls <code>serializeBid()</code> to translate bids
+     *
+     * @param instrument the instrument to translate
+     * @return the JSON string
+     */
     public String serializeInstrument(Instrument instrument) {
         String string = "{\"id\" : \"" + instrument.getId() +
                 "\", \"name\" : \"" + instrument.getName() +
@@ -60,6 +83,12 @@ public class Serializer {
         return string;
     }
 
+    /**
+     * Translates a <code>Bid</code> into a JSON string
+     *
+     * @param bid the bid to translate
+     * @return the JSON string
+     */
     public String serializeBid(Bid bid) {
         String string = "{\"id\" : \"" + bid.getId() +
                 "\", \"instrumentId\" : \"" + bid.getInstrumentId() +

@@ -68,7 +68,6 @@ public class ElasticsearchControllerTest extends ActivityInstrumentationTestCase
         task4.execute(user);
     }
 
-    // test also covers GetInstrumentTask()
     public void testUpdateUserTask() {
         User user = new User("testuser1", "testemail1");
         Log.d("ESC", "CreateUserTask starting...");
@@ -141,14 +140,14 @@ public class ElasticsearchControllerTest extends ActivityInstrumentationTestCase
         assertTrue(user2.size() == 0);
     }
 
-    public void testGetUserByInstrumentId() {
+    public void testGetUserByInstrumentIdTask() {
         User user = new User("testuser1", "testemail1");
         ElasticsearchController.CreateUserTask task1 = new ElasticsearchController.CreateUserTask();
         task1.execute(user);
         user.addOwnedInstrument("name", "description");
         ElasticsearchController.UpdateUserTask task2 = new ElasticsearchController.UpdateUserTask();
         task2.execute(user);
-        ElasticsearchController.GetUserByInstrumentId task3 = new ElasticsearchController.GetUserByInstrumentId();
+        ElasticsearchController.GetUserByInstrumentIdTask task3 = new ElasticsearchController.GetUserByInstrumentIdTask();
         task3.execute(user.getOwnedInstruments().getInstrument(0).getId());
         ArrayList<String> users = null;
         try {

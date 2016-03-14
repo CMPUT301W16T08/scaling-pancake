@@ -11,9 +11,24 @@ import cmput301w16t08.scaling_pancake.models.Instrument;
 import cmput301w16t08.scaling_pancake.models.User;
 
 /**
- * Created by William on 2016-03-03.
+ * <code>Deserializer</code> is a class meant to translate between JSON strings used by the
+ * <code>ElasticsearchController</code> and </code><code>User</code>,
+ * <code>Instrument</code>, and <code>Bid</code> objects.
+ *
+ * @author William
+ * @see User
+ * @see Instrument
+ * @see Bid
+ * @see cmput301w16t08.scaling_pancake.controllers.ElasticsearchController
  */
 public class Deserializer {
+    /**
+     * Translates the supplied JSON string into a <code>User</code>
+     * Calls <code>deserializeInstrument()</code> to translate parts of the string to instruments
+     *
+     * @param string the JSON string to translate
+     * @return the user
+     */
     public User deserializeUser(String string) {
         JSONObject object = null;
         JSONObject object2 = null;
@@ -85,6 +100,12 @@ public class Deserializer {
         return user;
     }
 
+    /**
+     * Translates the supplied JSON string into a <code>Instrument</code>
+     *
+     * @param string the JSON string to translate
+     * @return the instrument
+     */
     public Instrument deserializeInstrument(String string) {
         JSONObject object = null;
         JSONObject object2 = null;
@@ -103,7 +124,7 @@ public class Deserializer {
                     object.getString("description"), object.getString("id"));
             instrument.setStatus(object.getString("status"));
             if (instrument.getStatus().equals("borrowed")) {
-                instrument.setBorrowedBy(object.getString("borrowedById"));
+                instrument.setBorrowedById(object.getString("borrowedById"));
             }
         } catch (JSONException e) {
             e.printStackTrace();
