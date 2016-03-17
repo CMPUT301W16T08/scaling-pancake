@@ -12,4 +12,38 @@
     tools:context=".activities.DisplaySearchResultsActivity"
     tools:showIn="@layout/activity_display_search_results">
 
+    <ListView
+        android:id="@android:id/list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="5.0dp"
+        android:drawSelectorOnTop="true"/>
+
+    <RelativeLayout
+        android:id="@android:id/empty"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/displaysearchresults_empty_list_tv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="No matching items found."
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:textColorHighlight="#f44545"
+            android:layout_centerInParent="true"
+            android:gravity="center_vertical|center_horizontal"/>
+
+    </RelativeLayout>
+
+    <ProgressBar
+        android:id="@+id/displaysearchresults_pb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        android:layout_centerInParent="true"/>
+
 </RelativeLayout>

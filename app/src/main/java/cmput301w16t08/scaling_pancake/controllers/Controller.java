@@ -11,6 +11,7 @@ import cmput301w16t08.scaling_pancake.util.Deserializer;
 import cmput301w16t08.scaling_pancake.models.Instrument;
 import cmput301w16t08.scaling_pancake.models.InstrumentList;
 import cmput301w16t08.scaling_pancake.models.User;
+import cmput301w16t08.scaling_pancake.util.PrePostActionWrapper;
 
 /**
  * The <code>Controller</code> class controls access to the model classes (which can access
@@ -503,8 +504,8 @@ public class Controller extends Application {
      * @see InstrumentList
      * @see Instrument
      */
-    public InstrumentList searchInstruments(String keywords) {
-        ElasticsearchController.SearchInstrumentsTask searchInstrumentsTask = new ElasticsearchController.SearchInstrumentsTask();
+    public InstrumentList searchInstruments(PrePostActionWrapper prePostActionWrapper, String keywords) {
+        ElasticsearchController.SearchInstrumentsTask searchInstrumentsTask = new ElasticsearchController.SearchInstrumentsTask(prePostActionWrapper);
         searchInstrumentsTask.execute(keywords);
         ArrayList<String> usrs = null;
         try {

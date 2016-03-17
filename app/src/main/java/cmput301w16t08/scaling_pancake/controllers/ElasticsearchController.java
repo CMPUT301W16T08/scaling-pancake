@@ -10,6 +10,7 @@ import com.searchly.jestdroid.JestDroidClient;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import cmput301w16t08.scaling_pancake.util.PrePostActionWrapper;
 import cmput301w16t08.scaling_pancake.util.Serializer;
 import cmput301w16t08.scaling_pancake.models.User;
 import io.searchbox.core.Delete;
@@ -231,9 +232,38 @@ public class ElasticsearchController {
      * class, corresponding to the <code>User</code>s that own the instruments.
      *
      * @see User
+     * @see PrePostActionWrapper
      * @see cmput301w16t08.scaling_pancake.models.Instrument
      */
     public static class SearchInstrumentsTask extends AsyncTask<String, Void, ArrayList<String>> {
+
+        private PrePostActionWrapper prePostActionWrapper;
+
+        public SearchInstrumentsTask(PrePostActionWrapper prePostActionWrapper)
+        {
+            super();
+            this.prePostActionWrapper = prePostActionWrapper;
+        }
+
+        /**
+         * Executes in the UI thread before <code>doInBackground()</code>
+         */
+        @Override
+        protected void onPreExecute()
+        {
+            prePostActionWrapper.preAction();
+        }
+
+        /**
+         * Executes in the UI thread after <code>doInBackground()</code>
+         * @param result
+         */
+        @Override
+        protected void onPostExecute(ArrayList<String> result)
+        {
+            prePostActionWrapper.postAction();
+        }
+
         @Override
         protected ArrayList<String> doInBackground(String... strings) {
             // only one string containing all the keywords separated by spaces should be entered
