@@ -230,6 +230,9 @@ public class ElasticsearchController {
      * and find the ones containing the keywords that are separated by a space in the supplied string.
      * Returns an <code>ArrayList</code> of JSON strings, that can be translated using the <code>Deserializer</code>
      * class, corresponding to the <code>User</code>s that own the instruments.
+     * The <code>PrePostActionWrapper</code> provides a route for methods defined in the calling
+     * view to run during the <code>onPreExecute()</code> and <code>onPostExecute()</code>
+     * calls of the <code>AsyncTask</code>. <code>PrePostActionWrapper</code> can be <code>null</code>.
      *
      * @see User
      * @see PrePostActionWrapper
@@ -251,7 +254,10 @@ public class ElasticsearchController {
         @Override
         protected void onPreExecute()
         {
-            prePostActionWrapper.preAction();
+            if(prePostActionWrapper != null)
+            {
+                prePostActionWrapper.preAction();
+            }
         }
 
         /**
@@ -261,7 +267,10 @@ public class ElasticsearchController {
         @Override
         protected void onPostExecute(ArrayList<String> result)
         {
-            prePostActionWrapper.postAction();
+            if(prePostActionWrapper != null)
+            {
+                prePostActionWrapper.postAction();
+            }
         }
 
         @Override

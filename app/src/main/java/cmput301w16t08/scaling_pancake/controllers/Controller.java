@@ -500,6 +500,7 @@ public class Controller extends Application {
      * that were found
      *
      * @param keywords the space-separated keywords to search
+     * @param prePostActionWrapper a wrapper for functions defined in the view layer (can be null)
      * @return the list of found instruments
      * @see InstrumentList
      * @see Instrument
