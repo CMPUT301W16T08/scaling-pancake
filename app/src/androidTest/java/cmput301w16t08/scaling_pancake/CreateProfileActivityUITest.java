@@ -56,24 +56,35 @@ public class CreateProfileActivityUITest extends ActivityInstrumentationTestCase
 
         controller.createUser(testUser.getName(),testUser.getEmail());
 
+        /* test empty name and email field */
+        createProfile("","");
+        // make sure the activity is still running
+        assertFalse(activity.isFinishing());
+
+        /* test empty name and email field */
+        createProfile("name here","");
+        // make sure the activity is still running
+        assertFalse(activity.isFinishing());
+
+        /* test empty name field */
+        createProfile("","email here");
+        // make sure the activity is still running
+        assertFalse(activity.isFinishing());
+
         /* click on button if the user is already there */
         createProfile(testUser.getName(), testUser.getEmail());
-
         //check this activity is still running
         assertFalse(activity.isFinishing());
 
+        /* test when username is not in use */
         //make sure this is no such user
-
         User u = controller.getUserByName(testUser.getName());
         controller.deleteUserById(u.getId());
         assertNull(controller.getUserByName(testUser.getName()));
-
         // create a new profile, click on profile button
         createProfile(testUser.getName(), testUser.getEmail());
-
         //check the user is in userlist now
         assertNotNull(controller.getUserByName(testUser.getName()));
-
         //make sure this activity ends already
         assertTrue(activity.isFinishing());
 

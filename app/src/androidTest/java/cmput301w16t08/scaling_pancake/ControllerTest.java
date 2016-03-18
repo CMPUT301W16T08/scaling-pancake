@@ -406,17 +406,17 @@ public class ControllerTest extends ActivityInstrumentationTestCase2 {
         controller.addInstrument("name02", "description02");
         controller.logout();
         controller.login("user03");
-        InstrumentList instruments = controller.searchInstruments("hhfkdlsajfsajkfds");
+        InstrumentList instruments = controller.searchInstruments(null,"hhfkdlsajfsajkfds");
         assertEquals(instruments.size(), 0);
-        instruments = controller.searchInstruments("description01");
+        instruments = controller.searchInstruments(null,"description01");
         assertEquals(instruments.size(), 1);
         assertEquals(instruments.getInstrument(0).getName(), "name01");
-        instruments = controller.searchInstruments("name01");
+        instruments = controller.searchInstruments(null,"name01");
         assertEquals(instruments.size(), 1);
         assertEquals(instruments.getInstrument(0).getName(), "name01");
-        instruments = controller.searchInstruments("description");
+        instruments = controller.searchInstruments(null,"description");
         assertEquals(instruments.size(), 2);
-        instruments = controller.searchInstruments("name");
+        instruments = controller.searchInstruments(null,"name");
         assertEquals(instruments.size(), 2);
 
         controller.deleteUser();

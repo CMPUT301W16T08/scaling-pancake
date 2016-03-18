@@ -181,7 +181,7 @@ public class ElasticsearchControllerTest extends ActivityInstrumentationTestCase
         ElasticsearchController.UpdateUserTask task4 = new ElasticsearchController.UpdateUserTask();
         task4.execute(user2);
 
-        ElasticsearchController.SearchInstrumentsTask task5 = new ElasticsearchController.SearchInstrumentsTask();
+        ElasticsearchController.SearchInstrumentsTask task5 = new ElasticsearchController.SearchInstrumentsTask(null);
         task5.execute("There should not be an instrument containing this string");
         ArrayList<String> users = null;
         try {
@@ -194,7 +194,7 @@ public class ElasticsearchControllerTest extends ActivityInstrumentationTestCase
         assertNotNull(users);
         assertEquals(users.size(), 0);
 
-        ElasticsearchController.SearchInstrumentsTask task6 = new ElasticsearchController.SearchInstrumentsTask();
+        ElasticsearchController.SearchInstrumentsTask task6 = new ElasticsearchController.SearchInstrumentsTask(null);
         task6.execute("keyword");
         users = null;
         try {
@@ -207,7 +207,7 @@ public class ElasticsearchControllerTest extends ActivityInstrumentationTestCase
         assertNotNull(users);
         assertEquals(users.size(), 1);
 
-        ElasticsearchController.SearchInstrumentsTask task7 = new ElasticsearchController.SearchInstrumentsTask();
+        ElasticsearchController.SearchInstrumentsTask task7 = new ElasticsearchController.SearchInstrumentsTask(null);
         task7.execute("key");
         users = null;
         try {

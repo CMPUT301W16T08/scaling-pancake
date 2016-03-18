@@ -60,8 +60,16 @@ public class CreateProfileActivity extends AppCompatActivity
         String username = nameET.getText().toString();
         String email = emailET.getText().toString();
 
-        if(controller.createUser(username,email))
-        {
+
+        if (username.equals("")){
+            // if username is empty
+            // prompt not valid message
+            Toast.makeText(CreateProfileActivity.this,"username can't be empty",Toast.LENGTH_LONG).show();
+        } else if (email.equals("")){
+            // if email is empty
+            // prompt username in use message
+            Toast.makeText(CreateProfileActivity.this,"email can't be empty ",Toast.LENGTH_LONG).show();
+        } else if(controller.createUser(username,email)) {
             // if successfully create the user
             // login new user and finish
             controller.login(username);
@@ -69,9 +77,7 @@ public class CreateProfileActivity extends AppCompatActivity
             returnedIntent.putExtra("login", true);
             setResult(Activity.RESULT_OK, returnedIntent);
             finish();
-        }
-        else
-        {
+        } else {
             // if username is in use
             // prompt username in use message
             Toast.makeText(CreateProfileActivity.this,"username is in use",Toast.LENGTH_LONG).show();
