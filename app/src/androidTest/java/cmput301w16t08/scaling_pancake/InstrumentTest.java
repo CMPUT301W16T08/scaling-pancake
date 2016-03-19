@@ -169,5 +169,11 @@ public class InstrumentTest extends ActivityInstrumentationTestCase2 {
         instrument.declineBid(bid1);
         assertEquals(instrument.getStatus(), "available");
     }
+
+    /*public void testAddThumbnail() {
+        User owner = new User("Owner", "Owner email");
+        Instrument instrument = new Instrument(owner.getId(), "name", "Description");
+        instrument.addThumbnail( //LOAD THE TEST THUMBNAIL FROM FILE
+    }*/
 }
 

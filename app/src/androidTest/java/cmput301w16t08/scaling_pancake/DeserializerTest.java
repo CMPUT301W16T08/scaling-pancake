@@ -39,6 +39,7 @@ public class DeserializerTest extends ActivityInstrumentationTestCase2 {
         assertEquals(user.getBorrowedInstruments().getInstrument(0).getId(), borrower.getBorrowedInstruments().getInstrument(0).getId());
         assertEquals(user.getBids().size(), 1);
         assertEquals(user.getBids().getBid(0).getId(), bid2.getId());
+        assertEquals(user.getNewBidFlag(), false);
     }
 
     public void testDeserializeInstrument() {
@@ -56,6 +57,9 @@ public class DeserializerTest extends ActivityInstrumentationTestCase2 {
         assertEquals(instrument.getName(), "name1");
         assertEquals(instrument.getId(), owner.getOwnedInstruments().getInstrument(0).getId());
         assertEquals(instrument.getStatus(), "available");
+        assertEquals(instrument.getReturnedFlag(), false);
+        assertNull(instrument.getThumbnail());
+        assertEquals(instrument.getThumbnailBase64(), "null");
 
         // Test instrument after it is borrowed
         Bid bid1 = new Bid(owner.getOwnedInstruments().getInstrument(0).getId(), owner.getId(), borrower.getId(), 1.00f);
@@ -71,5 +75,8 @@ public class DeserializerTest extends ActivityInstrumentationTestCase2 {
         assertEquals(instrument.getBids().size(), 1);
         assertEquals(instrument.getBorrowedById(), borrower.getId());
         assertEquals(instrument.getStatus(), "borrowed");
+        assertEquals(instrument.getReturnedFlag(), false);
+        assertNull(instrument.getThumbnail());
+        assertEquals(instrument.getThumbnailBase64(), "null");
     }
 }
