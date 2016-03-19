@@ -529,4 +529,61 @@ public class ControllerTest extends ActivityInstrumentationTestCase2 {
         controller.login("bidder");
         controller.deleteUser();
     }
+
+    public void testReturnInstrument() {
+        Controller controller = new Controller();
+        controller.createUser("owner", "email1");
+        controller.login("owner");
+        User user1 = controller.getCurrentUser();
+        controller.addInstrument("name", "description");
+        controller.logout();
+        controller.createUser("bidder", "email2");
+        controller.login("bidder");
+        controller.makeBidOnInstrument(user1.getOwnedInstruments().getInstrument(0), 1);
+        controller.logout();
+        controller.login("owner");
+        controller.acceptBidOnInstrument(controller.getCurrentUsersOwnedInstruments().getInstrument(0).getBids().getBid(0));
+        controller.logout();
+        controller.login("bidder");
+        controller.returnInstrument(user1.getOwnedInstruments().getInstrument(0));
+        assertEquals(controller.getCurrentUsersBorrowedInstruments().size(), 0);
+        controller.logout();
+        controller.login("owner");
+        assertEquals(controller.getCurrentUsersOwnedBorrowedInstruments().getInstrument(0).getReturnedFlag(), true);
+
+        controller.deleteUser();
+        controller.login("bidder");
+        controller.deleteUser();
+    }
+
+    public void testAcceptReturnedInstrument() {
+        Controller controller = new Controller();
+        controller.createUser("owner", "email1");
+        controller.login("owner");
+        User user1 = controller.getCurrentUser();
+        controller.addInstrument("name", "description");
+        controller.logout();
+        controller.createUser("bidder", "email2");
+        controller.login("bidder");
+        controller.makeBidOnInstrument(user1.getOwnedInstruments().getInstrument(0), 1);
+        controller.logout();
+        controller.login("owner");
+        controller.acceptBidOnInstrument(controller.getCurrentUsersOwnedInstruments().getInstrument(0).getBids().getBid(0));
+        controller.logout();
+        controller.login("bidder");
+        controller.returnInstrument(user1.getOwnedInstruments().getInstrument(0));
+        controller.logout();
+        controller.login("owner");
+        assertEquals(controller.getCurrentUsersOwnedBorrowedInstruments().getInstrument(0).getReturnedFlag(), true);
+        controller.acceptReturnedInstrument(0);
+        assertEquals(controller.getCurrentUsersOwnedBorrowedInstruments().size(), 0);
+        assertEquals(controller.getCurrentUsersOwnedInstruments().size(), 1);
+        assertEquals(controller.getCurrentUsersOwnedInstruments().getInstrument(0).getReturnedFlag(), false);
+        assertEquals(controller.getCurrentUsersOwnedInstruments().getInstrument(0).getStatus(), "available");
+        assertEquals(controller.getCurrentUsersOwnedInstruments().getInstrument(0).getBids().size(), 0);
+
+        controller.deleteUser();
+        controller.login("bidder");
+        controller.deleteUser();
+    }
 }

@@ -676,4 +676,103 @@ public class Controller extends Application {
         updateUserTask1.execute(bidder);
         updateUserTask2.execute(this.currentUser);
     }
+
+    /**
+     * The currently logged in <code>User</code> returns a borrowed <code>Instrument</code>
+     *
+     * @param instrument the instrument to return
+     * @see Instrument
+     */
+    public void returnInstrument(Instrument instrument) {
+        if (!this.getCurrentUsersBorrowedInstruments().containsInstrument(instrument)) {
+            throw new RuntimeException();
+        }
+        this.getCurrentUsersBorrowedInstruments().removeInstrument(instrument);
+
+        // get the owner of the instrument and set the flag on his instrument
+        ElasticsearchController.GetUserTask getUserTask = new ElasticsearchController.GetUserTask();
+        getUserTask.execute(instrument.getOwnerId());
+        ArrayList<String> users = null;
+        try {
+            users = getUserTask.get();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+        User owner = new Deserializer().deserializeUser(users.get(0));
+        owner.getOwnedInstruments().getInstrument(instrument.getId()).setReturnedFlag(true);
+
+        // update both users
+        ElasticsearchController.UpdateUserTask updateUserTask = new ElasticsearchController.UpdateUserTask();
+        updateUserTask.execute(this.getCurrentUser());
+        ElasticsearchController.UpdateUserTask updateUserTask1 = new ElasticsearchController.UpdateUserTask();
+        updateUserTask1.execute(owner);
+    }
+
+    /**
+     * The currently logged in <code>User</code> returns a borrowed <code>Instrument</code>
+     *
+     * @param index the index of the instrument to return
+     * @see Instrument
+     */
+    public void returnInstrument(int index) {
+        if (index >= this.getCurrentUsersBorrowedInstruments().size()) {
+            throw new RuntimeException();
+        }
+        Instrument instrument = this.getCurrentUsersBorrowedInstruments().getInstrument(index);
+        this.getCurrentUsersBorrowedInstruments().removeInstrument(instrument);
+
+        // get the owner of the instrument and set the flag on his instrument
+        ElasticsearchController.GetUserTask getUserTask = new ElasticsearchController.GetUserTask();
+        getUserTask.execute(instrument.getOwnerId());
+        ArrayList<String> users = null;
+        try {
+            users = getUserTask.get();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+        User owner = new Deserializer().deserializeUser(users.get(0));
+        owner.getOwnedInstruments().getInstrument(instrument.getId()).setReturnedFlag(true);
+
+        // update both users
+        ElasticsearchController.UpdateUserTask updateUserTask = new ElasticsearchController.UpdateUserTask();
+        updateUserTask.execute(this.getCurrentUser());
+        ElasticsearchController.UpdateUserTask updateUserTask1 = new ElasticsearchController.UpdateUserTask();
+        updateUserTask1.execute(owner);
+    }
+
+    /**
+     * The currently logged in <code>User</code> sets a returned <code>Instrument</code> back to available
+     *
+     * @param instrument the instrument to set to available
+     * @see Instrument
+     */
+    public void acceptReturnedInstrument(Instrument instrument) {
+        instrument.setReturnedFlag(false);
+        instrument.getBids().clearBids();
+        instrument.setBorrowedById(null);
+        instrument.setStatus("available");
+        ElasticsearchController.UpdateUserTask updateUserTask = new ElasticsearchController.UpdateUserTask();
+        updateUserTask.execute(this.getCurrentUser());
+    }
+
+    /**
+     * The currently logged in <code>User</code> sets a returned <code>Instrument</code> back to available
+     *
+     * @param index the index of the instrument to set to available
+     * @see Instrument
+     */
+    public void acceptReturnedInstrument(int index) {
+        // NOTE: INDEX IS FOR USERS OWNED BORROWED INSTRUMENTS
+        Instrument instrument = this.getCurrentUsersOwnedBorrowedInstruments().getInstrument(index);
+        instrument.setReturnedFlag(false);
+        instrument.getBids().clearBids();
+        instrument.setBorrowedById(null);
+        instrument.setStatus("available");
+        ElasticsearchController.UpdateUserTask updateUserTask = new ElasticsearchController.UpdateUserTask();
+        updateUserTask.execute(this.getCurrentUser());
+    }
 }
