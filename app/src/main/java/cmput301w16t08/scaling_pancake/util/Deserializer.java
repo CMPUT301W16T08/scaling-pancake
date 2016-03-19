@@ -47,7 +47,8 @@ public class Deserializer {
 
         // Create the user
         try {
-            user = new User(object.getString("name"), object.getString("email"), object.getString("id"));
+            user = new User(object.getString("name"), object.getString("email"), object.getString("id"),
+                    Boolean.parseBoolean(object.getString("newBidFlag")));
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -121,8 +122,12 @@ public class Deserializer {
         if (object == null) {throw new RuntimeException();}
         try {
             instrument = new Instrument(object.getString("ownerId"), object.getString("name"),
-                    object.getString("description"), object.getString("id"));
+                    object.getString("description"), object.getString("id"),
+                    Boolean.parseBoolean(object.getString("returnedFlag")));
+
             instrument.setStatus(object.getString("status"));
+            instrument.addThumbnail(object.getString("thumbnailBase64"));
+
             if (instrument.getStatus().equals("borrowed")) {
                 instrument.setBorrowedById(object.getString("borrowedById"));
             }
