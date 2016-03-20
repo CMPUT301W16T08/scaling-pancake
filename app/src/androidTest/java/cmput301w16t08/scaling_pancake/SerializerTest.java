@@ -49,7 +49,7 @@ public class SerializerTest extends ActivityInstrumentationTestCase2 {
                 "\", \"name\" : \"name1\", \"description\" : \"description1\", \"ownerId\" : \"" +
                 owner.getId() + "\", \"status\" : \"available\", \"returnedFlag\" : \"false\"," +
                 " \"thumbnailBase64\" : \"" + owner.getOwnedInstruments().getInstrument(0).getThumbnailBase64() +
-                 "\", \"bids\" : []}");
+                "\", \"longitude\" : \"-1.0\", \"latitude\" : \"-1.0\", \"bids\" : []}");
 
         // try adding a bid
         Bid bid1 = new Bid(owner.getOwnedInstruments().getInstrument(0).getId(), owner.getId(), borrower.getId(), 1.00f);
@@ -61,7 +61,8 @@ public class SerializerTest extends ActivityInstrumentationTestCase2 {
                 "\", \"name\" : \"name1\", \"description\" : \"description1\", \"ownerId\" : \"" +
                 owner.getId() + "\", \"status\" : \"borrowed\", \"returnedFlag\" : \"false\"," +
                 " \"thumbnailBase64\" : \"" + owner.getOwnedInstruments().getInstrument(0).getThumbnailBase64() +
-                "\", \"borrowedById\" : \"" + borrower.getId() + "\", \"bids\" : [" + serializer.serializeBid(bid1) + "]}");
+                "\", \"longitude\" : \"-1.0\", \"latitude\" : \"-1.0\", \"borrowedById\" : \"" + borrower.getId() +
+                "\", \"bids\" : [" + serializer.serializeBid(bid1) + "]}");
     }
 
     public void testSerializeBid() {

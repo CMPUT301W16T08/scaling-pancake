@@ -756,6 +756,7 @@ public class Controller extends Application {
         instrument.getBids().clearBids();
         instrument.setBorrowedById(null);
         instrument.setStatus("available");
+        instrument.clearLocation();
         ElasticsearchController.UpdateUserTask updateUserTask = new ElasticsearchController.UpdateUserTask();
         updateUserTask.execute(this.getCurrentUser());
     }
@@ -773,6 +774,7 @@ public class Controller extends Application {
         instrument.getBids().clearBids();
         instrument.setBorrowedById(null);
         instrument.setStatus("available");
+        instrument.clearLocation();
         ElasticsearchController.UpdateUserTask updateUserTask = new ElasticsearchController.UpdateUserTask();
         updateUserTask.execute(this.getCurrentUser());
     }
@@ -813,6 +815,36 @@ public class Controller extends Application {
             throw new RuntimeException();
         }
         instrument.deleteThumbnail();
+        ElasticsearchController.UpdateUserTask updateUserTask = new ElasticsearchController.UpdateUserTask();
+        updateUserTask.execute(this.currentUser);
+    }
+
+    /**
+     * Sets the location to pick up the <code>Instrument</code>
+     *
+     * @param instrument
+     * @param longitude
+     * @param latitude
+     */
+    public void setLocationForInstrument(Instrument instrument, float longitude, float latitude) {
+        if (!this.currentUser.getOwnedInstruments().containsInstrument(instrument)) {
+            throw new RuntimeException();
+        }
+        instrument.setLocation(longitude, latitude);
+        ElasticsearchController.UpdateUserTask updateUserTask = new ElasticsearchController.UpdateUserTask();
+        updateUserTask.execute(this.currentUser);
+    }
+
+    /**
+     * Clears the pick up location of the <code>Instrument</code>
+     *
+     * @param instrument
+     */
+    public void clearLocationForInstrument(Instrument instrument) {
+        if (!this.currentUser.getOwnedInstruments().containsInstrument(instrument)) {
+            throw new RuntimeException();
+        }
+        instrument.clearLocation();
         ElasticsearchController.UpdateUserTask updateUserTask = new ElasticsearchController.UpdateUserTask();
         updateUserTask.execute(this.currentUser);
     }

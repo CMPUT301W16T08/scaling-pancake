@@ -4,7 +4,6 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.test.ActivityInstrumentationTestCase2;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
 
@@ -656,6 +655,73 @@ public class ControllerTest extends ActivityInstrumentationTestCase2 {
         u = new Deserializer().deserializeUser(users.get(0));
         assertEquals(u.getId(), user.getId());
         assertEquals(u.getOwnedInstruments().getInstrument(0).getThumbnail(), null);
+        controller.deleteUser();
+    }
+
+    public void testSetLocationForInstrument() {
+        Controller controller = new Controller();
+        controller.createUser("owner", "email");
+        controller.login("owner");
+        User user = controller.getCurrentUser();
+        Instrument instrument = new Instrument(user.getId(), "name", "description");
+        controller.addInstrument(instrument);
+        controller.setLocationForInstrument(instrument, 10.0001f, 12.9999f);
+
+        ElasticsearchController.GetUserTask getUserTask = new ElasticsearchController.GetUserTask();
+        getUserTask.execute(user.getId());
+        ArrayList<String> users = null;
+        try {
+            users = getUserTask.get();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+        User u = new Deserializer().deserializeUser(users.get(0));
+        assertEquals(u.getId(), user.getId());
+        assertEquals(u.getOwnedInstruments().getInstrument(0).getLongitude(), 10.0001f);
+        assertEquals(u.getOwnedInstruments().getInstrument(0).getLatitude(), 12.9999f);
+        controller.deleteUser();
+    }
+
+    public void testClearLocationForInstrument() {
+        Controller controller = new Controller();
+        controller.createUser("owner", "email");
+        controller.login("owner");
+        User user = controller.getCurrentUser();
+        Instrument instrument = new Instrument(user.getId(), "name", "description");
+        controller.addInstrument(instrument);
+        controller.setLocationForInstrument(instrument, 10.0001f, 12.9999f);
+
+        ElasticsearchController.GetUserTask getUserTask = new ElasticsearchController.GetUserTask();
+        getUserTask.execute(user.getId());
+        ArrayList<String> users = null;
+        try {
+            users = getUserTask.get();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+        User u = new Deserializer().deserializeUser(users.get(0));
+        assertEquals(u.getId(), user.getId());
+        assertEquals(u.getOwnedInstruments().getInstrument(0).getLongitude(), 10.0001f);
+        assertEquals(u.getOwnedInstruments().getInstrument(0).getLatitude(), 12.9999f);
+        controller.clearLocationForInstrument(instrument);
+        ElasticsearchController.GetUserTask getUserTask1 = new ElasticsearchController.GetUserTask();
+        getUserTask1.execute(user.getId());
+        users = null;
+        try {
+            users = getUserTask1.get();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+        u = new Deserializer().deserializeUser(users.get(0));
+        assertEquals(u.getId(), user.getId());
+        assertEquals(u.getOwnedInstruments().getInstrument(0).getLongitude(), -1f);
+        assertEquals(u.getOwnedInstruments().getInstrument(0).getLatitude(), -1f);
         controller.deleteUser();
     }
 }

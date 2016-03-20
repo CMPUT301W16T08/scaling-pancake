@@ -127,6 +127,7 @@ public class Deserializer {
 
             instrument.setStatus(object.getString("status"));
             instrument.addThumbnail(object.getString("thumbnailBase64"));
+            instrument.setLocation(Float.parseFloat(object.getString("longitude")), Float.parseFloat(object.getString("latitude")));
 
             if (instrument.getStatus().equals("borrowed")) {
                 instrument.setBorrowedById(object.getString("borrowedById"));

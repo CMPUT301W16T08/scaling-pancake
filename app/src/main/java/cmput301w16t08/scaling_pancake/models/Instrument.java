@@ -24,9 +24,10 @@ public class Instrument {
     private BidList bids;
     private String id;
     private boolean returnedFlag;
-    protected transient Bitmap thumbnail;
-    protected String thumbnailBase64;
-
+    private transient Bitmap thumbnail;
+    private String thumbnailBase64;
+    private float longitude;
+    private float latitude;
 
     /**
      * Creates a new <code>Instrument</code> with supplied name and description, and for supplied owner
@@ -46,6 +47,8 @@ public class Instrument {
         this.thumbnail = null;
         this.thumbnailBase64 = null;
         this.returnedFlag = false;
+        this.longitude = -1;
+        this.latitude = -1;
     }
 
     /**
@@ -66,6 +69,8 @@ public class Instrument {
         this.id = UUID.randomUUID().toString();
         this.returnedFlag = false;
         addThumbnail(thumbnail);
+        this.longitude = -1;
+        this.latitude = -1;
 
     }
 
@@ -87,6 +92,8 @@ public class Instrument {
         this.id = id;
         this.returnedFlag = returned;
         addThumbnail(thumbnail);
+        this.longitude = -1;
+        this.latitude = -1;
     }
 
     /**
@@ -108,6 +115,8 @@ public class Instrument {
         this.thumbnail = null;
         this.thumbnailBase64 = null;
         this.returnedFlag = returned;
+        this.longitude = -1;
+        this.latitude = -1;
     }
 
     /**
@@ -383,5 +392,42 @@ public class Instrument {
     public void deleteThumbnail() {
         this.thumbnail = null;
         this.thumbnailBase64 = null;
+    }
+
+    /**
+     * Returns the longitude of the pick up location for the <code>Instrument</code>
+     *
+     * @return the longitude
+     */
+    public float getLongitude() {
+        return this.longitude;
+    }
+
+    /**
+     * Returns the latitude of the pick up location for the <code>Instrument</code>
+     *
+     * @return the latitude
+     */
+    public float getLatitude() {
+        return this.latitude;
+    }
+
+    /**
+     * Sets the pick up location of the <code>Instrument</code>
+     *
+     * @param longitude
+     * @param latitude
+     */
+    public void setLocation(float longitude, float latitude) {
+        this.longitude = longitude;
+        this.latitude = latitude;
+    }
+
+    /**
+     * Resets the pick up location of the <code>Instrument</code>
+     */
+    public void clearLocation() {
+        this.longitude = -1;
+        this.latitude = -1;
     }
 }
