@@ -44,6 +44,7 @@ public class Instrument {
         this.bids = new BidList();
         this.id = UUID.randomUUID().toString();
         this.thumbnail = null;
+        this.thumbnailBase64 = null;
         this.returnedFlag = false;
     }
 
@@ -84,8 +85,8 @@ public class Instrument {
         this.borrowedById = null;
         this.bids = new BidList();
         this.id = id;
-        this.thumbnail = thumbnail;
         this.returnedFlag = returned;
+        addThumbnail(thumbnail);
     }
 
     /**
@@ -105,6 +106,7 @@ public class Instrument {
         this.bids = new BidList();
         this.id = id;
         this.thumbnail = null;
+        this.thumbnailBase64 = null;
         this.returnedFlag = returned;
     }
 
@@ -373,5 +375,13 @@ public class Instrument {
      */
     public String getThumbnailBase64() {
         return this.thumbnailBase64;
+    }
+
+    /**
+     * Deletes the thumbnail attached to the <code>Instrument</code>
+     */
+    public void deleteThumbnail() {
+        this.thumbnail = null;
+        this.thumbnailBase64 = null;
     }
 }

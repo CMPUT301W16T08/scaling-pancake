@@ -1,7 +1,10 @@
 package cmput301w16t08.scaling_pancake;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.test.ActivityInstrumentationTestCase2;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
 
@@ -584,6 +587,75 @@ public class ControllerTest extends ActivityInstrumentationTestCase2 {
 
         controller.deleteUser();
         controller.login("bidder");
+        controller.deleteUser();
+    }
+
+    public void testAddPhotoToInstrument() {
+        Controller controller = new Controller();
+        controller.createUser("owner", "email");
+        controller.login("owner");
+        User user = controller.getCurrentUser();
+        Instrument instrument = new Instrument(user.getId(), "name", "description");
+        controller.addInstrument(instrument);
+        Bitmap photo = BitmapFactory.decodeFile("test_image.png");
+        controller.addPhotoToInstrument(instrument, photo);
+
+        ElasticsearchController.GetUserTask getUserTask = new ElasticsearchController.GetUserTask();
+        getUserTask.execute(user.getId());
+        ArrayList<String> users = null;
+        try {
+            users = getUserTask.get();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+        User u = new Deserializer().deserializeUser(users.get(0));
+        assertEquals(u.getId(), user.getId());
+        assertEquals(u.getOwnedInstruments().getInstrument(0).getThumbnail(), photo);
+        controller.deleteUser();
+    }
+
+    public void testDeletePhotoFromInstrument() {
+        Controller controller = new Controller();
+        controller.createUser("owner", "email");
+        controller.login("owner");
+        User user = controller.getCurrentUser();
+        Instrument instrument = new Instrument(user.getId(), "name", "description");
+        controller.addInstrument(instrument);
+        Bitmap photo = BitmapFactory.decodeFile("test_image.png");
+        controller.addPhotoToInstrument(instrument, photo);
+
+        ElasticsearchController.GetUserTask getUserTask = new ElasticsearchController.GetUserTask();
+        getUserTask.execute(user.getId());
+        ArrayList<String> users = null;
+        try {
+            users = getUserTask.get();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+        User u = new Deserializer().deserializeUser(users.get(0));
+        assertEquals(u.getId(), user.getId());
+        assertEquals(u.getOwnedInstruments().getInstrument(0).getThumbnail(), photo);
+
+        controller.logout();
+        controller.login(u.getName());
+        controller.deletePhotoFromInstrument(u.getOwnedInstruments().getInstrument(0));
+        ElasticsearchController.GetUserTask getUserTask1 = new ElasticsearchController.GetUserTask();
+        getUserTask1.execute(u.getId());
+        users = null;
+        try {
+            users = getUserTask1.get();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+        u = new Deserializer().deserializeUser(users.get(0));
+        assertEquals(u.getId(), user.getId());
+        assertEquals(u.getOwnedInstruments().getInstrument(0).getThumbnail(), null);
         controller.deleteUser();
     }
 }

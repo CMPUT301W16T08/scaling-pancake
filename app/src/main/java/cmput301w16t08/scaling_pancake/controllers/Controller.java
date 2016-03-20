@@ -1,6 +1,7 @@
 package cmput301w16t08.scaling_pancake.controllers;
 
 import android.app.Application;
+import android.graphics.Bitmap;
 
 import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
@@ -774,5 +775,45 @@ public class Controller extends Application {
         instrument.setStatus("available");
         ElasticsearchController.UpdateUserTask updateUserTask = new ElasticsearchController.UpdateUserTask();
         updateUserTask.execute(this.getCurrentUser());
+    }
+
+    /**
+     * Resets the NewBidFlag for the currently logged in <code>User</code>
+     */
+    public void resetNewBidFlag() {
+        this.currentUser.setNewBidFlag(false);
+        ElasticsearchController.UpdateUserTask updateUserTask = new ElasticsearchController.UpdateUserTask();
+        updateUserTask.execute(this.getCurrentUser());
+    }
+
+    /**
+     * Adds a photo to an <code>Instrument</code>
+     *
+     * @param instrument the instrument to add a photo to
+     * @param photo the photo to add
+     * @see Instrument
+     */
+    public void addPhotoToInstrument(Instrument instrument, Bitmap photo) {
+        if (!this.currentUser.getOwnedInstruments().containsInstrument(instrument)) {
+            throw new RuntimeException();
+        }
+        instrument.addThumbnail(photo);
+        ElasticsearchController.UpdateUserTask updateUserTask = new ElasticsearchController.UpdateUserTask();
+        updateUserTask.execute(this.currentUser);
+    }
+
+    /**
+     * Deletes a photo from an <code>Instrument</code>
+     *
+     * @param instrument the instrument to delete a photo from
+     * @see Instrument
+     */
+    public void deletePhotoFromInstrument(Instrument instrument) {
+        if (!this.currentUser.getOwnedInstruments().containsInstrument(instrument)) {
+            throw new RuntimeException();
+        }
+        instrument.deleteThumbnail();
+        ElasticsearchController.UpdateUserTask updateUserTask = new ElasticsearchController.UpdateUserTask();
+        updateUserTask.execute(this.currentUser);
     }
 }
