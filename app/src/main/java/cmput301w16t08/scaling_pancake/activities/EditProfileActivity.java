@@ -68,7 +68,6 @@ public class EditProfileActivity extends AppCompatActivity {
                     controller.editCurrentUserEmail(strEmail);
                 }
                 Toast.makeText(controller, "Changes saved!", Toast.LENGTH_SHORT).show();
-                finish();
             }
             else
             {
@@ -83,8 +82,8 @@ public class EditProfileActivity extends AppCompatActivity {
         {
             controller.editCurrentUserEmail(strEmail);
             Toast.makeText(controller, "Changes saved!", Toast.LENGTH_SHORT).show();
-            finish();
         }
+        finish();
     }
 
     /**

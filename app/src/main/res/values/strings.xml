@@ -39,4 +39,9 @@
     <string name="title_activity_display_search_results">DisplaySearchResults</string>
     <string name="title_activity_view_instrument">ViewInstrumentActivity</string>
     <string name="nothing_to_show">Nothing to show.</string>
+    <string name="instrument_content_desc">Image of the instrument</string>
+    <string name="play_sound">Play sound</string>
+    <string name="make_bid">Make Bid</string>
+    <string name="view_bids">View Bids</string>
+    <string name="delete">Delete</string>
 </resources>
