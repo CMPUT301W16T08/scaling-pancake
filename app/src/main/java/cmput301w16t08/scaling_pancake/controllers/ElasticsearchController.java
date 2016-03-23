@@ -32,7 +32,7 @@ import io.searchbox.core.SearchResult;
 public class ElasticsearchController {
     private static JestDroidClient client;
     private static String url = "http://cmput301.softwareprocess.es:8080";
-    private static String index = "cmput301w16t08";
+    private static String index = "cmput301w16t08number2";
 
     /**
      * <code>CreateUserTask</code> is used to save a new <code>User</code>
