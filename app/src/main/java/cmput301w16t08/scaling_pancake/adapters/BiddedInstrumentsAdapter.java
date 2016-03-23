@@ -1,12 +1,9 @@
 package cmput301w16t08.scaling_pancake.adapters;
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import cmput301w16t08.scaling_pancake.models.Bid;

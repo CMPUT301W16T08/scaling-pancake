@@ -61,7 +61,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Nothing to show."
+            android:text="@string/nothing_to_show"
             android:textAlignment="center"
             android:textSize="24sp"
             android:textColorHighlight="#f44545"

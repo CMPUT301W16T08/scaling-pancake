@@ -2,7 +2,6 @@ package cmput301w16t08.scaling_pancake;
 
 import android.app.Activity;
 import android.app.Instrumentation;
-import android.support.annotation.UiThread;
 import android.test.ActivityInstrumentationTestCase2;
 import android.test.UiThreadTest;
 import android.widget.Button;
@@ -12,7 +11,6 @@ import com.robotium.solo.Solo;
 
 import cmput301w16t08.scaling_pancake.activities.EditProfileActivity;
 import cmput301w16t08.scaling_pancake.controllers.Controller;
-import cmput301w16t08.scaling_pancake.models.User;
 
 /**
  * Created by Aaron on 3/12/2016.

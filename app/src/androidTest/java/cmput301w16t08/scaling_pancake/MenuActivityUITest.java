@@ -8,7 +8,6 @@ import com.robotium.solo.Solo;
 
 import cmput301w16t08.scaling_pancake.activities.AddInstrumentActivity;
 import cmput301w16t08.scaling_pancake.activities.InstrumentListActivity;
-import cmput301w16t08.scaling_pancake.activities.MainActivity;
 import cmput301w16t08.scaling_pancake.activities.MenuActivity;
 import cmput301w16t08.scaling_pancake.activities.SearchInstrumentsActivity;
 import cmput301w16t08.scaling_pancake.activities.ViewProfileActivity;

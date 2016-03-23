@@ -653,7 +653,7 @@ public class Controller extends Application {
         if (!this.currentUser.getOwnedInstruments().getInstrument(bid.getInstrumentId()).getBids().containsBid(bid)) {
             throw new RuntimeException("instrument does not contain that bid");
         }
-        Instrument instrument = this.currentUser.getOwnedInstruments().getInstrument(bid.getInstrumentId());
+        //Instrument instrument = this.currentUser.getOwnedInstruments().getInstrument(bid.getInstrumentId());
 
         // get the bidder
         ElasticsearchController.GetUserTask getUserTask = new ElasticsearchController.GetUserTask();

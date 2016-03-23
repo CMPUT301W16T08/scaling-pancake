@@ -90,12 +90,11 @@ public class Serializer {
      * @return the JSON string
      */
     public String serializeBid(Bid bid) {
-        String string = "{\"id\" : \"" + bid.getId() +
+        return "{\"id\" : \"" + bid.getId() +
                 "\", \"instrumentId\" : \"" + bid.getInstrumentId() +
                 "\", \"ownerId\" : \"" + bid.getOwnerId() +
                 "\", \"bidderId\" : \"" + bid.getBidderId() +
                 "\", \"bidAmount\" : \"" + Float.toString(bid.getBidAmount()) +
                 "\", \"accepted\" : \"" + Boolean.toString(bid.getAccepted()) + "\"}";
-        return string;
     }
 }

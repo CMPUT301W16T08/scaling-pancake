@@ -1,19 +1,12 @@
 package cmput301w16t08.scaling_pancake;
 
-import android.content.Intent;
 import android.test.ActivityInstrumentationTestCase2;
-import android.test.UiThreadTest;
-import android.test.ViewAsserts;
-import android.view.Menu;
-import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 
 import com.robotium.solo.Solo;
 
 import cmput301w16t08.scaling_pancake.activities.EditProfileActivity;
 import cmput301w16t08.scaling_pancake.activities.MenuActivity;
-import cmput301w16t08.scaling_pancake.activities.ViewProfileActivity;
 import cmput301w16t08.scaling_pancake.controllers.Controller;
 
 /**

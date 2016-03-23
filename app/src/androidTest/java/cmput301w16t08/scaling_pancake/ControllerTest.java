@@ -90,7 +90,7 @@ public class ControllerTest extends ActivityInstrumentationTestCase2 {
     public void testDeleteUser() {
         Controller controller = new Controller();
         assertNull(controller.getCurrentUser());
-        assertTrue(controller.createUser("user", "email")); ;
+        assertTrue(controller.createUser("user", "email"));
         assertTrue(controller.login("user"));
         ElasticsearchController.GetUserTask getUserTask = new ElasticsearchController.GetUserTask();
         getUserTask.execute(controller.getCurrentUser().getId());
@@ -122,7 +122,7 @@ public class ControllerTest extends ActivityInstrumentationTestCase2 {
     public void testDeleteUserById() {
         Controller controller = new Controller();
         assertNull(controller.getCurrentUser());
-        assertTrue(controller.createUser("user", "email")); ;
+        assertTrue(controller.createUser("user", "email"));
         assertTrue(controller.login("user"));
         ElasticsearchController.GetUserTask getUserTask = new ElasticsearchController.GetUserTask();
         getUserTask.execute(controller.getCurrentUser().getId());
@@ -153,7 +153,7 @@ public class ControllerTest extends ActivityInstrumentationTestCase2 {
 
     public void testLogout() {
         Controller controller = new Controller();
-        assertTrue(controller.createUser("user", "email")); ;
+        assertTrue(controller.createUser("user", "email"));
         assertTrue(controller.login("user"));
         assertNotNull(controller.getCurrentUser());
         controller.logout();
@@ -165,7 +165,7 @@ public class ControllerTest extends ActivityInstrumentationTestCase2 {
     // Use case: US 03.02.01 Edit contact information
     public void testEditCurrentUser() {
         Controller controller = new Controller();
-        assertTrue(controller.createUser("user", "email")); ;
+        assertTrue(controller.createUser("user", "email"));
         assertTrue(controller.login("user"));
         assertTrue(controller.editCurrentUser("edit1", "edit2"));
         ElasticsearchController.GetUserTask getUserTask = new ElasticsearchController.GetUserTask();
@@ -187,7 +187,7 @@ public class ControllerTest extends ActivityInstrumentationTestCase2 {
 
     public void testEditCurrentUserName() {
         Controller controller = new Controller();
-        assertTrue(controller.createUser("user", "email")); ;
+        assertTrue(controller.createUser("user", "email"));
         assertTrue(controller.login("user"));
         assertTrue(controller.editCurrentUserName("edit1"));
         ElasticsearchController.GetUserTask getUserTask = new ElasticsearchController.GetUserTask();
@@ -209,7 +209,7 @@ public class ControllerTest extends ActivityInstrumentationTestCase2 {
 
     public void testEditCurrentUserEmail() {
         Controller controller = new Controller();
-        assertTrue(controller.createUser("user", "email")); ;
+        assertTrue(controller.createUser("user", "email"));
         assertTrue(controller.login("user"));
         assertTrue(controller.editCurrentUserEmail("edit1"));
         ElasticsearchController.GetUserTask getUserTask = new ElasticsearchController.GetUserTask();
@@ -233,7 +233,7 @@ public class ControllerTest extends ActivityInstrumentationTestCase2 {
     public void testGetCurrentUsersOwnedInstruments() {
         Controller controller = new Controller();
         assertNull(controller.getCurrentUsersOwnedInstruments());
-        assertTrue(controller.createUser("user", "email")); ;
+        assertTrue(controller.createUser("user", "email"));
         assertTrue(controller.login("user"));
         assertNotNull(controller.getCurrentUsersOwnedInstruments());
         controller.deleteUser();
@@ -243,7 +243,7 @@ public class ControllerTest extends ActivityInstrumentationTestCase2 {
     public void testGetCurrentUsersOwnedBorrowedInstruments() {
         Controller controller = new Controller();
         assertNull(controller.getCurrentUsersOwnedBorrowedInstruments());
-        assertTrue(controller.createUser("user", "email")); ;
+        assertTrue(controller.createUser("user", "email"));
         assertTrue(controller.login("user"));
         assertNotNull(controller.getCurrentUsersOwnedBorrowedInstruments());
         controller.deleteUser();
@@ -253,7 +253,7 @@ public class ControllerTest extends ActivityInstrumentationTestCase2 {
     public void testGetCurrentUsersBorrowedInstruments() {
         Controller controller = new Controller();
         assertNull(controller.getCurrentUsersBorrowedInstruments());
-        assertTrue(controller.createUser("user", "email")); ;
+        assertTrue(controller.createUser("user", "email"));
         assertTrue(controller.login("user"));
         assertNotNull(controller.getCurrentUsersBorrowedInstruments());
         controller.deleteUser();
@@ -263,7 +263,7 @@ public class ControllerTest extends ActivityInstrumentationTestCase2 {
     public void testGetCurrentUsersBiddedInstruments() {
         Controller controller = new Controller();
         assertNull(controller.getCurrentUsersBiddedInstruments());
-        assertTrue(controller.createUser("user", "email")); ;
+        assertTrue(controller.createUser("user", "email"));
         assertTrue(controller.login("user"));
         assertNotNull(controller.getCurrentUsersBiddedInstruments());
         controller.deleteUser();
@@ -273,7 +273,7 @@ public class ControllerTest extends ActivityInstrumentationTestCase2 {
     public void testGetCurrentUsersBids() {
         Controller controller = new Controller();
         assertNull(controller.getCurrentUsersBids());
-        assertTrue(controller.createUser("user", "email")); ;
+        assertTrue(controller.createUser("user", "email"));
         assertTrue(controller.login("user"));
         assertNotNull(controller.getCurrentUsersBids());
         controller.deleteUser();
@@ -282,7 +282,7 @@ public class ControllerTest extends ActivityInstrumentationTestCase2 {
     // Use case: US 01.01.01 Add an instrument
     public void testAddInstrument() {
         Controller controller = new Controller();
-        assertTrue(controller.createUser("user", "email")); ;
+        assertTrue(controller.createUser("user", "email"));
         assertTrue(controller.login("user"));
         User user = controller.getCurrentUser();
         Instrument instrument = new Instrument(user.getId(), "name", "description");
@@ -316,7 +316,7 @@ public class ControllerTest extends ActivityInstrumentationTestCase2 {
 
     public void testGetInstrumentById() {
         Controller controller = new Controller();
-        assertTrue(controller.createUser("user", "email")); ;
+        assertTrue(controller.createUser("user", "email"));
         assertTrue(controller.login("user"));
         User user = controller.getCurrentUser();
         Instrument instrument = new Instrument(user.getName(), "name", "description");
@@ -331,7 +331,7 @@ public class ControllerTest extends ActivityInstrumentationTestCase2 {
     // Use case: US 01.04.01 Edit an instrument
     public void testEditInstrument() {
         Controller controller = new Controller();
-        assertTrue(controller.createUser("user", "email")); ;
+        assertTrue(controller.createUser("user", "email"));
         assertTrue(controller.login("user"));
         User user = controller.getCurrentUser();
         Instrument instrument = new Instrument(user.getName(), "name", "description");
@@ -362,7 +362,7 @@ public class ControllerTest extends ActivityInstrumentationTestCase2 {
     // Use case: US 01.05.01 Delete an instrument
     public void testDeleteInstrument() {
         Controller controller = new Controller();
-        assertTrue(controller.createUser("user", "email")); ;
+        assertTrue(controller.createUser("user", "email"));
         assertTrue(controller.login("user"));
         User user = controller.getCurrentUser();
         Instrument instrument1 = new Instrument(user.getId(), "name1", "description1");

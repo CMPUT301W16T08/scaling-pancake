@@ -1,11 +1,9 @@
 package cmput301w16t08.scaling_pancake;
 
 import android.test.ActivityInstrumentationTestCase2;
-import android.widget.Adapter;
 
 import com.robotium.solo.Solo;
 
-import cmput301w16t08.scaling_pancake.activities.DisplaySearchResultsActivity;
 import cmput301w16t08.scaling_pancake.activities.MenuActivity;
 import cmput301w16t08.scaling_pancake.controllers.Controller;
 
