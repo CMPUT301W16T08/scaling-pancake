@@ -1,5 +1,7 @@
 package cmput301w16t08.scaling_pancake;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.test.ActivityInstrumentationTestCase2;
 
 import java.util.ArrayList;
@@ -527,6 +529,199 @@ public class ControllerTest extends ActivityInstrumentationTestCase2 {
 
         controller.deleteUser();
         controller.login("bidder");
+        controller.deleteUser();
+    }
+
+    public void testReturnInstrument() {
+        Controller controller = new Controller();
+        controller.createUser("owner", "email1");
+        controller.login("owner");
+        User user1 = controller.getCurrentUser();
+        controller.addInstrument("name", "description");
+        controller.logout();
+        controller.createUser("bidder", "email2");
+        controller.login("bidder");
+        controller.makeBidOnInstrument(user1.getOwnedInstruments().getInstrument(0), 1);
+        controller.logout();
+        controller.login("owner");
+        controller.acceptBidOnInstrument(controller.getCurrentUsersOwnedInstruments().getInstrument(0).getBids().getBid(0));
+        controller.logout();
+        controller.login("bidder");
+        controller.returnInstrument(user1.getOwnedInstruments().getInstrument(0));
+        assertEquals(controller.getCurrentUsersBorrowedInstruments().size(), 0);
+        controller.logout();
+        controller.login("owner");
+        assertEquals(controller.getCurrentUsersOwnedBorrowedInstruments().getInstrument(0).getReturnedFlag(), true);
+
+        controller.deleteUser();
+        controller.login("bidder");
+        controller.deleteUser();
+    }
+
+    public void testAcceptReturnedInstrument() {
+        Controller controller = new Controller();
+        controller.createUser("owner", "email1");
+        controller.login("owner");
+        User user1 = controller.getCurrentUser();
+        controller.addInstrument("name", "description");
+        controller.logout();
+        controller.createUser("bidder", "email2");
+        controller.login("bidder");
+        controller.makeBidOnInstrument(user1.getOwnedInstruments().getInstrument(0), 1);
+        controller.logout();
+        controller.login("owner");
+        controller.acceptBidOnInstrument(controller.getCurrentUsersOwnedInstruments().getInstrument(0).getBids().getBid(0));
+        controller.logout();
+        controller.login("bidder");
+        controller.returnInstrument(user1.getOwnedInstruments().getInstrument(0));
+        controller.logout();
+        controller.login("owner");
+        assertEquals(controller.getCurrentUsersOwnedBorrowedInstruments().getInstrument(0).getReturnedFlag(), true);
+        controller.acceptReturnedInstrument(0);
+        assertEquals(controller.getCurrentUsersOwnedBorrowedInstruments().size(), 0);
+        assertEquals(controller.getCurrentUsersOwnedInstruments().size(), 1);
+        assertEquals(controller.getCurrentUsersOwnedInstruments().getInstrument(0).getReturnedFlag(), false);
+        assertEquals(controller.getCurrentUsersOwnedInstruments().getInstrument(0).getStatus(), "available");
+        assertEquals(controller.getCurrentUsersOwnedInstruments().getInstrument(0).getBids().size(), 0);
+
+        controller.deleteUser();
+        controller.login("bidder");
+        controller.deleteUser();
+    }
+
+    public void testAddPhotoToInstrument() {
+        Controller controller = new Controller();
+        controller.createUser("owner", "email");
+        controller.login("owner");
+        User user = controller.getCurrentUser();
+        Instrument instrument = new Instrument(user.getId(), "name", "description");
+        controller.addInstrument(instrument);
+        Bitmap photo = BitmapFactory.decodeFile("test_image.png");
+        controller.addPhotoToInstrument(instrument, photo);
+
+        ElasticsearchController.GetUserTask getUserTask = new ElasticsearchController.GetUserTask();
+        getUserTask.execute(user.getId());
+        ArrayList<String> users = null;
+        try {
+            users = getUserTask.get();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+        User u = new Deserializer().deserializeUser(users.get(0));
+        assertEquals(u.getId(), user.getId());
+        assertEquals(u.getOwnedInstruments().getInstrument(0).getThumbnail(), photo);
+        controller.deleteUser();
+    }
+
+    public void testDeletePhotoFromInstrument() {
+        Controller controller = new Controller();
+        controller.createUser("owner", "email");
+        controller.login("owner");
+        User user = controller.getCurrentUser();
+        Instrument instrument = new Instrument(user.getId(), "name", "description");
+        controller.addInstrument(instrument);
+        Bitmap photo = BitmapFactory.decodeFile("test_image.png");
+        controller.addPhotoToInstrument(instrument, photo);
+
+        ElasticsearchController.GetUserTask getUserTask = new ElasticsearchController.GetUserTask();
+        getUserTask.execute(user.getId());
+        ArrayList<String> users = null;
+        try {
+            users = getUserTask.get();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+        User u = new Deserializer().deserializeUser(users.get(0));
+        assertEquals(u.getId(), user.getId());
+        assertEquals(u.getOwnedInstruments().getInstrument(0).getThumbnail(), photo);
+
+        controller.logout();
+        controller.login(u.getName());
+        controller.deletePhotoFromInstrument(u.getOwnedInstruments().getInstrument(0));
+        ElasticsearchController.GetUserTask getUserTask1 = new ElasticsearchController.GetUserTask();
+        getUserTask1.execute(u.getId());
+        users = null;
+        try {
+            users = getUserTask1.get();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+        u = new Deserializer().deserializeUser(users.get(0));
+        assertEquals(u.getId(), user.getId());
+        assertEquals(u.getOwnedInstruments().getInstrument(0).getThumbnail(), null);
+        controller.deleteUser();
+    }
+
+    public void testSetLocationForInstrument() {
+        Controller controller = new Controller();
+        controller.createUser("owner", "email");
+        controller.login("owner");
+        User user = controller.getCurrentUser();
+        Instrument instrument = new Instrument(user.getId(), "name", "description");
+        controller.addInstrument(instrument);
+        controller.setLocationForInstrument(instrument, 10.0001f, 12.9999f);
+
+        ElasticsearchController.GetUserTask getUserTask = new ElasticsearchController.GetUserTask();
+        getUserTask.execute(user.getId());
+        ArrayList<String> users = null;
+        try {
+            users = getUserTask.get();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+        User u = new Deserializer().deserializeUser(users.get(0));
+        assertEquals(u.getId(), user.getId());
+        assertEquals(u.getOwnedInstruments().getInstrument(0).getLongitude(), 10.0001f);
+        assertEquals(u.getOwnedInstruments().getInstrument(0).getLatitude(), 12.9999f);
+        controller.deleteUser();
+    }
+
+    public void testClearLocationForInstrument() {
+        Controller controller = new Controller();
+        controller.createUser("owner", "email");
+        controller.login("owner");
+        User user = controller.getCurrentUser();
+        Instrument instrument = new Instrument(user.getId(), "name", "description");
+        controller.addInstrument(instrument);
+        controller.setLocationForInstrument(instrument, 10.0001f, 12.9999f);
+
+        ElasticsearchController.GetUserTask getUserTask = new ElasticsearchController.GetUserTask();
+        getUserTask.execute(user.getId());
+        ArrayList<String> users = null;
+        try {
+            users = getUserTask.get();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+        User u = new Deserializer().deserializeUser(users.get(0));
+        assertEquals(u.getId(), user.getId());
+        assertEquals(u.getOwnedInstruments().getInstrument(0).getLongitude(), 10.0001f);
+        assertEquals(u.getOwnedInstruments().getInstrument(0).getLatitude(), 12.9999f);
+        controller.clearLocationForInstrument(instrument);
+        ElasticsearchController.GetUserTask getUserTask1 = new ElasticsearchController.GetUserTask();
+        getUserTask1.execute(user.getId());
+        users = null;
+        try {
+            users = getUserTask1.get();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+        u = new Deserializer().deserializeUser(users.get(0));
+        assertEquals(u.getId(), user.getId());
+        assertEquals(u.getOwnedInstruments().getInstrument(0).getLongitude(), -1f);
+        assertEquals(u.getOwnedInstruments().getInstrument(0).getLatitude(), -1f);
         controller.deleteUser();
     }
 }

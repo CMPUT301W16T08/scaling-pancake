@@ -1,5 +1,10 @@
 package cmput301w16t08.scaling_pancake.models;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.util.Base64;
+
+import java.io.ByteArrayOutputStream;
 import java.util.UUID;
 
 /**
@@ -18,6 +23,11 @@ public class Instrument {
     private String borrowedById;
     private BidList bids;
     private String id;
+    private boolean returnedFlag;
+    private transient Bitmap thumbnail;
+    private String thumbnailBase64;
+    private float longitude;
+    private float latitude;
 
     /**
      * Creates a new <code>Instrument</code> with supplied name and description, and for supplied owner
@@ -34,6 +44,34 @@ public class Instrument {
         this.borrowedById = null;
         this.bids = new BidList();
         this.id = UUID.randomUUID().toString();
+        this.thumbnail = null;
+        this.thumbnailBase64 = null;
+        this.returnedFlag = false;
+        this.longitude = -1;
+        this.latitude = -1;
+    }
+
+    /**
+     * Creates a new <code>Instrument</code> with supplied name, description, and thumbnail, and for supplied owner
+     *
+     * @param owner the id of the owner of the instrument
+     * @param name the name of the instrument
+     * @param description the description of the instrument
+     * @param thumbnail the image for the instrument
+     */
+    public Instrument(String owner, String name, String description, Bitmap thumbnail) {
+        this.name = name;
+        this.description = description;
+        this.ownerId = owner;
+        this.status = "available";
+        this.borrowedById = null;
+        this.bids = new BidList();
+        this.id = UUID.randomUUID().toString();
+        this.returnedFlag = false;
+        addThumbnail(thumbnail);
+        this.longitude = -1;
+        this.latitude = -1;
+
     }
 
     /**
@@ -41,10 +79,10 @@ public class Instrument {
      *
      * @param owner the id of the owner of the instrument
      * @param name the name of the instrument
-     * @param description the description of the instrumet
+     * @param description the description of the instrument
      * @param id the id of the instrument
      */
-    public Instrument(String owner, String name, String description, String id) {
+    public Instrument(String owner, String name, String description, String id, Bitmap thumbnail, boolean returned) {
         this.name = name;
         this.description = description;
         this.ownerId = owner;
@@ -52,6 +90,33 @@ public class Instrument {
         this.borrowedById = null;
         this.bids = new BidList();
         this.id = id;
+        this.returnedFlag = returned;
+        addThumbnail(thumbnail);
+        this.longitude = -1;
+        this.latitude = -1;
+    }
+
+    /**
+     * Creates the <code>Instrument</code> with the supplied id
+     *
+     * @param owner the id of the owner of the instrument
+     * @param name the name of the instrument
+     * @param description the description of the instrument
+     * @param id the id of the instrument
+     */
+    public Instrument(String owner, String name, String description, String id, boolean returned) {
+        this.name = name;
+        this.description = description;
+        this.ownerId = owner;
+        this.status = "available";
+        this.borrowedById = null;
+        this.bids = new BidList();
+        this.id = id;
+        this.thumbnail = null;
+        this.thumbnailBase64 = null;
+        this.returnedFlag = returned;
+        this.longitude = -1;
+        this.latitude = -1;
     }
 
     /**
@@ -251,5 +316,118 @@ public class Instrument {
      */
     public String getId() {
         return id;
+    }
+
+    /**
+     * Returns true if <code>Instrument</code> recently returned by borrower
+     *
+     * @return true/false
+     */
+    public boolean getReturnedFlag() {
+        return this.returnedFlag;
+    }
+
+    /**
+     * Sets the returnedFlag on the <code>Instrument</code>
+     *
+     * @param b boolean for if instrument has been returned recently by borrower
+     */
+    public void setReturnedFlag(boolean b) {
+        this.returnedFlag = b;
+    }
+
+    /**
+     * Adds a thumbnail for the <code>Instrument</code>
+     *
+     * @param thumbnail the new thumbnail for the instrument
+     */
+    public void addThumbnail(Bitmap thumbnail) {
+        if (thumbnail != null) {
+            this.thumbnail = thumbnail;
+            ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+            thumbnail.compress(Bitmap.CompressFormat.PNG, 100, byteArrayOutputStream);
+            byte[] b = byteArrayOutputStream.toByteArray();
+            this.thumbnailBase64 = Base64.encodeToString(b, Base64.DEFAULT);
+        }
+    }
+
+    /**
+     * Adds a thumbnail for the <code>Instrument</code> as a Base64 String
+     *
+     * @param thumbnailBase64 the new thumbnail in Base64
+     */
+    public void addThumbnail(String thumbnailBase64) {
+        if (thumbnailBase64 != null && !thumbnailBase64.equals("")) {
+            this.thumbnailBase64 = thumbnailBase64;
+            byte[] b = Base64.decode(thumbnailBase64.getBytes(), 0);
+            this.thumbnail = BitmapFactory.decodeByteArray(b, 0, b.length);
+        }
+    }
+
+    /**
+     * Returns the thumbnail for the <code>Instrument</code>
+     *
+     * @return the thumbnail, or null if no thumbnail
+     */
+    public Bitmap getThumbnail() {
+        if (this.thumbnail == null && thumbnailBase64 != null) {
+            byte[] decodeString = Base64.decode(thumbnailBase64, Base64.DEFAULT);
+            this.thumbnail = BitmapFactory.decodeByteArray(decodeString, 0, decodeString.length);
+        }
+        return this.thumbnail;
+    }
+
+    /**
+     * Returns the thumbnail for the <code>Instrument</code> as a String
+     *
+     * @return the thumbnail as a String, or null if no thumbnail
+     */
+    public String getThumbnailBase64() {
+        return this.thumbnailBase64;
+    }
+
+    /**
+     * Deletes the thumbnail attached to the <code>Instrument</code>
+     */
+    public void deleteThumbnail() {
+        this.thumbnail = null;
+        this.thumbnailBase64 = null;
+    }
+
+    /**
+     * Returns the longitude of the pick up location for the <code>Instrument</code>
+     *
+     * @return the longitude
+     */
+    public float getLongitude() {
+        return this.longitude;
+    }
+
+    /**
+     * Returns the latitude of the pick up location for the <code>Instrument</code>
+     *
+     * @return the latitude
+     */
+    public float getLatitude() {
+        return this.latitude;
+    }
+
+    /**
+     * Sets the pick up location of the <code>Instrument</code>
+     *
+     * @param longitude
+     * @param latitude
+     */
+    public void setLocation(float longitude, float latitude) {
+        this.longitude = longitude;
+        this.latitude = latitude;
+    }
+
+    /**
+     * Resets the pick up location of the <code>Instrument</code>
+     */
+    public void clearLocation() {
+        this.longitude = -1;
+        this.latitude = -1;
     }
 }

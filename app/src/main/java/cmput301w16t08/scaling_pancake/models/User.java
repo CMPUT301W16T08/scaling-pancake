@@ -18,6 +18,7 @@ public class User {
     private InstrumentList borrowedInstruments;
     private BidList bids;
     private String id;
+    private boolean newBidFlag;
 
     /**
      * Creates a new user with username <code>name</code> and email <code>email</code>, and assigns it a unique id
@@ -32,6 +33,7 @@ public class User {
         this.borrowedInstruments = new InstrumentList();
         this.bids = new BidList();
         this.id = UUID.randomUUID().toString();
+        this.newBidFlag = false;
     }
 
     /**
@@ -40,13 +42,14 @@ public class User {
      * @param email
      * @param id
      */
-    public User(String name, String email, String id) {
+    public User(String name, String email, String id, boolean newBid) {
         this.name = name;
         this.email = email;
         this.ownedInstruments = new InstrumentList();
         this.borrowedInstruments = new InstrumentList();
         this.bids = new BidList();
         this.id = id;
+        this.newBidFlag = newBid;
     }
 
     /**
@@ -283,5 +286,23 @@ public class User {
      */
     public void setId(String id) {
         this.id = id;
+    }
+
+    /**
+     * Returns true if the user has a new <code>Bid</code> on an owned <code>Instrument</code>
+     *
+     * @return true/false
+     */
+    public boolean getNewBidFlag() {
+        return this.newBidFlag;
+    }
+
+    /**
+     * Sets the newBidFlag for the User
+     *
+     * @param b boolean for if there is a new bid on an owned instrument
+     */
+    public void setNewBidFlag(boolean b) {
+        this.newBidFlag = b;
     }
 }

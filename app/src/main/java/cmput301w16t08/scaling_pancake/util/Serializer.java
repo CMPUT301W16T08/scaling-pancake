@@ -1,5 +1,8 @@
 package cmput301w16t08.scaling_pancake.util;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import cmput301w16t08.scaling_pancake.models.Bid;
 import cmput301w16t08.scaling_pancake.models.Instrument;
 import cmput301w16t08.scaling_pancake.models.User;
@@ -28,6 +31,7 @@ public class Serializer {
         String string = "{\"name\" : \"" + user.getName() +
                 "\", \"email\" : \"" + user.getEmail() +
                 "\", \"id\" : \"" + user.getId() +
+                "\", \"newBidFlag\" : \"" + String.valueOf(user.getNewBidFlag()) +
 
                 "\", \"ownedInstruments\" : [";
         if (user.getOwnedInstruments().size() > 0) {
@@ -68,7 +72,12 @@ public class Serializer {
                 "\", \"name\" : \"" + instrument.getName() +
                 "\", \"description\" : \"" + instrument.getDescription() +
                 "\", \"ownerId\" : \"" + instrument.getOwnerId() +
-                "\", \"status\" : \"" + instrument.getStatus();
+                "\", \"status\" : \"" + instrument.getStatus() +
+                "\", \"returnedFlag\" : \"" + String.valueOf(instrument.getReturnedFlag()) +
+                "\", \"thumbnailBase64\" : \"" + instrument.getThumbnailBase64() +
+                "\", \"longitude\" : \"" + String.valueOf(instrument.getLongitude()) +
+                "\", \"latitude\" : \"" + String.valueOf(instrument.getLatitude());
+
         if (instrument.getStatus().equals("borrowed")) {
             string = string + "\", \"borrowedById\" : \"" + instrument.getBorrowedById();
         }
