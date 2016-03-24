@@ -167,4 +167,28 @@ public class BidList {
     public void clearBids() {
         this.bids.clear();
     }
+
+    /**
+     * Find the <code>Bid</code> with the largest bid amount.
+     *
+     * @return
+     */
+    public Bid getMaxBid()
+    {
+        Bid max = null;
+        /* Negative bid amounts should not be possible */
+        float amount = -1;
+
+        for(int i = 0;i < bids.size();i++)
+        {
+            if(bids.get(i).getBidAmount() > amount)
+            {
+                max = bids.get(i);
+                amount = max.getBidAmount();
+            }
+        }
+
+        /* If there are no bids, the result should be null */
+        return max;
+    }
 }

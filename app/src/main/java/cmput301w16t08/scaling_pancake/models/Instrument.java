@@ -430,4 +430,9 @@ public class Instrument {
         this.longitude = -1;
         this.latitude = -1;
     }
+
+    public Bid getLargestBid()
+    {
+        return bids.getMaxBid();
+    }
 }

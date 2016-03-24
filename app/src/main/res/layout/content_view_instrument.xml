@@ -43,7 +43,7 @@
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/play_sound"
+        android:text="@string/play_sample"
         android:id="@+id/instrument_sound_button"
         android:layout_below="@+id/instrument_image_view"
         android:layout_alignParentLeft="true"

@@ -37,13 +37,13 @@
             android:layout_centerInParent="true"
             android:gravity="center_vertical|center_horizontal"/>
 
-    </RelativeLayout>
+        <ProgressBar
+            android:id="@+id/displaysearchresults_pb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            android:layout_centerInParent="true"/>
 
-    <ProgressBar
-        android:id="@+id/displaysearchresults_pb"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:visibility="invisible"
-        android:layout_centerInParent="true"/>
+    </RelativeLayout>
 
 </RelativeLayout>

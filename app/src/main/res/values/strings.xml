@@ -40,8 +40,21 @@
     <string name="title_activity_view_instrument">ViewInstrumentActivity</string>
     <string name="nothing_to_show">Nothing to show.</string>
     <string name="instrument_content_desc">Image of the instrument</string>
-    <string name="play_sound">Play sound</string>
+    <string name="play_sample">Play Sample</string>
     <string name="make_bid">Make Bid</string>
+    <string name="bid_again">Bid Again</string>
     <string name="view_bids">View Bids</string>
+    <string name="highest_bid">Current Max Bid: </string>
     <string name="delete">Delete</string>
+    <string name="owner">Owner:</string>
+    <string name="owner_me">Owner: Me</string>
+    <string name="rate">Rate: </string>
+    <string name="borrowing">You are currently borrowing this instrument.</string>
+    <string name="biddednotice">You have made a bid on this instrument.</string>
+    <string name="set_returned">Mark As Returned</string>
+    <string name="borrower">Borrower: </string>
+    <string name="accept_bid">Accept Bid</string>
+    <string name="decline_bid">Decline Bid</string>
+    <string name="bidder">Bidder: </string>
+    <string name="offer">Offered Rate: </string>
 </resources>

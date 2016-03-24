@@ -1,10 +1,12 @@
 package cmput301w16t08.scaling_pancake.activities;
 
 import android.app.ListActivity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.Spinner;
 
 import cmput301w16t08.scaling_pancake.adapters.BiddedInstrumentsAdapter;
@@ -12,6 +14,7 @@ import cmput301w16t08.scaling_pancake.adapters.BorrowedInstrumentAdapter;
 import cmput301w16t08.scaling_pancake.controllers.Controller;
 import cmput301w16t08.scaling_pancake.adapters.OwnedInstrumentAdapter;
 import cmput301w16t08.scaling_pancake.R;
+import cmput301w16t08.scaling_pancake.models.Instrument;
 
 /**
  * The <code>InstrumentListActivity</code> generates a list of <code>Instrument</code>s that are
@@ -30,6 +33,13 @@ public class InstrumentListActivity extends ListActivity implements AdapterView.
     private OwnedInstrumentAdapter ownedInstrumentAdapter;
     private BorrowedInstrumentAdapter borrowedInstrumentAdapter;
     private BiddedInstrumentsAdapter biddedInstrumentsAdapter;
+
+    private final static int ownedInstrumentsListCode = 1;
+    private final static int borrowedInstrumentsListCode = 2;
+    private final static int biddedInstrumentsListCode = 3;
+    private final static int borrowedByOthersListCode = 4;
+
+    private int currentSelection;
 
     /**
      * The adapters are initialized with data from the <code>Controller</code> in onCreate().
@@ -51,6 +61,7 @@ public class InstrumentListActivity extends ListActivity implements AdapterView.
                 controller.getCurrentUsersBorrowedInstruments());
 
         setListAdapter(ownedInstrumentAdapter);
+        currentSelection = ownedInstrumentsListCode;
 
 
         /*
@@ -89,14 +100,17 @@ public class InstrumentListActivity extends ListActivity implements AdapterView.
         if(selection.matches("Owned"))
         {
             setListAdapter(ownedInstrumentAdapter);
+            currentSelection = ownedInstrumentsListCode;
         }
         else if(selection.matches("Borrowed"))
         {
             setListAdapter(borrowedInstrumentAdapter);
+            currentSelection = borrowedInstrumentsListCode;
         }
         else if(selection.matches("My Bids"))
         {
             setListAdapter(biddedInstrumentsAdapter);
+            currentSelection = biddedInstrumentsListCode;
         }
     }
 
@@ -107,6 +121,79 @@ public class InstrumentListActivity extends ListActivity implements AdapterView.
      */
     @Override
     public void onNothingSelected(AdapterView<?> parent)
+    {
+
+    }
+
+    @Override
+    public void onListItemClick(ListView l, View v, int position, long id)
+    {
+        switch(currentSelection)
+        {
+            case ownedInstrumentsListCode:
+            {
+                viewOwnedInstrument(position);
+                break;
+            }
+            case borrowedInstrumentsListCode:
+            {
+                viewBorrowedInstrument(position);
+                break;
+            }
+            case biddedInstrumentsListCode:
+            {
+                viewMyBidsInstrument(position);
+                break;
+            }
+            case borrowedByOthersListCode:
+            {
+                viewBorrowedByOthersInstrument(position);
+                break;
+            }
+        }
+    }
+
+    public void viewOwnedInstrument(int position)
+    {
+        Intent intent = new Intent(this, ViewInstrumentActivity.class);
+
+        intent.putExtra("view_code", ViewInstrumentActivity.owned_instrument_view_code);
+        intent.putExtra("position", position);
+
+        startActivity(intent);
+    }
+
+    public void viewBorrowedInstrument(int position)
+    {
+        Intent intent = new Intent(this, ViewInstrumentActivity.class);
+
+        intent.putExtra("view_code", ViewInstrumentActivity.borrowed_instrument_view_code);
+        intent.putExtra("position", position);
+
+        startActivity(intent);
+    }
+
+    public void viewMyBidsInstrument(int position)
+    {
+        Intent intent = new Intent(this, ViewInstrumentActivity.class);
+
+        intent.putExtra("view_code", ViewInstrumentActivity.mybids_instrument_view_code);
+        intent.putExtra("position", position);
+
+        startActivity(intent);
+    }
+
+    public void viewBorrowedByOthersInstrument(int position)
+    {
+        Intent intent = new Intent(this, ViewInstrumentActivity.class);
+
+        intent.putExtra("view_code", ViewInstrumentActivity.brwd_by_others_instrument_view_code);
+        intent.putExtra("position", position);
+
+        startActivity(intent);
+    }
+
+    public void viewBid(int position)
     {
 
     }

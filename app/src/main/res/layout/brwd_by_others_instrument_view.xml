@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context="cmput301w16t08.scaling_pancake.activities.ViewInstrumentActivity">
+
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:context="cmput301w16t08.scaling_pancake.activities.ViewInstrumentActivity">
+
+        <LinearLayout
+            android:id="@+id/ownedinstrumentview_buttonshell"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_alignParentBottom="true">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="36sp"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                android:text="@string/set_returned"
+                android:background="@drawable/btn_selector"/>
+
+        </LinearLayout>
+
+        <ScrollView
+            android:id="@+id/ownedinstrumentview_sv"
+            android:layout_above="@id/ownedinstrumentview_buttonshell"
+            android:layout_alignParentTop="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/brwd_by_others_instrument_view_name_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="2dp"
+                    android:textSize="36sp"
+                    android:textColor="@color/black"
+                    android:textAlignment="center"
+                    android:background="@drawable/grey_rounded_border"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="2dp"
+                    android:src="@drawable/mothra"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:text="@string/owner_me"
+                    android:layout_gravity="start"
+                    android:textSize="24sp"/>
+
+                <TextView
+                    android:id="@+id/brwd_by_others_instrument_view_borrower_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:text="@string/borrower"
+                    android:layout_gravity="start"
+                    android:textSize="24sp"/>
+
+                <TextView
+                    android:id="@+id/brwd_by_others_instrument_view_rate_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:text="@string/rate"
+                    android:layout_gravity="start"
+                    android:textSize="24sp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:orientation="horizontal">
+
+                    <ImageButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="Play the sample sound"
+                        android:src="@android:drawable/ic_media_play"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/play_sample"
+                        android:textSize="24sp"/>
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/brwd_by_others_instrument_view_description_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:text="@string/description"
+                    android:textSize="18sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/black"
+                    android:layout_gravity="start"/>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+
+    </RelativeLayout>
+
+</android.support.design.widget.CoordinatorLayout>
