@@ -10,6 +10,8 @@ import com.searchly.jestdroid.JestDroidClient;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import cmput301w16t08.scaling_pancake.models.InstrumentList;
+import cmput301w16t08.scaling_pancake.util.Deserializer;
 import cmput301w16t08.scaling_pancake.util.PrePostActionWrapper;
 import cmput301w16t08.scaling_pancake.util.Serializer;
 import cmput301w16t08.scaling_pancake.models.User;
@@ -238,7 +240,7 @@ public class ElasticsearchController {
      * @see PrePostActionWrapper
      * @see cmput301w16t08.scaling_pancake.models.Instrument
      */
-    public static class SearchInstrumentsTask extends AsyncTask<String, Void, ArrayList<String>> {
+    public static class SearchInstrumentsTask extends AsyncTask<String, Void, InstrumentList> {
 
         private PrePostActionWrapper prePostActionWrapper;
 
@@ -262,19 +264,19 @@ public class ElasticsearchController {
 
         /**
          * Executes in the UI thread after <code>doInBackground()</code>
-         * @param result
+         * @param result unused
          */
         @Override
-        protected void onPostExecute(ArrayList<String> result)
+        protected void onPostExecute(InstrumentList result)
         {
             if(prePostActionWrapper != null)
             {
-                prePostActionWrapper.postAction();
+                prePostActionWrapper.postAction(result);
             }
         }
 
         @Override
-        protected ArrayList<String> doInBackground(String... strings) {
+        protected InstrumentList doInBackground(String... strings) {
             // only one string containing all the keywords separated by spaces should be entered
             verifyClient();
             String string = "{\"query\": { \"nested\": {\"path\": \"ownedInstruments\", \"query\": {\"bool\" : {\"should\" : [{\"match_phrase_prefix\": {\"ownedInstruments.description\": { \"query\": \"" + strings[0] + "\", \"slop\": 3}}}, {\"match_phrase_prefix\": {\"ownedInstruments.name\": { \"query\": \"" + strings[0] + "\", \"slop\": 3}}}]}}}}}";
@@ -284,15 +286,38 @@ public class ElasticsearchController {
             try {
                 SearchResult result = client.execute(search);
                 if (result.isSucceeded()) {
-                    Log.d("ESC", "GetUserTask completed.");
-                    returnedStrings = (ArrayList) result.getSourceAsStringList();
+                    returnedStrings = (ArrayList<String>) result.getSourceAsStringList();
                 } else {
                     throw new RuntimeException("search did not succeed");
                 }
             } catch (IOException e) {
                 throw new RuntimeException("search did not succeed");
             }
-            return returnedStrings;
+            /* Client-side result parsing */
+            InstrumentList instruments = new InstrumentList();
+            for (int i = 0; i < returnedStrings.size(); i++) {
+                User user = new Deserializer().deserializeUser(returnedStrings.get(i));
+                for (int j = 0; j < user.getOwnedInstruments().size(); j++) {
+                    if (user.getOwnedInstruments().getInstrument(j).getStatus().equals("borrowed")) {
+                        continue;
+                    }
+                    String string1 = strings[0].toLowerCase();
+                    String string2 = user.getOwnedInstruments().getInstrument(j).getName().toLowerCase();
+                    String string3 = user.getOwnedInstruments().getInstrument(j).getDescription().toLowerCase();
+                    if (string2.contains(string1) || string3.contains(string1)) {
+                        instruments.addInstrument(user.getOwnedInstruments().getInstrument(j));
+                    } else {
+                        String[] string_list = string1.split("\\s+");
+                        for (int k = 0; k < strings.length; k++) {
+                            if (string2.contains(string_list[k]) || string3.contains(string_list[k])) {
+                                instruments.addInstrument(user.getOwnedInstruments().getInstrument(j));
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+            return instruments;
         }
     }
 

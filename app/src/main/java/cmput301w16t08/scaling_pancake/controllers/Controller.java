@@ -506,41 +506,9 @@ public class Controller extends Application {
      * @see InstrumentList
      * @see Instrument
      */
-    public InstrumentList searchInstruments(PrePostActionWrapper prePostActionWrapper, String keywords) {
+    public void searchInstruments(PrePostActionWrapper prePostActionWrapper, String keywords) {
         ElasticsearchController.SearchInstrumentsTask searchInstrumentsTask = new ElasticsearchController.SearchInstrumentsTask(prePostActionWrapper);
         searchInstrumentsTask.execute(keywords);
-        ArrayList<String> usrs = null;
-        try {
-            usrs = searchInstrumentsTask.get();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        } catch (ExecutionException e) {
-            e.printStackTrace();
-        }
-        InstrumentList instruments = new InstrumentList();
-        for (int i = 0; i < usrs.size(); i++) {
-            User user = new Deserializer().deserializeUser(usrs.get(i));
-            for (int j = 0; j < user.getOwnedInstruments().size(); j++) {
-                if (user.getOwnedInstruments().getInstrument(j).getStatus().equals("borrowed")) {
-                    continue;
-                }
-                String string1 = keywords.toLowerCase();
-                String string2 = user.getOwnedInstruments().getInstrument(j).getName().toLowerCase();
-                String string3 = user.getOwnedInstruments().getInstrument(j).getDescription().toLowerCase();
-                if (string2.contains(string1) || string3.contains(string1)) {
-                    instruments.addInstrument(user.getOwnedInstruments().getInstrument(j));
-                } else {
-                    String[] strings = string1.split("\\s+");
-                    for (int k = 0; k < strings.length; k++) {
-                        if (string2.contains(strings[k]) || string3.contains(strings[k])) {
-                            instruments.addInstrument(user.getOwnedInstruments().getInstrument(j));
-                            break;
-                        }
-                    }
-                }
-            }
-        }
-        return instruments;
     }
 
     /**

@@ -14,5 +14,5 @@ package cmput301w16t08.scaling_pancake.util;
 public abstract class PrePostActionWrapper
 {
     public abstract void preAction();
-    public abstract void postAction();
+    public abstract void postAction(Object... objects);
 }

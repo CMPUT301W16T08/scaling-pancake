@@ -28,6 +28,7 @@ public class DisplaySearchResultsActivity extends ListActivity
     private Controller controller;
     private InstrumentList resultList;
     private SearchResultsAdapter searchResultsAdapter;
+    private String searchTerm;
 
     /**
      * A <code>PrePostActionWrapper</code> is used to handle displaying of the <code>ProgressBar</code>
@@ -41,32 +42,46 @@ public class DisplaySearchResultsActivity extends ListActivity
 
         controller = (Controller) getApplicationContext();
 
-        PrePostActionWrapper prePostActionWrapper = new PrePostActionWrapper()
-        {
-            @Override
-            public void preAction()
-            {
-                /* Display progress bar */
-                findViewById(R.id.displaysearchresults_pb).setVisibility(View.VISIBLE);
-            }
-
-            @Override
-            public void postAction()
-            {
-                /* Hide progress bar and set the list adapter */
-                findViewById(R.id.displaysearchresults_pb).setVisibility(View.INVISIBLE);
-                setListAdapter(searchResultsAdapter);
-            }
-        };
-
         Intent intent = getIntent();
 
         /* Send query to controller */
         if(intent != null && intent.hasExtra("instrument_search_term"))
         {
-            resultList = controller.searchInstruments(prePostActionWrapper, intent.getStringExtra("instrument_search_term"));
-            searchResultsAdapter = new SearchResultsAdapter(controller, resultList);
+            searchTerm = intent.getStringExtra("instrument_search_term");
         }
+
+        PrePostActionWrapper prePostActionWrapper = new PrePostActionWrapper()
+        {
+            @Override
+            public void preAction()
+            {
+                /* Display progress bar and hide no results message */
+                findViewById(R.id.displaysearchresults_pb).setVisibility(View.VISIBLE);
+                findViewById(R.id.displaysearchresults_empty_list_tv).setVisibility(View.INVISIBLE);
+            }
+
+            @Override
+            public void postAction(Object... objects)
+            {
+                if(objects != null)
+                {
+                    resultList = (InstrumentList) objects[0];
+                    searchResultsAdapter = new SearchResultsAdapter(controller, resultList);
+                    /* Hide progress bar and set the list adapter */
+                    findViewById(R.id.displaysearchresults_pb).setVisibility(View.INVISIBLE);
+                    setListAdapter(searchResultsAdapter);
+
+                    if (resultList.size() == 0)
+                    {
+                        findViewById(R.id.displaysearchresults_pb).setVisibility(View.INVISIBLE);
+                        findViewById(R.id.displaysearchresults_empty_list_tv).setVisibility(View.VISIBLE);
+                    }
+                }
+            }
+        };
+
+        /* Obtain the search results on a background thread */
+        controller.searchInstruments(prePostActionWrapper, searchTerm);
     }
 
 }

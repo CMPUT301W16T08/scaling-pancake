@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
 
 import cmput301w16t08.scaling_pancake.controllers.ElasticsearchController;
+import cmput301w16t08.scaling_pancake.models.InstrumentList;
 import cmput301w16t08.scaling_pancake.models.User;
 import cmput301w16t08.scaling_pancake.util.Deserializer;
 
@@ -164,61 +165,64 @@ public class ElasticsearchControllerTest extends ActivityInstrumentationTestCase
         task4.execute(user);
     }
 
+    // Use case: US 04.01.01 Search instruments
+    // Use case: US 04.02.01 Get search results
     public void testSearchInstrumentsTask() {
+        String desc1 = "4VO91C1IDVIT7KU", desc2 = "F4DPGUXJLDA0YH5", desc3 = "RWX8B1QTJ0H74P7";
         User user = new User("testuser01", "testemail01");
         ElasticsearchController.CreateUserTask task1 = new ElasticsearchController.CreateUserTask();
         task1.execute(user);
-        user.addOwnedInstrument("name01", "key");
+        user.addOwnedInstrument("name01", desc1);
         // to show even if 2 instruments from the same user satisfy the search, the user only gets returned once
         // add another instrument with same description
-        user.addOwnedInstrument("name02", "key");
+        user.addOwnedInstrument("name02", desc1);
         ElasticsearchController.UpdateUserTask task2 = new ElasticsearchController.UpdateUserTask();
         task2.execute(user);
         User user2 = new User("testuser02", "testemail02");
         ElasticsearchController.CreateUserTask task3 = new ElasticsearchController.CreateUserTask();
         task3.execute(user2);
-        user2.addOwnedInstrument("name03", "keyword");
+        user2.addOwnedInstrument("name03", desc2);
         ElasticsearchController.UpdateUserTask task4 = new ElasticsearchController.UpdateUserTask();
         task4.execute(user2);
 
+        InstrumentList instruments = null;
         ElasticsearchController.SearchInstrumentsTask task5 = new ElasticsearchController.SearchInstrumentsTask(null);
-        task5.execute("There should not be an instrument containing this string");
-        ArrayList<String> users = null;
+        task5.execute(desc3);
         try {
-            users = task5.get();
+            instruments = task5.get();
         } catch (InterruptedException e) {
             e.printStackTrace();
         } catch (ExecutionException e) {
             e.printStackTrace();
         }
-        assertNotNull(users);
-        assertEquals(users.size(), 0);
+        assertNotNull(instruments);
+        assertEquals(0, instruments.size());
 
+        InstrumentList instruments2 = null;
         ElasticsearchController.SearchInstrumentsTask task6 = new ElasticsearchController.SearchInstrumentsTask(null);
-        task6.execute("keyword");
-        users = null;
+        task6.execute(desc2);
         try {
-            users = task6.get();
+            instruments2 = task6.get();
         } catch (InterruptedException e) {
             e.printStackTrace();
         } catch (ExecutionException e) {
             e.printStackTrace();
         }
-        assertNotNull(users);
-        assertEquals(users.size(), 1);
+        assertNotNull(instruments2);
+        assertEquals(1, instruments2.size());
 
+        InstrumentList instruments3 = null;
         ElasticsearchController.SearchInstrumentsTask task7 = new ElasticsearchController.SearchInstrumentsTask(null);
-        task7.execute("key");
-        users = null;
+        task7.execute(desc1);
         try {
-            users = task7.get();
+            instruments3 = task7.get();
         } catch (InterruptedException e) {
             e.printStackTrace();
         } catch (ExecutionException e) {
             e.printStackTrace();
         }
-        assertNotNull(users);
-        assertEquals(users.size(), 2);
+        assertNotNull(instruments3);
+        assertEquals(2, instruments3.size());
 
         ElasticsearchController.DeleteUserTask task8 = new ElasticsearchController.DeleteUserTask();
         task8.execute(user);
