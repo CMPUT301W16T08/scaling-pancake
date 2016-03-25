@@ -681,8 +681,8 @@ public class ControllerTest extends ActivityInstrumentationTestCase2 {
         }
         User u = new Deserializer().deserializeUser(users.get(0));
         assertEquals(u.getId(), user.getId());
-        assertEquals(u.getOwnedInstruments().getInstrument(0).getLongitude(), 10.0001);
-        assertEquals(u.getOwnedInstruments().getInstrument(0).getLatitude(), 12.9999);
+        assertEquals(u.getOwnedInstruments().getInstrument(0).getLongitude(), 12.9999);
+        assertEquals(u.getOwnedInstruments().getInstrument(0).getLatitude(), 10.0001);
         controller.deleteUser();
     }
 
@@ -707,8 +707,8 @@ public class ControllerTest extends ActivityInstrumentationTestCase2 {
         }
         User u = new Deserializer().deserializeUser(users.get(0));
         assertEquals(u.getId(), user.getId());
-        assertEquals(u.getOwnedInstruments().getInstrument(0).getLongitude(), 10.0001);
-        assertEquals(u.getOwnedInstruments().getInstrument(0).getLatitude(), 12.9999);
+        assertEquals(u.getOwnedInstruments().getInstrument(0).getLongitude(), 12.9999);
+        assertEquals(u.getOwnedInstruments().getInstrument(0).getLatitude(), 10.0001);
         controller.clearLocationForInstrument(instrument);
         ElasticsearchController.GetUserTask getUserTask1 = new ElasticsearchController.GetUserTask();
         getUserTask1.execute(user.getId());
@@ -722,8 +722,7 @@ public class ControllerTest extends ActivityInstrumentationTestCase2 {
         }
         u = new Deserializer().deserializeUser(users.get(0));
         assertEquals(u.getId(), user.getId());
-        assertEquals(u.getOwnedInstruments().getInstrument(0).getLongitude(), -1f);
-        assertEquals(u.getOwnedInstruments().getInstrument(0).getLatitude(), -1f);
+        assertNull(u.getOwnedInstruments().getInstrument(0).getLocation());
         controller.deleteUser();
     }
 }
