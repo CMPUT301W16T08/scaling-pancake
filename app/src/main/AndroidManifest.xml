@@ -69,6 +69,11 @@
             android:label="@string/title_activity_view_instrument"
             android:theme="@style/MyTheme">
         </activity>
+        <activity
+            android:name=".activities.ViewBidsActivity"
+            android:label="@string/title_activity_view_bids"
+            android:theme="@style/MyTheme">
+        </activity>
     </application>
 
 </manifest>

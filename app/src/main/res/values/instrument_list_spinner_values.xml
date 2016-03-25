@@ -4,5 +4,6 @@
         <item>Owned</item>
         <item>Borrowed</item>
         <item>My Bids</item>
+        <item>Lended Out</item>
     </string-array>
 </resources>

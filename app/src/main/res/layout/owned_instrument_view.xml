@@ -34,6 +34,7 @@
             android:layout_marginTop="2dp"
             android:layout_marginBottom="2dp"
             android:text="@string/view_bids"
+            android:onClick="viewBids"
             android:background="@drawable/btn_selector"/>
 
         <Button

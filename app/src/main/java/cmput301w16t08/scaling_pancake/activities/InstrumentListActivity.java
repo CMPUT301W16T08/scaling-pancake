@@ -10,11 +10,11 @@ import android.widget.ListView;
 import android.widget.Spinner;
 
 import cmput301w16t08.scaling_pancake.adapters.BiddedInstrumentsAdapter;
+import cmput301w16t08.scaling_pancake.adapters.LendedInstrumentsAdapter;
 import cmput301w16t08.scaling_pancake.adapters.BorrowedInstrumentAdapter;
 import cmput301w16t08.scaling_pancake.controllers.Controller;
 import cmput301w16t08.scaling_pancake.adapters.OwnedInstrumentAdapter;
 import cmput301w16t08.scaling_pancake.R;
-import cmput301w16t08.scaling_pancake.models.Instrument;
 
 /**
  * The <code>InstrumentListActivity</code> generates a list of <code>Instrument</code>s that are
@@ -33,6 +33,7 @@ public class InstrumentListActivity extends ListActivity implements AdapterView.
     private OwnedInstrumentAdapter ownedInstrumentAdapter;
     private BorrowedInstrumentAdapter borrowedInstrumentAdapter;
     private BiddedInstrumentsAdapter biddedInstrumentsAdapter;
+    private LendedInstrumentsAdapter lendedInstrumentsAdapter;
 
     private final static int ownedInstrumentsListCode = 1;
     private final static int borrowedInstrumentsListCode = 2;
@@ -59,6 +60,8 @@ public class InstrumentListActivity extends ListActivity implements AdapterView.
                 controller.getCurrentUsersOwnedInstruments());
         borrowedInstrumentAdapter = new BorrowedInstrumentAdapter(controller,
                 controller.getCurrentUsersBorrowedInstruments());
+        lendedInstrumentsAdapter = new LendedInstrumentsAdapter(controller,
+                controller.getCurrentUsersOwnedBorrowedInstruments());
 
         setListAdapter(ownedInstrumentAdapter);
         currentSelection = ownedInstrumentsListCode;
@@ -111,6 +114,11 @@ public class InstrumentListActivity extends ListActivity implements AdapterView.
         {
             setListAdapter(biddedInstrumentsAdapter);
             currentSelection = biddedInstrumentsListCode;
+        }
+        else if(selection.matches("Lended Out"))
+        {
+            setListAdapter(lendedInstrumentsAdapter);
+            currentSelection = borrowedInstrumentsListCode;
         }
     }
 

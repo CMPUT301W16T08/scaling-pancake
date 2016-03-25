@@ -3,11 +3,14 @@ package cmput301w16t08.scaling_pancake.activities;
 import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.ListView;
 
 import cmput301w16t08.scaling_pancake.R;
 import cmput301w16t08.scaling_pancake.adapters.SearchResultsAdapter;
 import cmput301w16t08.scaling_pancake.controllers.Controller;
+import cmput301w16t08.scaling_pancake.models.Instrument;
 import cmput301w16t08.scaling_pancake.models.InstrumentList;
 import cmput301w16t08.scaling_pancake.util.PrePostActionWrapper;
 
@@ -82,6 +85,18 @@ public class DisplaySearchResultsActivity extends ListActivity
 
         /* Obtain the search results on a background thread */
         controller.searchInstruments(prePostActionWrapper, searchTerm);
+    }
+
+    @Override
+    public void onListItemClick(ListView l, View v, int position, long id)
+    {
+        Intent intent = new Intent(this, ViewInstrumentActivity.class);
+
+        intent.putExtra("view_code", ViewInstrumentActivity.searched_instrument_view_code);
+        intent.putExtra("position", position);
+        intent.putExtra("instrument_id", ((Instrument) searchResultsAdapter.getItem(position)).getId());
+
+        startActivity(intent);
     }
 
 }

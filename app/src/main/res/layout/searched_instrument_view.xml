@@ -28,12 +28,20 @@
             android:orientation="vertical"
             android:layout_alignParentBottom="true">
 
+            <EditText
+                android:id="@+id/searched_instrument_view_bidamount_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/enter_bid_amount"
+                android:inputType="numberDecimal"/>
+
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="36sp"
                 android:layout_marginTop="2dp"
                 android:layout_marginBottom="2dp"
                 android:text="@string/make_bid"
+                android:onClick="makeBid"
                 android:background="@drawable/btn_selector"/>
 
         </LinearLayout>

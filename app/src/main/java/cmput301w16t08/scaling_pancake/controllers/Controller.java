@@ -30,6 +30,7 @@ import cmput301w16t08.scaling_pancake.util.PrePostActionWrapper;
  */
 public class Controller extends Application {
     private User currentUser;
+    private Instrument savedInstrument;
 
     /**
      * Creates a new controller

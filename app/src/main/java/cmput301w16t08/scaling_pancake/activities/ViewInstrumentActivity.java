@@ -3,6 +3,9 @@ package cmput301w16t08.scaling_pancake.activities;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.InputFilter;
+import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import cmput301w16t08.scaling_pancake.R;
@@ -26,6 +29,8 @@ public class ViewInstrumentActivity extends AppCompatActivity
     public final static int brwd_by_others_instrument_view_code = 4;
     public final static int searched_instrument_view_code = 5;
 
+    private Instrument selected;
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -39,8 +44,6 @@ public class ViewInstrumentActivity extends AppCompatActivity
         {
             throw new RuntimeException("ViewInstrumentActivity: Intent is lacking position or view code");
         }
-
-        Instrument selected;
 
         switch(intent.getIntExtra("view_code", 0))
         {
@@ -119,6 +122,7 @@ public class ViewInstrumentActivity extends AppCompatActivity
                 ((TextView) findViewById(R.id.searched_instrument_view_owner_tv)).append(controller.getUserById(selected.getOwnerId()).getName());
                 ((TextView) findViewById(R.id.searched_instrument_view_status_tv)).append(selected.getStatus());
                 ((TextView) findViewById(R.id.searched_instrument_view_description_tv)).append(selected.getDescription());
+
                 break;
             }
             default:
@@ -127,6 +131,22 @@ public class ViewInstrumentActivity extends AppCompatActivity
             }
         }
 
+    }
+
+    public void makeBid(View view)
+    {
+        float bidAmount = Float.parseFloat(((EditText)findViewById(R.id.searched_instrument_view_bidamount_et)).getText().toString());
+
+        controller.makeBidOnInstrument(selected, bidAmount);
+    }
+
+    public void viewBids(View view)
+    {
+        Intent intent = new Intent(this, ViewBidsActivity.class);
+
+        intent.putExtra("instrument_id", selected.getId());
+
+        startActivity(intent);
     }
 
 }

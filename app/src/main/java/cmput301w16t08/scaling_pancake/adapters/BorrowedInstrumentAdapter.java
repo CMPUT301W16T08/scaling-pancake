@@ -64,7 +64,7 @@ public class BorrowedInstrumentAdapter extends ArrayAdapter
 
         /* Add the description and status */
         TextView description = (TextView) convertView.findViewById(R.id.borrowed_instrument_list_item_description_tv);
-        TextView username = (TextView) convertView.findViewById(R.id.borrowed_instrument_list_item_username_tv);
+        TextView username = (TextView) convertView.findViewById(R.id.borrowed_instrument_list_item_owner_tv);
 
         description.setText(instrument.getDescription());
         username.setText(String.format("Username: %s", ((Controller) getContext()).getUserById(instrument.getOwnerId()).getName()));
