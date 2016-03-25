@@ -4,6 +4,8 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.test.ActivityInstrumentationTestCase2;
 
+import com.google.android.gms.maps.model.LatLng;
+
 import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
 
@@ -665,7 +667,7 @@ public class ControllerTest extends ActivityInstrumentationTestCase2 {
         User user = controller.getCurrentUser();
         Instrument instrument = new Instrument(user.getId(), "name", "description");
         controller.addInstrument(instrument);
-        controller.setLocationForInstrument(instrument, 10.0001f, 12.9999f);
+        controller.setLocationForInstrument(instrument, new LatLng(10.0001, 12.9999));
 
         ElasticsearchController.GetUserTask getUserTask = new ElasticsearchController.GetUserTask();
         getUserTask.execute(user.getId());
@@ -679,8 +681,8 @@ public class ControllerTest extends ActivityInstrumentationTestCase2 {
         }
         User u = new Deserializer().deserializeUser(users.get(0));
         assertEquals(u.getId(), user.getId());
-        assertEquals(u.getOwnedInstruments().getInstrument(0).getLongitude(), 10.0001f);
-        assertEquals(u.getOwnedInstruments().getInstrument(0).getLatitude(), 12.9999f);
+        assertEquals(u.getOwnedInstruments().getInstrument(0).getLongitude(), 10.0001);
+        assertEquals(u.getOwnedInstruments().getInstrument(0).getLatitude(), 12.9999);
         controller.deleteUser();
     }
 
@@ -691,7 +693,7 @@ public class ControllerTest extends ActivityInstrumentationTestCase2 {
         User user = controller.getCurrentUser();
         Instrument instrument = new Instrument(user.getId(), "name", "description");
         controller.addInstrument(instrument);
-        controller.setLocationForInstrument(instrument, 10.0001f, 12.9999f);
+        controller.setLocationForInstrument(instrument, new LatLng(10.0001, 12.9999));
 
         ElasticsearchController.GetUserTask getUserTask = new ElasticsearchController.GetUserTask();
         getUserTask.execute(user.getId());
@@ -705,8 +707,8 @@ public class ControllerTest extends ActivityInstrumentationTestCase2 {
         }
         User u = new Deserializer().deserializeUser(users.get(0));
         assertEquals(u.getId(), user.getId());
-        assertEquals(u.getOwnedInstruments().getInstrument(0).getLongitude(), 10.0001f);
-        assertEquals(u.getOwnedInstruments().getInstrument(0).getLatitude(), 12.9999f);
+        assertEquals(u.getOwnedInstruments().getInstrument(0).getLongitude(), 10.0001);
+        assertEquals(u.getOwnedInstruments().getInstrument(0).getLatitude(), 12.9999);
         controller.clearLocationForInstrument(instrument);
         ElasticsearchController.GetUserTask getUserTask1 = new ElasticsearchController.GetUserTask();
         getUserTask1.execute(user.getId());

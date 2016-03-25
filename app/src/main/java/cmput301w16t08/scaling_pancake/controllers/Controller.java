@@ -3,6 +3,8 @@ package cmput301w16t08.scaling_pancake.controllers;
 import android.app.Application;
 import android.graphics.Bitmap;
 
+import com.google.android.gms.maps.model.LatLng;
+
 import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
 
@@ -792,14 +794,13 @@ public class Controller extends Application {
      * Sets the location to pick up the <code>Instrument</code>
      *
      * @param instrument
-     * @param longitude
-     * @param latitude
+     * @param location
      */
-    public void setLocationForInstrument(Instrument instrument, float longitude, float latitude) {
+    public void setLocationForInstrument(Instrument instrument, LatLng location) {
         if (!this.currentUser.getOwnedInstruments().containsInstrument(instrument)) {
             throw new RuntimeException();
         }
-        instrument.setLocation(longitude, latitude);
+        instrument.setLocation(location);
         ElasticsearchController.UpdateUserTask updateUserTask = new ElasticsearchController.UpdateUserTask();
         updateUserTask.execute(this.currentUser);
     }

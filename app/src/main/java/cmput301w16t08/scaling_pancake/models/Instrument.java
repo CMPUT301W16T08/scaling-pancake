@@ -4,6 +4,8 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.util.Base64;
 
+import com.google.android.gms.maps.model.LatLng;
+
 import java.io.ByteArrayOutputStream;
 import java.util.UUID;
 
@@ -26,8 +28,7 @@ public class Instrument {
     private boolean returnedFlag;
     private transient Bitmap thumbnail;
     private String thumbnailBase64;
-    private float longitude;
-    private float latitude;
+    private LatLng location = new LatLng(2,2);
 
     /**
      * Creates a new <code>Instrument</code> with supplied name and description, and for supplied owner
@@ -38,6 +39,7 @@ public class Instrument {
      */
     public Instrument(String owner, String name, String description) {
         this.name = name;
+        location.toString();
         this.description = description;
         this.ownerId = owner;
         this.status = "available";
@@ -47,8 +49,7 @@ public class Instrument {
         this.thumbnail = null;
         this.thumbnailBase64 = null;
         this.returnedFlag = false;
-        this.longitude = -1;
-        this.latitude = -1;
+        this.location = null;
     }
 
     /**
@@ -69,8 +70,7 @@ public class Instrument {
         this.id = UUID.randomUUID().toString();
         this.returnedFlag = false;
         addThumbnail(thumbnail);
-        this.longitude = -1;
-        this.latitude = -1;
+        this.location = null;
 
     }
 
@@ -92,8 +92,7 @@ public class Instrument {
         this.id = id;
         this.returnedFlag = returned;
         addThumbnail(thumbnail);
-        this.longitude = -1;
-        this.latitude = -1;
+        this.location = null;
     }
 
     /**
@@ -115,8 +114,7 @@ public class Instrument {
         this.thumbnail = null;
         this.thumbnailBase64 = null;
         this.returnedFlag = returned;
-        this.longitude = -1;
-        this.latitude = -1;
+        this.location = null;
     }
 
     /**
@@ -399,8 +397,30 @@ public class Instrument {
      *
      * @return the longitude
      */
-    public float getLongitude() {
-        return this.longitude;
+    public double getLongitude() {
+        return this.location.longitude;
+    }
+
+    /**
+     * Returns the location for the <code>Instrument</code>
+     *
+     * @return the location
+     */
+    public LatLng getLocation() {
+        return this.location;
+    }
+
+    /**
+     * Returns the  location of the <code>Instrument</code> as a string
+     *
+     * @return the string
+     */
+    public String getLocationString() {
+        if (this.getLocation() == null) {
+            return "{}";
+        }
+        return "{\"longitude\" : \"" + Double.toString(this.location.longitude) +
+                "\", \"latitude\" : \"" + Double.toString(this.location.latitude) + "\"}";
     }
 
     /**
@@ -408,27 +428,24 @@ public class Instrument {
      *
      * @return the latitude
      */
-    public float getLatitude() {
-        return this.latitude;
+    public double getLatitude() {
+        return this.location.latitude;
     }
 
     /**
      * Sets the pick up location of the <code>Instrument</code>
      *
-     * @param longitude
-     * @param latitude
+     * @param location
      */
-    public void setLocation(float longitude, float latitude) {
-        this.longitude = longitude;
-        this.latitude = latitude;
+    public void setLocation(LatLng location) {
+        this.location = location;
     }
 
     /**
      * Resets the pick up location of the <code>Instrument</code>
      */
     public void clearLocation() {
-        this.longitude = -1;
-        this.latitude = -1;
+        this.location = null;
     }
 
     public Bid getLargestBid()

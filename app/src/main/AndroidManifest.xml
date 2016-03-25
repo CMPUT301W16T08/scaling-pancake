@@ -2,7 +2,8 @@
 <manifest package="cmput301w16t08.scaling_pancake"
           xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
         android:name=".controllers.Controller"
@@ -11,6 +12,9 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/MyTheme">
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyAuOeAoRYlWG4EoYgg3DOziv_-aZMPy0C8"/>
         <activity
             android:name=".activities.MainActivity"
             android:label="@string/app_name"

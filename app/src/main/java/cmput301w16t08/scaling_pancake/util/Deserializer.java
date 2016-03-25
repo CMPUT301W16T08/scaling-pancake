@@ -1,5 +1,7 @@
 package cmput301w16t08.scaling_pancake.util;
 
+import com.google.android.gms.maps.model.LatLng;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -127,8 +129,14 @@ public class Deserializer {
 
             instrument.setStatus(object.getString("status"));
             instrument.addThumbnail(object.getString("thumbnailBase64"));
-            instrument.setLocation(Float.parseFloat(object.getString("longitude")), Float.parseFloat(object.getString("latitude")));
-
+            object2 = object.getJSONObject("location");
+            if (object2.length() == 2) {
+                try {
+                    instrument.setLocation(new LatLng(object2.getDouble("latitude"), object2.getDouble("longitude")));
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
             if (instrument.getStatus().equals("borrowed")) {
                 instrument.setBorrowedById(object.getString("borrowedById"));
             }

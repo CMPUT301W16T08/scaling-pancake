@@ -1,5 +1,7 @@
 package cmput301w16t08.scaling_pancake.util;
 
+import android.util.Log;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -73,10 +75,9 @@ public class Serializer {
                 "\", \"description\" : \"" + instrument.getDescription() +
                 "\", \"ownerId\" : \"" + instrument.getOwnerId() +
                 "\", \"status\" : \"" + instrument.getStatus() +
-                "\", \"returnedFlag\" : \"" + String.valueOf(instrument.getReturnedFlag()) +
-                "\", \"thumbnailBase64\" : \"" + instrument.getThumbnailBase64() +
-                "\", \"longitude\" : \"" + String.valueOf(instrument.getLongitude()) +
-                "\", \"latitude\" : \"" + String.valueOf(instrument.getLatitude());
+                "\", \"location\" : " + instrument.getLocationString() +
+                ", \"returnedFlag\" : \"" + String.valueOf(instrument.getReturnedFlag()) +
+                "\", \"thumbnailBase64\" : \"" + instrument.getThumbnailBase64();
 
         if (instrument.getStatus().equals("borrowed")) {
             string = string + "\", \"borrowedById\" : \"" + instrument.getBorrowedById();
