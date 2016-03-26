@@ -7,10 +7,10 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import cmput301w16t08.scaling_pancake.R;
+import cmput301w16t08.scaling_pancake.activities.ViewBidsActivity;
 import cmput301w16t08.scaling_pancake.controllers.Controller;
 import cmput301w16t08.scaling_pancake.models.Bid;
 import cmput301w16t08.scaling_pancake.models.BidList;
-import cmput301w16t08.scaling_pancake.models.Instrument;
 
 /**
  * Created by dan on 24/03/16.
@@ -19,12 +19,14 @@ public class BidsAdapter extends ArrayAdapter
 {
 
     private Controller controller;
+    private ViewBidsActivity callingActivity;
 
-    public BidsAdapter(Controller controller, BidList bidList)
+    public BidsAdapter(Controller controller, ViewBidsActivity activity, BidList bidList)
     {
         super(controller, 0, bidList.getArray());
 
         this.controller = controller;
+        this.callingActivity = activity;
     }
 
     @Override
@@ -47,6 +49,7 @@ public class BidsAdapter extends ArrayAdapter
             public void onClick(View v)
             {
                 controller.acceptBidOnInstrument(bid);
+                callingActivity.setLocation();
             }
         });
 

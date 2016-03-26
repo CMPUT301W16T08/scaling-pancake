@@ -803,6 +803,10 @@ public class Controller extends Application {
         instrument.setLocation(location);
         ElasticsearchController.UpdateUserTask updateUserTask = new ElasticsearchController.UpdateUserTask();
         updateUserTask.execute(this.currentUser);
+        User user = this.getUserById(instrument.getBorrowedById());
+        user.getBorrowedInstruments().getInstrument(instrument.getId()).setLocation(location);
+        ElasticsearchController.UpdateUserTask updateUserTask1 = new ElasticsearchController.UpdateUserTask();
+        updateUserTask1.execute(user);
     }
 
     /**
