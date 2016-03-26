@@ -59,5 +59,6 @@
     <string name="offer">Offered Rate: </string>
     <string name="instrument">Instrument: </string>
     <string name="title_activity_view_bids">ViewBidsActivity</string>
+    <string name="title_activity_view_location">View Location</string>
     <string name="enter_bid_amount">enter bid amount</string>
 </resources>

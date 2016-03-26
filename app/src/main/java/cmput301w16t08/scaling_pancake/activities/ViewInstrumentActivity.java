@@ -135,7 +135,7 @@ public class ViewInstrumentActivity extends AppCompatActivity
 
     public void makeBid(View view)
     {
-        float bidAmount = Float.parseFloat(((EditText)findViewById(R.id.searched_instrument_view_bidamount_et)).getText().toString());
+        float bidAmount = Float.parseFloat(((EditText) findViewById(R.id.searched_instrument_view_bidamount_et)).getText().toString());
 
         controller.makeBidOnInstrument(selected, bidAmount);
     }
@@ -149,4 +149,10 @@ public class ViewInstrumentActivity extends AppCompatActivity
         startActivity(intent);
     }
 
+    public void viewLocation(View view) {
+        Intent intent = new Intent(this, ViewLocationActivity.class);
+        intent.putExtra("latitude", selected.getLatitude());
+        intent.putExtra("longitude", selected.getLongitude());
+        startActivity(intent);
+    }
 }
