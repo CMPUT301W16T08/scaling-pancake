@@ -19,6 +19,7 @@ import cmput301w16t08.scaling_pancake.R;
 public class ViewLocationActivity extends AppCompatActivity implements OnMapReadyCallback {
 
     LatLng location;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
