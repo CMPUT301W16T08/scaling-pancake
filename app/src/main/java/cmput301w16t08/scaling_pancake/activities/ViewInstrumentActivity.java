@@ -4,9 +4,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.InputFilter;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import cmput301w16t08.scaling_pancake.R;
 import cmput301w16t08.scaling_pancake.controllers.Controller;
@@ -110,19 +112,27 @@ public class ViewInstrumentActivity extends AppCompatActivity
             }
             case searched_instrument_view_code:
             {
-                setContentView(R.layout.searched_instrument_view);
-
                 if(!intent.hasExtra("instrument_id"))
                 {
                     throw new RuntimeException("ViewInstrumentActivity: Missing instrument id for searched instrument");
                 }
                 selected = controller.getInstrumentById(intent.getStringExtra("instrument_id"));
 
-                ((TextView) findViewById(R.id.searched_instrument_view_name_tv)).append(selected.getName());
-                ((TextView) findViewById(R.id.searched_instrument_view_owner_tv)).append(controller.getUserById(selected.getOwnerId()).getName());
-                ((TextView) findViewById(R.id.searched_instrument_view_status_tv)).append(selected.getStatus());
-                ((TextView) findViewById(R.id.searched_instrument_view_description_tv)).append(selected.getDescription());
-
+                if(selected.getOwnerId().matches(controller.getCurrentUser().getId()))
+                {
+                    setContentView(R.layout.owned_instrument_view);
+                    ((TextView) findViewById(R.id.owned_instrument_view_name_tv)).append(selected.getName());
+                    ((TextView) findViewById(R.id.owned_instrument_view_status_tv)).append(selected.getStatus());
+                    ((TextView) findViewById(R.id.owned_instrument_view_description_tv)).append(selected.getDescription());
+                }
+                else
+                {
+                    setContentView(R.layout.searched_instrument_view);
+                    ((TextView) findViewById(R.id.searched_instrument_view_name_tv)).append(selected.getName());
+                    ((TextView) findViewById(R.id.searched_instrument_view_owner_tv)).append(controller.getUserById(selected.getOwnerId()).getName());
+                    ((TextView) findViewById(R.id.searched_instrument_view_status_tv)).append(selected.getStatus());
+                    ((TextView) findViewById(R.id.searched_instrument_view_description_tv)).append(selected.getDescription());
+                }
                 break;
             }
             default:
@@ -135,9 +145,28 @@ public class ViewInstrumentActivity extends AppCompatActivity
 
     public void makeBid(View view)
     {
-        float bidAmount = Float.parseFloat(((EditText)findViewById(R.id.searched_instrument_view_bidamount_et)).getText().toString());
+        if(((EditText) findViewById(R.id.searched_instrument_view_bidamount_et)).getText().toString().matches(""))
+        {
+            Toast.makeText(controller, "Please Enter a Bid Amount", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        float bidAmount = Float.parseFloat(((EditText) findViewById(R.id.searched_instrument_view_bidamount_et)).getText().toString());
 
         controller.makeBidOnInstrument(selected, bidAmount);
+
+        Toast.makeText(controller, "Bid Received!", Toast.LENGTH_SHORT).show();
+
+        finish();
+    }
+
+    public void edit(View view)
+    {
+        Intent intent = new Intent(this, EditInstrumentActivity.class);
+
+        intent.putExtra("instrument_id", selected.getId());
+
+        startActivity(intent);
     }
 
     public void viewBids(View view)
@@ -147,6 +176,11 @@ public class ViewInstrumentActivity extends AppCompatActivity
         intent.putExtra("instrument_id", selected.getId());
 
         startActivity(intent);
+    }
+
+    public void back(View view)
+    {
+        finish();
     }
 
 }

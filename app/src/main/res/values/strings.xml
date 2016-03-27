@@ -59,5 +59,8 @@
     <string name="offer">Offered Rate: </string>
     <string name="instrument">Instrument: </string>
     <string name="title_activity_view_bids">ViewBidsActivity</string>
-    <string name="enter_bid_amount">enter bid amount</string>
+    <string name="enter_bid_amount">Enter bid amount:</string>
+    <string name="ownedmsg">You own this instrument.</string>
+    <string name="title_activity_view_single_bid">ViewSingleBidActivity</string>
+    <string name="title_activity_edit_instrument">EditInstrumentActivity</string>
 </resources>

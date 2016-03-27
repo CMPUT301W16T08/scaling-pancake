@@ -99,4 +99,9 @@ public class DisplaySearchResultsActivity extends ListActivity
         startActivity(intent);
     }
 
+    public void back(View view)
+    {
+        finish();
+    }
+
 }

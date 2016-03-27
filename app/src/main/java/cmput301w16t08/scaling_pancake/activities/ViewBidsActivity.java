@@ -5,11 +5,18 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.ListView;
 
 import cmput301w16t08.scaling_pancake.R;
 import cmput301w16t08.scaling_pancake.adapters.BidsAdapter;
 import cmput301w16t08.scaling_pancake.controllers.Controller;
+import cmput301w16t08.scaling_pancake.models.Bid;
 
+/**
+ * Displays a list of the current <code>Bid</code>s on an instrument.
+ *
+ * @author dan
+ */
 public class ViewBidsActivity extends ListActivity
 {
 
@@ -29,5 +36,10 @@ public class ViewBidsActivity extends ListActivity
                 controller.getInstrumentById(intent.getStringExtra("instrument_id")).getBids());
 
         setListAdapter(bidsAdapter);
+    }
+
+    public void back(View view)
+    {
+        finish();
     }
 }
