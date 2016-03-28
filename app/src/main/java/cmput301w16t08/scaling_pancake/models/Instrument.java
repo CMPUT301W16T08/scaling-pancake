@@ -44,7 +44,6 @@ public class Instrument {
      */
     public Instrument(String owner, String name, String description) {
         this.name = name;
-        location.toString();
         this.description = description;
         this.ownerId = owner;
         this.status = "available";
