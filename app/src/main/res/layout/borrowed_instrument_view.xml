@@ -116,10 +116,12 @@
                     android:orientation="horizontal">
 
                     <ImageButton
+                        android:id="@+id/play_sample_button"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:contentDescription="Play the sample sound"
-                        android:src="@android:drawable/ic_media_play"/>
+                        android:src="@android:drawable/ic_media_play"
+                        android:onClick="onPlayButtonClick"/>
 
                     <TextView
                         android:layout_width="wrap_content"

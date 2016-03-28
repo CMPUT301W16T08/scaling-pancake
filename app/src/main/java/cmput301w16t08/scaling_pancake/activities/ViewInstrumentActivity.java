@@ -2,6 +2,7 @@ package cmput301w16t08.scaling_pancake.activities;
 
 import android.content.Context;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.InputFilter;
@@ -12,6 +13,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.io.FileDescriptor;
+import java.io.IOException;
 
 import cmput301w16t08.scaling_pancake.R;
 import cmput301w16t08.scaling_pancake.controllers.Controller;
@@ -36,6 +40,9 @@ public class ViewInstrumentActivity extends AppCompatActivity
     public final static int searched_instrument_view_code = 5;
 
     private Instrument selected;
+    private MediaPlayer player;
+    private FileDescriptor audioFile;
+    private boolean isPlaying;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -44,6 +51,9 @@ public class ViewInstrumentActivity extends AppCompatActivity
 
         controller = (Controller) getApplicationContext();
 
+        player = new MediaPlayer();
+        audioFile = null;
+        isPlaying = false;
         Intent intent = getIntent();
 
         if(!intent.hasExtra("view_code") || !intent.hasExtra("position"))
@@ -212,6 +222,28 @@ public class ViewInstrumentActivity extends AppCompatActivity
         selected.setReturnedFlag(true);
     }
 
+    public void onPlayButtonClick(View view) {
+        if (isPlaying == false) {
+            if (audioFile == null) {
+                audioFile = selected.getSampleAudioFile();
+            }
+            if (audioFile == null) {
+                Toast.makeText(getApplicationContext(), "No audio sample", Toast.LENGTH_SHORT).show();
+            } else {
+                try {
+                    player.setDataSource(selected.getSampleAudioFile());
+                    player.prepare();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                player.start();
+                isPlaying = true;
+            }
+        } else {
+            player.stop();
+            isPlaying = false;
+        }
+    }
     /**
      * returnedFlag for the instrument 'selected' should be true upon entering this method
      *      and will be false upon exit.

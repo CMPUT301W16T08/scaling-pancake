@@ -1,5 +1,7 @@
 package cmput301w16t08.scaling_pancake.activities;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -8,6 +10,7 @@ import android.widget.Toast;
 
 import cmput301w16t08.scaling_pancake.controllers.Controller;
 import cmput301w16t08.scaling_pancake.R;
+import cmput301w16t08.scaling_pancake.models.Instrument;
 
 /**
  * Presents a view to the user that allows them to add an <code>Instrument</code>
@@ -21,6 +24,8 @@ public class AddInstrumentActivity extends AppCompatActivity {
 
     // set up our global controller
     private static Controller controller;
+    private String audioFilePath = null;
+    private int AUDIO_RESULT_CODE = 10;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +44,22 @@ public class AddInstrumentActivity extends AppCompatActivity {
 
     }
 
+    public void addAudioSample(View view) {
+        Intent intent = new Intent(this, RecordAudioActivity.class);
+        startActivityForResult(intent, AUDIO_RESULT_CODE);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == AUDIO_RESULT_CODE) {
+            if (resultCode == Activity.RESULT_OK) {
+                audioFilePath = data.getStringExtra("filePath");
+            } else if (resultCode == Activity.RESULT_CANCELED) {
+                audioFilePath = null;
+            }
+        }
+    }
+
     /**
      * Sends new <code>Instrument</code> data to the controller.
      * @param view
@@ -51,7 +72,11 @@ public class AddInstrumentActivity extends AppCompatActivity {
         String description = descriptionET.getText().toString();
 
         if ((!name.equals("")) && (!description.equals(""))) {
-            controller.addInstrument(name, description);
+            Instrument instrument = new Instrument(controller.getCurrentUser().getId(), name, description);
+            if (audioFilePath != null) {
+                instrument.addSampleAudioFile(audioFilePath);
+            }
+            controller.addInstrument(instrument);
             finish();
         } else {
             Toast.makeText(AddInstrumentActivity.this, "Both Name and Description are required", Toast.LENGTH_LONG).show();

@@ -1,6 +1,8 @@
 package cmput301w16t08.scaling_pancake.activities;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.media.MediaRecorder;
 import android.os.Bundle;
@@ -10,28 +12,36 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import java.io.IOException;
+import java.util.UUID;
+
+import cmput301w16t08.scaling_pancake.controllers.Controller;
+import cmput301w16t08.scaling_pancake.models.Instrument;
 
 /**
  * Created by William on 2016-03-26.
  *
- * Take from the Android Developer Guides at
+ * Taken from the Android Developer Guides at
  * http://developer.android.com/guide/topics/media/audio-capture.html
  */
 public class RecordAudioActivity extends AppCompatActivity {
 
-    private static String fileName = null;
+    private static String filePath = null;
     private MediaRecorder recorder = null;
     private MediaPlayer player = null;
     private RecordButton recordButton = null;
     private PlayButton playButton = null;
+    private boolean hasRecorded = false;
+
+    private int AUDIO_RESULT_CODE = 10;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        fileName = Environment.getExternalStorageDirectory().getAbsolutePath();
-        fileName += "/audio_recording.3gp";
+        filePath = Environment.getExternalStorageDirectory().getAbsolutePath();
+        filePath += "/" + UUID.randomUUID().toString() + ".3gp";
 
         LinearLayout layout = new LinearLayout(this);
         recordButton = new RecordButton(this);
@@ -46,11 +56,46 @@ public class RecordAudioActivity extends AppCompatActivity {
                         ViewGroup.LayoutParams.WRAP_CONTENT,
                         ViewGroup.LayoutParams.WRAP_CONTENT,
                         0));
+
+        Button saveButton = new Button(this);
+        saveButton.setText("Save Sample");
+        saveButton.setLayoutParams(new LinearLayout.LayoutParams(
+                ViewGroup.LayoutParams.WRAP_CONTENT,
+                ViewGroup.LayoutParams.WRAP_CONTENT));
+        saveButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                if (!hasRecorded) {
+                    Toast.makeText(getApplicationContext(), "Nothing recorded", Toast.LENGTH_SHORT).show();
+                } else {
+                    Intent returnIntent = new Intent();
+                    returnIntent.putExtra("filePath", filePath);
+                    setResult(Activity.RESULT_OK, returnIntent);
+                    finish();
+                }
+            }
+        });
+        layout.addView(saveButton);
+
+        Button cancelButton = new Button(this);
+        cancelButton.setText("Cancel");
+        cancelButton.setLayoutParams(new LinearLayout.LayoutParams(
+                ViewGroup.LayoutParams.WRAP_CONTENT,
+                ViewGroup.LayoutParams.WRAP_CONTENT));
+        cancelButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent returnIntent = new Intent();
+                setResult(Activity.RESULT_CANCELED, returnIntent);
+                finish();
+            }
+        });
+        layout.addView(cancelButton);
+
         setContentView(layout);
     }
 
     private void onRecord(boolean start) {
         if (start) {
+            hasRecorded = true;
             startRecording();
         } else {
             stopRecording();
@@ -68,7 +113,7 @@ public class RecordAudioActivity extends AppCompatActivity {
     private void startPlaying() {
         player = new MediaPlayer();
         try {
-            player.setDataSource(fileName);
+            player.setDataSource(filePath);
             player.prepare();
             player.start();
         } catch (IOException e) {
@@ -85,7 +130,7 @@ public class RecordAudioActivity extends AppCompatActivity {
         recorder = new MediaRecorder();
         recorder.setAudioSource(MediaRecorder.AudioSource.MIC);
         recorder.setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP);
-        recorder.setOutputFile(fileName);
+        recorder.setOutputFile(filePath);
         recorder.setAudioEncoder(MediaRecorder.AudioEncoder.AMR_NB);
 
         try {
