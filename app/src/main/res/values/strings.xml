@@ -31,6 +31,7 @@
     <string name="title_activity_add_instrument">AddInstrumentActivity</string>
     <string name="description">Description:</string>
     <string name="add_photo">Add Photo</string>
+    <string name="add_audio_sample">Add Audio Sample</string>
     <string name="confirm">confirm</string>
     <string name="add">add</string>
     <string name="instrument_name">name</string>
