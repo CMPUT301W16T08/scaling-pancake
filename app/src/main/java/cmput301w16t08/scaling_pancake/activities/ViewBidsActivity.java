@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
 import com.google.android.gms.common.GooglePlayServicesRepairableException;
@@ -15,7 +16,13 @@ import com.google.android.gms.location.places.ui.PlacePicker;
 import cmput301w16t08.scaling_pancake.R;
 import cmput301w16t08.scaling_pancake.adapters.BidsAdapter;
 import cmput301w16t08.scaling_pancake.controllers.Controller;
+import cmput301w16t08.scaling_pancake.models.Bid;
 
+/**
+ * Displays a list of the current <code>Bid</code>s on an instrument.
+ *
+ * @author dan
+ */
 public class ViewBidsActivity extends ListActivity
 {
 
@@ -77,5 +84,10 @@ public class ViewBidsActivity extends ListActivity
             }
         }
         bidsAdapter.notifyDataSetChanged();
+    }
+
+    public void back(View view)
+    {
+        finish();
     }
 }

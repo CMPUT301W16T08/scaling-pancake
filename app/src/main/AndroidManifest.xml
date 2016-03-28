@@ -93,6 +93,11 @@
             android:label="@string/title_activity_record_audio"
             android:theme="@style/MyTheme">
         </activity>
+        <activity
+            android:name=".activities.EditInstrumentActivity"
+            android:label="@string/title_activity_edit_instrument"
+            android:theme="@style/MyTheme">
+        </activity>
     </application>
 
 </manifest>

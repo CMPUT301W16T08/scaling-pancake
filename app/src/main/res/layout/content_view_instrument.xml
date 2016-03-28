@@ -116,6 +116,7 @@
         android:layout_height="wrap_content"
         android:text="@string/edit"
         android:id="@+id/instrument_edit_button"
+        android:onClick="editInstrument"
         android:layout_below="@+id/instrument_make_bid_button"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"

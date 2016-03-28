@@ -1,12 +1,17 @@
 package cmput301w16t08.scaling_pancake.activities;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.InputFilter;
+import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import cmput301w16t08.scaling_pancake.R;
 import cmput301w16t08.scaling_pancake.controllers.Controller;
@@ -15,7 +20,8 @@ import cmput301w16t08.scaling_pancake.models.Instrument;
 
 /**
  * This view will be completed for project part 5.
- *
+ *  The intent to launch this view should have a viewCode
+ *  as well as a position.
  *
  * @author dan
  */
@@ -63,7 +69,15 @@ public class ViewInstrumentActivity extends AppCompatActivity
                 selected = controller.getCurrentUsersBorrowedInstruments()
                         .getInstrument(intent.getIntExtra("position", 0));
                 setContentView(R.layout.borrowed_instrument_view);
+                String message;
 
+                if(!selected.getReturnedFlag()) {
+                    message = "You are currently borrowing this instrument";
+                }
+                else{
+                    message = "Waiting for return to be confirmed by owner";
+                }
+                ((TextView) findViewById(R.id.borrowedinstrumentview_borrowing_tv)).setText(message);
                 ((TextView) findViewById(R.id.borrowed_instrument_view_name_tv)).append(selected.getName());
                 ((TextView) findViewById(R.id.borrowed_instrument_view_owner_tv)).append(controller.getUserById(selected.getOwnerId()).getName());
                 ((TextView) findViewById(R.id.borrowed_instrument_view_description_tv)).append(selected.getDescription());
@@ -110,19 +124,27 @@ public class ViewInstrumentActivity extends AppCompatActivity
             }
             case searched_instrument_view_code:
             {
-                setContentView(R.layout.searched_instrument_view);
-
                 if(!intent.hasExtra("instrument_id"))
                 {
                     throw new RuntimeException("ViewInstrumentActivity: Missing instrument id for searched instrument");
                 }
                 selected = controller.getInstrumentById(intent.getStringExtra("instrument_id"));
 
-                ((TextView) findViewById(R.id.searched_instrument_view_name_tv)).append(selected.getName());
-                ((TextView) findViewById(R.id.searched_instrument_view_owner_tv)).append(controller.getUserById(selected.getOwnerId()).getName());
-                ((TextView) findViewById(R.id.searched_instrument_view_status_tv)).append(selected.getStatus());
-                ((TextView) findViewById(R.id.searched_instrument_view_description_tv)).append(selected.getDescription());
-
+                if(selected.getOwnerId().matches(controller.getCurrentUser().getId()))
+                {
+                    setContentView(R.layout.owned_instrument_view);
+                    ((TextView) findViewById(R.id.owned_instrument_view_name_tv)).append(selected.getName());
+                    ((TextView) findViewById(R.id.owned_instrument_view_status_tv)).append(selected.getStatus());
+                    ((TextView) findViewById(R.id.owned_instrument_view_description_tv)).append(selected.getDescription());
+                }
+                else
+                {
+                    setContentView(R.layout.searched_instrument_view);
+                    ((TextView) findViewById(R.id.searched_instrument_view_name_tv)).append(selected.getName());
+                    ((TextView) findViewById(R.id.searched_instrument_view_owner_tv)).append(controller.getUserById(selected.getOwnerId()).getName());
+                    ((TextView) findViewById(R.id.searched_instrument_view_status_tv)).append(selected.getStatus());
+                    ((TextView) findViewById(R.id.searched_instrument_view_description_tv)).append(selected.getDescription());
+                }
                 break;
             }
             default:
@@ -135,17 +157,32 @@ public class ViewInstrumentActivity extends AppCompatActivity
 
     public void makeBid(View view)
     {
+        if(((EditText) findViewById(R.id.searched_instrument_view_bidamount_et)).getText().toString().matches(""))
+        {
+            Toast.makeText(controller, "Please Enter a Bid Amount", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
         float bidAmount = Float.parseFloat(((EditText) findViewById(R.id.searched_instrument_view_bidamount_et)).getText().toString());
 
         controller.makeBidOnInstrument(selected, bidAmount);
+
+        Toast.makeText(controller, "Bid Received!", Toast.LENGTH_SHORT).show();
+
+        finish();
+    }
+
+    public void edit(View view)
+    {
+        Intent intent = new Intent(this, EditInstrumentActivity.class);
+        intent.putExtra("instrument_id", selected.getId());
+        startActivity(intent);
     }
 
     public void viewBids(View view)
     {
         Intent intent = new Intent(this, ViewBidsActivity.class);
-
         intent.putExtra("instrument_id", selected.getId());
-
         startActivity(intent);
     }
 
@@ -154,5 +191,50 @@ public class ViewInstrumentActivity extends AppCompatActivity
         intent.putExtra("latitude", selected.getLatitude());
         intent.putExtra("longitude", selected.getLongitude());
         startActivity(intent);
+    }
+
+    public void returnAsBorrower(View view){
+        if (selected.getStatus().equals("borrowed")) {
+            if (!selected.getReturnedFlag()) { //if returnedFlag == false
+                controller.returnInstrument(selected);
+                String message = "Waiting for return to be confirmed by owner";
+                ((TextView) findViewById(R.id.borrowedinstrumentview_borrowing_tv)).setText(message);
+                }
+            else{
+                Toast.makeText(getApplicationContext(), "pending owner approval!", Toast.LENGTH_SHORT).show();
+            }
+        }
+        else {
+            //Toast.makeText(getApplicationContext(), "instrument status not currently borrowed", Toast.LENGTH_SHORT).show();
+            throw new RuntimeException("Instrument status is not currently 'borrowed'");
+        }
+
+        selected.setReturnedFlag(true);
+    }
+
+    /**
+     * returnedFlag for the instrument 'selected' should be true upon entering this method
+     *      and will be false upon exit.
+     * @param view
+     */
+    public void markReturned(View view){
+        if(selected.getReturnedFlag()) {
+            controller.acceptReturnedInstrument(selected);
+            Toast.makeText(getApplicationContext(), "instrument returned!", Toast.LENGTH_SHORT).show();
+
+            setContentView(R.layout.owned_instrument_view);
+            ((TextView) findViewById(R.id.owned_instrument_view_name_tv)).append(selected.getName());
+            ((TextView) findViewById(R.id.owned_instrument_view_status_tv)).append(selected.getStatus());
+            ((TextView) findViewById(R.id.owned_instrument_view_description_tv)).append(selected.getDescription());
+        }
+        else{
+            Toast.makeText(getApplicationContext(), "Oops! The borrower still hasn't returned the instrument", Toast.LENGTH_SHORT).show();
+        }
+        selected.setReturnedFlag(false);
+    }
+
+    public void back(View view)
+    {
+        finish();
     }
 }

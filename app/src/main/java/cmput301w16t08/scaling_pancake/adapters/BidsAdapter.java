@@ -5,6 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import cmput301w16t08.scaling_pancake.R;
 import cmput301w16t08.scaling_pancake.activities.ViewBidsActivity;
@@ -15,7 +16,7 @@ import cmput301w16t08.scaling_pancake.models.BidList;
 /**
  * Created by dan on 24/03/16.
  */
-public class BidsAdapter extends ArrayAdapter
+public class    BidsAdapter extends ArrayAdapter
 {
 
     private Controller controller;
@@ -50,6 +51,8 @@ public class BidsAdapter extends ArrayAdapter
             {
                 controller.acceptBidOnInstrument(bid);
                 callingActivity.setLocation();
+                Toast.makeText(controller, "Bid Accepted!", Toast.LENGTH_SHORT).show();
+                notifyDataSetChanged();
             }
         });
 
