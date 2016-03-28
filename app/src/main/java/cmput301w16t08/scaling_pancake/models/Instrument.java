@@ -336,6 +336,10 @@ public class Instrument {
         this.returnedFlag = b;
     }
 
+    public String toString(){
+        return "Name: "+ this.name + " Status: " + this.status + " OwnerID: " + this.ownerId + " Borrowed by ID: " + this.borrowedById;
+    }
+
     /**
      * Adds a thumbnail for the <code>Instrument</code>
      *

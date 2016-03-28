@@ -52,6 +52,7 @@
     <string name="borrowing">You are currently borrowing this instrument.</string>
     <string name="biddednotice">You have made a bid on this instrument.</string>
     <string name="set_returned">Mark As Returned</string>
+    <string name="return_instrument_as_borrower">Return instrument</string>
     <string name="borrower">Borrower: </string>
     <string name="accept_bid">Accept Bid</string>
     <string name="decline_bid">Decline Bid</string>

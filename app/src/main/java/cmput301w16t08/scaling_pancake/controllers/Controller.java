@@ -2,6 +2,7 @@ package cmput301w16t08.scaling_pancake.controllers;
 
 import android.app.Application;
 import android.graphics.Bitmap;
+import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
@@ -323,6 +324,7 @@ public class Controller extends Application {
      */
     public InstrumentList getCurrentUsersBorrowedInstruments() {
         if (this.currentUser == null) {
+            Log.d("Controller", "Current user is null");
             return null;
         }
         return this.currentUser.getBorrowedInstruments();
@@ -339,6 +341,7 @@ public class Controller extends Application {
      */
     public InstrumentList getCurrentUsersBiddedInstruments() {
         if (this.currentUser == null) {
+            Log.d("Controller", "Current user is null");
             return null;
         }
         InstrumentList instruments = new InstrumentList();
@@ -649,6 +652,7 @@ public class Controller extends Application {
 
     /**
      * The currently logged in <code>User</code> returns a borrowed <code>Instrument</code>
+     * Assumes that the currently logged in user is the borrower and not the owner
      *
      * @param instrument the instrument to return
      * @see Instrument
@@ -673,7 +677,7 @@ public class Controller extends Application {
         User owner = new Deserializer().deserializeUser(users.get(0));
         owner.getOwnedInstruments().getInstrument(instrument.getId()).setReturnedFlag(true);
 
-        // update both users
+         // update both users
         ElasticsearchController.UpdateUserTask updateUserTask = new ElasticsearchController.UpdateUserTask();
         updateUserTask.execute(this.getCurrentUser());
         ElasticsearchController.UpdateUserTask updateUserTask1 = new ElasticsearchController.UpdateUserTask();
@@ -681,7 +685,7 @@ public class Controller extends Application {
     }
 
     /**
-     * The currently logged in <code>User</code> returns a borrowed <code>Instrument</code>
+     * The currently logged in <code>User</code> marks a borrowed <code>Instrument</code> as returned
      *
      * @param index the index of the instrument to return
      * @see Instrument

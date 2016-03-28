@@ -266,7 +266,7 @@ public class User {
         if (this.bids.containsBid(bid)) {
             this.bids.removeBid(bid);
         } else {
-            throw new RuntimeException();
+            //throw new RuntimeException();
         }
     }
 
@@ -304,5 +304,9 @@ public class User {
      */
     public void setNewBidFlag(boolean b) {
         this.newBidFlag = b;
+    }
+
+    public String toString(){
+        return "Username: " + this.name + " id: " +this.id;
     }
 }
