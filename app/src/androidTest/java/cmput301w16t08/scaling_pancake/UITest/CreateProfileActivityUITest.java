@@ -1,4 +1,4 @@
-package cmput301w16t08.scaling_pancake;
+package cmput301w16t08.scaling_pancake.UITest;
 
 import android.app.Activity;
 import android.app.Instrumentation;
@@ -7,6 +7,7 @@ import android.test.UiThreadTest;
 import android.widget.Button;
 import android.widget.EditText;
 
+import cmput301w16t08.scaling_pancake.R;
 import cmput301w16t08.scaling_pancake.activities.CreateProfileActivity;
 import cmput301w16t08.scaling_pancake.controllers.Controller;
 import cmput301w16t08.scaling_pancake.models.User;

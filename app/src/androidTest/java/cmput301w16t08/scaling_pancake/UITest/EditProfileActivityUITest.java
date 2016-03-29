@@ -1,4 +1,4 @@
-package cmput301w16t08.scaling_pancake;
+package cmput301w16t08.scaling_pancake.UITest;
 
 import android.app.Activity;
 import android.app.Instrumentation;
@@ -9,6 +9,7 @@ import android.widget.EditText;
 
 import com.robotium.solo.Solo;
 
+import cmput301w16t08.scaling_pancake.R;
 import cmput301w16t08.scaling_pancake.activities.EditProfileActivity;
 import cmput301w16t08.scaling_pancake.controllers.Controller;
 
