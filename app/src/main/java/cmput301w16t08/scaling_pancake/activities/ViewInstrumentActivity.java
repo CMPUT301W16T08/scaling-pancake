@@ -51,6 +51,13 @@ public class ViewInstrumentActivity extends AppCompatActivity
             throw new RuntimeException("ViewInstrumentActivity: Intent is lacking position or view code");
         }
 
+    }
+
+    @Override
+    protected void onStart(){
+        super.onStart();
+        Intent intent = getIntent();
+
         switch(intent.getIntExtra("view_code", 0))
         {
             case owned_instrument_view_code:
@@ -153,7 +160,8 @@ public class ViewInstrumentActivity extends AppCompatActivity
             }
         }
 
-    }
+
+      }
 
     public void makeBid(View view)
     {
@@ -164,11 +172,8 @@ public class ViewInstrumentActivity extends AppCompatActivity
         }
 
         float bidAmount = Float.parseFloat(((EditText) findViewById(R.id.searched_instrument_view_bidamount_et)).getText().toString());
-
         controller.makeBidOnInstrument(selected, bidAmount);
-
         Toast.makeText(controller, "Bid Received!", Toast.LENGTH_SHORT).show();
-
         finish();
     }
 
@@ -225,6 +230,24 @@ public class ViewInstrumentActivity extends AppCompatActivity
         }
         selected.setReturnedFlag(false);
     }
+
+    public void displayOwner(View view){
+        Toast.makeText(getApplicationContext(), "showing owner...", Toast.LENGTH_SHORT).show();
+        String user_id = selected.getOwnerId();
+        Intent intent = new Intent(this, ViewProfileActivity.class);
+        intent.putExtra("user_id", user_id);
+        startActivity(intent);
+
+    }
+
+    public void displayBorrower(View view){
+        Toast.makeText(getApplicationContext(), "showing borrower..", Toast.LENGTH_SHORT).show();
+        String user_id = selected.getBorrowedById();
+        Intent intent = new Intent(this, ViewProfileActivity.class);
+        intent.putExtra("user_id", user_id);
+        startActivity(intent);
+    }
+
 
     public void back(View view)
     {

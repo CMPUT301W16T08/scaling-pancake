@@ -106,7 +106,9 @@
                     android:layout_marginBottom="5dp"
                     android:text="@string/owner"
                     android:layout_gravity="start"
-                    android:textSize="24sp"/>
+                    android:textSize="24sp"
+                    android:clickable = "true"
+                    android:onClick="displayOwner"/>
 
                 <TextView
                     android:id="@+id/searched_instrument_view_status_tv"

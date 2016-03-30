@@ -38,6 +38,11 @@ public class ViewBidsActivity extends ListActivity
         setListAdapter(bidsAdapter);
     }
 
+    protected void onStart(){
+        super.onStart();
+        bidsAdapter.notifyDataSetChanged();
+    }
+
     public void back(View view)
     {
         finish();
