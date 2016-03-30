@@ -61,11 +61,11 @@ public class BiddedInstrumentsAdapter extends ArrayAdapter
 
         /* Add the description and status */
         TextView description = (TextView) convertView.findViewById(R.id.bidded_instrument_list_item_description_tv);
-        TextView username = (TextView) convertView.findViewById(R.id.bidded_instrument_list_item_username_tv);
+        TextView user = (TextView) convertView.findViewById(R.id.bidded_instrument_list_item_username_tv);
         TextView bidAmount = (TextView) convertView.findViewById(R.id.bidded_instrument_list_item_bid_tv);
 
         description.setText(((Controller)getContext()).getInstrumentById(bid.getInstrumentId()).getDescription());
-        username.setText(String.format("Owner: %s", ((Controller) getContext()).getUserById(bid.getOwnerId()).getName()));
+        user.setText(String.format("Owner: %s", ((Controller) getContext()).getUserById(bid.getOwnerId()).getName()));
         bidAmount.setText(String.format("Bid: %.2f/hr", bid.getBidAmount()));
 
         return convertView;

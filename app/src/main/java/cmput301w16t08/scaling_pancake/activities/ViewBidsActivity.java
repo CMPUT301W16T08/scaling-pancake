@@ -86,6 +86,12 @@ public class ViewBidsActivity extends ListActivity
         bidsAdapter.notifyDataSetChanged();
     }
 
+    @Override
+    protected void onResume(){
+        super.onResume();
+        bidsAdapter.notifyDataSetChanged();
+    }
+
     public void back(View view)
     {
         finish();

@@ -645,7 +645,7 @@ public class Controller extends Application {
 
         // remove the bid and update users
         bidder.deleteBid(bid);
-        this.currentUser.getOwnedInstruments().getInstrument(bid.getInstrumentId()).getBids().removeBid(bid);
+        this.currentUser.getOwnedInstruments().getInstrument(bid.getInstrumentId()).declineBid(bid);
         ElasticsearchController.UpdateUserTask updateUserTask1 = new ElasticsearchController.UpdateUserTask();
         ElasticsearchController.UpdateUserTask updateUserTask2 = new ElasticsearchController.UpdateUserTask();
         updateUserTask1.execute(bidder);
@@ -743,7 +743,7 @@ public class Controller extends Application {
      * @see Instrument
      */
     public void acceptReturnedInstrument(int index) {
-        // NOTE: INDEX IS FOR USERS OWNED BORROWED INSTRUMENTS
+        // NOTE: INDEX IS FOR USER'S OWNED BORROWED INSTRUMENTS
         Instrument instrument = this.getCurrentUsersOwnedBorrowedInstruments().getInstrument(index);
         instrument.setReturnedFlag(false);
         instrument.getBids().clearBids();

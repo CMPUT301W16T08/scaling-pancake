@@ -21,6 +21,7 @@ import cmput301w16t08.scaling_pancake.models.User;
 public class ViewProfileActivity extends AppCompatActivity {
     private static Controller controller;
     private static final String TAG = "ViewProfileActivity";
+    private User user;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -33,17 +34,23 @@ public class ViewProfileActivity extends AppCompatActivity {
         if (!(current_user.getId().equals(user_id))){
             View edit_button = findViewById(R.id.edit_profile_button);
             edit_button.setVisibility(View.GONE);
+            user = current_user;
         }
-        User user = controller.getUserById(user_id);
-        setUsernameTextView(user);
-        setEmailTextView(user);
+        else{
+            user = controller.getUserById(user_id);
+        }
+        setUsernameTextView();
+        setEmailTextView();
+    }
+
+    protected void onStart(){
+        super.onStart();
     }
 
     /**
      * Initialize the username <code>TextView</code>
-     * @param user
      */
-    public void setUsernameTextView(User user) {
+    public void setUsernameTextView() {
         TextView usernameTextView = (TextView) findViewById(R.id.view_profile_username_tv);
         String name = user.getName();
 
@@ -52,9 +59,8 @@ public class ViewProfileActivity extends AppCompatActivity {
 
     /**
      * Initialize the email <code>TextView</code>
-     * @param user
      */
-    public void setEmailTextView(User user){
+    public void setEmailTextView(){
         TextView emailTextView = (TextView) findViewById(R.id.view_profile_email_tv);
         String email = user.getEmail();
         emailTextView.append(email);
@@ -66,9 +72,7 @@ public class ViewProfileActivity extends AppCompatActivity {
      */
     public void launchEditProfile(View view){
         Intent intent = new Intent(this, EditProfileActivity.class);
-
         startActivity(intent);
-
         finish();
     }
 
@@ -77,6 +81,11 @@ public class ViewProfileActivity extends AppCompatActivity {
      * @param view
      */
     public void goToMainMenu(View view){
+        Intent intent = new Intent(this, MenuActivity.class);
+        startActivity(intent);
+    }
+
+    public void back(View view){
         finish();
     }
 }

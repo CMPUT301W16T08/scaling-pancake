@@ -29,7 +29,7 @@
     <string name="view_instruments">View Instruments</string>
     <string name="search_instruments">Search Instruments</string>
     <string name="title_activity_add_instrument">AddInstrumentActivity</string>
-    <string name="description">Description:</string>
+    <string name="description">Description: </string>
     <string name="add_photo">Add Photo</string>
     <string name="add_audio_sample">Add Audio Sample</string>
     <string name="confirm">confirm</string>
@@ -47,7 +47,7 @@
     <string name="view_bids">View Bids</string>
     <string name="highest_bid">Current Max Bid: </string>
     <string name="delete">Delete</string>
-    <string name="owner">Owner:</string>
+    <string name="owner">Owner: </string>
     <string name="owner_me">Owner: Me</string>
     <string name="rate">Rate: </string>
     <string name="borrowing">You are currently borrowing this instrument.</string>
@@ -63,7 +63,7 @@
     <string name="title_activity_view_bids">ViewBidsActivity</string>
     <string name="title_activity_view_location">View Location</string>
     <string name="title_activity_record_audio">Record Audio</string>
-    <string name="enter_bid_amount">Enter bid amount:</string>
+    <string name="enter_bid_amount">Enter bid amount: </string>
     <string name="ownedmsg">You own this instrument.</string>
     <string name="title_activity_view_single_bid">ViewSingleBidActivity</string>
     <string name="title_activity_edit_instrument">EditInstrumentActivity</string>

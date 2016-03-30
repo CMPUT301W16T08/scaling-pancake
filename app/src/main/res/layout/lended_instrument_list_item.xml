@@ -23,7 +23,9 @@
         android:text="@string/owner"
         android:textColor="@color/black"
         android:layout_marginTop="2dp"
-        android:layout_marginBottom="2dp"/>
+        android:layout_marginBottom="2dp"
+        android:clickable="true"
+        android:onClick="displayOwner"/>
 
     <TextView
         android:id="@+id/lended_instrument_list_item_rate_tv"
