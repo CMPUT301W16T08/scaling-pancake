@@ -1,5 +1,6 @@
 package cmput301w16t08.scaling_pancake.adapters;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +10,7 @@ import android.widget.Toast;
 
 import cmput301w16t08.scaling_pancake.R;
 import cmput301w16t08.scaling_pancake.activities.ViewBidsActivity;
+import cmput301w16t08.scaling_pancake.activities.ViewInstrumentActivity;
 import cmput301w16t08.scaling_pancake.controllers.Controller;
 import cmput301w16t08.scaling_pancake.models.Bid;
 import cmput301w16t08.scaling_pancake.models.BidList;
@@ -51,6 +53,19 @@ public class BidsAdapter extends ArrayAdapter
                 controller.acceptBidOnInstrument(bid);
                 Toast.makeText(controller, "Bid Accepted!", Toast.LENGTH_SHORT).show();
                 notifyDataSetChanged();
+
+                Intent intent = new Intent();
+            }
+        });
+
+        convertView.findViewById(R.id.bid_list_item_decline_button).setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                controller.declineBidOnInstrument(bid);
+                Toast.makeText(controller, "Bid Declined", Toast.LENGTH_SHORT).show();
+                notifyDataSetChanged();
             }
         });
 
@@ -60,4 +75,6 @@ public class BidsAdapter extends ArrayAdapter
 
         return convertView;
     }
+
+
 }
