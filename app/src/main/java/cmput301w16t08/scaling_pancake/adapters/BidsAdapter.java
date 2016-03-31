@@ -23,11 +23,12 @@ public class BidsAdapter extends ArrayAdapter
 {
 
     private Controller controller;
+    private BidList bidList;
 
     public BidsAdapter(Controller controller, BidList bidList)
     {
         super(controller, 0, bidList.getArray());
-
+        this.bidList = bidList;
         this.controller = controller;
     }
 
@@ -50,9 +51,11 @@ public class BidsAdapter extends ArrayAdapter
             @Override
             public void onClick(View v)
             {
-                controller.acceptBidOnInstrument(bid);
-                Toast.makeText(controller, "Bid Accepted!", Toast.LENGTH_SHORT).show();
-                notifyDataSetChanged();
+                if(!bid.getAccepted()) {
+                    controller.acceptBidOnInstrument(bid);
+                    Toast.makeText(controller, "Bid Accepted!", Toast.LENGTH_SHORT).show();
+                    notifyDataSetChanged();
+                }
             }
         });
 
@@ -61,15 +64,18 @@ public class BidsAdapter extends ArrayAdapter
             @Override
             public void onClick(View v)
             {
-                controller.declineBidOnInstrument(bid);
-                Toast.makeText(controller, "Bid Declined", Toast.LENGTH_SHORT).show();
-                notifyDataSetChanged();
+                if(!bid.getAccepted()) {
+                    controller.declineBidOnInstrument(bid);
+                    bidList.removeBid(bid);
+                    Toast.makeText(controller, "Bid Declined", Toast.LENGTH_SHORT).show();
+                    notifyDataSetChanged();
+                }
             }
         });
 
-        name.append(controller.getInstrumentById(bid.getInstrumentId()).getName());
-        bidder.append(controller.getUserById(bid.getBidderId()).getName());
-        rate.append(String.format("%.2f/hr", bid.getBidAmount()));
+        name.setText(controller.getInstrumentById(bid.getInstrumentId()).getName());
+        bidder.setText(controller.getUserById(bid.getBidderId()).getName());
+        rate.setText(String.format("%.2f/hr", bid.getBidAmount()));
 
         return convertView;
     }
