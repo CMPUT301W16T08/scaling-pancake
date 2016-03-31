@@ -17,7 +17,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:id="@+id/linearLayout3">
 
         <Button
             android:layout_width="200dp"
@@ -75,4 +76,15 @@
             android:layout_marginBottom="2dp"
             android:background="@drawable/btn_selector"/>
     </LinearLayout>
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/new_bid"
+        android:id="@+id/new_bid_notif_button"
+        android:onClick="viewNotification"
+        android:layout_above="@+id/linearLayout3"
+        android:layout_alignRight="@+id/linearLayout3"
+        android:layout_alignEnd="@+id/linearLayout3" />
 </RelativeLayout>

@@ -76,9 +76,10 @@ public class BidsAdapter extends ArrayAdapter
         name.setText(controller.getInstrumentById(bid.getInstrumentId()).getName());
         bidder.setText(controller.getUserById(bid.getBidderId()).getName());
         rate.setText(String.format("%.2f/hr", bid.getBidAmount()));
-
         return convertView;
     }
 
-
+    public BidList getBidList(){
+        return this.bidList;
+    }
 }

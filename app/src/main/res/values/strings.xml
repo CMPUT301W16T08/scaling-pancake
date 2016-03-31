@@ -58,6 +58,7 @@
     <string name="decline_bid">Decline Bid</string>
     <string name="bidder">Bidder: </string>
     <string name="offer">Offered Rate: </string>
+    <string name="new_bid">New Bid!</string>
     <string name="instrument">Instrument: </string>
     <string name="title_activity_view_bids">ViewBidsActivity</string>
     <string name="enter_bid_amount">Enter bid amount: </string>

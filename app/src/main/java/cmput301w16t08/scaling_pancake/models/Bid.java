@@ -17,6 +17,7 @@ public class Bid {
     private float bidAmount;
     private boolean accepted;
     private String id;
+    private boolean seen;
 
     /**
      * Creates a new <code>Bid</code> from the supplied bidder on the supplied instrument
@@ -35,6 +36,7 @@ public class Bid {
         this.bidAmount = bidAmount;
         this.accepted = false;
         this.id = UUID.randomUUID().toString();
+        this.seen = false;
     }
 
     /**
@@ -116,5 +118,14 @@ public class Bid {
      */
     public String getId() {
         return id;
+    }
+
+    public boolean getSeen(){
+        return this.seen;
+    }
+
+    public void setSeen(boolean seen){
+        this.seen = seen;
+
     }
 }

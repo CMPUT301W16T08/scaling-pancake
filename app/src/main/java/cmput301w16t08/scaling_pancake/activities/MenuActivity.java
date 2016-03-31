@@ -5,8 +5,14 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
+import org.apache.commons.lang3.ObjectUtils;
+
 import cmput301w16t08.scaling_pancake.controllers.Controller;
 import cmput301w16t08.scaling_pancake.R;
+import cmput301w16t08.scaling_pancake.models.Bid;
+import cmput301w16t08.scaling_pancake.models.BidList;
+import cmput301w16t08.scaling_pancake.models.InstrumentList;
+import cmput301w16t08.scaling_pancake.models.User;
 
 /**
  * The <code>MenuActivity</code> provides a set of options for the user to click on.
@@ -24,6 +30,7 @@ import cmput301w16t08.scaling_pancake.R;
 public class MenuActivity extends AppCompatActivity {
     // set up our global controller
     private static Controller controller;
+    private Bid unseenBid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +38,47 @@ public class MenuActivity extends AppCompatActivity {
         setContentView(R.layout.activity_menu);
 
         controller = (Controller) getApplicationContext();
+
+    }
+
+    protected void onResume(){
+        super.onResume();
+        // Check for a notification
+//        if (hasNotifications()== null) {
+//            notif_button.setVisibility(View.INVISIBLE);
+//        }
+//        else {
+//
+//        }
+
+        View notif_button = findViewById(R.id.new_bid_notif_button);
+        this.unseenBid = hasNotifications();
+        if (this.unseenBid == null){
+            notif_button.setVisibility(View.INVISIBLE);
+        }
+    }
+
+
+
+
+    /**
+     * Checks if the currently logged in user has a notification
+     * @return true if the currently logged in user has a notification, else false
+     */
+    protected Bid hasNotifications(){
+        User user = controller.getCurrentUser();
+
+        // Checks each of the owners instruments for an unseen bid.
+        InstrumentList instruments = user.getOwnedInstruments();
+        for (int i = 0; i < instruments.size(); i++){
+            BidList bids = instruments.getInstrument(i).getBids();
+            for (int j = 0; j< bids.size(); j++){
+                if (!(bids.getBid(j).getSeen())){ //if bid.seen == false
+                    return bids.getBid(j);
+                }
+            }
+        }
+        return null;
     }
 
     /**
@@ -66,6 +114,12 @@ public class MenuActivity extends AppCompatActivity {
 
     public void searchInstruments(View view){
         Intent intent = new Intent(this, SearchInstrumentsActivity.class);
+        startActivity(intent);
+    }
+
+    public void viewNotification(View view){
+        Intent intent = new Intent(this, ViewBidsActivity.class);
+        intent.putExtra("instrument_id", this.unseenBid.getInstrumentId());
         startActivity(intent);
     }
 

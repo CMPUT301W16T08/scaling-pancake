@@ -16,6 +16,7 @@ import cmput301w16t08.scaling_pancake.R;
 import cmput301w16t08.scaling_pancake.adapters.BidsAdapter;
 import cmput301w16t08.scaling_pancake.controllers.Controller;
 import cmput301w16t08.scaling_pancake.models.Bid;
+import cmput301w16t08.scaling_pancake.models.BidList;
 
 /**
  * Displays a list of the current <code>Bid</code>s on an instrument.
@@ -41,6 +42,11 @@ public class ViewBidsActivity extends ListActivity
                 controller.getInstrumentById(intent.getStringExtra("instrument_id")).getBids());
 
         setListAdapter(bidsAdapter);
+
+        BidList bids = bidsAdapter.getBidList();
+        for (int i = 0; i < bids.size(); i++){
+            bids.getBid(i).setSeen(true);
+        }
     }
 
     protected void onStart(){
