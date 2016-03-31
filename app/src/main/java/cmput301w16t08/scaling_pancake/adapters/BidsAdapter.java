@@ -53,8 +53,6 @@ public class BidsAdapter extends ArrayAdapter
                 controller.acceptBidOnInstrument(bid);
                 Toast.makeText(controller, "Bid Accepted!", Toast.LENGTH_SHORT).show();
                 notifyDataSetChanged();
-
-                Intent intent = new Intent();
             }
         });
 
