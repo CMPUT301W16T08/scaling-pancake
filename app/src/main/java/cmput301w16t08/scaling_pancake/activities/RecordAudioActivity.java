@@ -1,13 +1,17 @@
 package cmput301w16t08.scaling_pancake.activities;
 
 import android.app.Activity;
+import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.media.MediaRecorder;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
+import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Base64;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -44,6 +48,7 @@ public class RecordAudioActivity extends AppCompatActivity {
         filePath += "/" + UUID.randomUUID().toString() + ".3gp";
 
         LinearLayout layout = new LinearLayout(this);
+        layout.setOrientation(LinearLayout.VERTICAL);
         recordButton = new RecordButton(this);
         layout.addView(recordButton,
                 new LinearLayout.LayoutParams(
@@ -67,8 +72,12 @@ public class RecordAudioActivity extends AppCompatActivity {
                 if (!hasRecorded) {
                     Toast.makeText(getApplicationContext(), "Nothing recorded", Toast.LENGTH_SHORT).show();
                 } else {
+                    ContentValues values = new ContentValues(1);
+                    values.put(MediaStore.Audio.Media.DATA, filePath);
+                    Uri baseUri = MediaStore.Audio.Media.EXTERNAL_CONTENT_URI;
+                    Uri uri = getContentResolver().insert(baseUri, values);
                     Intent returnIntent = new Intent();
-                    returnIntent.putExtra("filePath", filePath);
+                    returnIntent.putExtra("audioUriBase64", Base64.encode(uri.toString().getBytes(), 0));
                     setResult(Activity.RESULT_OK, returnIntent);
                     finish();
                 }

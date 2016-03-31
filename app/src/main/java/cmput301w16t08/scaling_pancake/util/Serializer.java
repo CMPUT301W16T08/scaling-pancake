@@ -77,7 +77,8 @@ public class Serializer {
                 "\", \"status\" : \"" + instrument.getStatus() +
                 "\", \"location\" : " + instrument.getLocationString() +
                 ", \"returnedFlag\" : \"" + String.valueOf(instrument.getReturnedFlag()) +
-                "\", \"thumbnailBase64\" : \"" + instrument.getThumbnailBase64();
+                "\", \"thumbnailBase64\" : \"" + instrument.getThumbnailBase64() +
+                "\", \"audioBase64\" : \"" + instrument.getSampleAudioBase64();
 
         if (instrument.getStatus().equals("borrowed")) {
             string = string + "\", \"borrowedById\" : \"" + instrument.getBorrowedById();

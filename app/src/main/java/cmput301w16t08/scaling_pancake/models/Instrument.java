@@ -2,14 +2,12 @@ package cmput301w16t08.scaling_pancake.models;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.util.Base64;
 
 import com.google.android.gms.maps.model.LatLng;
 
 import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.FileDescriptor;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.UUID;
 
@@ -33,7 +31,7 @@ public class Instrument {
     private transient Bitmap thumbnail;
     private String thumbnailBase64;
     private LatLng location;
-    private FileDescriptor audioFile;
+    private String audioBase64;
 
     /**
      * Creates a new <code>Instrument</code> with supplied name and description, and for supplied owner
@@ -54,7 +52,7 @@ public class Instrument {
         this.thumbnailBase64 = null;
         this.returnedFlag = false;
         this.location = null;
-        this.audioFile = null;
+        this.audioBase64 = null;
     }
 
     /**
@@ -76,7 +74,7 @@ public class Instrument {
         this.returnedFlag = false;
         addThumbnail(thumbnail);
         this.location = null;
-        this.audioFile = null;
+        this.audioBase64 = null;
     }
 
     /**
@@ -98,7 +96,7 @@ public class Instrument {
         this.returnedFlag = returned;
         addThumbnail(thumbnail);
         this.location = null;
-        this.audioFile = null;
+        this.audioBase64 = null;
     }
 
     /**
@@ -121,7 +119,7 @@ public class Instrument {
         this.thumbnailBase64 = null;
         this.returnedFlag = returned;
         this.location = null;
-        this.audioFile = null;
+        this.audioBase64 = null;
     }
 
     /**
@@ -464,19 +462,22 @@ public class Instrument {
         return bids.getMaxBid();
     }
 
-    public void addSampleAudioFile(String filePath) {
-        try {
-            this.audioFile = (new FileInputStream(new File(filePath))).getFD();
-        } catch (IOException e) {
-            e.printStackTrace();
+    public void addSampleAudioBase64(String audioBase64) {
+        this.audioBase64 = audioBase64;
+    }
+
+    public String getSampleAudioBase64() {
+        if (this.audioBase64 == null) {
+            return "";
         }
+        return this.audioBase64;
     }
 
-    public FileDescriptor getSampleAudioFile() {
-        return this.audioFile;
+    public Uri getSampleAudioUri() {
+        return Uri.parse(Base64.decode(this.audioBase64, 0).toString());
     }
 
-    public void deleteSampleAudioFile() {
-        this.audioFile = null;
+    public void deleteSampleAudio() {
+        this.audioBase64 = null;
     }
 }

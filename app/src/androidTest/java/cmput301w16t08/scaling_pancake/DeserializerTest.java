@@ -63,6 +63,7 @@ public class DeserializerTest extends ActivityInstrumentationTestCase2 {
         assertNull(instrument.getThumbnail());
         assertEquals(instrument.getThumbnailBase64(), "null");
         assertNull(instrument.getLocation());
+        assertEquals(instrument.getSampleAudioBase64(), "");
 
         // Test instrument after it is borrowed
         Bid bid1 = new Bid(owner.getOwnedInstruments().getInstrument(0).getId(), owner.getId(), borrower.getId(), 1.00f);
@@ -84,5 +85,6 @@ public class DeserializerTest extends ActivityInstrumentationTestCase2 {
         assertEquals(instrument.getThumbnailBase64(), "null");
         assertEquals(instrument.getLongitude(), 50.0);
         assertEquals(instrument.getLatitude(), 50.0);
+        assertEquals(instrument.getSampleAudioBase64(), "");
     }
 }

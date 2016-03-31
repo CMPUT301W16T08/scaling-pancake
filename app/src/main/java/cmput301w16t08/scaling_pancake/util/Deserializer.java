@@ -129,6 +129,9 @@ public class Deserializer {
 
             instrument.setStatus(object.getString("status"));
             instrument.addThumbnail(object.getString("thumbnailBase64"));
+            if (!object.getString("audioBase64").equals("")) {
+                instrument.addSampleAudioBase64(object.getString("audioBase64"));
+            }
             object2 = object.getJSONObject("location");
             if (object2.length() == 2) {
                 try {

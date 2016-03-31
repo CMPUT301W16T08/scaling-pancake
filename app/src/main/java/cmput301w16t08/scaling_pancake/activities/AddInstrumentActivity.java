@@ -1,12 +1,21 @@
 package cmput301w16t08.scaling_pancake.activities;
 
 import android.app.Activity;
+import android.content.ContentValues;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Base64;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.google.common.io.Files;
+
+import java.io.File;
+import java.io.IOException;
 
 import cmput301w16t08.scaling_pancake.controllers.Controller;
 import cmput301w16t08.scaling_pancake.R;
@@ -24,7 +33,7 @@ public class AddInstrumentActivity extends AppCompatActivity {
 
     // set up our global controller
     private static Controller controller;
-    private String audioFilePath = null;
+    private String audioBase64 = null;
     private int AUDIO_RESULT_CODE = 10;
 
     @Override
@@ -53,9 +62,9 @@ public class AddInstrumentActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == AUDIO_RESULT_CODE) {
             if (resultCode == Activity.RESULT_OK) {
-                audioFilePath = data.getStringExtra("filePath");
+                audioBase64 = data.getStringExtra("audioUriBase64");
             } else if (resultCode == Activity.RESULT_CANCELED) {
-                audioFilePath = null;
+                audioBase64 = null;
             }
         }
     }
@@ -73,8 +82,8 @@ public class AddInstrumentActivity extends AppCompatActivity {
 
         if ((!name.equals("")) && (!description.equals(""))) {
             Instrument instrument = new Instrument(controller.getCurrentUser().getId(), name, description);
-            if (audioFilePath != null) {
-                instrument.addSampleAudioFile(audioFilePath);
+            if (audioBase64 != null) {
+                instrument.addSampleAudioBase64(audioBase64);
             }
             controller.addInstrument(instrument);
             finish();

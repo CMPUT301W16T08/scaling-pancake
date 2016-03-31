@@ -51,7 +51,8 @@ public class SerializerTest extends ActivityInstrumentationTestCase2 {
         assertEquals(string, "{\"id\" : \"" + owner.getOwnedInstruments().getInstrument(0).getId() +
                 "\", \"name\" : \"name1\", \"description\" : \"description1\", \"ownerId\" : \"" +
                 owner.getId() + "\", \"status\" : \"available\", \"location\" : {}, \"returnedFlag\" : \"false\"," +
-                " \"thumbnailBase64\" : \"" + owner.getOwnedInstruments().getInstrument(0).getThumbnailBase64() + "\", \"bids\" : []}");
+                " \"thumbnailBase64\" : \"" + owner.getOwnedInstruments().getInstrument(0).getThumbnailBase64() +
+                "\", \"audioBase64\" : \"\", \"bids\" : []}");
 
         // try adding a bid and a location
         Bid bid1 = new Bid(owner.getOwnedInstruments().getInstrument(0).getId(), owner.getId(), borrower.getId(), 1.00f);
@@ -65,7 +66,7 @@ public class SerializerTest extends ActivityInstrumentationTestCase2 {
                 owner.getId() + "\", \"status\" : \"borrowed\", \"location\" : " +
                 owner.getOwnedInstruments().getInstrument(0).getLocationString() + ", \"returnedFlag\" : \"false\"," +
                 " \"thumbnailBase64\" : \"" + owner.getOwnedInstruments().getInstrument(0).getThumbnailBase64() +
-                "\", \"borrowedById\" : \"" + borrower.getId() + "\", \"bids\" : [" + serializer.serializeBid(bid1) + "]}");
+                "\", \"audioBase64\" : \"\", \"borrowedById\" : \"" + borrower.getId() + "\", \"bids\" : [" + serializer.serializeBid(bid1) + "]}");
     }
 
     public void testSerializeBid() {

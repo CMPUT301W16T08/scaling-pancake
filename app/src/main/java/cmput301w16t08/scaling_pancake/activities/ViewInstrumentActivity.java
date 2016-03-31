@@ -1,9 +1,12 @@
 package cmput301w16t08.scaling_pancake.activities;
 
+import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
 import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.text.InputFilter;
 import android.text.TextUtils;
@@ -41,8 +44,8 @@ public class ViewInstrumentActivity extends AppCompatActivity
 
     private Instrument selected;
     private MediaPlayer player;
-    private FileDescriptor audioFile;
     private boolean isPlaying;
+    private Uri audioUri;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -52,7 +55,6 @@ public class ViewInstrumentActivity extends AppCompatActivity
         controller = (Controller) getApplicationContext();
 
         player = new MediaPlayer();
-        audioFile = null;
         isPlaying = false;
         Intent intent = getIntent();
 
@@ -229,14 +231,14 @@ public class ViewInstrumentActivity extends AppCompatActivity
 
     public void onPlayButtonClick(View view) {
         if (isPlaying == false) {
-            if (audioFile == null) {
-                audioFile = selected.getSampleAudioFile();
+            if (audioUri == null) {
+                audioUri = selected.getSampleAudioUri();
             }
-            if (audioFile == null) {
+            if (audioUri == null) {
                 Toast.makeText(getApplicationContext(), "No audio sample", Toast.LENGTH_SHORT).show();
             } else {
                 try {
-                    player.setDataSource(selected.getSampleAudioFile());
+                    player.setDataSource(this, audioUri);
                     player.prepare();
                 } catch (IOException e) {
                     e.printStackTrace();
