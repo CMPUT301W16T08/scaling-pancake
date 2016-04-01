@@ -46,6 +46,17 @@
         android:text="@string/accept_bid"
         android:background="@drawable/btn_selector"/>
 
+    <Button
+        android:id="@+id/view_bid_activity_set_location_button"
+        android:layout_above="@id/view_bid_activity_accept_button"
+        android:layout_width="match_parent"
+        android:layout_height="36sp"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="2dp"
+        android:onClick="setLocation"
+        android:text="@string/choose_location"
+        android:background="@drawable/btn_selector"/>
+
     <LinearLayout
         android:id="@+id/view_bid_activity_tv_shell"
         android:layout_below="@id/view_bid_activity_back_button"

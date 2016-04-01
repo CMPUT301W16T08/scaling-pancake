@@ -68,4 +68,5 @@
     <string name="title_activity_view_single_bid">ViewSingleBidActivity</string>
     <string name="title_activity_edit_instrument">EditInstrumentActivity</string>
     <string name="title_activity_view_bid">ViewBidActivity</string>
+    <string name="choose_location">Specify a pickup location</string>
 </resources>

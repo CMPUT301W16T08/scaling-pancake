@@ -67,7 +67,7 @@ public class ViewBidActivity extends Activity
         super.onStop();
     }
 
-    public void setLocation() {
+    public void setLocation(View view) {
         PlacePicker.IntentBuilder intentBuilder = new PlacePicker.IntentBuilder();
         try {
             Intent intent = intentBuilder.build(this);

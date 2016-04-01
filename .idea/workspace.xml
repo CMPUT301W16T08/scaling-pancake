@@ -1668,9 +1668,10 @@
         <option value="$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/models/User.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/models/UserList.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/controllers/ElasticsearchController.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/borrowed_instrument_view.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/content_view_bid.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/activities/ViewBidActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/borrowed_instrument_view.xml" />
       </list>
     </option>
   </component>
@@ -1712,16 +1713,6 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="scaling-pancake" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scaling-pancake" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -2258,20 +2249,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/content_view_bid.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5662921">
-          <caret line="50" column="64" selection-start-line="50" selection-start-column="64" selection-end-line="50" selection-end-column="64" />
-          <folding>
-            <element signature="e#1061#1075#0" expanded="true" />
-            <element signature="e#1470#1491#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/borrowed_instrument_view.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.7407407">
@@ -2295,14 +2272,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/activities/ViewLocationActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.03448276">
-          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/activities/ViewInstrumentActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.49885058">
@@ -2311,10 +2280,47 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.884615">
+          <caret line="70" column="60" selection-start-line="70" selection-start-column="60" selection-end-line="70" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/content_view_bid.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.642858">
+          <caret line="54" column="41" selection-start-line="54" selection-start-column="41" selection-end-line="54" selection-end-column="41" />
+          <folding>
+            <element signature="e#332#365#0" expanded="true" />
+            <element signature="e#390#425#0" expanded="true" />
+            <element signature="e#451#486#0" expanded="true" />
+            <element signature="e#510#543#0" expanded="true" />
+            <element signature="e#568#608#0" expanded="true" />
+            <element signature="e#1061#1075#0" expanded="true" />
+            <element signature="e#1470#1491#0" expanded="true" />
+            <element signature="e#1904#1924#0" expanded="true" />
+            <element signature="e#2344#2369#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/activities/ViewBidActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7034483">
-          <caret line="46" column="103" selection-start-line="46" selection-start-column="103" selection-end-line="46" selection-end-column="103" />
+        <state vertical-scroll-proportion="2.4413793">
+          <caret line="79" column="5" selection-start-line="79" selection-start-column="5" selection-end-line="79" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/activities/ViewLocationActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.04137931">
+          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
           <folding />
         </state>
       </provider>
