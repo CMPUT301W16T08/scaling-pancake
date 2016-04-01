@@ -6,10 +6,10 @@ import android.content.Intent;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.text.InputFilter;
 import android.text.TextUtils;
+import android.util.Base64;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -17,7 +17,9 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.io.FileDescriptor;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 
 import cmput301w16t08.scaling_pancake.R;
@@ -46,6 +48,7 @@ public class ViewInstrumentActivity extends AppCompatActivity
     private MediaPlayer player;
     private boolean isPlaying;
     private Uri audioUri;
+    private byte [] bytes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -57,6 +60,7 @@ public class ViewInstrumentActivity extends AppCompatActivity
         player = new MediaPlayer();
         isPlaying = false;
         Intent intent = getIntent();
+        bytes = null;
 
         if(!intent.hasExtra("view_code") || !intent.hasExtra("position"))
         {
@@ -231,14 +235,20 @@ public class ViewInstrumentActivity extends AppCompatActivity
 
     public void onPlayButtonClick(View view) {
         if (isPlaying == false) {
-            if (audioUri == null) {
-                audioUri = selected.getSampleAudioUri();
+            if (bytes == null) {
+                bytes = Base64.decode(selected.getSampleAudioBase64(), 0);
             }
-            if (audioUri == null) {
+            if (bytes.length == 0) {
                 Toast.makeText(getApplicationContext(), "No audio sample", Toast.LENGTH_SHORT).show();
             } else {
                 try {
-                    player.setDataSource(this, audioUri);
+                    File file = File.createTempFile("tempFile", "tmp", null);
+                    file.deleteOnExit();
+                    FileOutputStream stream = new FileOutputStream(file);
+                    stream.write(bytes);
+                    stream.close();
+                    FileInputStream stream2 = new FileInputStream(file);
+                    player.setDataSource(stream2.getFD());
                     player.prepare();
                 } catch (IOException e) {
                     e.printStackTrace();

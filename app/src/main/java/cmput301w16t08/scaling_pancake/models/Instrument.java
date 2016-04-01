@@ -2,13 +2,11 @@ package cmput301w16t08.scaling_pancake.models;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.net.Uri;
 import android.util.Base64;
 
 import com.google.android.gms.maps.model.LatLng;
 
 import java.io.ByteArrayOutputStream;
-import java.io.IOException;
 import java.util.UUID;
 
 /**
@@ -471,10 +469,6 @@ public class Instrument {
             return "";
         }
         return this.audioBase64;
-    }
-
-    public Uri getSampleAudioUri() {
-        return Uri.parse(Base64.decode(this.audioBase64, 0).toString());
     }
 
     public void deleteSampleAudio() {

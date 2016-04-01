@@ -18,6 +18,9 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.UUID;
 
@@ -72,13 +75,23 @@ public class RecordAudioActivity extends AppCompatActivity {
                 if (!hasRecorded) {
                     Toast.makeText(getApplicationContext(), "Nothing recorded", Toast.LENGTH_SHORT).show();
                 } else {
-                    ContentValues values = new ContentValues(1);
-                    values.put(MediaStore.Audio.Media.DATA, filePath);
-                    Uri baseUri = MediaStore.Audio.Media.EXTERNAL_CONTENT_URI;
-                    Uri uri = getContentResolver().insert(baseUri, values);
-                    Intent returnIntent = new Intent();
-                    returnIntent.putExtra("audioUriBase64", Base64.encode(uri.toString().getBytes(), 0));
-                    setResult(Activity.RESULT_OK, returnIntent);
+                    FileInputStream stream = null;
+                    File audioFile =  new File(filePath);
+                    byte[] bytes = new byte[(int) audioFile.length()];
+                    try {
+                        stream = new FileInputStream(audioFile);
+                    } catch (FileNotFoundException e) {
+                        e.printStackTrace();
+                    }
+                    try {
+                        stream.read(bytes);
+                        stream.close();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                    String string = Base64.encodeToString(bytes, 0);
+                    getIntent().putExtra("audioUriBase64", Base64.encodeToString(bytes, 0));
+                    setResult(Activity.RESULT_OK, getIntent());
                     finish();
                 }
             }
@@ -92,8 +105,7 @@ public class RecordAudioActivity extends AppCompatActivity {
                 ViewGroup.LayoutParams.WRAP_CONTENT));
         cancelButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent returnIntent = new Intent();
-                setResult(Activity.RESULT_CANCELED, returnIntent);
+                setResult(Activity.RESULT_CANCELED, getIntent());
                 finish();
             }
         });

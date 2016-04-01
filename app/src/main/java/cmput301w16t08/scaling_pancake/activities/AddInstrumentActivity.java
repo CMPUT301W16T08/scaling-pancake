@@ -33,7 +33,7 @@ public class AddInstrumentActivity extends AppCompatActivity {
 
     // set up our global controller
     private static Controller controller;
-    private String audioBase64 = null;
+    private String audioBase64;
     private int AUDIO_RESULT_CODE = 10;
 
     @Override
@@ -62,7 +62,7 @@ public class AddInstrumentActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == AUDIO_RESULT_CODE) {
             if (resultCode == Activity.RESULT_OK) {
-                audioBase64 = data.getStringExtra("audioUriBase64");
+                audioBase64 = data.getExtras().getString("audioUriBase64");
             } else if (resultCode == Activity.RESULT_CANCELED) {
                 audioBase64 = null;
             }
@@ -83,7 +83,7 @@ public class AddInstrumentActivity extends AppCompatActivity {
         if ((!name.equals("")) && (!description.equals(""))) {
             Instrument instrument = new Instrument(controller.getCurrentUser().getId(), name, description);
             if (audioBase64 != null) {
-                instrument.addSampleAudioBase64(audioBase64);
+                instrument.addSampleAudioBase64(audioBase64.replace("\n", ""));
             }
             controller.addInstrument(instrument);
             finish();
