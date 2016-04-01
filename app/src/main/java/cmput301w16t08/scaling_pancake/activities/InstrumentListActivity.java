@@ -8,6 +8,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import cmput301w16t08.scaling_pancake.adapters.BiddedInstrumentsAdapter;
 import cmput301w16t08.scaling_pancake.adapters.LendedInstrumentsAdapter;
@@ -66,7 +67,31 @@ public class InstrumentListActivity extends ListActivity implements AdapterView.
 
         setListAdapter(ownedInstrumentAdapter);
         currentSelection = ownedInstrumentsListCode;
+//
+//
+//        /*
+//        * These lines taken from the api guides verbatim.
+//        * http://developer.android.com/guide/topics/ui/controls/spinner.html
+//        * */
+//        Spinner spinner = (Spinner) findViewById(R.id.instrumentlistactivity_category_spinner);
+//        // Create an ArrayAdapter using the string array and a default spinner layout
+//        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+//                R.array.instrument_status_array, android.R.layout.simple_spinner_item);
+//        // Specify the layout to use when the list of choices appears
+//        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//        // Apply the adapter to the spinner
+//        spinner.setAdapter(adapter);
+//
+//        /* Set this as the listener for the spinner items */
+//        spinner.setOnItemSelectedListener(this);
+    }
 
+    /**
+     * When the activity resumes, update what the user sees
+     */
+    @Override
+    protected void onStart(){
+        super.onStart();
 
         /*
         * These lines taken from the api guides verbatim.

@@ -1,10 +1,13 @@
 package cmput301w16t08.scaling_pancake.adapters;
 
 
+import android.media.Image;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import cmput301w16t08.scaling_pancake.R;
@@ -47,15 +50,21 @@ public class SearchResultsAdapter extends ArrayAdapter
         }
 
         /* Add the description and status */
+        ImageView thumbnail = (ImageView) convertView.findViewById(R.id.displaysearchresults_list_item_thumbnail_iv);
         TextView name = (TextView) convertView.findViewById(R.id.displaysearchresults_list_item_name_tv);
         TextView description = (TextView) convertView.findViewById(R.id.displaysearchresults_list_item_description_tv);
         TextView username = (TextView) convertView.findViewById(R.id.displaysearchresults_list_item_username_tv);
         TextView status = (TextView) convertView.findViewById(R.id.displaysearchresults_list_item_status_tv);
 
+        if(instrument.hasThumbnail())
+        {
+            thumbnail.setImageBitmap(instrument.getThumbnail());
+        }
+
         name.setText(instrument.getName());
         description.setText(instrument.getDescription());
         username.setText(String.format("Owner: %s", controller.getUserById(instrument.getOwnerId()).getName()));
-        status.setText(String.format("Status: %s", instrument.getStatus())); //What values of status are possible?
+        status.setText(String.format("Status: %s", instrument.getStatus()));
 
         return convertView;
     }

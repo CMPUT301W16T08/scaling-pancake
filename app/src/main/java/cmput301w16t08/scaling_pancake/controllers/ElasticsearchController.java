@@ -34,7 +34,7 @@ import io.searchbox.core.SearchResult;
 public class ElasticsearchController {
     private static JestDroidClient client;
     private static String url = "http://cmput301.softwareprocess.es:8080";
-    private static String index = "cmput301w16t08number2";
+    private static String index = "cmput301w16t08";
 
     /**
      * <code>CreateUserTask</code> is used to save a new <code>User</code>
@@ -218,7 +218,8 @@ public class ElasticsearchController {
                 if (result.isSucceeded()) {
                     Log.d("ESC", "UpdateUserTask completed.");
                 } else {
-                    throw new RuntimeException("UpdateUserTask not completed");
+                    throw new RuntimeException(result.getErrorMessage());
+//                    throw new RuntimeException("UpdateUserTask not completed");
                 }
             } catch (IOException e) {
                 e.printStackTrace();

@@ -1,31 +1,34 @@
 package cmput301w16t08.scaling_pancake.adapters;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import cmput301w16t08.scaling_pancake.R;
 import cmput301w16t08.scaling_pancake.activities.ViewBidsActivity;
+import cmput301w16t08.scaling_pancake.activities.ViewInstrumentActivity;
 import cmput301w16t08.scaling_pancake.controllers.Controller;
 import cmput301w16t08.scaling_pancake.models.Bid;
 import cmput301w16t08.scaling_pancake.models.BidList;
-import cmput301w16t08.scaling_pancake.models.Instrument;
 
 /**
  * Created by dan on 24/03/16.
  */
-public class BidsAdapter extends ArrayAdapter
+public class    BidsAdapter extends ArrayAdapter
 {
 
     private Controller controller;
+    private BidList bidList;
 
-    public BidsAdapter(Controller controller, BidList bidList)
+    public BidsAdapter(Controller controller, ViewBidsActivity activity, BidList bidList)
     {
         super(controller, 0, bidList.getArray());
-
+        this.bidList = bidList;
         this.controller = controller;
     }
 
@@ -39,6 +42,7 @@ public class BidsAdapter extends ArrayAdapter
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.bid_list_item, parent, false);
         }
 
+        ImageView thumbnail = (ImageView) convertView.findViewById(R.id.bid_list_item_thumbnail_iv);
         TextView name = (TextView) convertView.findViewById(R.id.bid_list_item_name_tv);
         TextView bidder = (TextView) convertView.findViewById(R.id.bid_list_item_bidder_tv);
         TextView rate = (TextView) convertView.findViewById(R.id.bid_list_item_rate_tv);
@@ -48,16 +52,40 @@ public class BidsAdapter extends ArrayAdapter
             @Override
             public void onClick(View v)
             {
-                controller.acceptBidOnInstrument(bid);
-                Toast.makeText(controller, "Bid Accepted!", Toast.LENGTH_SHORT).show();
-                notifyDataSetChanged();
+                if(!bid.getAccepted()) {
+                    controller.acceptBidOnInstrument(bid);
+                    Toast.makeText(controller, "Bid Accepted!", Toast.LENGTH_SHORT).show();
+                    notifyDataSetChanged();
+                }
             }
         });
 
-        name.append(controller.getInstrumentById(bid.getInstrumentId()).getName());
-        bidder.append(controller.getUserById(bid.getBidderId()).getName());
-        rate.append(String.format("%.2f/hr", bid.getBidAmount()));
+        convertView.findViewById(R.id.bid_list_item_decline_button).setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                if (!bid.getAccepted())
+                {
+                    controller.declineBidOnInstrument(bid);
+                    bidList.removeBid(bid);
+                    Toast.makeText(controller, "Bid Declined", Toast.LENGTH_SHORT).show();
+                    notifyDataSetChanged();
+                }
+            }
+        });
+
+        name.setText(controller.getInstrumentById(bid.getInstrumentId()).getName());
+        bidder.setText(String.format("Bidder: %s", controller.getUserById(bid.getBidderId()).getName()));
+        rate.setText(String.format("Rate: %.2f/hr", bid.getBidAmount()));
+
+        if(controller.getInstrumentById(bid.getInstrumentId()).hasThumbnail())
+        {
+            thumbnail.setImageBitmap(controller.getInstrumentById(bid.getInstrumentId()).getThumbnail());
+        }
 
         return convertView;
     }
+
+
 }

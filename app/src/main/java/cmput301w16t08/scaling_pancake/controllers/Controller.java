@@ -4,6 +4,8 @@ import android.app.Application;
 import android.graphics.Bitmap;
 import android.util.Log;
 
+import com.google.android.gms.maps.model.LatLng;
+
 import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
 
@@ -506,7 +508,6 @@ public class Controller extends Application {
      *
      * @param keywords the space-separated keywords to search
      * @param prePostActionWrapper a wrapper for functions defined in the view layer (can be null)
-     * @return the list of found instruments
      * @see InstrumentList
      * @see Instrument
      */
@@ -628,6 +629,7 @@ public class Controller extends Application {
         }
         //Instrument instrument = this.currentUser.getOwnedInstruments().getInstrument(bid.getInstrumentId());
 
+
         // get the bidder
         ElasticsearchController.GetUserTask getUserTask = new ElasticsearchController.GetUserTask();
         getUserTask.execute(bid.getBidderId());
@@ -643,7 +645,7 @@ public class Controller extends Application {
 
         // remove the bid and update users
         bidder.deleteBid(bid);
-        this.currentUser.getOwnedInstruments().getInstrument(bid.getInstrumentId()).getBids().removeBid(bid);
+        this.currentUser.getOwnedInstruments().getInstrument(bid.getInstrumentId()).declineBid(bid);
         ElasticsearchController.UpdateUserTask updateUserTask1 = new ElasticsearchController.UpdateUserTask();
         ElasticsearchController.UpdateUserTask updateUserTask2 = new ElasticsearchController.UpdateUserTask();
         updateUserTask1.execute(bidder);
@@ -741,7 +743,7 @@ public class Controller extends Application {
      * @see Instrument
      */
     public void acceptReturnedInstrument(int index) {
-        // NOTE: INDEX IS FOR USERS OWNED BORROWED INSTRUMENTS
+        // NOTE: INDEX IS FOR USER'S OWNED BORROWED INSTRUMENTS
         Instrument instrument = this.getCurrentUsersOwnedBorrowedInstruments().getInstrument(index);
         instrument.setReturnedFlag(false);
         instrument.getBids().clearBids();
@@ -796,16 +798,19 @@ public class Controller extends Application {
      * Sets the location to pick up the <code>Instrument</code>
      *
      * @param instrument
-     * @param longitude
-     * @param latitude
+     * @param location
      */
-    public void setLocationForInstrument(Instrument instrument, float longitude, float latitude) {
+    public void setLocationForInstrument(Instrument instrument, LatLng location) {
         if (!this.currentUser.getOwnedInstruments().containsInstrument(instrument)) {
             throw new RuntimeException();
         }
-        instrument.setLocation(longitude, latitude);
+        instrument.setLocation(location);
         ElasticsearchController.UpdateUserTask updateUserTask = new ElasticsearchController.UpdateUserTask();
         updateUserTask.execute(this.currentUser);
+        User user = this.getUserById(instrument.getBorrowedById());
+        user.getBorrowedInstruments().getInstrument(instrument.getId()).setLocation(location);
+        ElasticsearchController.UpdateUserTask updateUserTask1 = new ElasticsearchController.UpdateUserTask();
+        updateUserTask1.execute(user);
     }
 
     /**
@@ -818,6 +823,24 @@ public class Controller extends Application {
             throw new RuntimeException();
         }
         instrument.clearLocation();
+        ElasticsearchController.UpdateUserTask updateUserTask = new ElasticsearchController.UpdateUserTask();
+        updateUserTask.execute(this.currentUser);
+    }
+
+    public void addAudioSampleToInstrument(Instrument instrument, String string) {
+        if (!this.currentUser.getOwnedInstruments().containsInstrument(instrument)) {
+            throw new RuntimeException();
+        }
+        instrument.addSampleAudioBase64(string);
+        ElasticsearchController.UpdateUserTask updateUserTask = new ElasticsearchController.UpdateUserTask();
+        updateUserTask.execute(this.currentUser);
+    }
+
+    public void clearAudioSampleFromInstrument(Instrument instrument) {
+        if (!this.currentUser.getOwnedInstruments().containsInstrument(instrument)) {
+            throw new RuntimeException();
+        }
+        instrument.deleteSampleAudio();
         ElasticsearchController.UpdateUserTask updateUserTask = new ElasticsearchController.UpdateUserTask();
         updateUserTask.execute(this.currentUser);
     }

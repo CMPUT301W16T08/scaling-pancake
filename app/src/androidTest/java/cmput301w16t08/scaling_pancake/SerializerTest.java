@@ -1,6 +1,9 @@
 package cmput301w16t08.scaling_pancake;
 
 import android.test.ActivityInstrumentationTestCase2;
+import android.util.Log;
+
+import com.google.android.gms.maps.model.LatLng;
 
 import cmput301w16t08.scaling_pancake.models.Bid;
 import cmput301w16t08.scaling_pancake.models.User;
@@ -47,22 +50,23 @@ public class SerializerTest extends ActivityInstrumentationTestCase2 {
         String string = serializer.serializeInstrument(owner.getOwnedInstruments().getInstrument(0));
         assertEquals(string, "{\"id\" : \"" + owner.getOwnedInstruments().getInstrument(0).getId() +
                 "\", \"name\" : \"name1\", \"description\" : \"description1\", \"ownerId\" : \"" +
-                owner.getId() + "\", \"status\" : \"available\", \"returnedFlag\" : \"false\"," +
+                owner.getId() + "\", \"status\" : \"available\", \"location\" : {}, \"returnedFlag\" : \"false\"," +
                 " \"thumbnailBase64\" : \"" + owner.getOwnedInstruments().getInstrument(0).getThumbnailBase64() +
-                "\", \"longitude\" : \"-1.0\", \"latitude\" : \"-1.0\", \"bids\" : []}");
+                "\", \"audioBase64\" : \"\", \"bids\" : []}");
 
-        // try adding a bid
+        // try adding a bid and a location
         Bid bid1 = new Bid(owner.getOwnedInstruments().getInstrument(0).getId(), owner.getId(), borrower.getId(), 1.00f);
         owner.getOwnedInstruments().getInstrument(0).addBid(bid1);
         owner.getOwnedInstruments().getInstrument(0).acceptBid(bid1);
+        owner.getOwnedInstruments().getInstrument(0).setLocation(new LatLng(0, 0));
 
         string = serializer.serializeInstrument(owner.getOwnedInstruments().getInstrument(0));
         assertEquals(string, "{\"id\" : \"" + owner.getOwnedInstruments().getInstrument(0).getId() +
                 "\", \"name\" : \"name1\", \"description\" : \"description1\", \"ownerId\" : \"" +
-                owner.getId() + "\", \"status\" : \"borrowed\", \"returnedFlag\" : \"false\"," +
+                owner.getId() + "\", \"status\" : \"borrowed\", \"location\" : " +
+                owner.getOwnedInstruments().getInstrument(0).getLocationString() + ", \"returnedFlag\" : \"false\"," +
                 " \"thumbnailBase64\" : \"" + owner.getOwnedInstruments().getInstrument(0).getThumbnailBase64() +
-                "\", \"longitude\" : \"-1.0\", \"latitude\" : \"-1.0\", \"borrowedById\" : \"" + borrower.getId() +
-                "\", \"bids\" : [" + serializer.serializeBid(bid1) + "]}");
+                "\", \"audioBase64\" : \"\", \"borrowedById\" : \"" + borrower.getId() + "\", \"bids\" : [" + serializer.serializeBid(bid1) + "]}");
     }
 
     public void testSerializeBid() {

@@ -2,6 +2,8 @@ package cmput301w16t08.scaling_pancake;
 
 import android.test.ActivityInstrumentationTestCase2;
 
+import com.google.android.gms.maps.model.LatLng;
+
 import cmput301w16t08.scaling_pancake.models.Bid;
 import cmput301w16t08.scaling_pancake.models.Instrument;
 import cmput301w16t08.scaling_pancake.models.User;
@@ -60,14 +62,14 @@ public class DeserializerTest extends ActivityInstrumentationTestCase2 {
         assertEquals(instrument.getReturnedFlag(), false);
         assertNull(instrument.getThumbnail());
         assertEquals(instrument.getThumbnailBase64(), "null");
-        assertEquals(instrument.getLongitude(), -1f);
-        assertEquals(instrument.getLatitude(), -1f);
+        assertNull(instrument.getLocation());
+        assertEquals(instrument.getSampleAudioBase64(), "");
 
         // Test instrument after it is borrowed
         Bid bid1 = new Bid(owner.getOwnedInstruments().getInstrument(0).getId(), owner.getId(), borrower.getId(), 1.00f);
         owner.getOwnedInstruments().getInstrument(0).addBid(bid1);
         owner.getOwnedInstruments().getInstrument(0).acceptBid(bid1);
-        owner.getOwnedInstruments().getInstrument(0).setLocation(100.0f, 101.0f);
+        owner.getOwnedInstruments().getInstrument(0).setLocation(new LatLng(50,50));
 
         string = serializer.serializeInstrument(owner.getOwnedInstruments().getInstrument(0));
         instrument = deserializer.deserializeInstrument(string);
@@ -81,7 +83,8 @@ public class DeserializerTest extends ActivityInstrumentationTestCase2 {
         assertEquals(instrument.getReturnedFlag(), false);
         assertNull(instrument.getThumbnail());
         assertEquals(instrument.getThumbnailBase64(), "null");
-        assertEquals(instrument.getLongitude(), 100f);
-        assertEquals(instrument.getLatitude(), 101f);
+        assertEquals(instrument.getLongitude(), 50.0);
+        assertEquals(instrument.getLatitude(), 50.0);
+        assertEquals(instrument.getSampleAudioBase64(), "");
     }
 }

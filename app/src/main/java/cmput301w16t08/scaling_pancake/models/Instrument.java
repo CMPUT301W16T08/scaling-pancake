@@ -3,6 +3,9 @@ package cmput301w16t08.scaling_pancake.models;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.util.Base64;
+import android.util.Log;
+
+import com.google.android.gms.maps.model.LatLng;
 
 import java.io.ByteArrayOutputStream;
 import java.util.UUID;
@@ -26,8 +29,8 @@ public class Instrument {
     private boolean returnedFlag;
     private transient Bitmap thumbnail;
     private String thumbnailBase64;
-    private float longitude;
-    private float latitude;
+    private LatLng location;
+    private String audioBase64;
 
     /**
      * Creates a new <code>Instrument</code> with supplied name and description, and for supplied owner
@@ -47,8 +50,8 @@ public class Instrument {
         this.thumbnail = null;
         this.thumbnailBase64 = null;
         this.returnedFlag = false;
-        this.longitude = -1;
-        this.latitude = -1;
+        this.location = null;
+        this.audioBase64 = null;
     }
 
     /**
@@ -69,9 +72,8 @@ public class Instrument {
         this.id = UUID.randomUUID().toString();
         this.returnedFlag = false;
         addThumbnail(thumbnail);
-        this.longitude = -1;
-        this.latitude = -1;
-
+        this.location = null;
+        this.audioBase64 = null;
     }
 
     /**
@@ -92,8 +94,8 @@ public class Instrument {
         this.id = id;
         this.returnedFlag = returned;
         addThumbnail(thumbnail);
-        this.longitude = -1;
-        this.latitude = -1;
+        this.location = null;
+        this.audioBase64 = null;
     }
 
     /**
@@ -115,8 +117,8 @@ public class Instrument {
         this.thumbnail = null;
         this.thumbnailBase64 = null;
         this.returnedFlag = returned;
-        this.longitude = -1;
-        this.latitude = -1;
+        this.location = null;
+        this.audioBase64 = null;
     }
 
     /**
@@ -349,9 +351,10 @@ public class Instrument {
         if (thumbnail != null) {
             this.thumbnail = thumbnail;
             ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+
             thumbnail.compress(Bitmap.CompressFormat.PNG, 100, byteArrayOutputStream);
             byte[] b = byteArrayOutputStream.toByteArray();
-            this.thumbnailBase64 = Base64.encodeToString(b, Base64.DEFAULT);
+            this.thumbnailBase64 = Base64.encodeToString(b, Base64.NO_WRAP);
         }
     }
 
@@ -374,11 +377,20 @@ public class Instrument {
      * @return the thumbnail, or null if no thumbnail
      */
     public Bitmap getThumbnail() {
-        if (this.thumbnail == null && thumbnailBase64 != null) {
+        if(this.thumbnail == null && thumbnailBase64 != null)
+        {
             byte[] decodeString = Base64.decode(thumbnailBase64, Base64.DEFAULT);
             this.thumbnail = BitmapFactory.decodeByteArray(decodeString, 0, decodeString.length);
         }
         return this.thumbnail;
+    }
+
+    /**
+     * Returns true if there is a thumbnail available for this instrument.
+     */
+    public boolean hasThumbnail()
+    {
+        return thumbnailBase64 != null;
     }
 
     /**
@@ -403,8 +415,30 @@ public class Instrument {
      *
      * @return the longitude
      */
-    public float getLongitude() {
-        return this.longitude;
+    public double getLongitude() {
+        return this.location.longitude;
+    }
+
+    /**
+     * Returns the location for the <code>Instrument</code>
+     *
+     * @return the location
+     */
+    public LatLng getLocation() {
+        return this.location;
+    }
+
+    /**
+     * Returns the  location of the <code>Instrument</code> as a string
+     *
+     * @return the string
+     */
+    public String getLocationString() {
+        if (this.getLocation() == null) {
+            return "{}";
+        }
+        return "{\"longitude\" : \"" + Double.toString(this.location.longitude) +
+                "\", \"latitude\" : \"" + Double.toString(this.location.latitude) + "\"}";
     }
 
     /**
@@ -412,31 +446,43 @@ public class Instrument {
      *
      * @return the latitude
      */
-    public float getLatitude() {
-        return this.latitude;
+    public double getLatitude() {
+        return this.location.latitude;
     }
 
     /**
      * Sets the pick up location of the <code>Instrument</code>
      *
-     * @param longitude
-     * @param latitude
+     * @param location
      */
-    public void setLocation(float longitude, float latitude) {
-        this.longitude = longitude;
-        this.latitude = latitude;
+    public void setLocation(LatLng location) {
+        this.location = location;
     }
 
     /**
      * Resets the pick up location of the <code>Instrument</code>
      */
     public void clearLocation() {
-        this.longitude = -1;
-        this.latitude = -1;
+        this.location = null;
     }
 
     public Bid getLargestBid()
     {
         return bids.getMaxBid();
+    }
+
+    public void addSampleAudioBase64(String audioBase64) {
+        this.audioBase64 = audioBase64;
+    }
+
+    public String getSampleAudioBase64() {
+        if (this.audioBase64 == null) {
+            return "";
+        }
+        return this.audioBase64;
+    }
+
+    public void deleteSampleAudio() {
+        this.audioBase64 = null;
     }
 }
