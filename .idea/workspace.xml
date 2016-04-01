@@ -31,11 +31,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="AddInstrumentActivity.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="AddInstrumentActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/activities/AddInstrumentActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="215" column="62" selection-start-line="215" selection-start-column="62" selection-end-line="215" selection-end-column="62" />
+            <state vertical-scroll-proportion="1.4071038">
+              <caret line="231" column="9" selection-start-line="231" selection-start-column="9" selection-end-line="231" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -51,10 +51,103 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ElasticsearchController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Controller.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/controllers/Controller.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="843" column="39" selection-start-line="843" selection-start-column="39" selection-end-line="843" selection-end-column="39" />
+              <folding>
+                <element signature="docComment;class#Controller#0" expanded="false" />
+                <element signature="docComment;method#Controller#0;class#Controller#0" expanded="false" />
+                <element signature="docComment;method#getCurrentUser#0;class#Controller#0" expanded="false" />
+                <element signature="e#1671#1672#0" expanded="true" />
+                <element signature="e#1710#1711#0" expanded="true" />
+                <element signature="docComment;method#getUserByName#0;class#Controller#0" expanded="false" />
+                <element signature="docComment;method#getUserById#0;class#Controller#0" expanded="false" />
+                <element signature="docComment;method#createUser#0;class#Controller#0" expanded="false" />
+                <element signature="method#createUser#0;class#Controller#0" expanded="false" />
+                <element signature="docComment;method#deleteUser#0;class#Controller#0" expanded="false" />
+                <element signature="method#deleteUser#0;class#Controller#0" expanded="false" />
+                <element signature="docComment;method#deleteUserById#0;class#Controller#0" expanded="false" />
+                <element signature="method#deleteUserById#0;class#Controller#0" expanded="false" />
+                <element signature="docComment;method#login#0;class#Controller#0" expanded="false" />
+                <element signature="method#login#0;class#Controller#0" expanded="false" />
+                <element signature="docComment;method#logout#0;class#Controller#0" expanded="false" />
+                <element signature="e#6934#6935#0" expanded="true" />
+                <element signature="e#6973#6974#0" expanded="true" />
+                <element signature="docComment;method#editCurrentUser#0;class#Controller#0" expanded="false" />
+                <element signature="docComment;method#editCurrentUserName#0;class#Controller#0" expanded="false" />
+                <element signature="docComment;method#editCurrentUserEmail#0;class#Controller#0" expanded="false" />
+                <element signature="method#editCurrentUserEmail#0;class#Controller#0" expanded="false" />
+                <element signature="docComment;method#getCurrentUsersOwnedInstruments#0;class#Controller#0" expanded="false" />
+                <element signature="method#getCurrentUsersOwnedInstruments#0;class#Controller#0" expanded="false" />
+                <element signature="docComment;method#getCurrentUsersOwnedBorrowedInstruments#0;class#Controller#0" expanded="false" />
+                <element signature="method#getCurrentUsersOwnedBorrowedInstruments#0;class#Controller#0" expanded="false" />
+                <element signature="docComment;method#getCurrentUsersBorrowedInstruments#0;class#Controller#0" expanded="false" />
+                <element signature="method#getCurrentUsersBorrowedInstruments#0;class#Controller#0" expanded="false" />
+                <element signature="docComment;method#getCurrentUsersBiddedInstruments#0;class#Controller#0" expanded="false" />
+                <element signature="method#getCurrentUsersBiddedInstruments#0;class#Controller#0" expanded="false" />
+                <element signature="docComment;method#getCurrentUsersBids#0;class#Controller#0" expanded="false" />
+                <element signature="method#getCurrentUsersBids#0;class#Controller#0" expanded="false" />
+                <element signature="docComment;method#getInstrumentById#0;class#Controller#0" expanded="false" />
+                <element signature="method#getInstrumentById#0;class#Controller#0" expanded="false" />
+                <element signature="docComment;method#addInstrument#0;class#Controller#0" expanded="false" />
+                <element signature="method#addInstrument#0;class#Controller#0" expanded="false" />
+                <element signature="docComment;method#addInstrument#1;class#Controller#0" expanded="false" />
+                <element signature="method#addInstrument#1;class#Controller#0" expanded="false" />
+                <element signature="docComment;method#editInstrument#0;class#Controller#0" expanded="false" />
+                <element signature="method#editInstrument#0;class#Controller#0" expanded="false" />
+                <element signature="docComment;method#editInstrument#1;class#Controller#0" expanded="false" />
+                <element signature="method#editInstrument#1;class#Controller#0" expanded="false" />
+                <element signature="docComment;method#deleteInstrument#0;class#Controller#0" expanded="false" />
+                <element signature="method#deleteInstrument#0;class#Controller#0" expanded="false" />
+                <element signature="docComment;method#deleteInstrument#1;class#Controller#0" expanded="false" />
+                <element signature="method#deleteInstrument#1;class#Controller#0" expanded="false" />
+                <element signature="docComment;method#searchInstruments#0;class#Controller#0" expanded="false" />
+                <element signature="method#searchInstruments#0;class#Controller#0" expanded="false" />
+                <element signature="docComment;method#makeBidOnInstrument#0;class#Controller#0" expanded="false" />
+                <element signature="method#makeBidOnInstrument#0;class#Controller#0" expanded="false" />
+                <element signature="docComment;method#acceptBidOnInstrument#0;class#Controller#0" expanded="false" />
+                <element signature="method#acceptBidOnInstrument#0;class#Controller#0" expanded="false" />
+                <element signature="docComment;method#declineBidOnInstrument#0;class#Controller#0" expanded="false" />
+                <element signature="method#declineBidOnInstrument#0;class#Controller#0" expanded="false" />
+                <element signature="e#24527#24629#0" expanded="false" />
+                <element signature="docComment;method#returnInstrument#0;class#Controller#0" expanded="false" />
+                <element signature="method#returnInstrument#0;class#Controller#0" expanded="false" />
+                <element signature="docComment;method#returnInstrument#1;class#Controller#0" expanded="false" />
+                <element signature="method#returnInstrument#1;class#Controller#0" expanded="false" />
+                <element signature="docComment;method#acceptReturnedInstrument#0;class#Controller#0" expanded="false" />
+                <element signature="method#acceptReturnedInstrument#0;class#Controller#0" expanded="false" />
+                <element signature="docComment;method#acceptReturnedInstrument#1;class#Controller#0" expanded="false" />
+                <element signature="method#acceptReturnedInstrument#1;class#Controller#0" expanded="false" />
+                <element signature="docComment;method#resetNewBidFlag#0;class#Controller#0" expanded="false" />
+                <element signature="method#resetNewBidFlag#0;class#Controller#0" expanded="false" />
+                <element signature="docComment;method#addPhotoToInstrument#0;class#Controller#0" expanded="false" />
+                <element signature="method#addPhotoToInstrument#0;class#Controller#0" expanded="false" />
+                <element signature="docComment;method#deletePhotoFromInstrument#0;class#Controller#0" expanded="false" />
+                <element signature="method#deletePhotoFromInstrument#0;class#Controller#0" expanded="false" />
+                <element signature="docComment;method#setLocationForInstrument#0;class#Controller#0" expanded="false" />
+                <element signature="method#setLocationForInstrument#0;class#Controller#0" expanded="false" />
+                <element signature="docComment;method#clearLocationForInstrument#0;class#Controller#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Instrument.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/models/Instrument.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="19" column="3" selection-start-line="19" selection-start-column="3" selection-end-line="19" selection-end-column="3" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ElasticsearchController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/controllers/ElasticsearchController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.60382515">
+            <state vertical-scroll-proportion="0.0">
               <caret line="32" column="3" selection-start-line="32" selection-start-column="3" selection-end-line="32" selection-end-column="3" />
               <folding />
             </state>
@@ -1663,8 +1756,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/activities/AddInstrumentActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/controllers/ElasticsearchController.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/controllers/Controller.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/activities/AddInstrumentActivity.java" />
       </list>
     </option>
   </component>
@@ -2117,34 +2211,11 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/activities/AddInstrumentActivity.java</url>
-          <line>209</line>
-          <properties />
-        </line-breakpoint>
-      </breakpoints>
       <option name="time" value="1" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/activities/AddInstrumentActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="215" column="62" selection-start-line="215" selection-start-column="62" selection-end-line="215" selection-end-column="62" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/models/Instrument.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.24863388">
-          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/activities/RecordAudioActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -2155,8 +2226,105 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/controllers/ElasticsearchController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.60382515">
+        <state vertical-scroll-proportion="0.0">
           <caret line="32" column="3" selection-start-line="32" selection-start-column="3" selection-end-line="32" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/models/Instrument.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="19" column="3" selection-start-line="19" selection-start-column="3" selection-end-line="19" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/controllers/Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="843" column="39" selection-start-line="843" selection-start-column="39" selection-end-line="843" selection-end-column="39" />
+          <folding>
+            <element signature="docComment;class#Controller#0" expanded="false" />
+            <element signature="docComment;method#Controller#0;class#Controller#0" expanded="false" />
+            <element signature="docComment;method#getCurrentUser#0;class#Controller#0" expanded="false" />
+            <element signature="e#1671#1672#0" expanded="true" />
+            <element signature="e#1710#1711#0" expanded="true" />
+            <element signature="docComment;method#getUserByName#0;class#Controller#0" expanded="false" />
+            <element signature="docComment;method#getUserById#0;class#Controller#0" expanded="false" />
+            <element signature="docComment;method#createUser#0;class#Controller#0" expanded="false" />
+            <element signature="method#createUser#0;class#Controller#0" expanded="false" />
+            <element signature="docComment;method#deleteUser#0;class#Controller#0" expanded="false" />
+            <element signature="method#deleteUser#0;class#Controller#0" expanded="false" />
+            <element signature="docComment;method#deleteUserById#0;class#Controller#0" expanded="false" />
+            <element signature="method#deleteUserById#0;class#Controller#0" expanded="false" />
+            <element signature="docComment;method#login#0;class#Controller#0" expanded="false" />
+            <element signature="method#login#0;class#Controller#0" expanded="false" />
+            <element signature="docComment;method#logout#0;class#Controller#0" expanded="false" />
+            <element signature="e#6934#6935#0" expanded="true" />
+            <element signature="e#6973#6974#0" expanded="true" />
+            <element signature="docComment;method#editCurrentUser#0;class#Controller#0" expanded="false" />
+            <element signature="docComment;method#editCurrentUserName#0;class#Controller#0" expanded="false" />
+            <element signature="docComment;method#editCurrentUserEmail#0;class#Controller#0" expanded="false" />
+            <element signature="method#editCurrentUserEmail#0;class#Controller#0" expanded="false" />
+            <element signature="docComment;method#getCurrentUsersOwnedInstruments#0;class#Controller#0" expanded="false" />
+            <element signature="method#getCurrentUsersOwnedInstruments#0;class#Controller#0" expanded="false" />
+            <element signature="docComment;method#getCurrentUsersOwnedBorrowedInstruments#0;class#Controller#0" expanded="false" />
+            <element signature="method#getCurrentUsersOwnedBorrowedInstruments#0;class#Controller#0" expanded="false" />
+            <element signature="docComment;method#getCurrentUsersBorrowedInstruments#0;class#Controller#0" expanded="false" />
+            <element signature="method#getCurrentUsersBorrowedInstruments#0;class#Controller#0" expanded="false" />
+            <element signature="docComment;method#getCurrentUsersBiddedInstruments#0;class#Controller#0" expanded="false" />
+            <element signature="method#getCurrentUsersBiddedInstruments#0;class#Controller#0" expanded="false" />
+            <element signature="docComment;method#getCurrentUsersBids#0;class#Controller#0" expanded="false" />
+            <element signature="method#getCurrentUsersBids#0;class#Controller#0" expanded="false" />
+            <element signature="docComment;method#getInstrumentById#0;class#Controller#0" expanded="false" />
+            <element signature="method#getInstrumentById#0;class#Controller#0" expanded="false" />
+            <element signature="docComment;method#addInstrument#0;class#Controller#0" expanded="false" />
+            <element signature="method#addInstrument#0;class#Controller#0" expanded="false" />
+            <element signature="docComment;method#addInstrument#1;class#Controller#0" expanded="false" />
+            <element signature="method#addInstrument#1;class#Controller#0" expanded="false" />
+            <element signature="docComment;method#editInstrument#0;class#Controller#0" expanded="false" />
+            <element signature="method#editInstrument#0;class#Controller#0" expanded="false" />
+            <element signature="docComment;method#editInstrument#1;class#Controller#0" expanded="false" />
+            <element signature="method#editInstrument#1;class#Controller#0" expanded="false" />
+            <element signature="docComment;method#deleteInstrument#0;class#Controller#0" expanded="false" />
+            <element signature="method#deleteInstrument#0;class#Controller#0" expanded="false" />
+            <element signature="docComment;method#deleteInstrument#1;class#Controller#0" expanded="false" />
+            <element signature="method#deleteInstrument#1;class#Controller#0" expanded="false" />
+            <element signature="docComment;method#searchInstruments#0;class#Controller#0" expanded="false" />
+            <element signature="method#searchInstruments#0;class#Controller#0" expanded="false" />
+            <element signature="docComment;method#makeBidOnInstrument#0;class#Controller#0" expanded="false" />
+            <element signature="method#makeBidOnInstrument#0;class#Controller#0" expanded="false" />
+            <element signature="docComment;method#acceptBidOnInstrument#0;class#Controller#0" expanded="false" />
+            <element signature="method#acceptBidOnInstrument#0;class#Controller#0" expanded="false" />
+            <element signature="docComment;method#declineBidOnInstrument#0;class#Controller#0" expanded="false" />
+            <element signature="method#declineBidOnInstrument#0;class#Controller#0" expanded="false" />
+            <element signature="e#24527#24629#0" expanded="false" />
+            <element signature="docComment;method#returnInstrument#0;class#Controller#0" expanded="false" />
+            <element signature="method#returnInstrument#0;class#Controller#0" expanded="false" />
+            <element signature="docComment;method#returnInstrument#1;class#Controller#0" expanded="false" />
+            <element signature="method#returnInstrument#1;class#Controller#0" expanded="false" />
+            <element signature="docComment;method#acceptReturnedInstrument#0;class#Controller#0" expanded="false" />
+            <element signature="method#acceptReturnedInstrument#0;class#Controller#0" expanded="false" />
+            <element signature="docComment;method#acceptReturnedInstrument#1;class#Controller#0" expanded="false" />
+            <element signature="method#acceptReturnedInstrument#1;class#Controller#0" expanded="false" />
+            <element signature="docComment;method#resetNewBidFlag#0;class#Controller#0" expanded="false" />
+            <element signature="method#resetNewBidFlag#0;class#Controller#0" expanded="false" />
+            <element signature="docComment;method#addPhotoToInstrument#0;class#Controller#0" expanded="false" />
+            <element signature="method#addPhotoToInstrument#0;class#Controller#0" expanded="false" />
+            <element signature="docComment;method#deletePhotoFromInstrument#0;class#Controller#0" expanded="false" />
+            <element signature="method#deletePhotoFromInstrument#0;class#Controller#0" expanded="false" />
+            <element signature="docComment;method#setLocationForInstrument#0;class#Controller#0" expanded="false" />
+            <element signature="method#setLocationForInstrument#0;class#Controller#0" expanded="false" />
+            <element signature="docComment;method#clearLocationForInstrument#0;class#Controller#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/activities/AddInstrumentActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.4071038">
+          <caret line="231" column="9" selection-start-line="231" selection-start-column="9" selection-end-line="231" selection-end-column="9" />
           <folding />
         </state>
       </provider>

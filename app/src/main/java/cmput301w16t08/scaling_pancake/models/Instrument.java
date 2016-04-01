@@ -3,6 +3,7 @@ package cmput301w16t08.scaling_pancake.models;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.util.Base64;
+import android.util.Log;
 
 import com.google.android.gms.maps.model.LatLng;
 
@@ -34,14 +35,14 @@ public class Instrument {
     /**
      * Creates a new <code>Instrument</code> with supplied name and description, and for supplied owner
      *
-     * @param owner_id the id of the owner of the instrument
+     * @param owner the id of the owner of the instrument
      * @param name the name of the instrument
      * @param description the description of the instrument
      */
-    public Instrument(String owner_id, String name, String description) {
+    public Instrument(String owner, String name, String description) {
         this.name = name;
         this.description = description;
-        this.ownerId = owner_id;
+        this.ownerId = owner;
         this.status = "available";
         this.borrowedById = null;
         this.bids = new BidList();
@@ -376,11 +377,20 @@ public class Instrument {
      * @return the thumbnail, or null if no thumbnail
      */
     public Bitmap getThumbnail() {
-        if (this.thumbnail == null && thumbnailBase64 != null) {
+        if(this.thumbnail == null && thumbnailBase64 != null)
+        {
             byte[] decodeString = Base64.decode(thumbnailBase64, Base64.DEFAULT);
             this.thumbnail = BitmapFactory.decodeByteArray(decodeString, 0, decodeString.length);
         }
         return this.thumbnail;
+    }
+
+    /**
+     * Returns true if there is a thumbnail available for this instrument.
+     */
+    public boolean hasThumbnail()
+    {
+        return thumbnailBase64 != null;
     }
 
     /**

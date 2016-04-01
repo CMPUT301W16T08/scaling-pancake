@@ -86,6 +86,11 @@ public class ViewInstrumentActivity extends AppCompatActivity
                 ((TextView) findViewById(R.id.owned_instrument_view_name_tv)).append(selected.getName());
                 ((TextView) findViewById(R.id.owned_instrument_view_status_tv)).append(selected.getStatus());
                 ((TextView) findViewById(R.id.owned_instrument_view_description_tv)).append(selected.getDescription());
+
+                if(selected.hasThumbnail())
+                {
+                    ((ImageView) findViewById(R.id.owned_instrument_view_thumbnail_iv)).setImageBitmap(selected.getThumbnail());
+                }
                 break;
             }
             case borrowed_instrument_view_code:
@@ -105,6 +110,11 @@ public class ViewInstrumentActivity extends AppCompatActivity
                 ((TextView) findViewById(R.id.borrowed_instrument_view_name_tv)).append(selected.getName());
                 ((TextView) findViewById(R.id.borrowed_instrument_view_owner_tv)).append(controller.getUserById(selected.getOwnerId()).getName());
                 ((TextView) findViewById(R.id.borrowed_instrument_view_description_tv)).append(selected.getDescription());
+
+                if(selected.hasThumbnail())
+                {
+                    ((ImageView) findViewById(R.id.borrowed_instrument_view_thumbnail_iv)).setImageBitmap(selected.getThumbnail());
+                }
                 break;
             }
             case mybids_instrument_view_code:
@@ -129,6 +139,11 @@ public class ViewInstrumentActivity extends AppCompatActivity
                 ((TextView) findViewById(R.id.mybids_instrument_view_owner_tv)).append(controller.getUserById(selected.getOwnerId()).getName());
                 ((TextView) findViewById(R.id.mybids_instrument_view_maxbid_tv)).append(bidData);
                 ((TextView) findViewById(R.id.mybids_instrument_view_description_tv)).append(selected.getDescription());
+
+                if(selected.hasThumbnail())
+                {
+                    ((ImageView) findViewById(R.id.mybids_instrument_view_thumbnail_iv)).setImageBitmap(selected.getThumbnail());
+                }
                 break;
             }
             case brwd_by_others_instrument_view_code:
@@ -144,6 +159,11 @@ public class ViewInstrumentActivity extends AppCompatActivity
                 ((TextView) findViewById(R.id.brwd_by_others_instrument_view_rate_tv))
                         .append(String.format("%.2f/hr", selected.getBids().getBid(0).getBidAmount()));
                 ((TextView) findViewById(R.id.brwd_by_others_instrument_view_description_tv)).append(selected.getDescription());
+
+                if(selected.hasThumbnail())
+                {
+                    ((ImageView) findViewById(R.id.brwd_by_others_instrument_view_thumbnail_iv)).setImageBitmap(selected.getThumbnail());
+                }
                 break;
             }
             case searched_instrument_view_code:
@@ -170,7 +190,7 @@ public class ViewInstrumentActivity extends AppCompatActivity
                     ((TextView) findViewById(R.id.searched_instrument_view_description_tv)).append(selected.getDescription());
                 }
 
-                if(selected.getThumbnail() != null)
+                if(selected.hasThumbnail())
                 {
                     ((ImageView) findViewById(R.id.searched_instrument_view_thumbnail_iv)).setImageBitmap(selected.getThumbnail());
                 }

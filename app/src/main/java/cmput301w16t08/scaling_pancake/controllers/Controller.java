@@ -827,4 +827,22 @@ public class Controller extends Application {
         ElasticsearchController.UpdateUserTask updateUserTask = new ElasticsearchController.UpdateUserTask();
         updateUserTask.execute(this.currentUser);
     }
+
+    public void addAudioSampleToInstrument(Instrument instrument, String string) {
+        if (!this.currentUser.getOwnedInstruments().containsInstrument(instrument)) {
+            throw new RuntimeException();
+        }
+        instrument.addSampleAudioBase64(string);
+        ElasticsearchController.UpdateUserTask updateUserTask = new ElasticsearchController.UpdateUserTask();
+        updateUserTask.execute(this.currentUser);
+    }
+
+    public void clearAudioSampleFromInstrument(Instrument instrument) {
+        if (!this.currentUser.getOwnedInstruments().containsInstrument(instrument)) {
+            throw new RuntimeException();
+        }
+        instrument.deleteSampleAudio();
+        ElasticsearchController.UpdateUserTask updateUserTask = new ElasticsearchController.UpdateUserTask();
+        updateUserTask.execute(this.currentUser);
+    }
 }

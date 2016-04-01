@@ -215,22 +215,21 @@ public class AddInstrumentActivity extends Activity
 
         if ((!name.matches("")) && (!description.matches("")))
         {
-            Instrument instrument = new Instrument(controller.getCurrentUser().getId(), name, description);
+            Instrument addedInstrument = new Instrument(controller.getCurrentUser().getId(), name, description);
+            controller.addInstrument(addedInstrument);
             if (thumbnail != null)
             {
-                instrument.addThumbnail(thumbnail);
+                controller.addPhotoToInstrument(addedInstrument, thumbnail);
             }
             if (audioBase64 != null) {
-                instrument.addSampleAudioBase64(audioBase64);
+                controller.addAudioSampleToInstrument(addedInstrument, audioBase64);
             }
-            controller.addInstrument(instrument);
             finish();
         }
         else
         {
             Toast.makeText(AddInstrumentActivity.this, "Both Name and Description are required", Toast.LENGTH_LONG).show();
         }
-
     }
 
     public void addInstrumentCancel(View view)
