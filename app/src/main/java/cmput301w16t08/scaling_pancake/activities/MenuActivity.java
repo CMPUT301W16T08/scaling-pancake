@@ -76,6 +76,7 @@ public class MenuActivity extends AppCompatActivity {
     public void logout(View view){
         controller.logout();
         Intent intent = new Intent(this, MainActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
     }
 

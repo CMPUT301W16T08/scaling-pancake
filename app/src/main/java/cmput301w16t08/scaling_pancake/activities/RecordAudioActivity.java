@@ -42,8 +42,6 @@ public class RecordAudioActivity extends AppCompatActivity {
     private PlayButton playButton = null;
     private boolean hasRecorded = false;
 
-    private int AUDIO_RESULT_CODE = 10;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -12,6 +12,12 @@ import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.places.Place;
 import com.google.android.gms.location.places.Places;
 import com.google.android.gms.location.places.ui.PlacePicker;
+import android.widget.Adapter;
+import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import cmput301w16t08.scaling_pancake.R;
 import cmput301w16t08.scaling_pancake.adapters.BidsAdapter;
@@ -91,6 +97,27 @@ public class ViewBidsActivity extends ListActivity
         super.onResume();
         bidsAdapter.notifyDataSetChanged();
     }
+
+//    public void acceptBid(View view){
+//        Toast.makeText(controller, "Bid Accepted!", Toast.LENGTH_SHORT).show();
+//        Bid bid;
+//
+//        Button acceptButton = (Button) findViewById(R.id.bid_list_item_accept_button);
+//        //We have a view
+//        // It needs to get it's position
+//        // One way:
+//        // Get its list view?
+//
+//
+//        int position = bidsListView.getPositionForView(view);
+//        controller.acceptBidOnInstrument(bid);
+//        bidsAdapter.notifyDataSetChanged();
+//
+//    }
+//
+//    public void declineBid(View view){
+//        Toast.makeText(controller, "Bid declined!", Toast.LENGTH_SHORT).show();
+//    }
 
     public void back(View view)
     {

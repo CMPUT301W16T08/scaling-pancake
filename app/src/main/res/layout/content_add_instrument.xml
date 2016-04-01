@@ -13,15 +13,82 @@
     tools:context=".activities.AddInstrumentActivity"
     tools:showIn="@layout/activity_add_instrument">
 
+
+    <RelativeLayout
+        android:id="@+id/add_instrument_photo_dialog"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        android:layout_width="300sp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:clickable="true"
+        android:background="@drawable/photo_dialog_box">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp">
+
+                <ImageButton
+                    android:layout_width="100sp"
+                    android:layout_height="100sp"
+                    android:src="@android:drawable/ic_menu_gallery"
+                    android:onClick="launchGallery"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Storage"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp">
+
+                <ImageButton
+                    android:layout_width="100sp"
+                    android:layout_height="100sp"
+                    android:src="@android:drawable/ic_menu_camera"
+                    android:onClick="launchCamera"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Camera"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/add_instrument_main">
+
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:id="@+id/add_instrument_et_shell"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:orientation="vertical">
 
         <EditText
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:hint="@string/instrument_name"
             android:id="@id/addInstrument_name_et"
             android:layout_marginTop="2dp"
@@ -30,17 +97,43 @@
 
         <EditText
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:hint="@string/description"
             android:id="@id/addInstrument_description_et"
             android:layout_marginTop="2dp"
             android:layout_marginBottom="2dp"
             android:background="@drawable/grey_rounded_border"/>
 
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/add_instrument_et_shell"
+        android:background="@drawable/grey_rounded_border"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="2dp">
+
+        <ImageView
+            android:id="@+id/add_instrument_thumbnail_iv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:src="@android:drawable/ic_menu_camera"
+            android:contentDescription="Thumbnail area"/>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical">
+
         <Button
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="addPhoto"
+            android:layout_height="36sp"
+            android:onClick="launchPhotoDialog"
             android:text="@string/add_photo"
             android:id="@+id/addInstrument_addPhoto_button"
             android:layout_marginTop="2dp"
@@ -49,7 +142,7 @@
 
         <Button
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="36sp"
             android:onClick="addAudioSample"
             android:text="@string/add_audio_sample"
             android:id="@+id/addInstrument_addAudioSample_button"
@@ -59,7 +152,7 @@
 
         <Button
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="36sp"
             android:text="@string/confirm"
             android:onClick="confirm"
             android:id="@+id/addInstrument_confirm_button"
@@ -69,7 +162,7 @@
 
         <Button
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="36sp"
             android:text="@string/cancel"
             android:onClick="addInstrumentCancel"
             android:id="@+id/addInstrument_cancel_button"
@@ -77,4 +170,7 @@
             android:layout_marginBottom="2dp"
             android:background="@drawable/btn_selector" />
     </LinearLayout>
+
+    </RelativeLayout>
+
 </RelativeLayout>

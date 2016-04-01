@@ -34,14 +34,14 @@ public class Instrument {
     /**
      * Creates a new <code>Instrument</code> with supplied name and description, and for supplied owner
      *
-     * @param owner the id of the owner of the instrument
+     * @param owner_id the id of the owner of the instrument
      * @param name the name of the instrument
      * @param description the description of the instrument
      */
-    public Instrument(String owner, String name, String description) {
+    public Instrument(String owner_id, String name, String description) {
         this.name = name;
         this.description = description;
-        this.ownerId = owner;
+        this.ownerId = owner_id;
         this.status = "available";
         this.borrowedById = null;
         this.bids = new BidList();
@@ -350,9 +350,10 @@ public class Instrument {
         if (thumbnail != null) {
             this.thumbnail = thumbnail;
             ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+
             thumbnail.compress(Bitmap.CompressFormat.PNG, 100, byteArrayOutputStream);
             byte[] b = byteArrayOutputStream.toByteArray();
-            this.thumbnailBase64 = Base64.encodeToString(b, Base64.DEFAULT);
+            this.thumbnailBase64 = Base64.encodeToString(b, Base64.NO_WRAP);
         }
     }
 

@@ -630,6 +630,7 @@ public class Controller extends Application {
         }
         //Instrument instrument = this.currentUser.getOwnedInstruments().getInstrument(bid.getInstrumentId());
 
+
         // get the bidder
         ElasticsearchController.GetUserTask getUserTask = new ElasticsearchController.GetUserTask();
         getUserTask.execute(bid.getBidderId());

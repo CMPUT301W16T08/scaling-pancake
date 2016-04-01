@@ -1,5 +1,6 @@
 package cmput301w16t08.scaling_pancake.adapters;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +10,7 @@ import android.widget.Toast;
 
 import cmput301w16t08.scaling_pancake.R;
 import cmput301w16t08.scaling_pancake.activities.ViewBidsActivity;
+import cmput301w16t08.scaling_pancake.activities.ViewInstrumentActivity;
 import cmput301w16t08.scaling_pancake.controllers.Controller;
 import cmput301w16t08.scaling_pancake.models.Bid;
 import cmput301w16t08.scaling_pancake.models.BidList;
@@ -20,14 +22,13 @@ public class    BidsAdapter extends ArrayAdapter
 {
 
     private Controller controller;
-    private ViewBidsActivity callingActivity;
+    private BidList bidList;
 
     public BidsAdapter(Controller controller, ViewBidsActivity activity, BidList bidList)
     {
         super(controller, 0, bidList.getArray());
-
+        this.bidList = bidList;
         this.controller = controller;
-        this.callingActivity = activity;
     }
 
     @Override
@@ -49,17 +50,34 @@ public class    BidsAdapter extends ArrayAdapter
             @Override
             public void onClick(View v)
             {
-                controller.acceptBidOnInstrument(bid);
-                callingActivity.setLocation();
-                Toast.makeText(controller, "Bid Accepted!", Toast.LENGTH_SHORT).show();
-                notifyDataSetChanged();
+                if(!bid.getAccepted()) {
+                    controller.acceptBidOnInstrument(bid);
+                    Toast.makeText(controller, "Bid Accepted!", Toast.LENGTH_SHORT).show();
+                    notifyDataSetChanged();
+                }
             }
         });
 
-        name.append(controller.getInstrumentById(bid.getInstrumentId()).getName());
-        bidder.append(controller.getUserById(bid.getBidderId()).getName());
-        rate.append(String.format("%.2f/hr", bid.getBidAmount()));
+        convertView.findViewById(R.id.bid_list_item_decline_button).setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                if(!bid.getAccepted()) {
+                    controller.declineBidOnInstrument(bid);
+                    bidList.removeBid(bid);
+                    Toast.makeText(controller, "Bid Declined", Toast.LENGTH_SHORT).show();
+                    notifyDataSetChanged();
+                }
+            }
+        });
+
+        name.setText(controller.getInstrumentById(bid.getInstrumentId()).getName());
+        bidder.setText(controller.getUserById(bid.getBidderId()).getName());
+        rate.setText(String.format("%.2f/hr", bid.getBidAmount()));
 
         return convertView;
     }
+
+
 }

@@ -1,21 +1,18 @@
 package cmput301w16t08.scaling_pancake.activities;
 
 import android.app.Activity;
-import android.content.ContentValues;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
-import android.support.v7.app.AppCompatActivity;
-import android.util.Base64;
+import android.database.Cursor;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
-
-import com.google.common.io.Files;
-
-import java.io.File;
-import java.io.IOException;
+import android.media.ThumbnailUtils;
 
 import cmput301w16t08.scaling_pancake.controllers.Controller;
 import cmput301w16t08.scaling_pancake.R;
@@ -29,12 +26,18 @@ import cmput301w16t08.scaling_pancake.models.Instrument;
  * @see Controller
  * @see cmput301w16t08.scaling_pancake.models.Instrument
  */
-public class AddInstrumentActivity extends AppCompatActivity {
+public class AddInstrumentActivity extends Activity
+{
+    private static final int AUDIO_REQUEST_CODE = 10;
+    private static final int REQUEST_IMAGE_CAPTURE = 1;
+    private static final int REQUEST_LOAD_IMAGE = 2;
+    private static final int FADEDURATION = 150;
+    private boolean displayingDialogBox = false;
 
-    // set up our global controller
+    private Bitmap thumbnail;
+
     private static Controller controller;
-    private String audioBase64;
-    private int AUDIO_RESULT_CODE = 10;
+    private String audioBase64 = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,30 +46,160 @@ public class AddInstrumentActivity extends AppCompatActivity {
 
         controller = (Controller) getApplicationContext();
 
+        findViewById(R.id.add_instrument_photo_dialog).bringToFront();
     }
 
     /**
-     * To be filled out in project part 5.
+     * Launches a dialog box that allows the user to select either device storage or
+     * the camera to provide a picture.
+     *
      * @param view
      */
-    public void addPhoto(View view){
+    public void launchPhotoDialog(View view)
+    {
+        View dialogBox = findViewById(R.id.add_instrument_photo_dialog);
 
+        /* Quickly fade in the dialog box */
+        dialogBox.setAlpha(0f);
+        dialogBox.setVisibility(View.VISIBLE);
+        dialogBox.animate()
+                .alpha(1f)
+                .setDuration(FADEDURATION)
+                .setListener(null);
+
+        View main = findViewById(R.id.add_instrument_main);
+
+        /* And fade the background view slightly */
+        main.setAlpha(1f);
+        main.animate()
+                .alpha(0.5f)
+                .setDuration(FADEDURATION)
+                .setListener(null);
+
+        /* These must not be clickable while the dialog is open */
+        findViewById(R.id.addInstrument_description_et).setFocusable(false);
+        findViewById(R.id.addInstrument_name_et).setFocusable(false);
+        findViewById(R.id.addInstrument_addPhoto_button).setClickable(false);
+        findViewById(R.id.addInstrument_confirm_button).setClickable(false);
+        findViewById(R.id.addInstrument_cancel_button).setClickable(false);
+
+        main.setClickable(true);
+        main.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                hideDialogBox();
+            }
+        });
+
+        /* Keep track of state */
+        displayingDialogBox = true;
+    }
+
+    /**
+     * Browse the device storage for an image
+     * @param view
+     */
+    public void launchGallery(View view)
+    {
+        Intent takePictureIntent = new Intent(Intent.ACTION_PICK,android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+
+        if (takePictureIntent.resolveActivity(getPackageManager()) != null)
+        {
+            startActivityForResult(takePictureIntent, REQUEST_LOAD_IMAGE);
+        }
+    }
+
+    /**
+     * Use the camera to supply an image
+     * @param view
+     */
+    public void launchCamera(View view)
+    {
+        Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+
+        if (takePictureIntent.resolveActivity(getPackageManager()) != null)
+        {
+            startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
+        }
+    }
+
+    /**
+     * Catch presses of the back button. Close dialog box if it is open, otherwise
+     * move up activity stack
+     */
+    @Override
+    public void onBackPressed()
+    {
+        if(displayingDialogBox)
+        {
+            hideDialogBox();
+        }
+        else
+        {
+            finish();
+        }
+    }
+
+    /**
+     * Handle data returned from the gallery or camera activities.
+     * @param requestCode
+     * @param resultCode
+     * @param data
+     */
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data)
+    {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (resultCode == RESULT_OK && data != null)
+        {
+            switch (requestCode)
+            {
+                case REQUEST_IMAGE_CAPTURE:
+                {
+                    // http://developer.android.com/training/camera/photobasics.html
+                    Bundle extras = data.getExtras();
+                    thumbnail = (Bitmap) extras.get("data");
+
+                    ((ImageView) findViewById(R.id.add_instrument_thumbnail_iv)).setImageBitmap(thumbnail);
+                    break;
+                }
+                case REQUEST_LOAD_IMAGE:
+                {
+                    /*
+                     * Credit:
+                     * http://paragchauhan2010.blogspot.ca/2012/05/choose-image-from-gallary-and-display.html
+                     * */
+                    Uri selectedImage = data.getData();
+                    String[] filePathColumn = {MediaStore.Images.Media.DATA};
+                    Cursor cursor = getContentResolver().query(selectedImage, filePathColumn, null, null, null);
+
+                    cursor.moveToFirst();
+
+                    int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
+                    String picturePath = cursor.getString(columnIndex);
+                    cursor.close();
+                    ImageView imageView = (ImageView) findViewById(R.id.add_instrument_thumbnail_iv);
+                    thumbnail = BitmapFactory.decodeFile(picturePath);
+//                    thumbnail = ThumbnailUtils.extractThumbnail(BitmapFactory.decodeFile(picturePath), 100, 100);
+                    imageView.setImageBitmap(thumbnail);
+                    break;
+                }
+                case AUDIO_REQUEST_CODE:
+                {
+                    audioBase64 = data.getExtras().getString("audioUriBase64").replace("\n", "");
+                    break;
+                }
+            }
+        }
+        hideDialogBox();
     }
 
     public void addAudioSample(View view) {
         Intent intent = new Intent(this, RecordAudioActivity.class);
-        startActivityForResult(intent, AUDIO_RESULT_CODE);
-    }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (requestCode == AUDIO_RESULT_CODE) {
-            if (resultCode == Activity.RESULT_OK) {
-                audioBase64 = data.getExtras().getString("audioUriBase64");
-            } else if (resultCode == Activity.RESULT_CANCELED) {
-                audioBase64 = null;
-            }
-        }
+        startActivityForResult(intent, AUDIO_REQUEST_CODE);
     }
 
     /**
@@ -80,20 +213,66 @@ public class AddInstrumentActivity extends AppCompatActivity {
         String name = nameET.getText().toString();
         String description = descriptionET.getText().toString();
 
-        if ((!name.equals("")) && (!description.equals(""))) {
+        if ((!name.matches("")) && (!description.matches("")))
+        {
             Instrument instrument = new Instrument(controller.getCurrentUser().getId(), name, description);
+            if (thumbnail != null)
+            {
+                instrument.addThumbnail(thumbnail);
+            }
             if (audioBase64 != null) {
-                instrument.addSampleAudioBase64(audioBase64.replace("\n", ""));
+                instrument.addSampleAudioBase64(audioBase64);
             }
             controller.addInstrument(instrument);
             finish();
-        } else {
+        }
+        else
+        {
             Toast.makeText(AddInstrumentActivity.this, "Both Name and Description are required", Toast.LENGTH_LONG).show();
         }
 
     }
 
-    public void addInstrumentCancel(View view){
+    public void addInstrumentCancel(View view)
+    {
         finish();
+    }
+
+    /**
+     * Close the dialog box.
+     */
+    private void hideDialogBox()
+    {
+        View main = findViewById(R.id.add_instrument_main);
+
+        /* Fade background view bakc to full opacity */
+        main.animate()
+                .alpha(1f)
+                .setDuration(FADEDURATION)
+                .setListener(null);
+
+        main.setClickable(false);
+
+        View dialogBox = findViewById(R.id.add_instrument_photo_dialog);
+
+        /* Fade out dialog box quickly */
+        dialogBox.animate()
+                .alpha(0f)
+                .setDuration(FADEDURATION)
+                .setListener(null);
+
+        dialogBox.setVisibility(View.GONE);
+
+        /* Restore clickable fields */
+        findViewById(R.id.addInstrument_description_et).setFocusableInTouchMode(true);
+        findViewById(R.id.addInstrument_name_et).setFocusableInTouchMode(true);
+        findViewById(R.id.addInstrument_description_et).setFocusable(true);
+        findViewById(R.id.addInstrument_name_et).setFocusable(true);
+        findViewById(R.id.addInstrument_addPhoto_button).setClickable(true);
+        findViewById(R.id.addInstrument_confirm_button).setClickable(true);
+        findViewById(R.id.addInstrument_cancel_button).setClickable(true);
+
+        /* Keep track of state */
+        displayingDialogBox = false;
     }
 }
