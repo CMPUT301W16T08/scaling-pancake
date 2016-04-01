@@ -145,6 +145,7 @@ public class AddInstrumentActivity extends Activity
 
     /**
      * Handle data returned from the gallery or camera activities.
+     * Constraint: All images are scaled to 256x256.
      * @param requestCode
      * @param resultCode
      * @param data
@@ -162,8 +163,7 @@ public class AddInstrumentActivity extends Activity
                 {
                     // http://developer.android.com/training/camera/photobasics.html
                     Bundle extras = data.getExtras();
-                    thumbnail = (Bitmap) extras.get("data");
-
+                    thumbnail = ThumbnailUtils.extractThumbnail((Bitmap) extras.get("data"), 256, 256);
                     ((ImageView) findViewById(R.id.add_instrument_thumbnail_iv)).setImageBitmap(thumbnail);
                     break;
                 }
@@ -183,8 +183,7 @@ public class AddInstrumentActivity extends Activity
                     String picturePath = cursor.getString(columnIndex);
                     cursor.close();
                     ImageView imageView = (ImageView) findViewById(R.id.add_instrument_thumbnail_iv);
-                    thumbnail = BitmapFactory.decodeFile(picturePath);
-//                    thumbnail = ThumbnailUtils.extractThumbnail(BitmapFactory.decodeFile(picturePath), 100, 100);
+                    thumbnail = ThumbnailUtils.extractThumbnail(BitmapFactory.decodeFile(picturePath), 256, 256);
                     imageView.setImageBitmap(thumbnail);
                     break;
                 }
