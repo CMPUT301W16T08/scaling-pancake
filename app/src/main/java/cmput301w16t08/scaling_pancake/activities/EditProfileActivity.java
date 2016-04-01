@@ -3,6 +3,7 @@ package cmput301w16t08.scaling_pancake.activities;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -68,6 +69,7 @@ public class EditProfileActivity extends AppCompatActivity {
                     controller.editCurrentUserEmail(strEmail);
                 }
                 Toast.makeText(controller, "Changes saved!", Toast.LENGTH_SHORT).show();
+                finish();
             }
             else
             {
@@ -82,8 +84,8 @@ public class EditProfileActivity extends AppCompatActivity {
         {
             controller.editCurrentUserEmail(strEmail);
             Toast.makeText(controller, "Changes saved!", Toast.LENGTH_SHORT).show();
+            finish();
         }
-        finish();
     }
 
     /**

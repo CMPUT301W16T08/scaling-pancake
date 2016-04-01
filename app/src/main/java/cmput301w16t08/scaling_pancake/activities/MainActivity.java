@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
      */
     public void menu(View view){
         Intent intent = new Intent(this, MenuActivity.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        finish();
         startActivity(intent);
     }
 
@@ -95,7 +95,7 @@ public class MainActivity extends AppCompatActivity {
                 {
                     /* New user was created; start MenuActivity immediately */
                     Intent intent = new Intent(this, MenuActivity.class);
-                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    finish();
                     startActivity(intent);
                 }
             }
