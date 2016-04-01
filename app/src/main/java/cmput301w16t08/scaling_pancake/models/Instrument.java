@@ -349,7 +349,8 @@ public class Instrument {
         if (thumbnail != null) {
             this.thumbnail = thumbnail;
             ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-            thumbnail.compress(Bitmap.CompressFormat.PNG, 100, byteArrayOutputStream);
+
+            thumbnail.compress(Bitmap.CompressFormat.JPEG, 100, byteArrayOutputStream);
             byte[] b = byteArrayOutputStream.toByteArray();
             this.thumbnailBase64 = Base64.encodeToString(b, Base64.DEFAULT);
         }

@@ -1,5 +1,7 @@
 package cmput301w16t08.scaling_pancake.util;
 
+import android.util.Log;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
