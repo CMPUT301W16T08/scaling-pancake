@@ -35,17 +35,15 @@ public class SearchInstrumentsActivityUITest extends ActivityInstrumentationTest
     public void testSearchButton(){
         /* search without keywords */
         // click on search button
-        solo.clickOnButton("SEARCH");
+        solo.clickOnView(solo.getView(R.id.search_instrument_search_button));
         // test if we are in next activity
-        solo.assertCurrentActivity("did not change acitivity", DisplaySearchResultsActivity.class);
+        solo.assertCurrentActivity("should not go to next activity", SearchInstrumentsActivity.class);
 
         /* search with keywords */
-        // go back to search activity
-        solo.clickOnButton("Back");
         //write in edit text
         solo.enterText((EditText) solo.getView(R.id.search_instrument_et), "apple");
         //click search button
-        solo.clickOnButton("SEARCH");
+        solo.clickOnView(solo.getView(R.id.search_instrument_search_button));
         // test if we are in next activity
         solo.assertCurrentActivity("did not change acitivity", DisplaySearchResultsActivity.class);
     }

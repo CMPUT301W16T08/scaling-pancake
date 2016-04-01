@@ -15,6 +15,7 @@ import cmput301w16t08.scaling_pancake.adapters.BorrowedInstrumentAdapter;
 import cmput301w16t08.scaling_pancake.controllers.Controller;
 import cmput301w16t08.scaling_pancake.adapters.OwnedInstrumentAdapter;
 import cmput301w16t08.scaling_pancake.R;
+import cmput301w16t08.scaling_pancake.models.Instrument;
 
 /**
  * The <code>InstrumentListActivity</code> generates a list of <code>Instrument</code>s that are
@@ -118,7 +119,7 @@ public class InstrumentListActivity extends ListActivity implements AdapterView.
         else if(selection.matches("Lended Out"))
         {
             setListAdapter(lendedInstrumentsAdapter);
-            currentSelection = borrowedInstrumentsListCode;
+            currentSelection = borrowedByOthersListCode;
         }
     }
 
@@ -165,8 +166,22 @@ public class InstrumentListActivity extends ListActivity implements AdapterView.
     {
         Intent intent = new Intent(this, ViewInstrumentActivity.class);
 
-        intent.putExtra("view_code", ViewInstrumentActivity.owned_instrument_view_code);
-        intent.putExtra("position", position);
+        Instrument instrument = controller.getCurrentUsersOwnedInstruments()
+                .getInstrument(position);
+        String status = instrument.getStatus();
+
+        // If instrument is currently being lent out
+        if (status.equals("borrowed")) {
+            intent.putExtra("view_code", ViewInstrumentActivity.brwd_by_others_instrument_view_code);
+            intent.putExtra("position", position);
+        }
+
+        // else : instrument is currently available or being bidded on:
+        else {
+            intent.putExtra("view_code", ViewInstrumentActivity.owned_instrument_view_code);
+            intent.putExtra("position", position);
+        }
+
 
         startActivity(intent);
     }

@@ -52,6 +52,7 @@
     <string name="borrowing">You are currently borrowing this instrument.</string>
     <string name="biddednotice">You have made a bid on this instrument.</string>
     <string name="set_returned">Mark As Returned</string>
+    <string name="return_instrument_as_borrower">Return instrument</string>
     <string name="borrower">Borrower: </string>
     <string name="accept_bid">Accept Bid</string>
     <string name="decline_bid">Decline Bid</string>
@@ -59,5 +60,8 @@
     <string name="offer">Offered Rate: </string>
     <string name="instrument">Instrument: </string>
     <string name="title_activity_view_bids">ViewBidsActivity</string>
-    <string name="enter_bid_amount">enter bid amount</string>
+    <string name="enter_bid_amount">Enter bid amount:</string>
+    <string name="ownedmsg">You own this instrument.</string>
+    <string name="title_activity_view_single_bid">ViewSingleBidActivity</string>
+    <string name="title_activity_edit_instrument">EditInstrumentActivity</string>
 </resources>

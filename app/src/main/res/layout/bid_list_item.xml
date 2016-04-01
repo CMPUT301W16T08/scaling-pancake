@@ -44,7 +44,6 @@
         android:layout_marginTop="2dp"
         android:layout_marginBottom="2dp"
         android:text="@string/accept_bid"
-        android:onClick="acceptBid"
         android:background="@drawable/btn_selector"/>
 
 </LinearLayout>

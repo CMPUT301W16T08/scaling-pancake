@@ -1,13 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
-    tools:context="cmput301w16t08.scaling_pancake.activities.ViewInstrumentActivity">
-
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -19,10 +10,12 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="cmput301w16t08.scaling_pancake.activities.ViewInstrumentActivity">
+    tools:context="cmput301w16t08.scaling_pancake.activities.EditInstrumentActivity"
+    tools:showIn="@layout/activity_edit_instrument"
+    android:focusableInTouchMode="true">
 
     <Button
-        android:id="@+id/owned_instrument_view_back_button"
+        android:id="@+id/edit_instrument_view_back_button"
         android:layout_width="match_parent"
         android:layout_height="36sp"
         android:onClick="back"
@@ -33,7 +26,7 @@
         android:background="@drawable/btn_selector"/>
 
     <LinearLayout
-        android:id="@+id/ownedinstrumentview_buttonshell"
+        android:id="@+id/edit_instrument_view_buttonshell"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -44,8 +37,7 @@
             android:layout_height="36sp"
             android:layout_marginTop="2dp"
             android:layout_marginBottom="2dp"
-            android:onClick="edit"
-            android:text="@string/edit"
+            android:text="@string/save"
             android:background="@drawable/btn_selector"/>
 
         <Button
@@ -53,15 +45,15 @@
             android:layout_height="36sp"
             android:layout_marginTop="2dp"
             android:layout_marginBottom="2dp"
-            android:text="@string/view_bids"
-            android:onClick="viewBids"
-            android:background="@drawable/btn_selector"/>
+            android:onClick="deleteInstrument"
+            android:text="@string/delete"
+            android:background="@drawable/red_btn_selector"/>
     </LinearLayout>
 
     <ScrollView
-        android:id="@+id/ownedinstrumentview_sv"
-        android:layout_above="@id/ownedinstrumentview_buttonshell"
-        android:layout_below="@id/owned_instrument_view_back_button"
+        android:id="@+id/edit_instrument_view_sv"
+        android:layout_above="@id/edit_instrument_view_buttonshell"
+        android:layout_below="@id/edit_instrument_view_back_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -70,42 +62,23 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/owned_instrument_view_name_tv"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="2dp"
-            android:layout_marginBottom="2dp"
-            android:textSize="36sp"
-            android:textColor="@color/black"
-            android:textAlignment="center"
-            android:background="@drawable/grey_rounded_border"/>
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="100dp"
-            android:layout_marginTop="2dp"
-            android:layout_marginBottom="2dp"
-            android:src="@drawable/mothra"/>
-
-            <TextView
+            <EditText
+                android:id="@+id/edit_instrument_view_name_et"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="5dp"
-                android:text="@string/owner_me"
-                android:layout_gravity="start"
-                android:textSize="24sp"/>
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                android:textSize="36sp"
+                android:textColor="@color/black"
+                android:textAlignment="center"
+                android:background="@drawable/grey_rounded_border"/>
 
-            <TextView
-                android:id="@+id/owned_instrument_view_status_tv"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="5dp"
-                android:text="@string/status"
-                android:layout_gravity="start"
-                android:textSize="24sp"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                android:src="@drawable/mothra"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -129,7 +102,7 @@
             </LinearLayout>
 
             <TextView
-                android:id="@+id/owned_instrument_view_description_tv"
+                android:id="@+id/edit_instrument_view_description_tv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
@@ -140,11 +113,17 @@
                 android:textColor="@color/black"
                 android:layout_gravity="start"/>
 
+            <EditText
+                android:id="@+id/edit_instrument_view_description_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                android:textSize="36sp"
+                android:textColor="@color/black"/>
+
         </LinearLayout>
 
     </ScrollView>
 
-
 </RelativeLayout>
-
-</android.support.design.widget.CoordinatorLayout>

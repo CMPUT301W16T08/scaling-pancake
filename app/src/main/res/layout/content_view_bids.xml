@@ -13,9 +13,21 @@
     tools:context="cmput301w16t08.scaling_pancake.activities.ViewBidsActivity"
     tools:showIn="@layout/activity_view_bids">
 
+    <Button
+        android:id="@+id/view_bids_activity_back_button"
+        android:layout_width="match_parent"
+        android:layout_height="36sp"
+        android:onClick="back"
+        android:text="@string/back"
+        android:textColor="#000000"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="2dp"
+        android:background="@drawable/btn_selector"/>
+
     <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@id/view_bids_activity_back_button"
         android:id="@android:id/list"
         android:divider="@android:color/transparent"
         android:dividerHeight="5.0dp"

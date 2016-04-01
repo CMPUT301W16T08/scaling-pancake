@@ -35,7 +35,8 @@
             android:onClick="display_search_results"
             android:layout_marginTop="2dp"
             android:layout_marginBottom="2dp"
-            android:background="@drawable/btn_selector"/>
+            android:background="@drawable/btn_selector"
+            android:id="@+id/search_instrument_search_button" />
 
         <Button
             android:layout_width="match_parent"
