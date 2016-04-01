@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -54,8 +55,8 @@ public class ViewInstrumentActivity extends AppCompatActivity
     }
 
     @Override
-    protected void onStart(){
-        super.onStart();
+    protected void onResume(){
+        super.onResume();
         Intent intent = getIntent();
 
         switch(intent.getIntExtra("view_code", 0))
@@ -151,6 +152,11 @@ public class ViewInstrumentActivity extends AppCompatActivity
                     ((TextView) findViewById(R.id.searched_instrument_view_owner_tv)).append(controller.getUserById(selected.getOwnerId()).getName());
                     ((TextView) findViewById(R.id.searched_instrument_view_status_tv)).append(selected.getStatus());
                     ((TextView) findViewById(R.id.searched_instrument_view_description_tv)).append(selected.getDescription());
+                }
+
+                if(selected.getThumbnail() != null)
+                {
+                    ((ImageView) findViewById(R.id.searched_instrument_view_thumbnail_iv)).setImageBitmap(selected.getThumbnail());
                 }
                 break;
             }

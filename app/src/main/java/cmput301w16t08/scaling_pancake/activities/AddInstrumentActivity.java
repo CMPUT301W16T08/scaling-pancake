@@ -8,6 +8,7 @@ import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -207,7 +208,7 @@ public class AddInstrumentActivity extends Activity
         {
             if(thumbnail != null)
             {
-                Instrument addedInstrument = new Instrument(controller.getCurrentUser().getName(),
+                Instrument addedInstrument = new Instrument(controller.getCurrentUser().getId(),
                         name, description, thumbnail);
                 controller.addInstrument(addedInstrument);
                 finish();

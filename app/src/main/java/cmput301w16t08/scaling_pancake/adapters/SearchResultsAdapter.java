@@ -55,7 +55,7 @@ public class SearchResultsAdapter extends ArrayAdapter
         name.setText(instrument.getName());
         description.setText(instrument.getDescription());
         username.setText(String.format("Owner: %s", controller.getUserById(instrument.getOwnerId()).getName()));
-        status.setText(String.format("Status: %s", instrument.getStatus())); //What values of status are possible?
+        status.setText(String.format("Status: %s", instrument.getStatus()));
 
         return convertView;
     }
