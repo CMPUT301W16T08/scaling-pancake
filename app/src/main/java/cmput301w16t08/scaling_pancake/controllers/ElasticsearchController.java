@@ -218,7 +218,8 @@ public class ElasticsearchController {
                 if (result.isSucceeded()) {
                     Log.d("ESC", "UpdateUserTask completed.");
                 } else {
-                    throw new RuntimeException("UpdateUserTask not completed");
+                    throw new RuntimeException(result.getErrorMessage());
+//                    throw new RuntimeException("UpdateUserTask not completed");
                 }
             } catch (IOException e) {
                 e.printStackTrace();
