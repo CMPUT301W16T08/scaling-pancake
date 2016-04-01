@@ -299,7 +299,7 @@ public class ElasticsearchController {
             for (int i = 0; i < returnedStrings.size(); i++) {
                 User user = new Deserializer().deserializeUser(returnedStrings.get(i));
                 for (int j = 0; j < user.getOwnedInstruments().size(); j++) {
-                    if (user.getOwnedInstruments().getInstrument(j).getStatus().equals("borrowed")) {
+                    if (user.getOwnedInstruments().getInstrument(j).getStatus().matches("borrowed")) {
                         continue;
                     }
                     String string1 = strings[0].toLowerCase();

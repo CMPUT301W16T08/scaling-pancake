@@ -38,7 +38,7 @@ public class UserList {
      */
     public boolean containsUser(User user) {
         for (int i = 0; i < this.users.size(); i++) {
-            if (this.users.get(i).getId().equals(user.getId())) {
+            if (this.users.get(i).getId().matches(user.getId())) {
                 return true;
             }
         }
@@ -53,7 +53,7 @@ public class UserList {
      */
     public boolean containsUser(String id) {
         for (int i = 0; i < this.users.size(); i++) {
-            if (this.users.get(i).getId().equals(id)) {
+            if (this.users.get(i).getId().matches(id)) {
                 return true;
             }
         }
@@ -78,7 +78,7 @@ public class UserList {
      */
     public void removeUser(User user) {
         for (int i = 0; i < this.users.size(); i++) {
-            if (this.users.get(i).getId().equals(user.getId())) {
+            if (this.users.get(i).getId().matches(user.getId())) {
                 this.users.remove(i);
                 return;
             }
@@ -110,7 +110,7 @@ public class UserList {
      */
     public void removeUser(String id) {
         for (int i = 0; i < this.users.size(); i++) {
-            if (this.users.get(i).getId().equals(id)) {
+            if (this.users.get(i).getId().matches(id)) {
                 this.users.remove(i);
                 return;
             }
@@ -144,7 +144,7 @@ public class UserList {
      */
     public User getUser(String id) {
         for (int i = 0; i < this.users.size(); i++) {
-            if (this.users.get(i).getId().equals(id)) {
+            if (this.users.get(i).getId().matches(id)) {
                 return this.users.get(i);
             }
         }

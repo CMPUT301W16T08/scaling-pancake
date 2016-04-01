@@ -67,4 +67,5 @@
     <string name="ownedmsg">You own this instrument.</string>
     <string name="title_activity_view_single_bid">ViewSingleBidActivity</string>
     <string name="title_activity_edit_instrument">EditInstrumentActivity</string>
+    <string name="title_activity_view_bid">ViewBidActivity</string>
 </resources>

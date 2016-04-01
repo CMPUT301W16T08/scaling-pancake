@@ -1,18 +1,12 @@
 package cmput301w16t08.scaling_pancake.activities;
 
-import android.content.ContentResolver;
-import android.content.Context;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.text.InputFilter;
-import android.text.TextUtils;
 import android.util.Base64;
-import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -228,7 +222,7 @@ public class ViewInstrumentActivity extends AppCompatActivity
 
     public void viewBids(View view)
     {
-        Intent intent = new Intent(this, ViewBidsActivity.class);
+        Intent intent = new Intent(this, BidListActivity.class);
         intent.putExtra("instrument_id", selected.getId());
         startActivity(intent);
     }

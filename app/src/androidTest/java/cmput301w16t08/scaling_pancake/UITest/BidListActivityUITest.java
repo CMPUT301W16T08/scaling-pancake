@@ -6,21 +6,20 @@ import com.robotium.solo.Solo;
 
 import cmput301w16t08.scaling_pancake.R;
 import cmput301w16t08.scaling_pancake.activities.MenuActivity;
-import cmput301w16t08.scaling_pancake.activities.ViewBidsActivity;
 import cmput301w16t08.scaling_pancake.activities.ViewInstrumentActivity;
 import cmput301w16t08.scaling_pancake.controllers.Controller;
 import cmput301w16t08.scaling_pancake.models.Instrument;
 import cmput301w16t08.scaling_pancake.models.User;
 
 
-public class ViewBidsActivityUITest extends ActivityInstrumentationTestCase2 {
+public class BidListActivityUITest extends ActivityInstrumentationTestCase2 {
     Solo solo;
     Controller controller;
     User first;
     User second;
     Instrument instrument;
 
-    public ViewBidsActivityUITest() {
+    public BidListActivityUITest() {
         super(MenuActivity.class);
     }
 

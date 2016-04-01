@@ -10,8 +10,8 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="cmput301w16t08.scaling_pancake.activities.ViewBidsActivity"
-    tools:showIn="@layout/activity_view_bids">
+    tools:context=".activities.BidListActivity"
+    tools:showIn="@layout/activity_bid_list">
 
     <Button
         android:id="@+id/view_bids_activity_back_button"

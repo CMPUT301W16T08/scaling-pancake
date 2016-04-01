@@ -33,31 +33,42 @@
             android:layout_marginBottom="2dp"
             android:background="@drawable/btn_selector"/>
 
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="36sp"
+            android:id="@+id/borrowed_instrument_view_return_button"
+            android:text="Return Instrument"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:onClick="returnAsBorrower"
+            android:textColor="@color/black"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="2dp"
+            android:background="@drawable/btn_selector"/>
+
+        <Button
+            android:id="@+id/borrowed_instrument_view_location_button"
+            android:layout_above="@id/borrowed_instrument_view_return_button"
+            android:layout_width="match_parent"
+            android:layout_height="36sp"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="2dp"
+            android:textColor="@color/black"
+            android:text="Pick Up Location"
+            android:onClick="viewLocation"
+            android:background="@drawable/btn_selector"/>
 
         <TextView
             android:id="@+id/borrowedinstrumentview_borrowing_tv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/borrowing"
-            android:textSize="24sp"
+            android:textSize="16sp"
             android:textAlignment="center"
             android:background="@drawable/grey_rounded_border"
-            android:layout_above="@+id/return_as_borrower_button"
+            android:layout_above="@id/borrowed_instrument_view_location_button"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true" />
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="36sp"
-            android:id="@+id/return_as_borrower_button"
-            android:text="  return instrument  "
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:onClick="returnAsBorrower"
-            android:textColor="#000000"
-            android:layout_marginTop="2dp"
-            android:layout_marginBottom="2dp"
-            android:background="@drawable/btn_selector"/>
 
         <ScrollView
             android:id="@+id/borrowedinstrumentview_sv"
@@ -137,14 +148,6 @@
                         android:textSize="24sp"/>
 
                 </LinearLayout>
-
-                <Button
-                    android:id="@+id/borrowed_instrument_view_location_button"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Pick Up Location"
-                    android:textSize="24sp"
-                    android:onClick="viewLocation" />
 
                 <TextView
                     android:id="@+id/borrowed_instrument_view_description_tv"

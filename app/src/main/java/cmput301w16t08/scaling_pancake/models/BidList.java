@@ -1,5 +1,7 @@
 package cmput301w16t08.scaling_pancake.models;
 
+import android.util.Log;
+
 import java.util.ArrayList;
 
 /**
@@ -38,7 +40,7 @@ public class BidList {
      */
     public boolean containsBid(Bid bid) {
         for (int i = 0; i < this.bids.size(); i++) {
-            if (this.bids.get(i).getId().equals(bid.getId())) {
+            if (this.bids.get(i).getId().matches(bid.getId())) {
                 return true;
             }
         }
@@ -53,7 +55,7 @@ public class BidList {
      */
     public boolean containsBid(String id) {
         for (int i = 0; i < this.bids.size(); i++) {
-            if (this.bids.get(i).getId().equals(id)) {
+            if (this.bids.get(i).getId().matches(id)) {
                 return true;
             }
         }
@@ -78,7 +80,7 @@ public class BidList {
      */
     public void removeBid(Bid bid) {
         for (int i = 0; i < this.bids.size(); i++) {
-            if (this.bids.get(i).getId().equals(bid.getId())) {
+            if (this.bids.get(i).getId().matches(bid.getId())) {
                 this.bids.remove(i);
                 return;
             }
@@ -110,7 +112,7 @@ public class BidList {
      */
     public void removeBid(String id) {
         for (int i = 0; i < this.bids.size(); i++) {
-            if (this.bids.get(i).getId().equals(id)) {
+            if (this.bids.get(i).getId().matches(id)) {
                 this.bids.remove(i);
                 return;
             }
@@ -154,11 +156,11 @@ public class BidList {
      */
     public Bid getBid(String id) {
         for (int i = 0; i < this.bids.size(); i++) {
-            if (this.bids.get(i).getId().equals(id)) {
+            if (this.bids.get(i).getId().matches(id)) {
                 return this.bids.get(i);
             }
         }
-        throw new RuntimeException();
+        throw new RuntimeException("Bid not found in model");
     }
 
     /**
