@@ -206,18 +206,15 @@ public class AddInstrumentActivity extends Activity
 
         if ((!name.matches("")) && (!description.matches("")))
         {
-            if(thumbnail != null)
+            Instrument addedInstrument = new Instrument(controller.getCurrentUser().getId(), name, description);
+            controller.addInstrument(addedInstrument);
+
+            if (thumbnail != null)
             {
-                Instrument addedInstrument = new Instrument(controller.getCurrentUser().getId(),
-                        name, description, thumbnail);
-                controller.addInstrument(addedInstrument);
-                finish();
+                controller.addPhotoToInstrument(addedInstrument, thumbnail);
             }
-            else
-            {
-                controller.addInstrument(name, description);
-                finish();
-            }
+
+            finish();
         }
         else
         {

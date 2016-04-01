@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -42,6 +43,7 @@ public class BidsAdapter extends ArrayAdapter
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.bid_list_item, parent, false);
         }
 
+        ImageView thumbnail = (ImageView) convertView.findViewById(R.id.bid_list_item_thumbnail_iv);
         TextView name = (TextView) convertView.findViewById(R.id.bid_list_item_name_tv);
         TextView bidder = (TextView) convertView.findViewById(R.id.bid_list_item_bidder_tv);
         TextView rate = (TextView) convertView.findViewById(R.id.bid_list_item_rate_tv);
@@ -64,7 +66,8 @@ public class BidsAdapter extends ArrayAdapter
             @Override
             public void onClick(View v)
             {
-                if(!bid.getAccepted()) {
+                if (!bid.getAccepted())
+                {
                     controller.declineBidOnInstrument(bid);
                     bidList.removeBid(bid);
                     Toast.makeText(controller, "Bid Declined", Toast.LENGTH_SHORT).show();
@@ -74,8 +77,13 @@ public class BidsAdapter extends ArrayAdapter
         });
 
         name.setText(controller.getInstrumentById(bid.getInstrumentId()).getName());
-        bidder.setText(controller.getUserById(bid.getBidderId()).getName());
-        rate.setText(String.format("%.2f/hr", bid.getBidAmount()));
+        bidder.setText(String.format("Bidder: %s", controller.getUserById(bid.getBidderId()).getName()));
+        rate.setText(String.format("Rate: %.2f/hr", bid.getBidAmount()));
+
+        if(controller.getInstrumentById(bid.getInstrumentId()).hasThumbnail())
+        {
+            thumbnail.setImageBitmap(controller.getInstrumentById(bid.getInstrumentId()).getThumbnail());
+        }
 
         return convertView;
     }
