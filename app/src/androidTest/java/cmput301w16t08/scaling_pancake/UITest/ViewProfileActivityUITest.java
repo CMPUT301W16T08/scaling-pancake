@@ -65,8 +65,8 @@ public class ViewProfileActivityUITest extends ActivityInstrumentationTestCase2 
 
 
 
-    public void testMenuButton(){
-        solo.clickOnView(solo.getView(R.id.view_profile_back_button));
+    public void testBackButton(){
+        solo.clickOnButton(solo.getString(R.string.back));
 
         // make sure the activity is finished
         solo.assertCurrentActivity("did not go back to menu", MenuActivity.class);
