@@ -28,6 +28,7 @@ public class ViewBidActivity extends Activity
     private Bid bid;
     private int PLACE_PICKER_REQUEST = 1;
     private GoogleApiClient client;
+    private Place place = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -82,18 +83,21 @@ public class ViewBidActivity extends Activity
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == PLACE_PICKER_REQUEST) {
             if (resultCode == Activity.RESULT_OK) {
-                final Place place = PlacePicker.getPlace(data, this);
-                controller.setLocationForInstrument(controller.getCurrentUsersOwnedInstruments().getInstrument(
-                        getIntent().getStringExtra("instrument_id")), place.getLatLng());
+                place = PlacePicker.getPlace(data, this);
             }
         }
     }
 
     public void acceptBid(View view)
     {
-        if(!bid.getAccepted())
+        if (place == null) {
+            Toast.makeText(controller, "Must select a pick up location!", Toast.LENGTH_SHORT).show();
+        } else if(!bid.getAccepted())
         {
             controller.acceptBidOnInstrument(bid);
+            controller.setLocationForInstrument(
+                    controller.getCurrentUsersOwnedInstruments().getInstrument(getIntent().getStringExtra("instrument_id")),
+                    place.getLatLng());
             Toast.makeText(controller, "Bid Accepted!", Toast.LENGTH_SHORT).show();
             finish();
         }
@@ -104,7 +108,6 @@ public class ViewBidActivity extends Activity
         if (!bid.getAccepted())
         {
             controller.declineBidOnInstrument(bid);
-            controller.getCurrentUsersBids().removeBid(bid);
             Toast.makeText(controller, "Bid Declined", Toast.LENGTH_SHORT).show();
             finish();
         }
