@@ -20,7 +20,6 @@ import cmput301w16t08.scaling_pancake.models.User;
  */
 public class ViewProfileActivity extends AppCompatActivity {
     private static Controller controller;
-    private static final String TAG = "ViewProfileActivity";
     private User user;
 
     @Override
@@ -29,22 +28,23 @@ public class ViewProfileActivity extends AppCompatActivity {
         setContentView(R.layout.activity_view_profile);
         controller = (Controller) getApplicationContext();
         User current_user = controller.getCurrentUser();
+
         Intent intent = getIntent();
         String user_id = intent.getStringExtra("user_id");
-        if (!(current_user.getId().equals(user_id))){
+
+        if (!(current_user.getId().matches(user_id)))
+        {
             View edit_button = findViewById(R.id.edit_profile_button);
             edit_button.setVisibility(View.GONE);
             user = current_user;
         }
-        else{
+        else
+        {
             user = controller.getUserById(user_id);
         }
+
         setUsernameTextView();
         setEmailTextView();
-    }
-
-    protected void onStart(){
-        super.onStart();
     }
 
     /**
@@ -54,7 +54,7 @@ public class ViewProfileActivity extends AppCompatActivity {
         TextView usernameTextView = (TextView) findViewById(R.id.view_profile_username_tv);
         String name = user.getName();
 
-        usernameTextView.append(name);
+        usernameTextView.setText(String.format("Username: %s", name));
     }
 
     /**
@@ -63,27 +63,20 @@ public class ViewProfileActivity extends AppCompatActivity {
     public void setEmailTextView(){
         TextView emailTextView = (TextView) findViewById(R.id.view_profile_email_tv);
         String email = user.getEmail();
-        emailTextView.append(email);
+        emailTextView.setText(String.format("Email: %s", email));
     }
 
     /**
      * Navigate to the <code>EditProfileActivity</code>
      * @param view
      */
-    public void launchEditProfile(View view){
+    public void launchEditProfile(View view)
+    {
         Intent intent = new Intent(this, EditProfileActivity.class);
-        startActivity(intent);
         finish();
+        startActivity(intent);
     }
 
-    /**
-     * Return to the <code>MenuActivity</code>
-     * @param view
-     */
-    public void goToMainMenu(View view){
-        Intent intent = new Intent(this, MenuActivity.class);
-        startActivity(intent);
-    }
 
     public void back(View view){
         finish();

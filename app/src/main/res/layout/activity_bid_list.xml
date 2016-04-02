@@ -6,8 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="cmput301w16t08.scaling_pancake.activities.ViewBidsActivity">
+    tools:context=".activities.BidListActivity">
 
-    <include layout="@layout/content_view_bids"/>
+    <include layout="@layout/content_bid_list"/>
 
 </android.support.design.widget.CoordinatorLayout>

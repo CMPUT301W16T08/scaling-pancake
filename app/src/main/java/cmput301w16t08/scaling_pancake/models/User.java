@@ -117,7 +117,7 @@ public class User {
     public InstrumentList getOwnedBorrowedInstruments() {
         InstrumentList list = new InstrumentList();
         for (int i = 0; i < this.getOwnedInstruments().size(); i++) {
-            if (this.getOwnedInstruments().getInstrument(i).getStatus().equals("borrowed")) {
+            if (this.getOwnedInstruments().getInstrument(i).getStatus().matches("borrowed")) {
                 list.addInstrument(this.getOwnedInstruments().getInstrument(i));
             }
         }

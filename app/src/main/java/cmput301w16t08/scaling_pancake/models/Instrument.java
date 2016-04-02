@@ -139,7 +139,7 @@ public class Instrument {
      *          if status not "available", "bidded", or "borrowed"
      */
     public void setStatus(String status) {
-        if (status.equals("available") || status.equals("bidded") || status.equals("borrowed")) {
+        if (status.matches("available") || status.matches("bidded") || status.matches("borrowed")) {
             this.status = status;
         } else { throw new RuntimeException("status should be one of available, bidded, or borrowed"); }
     }
@@ -197,7 +197,7 @@ public class Instrument {
      *          if the status of the instrument is not currently "borrowed"
      */
     public String getBorrowedById() {
-        if (!this.status.equals("borrowed")) {
+        if (!this.status.matches("borrowed")) {
             throw new RuntimeException("The instrument is not currently borrowed");
         }
         return borrowedById;
@@ -364,7 +364,7 @@ public class Instrument {
      * @param thumbnailBase64 the new thumbnail in Base64
      */
     public void addThumbnail(String thumbnailBase64) {
-        if (thumbnailBase64 != null && !thumbnailBase64.equals("")) {
+        if (thumbnailBase64 != null && !thumbnailBase64.matches("")) {
             this.thumbnailBase64 = thumbnailBase64;
             byte[] b = Base64.decode(thumbnailBase64.getBytes(), 0);
             this.thumbnail = BitmapFactory.decodeByteArray(b, 0, b.length);

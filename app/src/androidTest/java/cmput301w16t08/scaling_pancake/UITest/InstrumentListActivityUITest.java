@@ -33,7 +33,7 @@ public class InstrumentListActivityUITest extends ActivityInstrumentationTestCas
         solo.clickOnView(solo.getView(R.id.menu_view_instruments_button));
     }
 
-    @Override
+    /*@Override
     // do this after each test
     public void tearDown(){
         Controller controller = (Controller) getActivity().getApplicationContext();
@@ -43,7 +43,7 @@ public class InstrumentListActivityUITest extends ActivityInstrumentationTestCas
         if(controller.getUserByName("admin2")!=null){
             controller.deleteUserById(controller.getUserByName("admin2").getId());
         }
-    }
+    }*/
 
     /* test back button */
     public void testBackButton(){
@@ -72,16 +72,16 @@ public class InstrumentListActivityUITest extends ActivityInstrumentationTestCas
         assertTrue(solo.searchText("2nd description"));
 
         /* test click on the listed instrument */
-        // click on first "VIEW" text
+        // click on first list item
         solo.clickOnText("1st description", 1);
         //test we swiched to another activity
         solo.assertCurrentActivity("not changed to view instrument activity", ViewInstrumentActivity.class);
-        //TODO: go back insttumentlist
-        //solo.clickOnView(solo.getView("I need Id here"));
-        // click on Second "Edit" text(button)
-        //solo.clickOnText("2nd description",1);
-        //TODO: test we swiched to another activity
-        //solo.assertCurrentActivity("not changed to view instrument activity", ViewInstrumentActivity.class);
+        //go back insttumentlist
+        solo.clickOnButton(solo.getString(R.string.back));
+        // click on Second list item
+        solo.clickOnText("2nd description",1);
+        // test we swiched to another activity
+        solo.assertCurrentActivity("not changed to view instrument activity", ViewInstrumentActivity.class);
 
     }
 
@@ -133,8 +133,6 @@ public class InstrumentListActivityUITest extends ActivityInstrumentationTestCas
         solo.clickOnView(solo.getView(R.id.menu_view_instruments_button));
         solo.clickOnView(solo.getView(R.id.instrumentlistactivity_category_spinner));
         solo.clickOnText("My Bids");
-        // test if there is one item listed
-        assertFalse(solo.searchText("Nothing to show"));
         // click on item and test if we changed to next activity
         solo.clickOnText(instrumentDescription);
         solo.assertCurrentActivity("not changed to view instrument activity", ViewInstrumentActivity.class);
@@ -183,6 +181,7 @@ public class InstrumentListActivityUITest extends ActivityInstrumentationTestCas
         controller.logout();
         controller.login("admin");
         controller.makeBidOnInstrument(instrument, 10);
+
 
         // admin2 accepted the bid
         controller.logout();

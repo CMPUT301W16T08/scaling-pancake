@@ -75,7 +75,7 @@ public class Controller extends Application {
         }
         for (int i = 0; i < users.size(); i++) {
             User user = deserializer.deserializeUser(users.get(i));
-            if (user.getName().equals(username)) {
+            if (user.getName().matches(username)) {
                 return user;
             }
         }
@@ -102,7 +102,7 @@ public class Controller extends Application {
         }
         for (int i = 0; i < users.size(); i++) {
             User user = deserializer.deserializeUser(users.get(i));
-            if (user.getId().equals(id)) {
+            if (user.getId().matches(id)) {
                 return user;
             }
         }
@@ -131,7 +131,7 @@ public class Controller extends Application {
         }
         for (int i = 0; i < users.size(); i++) {
             User user = deserializer.deserializeUser(users.get(i));
-            if (user.getName().equals(username)) {
+            if (user.getName().matches(username)) {
                 return false;
             }
         }
@@ -188,7 +188,7 @@ public class Controller extends Application {
         }
         for (int i = 0; i < users.size(); i++) {
             User user = deserializer.deserializeUser(users.get(i));
-            if (user.getName().equals(username)) {
+            if (user.getName().matches(username)) {
                 this.currentUser = user;
                 return true;
             }
@@ -227,7 +227,7 @@ public class Controller extends Application {
         }
         for (int i = 0; i < users.size(); i++) {
             User user = deserializer.deserializeUser(users.get(i));
-            if (user.getName().equals(username)) {
+            if (user.getName().matches(username)) {
                 return false;
             }
         }
@@ -259,7 +259,7 @@ public class Controller extends Application {
         }
         for (int i = 0; i < users.size(); i++) {
             User user = deserializer.deserializeUser(users.get(i));
-            if (user.getName().equals(username)) {
+            if (user.getName().matches(username)) {
                 return false;
             }
         }
@@ -361,7 +361,7 @@ public class Controller extends Application {
             }
             User user = deserializer.deserializeUser(users.get(0));
             for (int j = 0; j < user.getOwnedInstruments().size(); j++) {
-                if (user.getOwnedInstruments().getInstrument(i).getId().equals(
+                if (user.getOwnedInstruments().getInstrument(i).getId().matches(
                         this.getCurrentUsersBids().getBid(i).getInstrumentId())) {
                     instruments.addInstrument(user.getOwnedInstruments().getInstrument(i));
                 }
@@ -407,7 +407,7 @@ public class Controller extends Application {
         }
         User user = new Deserializer().deserializeUser(users.get(0));
         for (int i = 0; i < user.getOwnedInstruments().size(); i++) {
-            if (user.getOwnedInstruments().getInstrument(i).getId().equals(id)) {
+            if (user.getOwnedInstruments().getInstrument(i).getId().matches(id)) {
                 return user.getOwnedInstruments().getInstrument(i);
             }
         }

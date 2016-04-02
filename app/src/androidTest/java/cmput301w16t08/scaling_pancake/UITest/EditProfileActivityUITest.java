@@ -49,19 +49,6 @@ public class EditProfileActivityUITest extends ActivityInstrumentationTestCase2{
     }
 
 
-    /*@UiThreadTest
-    //TODO: check if editText has same content as user's profile
-    public void testEditText(){
-        Controller controller = (Controller) activity.getApplicationContext();
-
-        // get current user first
-        User user = controller.getCurrentUser();
-
-
-        //assertEquals(user.getName(),username.getText().toString());
-        //assertEquals(user.getEmail(),username.getText().toString());
-    }*/
-
     @UiThreadTest
     public void testChangeName(){
         Controller controller = (Controller) activity.getApplicationContext();

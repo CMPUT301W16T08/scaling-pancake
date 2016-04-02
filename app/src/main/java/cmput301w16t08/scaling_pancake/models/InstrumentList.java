@@ -38,7 +38,7 @@ public class InstrumentList {
      */
     public boolean containsInstrument(Instrument instrument) {
         for (int i = 0; i < this.instruments.size(); i++) {
-            if (this.instruments.get(i).getId().equals(instrument.getId())) {
+            if (this.instruments.get(i).getId().matches(instrument.getId())) {
                 return true;
             }
         }
@@ -53,7 +53,7 @@ public class InstrumentList {
      */
     public boolean containsInstrument(String id) {
         for (int i = 0; i < this.instruments.size(); i++) {
-            if (this.instruments.get(i).getId().equals(id)) {
+            if (this.instruments.get(i).getId().matches(id)) {
                 return true;
             }
         }
@@ -76,7 +76,7 @@ public class InstrumentList {
      */
     public void removeInstrument(Instrument instrument) {
         for (int i = 0; i < this.instruments.size(); i++) {
-            if (instrument.getId().equals(this.instruments.get(i).getId())) {
+            if (instrument.getId().matches(this.instruments.get(i).getId())) {
                 this.instruments.remove(i);
                 return;
             }
@@ -90,7 +90,7 @@ public class InstrumentList {
      */
     public void removeInstrument(String id) {
         for (int i = 0; i < this.instruments.size(); i++) {
-            if (id.equals(this.instruments.get(i).getId())) {
+            if (id.matches(this.instruments.get(i).getId())) {
                 this.instruments.remove(i);
                 return;
             }
@@ -148,7 +148,7 @@ public class InstrumentList {
      */
     public Instrument getInstrument(String id) {
         for (int i = 0; i < this.instruments.size(); i++) {
-            if (id.equals(this.instruments.get(i).getId())) {
+            if (id.matches(this.instruments.get(i).getId())) {
                 return this.instruments.get(i);
             }
         }

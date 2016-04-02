@@ -10,12 +10,12 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".activities.CreateProfileActivity"
+    tools:context=".activities.EditProfileActivity"
     tools:showIn="@layout/activity_edit_profile">
 
     <LinearLayout
         android:id="@+id/edit_profile_et_shell"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:orientation="vertical">
@@ -39,26 +39,11 @@
             android:hint="@string/email_prompt"
             android:background="@drawable/grey_rounded_border"/>
 
-        <Button
-            android:id="@+id/edit_profile_save_button"
-            android:onClick="save_profile_changes"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="2dp"
-            android:layout_marginBottom="2dp"
-            android:text="@string/save_changes"
-            android:background="@drawable/btn_selector"/>
-
-        <TextView
-            android:id="@+id/startscreen_word_or_tv"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="2dp"
-            android:layout_marginBottom="2dp"
-            android:text="@string/word_or"/>
+    </LinearLayout>
 
         <Button
             android:id="@+id/edit_profile_cancel_button"
+            android:layout_alignParentBottom="true"
             android:onClick="cancel_profile_changes"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -67,17 +52,15 @@
             android:text="@string/cancel"
             android:background="@drawable/btn_selector"/>
 
-
-    </LinearLayout>
-
-    <TextView
-        android:layout_width="wrap_content"
+    <Button
+        android:id="@+id/edit_profile_save_button"
+        android:layout_above="@id/edit_profile_cancel_button"
+        android:onClick="save_profile_changes"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:id="@+id/edit_profile_message_tv"
-        android:layout_below="@+id/edit_profile_et_shell"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="29dp" />
-
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="2dp"
+        android:text="@string/save_changes"
+        android:background="@drawable/btn_selector"/>
 
 </RelativeLayout>
