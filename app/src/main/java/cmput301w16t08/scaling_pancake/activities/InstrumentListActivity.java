@@ -222,6 +222,16 @@ public class InstrumentListActivity extends ListActivity implements AdapterView.
 
     }
 
+    @Override
+    protected void onResume()
+    {
+        super.onResume();
+        ownedInstrumentAdapter.notifyDataSetChanged();
+        borrowedInstrumentAdapter.notifyDataSetChanged();
+        biddedInstrumentsAdapter.notifyDataSetChanged();
+        lendedInstrumentsAdapter.notifyDataSetChanged();
+    }
+
     /**
      * Return to the <code>MenuActivity</code>
      * @param view

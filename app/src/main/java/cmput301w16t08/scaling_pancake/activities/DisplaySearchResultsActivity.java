@@ -99,6 +99,13 @@ public class DisplaySearchResultsActivity extends ListActivity
         startActivity(intent);
     }
 
+    @Override
+    protected void onResume()
+    {
+        super.onResume();
+        searchResultsAdapter.notifyDataSetChanged();
+    }
+
     public void back(View view)
     {
         finish();

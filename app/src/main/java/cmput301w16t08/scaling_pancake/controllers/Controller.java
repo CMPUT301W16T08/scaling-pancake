@@ -455,6 +455,17 @@ public class Controller extends Application {
         instrument.setDescription(description);
         ElasticsearchController.UpdateUserTask updateUserTask = new ElasticsearchController.UpdateUserTask();
         updateUserTask.execute(this.currentUser);
+        if (instrument.getStatus().matches("borrowed")) {
+            User borrower = getUserById(instrument.getBorrowedById());
+            for (int i = 0; i < borrower.getBorrowedInstruments().size(); i++) {
+                if (borrower.getBorrowedInstruments().getInstrument(i).getId().matches(instrument.getId())) {
+                    borrower.getBorrowedInstruments().getInstrument(i).setName(name);
+                    borrower.getBorrowedInstruments().getInstrument(i).setDescription(description);
+                    ElasticsearchController.UpdateUserTask updateUserTask1 = new ElasticsearchController.UpdateUserTask();
+                    updateUserTask1.execute(borrower);
+                }
+            }
+        }
     }
 
     /**
@@ -472,6 +483,17 @@ public class Controller extends Application {
         instrument.setDescription(description);
         ElasticsearchController.UpdateUserTask updateUserTask = new ElasticsearchController.UpdateUserTask();
         updateUserTask.execute(this.currentUser);
+        if (instrument.getStatus().matches("borrowed")) {
+            User borrower = getUserById(instrument.getBorrowedById());
+            for (int i = 0; i < borrower.getBorrowedInstruments().size(); i++) {
+                if (borrower.getBorrowedInstruments().getInstrument(i).getId().matches(instrument.getId())) {
+                    borrower.getBorrowedInstruments().getInstrument(i).setName(name);
+                    borrower.getBorrowedInstruments().getInstrument(i).setDescription(description);
+                    ElasticsearchController.UpdateUserTask updateUserTask1 = new ElasticsearchController.UpdateUserTask();
+                    updateUserTask1.execute(borrower);
+                }
+            }
+        }
     }
 
     /**
@@ -484,6 +506,28 @@ public class Controller extends Application {
         this.currentUser.deleteOwnedInstrument(instrument);
         ElasticsearchController.UpdateUserTask updateUserTask = new ElasticsearchController.UpdateUserTask();
         updateUserTask.execute(this.currentUser);
+        if (instrument.getStatus().matches("borrowed")) {
+            User borrower = getUserById(instrument.getBorrowedById());
+            for (int i = 0; i < borrower.getBorrowedInstruments().size(); i++) {
+                if (borrower.getBorrowedInstruments().getInstrument(i).getId().matches(instrument.getId())) {
+                    borrower.getBorrowedInstruments().removeInstrument(instrument.getId());
+                    ElasticsearchController.UpdateUserTask updateUserTask1 = new ElasticsearchController.UpdateUserTask();
+                    updateUserTask1.execute(borrower);
+                    break;
+                }
+            }
+        }
+        for (int i = 0; i < instrument.getBids().size(); i++) {
+            User bidder =  getUserById(instrument.getBids().getBid(i).getBidderId());
+            BidList bids = bidder.getBids();
+            for (int j = 0; j < bidder.getBids().size(); j++) {
+                if (bids.getBid(j).getInstrumentId().matches(instrument.getId())) {
+                    bidder.getBids().removeBid(j);
+                }
+            }
+            ElasticsearchController.UpdateUserTask updateUserTask2 = new ElasticsearchController.UpdateUserTask();
+            updateUserTask2.execute(bidder);
+        }
     }
 
     /**
@@ -499,6 +543,28 @@ public class Controller extends Application {
         this.currentUser.deleteOwnedInstrument(instrument);
         ElasticsearchController.UpdateUserTask updateUserTask = new ElasticsearchController.UpdateUserTask();
         updateUserTask.execute(this.currentUser);
+        if (instrument.getStatus().matches("borrowed")) {
+            User borrower = getUserById(instrument.getBorrowedById());
+            for (int i = 0; i < borrower.getBorrowedInstruments().size(); i++) {
+                if (borrower.getBorrowedInstruments().getInstrument(i).getId().matches(instrument.getId())) {
+                    borrower.getBorrowedInstruments().removeInstrument(instrument.getId());
+                    ElasticsearchController.UpdateUserTask updateUserTask1 = new ElasticsearchController.UpdateUserTask();
+                    updateUserTask1.execute(borrower);
+                    break;
+                }
+            }
+        }
+        for (int i = 0; i < instrument.getBids().size(); i++) {
+            User bidder =  getUserById(instrument.getBids().getBid(i).getBidderId());
+            BidList bids = bidder.getBids();
+            for (int j = 0; j < bidder.getBids().size(); j++) {
+                if (bids.getBid(j).getInstrumentId().matches(instrument.getId())) {
+                    bidder.getBids().removeBid(j);
+                }
+            }
+            ElasticsearchController.UpdateUserTask updateUserTask2 = new ElasticsearchController.UpdateUserTask();
+            updateUserTask2.execute(bidder);
+        }
     }
 
     /**
@@ -777,6 +843,17 @@ public class Controller extends Application {
         instrument.addThumbnail(photo);
         ElasticsearchController.UpdateUserTask updateUserTask = new ElasticsearchController.UpdateUserTask();
         updateUserTask.execute(this.currentUser);
+
+        if (instrument.getStatus().matches("borrowed")) {
+            User borrower = getUserById(instrument.getBorrowedById());
+            for (int i = 0; i < borrower.getBorrowedInstruments().size(); i++) {
+                if (borrower.getBorrowedInstruments().getInstrument(i).getId().matches(instrument.getId())) {
+                    borrower.getBorrowedInstruments().getInstrument(i).addThumbnail(photo);
+                    ElasticsearchController.UpdateUserTask updateUserTask1 = new ElasticsearchController.UpdateUserTask();
+                    updateUserTask1.execute(borrower);
+                }
+            }
+        }
     }
 
     /**
@@ -792,6 +869,17 @@ public class Controller extends Application {
         instrument.deleteThumbnail();
         ElasticsearchController.UpdateUserTask updateUserTask = new ElasticsearchController.UpdateUserTask();
         updateUserTask.execute(this.currentUser);
+
+        if (instrument.getStatus().matches("borrowed")) {
+            User borrower = getUserById(instrument.getBorrowedById());
+            for (int i = 0; i < borrower.getBorrowedInstruments().size(); i++) {
+                if (borrower.getBorrowedInstruments().getInstrument(i).getId().matches(instrument.getId())) {
+                    borrower.getBorrowedInstruments().getInstrument(i).deleteThumbnail();
+                    ElasticsearchController.UpdateUserTask updateUserTask1 = new ElasticsearchController.UpdateUserTask();
+                    updateUserTask1.execute(borrower);
+                }
+            }
+        }
     }
 
     /**
@@ -834,6 +922,17 @@ public class Controller extends Application {
         instrument.addSampleAudioBase64(string);
         ElasticsearchController.UpdateUserTask updateUserTask = new ElasticsearchController.UpdateUserTask();
         updateUserTask.execute(this.currentUser);
+
+        if (instrument.getStatus().matches("borrowed")) {
+            User borrower = getUserById(instrument.getBorrowedById());
+            for (int i = 0; i < borrower.getBorrowedInstruments().size(); i++) {
+                if (borrower.getBorrowedInstruments().getInstrument(i).getId().matches(instrument.getId())) {
+                    borrower.getBorrowedInstruments().getInstrument(i).addSampleAudioBase64(string);
+                    ElasticsearchController.UpdateUserTask updateUserTask1 = new ElasticsearchController.UpdateUserTask();
+                    updateUserTask1.execute(borrower);
+                }
+            }
+        }
     }
 
     public void clearAudioSampleFromInstrument(Instrument instrument) {
@@ -843,5 +942,16 @@ public class Controller extends Application {
         instrument.deleteSampleAudio();
         ElasticsearchController.UpdateUserTask updateUserTask = new ElasticsearchController.UpdateUserTask();
         updateUserTask.execute(this.currentUser);
+
+        if (instrument.getStatus().matches("borrowed")) {
+            User borrower = getUserById(instrument.getBorrowedById());
+            for (int i = 0; i < borrower.getBorrowedInstruments().size(); i++) {
+                if (borrower.getBorrowedInstruments().getInstrument(i).getId().matches(instrument.getId())) {
+                    borrower.getBorrowedInstruments().getInstrument(i).deleteSampleAudio();
+                    ElasticsearchController.UpdateUserTask updateUserTask1 = new ElasticsearchController.UpdateUserTask();
+                    updateUserTask1.execute(borrower);
+                }
+            }
+        }
     }
 }

@@ -21,6 +21,7 @@ public class ControllerTest extends ActivityInstrumentationTestCase2 {
     public ControllerTest() {
         super(Controller.class);
     }
+    // *************** TESTS SHOULD BE RUN ONE AT A TIME ********************
 
     // Use case: US 03.01.01 Profile with unique username and contact info
     public void testCreateUser() {
@@ -663,11 +664,19 @@ public class ControllerTest extends ActivityInstrumentationTestCase2 {
     public void testSetLocationForInstrument() {
         Controller controller = new Controller();
         controller.createUser("owner", "email");
+        controller.createUser("bidder", "email2");
         controller.login("owner");
         User user = controller.getCurrentUser();
         Instrument instrument = new Instrument(user.getId(), "name", "description");
         controller.addInstrument(instrument);
-        controller.setLocationForInstrument(instrument, new LatLng(10.0001, 12.9999));
+        controller.logout();
+        controller.login("bidder");
+        controller.makeBidOnInstrument(instrument, 5);
+        controller.logout();
+        controller.login("owner");
+        controller.acceptBidOnInstrument(controller.getCurrentUsersOwnedInstruments().getInstrument(0).getBids().getBid(0));
+        controller.getCurrentUsersOwnedInstruments().getInstrument(0).setStatus("borrowed");
+        controller.setLocationForInstrument(controller.getCurrentUsersOwnedInstruments().getInstrument(0), new LatLng(10.0001, 12.9999));
 
         ElasticsearchController.GetUserTask getUserTask = new ElasticsearchController.GetUserTask();
         getUserTask.execute(user.getId());
@@ -684,16 +693,26 @@ public class ControllerTest extends ActivityInstrumentationTestCase2 {
         assertEquals(u.getOwnedInstruments().getInstrument(0).getLongitude(), 12.9999);
         assertEquals(u.getOwnedInstruments().getInstrument(0).getLatitude(), 10.0001);
         controller.deleteUser();
+        controller.login("bidder");
+        controller.deleteUser();
     }
 
     public void testClearLocationForInstrument() {
         Controller controller = new Controller();
         controller.createUser("owner", "email");
+        controller.createUser("bidder", "email2");
         controller.login("owner");
         User user = controller.getCurrentUser();
         Instrument instrument = new Instrument(user.getId(), "name", "description");
         controller.addInstrument(instrument);
-        controller.setLocationForInstrument(instrument, new LatLng(10.0001, 12.9999));
+        controller.logout();
+        controller.login("bidder");
+        controller.makeBidOnInstrument(instrument, 5);
+        controller.logout();
+        controller.login("owner");
+        controller.acceptBidOnInstrument(controller.getCurrentUsersOwnedInstruments().getInstrument(0).getBids().getBid(0));
+        controller.getCurrentUsersOwnedInstruments().getInstrument(0).setStatus("borrowed");
+        controller.setLocationForInstrument(controller.getCurrentUsersOwnedInstruments().getInstrument(0), new LatLng(10.0001, 12.9999));
 
         ElasticsearchController.GetUserTask getUserTask = new ElasticsearchController.GetUserTask();
         getUserTask.execute(user.getId());
@@ -709,7 +728,7 @@ public class ControllerTest extends ActivityInstrumentationTestCase2 {
         assertEquals(u.getId(), user.getId());
         assertEquals(u.getOwnedInstruments().getInstrument(0).getLongitude(), 12.9999);
         assertEquals(u.getOwnedInstruments().getInstrument(0).getLatitude(), 10.0001);
-        controller.clearLocationForInstrument(instrument);
+        controller.clearLocationForInstrument(controller.getCurrentUsersOwnedInstruments().getInstrument(0));
         ElasticsearchController.GetUserTask getUserTask1 = new ElasticsearchController.GetUserTask();
         getUserTask1.execute(user.getId());
         users = null;
@@ -723,6 +742,8 @@ public class ControllerTest extends ActivityInstrumentationTestCase2 {
         u = new Deserializer().deserializeUser(users.get(0));
         assertEquals(u.getId(), user.getId());
         assertNull(u.getOwnedInstruments().getInstrument(0).getLocation());
+        controller.deleteUser();
+        controller.login("bidder");
         controller.deleteUser();
     }
 }
