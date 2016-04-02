@@ -6,6 +6,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Base64;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -52,9 +53,10 @@ public class ViewInstrumentActivity extends AppCompatActivity
 
         controller = (Controller) getApplicationContext();
 
+        Intent intent = getIntent();
+
         player = new MediaPlayer();
         isPlaying = false;
-        Intent intent = getIntent();
         bytes = null;
 
         if(!intent.hasExtra("view_code") || !intent.hasExtra("position"))
@@ -100,10 +102,22 @@ public class ViewInstrumentActivity extends AppCompatActivity
                 else{
                     message = "Waiting for return to be confirmed by owner";
                 }
+
                 ((TextView) findViewById(R.id.borrowedinstrumentview_borrowing_tv)).setText(message);
-                ((TextView) findViewById(R.id.borrowed_instrument_view_name_tv)).append(selected.getName());
-                ((TextView) findViewById(R.id.borrowed_instrument_view_owner_tv)).append(controller.getUserById(selected.getOwnerId()).getName());
-                ((TextView) findViewById(R.id.borrowed_instrument_view_description_tv)).append(selected.getDescription());
+
+                ((TextView) findViewById(R.id.borrowed_instrument_view_name_tv))
+                        .setText(selected.getName());
+
+                ((TextView) findViewById(R.id.borrowed_instrument_view_rate_tv))
+                        .setText(String.format("Rate: %.2f",
+                                selected.getBids().getBid(0).getBidAmount()));
+
+                ((TextView) findViewById(R.id.borrowed_instrument_view_owner_tv))
+                        .setText(String.format("Owner: %s",
+                                controller.getUserById(selected.getOwnerId()).getName()));
+
+                ((TextView) findViewById(R.id.borrowed_instrument_view_description_tv))
+                        .setText(String.format("Description: %s", selected.getDescription()));
 
                 if(selected.hasThumbnail())
                 {
@@ -197,7 +211,7 @@ public class ViewInstrumentActivity extends AppCompatActivity
         }
 
 
-      }
+    }
 
     public void makeBid(View view)
     {
@@ -240,7 +254,7 @@ public class ViewInstrumentActivity extends AppCompatActivity
                 controller.returnInstrument(selected);
                 String message = "Waiting for return to be confirmed by owner";
                 ((TextView) findViewById(R.id.borrowedinstrumentview_borrowing_tv)).setText(message);
-                }
+            }
             else{
                 Toast.makeText(getApplicationContext(), "pending owner approval!", Toast.LENGTH_SHORT).show();
             }

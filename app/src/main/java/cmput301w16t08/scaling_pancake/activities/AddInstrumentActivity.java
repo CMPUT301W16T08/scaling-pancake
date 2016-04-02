@@ -39,6 +39,8 @@ public class AddInstrumentActivity extends Activity
     private static Controller controller;
     private String audioBase64 = null;
 
+    private View dialogBox;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,7 +48,9 @@ public class AddInstrumentActivity extends Activity
 
         controller = (Controller) getApplicationContext();
 
-        findViewById(R.id.add_instrument_photo_dialog).bringToFront();
+        dialogBox = findViewById(R.id.add_instrument_photo_dialog_box);
+
+        dialogBox.bringToFront();
     }
 
     /**
@@ -57,8 +61,6 @@ public class AddInstrumentActivity extends Activity
      */
     public void launchPhotoDialog(View view)
     {
-        View dialogBox = findViewById(R.id.add_instrument_photo_dialog);
-
         /* Quickly fade in the dialog box */
         dialogBox.setAlpha(0f);
         dialogBox.setVisibility(View.VISIBLE);
@@ -75,24 +77,6 @@ public class AddInstrumentActivity extends Activity
                 .alpha(0.5f)
                 .setDuration(FADEDURATION)
                 .setListener(null);
-
-        /* These must not be clickable while the dialog is open */
-        findViewById(R.id.addInstrument_description_et).setFocusable(false);
-        findViewById(R.id.addInstrument_name_et).setFocusable(false);
-        findViewById(R.id.addInstrument_addPhoto_button).setClickable(false);
-        findViewById(R.id.addInstrument_confirm_button).setClickable(false);
-        findViewById(R.id.addInstrument_cancel_button).setClickable(false);
-        findViewById(R.id.addInstrument_addAudioSample_button).setClickable(false);
-
-        main.setClickable(true);
-        main.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View v)
-            {
-                hideDialogBox();
-            }
-        });
 
         /* Keep track of state */
         displayingDialogBox = true;
@@ -135,7 +119,7 @@ public class AddInstrumentActivity extends Activity
     {
         if(displayingDialogBox)
         {
-            hideDialogBox();
+            hideDialogBox(null);
         }
         else
         {
@@ -194,7 +178,7 @@ public class AddInstrumentActivity extends Activity
                 }
             }
         }
-        hideDialogBox();
+        hideDialogBox(null);
     }
 
     public void addAudioSample(View view) {
@@ -240,7 +224,7 @@ public class AddInstrumentActivity extends Activity
     /**
      * Close the dialog box.
      */
-    private void hideDialogBox()
+    public void hideDialogBox(View view)
     {
         View main = findViewById(R.id.add_instrument_main);
 
@@ -250,10 +234,6 @@ public class AddInstrumentActivity extends Activity
                 .setDuration(FADEDURATION)
                 .setListener(null);
 
-        main.setClickable(false);
-
-        View dialogBox = findViewById(R.id.add_instrument_photo_dialog);
-
         /* Fade out dialog box quickly */
         dialogBox.animate()
                 .alpha(0f)
@@ -261,16 +241,6 @@ public class AddInstrumentActivity extends Activity
                 .setListener(null);
 
         dialogBox.setVisibility(View.GONE);
-
-        /* Restore clickable fields */
-        findViewById(R.id.addInstrument_description_et).setFocusableInTouchMode(true);
-        findViewById(R.id.addInstrument_name_et).setFocusableInTouchMode(true);
-        findViewById(R.id.addInstrument_description_et).setFocusable(true);
-        findViewById(R.id.addInstrument_name_et).setFocusable(true);
-        findViewById(R.id.addInstrument_addPhoto_button).setClickable(true);
-        findViewById(R.id.addInstrument_confirm_button).setClickable(true);
-        findViewById(R.id.addInstrument_cancel_button).setClickable(true);
-        findViewById(R.id.addInstrument_addAudioSample_button).setClickable(true);
 
         /* Keep track of state */
         displayingDialogBox = false;
