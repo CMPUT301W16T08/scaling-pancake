@@ -178,7 +178,6 @@ public class ViewInstrumentActivity extends AppCompatActivity
                 {
                     setContentView(R.layout.owned_instrument_view);
                     ((TextView) findViewById(R.id.owned_instrument_view_name_tv)).setText(selected.getName());
-                    ((TextView) findViewById(R.id.searched_instrument_view_owner_tv)).setText("Owner: Me");
                     ((TextView) findViewById(R.id.owned_instrument_view_status_tv)).setText(String.format("Status: %s", selected.getStatus()));
                     ((TextView) findViewById(R.id.owned_instrument_view_description_tv)).setText(String.format("Description: %s", selected.getDescription()));
                 }
