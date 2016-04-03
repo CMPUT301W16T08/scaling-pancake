@@ -42,6 +42,8 @@ public class InstrumentListActivity extends ListActivity implements AdapterView.
     private final static int biddedInstrumentsListCode = 3;
     private final static int borrowedByOthersListCode = 4;
 
+    private final static String id_token = "instrument_id";
+
     private int currentSelection;
 
     /**
@@ -142,84 +144,83 @@ public class InstrumentListActivity extends ListActivity implements AdapterView.
         {
             case ownedInstrumentsListCode:
             {
-                viewOwnedInstrument(position);
+                String instrumentId = ((Instrument) ownedInstrumentAdapter.getItem(position)).getId();
+                viewOwnedInstrument(instrumentId);
                 break;
             }
             case borrowedInstrumentsListCode:
             {
-                viewBorrowedInstrument(position);
+                String instrumentId = ((Instrument) borrowedInstrumentAdapter.getItem(position)).getId();
+                viewBorrowedInstrument(instrumentId);
                 break;
             }
             case biddedInstrumentsListCode:
             {
-                viewMyBidsInstrument(position);
+                String instrumentId = ((Instrument) biddedInstrumentsAdapter.getItem(position)).getId();
+                viewMyBidsInstrument(instrumentId);
                 break;
             }
             case borrowedByOthersListCode:
             {
-                viewBorrowedByOthersInstrument(position);
+                String instrumentId = ((Instrument) lendedInstrumentsAdapter.getItem(position)).getId();
+                viewBorrowedByOthersInstrument(instrumentId);
                 break;
             }
         }
     }
 
-    public void viewOwnedInstrument(int position)
+    public void viewOwnedInstrument(String instrumentId)
     {
         Intent intent = new Intent(this, ViewInstrumentActivity.class);
 
         Instrument instrument = controller.getCurrentUsersOwnedInstruments()
-                .getInstrument(position);
+                .getInstrument(instrumentId);
         String status = instrument.getStatus();
 
         // If instrument is currently being lent out
         if (status.equals("borrowed")) {
             intent.putExtra("view_code", ViewInstrumentActivity.brwd_by_others_instrument_view_code);
-            intent.putExtra("position", position);
+            intent.putExtra(id_token, instrumentId);
         }
 
         // else : instrument is currently available or being bidded on:
         else {
             intent.putExtra("view_code", ViewInstrumentActivity.owned_instrument_view_code);
-            intent.putExtra("position", position);
+            intent.putExtra(id_token, instrumentId);
         }
 
 
         startActivity(intent);
     }
 
-    public void viewBorrowedInstrument(int position)
+    public void viewBorrowedInstrument(String instrumentId)
     {
         Intent intent = new Intent(this, ViewInstrumentActivity.class);
 
         intent.putExtra("view_code", ViewInstrumentActivity.borrowed_instrument_view_code);
-        intent.putExtra("position", position);
+        intent.putExtra(id_token, instrumentId);
 
         startActivity(intent);
     }
 
-    public void viewMyBidsInstrument(int position)
+    public void viewMyBidsInstrument(String instrumentId)
     {
         Intent intent = new Intent(this, ViewInstrumentActivity.class);
 
         intent.putExtra("view_code", ViewInstrumentActivity.mybids_instrument_view_code);
-        intent.putExtra("position", position);
+        intent.putExtra(id_token, instrumentId);
 
         startActivity(intent);
     }
 
-    public void viewBorrowedByOthersInstrument(int position)
+    public void viewBorrowedByOthersInstrument(String instrumentId)
     {
         Intent intent = new Intent(this, ViewInstrumentActivity.class);
 
         intent.putExtra("view_code", ViewInstrumentActivity.brwd_by_others_instrument_view_code);
-        intent.putExtra("position", position);
+        intent.putExtra(id_token, instrumentId);
 
         startActivity(intent);
-    }
-
-    public void viewBid(int position)
-    {
-
     }
 
     @Override

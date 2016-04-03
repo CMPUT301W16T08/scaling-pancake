@@ -40,6 +40,8 @@ public class ViewInstrumentActivity extends AppCompatActivity
     public final static int brwd_by_others_instrument_view_code = 4;
     public final static int searched_instrument_view_code = 5;
 
+    private final static String id_token = "instrument_id";
+
     private Instrument selected;
     private MediaPlayer player;
     private boolean isPlaying;
@@ -59,7 +61,7 @@ public class ViewInstrumentActivity extends AppCompatActivity
         isPlaying = false;
         bytes = null;
 
-        if(!intent.hasExtra("view_code") || !intent.hasExtra("position"))
+        if(!intent.hasExtra("view_code") || !intent.hasExtra(id_token))
         {
             throw new RuntimeException("ViewInstrumentActivity: Intent is lacking position or view code");
         }
@@ -71,12 +73,12 @@ public class ViewInstrumentActivity extends AppCompatActivity
         super.onResume();
         Intent intent = getIntent();
 
+        selected = controller.getInstrumentById(intent.getStringExtra(id_token));
+
         switch(intent.getIntExtra("view_code", 0))
         {
             case owned_instrument_view_code:
             {
-                selected = controller.getCurrentUsersOwnedInstruments()
-                        .getInstrument(intent.getIntExtra("position", 0));
                 setContentView(R.layout.owned_instrument_view);
 
                 ((TextView) findViewById(R.id.owned_instrument_view_name_tv)).append(selected.getName());
@@ -91,8 +93,6 @@ public class ViewInstrumentActivity extends AppCompatActivity
             }
             case borrowed_instrument_view_code:
             {
-                selected = controller.getCurrentUsersBorrowedInstruments()
-                        .getInstrument(intent.getIntExtra("position", 0));
                 setContentView(R.layout.borrowed_instrument_view);
                 String message;
 
@@ -127,8 +127,6 @@ public class ViewInstrumentActivity extends AppCompatActivity
             }
             case mybids_instrument_view_code:
             {
-                selected = controller.getCurrentUsersBiddedInstruments()
-                        .getInstrument(intent.getIntExtra("position", 0));
                 setContentView(R.layout.mybids_instrument_view);
 
                 Bid largest = selected.getLargestBid();
@@ -158,9 +156,6 @@ public class ViewInstrumentActivity extends AppCompatActivity
             {
                 setContentView(R.layout.brwd_by_others_instrument_view);
 
-                selected = controller.getCurrentUsersOwnedBorrowedInstruments()
-                        .getInstrument(intent.getIntExtra("position", 0));
-
                 ((TextView) findViewById(R.id.brwd_by_others_instrument_view_name_tv)).append(selected.getName());
                 ((TextView) findViewById(R.id.brwd_by_others_instrument_view_borrower_tv))
                         .append(controller.getUserById(selected.getBorrowedById()).getName());
@@ -180,8 +175,7 @@ public class ViewInstrumentActivity extends AppCompatActivity
                 {
                     throw new RuntimeException("ViewInstrumentActivity: Missing instrument id for searched instrument");
                 }
-                selected = controller.getInstrumentById(intent.getStringExtra("instrument_id"));
-
+                
                 if(selected.getOwnerId().matches(controller.getCurrentUser().getId()))
                 {
                     setContentView(R.layout.owned_instrument_view);
