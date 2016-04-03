@@ -19,13 +19,14 @@
         android:paddingRight="@dimen/activity_horizontal_margin"
         android:paddingTop="@dimen/activity_vertical_margin"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        tools:context="cmput301w16t08.scaling_pancake.activities.ViewInstrumentActivity">
+        tools:context="cmput301w16t08.scaling_pancake.activities.ViewInstrumentActivity"
+        android:focusableInTouchMode="true">
 
         <Button
             android:id="@+id/mybidsinstrumentview_back_button"
+            android:onClick="back"
             android:layout_width="match_parent"
             android:layout_height="36sp"
-            android:onClick="back"
             android:text="@string/back"
             android:textColor="#000000"
             android:layout_marginTop="2dp"
@@ -39,12 +40,29 @@
             android:orientation="vertical"
             android:layout_alignParentBottom="true">
 
+            <TextView
+                android:id="@+id/mybids_instrument_view_bidamount_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                android:text="@string/new_bid_amount"
+                android:textSize="16sp"
+                android:textColor="@color/black"/>
+
+            <EditText
+                android:id="@+id/mybids_instrument_view_bidamount_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"/>
+
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="36sp"
                 android:layout_marginTop="2dp"
                 android:layout_marginBottom="2dp"
                 android:text="@string/bid_again"
+                android:onClick="bidAgain"
                 android:background="@drawable/btn_selector"/>
 
         </LinearLayout>

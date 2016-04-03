@@ -145,6 +145,8 @@ public class ViewInstrumentActivity extends AppCompatActivity
                 {
                     ((ImageView) findViewById(R.id.mybids_instrument_view_thumbnail_iv)).setImageBitmap(selected.getThumbnail());
                 }
+
+
                 break;
             }
             case brwd_by_others_instrument_view_code:
@@ -233,6 +235,21 @@ public class ViewInstrumentActivity extends AppCompatActivity
         controller.makeBidOnInstrument(selected, bidAmount);
         Toast.makeText(controller, "Bid Received!", Toast.LENGTH_SHORT).show();
         finish();
+    }
+
+    public void bidAgain(View view)
+    {
+        if(((EditText) findViewById(R.id.mybids_instrument_view_bidamount_et)).getText().toString().matches(""))
+        {
+            Toast.makeText(controller, "Please Enter a Bid Amount", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        float bidAmount = Float.parseFloat(((EditText) findViewById(R.id.mybids_instrument_view_bidamount_et)).getText().toString());
+        controller.makeBidOnInstrument(selected, bidAmount);
+        Toast.makeText(controller, "Bid Received!", Toast.LENGTH_SHORT).show();
+        finish();
+
     }
 
     public void edit(View view)

@@ -118,5 +118,5 @@ public class Bid {
         return id;
     }
 
-    
+
 }
