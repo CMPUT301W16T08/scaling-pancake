@@ -20,7 +20,7 @@ import cmput301w16t08.scaling_pancake.R;
  * @author dan
  * @see Instrument
  */
-public class OwnedInstrumentAdapter extends ArrayAdapter
+public class    OwnedInstrumentAdapter extends ArrayAdapter
 {
 
     public OwnedInstrumentAdapter(Context context, InstrumentList instrumentList)
