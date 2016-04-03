@@ -44,6 +44,7 @@
     <string name="play_sample">Play Sample</string>
     <string name="make_bid">Make Bid</string>
     <string name="bid_again">Bid Again</string>
+    <string name="new_bid_amount">New bid amount:</string>
     <string name="view_bids">View Bids</string>
     <string name="highest_bid">Current Max Bid: </string>
     <string name="delete">Delete</string>
