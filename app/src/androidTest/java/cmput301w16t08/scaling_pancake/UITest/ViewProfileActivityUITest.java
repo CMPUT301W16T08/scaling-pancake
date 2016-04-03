@@ -1,10 +1,11 @@
-package cmput301w16t08.scaling_pancake;
+package cmput301w16t08.scaling_pancake.UITest;
 
 import android.test.ActivityInstrumentationTestCase2;
 import android.widget.TextView;
 
 import com.robotium.solo.Solo;
 
+import cmput301w16t08.scaling_pancake.R;
 import cmput301w16t08.scaling_pancake.activities.EditProfileActivity;
 import cmput301w16t08.scaling_pancake.activities.MenuActivity;
 import cmput301w16t08.scaling_pancake.controllers.Controller;
@@ -35,16 +36,9 @@ public class ViewProfileActivityUITest extends ActivityInstrumentationTestCase2 
     @Override
     public void tearDown() throws Exception{
         Controller controller = (Controller) getActivity().getApplicationContext();
-        controller.deleteUser();
+        controller.deleteUserById(controller.getUserByName("admin").getId());
 
         solo.finishOpenedActivities();
-    }
-    // login as admin
-    public void login(){
-        Controller controller = (Controller) getActivity().getApplicationContext();
-
-        controller.createUser("admin", "admin@test.com");
-        controller.login("admin");
     }
 
     /* test edit button */
@@ -71,8 +65,8 @@ public class ViewProfileActivityUITest extends ActivityInstrumentationTestCase2 
 
 
 
-    public void testMenuButton(){
-        solo.clickOnView(solo.getView(R.id.view_profile_back_button));
+    public void testBackButton(){
+        solo.clickOnButton(solo.getString(R.string.back));
 
         // make sure the activity is finished
         solo.assertCurrentActivity("did not go back to menu", MenuActivity.class);

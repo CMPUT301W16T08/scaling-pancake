@@ -75,31 +75,34 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <LinearLayout
-                android:orientation="vertical"
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <TextView
                     android:id="@+id/searched_instrument_view_name_tv"
+                    android:layout_alignParentTop="true"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="2dp"
                     android:layout_marginBottom="2dp"
                     android:textSize="36sp"
                     android:textColor="@color/black"
-                    android:textAlignment="center"
                     android:background="@drawable/grey_rounded_border"/>
 
                 <ImageView
+                    android:id="@+id/searched_instrument_view_thumbnail_iv"
+                    android:layout_below="@id/searched_instrument_view_name_tv"
                     android:layout_width="wrap_content"
                     android:layout_height="100dp"
                     android:layout_marginTop="2dp"
                     android:layout_marginBottom="2dp"
-                    android:src="@drawable/mothra"/>
+                    android:layout_centerHorizontal="true"
+                    android:src="@android:drawable/ic_menu_camera"/>
 
                 <TextView
                     android:id="@+id/searched_instrument_view_owner_tv"
+                    android:layout_below="@id/searched_instrument_view_thumbnail_iv"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
@@ -112,6 +115,7 @@
 
                 <TextView
                     android:id="@+id/searched_instrument_view_status_tv"
+                    android:layout_below="@id/searched_instrument_view_owner_tv"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
@@ -121,6 +125,8 @@
                     android:textSize="24sp"/>
 
                 <LinearLayout
+                    android:id="@+id/searched_instrument_view_player_shell"
+                    android:layout_below="@id/searched_instrument_view_status_tv"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
@@ -128,10 +134,12 @@
                     android:orientation="horizontal">
 
                     <ImageButton
+                        android:id="@+id/play_sample_button"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:contentDescription="Play the sample sound"
-                        android:src="@android:drawable/ic_media_play"/>
+                        android:src="@android:drawable/ic_media_play"
+                        android:onClick="onPlayButtonClick"/>
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -143,6 +151,7 @@
 
                 <TextView
                     android:id="@+id/searched_instrument_view_description_tv"
+                    android:layout_below="@id/searched_instrument_view_player_shell"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
@@ -153,7 +162,7 @@
                     android:textColor="@color/black"
                     android:layout_gravity="start"/>
 
-            </LinearLayout>
+            </RelativeLayout>
 
         </ScrollView>
 

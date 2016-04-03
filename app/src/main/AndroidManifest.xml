@@ -3,6 +3,16 @@
           xmlns:android="http://schemas.android.com/apk/res/android">
 
     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true"/>
+
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
 
     <application
         android:name=".controllers.Controller"
@@ -11,6 +21,13 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/MyTheme">
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyAuOeAoRYlWG4EoYgg3DOziv_-aZMPy0C8"/>
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version"/>
+
         <activity
             android:name=".activities.MainActivity"
             android:label="@string/app_name"
@@ -70,13 +87,28 @@
             android:theme="@style/MyTheme">
         </activity>
         <activity
-            android:name=".activities.ViewBidsActivity"
+            android:name=".activities.BidListActivity"
             android:label="@string/title_activity_view_bids"
+            android:theme="@style/MyTheme">
+        </activity>
+        <activity
+            android:name=".activities.ViewLocationActivity"
+            android:label="@string/title_activity_view_location"
+            android:theme="@style/MyTheme">
+        </activity>
+        <activity
+            android:name=".activities.RecordAudioActivity"
+            android:label="@string/title_activity_record_audio"
             android:theme="@style/MyTheme">
         </activity>
         <activity
             android:name=".activities.EditInstrumentActivity"
             android:label="@string/title_activity_edit_instrument"
+            android:theme="@style/MyTheme">
+        </activity>
+        <activity
+            android:name=".activities.ViewBidActivity"
+            android:label="@string/title_activity_view_bid"
             android:theme="@style/MyTheme">
         </activity>
     </application>

@@ -117,7 +117,7 @@ public class User {
     public InstrumentList getOwnedBorrowedInstruments() {
         InstrumentList list = new InstrumentList();
         for (int i = 0; i < this.getOwnedInstruments().size(); i++) {
-            if (this.getOwnedInstruments().getInstrument(i).getStatus().equals("borrowed")) {
+            if (this.getOwnedInstruments().getInstrument(i).getStatus().matches("borrowed")) {
                 list.addInstrument(this.getOwnedInstruments().getInstrument(i));
             }
         }
@@ -306,6 +306,11 @@ public class User {
         this.newBidFlag = b;
     }
 
+    /**
+     * Returns a string representation of the name and id of the <code>User</code>
+     *
+     * @return the string
+     */
     public String toString(){
         return "Username: " + this.name + " id: " +this.id;
     }

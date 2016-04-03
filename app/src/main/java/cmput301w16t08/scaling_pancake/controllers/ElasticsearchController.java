@@ -34,7 +34,7 @@ import io.searchbox.core.SearchResult;
 public class ElasticsearchController {
     private static JestDroidClient client;
     private static String url = "http://cmput301.softwareprocess.es:8080";
-    private static String index = "cmput301w16t08number2";
+    private static String index = "cmput301w16t08";
 
     /**
      * <code>CreateUserTask</code> is used to save a new <code>User</code>
@@ -218,7 +218,8 @@ public class ElasticsearchController {
                 if (result.isSucceeded()) {
                     Log.d("ESC", "UpdateUserTask completed.");
                 } else {
-                    throw new RuntimeException("UpdateUserTask not completed");
+                    throw new RuntimeException(result.getErrorMessage());
+//                    throw new RuntimeException("UpdateUserTask not completed");
                 }
             } catch (IOException e) {
                 e.printStackTrace();
@@ -298,7 +299,7 @@ public class ElasticsearchController {
             for (int i = 0; i < returnedStrings.size(); i++) {
                 User user = new Deserializer().deserializeUser(returnedStrings.get(i));
                 for (int j = 0; j < user.getOwnedInstruments().size(); j++) {
-                    if (user.getOwnedInstruments().getInstrument(j).getStatus().equals("borrowed")) {
+                    if (user.getOwnedInstruments().getInstrument(j).getStatus().matches("borrowed")) {
                         continue;
                     }
                     String string1 = strings[0].toLowerCase();
@@ -321,6 +322,9 @@ public class ElasticsearchController {
         }
     }
 
+    /**
+     * Initializes the client for Elasticsearch
+     */
     public static void verifyClient() {
         if (client == null) {
             DroidClientConfig.Builder builder = new DroidClientConfig.Builder(url);

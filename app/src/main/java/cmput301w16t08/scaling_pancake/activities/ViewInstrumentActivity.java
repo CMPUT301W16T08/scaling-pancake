@@ -1,17 +1,20 @@
 package cmput301w16t08.scaling_pancake.activities;
 
-import android.content.Context;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.text.InputFilter;
-import android.text.TextUtils;
-import android.util.Log;
+import android.util.Base64;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
 
 import cmput301w16t08.scaling_pancake.R;
 import cmput301w16t08.scaling_pancake.controllers.Controller;
@@ -35,7 +38,11 @@ public class ViewInstrumentActivity extends AppCompatActivity
     public final static int brwd_by_others_instrument_view_code = 4;
     public final static int searched_instrument_view_code = 5;
 
+    private final static String id_token = "instrument_id";
+
     private Instrument selected;
+    private MediaPlayer player;
+    private byte [] bytes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -46,7 +53,7 @@ public class ViewInstrumentActivity extends AppCompatActivity
 
         Intent intent = getIntent();
 
-        if(!intent.hasExtra("view_code") || !intent.hasExtra("position"))
+        if(!intent.hasExtra("view_code") || !intent.hasExtra(id_token))
         {
             throw new RuntimeException("ViewInstrumentActivity: Intent is lacking position or view code");
         }
@@ -54,27 +61,32 @@ public class ViewInstrumentActivity extends AppCompatActivity
     }
 
     @Override
-    protected void onStart(){
-        super.onStart();
+    protected void onResume(){
+        super.onResume();
         Intent intent = getIntent();
+
+        player = new MediaPlayer();
+        bytes = null;
+        selected = controller.getInstrumentById(intent.getStringExtra(id_token));
 
         switch(intent.getIntExtra("view_code", 0))
         {
             case owned_instrument_view_code:
             {
-                selected = controller.getCurrentUsersOwnedInstruments()
-                        .getInstrument(intent.getIntExtra("position", 0));
                 setContentView(R.layout.owned_instrument_view);
 
                 ((TextView) findViewById(R.id.owned_instrument_view_name_tv)).append(selected.getName());
                 ((TextView) findViewById(R.id.owned_instrument_view_status_tv)).append(selected.getStatus());
                 ((TextView) findViewById(R.id.owned_instrument_view_description_tv)).append(selected.getDescription());
+
+                if(selected.hasThumbnail())
+                {
+                    ((ImageView) findViewById(R.id.owned_instrument_view_thumbnail_iv)).setImageBitmap(selected.getThumbnail());
+                }
                 break;
             }
             case borrowed_instrument_view_code:
             {
-                selected = controller.getCurrentUsersBorrowedInstruments()
-                        .getInstrument(intent.getIntExtra("position", 0));
                 setContentView(R.layout.borrowed_instrument_view);
                 String message;
 
@@ -84,16 +96,31 @@ public class ViewInstrumentActivity extends AppCompatActivity
                 else{
                     message = "Waiting for return to be confirmed by owner";
                 }
+
                 ((TextView) findViewById(R.id.borrowedinstrumentview_borrowing_tv)).setText(message);
-                ((TextView) findViewById(R.id.borrowed_instrument_view_name_tv)).append(selected.getName());
-                ((TextView) findViewById(R.id.borrowed_instrument_view_owner_tv)).append(controller.getUserById(selected.getOwnerId()).getName());
-                ((TextView) findViewById(R.id.borrowed_instrument_view_description_tv)).append(selected.getDescription());
+
+                ((TextView) findViewById(R.id.borrowed_instrument_view_name_tv))
+                        .setText(selected.getName());
+
+                ((TextView) findViewById(R.id.borrowed_instrument_view_rate_tv))
+                        .setText(String.format("Rate: %.2f",
+                                selected.getBids().getBid(0).getBidAmount()));
+
+                ((TextView) findViewById(R.id.borrowed_instrument_view_owner_tv))
+                        .setText(String.format("Owner: %s",
+                                controller.getUserById(selected.getOwnerId()).getName()));
+
+                ((TextView) findViewById(R.id.borrowed_instrument_view_description_tv))
+                        .setText(String.format("Description: %s", selected.getDescription()));
+
+                if(selected.hasThumbnail())
+                {
+                    ((ImageView) findViewById(R.id.borrowed_instrument_view_thumbnail_iv)).setImageBitmap(selected.getThumbnail());
+                }
                 break;
             }
             case mybids_instrument_view_code:
             {
-                selected = controller.getCurrentUsersBiddedInstruments()
-                        .getInstrument(intent.getIntExtra("position", 0));
                 setContentView(R.layout.mybids_instrument_view);
 
                 Bid largest = selected.getLargestBid();
@@ -112,14 +139,16 @@ public class ViewInstrumentActivity extends AppCompatActivity
                 ((TextView) findViewById(R.id.mybids_instrument_view_owner_tv)).append(controller.getUserById(selected.getOwnerId()).getName());
                 ((TextView) findViewById(R.id.mybids_instrument_view_maxbid_tv)).append(bidData);
                 ((TextView) findViewById(R.id.mybids_instrument_view_description_tv)).append(selected.getDescription());
+
+                if(selected.hasThumbnail())
+                {
+                    ((ImageView) findViewById(R.id.mybids_instrument_view_thumbnail_iv)).setImageBitmap(selected.getThumbnail());
+                }
                 break;
             }
             case brwd_by_others_instrument_view_code:
             {
                 setContentView(R.layout.brwd_by_others_instrument_view);
-
-                selected = controller.getCurrentUsersOwnedBorrowedInstruments()
-                        .getInstrument(intent.getIntExtra("position", 0));
 
                 ((TextView) findViewById(R.id.brwd_by_others_instrument_view_name_tv)).append(selected.getName());
                 ((TextView) findViewById(R.id.brwd_by_others_instrument_view_borrower_tv))
@@ -127,6 +156,11 @@ public class ViewInstrumentActivity extends AppCompatActivity
                 ((TextView) findViewById(R.id.brwd_by_others_instrument_view_rate_tv))
                         .append(String.format("%.2f/hr", selected.getBids().getBid(0).getBidAmount()));
                 ((TextView) findViewById(R.id.brwd_by_others_instrument_view_description_tv)).append(selected.getDescription());
+
+                if(selected.hasThumbnail())
+                {
+                    ((ImageView) findViewById(R.id.brwd_by_others_instrument_view_thumbnail_iv)).setImageBitmap(selected.getThumbnail());
+                }
                 break;
             }
             case searched_instrument_view_code:
@@ -135,7 +169,6 @@ public class ViewInstrumentActivity extends AppCompatActivity
                 {
                     throw new RuntimeException("ViewInstrumentActivity: Missing instrument id for searched instrument");
                 }
-                selected = controller.getInstrumentById(intent.getStringExtra("instrument_id"));
 
                 if(selected.getOwnerId().matches(controller.getCurrentUser().getId()))
                 {
@@ -152,6 +185,11 @@ public class ViewInstrumentActivity extends AppCompatActivity
                     ((TextView) findViewById(R.id.searched_instrument_view_status_tv)).append(selected.getStatus());
                     ((TextView) findViewById(R.id.searched_instrument_view_description_tv)).append(selected.getDescription());
                 }
+
+                if(selected.hasThumbnail())
+                {
+                    ((ImageView) findViewById(R.id.searched_instrument_view_thumbnail_iv)).setImageBitmap(selected.getThumbnail());
+                }
                 break;
             }
             default:
@@ -159,9 +197,19 @@ public class ViewInstrumentActivity extends AppCompatActivity
                 throw new RuntimeException("Invalid view code in ViewInstrumentActivity");
             }
         }
+    }
 
+    @Override
+    protected void onPause() {
+        super.onPause();
+        player.release();
+    }
 
-      }
+    @Override
+    protected void onStop() {
+        super.onStop();
+        player.release();
+    }
 
     public void makeBid(View view)
     {
@@ -181,13 +229,21 @@ public class ViewInstrumentActivity extends AppCompatActivity
     {
         Intent intent = new Intent(this, EditInstrumentActivity.class);
         intent.putExtra("instrument_id", selected.getId());
+        finish();
         startActivity(intent);
     }
 
     public void viewBids(View view)
     {
-        Intent intent = new Intent(this, ViewBidsActivity.class);
+        Intent intent = new Intent(this, BidListActivity.class);
         intent.putExtra("instrument_id", selected.getId());
+        startActivity(intent);
+    }
+
+    public void viewLocation(View view) {
+        Intent intent = new Intent(this, ViewLocationActivity.class);
+        intent.putExtra("latitude", selected.getLatitude());
+        intent.putExtra("longitude", selected.getLongitude());
         startActivity(intent);
     }
 
@@ -197,7 +253,7 @@ public class ViewInstrumentActivity extends AppCompatActivity
                 controller.returnInstrument(selected);
                 String message = "Waiting for return to be confirmed by owner";
                 ((TextView) findViewById(R.id.borrowedinstrumentview_borrowing_tv)).setText(message);
-                }
+            }
             else{
                 Toast.makeText(getApplicationContext(), "pending owner approval!", Toast.LENGTH_SHORT).show();
             }
@@ -210,6 +266,29 @@ public class ViewInstrumentActivity extends AppCompatActivity
         selected.setReturnedFlag(true);
     }
 
+    public void onPlayButtonClick(View view) {
+        player.reset();
+        if (bytes == null) {
+            bytes = Base64.decode(selected.getSampleAudioBase64(), 0);
+        }
+        if (bytes.length == 0) {
+            Toast.makeText(getApplicationContext(), "No audio sample", Toast.LENGTH_SHORT).show();
+        } else {
+            try {
+                File file = File.createTempFile("tempFile", "tmp", null);
+                file.deleteOnExit();
+                FileOutputStream stream = new FileOutputStream(file);
+                stream.write(bytes);
+                stream.close();
+                FileInputStream stream2 = new FileInputStream(file);
+                player.setDataSource(stream2.getFD());
+                player.prepare();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            player.start();
+        }
+    }
     /**
      * returnedFlag for the instrument 'selected' should be true upon entering this method
      *      and will be false upon exit.
@@ -253,5 +332,4 @@ public class ViewInstrumentActivity extends AppCompatActivity
     {
         finish();
     }
-
 }

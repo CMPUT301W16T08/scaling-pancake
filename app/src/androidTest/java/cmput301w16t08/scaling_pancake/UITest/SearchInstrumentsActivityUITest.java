@@ -1,4 +1,4 @@
-package cmput301w16t08.scaling_pancake;
+package cmput301w16t08.scaling_pancake.UITest;
 
 import android.test.ActivityInstrumentationTestCase2;
 import android.test.UiThreadTest;
@@ -7,6 +7,7 @@ import android.widget.EditText;
 
 import com.robotium.solo.Solo;
 
+import cmput301w16t08.scaling_pancake.R;
 import cmput301w16t08.scaling_pancake.activities.DisplaySearchResultsActivity;
 import cmput301w16t08.scaling_pancake.activities.SearchInstrumentsActivity;
 
@@ -34,17 +35,15 @@ public class SearchInstrumentsActivityUITest extends ActivityInstrumentationTest
     public void testSearchButton(){
         /* search without keywords */
         // click on search button
-        solo.clickOnButton("SEARCH");
+        solo.clickOnView(solo.getView(R.id.search_instrument_search_button));
         // test if we are in next activity
-        solo.assertCurrentActivity("did not change acitivity", DisplaySearchResultsActivity.class);
+        solo.assertCurrentActivity("should not go to next activity", SearchInstrumentsActivity.class);
 
         /* search with keywords */
-        // go back to search activity
-        solo.clickOnButton("Back");
         //write in edit text
         solo.enterText((EditText) solo.getView(R.id.search_instrument_et), "apple");
         //click search button
-        solo.clickOnButton("SEARCH");
+        solo.clickOnView(solo.getView(R.id.search_instrument_search_button));
         // test if we are in next activity
         solo.assertCurrentActivity("did not change acitivity", DisplaySearchResultsActivity.class);
     }

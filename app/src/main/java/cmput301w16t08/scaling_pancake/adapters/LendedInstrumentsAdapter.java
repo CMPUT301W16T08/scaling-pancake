@@ -4,6 +4,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import cmput301w16t08.scaling_pancake.R;
@@ -35,13 +36,21 @@ public class LendedInstrumentsAdapter extends ArrayAdapter
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.lended_instrument_list_item, parent, false);
         }
 
+        ImageView thumbnail = (ImageView) convertView.findViewById(R.id.lended_instrument_list_item_thumbnail_iv);
         TextView name = (TextView) convertView.findViewById(R.id.lended_instrument_list_item_name_tv);
+        TextView description = (TextView) convertView.findViewById(R.id.lended_instrument_list_item_description_tv);
         TextView borrower = (TextView) convertView.findViewById(R.id.lended_instrument_list_item_borrower_tv);
         TextView rate = (TextView) convertView.findViewById(R.id.lended_instrument_list_item_rate_tv);
 
-        name.append(lendedInstrument.getName());
-        borrower.append(controller.getUserById(lendedInstrument.getBorrowedById()).getName());
-        rate.append(String.format("%.2f/hr", lendedInstrument.getBids().getBid(0).getBidAmount()));
+        if(lendedInstrument.hasThumbnail())
+        {
+            thumbnail.setImageBitmap(lendedInstrument.getThumbnail());
+        }
+
+        name.setText(lendedInstrument.getName());
+        description.setText(lendedInstrument.getDescription());
+        borrower.setText(String.format("Borrower: %s" ,controller.getUserById(lendedInstrument.getBorrowedById()).getName()));
+        rate.setText(String.format("%.2f/hr", lendedInstrument.getBids().getBid(0).getBidAmount()));
 
         return convertView;
     }

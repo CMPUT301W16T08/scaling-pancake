@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
             menu(view);
         } else {
             // if username does not exist
-            Toast.makeText(MainActivity.this, "wrong username", Toast.LENGTH_LONG).show();
+            Toast.makeText(MainActivity.this, "Invalid Username", Toast.LENGTH_LONG).show();
         }
     }
 
@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
      */
     public void menu(View view){
         Intent intent = new Intent(this, MenuActivity.class);
-
+        finish();
         startActivity(intent);
     }
 
@@ -95,8 +95,8 @@ public class MainActivity extends AppCompatActivity {
                 {
                     /* New user was created; start MenuActivity immediately */
                     Intent intent = new Intent(this, MenuActivity.class);
+                    finish();
                     startActivity(intent);
-
                 }
             }
         }

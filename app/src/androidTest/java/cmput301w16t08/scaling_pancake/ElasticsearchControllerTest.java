@@ -20,6 +20,7 @@ public class ElasticsearchControllerTest extends ActivityInstrumentationTestCase
     public ElasticsearchControllerTest() {
         super(ElasticsearchController.class);
     }
+    // *************** TESTS SHOULD BE RUN ONE AT A TIME ********************
 
     // test also covers GetUserTask() and GetUserByNameTask()
     public void testCreateUserTask() {
