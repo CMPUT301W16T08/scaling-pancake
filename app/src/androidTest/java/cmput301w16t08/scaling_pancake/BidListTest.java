@@ -26,7 +26,6 @@ public class BidListTest extends ActivityInstrumentationTestCase2 {
         assertEquals(bidList.size(),1);
     }
 
-
     public void testContainsBid() {
         BidList bidList = new BidList();
         Bid bid1 = new Bid("instrument1","onwer1","bidder1",10,"id1");
@@ -67,6 +66,7 @@ public class BidListTest extends ActivityInstrumentationTestCase2 {
         assertFalse(bidList.containsBid(bid1));
     }
 
+    // Use case: US 05.05.01 view bid on instrument
     public void testGetBid() {
         BidList bidList = new BidList();
         Bid bid1 = new Bid("instrument1","onwer1","bidder1",10,"id1");
@@ -75,7 +75,6 @@ public class BidListTest extends ActivityInstrumentationTestCase2 {
         assertEquals(bid1, bidList.getBid(0));
         assertEquals(bid1,bidList.getBid("id1"));
     }
-
 
     public void testGetArray() {
         ArrayList<Bid> arrayList = new ArrayList<Bid>();
@@ -96,7 +95,6 @@ public class BidListTest extends ActivityInstrumentationTestCase2 {
 
         assertTrue(bidList.getArray().isEmpty());
     }
-
 
     public void testGetMaxBid() {
         BidList bidList = new BidList();

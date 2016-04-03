@@ -561,6 +561,7 @@ public class ControllerTest extends ActivityInstrumentationTestCase2 {
         controller.deleteUser();
     }
 
+    // Use case: US 07.01.01 Set status available when returned
     public void testAcceptReturnedInstrument() {
         Controller controller = new Controller();
         controller.createUser("owner", "email1");
@@ -592,6 +593,7 @@ public class ControllerTest extends ActivityInstrumentationTestCase2 {
         controller.deleteUser();
     }
 
+    // Use case: US 09.01.01 Add photo to instrument
     public void testAddPhotoToInstrument() {
         Controller controller = new Controller();
         controller.createUser("owner", "email");
@@ -618,6 +620,7 @@ public class ControllerTest extends ActivityInstrumentationTestCase2 {
         controller.deleteUser();
     }
 
+    // Use case: US 09.02.01 Delete photo from instrument
     public void testDeletePhotoFromInstrument() {
         Controller controller = new Controller();
         controller.createUser("owner", "email");
@@ -661,6 +664,7 @@ public class ControllerTest extends ActivityInstrumentationTestCase2 {
         controller.deleteUser();
     }
 
+    // Use case: US 10.01.01 Set pick up location
     public void testSetLocationForInstrument() {
         Controller controller = new Controller();
         controller.createUser("owner", "email");
