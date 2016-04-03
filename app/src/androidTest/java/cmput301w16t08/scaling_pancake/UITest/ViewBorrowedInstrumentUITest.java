@@ -9,6 +9,7 @@ import cmput301w16t08.scaling_pancake.R;
 import cmput301w16t08.scaling_pancake.activities.InstrumentListActivity;
 import cmput301w16t08.scaling_pancake.activities.MenuActivity;
 import cmput301w16t08.scaling_pancake.activities.ViewInstrumentActivity;
+import cmput301w16t08.scaling_pancake.activities.ViewLocationActivity;
 import cmput301w16t08.scaling_pancake.controllers.Controller;
 import cmput301w16t08.scaling_pancake.models.Instrument;
 import cmput301w16t08.scaling_pancake.models.User;
@@ -101,6 +102,7 @@ public class ViewBorrowedInstrumentUITest extends ActivityInstrumentationTestCas
         moveToActivity();
 
         solo.clickOnButton("Pick Up Location");
+        solo.assertCurrentActivity("should have go to view location activity", ViewLocationActivity.class);
     }
     //TODO: test photo I don't know how to test if a photo is the one we desired
     //TODO: test play sample button: I don't know how to test if a sound is the sound we want to hear

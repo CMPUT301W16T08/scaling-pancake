@@ -9,6 +9,7 @@ import com.robotium.solo.Solo;
 
 import cmput301w16t08.scaling_pancake.R;
 import cmput301w16t08.scaling_pancake.activities.AddInstrumentActivity;
+import cmput301w16t08.scaling_pancake.activities.RecordAudioActivity;
 import cmput301w16t08.scaling_pancake.controllers.Controller;
 
 /**
@@ -48,8 +49,9 @@ public class AddInstrumentActivityUITest extends ActivityInstrumentationTestCase
     }
 
 
+    /* test confirm button */
     @UiThreadTest
-    public void testAddInstrument(){
+    public void testConfirmButton(){
         Controller controller = (Controller) getActivity().getApplicationContext();
         int oldSize = controller.getCurrentUsersOwnedInstruments().size();
 
@@ -81,11 +83,26 @@ public class AddInstrumentActivityUITest extends ActivityInstrumentationTestCase
         assertEquals(controller.getCurrentUsersOwnedInstruments().size(), oldSize + 1);
     }
 
+    /* test cancel */
     @UiThreadTest
     public void testCancel(){
         ((Button) getActivity().findViewById(R.id.addInstrument_cancel_button)).performClick();
         assertTrue(getActivity().isFinishing());
     }
 
-    //TODO: add photo test
+    /* test add photo button */
+    public void testPhotoButton(){
+        solo.clickOnButton(solo.getString(R.string.add_photo));
+
+        // click on camera
+        solo.clickOnImageButton(1);
+        //TODO: don't know how to test this, because we are still in the AddInstrumentActivity in the background
+
+    }
+
+    /* test add audio button */
+    public void testAudioButton(){
+        solo.clickOnButton(solo.getString(R.string.add_audio_sample));
+        solo.assertCurrentActivity("should have go to audio activity", RecordAudioActivity.class);
+    }
 }
