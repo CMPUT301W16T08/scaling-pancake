@@ -49,8 +49,6 @@ public class MenuActivity extends AppCompatActivity {
         }
     }
 
-
-
 //    protected Bid getUnseenBid(){
 //        User user = controller.getCurrentUser();
 //
