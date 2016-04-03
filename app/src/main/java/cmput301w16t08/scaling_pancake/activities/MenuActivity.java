@@ -30,7 +30,6 @@ import cmput301w16t08.scaling_pancake.models.User;
 public class MenuActivity extends AppCompatActivity {
     // set up our global controller
     private static Controller controller;
-    private Bid unseenBid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,30 +43,30 @@ public class MenuActivity extends AppCompatActivity {
         super.onResume();
 
         View notif_button = findViewById(R.id.new_bid_notif_button);
-        this.unseenBid = getUnseenBid();
-        if (this.unseenBid == null){
+        User current_user = controller.getCurrentUser();
+        if (!current_user.getNewBidFlag()){
             notif_button.setVisibility(View.INVISIBLE);
         }
     }
 
 
 
-    protected Bid getUnseenBid(){
-        User user = controller.getCurrentUser();
-
-        // Checks each of the owners instruments for an unseen bid.
-        // Returns the first unseen bid that it finds.
-        InstrumentList instruments = user.getOwnedInstruments();
-        for (int i = 0; i < instruments.size(); i++){
-            BidList bids = instruments.getInstrument(i).getBids();
-            for (int j = 0; j< bids.size(); j++){
-                if (!(bids.getBid(j).getSeen())){ //if bid.seen == false
-                    return bids.getBid(j);
-                }
-            }
-        }
-        return null;
-    }
+//    protected Bid getUnseenBid(){
+//        User user = controller.getCurrentUser();
+//
+//        // Checks each of the owners instruments for an unseen bid.
+//        // Returns the first unseen bid that it finds.
+//        InstrumentList instruments = user.getOwnedInstruments();
+//        for (int i = 0; i < instruments.size(); i++){
+//            BidList bids = instruments.getInstrument(i).getBids();
+//            for (int j = 0; j< bids.size(); j++){
+//                if (!(bids.getBid(j).getSeen())){ //if bid.seen == false
+//                    return bids.getBid(j);
+//                }
+//            }
+//        }
+//        return null;
+//    }
 
     /**
      * Navigate to the <code>ViewProfileActivity</code>
@@ -106,8 +105,8 @@ public class MenuActivity extends AppCompatActivity {
     }
 
     public void viewNotification(View view){
-        Intent intent = new Intent(this, ViewBidsActivity.class);
-        intent.putExtra("instrument_id", this.unseenBid.getInstrumentId());
+        Intent intent = new Intent(this, InstrumentListActivity.class);
+        controller.resetNewBidFlag();
         startActivity(intent);
     }
 

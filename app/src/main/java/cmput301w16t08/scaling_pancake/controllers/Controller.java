@@ -610,6 +610,7 @@ public class Controller extends Application {
         if (user.getOwnedInstruments().containsInstrument(instrument)) {
             Bid bid = new Bid(instrument.getId(), user.getId(), this.currentUser.getId(), amount);
             user.getOwnedInstruments().getInstrument(instrument.getId()).addBid(bid);
+            user.setNewBidFlag(true);
             this.currentUser.addBid(bid);
         } else {
             throw new RuntimeException("Instrument not found");

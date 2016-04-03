@@ -45,14 +45,9 @@ public class    BidsAdapter extends ArrayAdapter
         TextView rate = (TextView) convertView.findViewById(R.id.bid_list_item_rate_tv);
 
         name.setText(controller.getInstrumentById(bid.getInstrumentId()).getName());
-<<<<<<< HEAD
-        bidder.setText(controller.getUserById(bid.getBidderId()).getName());
-        rate.setText(String.format("%.2f/hr", bid.getBidAmount()));
-=======
         bidder.setText(String.format("Bidder: %s", controller.getUserById(bid.getBidderId()).getName()));
         rate.setText(String.format("Rate: %.2f/hr", bid.getBidAmount()));
 
->>>>>>> refs/remotes/origin/master
         return convertView;
     }
 
