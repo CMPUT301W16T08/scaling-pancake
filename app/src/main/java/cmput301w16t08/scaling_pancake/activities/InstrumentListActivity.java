@@ -16,6 +16,7 @@ import cmput301w16t08.scaling_pancake.adapters.BorrowedInstrumentAdapter;
 import cmput301w16t08.scaling_pancake.controllers.Controller;
 import cmput301w16t08.scaling_pancake.adapters.OwnedInstrumentAdapter;
 import cmput301w16t08.scaling_pancake.R;
+import cmput301w16t08.scaling_pancake.models.Bid;
 import cmput301w16t08.scaling_pancake.models.Instrument;
 
 /**
@@ -156,7 +157,7 @@ public class InstrumentListActivity extends ListActivity implements AdapterView.
             }
             case biddedInstrumentsListCode:
             {
-                String instrumentId = ((Instrument) biddedInstrumentsAdapter.getItem(position)).getId();
+                String instrumentId = ((Bid) biddedInstrumentsAdapter.getItem(position)).getInstrumentId();
                 viewMyBidsInstrument(instrumentId);
                 break;
             }

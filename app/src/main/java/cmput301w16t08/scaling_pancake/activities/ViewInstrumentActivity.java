@@ -175,7 +175,7 @@ public class ViewInstrumentActivity extends AppCompatActivity
                 {
                     throw new RuntimeException("ViewInstrumentActivity: Missing instrument id for searched instrument");
                 }
-                
+
                 if(selected.getOwnerId().matches(controller.getCurrentUser().getId()))
                 {
                     setContentView(R.layout.owned_instrument_view);
