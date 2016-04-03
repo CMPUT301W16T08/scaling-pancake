@@ -5,6 +5,7 @@ import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Base64;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -75,9 +76,9 @@ public class ViewInstrumentActivity extends AppCompatActivity
             {
                 setContentView(R.layout.owned_instrument_view);
 
-                ((TextView) findViewById(R.id.owned_instrument_view_name_tv)).append(selected.getName());
-                ((TextView) findViewById(R.id.owned_instrument_view_status_tv)).append(selected.getStatus());
-                ((TextView) findViewById(R.id.owned_instrument_view_description_tv)).append(selected.getDescription());
+                ((TextView) findViewById(R.id.owned_instrument_view_name_tv)).setText(selected.getName());
+                ((TextView) findViewById(R.id.owned_instrument_view_status_tv)).setText(String.format("Status: %s", selected.getStatus()));
+                ((TextView) findViewById(R.id.owned_instrument_view_description_tv)).setText(String.format("Description: %s", selected.getDescription()));
 
                 if(selected.hasThumbnail())
                 {
@@ -135,10 +136,10 @@ public class ViewInstrumentActivity extends AppCompatActivity
                     bidData += "  (" + controller.getUserById(largest.getOwnerId()).getName() + ")";
                 }
 
-                ((TextView) findViewById(R.id.mybids_instrument_view_name_tv)).append(selected.getName());
-                ((TextView) findViewById(R.id.mybids_instrument_view_owner_tv)).append(controller.getUserById(selected.getOwnerId()).getName());
-                ((TextView) findViewById(R.id.mybids_instrument_view_maxbid_tv)).append(bidData);
-                ((TextView) findViewById(R.id.mybids_instrument_view_description_tv)).append(selected.getDescription());
+                ((TextView) findViewById(R.id.mybids_instrument_view_name_tv)).setText(selected.getName());
+                ((TextView) findViewById(R.id.mybids_instrument_view_owner_tv)).setText(String.format("Owner: %s", controller.getUserById(selected.getOwnerId()).getName()));
+                ((TextView) findViewById(R.id.mybids_instrument_view_maxbid_tv)).setText(String.format("CUrrent Max Bid: %s", bidData));
+                ((TextView) findViewById(R.id.mybids_instrument_view_description_tv)).setText(String.format("Description: %s", selected.getDescription()));
 
                 if(selected.hasThumbnail())
                 {
@@ -150,12 +151,16 @@ public class ViewInstrumentActivity extends AppCompatActivity
             {
                 setContentView(R.layout.brwd_by_others_instrument_view);
 
-                ((TextView) findViewById(R.id.brwd_by_others_instrument_view_name_tv)).append(selected.getName());
+                ((TextView) findViewById(R.id.brwd_by_others_instrument_view_name_tv)).setText(selected.getName());
+
                 ((TextView) findViewById(R.id.brwd_by_others_instrument_view_borrower_tv))
-                        .append(controller.getUserById(selected.getBorrowedById()).getName());
+                        .setText(String.format("Borrower: %s", controller.getUserById(selected.getBorrowedById()).getName()));
+
                 ((TextView) findViewById(R.id.brwd_by_others_instrument_view_rate_tv))
-                        .append(String.format("%.2f/hr", selected.getBids().getBid(0).getBidAmount()));
-                ((TextView) findViewById(R.id.brwd_by_others_instrument_view_description_tv)).append(selected.getDescription());
+                        .setText(String.format("Rate: %.2f/hr", selected.getBids().getBid(0).getBidAmount()));
+
+                ((TextView) findViewById(R.id.brwd_by_others_instrument_view_description_tv))
+                        .setText(String.format("Description: %s", selected.getDescription()));
 
                 if(selected.hasThumbnail())
                 {
@@ -173,22 +178,27 @@ public class ViewInstrumentActivity extends AppCompatActivity
                 if(selected.getOwnerId().matches(controller.getCurrentUser().getId()))
                 {
                     setContentView(R.layout.owned_instrument_view);
-                    ((TextView) findViewById(R.id.owned_instrument_view_name_tv)).append(selected.getName());
-                    ((TextView) findViewById(R.id.owned_instrument_view_status_tv)).append(selected.getStatus());
-                    ((TextView) findViewById(R.id.owned_instrument_view_description_tv)).append(selected.getDescription());
+                    ((TextView) findViewById(R.id.owned_instrument_view_name_tv)).setText(selected.getName());
+                    ((TextView) findViewById(R.id.owned_instrument_view_status_tv)).setText(String.format("Status: %s", selected.getStatus()));
+                    ((TextView) findViewById(R.id.owned_instrument_view_description_tv)).setText(String.format("Description: %s", selected.getDescription()));
+
+                    if(selected.hasThumbnail())
+                    {
+                        ((ImageView) findViewById(R.id.owned_instrument_view_thumbnail_iv)).setImageBitmap(selected.getThumbnail());
+                    }
                 }
                 else
                 {
                     setContentView(R.layout.searched_instrument_view);
-                    ((TextView) findViewById(R.id.searched_instrument_view_name_tv)).append(selected.getName());
-                    ((TextView) findViewById(R.id.searched_instrument_view_owner_tv)).append(controller.getUserById(selected.getOwnerId()).getName());
-                    ((TextView) findViewById(R.id.searched_instrument_view_status_tv)).append(selected.getStatus());
-                    ((TextView) findViewById(R.id.searched_instrument_view_description_tv)).append(selected.getDescription());
-                }
+                    ((TextView) findViewById(R.id.searched_instrument_view_name_tv)).setText(selected.getName());
+                    ((TextView) findViewById(R.id.searched_instrument_view_owner_tv)).setText(String.format("Owner: %s", controller.getUserById(selected.getOwnerId()).getName()));
+                    ((TextView) findViewById(R.id.searched_instrument_view_status_tv)).setText(String.format("Status: %s", selected.getStatus()));
+                    ((TextView) findViewById(R.id.searched_instrument_view_description_tv)).setText(String.format("Description: %s", selected.getDescription()));
 
-                if(selected.hasThumbnail())
-                {
-                    ((ImageView) findViewById(R.id.searched_instrument_view_thumbnail_iv)).setImageBitmap(selected.getThumbnail());
+                    if(selected.hasThumbnail())
+                    {
+                        ((ImageView) findViewById(R.id.searched_instrument_view_thumbnail_iv)).setImageBitmap(selected.getThumbnail());
+                    }
                 }
                 break;
             }
