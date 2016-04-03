@@ -309,6 +309,7 @@ public class EditInstrumentActivity extends AppCompatActivity
             {
                 controller.addAudioSampleToInstrument(instrument, audioBase64);
             }
+            Toast.makeText(this, "Changes saved!", Toast.LENGTH_LONG).show();
             finish();
         }
         else
