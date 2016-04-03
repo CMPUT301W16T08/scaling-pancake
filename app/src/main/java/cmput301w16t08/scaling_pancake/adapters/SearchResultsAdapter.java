@@ -1,8 +1,5 @@
 package cmput301w16t08.scaling_pancake.adapters;
 
-
-import android.media.Image;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
