@@ -42,10 +42,8 @@ public class EditInstrumentActivity extends AppCompatActivity
     private static final int FADEDURATION = 150;
     private boolean displayingDialogBox = false;
     private String audioBase64 = null;
-    private Bitmap thumbnail;
+    private Bitmap thumbnail = null;
     private MediaPlayer player;
-    private boolean isPlaying;
-    private Uri audioUri;
     private byte [] bytes;
     private View dialogBox;
 
@@ -56,16 +54,22 @@ public class EditInstrumentActivity extends AppCompatActivity
         setContentView(R.layout.activity_edit_instrument);
 
         controller = (Controller) getApplicationContext();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        player = new MediaPlayer();
+        bytes = null;
 
         Intent intent = getIntent();
 
-        player = new MediaPlayer();
-        isPlaying = false;
-        bytes = null;
+        instrument = controller.getCurrentUsersOwnedInstruments().getInstrument(intent.getStringExtra("instrument_id"));
 
-        instrument = controller.getInstrumentById(intent.getStringExtra("instrument_id"));
-
-        if (instrument.hasThumbnail())
+        if (thumbnail != null) {
+            ((ImageView) findViewById(R.id.edit_instrument_thumbnail_iv)).setImageBitmap(thumbnail);
+        } else if (instrument.hasThumbnail())
         {
             ((ImageView) findViewById(R.id.edit_instrument_thumbnail_iv)).setImageBitmap(instrument.getThumbnail());
         }
@@ -78,42 +82,42 @@ public class EditInstrumentActivity extends AppCompatActivity
         dialogBox.bringToFront();
     }
 
+    @Override
+    protected void onPause() {
+        super.onPause();
+        player.release();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        player.release();
+    }
+
     public void onPlayButtonClick(View view)
     {
-        if (isPlaying == false)
-        {
-            if (bytes == null)
-            {
-                bytes = Base64.decode(instrument.getSampleAudioBase64(), 0);
-            }
-            if (bytes.length == 0)
-            {
-                Toast.makeText(getApplicationContext(), "No audio sample", Toast.LENGTH_SHORT).show();
-            }
-            else
-            {
-                try
-                {
-                    File file = File.createTempFile("tempFile", "tmp", null);
-                    file.deleteOnExit();
-                    FileOutputStream stream = new FileOutputStream(file);
-                    stream.write(bytes);
-                    stream.close();
-                    FileInputStream stream2 = new FileInputStream(file);
-                    player.setDataSource(stream2.getFD());
-                    player.prepare();
-                } catch (IOException e)
-                {
-                    e.printStackTrace();
-                }
-                player.start();
-                isPlaying = true;
-            }
+        player.reset();
+        if (audioBase64 != null) {
+            bytes = Base64.decode(audioBase64, 0);
+        } else if (bytes == null) {
+            bytes = Base64.decode(instrument.getSampleAudioBase64(), 0);
         }
-        else
-        {
-            player.stop();
-            isPlaying = false;
+        if (bytes.length == 0) {
+            Toast.makeText(getApplicationContext(), "No audio sample", Toast.LENGTH_SHORT).show();
+        } else {
+            try {
+                File file = File.createTempFile("tempFile", "tmp", null);
+                file.deleteOnExit();
+                FileOutputStream stream = new FileOutputStream(file);
+                stream.write(bytes);
+                stream.close();
+                FileInputStream stream2 = new FileInputStream(file);
+                player.setDataSource(stream2.getFD());
+                player.prepare();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            player.start();
         }
     }
 

@@ -21,6 +21,7 @@ import android.widget.Toast;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.UUID;
 
@@ -39,7 +40,7 @@ public class RecordAudioActivity extends AppCompatActivity {
     private MediaRecorder recorder = null;
     private MediaPlayer player = null;
     private RecordButton recordButton = null;
-    private PlayButton playButton = null;
+    private Button playButton = null;
     private boolean hasRecorded = false;
 
     @Override
@@ -56,12 +57,28 @@ public class RecordAudioActivity extends AppCompatActivity {
                         ViewGroup.LayoutParams.WRAP_CONTENT,
                         ViewGroup.LayoutParams.WRAP_CONTENT,
                         0));
-        playButton = new PlayButton(this);
-        layout.addView(playButton,
-                new LinearLayout.LayoutParams(
-                        ViewGroup.LayoutParams.WRAP_CONTENT,
-                        ViewGroup.LayoutParams.WRAP_CONTENT,
-                        0));
+        playButton = new Button(this);
+        playButton.setText("Play recording");
+        playButton.setOnClickListener(new View.OnClickListener() {
+                                          @Override
+                                          public void onClick(View v) {
+                                              if (hasRecorded) {
+                                                  player.reset();
+                                                  try {
+                                                      player.setDataSource(filePath);
+                                                      player.prepare();
+                                                  } catch (IOException e) {
+                                                      e.printStackTrace();
+                                                  }
+                                                  player.start();
+                                              }
+                                          }
+                                      });
+                layout.addView(playButton,
+                        new LinearLayout.LayoutParams(
+                                ViewGroup.LayoutParams.WRAP_CONTENT,
+                                ViewGroup.LayoutParams.WRAP_CONTENT,
+                                0));
 
         Button saveButton = new Button(this);
         saveButton.setText("Save Sample");
@@ -112,6 +129,12 @@ public class RecordAudioActivity extends AppCompatActivity {
         setContentView(layout);
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        player = new MediaPlayer();
+    }
+
     private void onRecord(boolean start) {
         if (start) {
             hasRecorded = true;
@@ -119,30 +142,6 @@ public class RecordAudioActivity extends AppCompatActivity {
         } else {
             stopRecording();
         }
-    }
-
-    private void onPlay(boolean start) {
-        if (start) {
-            startPlaying();
-        } else {
-            stopPlaying();
-        }
-    }
-
-    private void startPlaying() {
-        player = new MediaPlayer();
-        try {
-            player.setDataSource(filePath);
-            player.prepare();
-            player.start();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    private void stopPlaying() {
-        player.release();
-        player = null;
     }
 
     private void startRecording() {
@@ -168,8 +167,22 @@ public class RecordAudioActivity extends AppCompatActivity {
     }
 
     @Override
-    public void onPause() {
+         public void onPause() {
         super.onPause();
+        if (recorder != null) {
+            recorder.release();
+            recorder = null;
+        }
+
+        if (player != null) {
+            player.release();
+            player = null;
+        }
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
         if (recorder != null) {
             recorder.release();
             recorder = null;
@@ -202,27 +215,4 @@ public class RecordAudioActivity extends AppCompatActivity {
             setOnClickListener(clicker);
         }
     }
-
-    class PlayButton extends Button {
-        boolean startPlaying = true;
-
-        OnClickListener clicker = new OnClickListener() {
-            public void onClick(View v) {
-                onPlay(startPlaying);
-                if (startPlaying) {
-                    setText("Stop playing");
-                } else {
-                    setText("Start playing");
-                }
-                startPlaying = !startPlaying;
-            }
-        };
-
-        public PlayButton(Context ctx) {
-            super(ctx);
-            setText("Start playing");
-            setOnClickListener(clicker);
-        }
-    }
-
 }

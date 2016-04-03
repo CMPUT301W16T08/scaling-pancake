@@ -42,8 +42,6 @@ public class ViewInstrumentActivity extends AppCompatActivity
 
     private Instrument selected;
     private MediaPlayer player;
-    private boolean isPlaying;
-    private Uri audioUri;
     private byte [] bytes;
 
     @Override
@@ -54,10 +52,6 @@ public class ViewInstrumentActivity extends AppCompatActivity
         controller = (Controller) getApplicationContext();
 
         Intent intent = getIntent();
-
-        player = new MediaPlayer();
-        isPlaying = false;
-        bytes = null;
 
         if(!intent.hasExtra("view_code") || !intent.hasExtra("position"))
         {
@@ -70,6 +64,9 @@ public class ViewInstrumentActivity extends AppCompatActivity
     protected void onResume(){
         super.onResume();
         Intent intent = getIntent();
+
+        player = new MediaPlayer();
+        bytes = null;
 
         switch(intent.getIntExtra("view_code", 0))
         {
@@ -209,8 +206,18 @@ public class ViewInstrumentActivity extends AppCompatActivity
                 throw new RuntimeException("Invalid view code in ViewInstrumentActivity");
             }
         }
+    }
 
+    @Override
+    protected void onPause() {
+        super.onPause();
+        player.release();
+    }
 
+    @Override
+    protected void onStop() {
+        super.onStop();
+        player.release();
     }
 
     public void makeBid(View view)
@@ -268,31 +275,26 @@ public class ViewInstrumentActivity extends AppCompatActivity
     }
 
     public void onPlayButtonClick(View view) {
-        if (isPlaying == false) {
-            if (bytes == null) {
-                bytes = Base64.decode(selected.getSampleAudioBase64(), 0);
-            }
-            if (bytes.length == 0) {
-                Toast.makeText(getApplicationContext(), "No audio sample", Toast.LENGTH_SHORT).show();
-            } else {
-                try {
-                    File file = File.createTempFile("tempFile", "tmp", null);
-                    file.deleteOnExit();
-                    FileOutputStream stream = new FileOutputStream(file);
-                    stream.write(bytes);
-                    stream.close();
-                    FileInputStream stream2 = new FileInputStream(file);
-                    player.setDataSource(stream2.getFD());
-                    player.prepare();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-                player.start();
-                isPlaying = true;
-            }
+        player.reset();
+        if (bytes == null) {
+            bytes = Base64.decode(selected.getSampleAudioBase64(), 0);
+        }
+        if (bytes.length == 0) {
+            Toast.makeText(getApplicationContext(), "No audio sample", Toast.LENGTH_SHORT).show();
         } else {
-            player.stop();
-            isPlaying = false;
+            try {
+                File file = File.createTempFile("tempFile", "tmp", null);
+                file.deleteOnExit();
+                FileOutputStream stream = new FileOutputStream(file);
+                stream.write(bytes);
+                stream.close();
+                FileInputStream stream2 = new FileInputStream(file);
+                player.setDataSource(stream2.getFD());
+                player.prepare();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            player.start();
         }
     }
     /**
