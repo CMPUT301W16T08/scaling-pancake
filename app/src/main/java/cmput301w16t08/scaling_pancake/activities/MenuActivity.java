@@ -38,21 +38,13 @@ public class MenuActivity extends AppCompatActivity {
         setContentView(R.layout.activity_menu);
 
         controller = (Controller) getApplicationContext();
-
     }
 
     protected void onResume(){
         super.onResume();
-        // Check for a notification
-//        if (hasNotifications()== null) {
-//            notif_button.setVisibility(View.INVISIBLE);
-//        }
-//        else {
-//
-//        }
 
         View notif_button = findViewById(R.id.new_bid_notif_button);
-        this.unseenBid = hasNotifications();
+        this.unseenBid = getUnseenBid();
         if (this.unseenBid == null){
             notif_button.setVisibility(View.INVISIBLE);
         }
@@ -60,15 +52,11 @@ public class MenuActivity extends AppCompatActivity {
 
 
 
-
-    /**
-     * Checks if the currently logged in user has a notification
-     * @return true if the currently logged in user has a notification, else false
-     */
-    protected Bid hasNotifications(){
+    protected Bid getUnseenBid(){
         User user = controller.getCurrentUser();
 
         // Checks each of the owners instruments for an unseen bid.
+        // Returns the first unseen bid that it finds.
         InstrumentList instruments = user.getOwnedInstruments();
         for (int i = 0; i < instruments.size(); i++){
             BidList bids = instruments.getInstrument(i).getBids();

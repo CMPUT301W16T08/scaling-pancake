@@ -46,11 +46,15 @@ public class ViewBidsActivity extends ListActivity
         BidList bids = bidsAdapter.getBidList();
         for (int i = 0; i < bids.size(); i++){
             bids.getBid(i).setSeen(true);
+            String message = bids.getBid(i).getId()+ " seen";
+            Toast.makeText(controller, message, Toast.LENGTH_SHORT).show();
+
+
         }
     }
-
-    protected void onStart(){
-        super.onStart();
+    
+    protected void onResume(){
+        super.onResume();
         bidsAdapter.notifyDataSetChanged();
     }
 
