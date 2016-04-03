@@ -22,6 +22,7 @@ public class BidListActivity extends ListActivity
 
     private static Controller controller;
     private BidsAdapter bidsAdapter;
+    private String instrument_id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -31,10 +32,8 @@ public class BidListActivity extends ListActivity
         Intent intent = getIntent();
 
         controller = (Controller) getApplicationContext();
-        bidsAdapter = new BidsAdapter(controller, this,
-                controller.getInstrumentById(intent.getStringExtra("instrument_id")).getBids());
 
-        setListAdapter(bidsAdapter);
+        instrument_id = intent.getStringExtra("instrument_id");
     }
 
     @Override
@@ -56,7 +55,11 @@ public class BidListActivity extends ListActivity
     protected void onResume()
     {
         super.onResume();
-        bidsAdapter.notifyDataSetChanged();
+
+        bidsAdapter = new BidsAdapter(controller, this,
+                controller.getInstrumentById(instrument_id).getBids());
+
+        setListAdapter(bidsAdapter);
     }
 
     public void back(View view)

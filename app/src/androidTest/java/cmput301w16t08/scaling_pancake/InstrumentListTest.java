@@ -65,6 +65,7 @@ public class InstrumentListTest extends ActivityInstrumentationTestCase2 {
         assertFalse(instrumentList.containsInstrument(instrument1));
     }
 
+    // Use case: US 01.03.01 View owned instrument
     public void testGetInstrument() {
         InstrumentList instrumentList = new InstrumentList();
         Instrument instrument1 = new Instrument("owner1","name1","descroption1","id1",true);

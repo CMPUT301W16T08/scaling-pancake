@@ -187,7 +187,7 @@ public class RecordAudioActivity extends AppCompatActivity {
     }
 
     @Override
-         public void onPause() {
+    public void onPause() {
         super.onPause();
         if (recorder != null) {
             recorder.release();
