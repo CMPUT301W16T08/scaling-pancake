@@ -171,7 +171,7 @@ public class BidList {
     /**
      * Find the <code>Bid</code> with the largest bid amount.
      *
-     * @return
+     * @return the maximum bid
      */
     public Bid getMaxBid()
     {

@@ -1,38 +1,31 @@
 package cmput301w16t08.scaling_pancake.activities;
 
-import android.app.ActionBar;
 import android.app.Activity;
-import android.content.ContentValues;
 import android.content.Context;
-import android.content.Intent;
 import android.media.MediaPlayer;
 import android.media.MediaRecorder;
-import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
-import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Base64;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.UUID;
 
 import cmput301w16t08.scaling_pancake.R;
-import cmput301w16t08.scaling_pancake.controllers.Controller;
-import cmput301w16t08.scaling_pancake.models.Instrument;
 
 /**
- * Created by William on 2016-03-26.
+ * The <code>RecordAudioActivity</code> allows the currently logged in user to record audio
+ * on the phone's microphone, play it back, and save it to the instrument.
+ *
+ * @author William
  *
  * Taken from the Android Developer Guides at
  * http://developer.android.com/guide/topics/media/audio-capture.html
@@ -151,6 +144,11 @@ public class RecordAudioActivity extends AppCompatActivity {
         player = new MediaPlayer();
     }
 
+    /**
+     * Called when the recordButton is clicked
+     *
+     * @param start boolean for whether already recording
+     */
     private void onRecord(boolean start) {
         if (start) {
             hasRecorded = true;
@@ -160,6 +158,9 @@ public class RecordAudioActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Used to start recording the audio on the phone's microphone
+     */
     private void startRecording() {
         recorder = new MediaRecorder();
         recorder.setAudioSource(MediaRecorder.AudioSource.MIC);
@@ -176,6 +177,9 @@ public class RecordAudioActivity extends AppCompatActivity {
         recorder.start();
     }
 
+    /**
+     * Used to stop recording the audio on the phone's microphone
+     */
     private void stopRecording() {
         recorder.stop();
         recorder.release();
@@ -210,6 +214,10 @@ public class RecordAudioActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Custom <code>Button</code> class that allows for different functionality on click
+     * depending on whether already recording on not
+     */
     class RecordButton extends Button {
         boolean startRecording = true;
 

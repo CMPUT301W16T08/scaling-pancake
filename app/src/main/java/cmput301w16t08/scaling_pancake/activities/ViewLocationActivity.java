@@ -14,7 +14,10 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import cmput301w16t08.scaling_pancake.R;
 
 /**
- * Created by William on 2016-03-26.
+ * The <code>ViewLocationActivity</code> allows the borrower of an <code>Instrument</code>
+ * to view the pick up location of that <code>Instrument</code>.
+ *
+ * @author William
  */
 public class ViewLocationActivity extends AppCompatActivity implements OnMapReadyCallback {
 

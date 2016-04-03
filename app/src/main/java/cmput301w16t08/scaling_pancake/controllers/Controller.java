@@ -158,7 +158,7 @@ public class Controller extends Application {
      * Deletes the <code>User</code> with the supplied id
      * If there is no <code>User</code> with the id then does nothing
      *
-     * @param id
+     * @param id the id of the user to delete
      * @see User
      */
     public void deleteUserById(String id) {
