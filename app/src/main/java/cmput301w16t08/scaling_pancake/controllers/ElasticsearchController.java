@@ -322,6 +322,9 @@ public class ElasticsearchController {
         }
     }
 
+    /**
+     * Initializes the client for Elasticsearch
+     */
     public static void verifyClient() {
         if (client == null) {
             DroidClientConfig.Builder builder = new DroidClientConfig.Builder(url);

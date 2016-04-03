@@ -306,6 +306,11 @@ public class User {
         this.newBidFlag = b;
     }
 
+    /**
+     * Returns a string representation of the name and id of the <code>User</code>
+     *
+     * @return the string
+     */
     public String toString(){
         return "Username: " + this.name + " id: " +this.id;
     }

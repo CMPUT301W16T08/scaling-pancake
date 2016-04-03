@@ -155,7 +155,6 @@ public class InstrumentList {
         throw new RuntimeException();
     }
 
-
     /**
      * Removes all <code>Instrument</code>s from the list
      */

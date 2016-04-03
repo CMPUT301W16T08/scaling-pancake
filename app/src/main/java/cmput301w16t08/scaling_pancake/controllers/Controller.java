@@ -915,6 +915,12 @@ public class Controller extends Application {
         updateUserTask.execute(this.currentUser);
     }
 
+    /**
+     * Adds an audio sample to the supplied <code>Instrument</code>
+     *
+     * @param instrument the instrument
+     * @param string the audio sample as a Base64 string
+     */
     public void addAudioSampleToInstrument(Instrument instrument, String string) {
         if (!this.currentUser.getOwnedInstruments().containsInstrument(instrument)) {
             throw new RuntimeException();
@@ -935,6 +941,11 @@ public class Controller extends Application {
         }
     }
 
+    /**
+     * Deletes the audio sample on the supplied <code>Instrument</code>
+     *
+     * @param instrument the instrument
+     */
     public void clearAudioSampleFromInstrument(Instrument instrument) {
         if (!this.currentUser.getOwnedInstruments().containsInstrument(instrument)) {
             throw new RuntimeException();

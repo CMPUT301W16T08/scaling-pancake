@@ -49,7 +49,94 @@
     <favorites_list name="scaling-pancake" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="Controller.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/controllers/Controller.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.33707866">
+              <caret line="946" column="39" selection-start-line="946" selection-start-column="39" selection-end-line="946" selection-end-column="39" />
+              <folding>
+                <element signature="docComment;class#Controller#0" expanded="false" />
+                <element signature="docComment;method#Controller#0;class#Controller#0" expanded="false" />
+                <element signature="method#Controller#0;class#Controller#0" expanded="false" />
+                <element signature="docComment;method#getCurrentUser#0;class#Controller#0" expanded="false" />
+                <element signature="docComment;method#getUserByName#0;class#Controller#0" expanded="false" />
+                <element signature="method#getUserByName#0;class#Controller#0" expanded="false" />
+                <element signature="docComment;method#getUserById#0;class#Controller#0" expanded="false" />
+                <element signature="method#getUserById#0;class#Controller#0" expanded="false" />
+                <element signature="docComment;method#createUser#0;class#Controller#0" expanded="false" />
+                <element signature="method#createUser#0;class#Controller#0" expanded="false" />
+                <element signature="docComment;method#deleteUser#0;class#Controller#0" expanded="false" />
+                <element signature="method#deleteUser#0;class#Controller#0" expanded="false" />
+                <element signature="docComment;method#deleteUserById#0;class#Controller#0" expanded="false" />
+                <element signature="method#deleteUserById#0;class#Controller#0" expanded="false" />
+                <element signature="docComment;method#login#0;class#Controller#0" expanded="false" />
+                <element signature="method#login#0;class#Controller#0" expanded="false" />
+                <element signature="docComment;method#logout#0;class#Controller#0" expanded="false" />
+                <element signature="docComment;method#editCurrentUser#0;class#Controller#0" expanded="false" />
+                <element signature="method#editCurrentUser#0;class#Controller#0" expanded="false" />
+                <element signature="docComment;method#editCurrentUserName#0;class#Controller#0" expanded="false" />
+                <element signature="method#editCurrentUserName#0;class#Controller#0" expanded="false" />
+                <element signature="docComment;method#editCurrentUserEmail#0;class#Controller#0" expanded="false" />
+                <element signature="method#editCurrentUserEmail#0;class#Controller#0" expanded="false" />
+                <element signature="docComment;method#getCurrentUsersOwnedInstruments#0;class#Controller#0" expanded="false" />
+                <element signature="method#getCurrentUsersOwnedInstruments#0;class#Controller#0" expanded="false" />
+                <element signature="docComment;method#getCurrentUsersOwnedBorrowedInstruments#0;class#Controller#0" expanded="false" />
+                <element signature="method#getCurrentUsersOwnedBorrowedInstruments#0;class#Controller#0" expanded="false" />
+                <element signature="docComment;method#getCurrentUsersBorrowedInstruments#0;class#Controller#0" expanded="false" />
+                <element signature="method#getCurrentUsersBorrowedInstruments#0;class#Controller#0" expanded="false" />
+                <element signature="docComment;method#getCurrentUsersBiddedInstruments#0;class#Controller#0" expanded="false" />
+                <element signature="method#getCurrentUsersBiddedInstruments#0;class#Controller#0" expanded="false" />
+                <element signature="docComment;method#getCurrentUsersBids#0;class#Controller#0" expanded="false" />
+                <element signature="method#getCurrentUsersBids#0;class#Controller#0" expanded="false" />
+                <element signature="docComment;method#getInstrumentById#0;class#Controller#0" expanded="false" />
+                <element signature="method#getInstrumentById#0;class#Controller#0" expanded="false" />
+                <element signature="docComment;method#addInstrument#0;class#Controller#0" expanded="false" />
+                <element signature="method#addInstrument#0;class#Controller#0" expanded="false" />
+                <element signature="docComment;method#addInstrument#1;class#Controller#0" expanded="false" />
+                <element signature="method#addInstrument#1;class#Controller#0" expanded="false" />
+                <element signature="docComment;method#editInstrument#0;class#Controller#0" expanded="false" />
+                <element signature="method#editInstrument#0;class#Controller#0" expanded="false" />
+                <element signature="docComment;method#editInstrument#1;class#Controller#0" expanded="false" />
+                <element signature="method#editInstrument#1;class#Controller#0" expanded="false" />
+                <element signature="docComment;method#deleteInstrument#0;class#Controller#0" expanded="false" />
+                <element signature="method#deleteInstrument#0;class#Controller#0" expanded="false" />
+                <element signature="docComment;method#deleteInstrument#1;class#Controller#0" expanded="false" />
+                <element signature="method#deleteInstrument#1;class#Controller#0" expanded="false" />
+                <element signature="docComment;method#searchInstruments#0;class#Controller#0" expanded="false" />
+                <element signature="method#searchInstruments#0;class#Controller#0" expanded="false" />
+                <element signature="docComment;method#makeBidOnInstrument#0;class#Controller#0" expanded="false" />
+                <element signature="method#makeBidOnInstrument#0;class#Controller#0" expanded="false" />
+                <element signature="docComment;method#acceptBidOnInstrument#0;class#Controller#0" expanded="false" />
+                <element signature="method#acceptBidOnInstrument#0;class#Controller#0" expanded="false" />
+                <element signature="docComment;method#declineBidOnInstrument#0;class#Controller#0" expanded="false" />
+                <element signature="method#declineBidOnInstrument#0;class#Controller#0" expanded="false" />
+                <element signature="e#28452#28554#0" expanded="false" />
+                <element signature="docComment;method#returnInstrument#0;class#Controller#0" expanded="false" />
+                <element signature="method#returnInstrument#0;class#Controller#0" expanded="false" />
+                <element signature="docComment;method#returnInstrument#1;class#Controller#0" expanded="false" />
+                <element signature="method#returnInstrument#1;class#Controller#0" expanded="false" />
+                <element signature="docComment;method#acceptReturnedInstrument#0;class#Controller#0" expanded="false" />
+                <element signature="method#acceptReturnedInstrument#0;class#Controller#0" expanded="false" />
+                <element signature="docComment;method#acceptReturnedInstrument#1;class#Controller#0" expanded="false" />
+                <element signature="method#acceptReturnedInstrument#1;class#Controller#0" expanded="false" />
+                <element signature="docComment;method#resetNewBidFlag#0;class#Controller#0" expanded="false" />
+                <element signature="method#resetNewBidFlag#0;class#Controller#0" expanded="false" />
+                <element signature="docComment;method#addPhotoToInstrument#0;class#Controller#0" expanded="false" />
+                <element signature="method#addPhotoToInstrument#0;class#Controller#0" expanded="false" />
+                <element signature="docComment;method#deletePhotoFromInstrument#0;class#Controller#0" expanded="false" />
+                <element signature="method#deletePhotoFromInstrument#0;class#Controller#0" expanded="false" />
+                <element signature="docComment;method#setLocationForInstrument#0;class#Controller#0" expanded="false" />
+                <element signature="method#setLocationForInstrument#0;class#Controller#0" expanded="false" />
+                <element signature="docComment;method#clearLocationForInstrument#0;class#Controller#0" expanded="false" />
+                <element signature="method#clearLocationForInstrument#0;class#Controller#0" expanded="false" />
+                <element signature="method#addAudioSampleToInstrument#0;class#Controller#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="GradleLocalSettings">
     <option name="availableProjects">
@@ -1286,6 +1373,7 @@
     <option name="modificationStamps">
       <map>
         <entry key="C:\Users\Aaron\Downloads\scaling-pancake" value="4378726507397" />
+        <entry key="C:\Users\William\Desktop\projects\scaling-pancake" value="4372541123922" />
       </map>
     </option>
     <option name="projectBuildClasspath">
@@ -1648,14 +1736,27 @@
       <projects_view />
     </option>
   </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/app/src/androidTest/java/cmput301w16t08/scaling_pancake/BidListTest.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/models/BidList.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/models/Instrument.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/models/InstrumentList.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/models/User.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/controllers/ElasticsearchController.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/controllers/Controller.java" />
+      </list>
+    </option>
+  </component>
   <component name="NamedScopeManager">
     <order />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1912" />
+    <option name="x" value="-1374" />
     <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -1668,7 +1769,7 @@
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="AndroidView" proportions="" version="1">
+    <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -1680,102 +1781,120 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="PackagesPane" />
-      <pane id="ProjectPane" />
-      <pane id="AndroidView">
+      <pane id="Scratches" />
+      <pane id="ProjectPane">
         <subPane>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="scaling-pancake" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="scaling-pancake" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
+              <option name="myItemId" value="scaling-pancake" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="scaling-pancake" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scaling-pancake" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="layout" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderTypeNode" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="scaling-pancake" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scaling-pancake" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scaling-pancake" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scaling-pancake" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="scaling_pancake" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="scaling-pancake" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scaling_pancake" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="scaling-pancake" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="scaling_pancake" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="models" />
@@ -1785,43 +1904,146 @@
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="scaling-pancake" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scaling-pancake" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="scaling_pancake" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="activities" />
+              <option name="myItemId" value="controllers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="scaling-pancake" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scaling-pancake" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scaling-pancake" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scaling-pancake" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="androidTest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scaling_pancake" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="AndroidView">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scaling-pancake" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="recentsLimit" value="5" />
+    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="emulator-5554" />
+    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="Nexus_5_API_18" />
   </component>
-  <component name="RunManager" selected="Android Application.app">
+  <component name="RunManager" selected="Android Tests.InstrumentListTest">
+    <configuration default="false" name="BidListTest" type="AndroidTestRunConfigurationType" factoryName="Android Tests" temporary="true" nameIsGenerated="true">
+      <module name="app" />
+      <option name="TESTING_TYPE" value="2" />
+      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="CLASS_NAME" value="cmput301w16t08.scaling_pancake.BidListTest" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="EXTRA_OPTIONS" value="" />
+      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <method />
+    </configuration>
+    <configuration default="false" name="InstrumentListTest" type="AndroidTestRunConfigurationType" factoryName="Android Tests" temporary="true" nameIsGenerated="true">
+      <module name="app" />
+      <option name="TESTING_TYPE" value="2" />
+      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="CLASS_NAME" value="cmput301w16t08.scaling_pancake.InstrumentListTest" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="EXTRA_OPTIONS" value="" />
+      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <method />
+    </configuration>
     <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
       <module name="" />
       <option name="DEPLOY" value="true" />
@@ -1841,6 +2063,26 @@
       <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
       <option name="DEEP_LINK" value="" />
       <option name="ACTIVITY_CLASS" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
+      <module name="" />
+      <option name="TESTING_TYPE" value="0" />
+      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="EXTRA_OPTIONS" value="" />
+      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -1881,6 +2123,11 @@
         <option name="Make" enabled="false" />
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
+    </configuration>
+    <configuration default="true" type="JarApplication" factoryName="JAR Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <envs />
+      <method />
     </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
@@ -1939,9 +2186,17 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method />
     </configuration>
-    <list size="1">
+    <list size="3">
       <item index="0" class="java.lang.String" itemvalue="Android Application.app" />
+      <item index="1" class="java.lang.String" itemvalue="Android Tests.BidListTest" />
+      <item index="2" class="java.lang.String" itemvalue="Android Tests.InstrumentListTest" />
     </list>
+    <recent_temporary>
+      <list size="2">
+        <item index="0" class="java.lang.String" itemvalue="Android Tests.InstrumentListTest" />
+        <item index="1" class="java.lang.String" itemvalue="Android Tests.BidListTest" />
+      </list>
+    </recent_temporary>
     <configuration name="&lt;template&gt;" type="Applet" default="true" selected="false">
       <option name="MAIN_CLASS_NAME" />
       <option name="HTML_FILE_NAME" />
@@ -1966,38 +2221,38 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-1374" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3547655" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.34582624" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -2008,19 +2263,390 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/androidTest/java/cmput301w16t08/scaling_pancake/BidListTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.15269805">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/activities/RecordAudioActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.21469575">
           <caret line="39" column="13" selection-start-line="39" selection-start-column="13" selection-end-line="39" selection-end-column="13" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/androidTest/java/cmput301w16t08/scaling_pancake/BidListTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33426967">
+          <caret line="12" column="34" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/models/Bid.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.9578652">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding>
+            <element signature="docComment;class#Bid#0" expanded="false" />
+            <element signature="docComment;method#Bid#0;class#Bid#0" expanded="false" />
+            <element signature="method#Bid#0;class#Bid#0" expanded="false" />
+            <element signature="docComment;method#Bid#1;class#Bid#0" expanded="false" />
+            <element signature="method#Bid#1;class#Bid#0" expanded="false" />
+            <element signature="docComment;method#getInstrumentId#0;class#Bid#0" expanded="false" />
+            <element signature="docComment;method#getOwnerId#0;class#Bid#0" expanded="false" />
+            <element signature="docComment;method#getBidderId#0;class#Bid#0" expanded="false" />
+            <element signature="docComment;method#getBidAmount#0;class#Bid#0" expanded="false" />
+            <element signature="docComment;method#getAccepted#0;class#Bid#0" expanded="false" />
+            <element signature="docComment;method#setAccepted#0;class#Bid#0" expanded="false" />
+            <element signature="docComment;method#getId#0;class#Bid#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/androidTest/java/cmput301w16t08/scaling_pancake/InstrumentListTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.24438202">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/models/Instrument.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5702247">
+          <caret line="503" column="64" selection-start-line="503" selection-start-column="64" selection-end-line="503" selection-end-column="64" />
+          <folding>
+            <element signature="docComment;class#Instrument#0" expanded="false" />
+            <element signature="docComment;method#Instrument#0;class#Instrument#0" expanded="false" />
+            <element signature="docComment;method#Instrument#1;class#Instrument#0" expanded="false" />
+            <element signature="method#Instrument#2;class#Instrument#0" expanded="false" />
+            <element signature="method#Instrument#3;class#Instrument#0" expanded="false" />
+            <element signature="docComment;method#getStatus#0;class#Instrument#0" expanded="false" />
+            <element signature="e#4252#4253#0" expanded="true" />
+            <element signature="e#4281#4282#0" expanded="true" />
+            <element signature="docComment;method#setStatus#0;class#Instrument#0" expanded="false" />
+            <element signature="docComment;method#getName#0;class#Instrument#0" expanded="false" />
+            <element signature="e#4929#4930#0" expanded="true" />
+            <element signature="e#4956#4957#0" expanded="true" />
+            <element signature="docComment;method#setName#0;class#Instrument#0" expanded="false" />
+            <element signature="docComment;method#getDescription#0;class#Instrument#0" expanded="false" />
+            <element signature="docComment;method#setDescription#0;class#Instrument#0" expanded="false" />
+            <element signature="docComment;method#getOwnerId#0;class#Instrument#0" expanded="false" />
+            <element signature="docComment;method#getBorrowedById#0;class#Instrument#0" expanded="false" />
+            <element signature="docComment;method#setBorrowedById#0;class#Instrument#0" expanded="false" />
+            <element signature="method#setBorrowedById#0;class#Instrument#0" expanded="false" />
+            <element signature="docComment;method#getBids#0;class#Instrument#0" expanded="false" />
+            <element signature="e#6759#6760#0" expanded="true" />
+            <element signature="e#6791#6792#0" expanded="true" />
+            <element signature="docComment;method#addBid#0;class#Instrument#0" expanded="false" />
+            <element signature="docComment;method#acceptBid#0;class#Instrument#0" expanded="false" />
+            <element signature="method#acceptBid#0;class#Instrument#0" expanded="false" />
+            <element signature="docComment;method#acceptBid#1;class#Instrument#0" expanded="false" />
+            <element signature="method#acceptBid#1;class#Instrument#0" expanded="false" />
+            <element signature="docComment;method#declineBid#0;class#Instrument#0" expanded="false" />
+            <element signature="method#declineBid#0;class#Instrument#0" expanded="false" />
+            <element signature="docComment;method#declineBid#1;class#Instrument#0" expanded="false" />
+            <element signature="method#declineBid#1;class#Instrument#0" expanded="false" />
+            <element signature="docComment;method#getId#0;class#Instrument#0" expanded="false" />
+            <element signature="e#9614#9615#0" expanded="true" />
+            <element signature="e#9639#9640#0" expanded="true" />
+            <element signature="docComment;method#getReturnedFlag#0;class#Instrument#0" expanded="false" />
+            <element signature="method#addThumbnail#0;class#Instrument#0" expanded="false" />
+            <element signature="docComment;method#addThumbnail#1;class#Instrument#0" expanded="false" />
+            <element signature="method#addThumbnail#1;class#Instrument#0" expanded="false" />
+            <element signature="docComment;method#getThumbnail#0;class#Instrument#0" expanded="false" />
+            <element signature="method#getThumbnail#0;class#Instrument#0" expanded="false" />
+            <element signature="docComment;method#hasThumbnail#0;class#Instrument#0" expanded="false" />
+            <element signature="docComment;method#getThumbnailBase64#0;class#Instrument#0" expanded="false" />
+            <element signature="docComment;method#deleteThumbnail#0;class#Instrument#0" expanded="false" />
+            <element signature="method#deleteThumbnail#0;class#Instrument#0" expanded="false" />
+            <element signature="docComment;method#getLongitude#0;class#Instrument#0" expanded="false" />
+            <element signature="docComment;method#getLocation#0;class#Instrument#0" expanded="false" />
+            <element signature="docComment;method#getLocationString#0;class#Instrument#0" expanded="false" />
+            <element signature="method#getLocationString#0;class#Instrument#0" expanded="false" />
+            <element signature="docComment;method#getLatitude#0;class#Instrument#0" expanded="false" />
+            <element signature="docComment;method#setLocation#0;class#Instrument#0" expanded="false" />
+            <element signature="docComment;method#clearLocation#0;class#Instrument#0" expanded="false" />
+            <element signature="docComment;method#getLargestBid#0;class#Instrument#0" expanded="false" />
+            <element signature="e#14409#14410#0" expanded="true" />
+            <element signature="e#14455#14456#0" expanded="true" />
+            <element signature="docComment;method#getSampleAudioBase64#0;class#Instrument#0" expanded="false" />
+            <element signature="method#getSampleAudioBase64#0;class#Instrument#0" expanded="false" />
+            <element signature="e#14933#14934#0" expanded="true" />
+            <element signature="e#14972#14973#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/models/BidList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="46" selection-start-line="0" selection-start-column="46" selection-end-line="0" selection-end-column="46" />
+          <folding>
+            <element signature="docComment;class#BidList#0" expanded="false" />
+            <element signature="docComment;method#BidList#0;class#BidList#0" expanded="false" />
+            <element signature="docComment;method#size#0;class#BidList#0" expanded="false" />
+            <element signature="docComment;method#containsBid#0;class#BidList#0" expanded="false" />
+            <element signature="method#containsBid#0;class#BidList#0" expanded="false" />
+            <element signature="docComment;method#containsBid#1;class#BidList#0" expanded="false" />
+            <element signature="method#containsBid#1;class#BidList#0" expanded="false" />
+            <element signature="docComment;method#addBid#0;class#BidList#0" expanded="false" />
+            <element signature="docComment;method#removeBid#0;class#BidList#0" expanded="false" />
+            <element signature="method#removeBid#0;class#BidList#0" expanded="false" />
+            <element signature="docComment;method#removeBid#1;class#BidList#0" expanded="false" />
+            <element signature="method#removeBid#1;class#BidList#0" expanded="false" />
+            <element signature="docComment;method#removeBid#2;class#BidList#0" expanded="false" />
+            <element signature="method#removeBid#2;class#BidList#0" expanded="false" />
+            <element signature="docComment;method#getBid#0;class#BidList#0" expanded="false" />
+            <element signature="method#getBid#0;class#BidList#0" expanded="false" />
+            <element signature="docComment;method#getArray#0;class#BidList#0" expanded="false" />
+            <element signature="method#getArray#0;class#BidList#0" expanded="false" />
+            <element signature="docComment;method#getBid#1;class#BidList#0" expanded="false" />
+            <element signature="method#getBid#1;class#BidList#0" expanded="false" />
+            <element signature="docComment;method#clearBids#0;class#BidList#0" expanded="false" />
+            <element signature="docComment;method#getMaxBid#0;class#BidList#0" expanded="false" />
+            <element signature="method#getMaxBid#0;class#BidList#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/models/InstrumentList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4747191">
+          <caret line="155" column="5" selection-start-line="155" selection-start-column="5" selection-end-line="155" selection-end-column="5" />
+          <folding>
+            <element signature="docComment;class#InstrumentList#0" expanded="false" />
+            <element signature="docComment;method#InstrumentList#0;class#InstrumentList#0" expanded="false" />
+            <element signature="docComment;method#size#0;class#InstrumentList#0" expanded="false" />
+            <element signature="docComment;method#containsInstrument#0;class#InstrumentList#0" expanded="false" />
+            <element signature="method#containsInstrument#0;class#InstrumentList#0" expanded="false" />
+            <element signature="docComment;method#containsInstrument#1;class#InstrumentList#0" expanded="false" />
+            <element signature="method#containsInstrument#1;class#InstrumentList#0" expanded="false" />
+            <element signature="docComment;method#addInstrument#0;class#InstrumentList#0" expanded="false" />
+            <element signature="docComment;method#removeInstrument#0;class#InstrumentList#0" expanded="false" />
+            <element signature="method#removeInstrument#0;class#InstrumentList#0" expanded="false" />
+            <element signature="docComment;method#removeInstrument#1;class#InstrumentList#0" expanded="false" />
+            <element signature="method#removeInstrument#1;class#InstrumentList#0" expanded="false" />
+            <element signature="docComment;method#removeInstrument#2;class#InstrumentList#0" expanded="false" />
+            <element signature="method#removeInstrument#2;class#InstrumentList#0" expanded="false" />
+            <element signature="docComment;method#getInstrument#0;class#InstrumentList#0" expanded="false" />
+            <element signature="method#getInstrument#0;class#InstrumentList#0" expanded="false" />
+            <element signature="docComment;method#getArray#0;class#InstrumentList#0" expanded="false" />
+            <element signature="method#getArray#0;class#InstrumentList#0" expanded="false" />
+            <element signature="docComment;method#getInstrument#1;class#InstrumentList#0" expanded="false" />
+            <element signature="method#getInstrument#1;class#InstrumentList#0" expanded="false" />
+            <element signature="docComment;method#clearInstruments#0;class#InstrumentList#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/models/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8005618">
+          <caret line="311" column="25" selection-start-line="311" selection-start-column="25" selection-end-line="311" selection-end-column="25" />
+          <folding>
+            <element signature="docComment;class#User#0" expanded="false" />
+            <element signature="docComment;method#User#0;class#User#0" expanded="false" />
+            <element signature="method#User#0;class#User#0" expanded="false" />
+            <element signature="docComment;method#User#1;class#User#0" expanded="false" />
+            <element signature="method#User#1;class#User#0" expanded="false" />
+            <element signature="docComment;method#getName#0;class#User#0" expanded="false" />
+            <element signature="docComment;method#setName#0;class#User#0" expanded="false" />
+            <element signature="docComment;method#getEmail#0;class#User#0" expanded="false" />
+            <element signature="docComment;method#setEmail#0;class#User#0" expanded="false" />
+            <element signature="docComment;method#getOwnedInstruments#0;class#User#0" expanded="false" />
+            <element signature="docComment;method#getBorrowedInstruments#0;class#User#0" expanded="false" />
+            <element signature="docComment;method#getOwnedBorrowedInstruments#0;class#User#0" expanded="false" />
+            <element signature="method#getOwnedBorrowedInstruments#0;class#User#0" expanded="false" />
+            <element signature="docComment;method#getBids#0;class#User#0" expanded="false" />
+            <element signature="docComment;method#addOwnedInstrument#0;class#User#0" expanded="false" />
+            <element signature="method#addOwnedInstrument#0;class#User#0" expanded="false" />
+            <element signature="docComment;method#addOwnedInstrument#1;class#User#0" expanded="false" />
+            <element signature="method#addOwnedInstrument#1;class#User#0" expanded="false" />
+            <element signature="docComment;method#addBorrowedInstrument#0;class#User#0" expanded="false" />
+            <element signature="method#addBorrowedInstrument#0;class#User#0" expanded="false" />
+            <element signature="docComment;method#editOwnedInstrument#0;class#User#0" expanded="false" />
+            <element signature="method#editOwnedInstrument#0;class#User#0" expanded="false" />
+            <element signature="docComment;method#editOwnedInstrument#1;class#User#0" expanded="false" />
+            <element signature="method#editOwnedInstrument#1;class#User#0" expanded="false" />
+            <element signature="docComment;method#deleteOwnedInstrument#0;class#User#0" expanded="false" />
+            <element signature="method#deleteOwnedInstrument#0;class#User#0" expanded="false" />
+            <element signature="docComment;method#deleteBorrowedInstrument#0;class#User#0" expanded="false" />
+            <element signature="method#deleteBorrowedInstrument#0;class#User#0" expanded="false" />
+            <element signature="docComment;method#addBid#0;class#User#0" expanded="false" />
+            <element signature="docComment;method#deleteBid#0;class#User#0" expanded="false" />
+            <element signature="method#deleteBid#0;class#User#0" expanded="false" />
+            <element signature="docComment;method#getId#0;class#User#0" expanded="false" />
+            <element signature="docComment;method#setId#0;class#User#0" expanded="false" />
+            <element signature="docComment;method#getNewBidFlag#0;class#User#0" expanded="false" />
+            <element signature="docComment;method#setNewBidFlag#0;class#User#0" expanded="false" />
+            <element signature="e#9307#9308#0" expanded="true" />
+            <element signature="e#9373#9374#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/models/UserList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33426967">
+          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding>
+            <element signature="docComment;class#UserList#0" expanded="false" />
+            <element signature="docComment;method#UserList#0;class#UserList#0" expanded="false" />
+            <element signature="docComment;method#size#0;class#UserList#0" expanded="false" />
+            <element signature="docComment;method#containsUser#0;class#UserList#0" expanded="false" />
+            <element signature="method#containsUser#0;class#UserList#0" expanded="false" />
+            <element signature="docComment;method#containsUser#1;class#UserList#0" expanded="false" />
+            <element signature="method#containsUser#1;class#UserList#0" expanded="false" />
+            <element signature="docComment;method#addUser#0;class#UserList#0" expanded="false" />
+            <element signature="docComment;method#removeUser#0;class#UserList#0" expanded="false" />
+            <element signature="method#removeUser#0;class#UserList#0" expanded="false" />
+            <element signature="docComment;method#removeUser#1;class#UserList#0" expanded="false" />
+            <element signature="method#removeUser#1;class#UserList#0" expanded="false" />
+            <element signature="docComment;method#removeUser#2;class#UserList#0" expanded="false" />
+            <element signature="method#removeUser#2;class#UserList#0" expanded="false" />
+            <element signature="docComment;method#getUser#0;class#UserList#0" expanded="false" />
+            <element signature="method#getUser#0;class#UserList#0" expanded="false" />
+            <element signature="docComment;method#getUser#1;class#UserList#0" expanded="false" />
+            <element signature="method#getUser#1;class#UserList#0" expanded="false" />
+            <element signature="docComment;method#clearUsers#0;class#UserList#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/util/Deserializer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33426967">
+          <caret line="103" column="5" selection-start-line="103" selection-start-column="5" selection-end-line="103" selection-end-column="5" />
+          <folding>
+            <element signature="docComment;class#Deserializer#0" expanded="false" />
+            <element signature="docComment;method#deserializeUser#0;class#Deserializer#0" expanded="false" />
+            <element signature="method#deserializeUser#0;class#Deserializer#0" expanded="false" />
+            <element signature="docComment;method#deserializeInstrument#0;class#Deserializer#0" expanded="false" />
+            <element signature="method#deserializeInstrument#0;class#Deserializer#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/controllers/ElasticsearchController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4775281">
+          <caret line="325" column="47" selection-start-line="325" selection-start-column="47" selection-end-line="325" selection-end-column="47" />
+          <folding>
+            <element signature="docComment;class#ElasticsearchController#0" expanded="false" />
+            <element signature="docComment;class#CreateUserTask#0;class#ElasticsearchController#0" expanded="false" />
+            <element signature="class#CreateUserTask#0;class#ElasticsearchController#0" expanded="false" />
+            <element signature="method#doInBackground#0;class#CreateUserTask#0;class#ElasticsearchController#0" expanded="false" />
+            <element signature="docComment;class#GetUserTask#0;class#ElasticsearchController#0" expanded="false" />
+            <element signature="class#GetUserTask#0;class#ElasticsearchController#0" expanded="false" />
+            <element signature="method#doInBackground#0;class#GetUserTask#0;class#ElasticsearchController#0" expanded="false" />
+            <element signature="e#3020#3084#0" expanded="false" />
+            <element signature="docComment;class#GetUserByNameTask#0;class#ElasticsearchController#0" expanded="false" />
+            <element signature="class#GetUserByNameTask#0;class#ElasticsearchController#0" expanded="false" />
+            <element signature="method#doInBackground#0;class#GetUserByNameTask#0;class#ElasticsearchController#0" expanded="false" />
+            <element signature="e#4708#4778#0" expanded="false" />
+            <element signature="docComment;class#GetUserByInstrumentIdTask#0;class#ElasticsearchController#0" expanded="false" />
+            <element signature="class#GetUserByInstrumentIdTask#0;class#ElasticsearchController#0" expanded="false" />
+            <element signature="method#doInBackground#0;class#GetUserByInstrumentIdTask#0;class#ElasticsearchController#0" expanded="false" />
+            <element signature="docComment;class#DeleteUserTask#0;class#ElasticsearchController#0" expanded="false" />
+            <element signature="class#DeleteUserTask#0;class#ElasticsearchController#0" expanded="false" />
+            <element signature="method#doInBackground#0;class#DeleteUserTask#0;class#ElasticsearchController#0" expanded="false" />
+            <element signature="docComment;class#DeleteUserByIdTask#0;class#ElasticsearchController#0" expanded="false" />
+            <element signature="class#DeleteUserByIdTask#0;class#ElasticsearchController#0" expanded="false" />
+            <element signature="method#doInBackground#0;class#DeleteUserByIdTask#0;class#ElasticsearchController#0" expanded="false" />
+            <element signature="docComment;class#UpdateUserTask#0;class#ElasticsearchController#0" expanded="false" />
+            <element signature="class#UpdateUserTask#0;class#ElasticsearchController#0" expanded="false" />
+            <element signature="method#doInBackground#0;class#UpdateUserTask#0;class#ElasticsearchController#0" expanded="false" />
+            <element signature="docComment;class#SearchInstrumentsTask#0;class#ElasticsearchController#0" expanded="false" />
+            <element signature="class#SearchInstrumentsTask#0;class#ElasticsearchController#0" expanded="false" />
+            <element signature="method#SearchInstrumentsTask#0;class#SearchInstrumentsTask#0;class#ElasticsearchController#0" expanded="false" />
+            <element signature="docComment;method#onPreExecute#0;class#SearchInstrumentsTask#0;class#ElasticsearchController#0" expanded="false" />
+            <element signature="method#onPreExecute#0;class#SearchInstrumentsTask#0;class#ElasticsearchController#0" expanded="false" />
+            <element signature="docComment;method#onPostExecute#0;class#SearchInstrumentsTask#0;class#ElasticsearchController#0" expanded="false" />
+            <element signature="method#onPostExecute#0;class#SearchInstrumentsTask#0;class#ElasticsearchController#0" expanded="false" />
+            <element signature="method#doInBackground#0;class#SearchInstrumentsTask#0;class#ElasticsearchController#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/controllers/Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.33707866">
+          <caret line="946" column="39" selection-start-line="946" selection-start-column="39" selection-end-line="946" selection-end-column="39" />
+          <folding>
+            <element signature="docComment;class#Controller#0" expanded="false" />
+            <element signature="docComment;method#Controller#0;class#Controller#0" expanded="false" />
+            <element signature="method#Controller#0;class#Controller#0" expanded="false" />
+            <element signature="docComment;method#getCurrentUser#0;class#Controller#0" expanded="false" />
+            <element signature="docComment;method#getUserByName#0;class#Controller#0" expanded="false" />
+            <element signature="method#getUserByName#0;class#Controller#0" expanded="false" />
+            <element signature="docComment;method#getUserById#0;class#Controller#0" expanded="false" />
+            <element signature="method#getUserById#0;class#Controller#0" expanded="false" />
+            <element signature="docComment;method#createUser#0;class#Controller#0" expanded="false" />
+            <element signature="method#createUser#0;class#Controller#0" expanded="false" />
+            <element signature="docComment;method#deleteUser#0;class#Controller#0" expanded="false" />
+            <element signature="method#deleteUser#0;class#Controller#0" expanded="false" />
+            <element signature="docComment;method#deleteUserById#0;class#Controller#0" expanded="false" />
+            <element signature="method#deleteUserById#0;class#Controller#0" expanded="false" />
+            <element signature="docComment;method#login#0;class#Controller#0" expanded="false" />
+            <element signature="method#login#0;class#Controller#0" expanded="false" />
+            <element signature="docComment;method#logout#0;class#Controller#0" expanded="false" />
+            <element signature="docComment;method#editCurrentUser#0;class#Controller#0" expanded="false" />
+            <element signature="method#editCurrentUser#0;class#Controller#0" expanded="false" />
+            <element signature="docComment;method#editCurrentUserName#0;class#Controller#0" expanded="false" />
+            <element signature="method#editCurrentUserName#0;class#Controller#0" expanded="false" />
+            <element signature="docComment;method#editCurrentUserEmail#0;class#Controller#0" expanded="false" />
+            <element signature="method#editCurrentUserEmail#0;class#Controller#0" expanded="false" />
+            <element signature="docComment;method#getCurrentUsersOwnedInstruments#0;class#Controller#0" expanded="false" />
+            <element signature="method#getCurrentUsersOwnedInstruments#0;class#Controller#0" expanded="false" />
+            <element signature="docComment;method#getCurrentUsersOwnedBorrowedInstruments#0;class#Controller#0" expanded="false" />
+            <element signature="method#getCurrentUsersOwnedBorrowedInstruments#0;class#Controller#0" expanded="false" />
+            <element signature="docComment;method#getCurrentUsersBorrowedInstruments#0;class#Controller#0" expanded="false" />
+            <element signature="method#getCurrentUsersBorrowedInstruments#0;class#Controller#0" expanded="false" />
+            <element signature="docComment;method#getCurrentUsersBiddedInstruments#0;class#Controller#0" expanded="false" />
+            <element signature="method#getCurrentUsersBiddedInstruments#0;class#Controller#0" expanded="false" />
+            <element signature="docComment;method#getCurrentUsersBids#0;class#Controller#0" expanded="false" />
+            <element signature="method#getCurrentUsersBids#0;class#Controller#0" expanded="false" />
+            <element signature="docComment;method#getInstrumentById#0;class#Controller#0" expanded="false" />
+            <element signature="method#getInstrumentById#0;class#Controller#0" expanded="false" />
+            <element signature="docComment;method#addInstrument#0;class#Controller#0" expanded="false" />
+            <element signature="method#addInstrument#0;class#Controller#0" expanded="false" />
+            <element signature="docComment;method#addInstrument#1;class#Controller#0" expanded="false" />
+            <element signature="method#addInstrument#1;class#Controller#0" expanded="false" />
+            <element signature="docComment;method#editInstrument#0;class#Controller#0" expanded="false" />
+            <element signature="method#editInstrument#0;class#Controller#0" expanded="false" />
+            <element signature="docComment;method#editInstrument#1;class#Controller#0" expanded="false" />
+            <element signature="method#editInstrument#1;class#Controller#0" expanded="false" />
+            <element signature="docComment;method#deleteInstrument#0;class#Controller#0" expanded="false" />
+            <element signature="method#deleteInstrument#0;class#Controller#0" expanded="false" />
+            <element signature="docComment;method#deleteInstrument#1;class#Controller#0" expanded="false" />
+            <element signature="method#deleteInstrument#1;class#Controller#0" expanded="false" />
+            <element signature="docComment;method#searchInstruments#0;class#Controller#0" expanded="false" />
+            <element signature="method#searchInstruments#0;class#Controller#0" expanded="false" />
+            <element signature="docComment;method#makeBidOnInstrument#0;class#Controller#0" expanded="false" />
+            <element signature="method#makeBidOnInstrument#0;class#Controller#0" expanded="false" />
+            <element signature="docComment;method#acceptBidOnInstrument#0;class#Controller#0" expanded="false" />
+            <element signature="method#acceptBidOnInstrument#0;class#Controller#0" expanded="false" />
+            <element signature="docComment;method#declineBidOnInstrument#0;class#Controller#0" expanded="false" />
+            <element signature="method#declineBidOnInstrument#0;class#Controller#0" expanded="false" />
+            <element signature="e#28452#28554#0" expanded="false" />
+            <element signature="docComment;method#returnInstrument#0;class#Controller#0" expanded="false" />
+            <element signature="method#returnInstrument#0;class#Controller#0" expanded="false" />
+            <element signature="docComment;method#returnInstrument#1;class#Controller#0" expanded="false" />
+            <element signature="method#returnInstrument#1;class#Controller#0" expanded="false" />
+            <element signature="docComment;method#acceptReturnedInstrument#0;class#Controller#0" expanded="false" />
+            <element signature="method#acceptReturnedInstrument#0;class#Controller#0" expanded="false" />
+            <element signature="docComment;method#acceptReturnedInstrument#1;class#Controller#0" expanded="false" />
+            <element signature="method#acceptReturnedInstrument#1;class#Controller#0" expanded="false" />
+            <element signature="docComment;method#resetNewBidFlag#0;class#Controller#0" expanded="false" />
+            <element signature="method#resetNewBidFlag#0;class#Controller#0" expanded="false" />
+            <element signature="docComment;method#addPhotoToInstrument#0;class#Controller#0" expanded="false" />
+            <element signature="method#addPhotoToInstrument#0;class#Controller#0" expanded="false" />
+            <element signature="docComment;method#deletePhotoFromInstrument#0;class#Controller#0" expanded="false" />
+            <element signature="method#deletePhotoFromInstrument#0;class#Controller#0" expanded="false" />
+            <element signature="docComment;method#setLocationForInstrument#0;class#Controller#0" expanded="false" />
+            <element signature="method#setLocationForInstrument#0;class#Controller#0" expanded="false" />
+            <element signature="docComment;method#clearLocationForInstrument#0;class#Controller#0" expanded="false" />
+            <element signature="method#clearLocationForInstrument#0;class#Controller#0" expanded="false" />
+            <element signature="method#addAudioSampleToInstrument#0;class#Controller#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -1,7 +1,5 @@
 package cmput301w16t08.scaling_pancake.models;
 
-import android.util.Log;
-
 import java.util.ArrayList;
 
 /**

@@ -3,7 +3,6 @@ package cmput301w16t08.scaling_pancake.models;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.util.Base64;
-import android.util.Log;
 
 import com.google.android.gms.maps.model.LatLng;
 
@@ -338,6 +337,10 @@ public class Instrument {
         this.returnedFlag = b;
     }
 
+    /**
+     * Returns a sting representation of the name, status, ownerId, and borrowerId of the <code>Instrument</code>
+     * @return the string
+     */
     public String toString(){
         return "Name: "+ this.name + " Status: " + this.status + " OwnerID: " + this.ownerId + " Borrowed by ID: " + this.borrowedById;
     }
@@ -466,15 +469,30 @@ public class Instrument {
         this.location = null;
     }
 
+    /**
+     * Returns the <code>bid</code> with the largest bid amount on the <code>Instrument</code>
+     *
+     * @return the bid
+     */
     public Bid getLargestBid()
     {
         return bids.getMaxBid();
     }
 
+    /**
+     * Adds an audio sample to the <code>Instrument</code>
+     *
+     * @param audioBase64 the audio sample as a Base64 string
+     */
     public void addSampleAudioBase64(String audioBase64) {
         this.audioBase64 = audioBase64;
     }
 
+    /**
+     * Returns the audio sample for the <code>Instrument</code> or an empty string if no audio sample
+     *
+     * @return the audio sample as a Base64 string or an empty string
+     */
     public String getSampleAudioBase64() {
         if (this.audioBase64 == null) {
             return "";
@@ -482,6 +500,9 @@ public class Instrument {
         return this.audioBase64;
     }
 
+    /**
+     * Deletes the current audio sample for the <code>Instrument</code>
+     */
     public void deleteSampleAudio() {
         this.audioBase64 = null;
     }
