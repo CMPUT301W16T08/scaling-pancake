@@ -52,162 +52,7 @@
     <favorites_list name="scaling-pancake" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="Controller.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/controllers/Controller.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.43539324">
-              <caret line="156" column="4" selection-start-line="156" selection-start-column="4" selection-end-line="156" selection-end-column="4" />
-              <folding>
-                <element signature="docComment;method#Controller#0;class#Controller#0" expanded="false" />
-                <element signature="method#Controller#0;class#Controller#0" expanded="false" />
-                <element signature="docComment;method#getCurrentUser#0;class#Controller#0" expanded="false" />
-                <element signature="docComment;method#getUserByName#0;class#Controller#0" expanded="false" />
-                <element signature="method#getUserByName#0;class#Controller#0" expanded="false" />
-                <element signature="docComment;method#getUserById#0;class#Controller#0" expanded="false" />
-                <element signature="method#getUserById#0;class#Controller#0" expanded="false" />
-                <element signature="docComment;method#createUser#0;class#Controller#0" expanded="false" />
-                <element signature="method#createUser#0;class#Controller#0" expanded="false" />
-                <element signature="docComment;method#deleteUser#0;class#Controller#0" expanded="false" />
-                <element signature="method#deleteUser#0;class#Controller#0" expanded="false" />
-                <element signature="docComment;method#deleteUserById#0;class#Controller#0" expanded="false" />
-                <element signature="method#deleteUserById#0;class#Controller#0" expanded="false" />
-                <element signature="docComment;method#login#0;class#Controller#0" expanded="false" />
-                <element signature="method#login#0;class#Controller#0" expanded="false" />
-                <element signature="docComment;method#logout#0;class#Controller#0" expanded="false" />
-                <element signature="docComment;method#editCurrentUser#0;class#Controller#0" expanded="false" />
-                <element signature="method#editCurrentUser#0;class#Controller#0" expanded="false" />
-                <element signature="docComment;method#editCurrentUserName#0;class#Controller#0" expanded="false" />
-                <element signature="method#editCurrentUserName#0;class#Controller#0" expanded="false" />
-                <element signature="docComment;method#editCurrentUserEmail#0;class#Controller#0" expanded="false" />
-                <element signature="method#editCurrentUserEmail#0;class#Controller#0" expanded="false" />
-                <element signature="docComment;method#getCurrentUsersOwnedInstruments#0;class#Controller#0" expanded="false" />
-                <element signature="method#getCurrentUsersOwnedInstruments#0;class#Controller#0" expanded="false" />
-                <element signature="docComment;method#getCurrentUsersOwnedBorrowedInstruments#0;class#Controller#0" expanded="false" />
-                <element signature="method#getCurrentUsersOwnedBorrowedInstruments#0;class#Controller#0" expanded="false" />
-                <element signature="docComment;method#getCurrentUsersBorrowedInstruments#0;class#Controller#0" expanded="false" />
-                <element signature="method#getCurrentUsersBorrowedInstruments#0;class#Controller#0" expanded="false" />
-                <element signature="docComment;method#getCurrentUsersBiddedInstruments#0;class#Controller#0" expanded="false" />
-                <element signature="method#getCurrentUsersBiddedInstruments#0;class#Controller#0" expanded="false" />
-                <element signature="docComment;method#getCurrentUsersBids#0;class#Controller#0" expanded="false" />
-                <element signature="method#getCurrentUsersBids#0;class#Controller#0" expanded="false" />
-                <element signature="docComment;method#getInstrumentById#0;class#Controller#0" expanded="false" />
-                <element signature="method#getInstrumentById#0;class#Controller#0" expanded="false" />
-                <element signature="docComment;method#addInstrument#0;class#Controller#0" expanded="false" />
-                <element signature="method#addInstrument#0;class#Controller#0" expanded="false" />
-                <element signature="docComment;method#addInstrument#1;class#Controller#0" expanded="false" />
-                <element signature="method#addInstrument#1;class#Controller#0" expanded="false" />
-                <element signature="docComment;method#editInstrument#0;class#Controller#0" expanded="false" />
-                <element signature="method#editInstrument#0;class#Controller#0" expanded="false" />
-                <element signature="docComment;method#editInstrument#1;class#Controller#0" expanded="false" />
-                <element signature="method#editInstrument#1;class#Controller#0" expanded="false" />
-                <element signature="docComment;method#deleteInstrument#0;class#Controller#0" expanded="false" />
-                <element signature="method#deleteInstrument#0;class#Controller#0" expanded="false" />
-                <element signature="docComment;method#deleteInstrument#1;class#Controller#0" expanded="false" />
-                <element signature="method#deleteInstrument#1;class#Controller#0" expanded="false" />
-                <element signature="docComment;method#searchInstruments#0;class#Controller#0" expanded="false" />
-                <element signature="method#searchInstruments#0;class#Controller#0" expanded="false" />
-                <element signature="docComment;method#makeBidOnInstrument#0;class#Controller#0" expanded="false" />
-                <element signature="method#makeBidOnInstrument#0;class#Controller#0" expanded="false" />
-                <element signature="docComment;method#acceptBidOnInstrument#0;class#Controller#0" expanded="false" />
-                <element signature="method#acceptBidOnInstrument#0;class#Controller#0" expanded="false" />
-                <element signature="docComment;method#declineBidOnInstrument#0;class#Controller#0" expanded="false" />
-                <element signature="method#declineBidOnInstrument#0;class#Controller#0" expanded="false" />
-                <element signature="e#28481#28583#0" expanded="false" />
-                <element signature="docComment;method#returnInstrument#0;class#Controller#0" expanded="false" />
-                <element signature="method#returnInstrument#0;class#Controller#0" expanded="false" />
-                <element signature="docComment;method#returnInstrument#1;class#Controller#0" expanded="false" />
-                <element signature="method#returnInstrument#1;class#Controller#0" expanded="false" />
-                <element signature="docComment;method#acceptReturnedInstrument#0;class#Controller#0" expanded="false" />
-                <element signature="method#acceptReturnedInstrument#0;class#Controller#0" expanded="false" />
-                <element signature="docComment;method#acceptReturnedInstrument#1;class#Controller#0" expanded="false" />
-                <element signature="method#acceptReturnedInstrument#1;class#Controller#0" expanded="false" />
-                <element signature="docComment;method#resetNewBidFlag#0;class#Controller#0" expanded="false" />
-                <element signature="method#resetNewBidFlag#0;class#Controller#0" expanded="false" />
-                <element signature="docComment;method#addPhotoToInstrument#0;class#Controller#0" expanded="false" />
-                <element signature="method#addPhotoToInstrument#0;class#Controller#0" expanded="false" />
-                <element signature="docComment;method#deletePhotoFromInstrument#0;class#Controller#0" expanded="false" />
-                <element signature="method#deletePhotoFromInstrument#0;class#Controller#0" expanded="false" />
-                <element signature="docComment;method#setLocationForInstrument#0;class#Controller#0" expanded="false" />
-                <element signature="method#setLocationForInstrument#0;class#Controller#0" expanded="false" />
-                <element signature="docComment;method#clearLocationForInstrument#0;class#Controller#0" expanded="false" />
-                <element signature="method#clearLocationForInstrument#0;class#Controller#0" expanded="false" />
-                <element signature="method#addAudioSampleToInstrument#0;class#Controller#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RecordAudioActivity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/activities/RecordAudioActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="27" column="3" selection-start-line="27" selection-start-column="3" selection-end-line="27" selection-end-column="18" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#7895#8252#0" expanded="true" />
-                <element signature="e#8251#8252#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ViewLocationActivity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/activities/ViewLocationActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="19" column="18" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BidList.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/models/BidList.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="173" column="30" selection-start-line="173" selection-start-column="30" selection-end-line="173" selection-end-column="30" />
-              <folding>
-                <element signature="docComment;class#BidList#0" expanded="false" />
-                <element signature="docComment;method#BidList#0;class#BidList#0" expanded="false" />
-                <element signature="docComment;method#size#0;class#BidList#0" expanded="false" />
-                <element signature="docComment;method#containsBid#0;class#BidList#0" expanded="false" />
-                <element signature="method#containsBid#0;class#BidList#0" expanded="false" />
-                <element signature="docComment;method#containsBid#1;class#BidList#0" expanded="false" />
-                <element signature="method#containsBid#1;class#BidList#0" expanded="false" />
-                <element signature="docComment;method#addBid#0;class#BidList#0" expanded="false" />
-                <element signature="docComment;method#removeBid#0;class#BidList#0" expanded="false" />
-                <element signature="method#removeBid#0;class#BidList#0" expanded="false" />
-                <element signature="docComment;method#removeBid#1;class#BidList#0" expanded="false" />
-                <element signature="method#removeBid#1;class#BidList#0" expanded="false" />
-                <element signature="docComment;method#removeBid#2;class#BidList#0" expanded="false" />
-                <element signature="method#removeBid#2;class#BidList#0" expanded="false" />
-                <element signature="docComment;method#getBid#0;class#BidList#0" expanded="false" />
-                <element signature="method#getBid#0;class#BidList#0" expanded="false" />
-                <element signature="docComment;method#getArray#0;class#BidList#0" expanded="false" />
-                <element signature="method#getArray#0;class#BidList#0" expanded="false" />
-                <element signature="docComment;method#getBid#1;class#BidList#0" expanded="false" />
-                <element signature="method#getBid#1;class#BidList#0" expanded="false" />
-                <element signature="docComment;method#clearBids#0;class#BidList#0" expanded="false" />
-                <element signature="method#getMaxBid#0;class#BidList#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SearchResultsAdapter.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/adapters/SearchResultsAdapter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="GradleLocalSettings">
     <option name="availableProjects">
@@ -1815,11 +1660,11 @@
         <option value="$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/models/InstrumentList.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/models/User.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/controllers/ElasticsearchController.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/activities/RecordAudioActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/activities/ViewLocationActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/models/BidList.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/adapters/SearchResultsAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/controllers/Controller.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/activities/RecordAudioActivity.java" />
       </list>
     </option>
   </component>
@@ -1937,6 +1782,10 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="scaling_pancake" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="util" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -2364,7 +2213,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1374" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -2387,8 +2236,8 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3547655" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.34582624" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3547655" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.34582624" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -2410,11 +2259,11 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="965" column="9" selection-start-line="965" selection-start-column="9" selection-end-line="965" selection-end-column="9" />
           <folding>
+            <element signature="docComment;class#Controller#0" expanded="false" />
             <element signature="docComment;method#Controller#0;class#Controller#0" expanded="false" />
             <element signature="method#Controller#0;class#Controller#0" expanded="false" />
             <element signature="docComment;method#getCurrentUser#0;class#Controller#0" expanded="false" />
             <element signature="docComment;method#getUserByName#0;class#Controller#0" expanded="false" />
-            <element signature="method#getUserByName#0;class#Controller#0" expanded="false" />
             <element signature="docComment;method#getUserById#0;class#Controller#0" expanded="false" />
             <element signature="method#getUserById#0;class#Controller#0" expanded="false" />
             <element signature="docComment;method#createUser#0;class#Controller#0" expanded="false" />
@@ -2493,9 +2342,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#7895#8252#0" expanded="true" />
-            <element signature="e#8251#8252#0" expanded="true" />
+            <element signature="e#7890#8247#0" expanded="false" />
+            <element signature="e#8246#8247#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2508,62 +2356,57 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/models/Bid.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.9578652">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding>
-            <element signature="docComment;class#Bid#0" expanded="false" />
-            <element signature="docComment;method#Bid#0;class#Bid#0" expanded="false" />
-            <element signature="method#Bid#0;class#Bid#0" expanded="false" />
-            <element signature="docComment;method#Bid#1;class#Bid#0" expanded="false" />
-            <element signature="method#Bid#1;class#Bid#0" expanded="false" />
-            <element signature="docComment;method#getInstrumentId#0;class#Bid#0" expanded="false" />
-            <element signature="docComment;method#getOwnerId#0;class#Bid#0" expanded="false" />
-            <element signature="docComment;method#getBidderId#0;class#Bid#0" expanded="false" />
-            <element signature="docComment;method#getBidAmount#0;class#Bid#0" expanded="false" />
-            <element signature="docComment;method#getAccepted#0;class#Bid#0" expanded="false" />
-            <element signature="docComment;method#setAccepted#0;class#Bid#0" expanded="false" />
-            <element signature="docComment;method#getId#0;class#Bid#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/androidTest/java/cmput301w16t08/scaling_pancake/InstrumentListTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.24438202">
           <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/util/Deserializer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33426967">
+          <caret line="103" column="5" selection-start-line="103" selection-start-column="5" selection-end-line="103" selection-end-column="5" />
+          <folding>
+            <element signature="docComment;class#Deserializer#0" expanded="false" />
+            <element signature="docComment;method#deserializeUser#0;class#Deserializer#0" expanded="false" />
+            <element signature="method#deserializeUser#0;class#Deserializer#0" expanded="false" />
+            <element signature="docComment;method#deserializeInstrument#0;class#Deserializer#0" expanded="false" />
+            <element signature="method#deserializeInstrument#0;class#Deserializer#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/models/Instrument.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5702247">
-          <caret line="503" column="64" selection-start-line="503" selection-start-column="64" selection-end-line="503" selection-end-column="64" />
+        <state vertical-scroll-proportion="0.7696629">
+          <caret line="502" column="4" selection-start-line="502" selection-start-column="4" selection-end-line="502" selection-end-column="4" />
           <folding>
             <element signature="docComment;class#Instrument#0" expanded="false" />
             <element signature="docComment;method#Instrument#0;class#Instrument#0" expanded="false" />
+            <element signature="method#Instrument#0;class#Instrument#0" expanded="false" />
             <element signature="docComment;method#Instrument#1;class#Instrument#0" expanded="false" />
+            <element signature="method#Instrument#1;class#Instrument#0" expanded="false" />
+            <element signature="docComment;method#Instrument#2;class#Instrument#0" expanded="false" />
             <element signature="method#Instrument#2;class#Instrument#0" expanded="false" />
+            <element signature="docComment;method#Instrument#3;class#Instrument#0" expanded="false" />
             <element signature="method#Instrument#3;class#Instrument#0" expanded="false" />
             <element signature="docComment;method#getStatus#0;class#Instrument#0" expanded="false" />
-            <element signature="e#4252#4253#0" expanded="true" />
-            <element signature="e#4281#4282#0" expanded="true" />
             <element signature="docComment;method#setStatus#0;class#Instrument#0" expanded="false" />
+            <element signature="method#setStatus#0;class#Instrument#0" expanded="false" />
             <element signature="docComment;method#getName#0;class#Instrument#0" expanded="false" />
-            <element signature="e#4929#4930#0" expanded="true" />
-            <element signature="e#4956#4957#0" expanded="true" />
             <element signature="docComment;method#setName#0;class#Instrument#0" expanded="false" />
             <element signature="docComment;method#getDescription#0;class#Instrument#0" expanded="false" />
             <element signature="docComment;method#setDescription#0;class#Instrument#0" expanded="false" />
             <element signature="docComment;method#getOwnerId#0;class#Instrument#0" expanded="false" />
             <element signature="docComment;method#getBorrowedById#0;class#Instrument#0" expanded="false" />
+            <element signature="method#getBorrowedById#0;class#Instrument#0" expanded="false" />
             <element signature="docComment;method#setBorrowedById#0;class#Instrument#0" expanded="false" />
             <element signature="method#setBorrowedById#0;class#Instrument#0" expanded="false" />
             <element signature="docComment;method#getBids#0;class#Instrument#0" expanded="false" />
-            <element signature="e#6759#6760#0" expanded="true" />
-            <element signature="e#6791#6792#0" expanded="true" />
             <element signature="docComment;method#addBid#0;class#Instrument#0" expanded="false" />
+            <element signature="method#addBid#0;class#Instrument#0" expanded="false" />
             <element signature="docComment;method#acceptBid#0;class#Instrument#0" expanded="false" />
             <element signature="method#acceptBid#0;class#Instrument#0" expanded="false" />
             <element signature="docComment;method#acceptBid#1;class#Instrument#0" expanded="false" />
@@ -2573,9 +2416,11 @@
             <element signature="docComment;method#declineBid#1;class#Instrument#0" expanded="false" />
             <element signature="method#declineBid#1;class#Instrument#0" expanded="false" />
             <element signature="docComment;method#getId#0;class#Instrument#0" expanded="false" />
-            <element signature="e#9614#9615#0" expanded="true" />
-            <element signature="e#9639#9640#0" expanded="true" />
             <element signature="docComment;method#getReturnedFlag#0;class#Instrument#0" expanded="false" />
+            <element signature="docComment;method#setReturnedFlag#0;class#Instrument#0" expanded="false" />
+            <element signature="docComment;method#toString#0;class#Instrument#0" expanded="false" />
+            <element signature="method#toString#0;class#Instrument#0" expanded="false" />
+            <element signature="docComment;method#addThumbnail#0;class#Instrument#0" expanded="false" />
             <element signature="method#addThumbnail#0;class#Instrument#0" expanded="false" />
             <element signature="docComment;method#addThumbnail#1;class#Instrument#0" expanded="false" />
             <element signature="method#addThumbnail#1;class#Instrument#0" expanded="false" />
@@ -2593,19 +2438,17 @@
             <element signature="docComment;method#setLocation#0;class#Instrument#0" expanded="false" />
             <element signature="docComment;method#clearLocation#0;class#Instrument#0" expanded="false" />
             <element signature="docComment;method#getLargestBid#0;class#Instrument#0" expanded="false" />
-            <element signature="e#14409#14410#0" expanded="true" />
-            <element signature="e#14455#14456#0" expanded="true" />
+            <element signature="docComment;method#addSampleAudioBase64#0;class#Instrument#0" expanded="false" />
             <element signature="docComment;method#getSampleAudioBase64#0;class#Instrument#0" expanded="false" />
             <element signature="method#getSampleAudioBase64#0;class#Instrument#0" expanded="false" />
-            <element signature="e#14933#14934#0" expanded="true" />
-            <element signature="e#14972#14973#0" expanded="true" />
+            <element signature="docComment;method#deleteSampleAudio#0;class#Instrument#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/models/InstrumentList.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4747191">
+        <state vertical-scroll-proportion="0.6769663">
           <caret line="155" column="5" selection-start-line="155" selection-start-column="5" selection-end-line="155" selection-end-column="5" />
           <folding>
             <element signature="docComment;class#InstrumentList#0" expanded="false" />
@@ -2633,9 +2476,89 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/models/BidList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6544944">
+          <caret line="173" column="30" selection-start-line="173" selection-start-column="30" selection-end-line="173" selection-end-column="30" />
+          <folding>
+            <element signature="docComment;class#BidList#0" expanded="false" />
+            <element signature="docComment;method#BidList#0;class#BidList#0" expanded="false" />
+            <element signature="docComment;method#size#0;class#BidList#0" expanded="false" />
+            <element signature="docComment;method#containsBid#0;class#BidList#0" expanded="false" />
+            <element signature="method#containsBid#0;class#BidList#0" expanded="false" />
+            <element signature="docComment;method#containsBid#1;class#BidList#0" expanded="false" />
+            <element signature="method#containsBid#1;class#BidList#0" expanded="false" />
+            <element signature="docComment;method#addBid#0;class#BidList#0" expanded="false" />
+            <element signature="docComment;method#removeBid#0;class#BidList#0" expanded="false" />
+            <element signature="method#removeBid#0;class#BidList#0" expanded="false" />
+            <element signature="docComment;method#removeBid#1;class#BidList#0" expanded="false" />
+            <element signature="method#removeBid#1;class#BidList#0" expanded="false" />
+            <element signature="docComment;method#removeBid#2;class#BidList#0" expanded="false" />
+            <element signature="method#removeBid#2;class#BidList#0" expanded="false" />
+            <element signature="docComment;method#getBid#0;class#BidList#0" expanded="false" />
+            <element signature="method#getBid#0;class#BidList#0" expanded="false" />
+            <element signature="docComment;method#getArray#0;class#BidList#0" expanded="false" />
+            <element signature="method#getArray#0;class#BidList#0" expanded="false" />
+            <element signature="docComment;method#getBid#1;class#BidList#0" expanded="false" />
+            <element signature="method#getBid#1;class#BidList#0" expanded="false" />
+            <element signature="docComment;method#clearBids#0;class#BidList#0" expanded="false" />
+            <element signature="method#getMaxBid#0;class#BidList#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/models/UserList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.75">
+          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding>
+            <element signature="docComment;class#UserList#0" expanded="false" />
+            <element signature="docComment;method#UserList#0;class#UserList#0" expanded="false" />
+            <element signature="docComment;method#size#0;class#UserList#0" expanded="false" />
+            <element signature="docComment;method#containsUser#0;class#UserList#0" expanded="false" />
+            <element signature="method#containsUser#0;class#UserList#0" expanded="false" />
+            <element signature="docComment;method#containsUser#1;class#UserList#0" expanded="false" />
+            <element signature="method#containsUser#1;class#UserList#0" expanded="false" />
+            <element signature="docComment;method#addUser#0;class#UserList#0" expanded="false" />
+            <element signature="docComment;method#removeUser#0;class#UserList#0" expanded="false" />
+            <element signature="method#removeUser#0;class#UserList#0" expanded="false" />
+            <element signature="docComment;method#removeUser#1;class#UserList#0" expanded="false" />
+            <element signature="method#removeUser#1;class#UserList#0" expanded="false" />
+            <element signature="docComment;method#removeUser#2;class#UserList#0" expanded="false" />
+            <element signature="method#removeUser#2;class#UserList#0" expanded="false" />
+            <element signature="docComment;method#getUser#0;class#UserList#0" expanded="false" />
+            <element signature="method#getUser#0;class#UserList#0" expanded="false" />
+            <element signature="docComment;method#getUser#1;class#UserList#0" expanded="false" />
+            <element signature="method#getUser#1;class#UserList#0" expanded="false" />
+            <element signature="docComment;method#clearUsers#0;class#UserList#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/models/Bid.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.9578652">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding>
+            <element signature="docComment;class#Bid#0" expanded="false" />
+            <element signature="docComment;method#Bid#0;class#Bid#0" expanded="false" />
+            <element signature="method#Bid#0;class#Bid#0" expanded="false" />
+            <element signature="docComment;method#Bid#1;class#Bid#0" expanded="false" />
+            <element signature="method#Bid#1;class#Bid#0" expanded="false" />
+            <element signature="docComment;method#getInstrumentId#0;class#Bid#0" expanded="false" />
+            <element signature="docComment;method#getOwnerId#0;class#Bid#0" expanded="false" />
+            <element signature="docComment;method#getBidderId#0;class#Bid#0" expanded="false" />
+            <element signature="docComment;method#getBidAmount#0;class#Bid#0" expanded="false" />
+            <element signature="docComment;method#getAccepted#0;class#Bid#0" expanded="false" />
+            <element signature="docComment;method#setAccepted#0;class#Bid#0" expanded="false" />
+            <element signature="docComment;method#getId#0;class#Bid#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/models/User.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8005618">
+        <state vertical-scroll-proportion="0.6573034">
           <caret line="311" column="25" selection-start-line="311" selection-start-column="25" selection-end-line="311" selection-end-column="25" />
           <folding>
             <element signature="docComment;class#User#0" expanded="false" />
@@ -2673,50 +2596,13 @@
             <element signature="docComment;method#setId#0;class#User#0" expanded="false" />
             <element signature="docComment;method#getNewBidFlag#0;class#User#0" expanded="false" />
             <element signature="docComment;method#setNewBidFlag#0;class#User#0" expanded="false" />
-            <element signature="e#9307#9308#0" expanded="false" />
-            <element signature="e#9373#9374#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/models/UserList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33426967">
-          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-          <folding>
-            <element signature="docComment;class#UserList#0" expanded="false" />
-            <element signature="docComment;method#UserList#0;class#UserList#0" expanded="false" />
-            <element signature="docComment;method#size#0;class#UserList#0" expanded="false" />
-            <element signature="docComment;method#containsUser#0;class#UserList#0" expanded="false" />
-            <element signature="method#containsUser#0;class#UserList#0" expanded="false" />
-            <element signature="docComment;method#containsUser#1;class#UserList#0" expanded="false" />
-            <element signature="method#containsUser#1;class#UserList#0" expanded="false" />
-            <element signature="docComment;method#addUser#0;class#UserList#0" expanded="false" />
-            <element signature="docComment;method#removeUser#0;class#UserList#0" expanded="false" />
-            <element signature="method#removeUser#0;class#UserList#0" expanded="false" />
-            <element signature="docComment;method#removeUser#1;class#UserList#0" expanded="false" />
-            <element signature="method#removeUser#1;class#UserList#0" expanded="false" />
-            <element signature="docComment;method#removeUser#2;class#UserList#0" expanded="false" />
-            <element signature="method#removeUser#2;class#UserList#0" expanded="false" />
-            <element signature="docComment;method#getUser#0;class#UserList#0" expanded="false" />
-            <element signature="method#getUser#0;class#UserList#0" expanded="false" />
-            <element signature="docComment;method#getUser#1;class#UserList#0" expanded="false" />
-            <element signature="method#getUser#1;class#UserList#0" expanded="false" />
-            <element signature="docComment;method#clearUsers#0;class#UserList#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/util/Deserializer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33426967">
-          <caret line="103" column="5" selection-start-line="103" selection-start-column="5" selection-end-line="103" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/controllers/ElasticsearchController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4775281">
+        <state vertical-scroll-proportion="0.0">
           <caret line="325" column="47" selection-start-line="325" selection-start-column="47" selection-end-line="325" selection-end-column="47" />
           <folding>
             <element signature="docComment;class#ElasticsearchController#0" expanded="false" />
@@ -2744,7 +2630,6 @@
             <element signature="class#UpdateUserTask#0;class#ElasticsearchController#0" expanded="false" />
             <element signature="method#doInBackground#0;class#UpdateUserTask#0;class#ElasticsearchController#0" expanded="false" />
             <element signature="docComment;class#SearchInstrumentsTask#0;class#ElasticsearchController#0" expanded="false" />
-            <element signature="class#SearchInstrumentsTask#0;class#ElasticsearchController#0" expanded="false" />
             <element signature="method#SearchInstrumentsTask#0;class#SearchInstrumentsTask#0;class#ElasticsearchController#0" expanded="false" />
             <element signature="docComment;method#onPreExecute#0;class#SearchInstrumentsTask#0;class#ElasticsearchController#0" expanded="false" />
             <element signature="method#onPreExecute#0;class#SearchInstrumentsTask#0;class#ElasticsearchController#0" expanded="false" />
@@ -2755,101 +2640,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/activities/EditInstrumentActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33146068">
-          <caret line="34" column="13" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/activities/AddInstrumentActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.8372092">
-          <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/activities/CreateProfileActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3041145">
-          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/activities/RecordAudioActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/util/PrePostActionWrapper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="27" column="3" selection-start-line="27" selection-start-column="3" selection-end-line="27" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#7895#8252#0" expanded="true" />
-            <element signature="e#8251#8252#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/activities/ViewLocationActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="19" column="18" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
+          <caret line="13" column="22" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/models/BidList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="173" column="30" selection-start-line="173" selection-start-column="30" selection-end-line="173" selection-end-column="30" />
-          <folding>
-            <element signature="docComment;class#BidList#0" expanded="false" />
-            <element signature="docComment;method#BidList#0;class#BidList#0" expanded="false" />
-            <element signature="docComment;method#size#0;class#BidList#0" expanded="false" />
-            <element signature="docComment;method#containsBid#0;class#BidList#0" expanded="false" />
-            <element signature="method#containsBid#0;class#BidList#0" expanded="false" />
-            <element signature="docComment;method#containsBid#1;class#BidList#0" expanded="false" />
-            <element signature="method#containsBid#1;class#BidList#0" expanded="false" />
-            <element signature="docComment;method#addBid#0;class#BidList#0" expanded="false" />
-            <element signature="docComment;method#removeBid#0;class#BidList#0" expanded="false" />
-            <element signature="method#removeBid#0;class#BidList#0" expanded="false" />
-            <element signature="docComment;method#removeBid#1;class#BidList#0" expanded="false" />
-            <element signature="method#removeBid#1;class#BidList#0" expanded="false" />
-            <element signature="docComment;method#removeBid#2;class#BidList#0" expanded="false" />
-            <element signature="method#removeBid#2;class#BidList#0" expanded="false" />
-            <element signature="docComment;method#getBid#0;class#BidList#0" expanded="false" />
-            <element signature="method#getBid#0;class#BidList#0" expanded="false" />
-            <element signature="docComment;method#getArray#0;class#BidList#0" expanded="false" />
-            <element signature="method#getArray#0;class#BidList#0" expanded="false" />
-            <element signature="docComment;method#getBid#1;class#BidList#0" expanded="false" />
-            <element signature="method#getBid#1;class#BidList#0" expanded="false" />
-            <element signature="docComment;method#clearBids#0;class#BidList#0" expanded="false" />
-            <element signature="method#getMaxBid#0;class#BidList#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/adapters/SearchResultsAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/controllers/Controller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.43539324">
-          <caret line="156" column="4" selection-start-line="156" selection-start-column="4" selection-end-line="156" selection-end-column="4" />
+        <state vertical-scroll-proportion="1.6882023">
+          <caret line="196" column="5" selection-start-line="196" selection-start-column="5" selection-end-line="196" selection-end-column="5" />
           <folding>
+            <element signature="docComment;class#Controller#0" expanded="false" />
             <element signature="docComment;method#Controller#0;class#Controller#0" expanded="false" />
             <element signature="method#Controller#0;class#Controller#0" expanded="false" />
             <element signature="docComment;method#getCurrentUser#0;class#Controller#0" expanded="false" />
             <element signature="docComment;method#getUserByName#0;class#Controller#0" expanded="false" />
-            <element signature="method#getUserByName#0;class#Controller#0" expanded="false" />
             <element signature="docComment;method#getUserById#0;class#Controller#0" expanded="false" />
             <element signature="method#getUserById#0;class#Controller#0" expanded="false" />
             <element signature="docComment;method#createUser#0;class#Controller#0" expanded="false" />
@@ -2919,6 +2727,247 @@
             <element signature="docComment;method#clearLocationForInstrument#0;class#Controller#0" expanded="false" />
             <element signature="method#clearLocationForInstrument#0;class#Controller#0" expanded="false" />
             <element signature="method#addAudioSampleToInstrument#0;class#Controller#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/adapters/BiddedInstrumentsAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33146068">
+          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/adapters/BidsAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33146068">
+          <caret line="19" column="16" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/adapters/BorrowedInstrumentAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33146068">
+          <caret line="27" column="13" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/adapters/OwnedInstrumentAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33146068">
+          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/adapters/LendedInstrumentsAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/activities/AddInstrumentActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/activities/BidListActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/activities/CreateProfileActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.5337079">
+          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/activities/DisplaySearchResultsActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.0955056">
+          <caret line="64" column="0" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/activities/EditInstrumentActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.5814607">
+          <caret line="34" column="13" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
+          <folding>
+            <element signature="docComment;class#EditInstrumentActivity#0" expanded="false" />
+            <element signature="method#onCreate#0;class#EditInstrumentActivity#0" expanded="false" />
+            <element signature="method#onResume#0;class#EditInstrumentActivity#0" expanded="false" />
+            <element signature="method#onPause#0;class#EditInstrumentActivity#0" expanded="false" />
+            <element signature="method#onStop#0;class#EditInstrumentActivity#0" expanded="false" />
+            <element signature="method#onPlayButtonClick#0;class#EditInstrumentActivity#0" expanded="false" />
+            <element signature="method#deleteInstrument#0;class#EditInstrumentActivity#0" expanded="false" />
+            <element signature="docComment;method#launchPhotoDialog#0;class#EditInstrumentActivity#0" expanded="false" />
+            <element signature="method#launchPhotoDialog#0;class#EditInstrumentActivity#0" expanded="false" />
+            <element signature="method#addAudioSample#0;class#EditInstrumentActivity#0" expanded="false" />
+            <element signature="method#onActivityResult#0;class#EditInstrumentActivity#0" expanded="false" />
+            <element signature="docComment;method#onBackPressed#0;class#EditInstrumentActivity#0" expanded="false" />
+            <element signature="method#onBackPressed#0;class#EditInstrumentActivity#0" expanded="false" />
+            <element signature="docComment;method#launchGallery#0;class#EditInstrumentActivity#0" expanded="false" />
+            <element signature="method#launchGallery#0;class#EditInstrumentActivity#0" expanded="false" />
+            <element signature="docComment;method#launchCamera#0;class#EditInstrumentActivity#0" expanded="false" />
+            <element signature="method#launchCamera#0;class#EditInstrumentActivity#0" expanded="false" />
+            <element signature="docComment;method#hideDialogBox#0;class#EditInstrumentActivity#0" expanded="false" />
+            <element signature="method#hideDialogBox#0;class#EditInstrumentActivity#0" expanded="false" />
+            <element signature="method#save#0;class#EditInstrumentActivity#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/activities/EditProfileActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/activities/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.25">
+          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/activities/ViewBidActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+          <folding>
+            <element signature="method#onCreate#0;class#ViewBidActivity#0" expanded="false" />
+            <element signature="method#onStart#0;class#ViewBidActivity#0" expanded="false" />
+            <element signature="method#onStop#0;class#ViewBidActivity#0" expanded="false" />
+            <element signature="method#setLocation#0;class#ViewBidActivity#0" expanded="false" />
+            <element signature="method#onActivityResult#0;class#ViewBidActivity#0" expanded="false" />
+            <element signature="method#acceptBid#0;class#ViewBidActivity#0" expanded="false" />
+            <element signature="method#declineBid#0;class#ViewBidActivity#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/activities/SearchInstrumentsActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.42977527">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/adapters/SearchResultsAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5252809">
+          <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/activities/MenuActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.1516855">
+          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/activities/RecordAudioActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.53370786">
+          <caret line="189" column="4" selection-start-line="189" selection-start-column="4" selection-end-line="189" selection-end-column="4" />
+          <folding>
+            <element signature="docComment;class#RecordAudioActivity#0" expanded="false" />
+            <element signature="method#onCreate#0;class#RecordAudioActivity#0" expanded="false" />
+            <element signature="method#onResume#0;class#RecordAudioActivity#0" expanded="false" />
+            <element signature="docComment;method#onRecord#0;class#RecordAudioActivity#0" expanded="false" />
+            <element signature="method#onRecord#0;class#RecordAudioActivity#0" expanded="false" />
+            <element signature="docComment;method#startRecording#0;class#RecordAudioActivity#0" expanded="false" />
+            <element signature="method#startRecording#0;class#RecordAudioActivity#0" expanded="false" />
+            <element signature="docComment;method#stopRecording#0;class#RecordAudioActivity#0" expanded="false" />
+            <element signature="method#stopRecording#0;class#RecordAudioActivity#0" expanded="false" />
+            <element signature="method#onPause#0;class#RecordAudioActivity#0" expanded="false" />
+            <element signature="method#onStop#0;class#RecordAudioActivity#0" expanded="false" />
+            <element signature="docComment;class#RecordButton#0;class#RecordAudioActivity#0" expanded="false" />
+            <element signature="class#RecordButton#0;class#RecordAudioActivity#0" expanded="false" />
+            <element signature="method#RecordButton#0;class#RecordButton#0;class#RecordAudioActivity#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/activities/InstrumentListActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.710674">
+          <caret line="43" column="58" selection-start-line="43" selection-start-column="4" selection-end-line="43" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/activities/ViewInstrumentActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="2.1966293">
+          <caret line="267" column="0" selection-start-line="267" selection-start-column="0" selection-end-line="267" selection-end-column="0" />
+          <folding>
+            <element signature="docComment;class#ViewInstrumentActivity#0" expanded="false" />
+            <element signature="method#onCreate#0;class#ViewInstrumentActivity#0" expanded="false" />
+            <element signature="method#onResume#0;class#ViewInstrumentActivity#0" expanded="false" />
+            <element signature="method#onPause#0;class#ViewInstrumentActivity#0" expanded="false" />
+            <element signature="method#onStop#0;class#ViewInstrumentActivity#0" expanded="false" />
+            <element signature="method#makeBid#0;class#ViewInstrumentActivity#0" expanded="false" />
+            <element signature="method#edit#0;class#ViewInstrumentActivity#0" expanded="false" />
+            <element signature="method#viewBids#0;class#ViewInstrumentActivity#0" expanded="false" />
+            <element signature="method#viewLocation#0;class#ViewInstrumentActivity#0" expanded="false" />
+            <element signature="method#returnAsBorrower#0;class#ViewInstrumentActivity#0" expanded="false" />
+            <element signature="method#onPlayButtonClick#0;class#ViewInstrumentActivity#0" expanded="false" />
+            <element signature="docComment;method#markReturned#0;class#ViewInstrumentActivity#0" expanded="false" />
+            <element signature="method#markReturned#0;class#ViewInstrumentActivity#0" expanded="false" />
+            <element signature="method#displayOwner#0;class#ViewInstrumentActivity#0" expanded="false" />
+            <element signature="method#displayBorrower#0;class#ViewInstrumentActivity#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/activities/ViewProfileActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.17977528">
+          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+          <folding>
+            <element signature="docComment;class#ViewProfileActivity#0" expanded="false" />
+            <element signature="method#onCreate#0;class#ViewProfileActivity#0" expanded="false" />
+            <element signature="docComment;method#setUsernameTextView#0;class#ViewProfileActivity#0" expanded="false" />
+            <element signature="method#setUsernameTextView#0;class#ViewProfileActivity#0" expanded="false" />
+            <element signature="docComment;method#setEmailTextView#0;class#ViewProfileActivity#0" expanded="false" />
+            <element signature="method#setEmailTextView#0;class#ViewProfileActivity#0" expanded="false" />
+            <element signature="docComment;method#launchEditProfile#0;class#ViewProfileActivity#0" expanded="false" />
+            <element signature="method#launchEditProfile#0;class#ViewProfileActivity#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cmput301w16t08/scaling_pancake/activities/ViewLocationActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.18820225">
+          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding>
+            <element signature="docComment;class#ViewLocationActivity#0" expanded="false" />
+            <element signature="method#onCreate#0;class#ViewLocationActivity#0" expanded="false" />
+            <element signature="method#onMapReady#0;class#ViewLocationActivity#0" expanded="false" />
           </folding>
         </state>
       </provider>
