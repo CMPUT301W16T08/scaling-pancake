@@ -10,7 +10,7 @@ import java.util.UUID;
  * @see Instrument
  * @see User
  */
-public class Bid {
+public class Bid     {
     private String instrument;
     private String ownerId;
     private String bidderId;

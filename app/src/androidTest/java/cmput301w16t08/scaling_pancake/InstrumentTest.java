@@ -82,7 +82,7 @@ public class InstrumentTest extends ActivityInstrumentationTestCase2 {
         assertEquals(instrument.getBorrowedById(), bidder1.getId());
     }
 
-    // test use case US 05.05.01: ViewBidsOnInstrument
+    // Use case US 05.05.01: ViewBidsOnInstrument
     public void testGetBids() {
         User owner = new User("Owner", "Owner email");
         User bidder1 = new User("Bidder1", "Bidder1 email");
@@ -170,10 +170,11 @@ public class InstrumentTest extends ActivityInstrumentationTestCase2 {
         assertEquals(instrument.getStatus(), "available");
     }
 
-    /*public void testAddThumbnail() {
+    // Use case US 09.03.01 view photo
+    public void testGetThumbnail() {
         User owner = new User("Owner", "Owner email");
         Instrument instrument = new Instrument(owner.getId(), "name", "Description");
-        instrument.addThumbnail( //LOAD THE TEST THUMBNAIL FROM FILE
-    }*/
+        //instrument.addThumbnail();
+    }
 }
 

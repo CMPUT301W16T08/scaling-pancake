@@ -3,9 +3,15 @@ package cmput301w16t08.scaling_pancake;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.test.ActivityInstrumentationTestCase2;
+import android.util.Base64;
 
 import com.google.android.gms.maps.model.LatLng;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
 
@@ -601,7 +607,7 @@ public class ControllerTest extends ActivityInstrumentationTestCase2 {
         User user = controller.getCurrentUser();
         Instrument instrument = new Instrument(user.getId(), "name", "description");
         controller.addInstrument(instrument);
-        Bitmap photo = BitmapFactory.decodeFile("test_image.png");
+        Bitmap photo = BitmapFactory.decodeFile("cmput301w16t08/scaling_pancake/test_image.png");
         controller.addPhotoToInstrument(instrument, photo);
 
         ElasticsearchController.GetUserTask getUserTask = new ElasticsearchController.GetUserTask();
@@ -628,7 +634,7 @@ public class ControllerTest extends ActivityInstrumentationTestCase2 {
         User user = controller.getCurrentUser();
         Instrument instrument = new Instrument(user.getId(), "name", "description");
         controller.addInstrument(instrument);
-        Bitmap photo = BitmapFactory.decodeFile("test_image.png");
+        Bitmap photo = BitmapFactory.decodeFile("cmput301w16t08/scaling_pancake/test_image.png");
         controller.addPhotoToInstrument(instrument, photo);
 
         ElasticsearchController.GetUserTask getUserTask = new ElasticsearchController.GetUserTask();
@@ -749,5 +755,52 @@ public class ControllerTest extends ActivityInstrumentationTestCase2 {
         controller.deleteUser();
         controller.login("bidder");
         controller.deleteUser();
+    }
+
+    // Use case: US 05.03.01
+    public void testBidNotification() {
+        Controller controller = new Controller();
+        controller.createUser("owner", "email");
+        controller.createUser("bidder", "email2");
+        controller.login("owner");
+        assertFalse(controller.getCurrentUser().getNewBidFlag());
+        Instrument instrument = new Instrument(controller.getCurrentUser().getId(), "name", "description");
+        controller.addInstrument(instrument);
+        controller.logout();
+        controller.login("bidder");
+        controller.makeBidOnInstrument(instrument, 5);
+        controller.logout();
+        controller.login("owner");
+        assertTrue(controller.getCurrentUser().getNewBidFlag());
+        controller.deleteUser();
+        controller.login("bidder");
+        controller.deleteUser();
+    }
+
+    // Use case: US 11.01.01 Add audio
+    public void testAddAudioSample() {
+        Controller controller = new Controller();
+        controller.createUser("owner", "email");
+        controller.login("owner");
+        Instrument instrument = new Instrument(controller.getCurrentUser().getId(), "name", "description");
+        controller.addInstrument(instrument);
+        InputStream stream = this.getClass().getClassLoader().getResourceAsStream("test_audio.3GP");
+        byte[] bytes = new byte[400000];
+        try {
+            stream.read(bytes);
+            stream.close();
+        } catch (IOException e) {
+            new RuntimeException();
+        }
+        controller.addAudioSampleToInstrument(controller.getCurrentUsersOwnedInstruments().getInstrument(0),
+                Base64.encodeToString(bytes, 0).replace("\n", ""));
+        assertNotNull(controller.getCurrentUsersOwnedInstruments().getInstrument(0));
+        assertNotSame("", controller.getCurrentUsersOwnedInstruments().getInstrument(0));
+        controller.deleteUser();
+    }
+
+    // Use case: US 11.02.01 Play audio
+    public void testPlayAudioSample() {
+        // Don't know how to test audio play back
     }
 }
