@@ -5,6 +5,7 @@ import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Base64;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -180,6 +181,11 @@ public class ViewInstrumentActivity extends AppCompatActivity
                     ((TextView) findViewById(R.id.owned_instrument_view_name_tv)).setText(selected.getName());
                     ((TextView) findViewById(R.id.owned_instrument_view_status_tv)).setText(String.format("Status: %s", selected.getStatus()));
                     ((TextView) findViewById(R.id.owned_instrument_view_description_tv)).setText(String.format("Description: %s", selected.getDescription()));
+
+                    if(selected.hasThumbnail())
+                    {
+                        ((ImageView) findViewById(R.id.owned_instrument_view_thumbnail_iv)).setImageBitmap(selected.getThumbnail());
+                    }
                 }
                 else
                 {
@@ -188,11 +194,11 @@ public class ViewInstrumentActivity extends AppCompatActivity
                     ((TextView) findViewById(R.id.searched_instrument_view_owner_tv)).setText(String.format("Owner: %s", controller.getUserById(selected.getOwnerId()).getName()));
                     ((TextView) findViewById(R.id.searched_instrument_view_status_tv)).setText(String.format("Status: %s", selected.getStatus()));
                     ((TextView) findViewById(R.id.searched_instrument_view_description_tv)).setText(String.format("Description: %s", selected.getDescription()));
-                }
 
-                if(selected.hasThumbnail())
-                {
-                    ((ImageView) findViewById(R.id.searched_instrument_view_thumbnail_iv)).setImageBitmap(selected.getThumbnail());
+                    if(selected.hasThumbnail())
+                    {
+                        ((ImageView) findViewById(R.id.searched_instrument_view_thumbnail_iv)).setImageBitmap(selected.getThumbnail());
+                    }
                 }
                 break;
             }
