@@ -231,6 +231,7 @@ public class ViewInstrumentActivity extends AppCompatActivity
     {
         Intent intent = new Intent(this, EditInstrumentActivity.class);
         intent.putExtra("instrument_id", selected.getId());
+        finish();
         startActivity(intent);
     }
 
