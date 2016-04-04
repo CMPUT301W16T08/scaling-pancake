@@ -11,11 +11,13 @@ import cmput301w16t08.scaling_pancake.R;
 import cmput301w16t08.scaling_pancake.activities.AddInstrumentActivity;
 import cmput301w16t08.scaling_pancake.activities.EditInstrumentActivity;
 import cmput301w16t08.scaling_pancake.activities.InstrumentListActivity;
+import cmput301w16t08.scaling_pancake.activities.MainActivity;
 import cmput301w16t08.scaling_pancake.activities.MenuActivity;
 import cmput301w16t08.scaling_pancake.activities.RecordAudioActivity;
 import cmput301w16t08.scaling_pancake.activities.ViewInstrumentActivity;
 import cmput301w16t08.scaling_pancake.controllers.Controller;
 import cmput301w16t08.scaling_pancake.models.Instrument;
+import cmput301w16t08.scaling_pancake.models.InstrumentList;
 import cmput301w16t08.scaling_pancake.models.User;
 
 public class EditInstrumentActivityUITest extends ActivityInstrumentationTestCase2 {
@@ -25,7 +27,7 @@ public class EditInstrumentActivityUITest extends ActivityInstrumentationTestCas
     Instrument instrument;
 
     public EditInstrumentActivityUITest() {
-        super(MenuActivity.class);
+        super(MainActivity.class);
     }
 
     @Override
@@ -40,7 +42,10 @@ public class EditInstrumentActivityUITest extends ActivityInstrumentationTestCas
         }
         //login user and add an instrument
         user = controller.getUserByName("admin");
+
         controller.login(user.getName());
+        solo.enterText((EditText) solo.getView(R.id.startscreen_username_et), user.getName());
+        solo.clickOnView(solo.getView(R.id.startscreen_login_button));
         controller.addInstrument("test instrument", "test instrument description");
         // reassign user and instrument
         user =controller.getCurrentUser();
@@ -63,7 +68,7 @@ public class EditInstrumentActivityUITest extends ActivityInstrumentationTestCas
         // click on back button
         solo.clickOnButton(solo.getString(R.string.back));
         // test if we are back to previous activity
-        solo.assertCurrentActivity("we should have go back", ViewInstrumentActivity.class);
+        solo.assertCurrentActivity("we should have go back", InstrumentListActivity.class);
     }
 
     /* test for display */
@@ -90,10 +95,11 @@ public class EditInstrumentActivityUITest extends ActivityInstrumentationTestCas
         assertEquals(newName, nameET.getText().toString());
         // before click
         instrument = controller.getInstrumentById(instrument.getId());
-        assertNotSame(instrument.getName(),newName);
+        assertNotSame(instrument.getName(), newName);
         // click
         solo.clickOnButton(solo.getString(R.string.save));
         // after click
+        solo.assertCurrentActivity("back to list",InstrumentListActivity.class);
         instrument = controller.getInstrumentById(instrument.getId());
         assertEquals(instrument.getName(), newName);
     }
@@ -107,7 +113,8 @@ public class EditInstrumentActivityUITest extends ActivityInstrumentationTestCas
         // click
         solo.clickOnButton(solo.getString(R.string.delete));
         // after click
-        assertNull(controller.getInstrumentById(instrument.getId()));
+        solo.assertCurrentActivity("back to list",InstrumentListActivity.class);
+        assertEquals(0,controller.getCurrentUser().getOwnedInstruments().size());
     }
 
     /* test for edit music button */
@@ -119,21 +126,22 @@ public class EditInstrumentActivityUITest extends ActivityInstrumentationTestCas
     }
 
     /* test for edit photo button */
-    public void testEditPhoto(){
-        moveToActivity();
+    //TODO:
+//    public void testEditPhoto(){
+//        moveToActivity();
 
         /* test gallery button */
-        solo.clickOnView(solo.getView(R.id.edit_instrument_editimage_iv));
-        solo.clickOnImageButton(1);
-        //TODO: I don't know how to test if we are in the gallery...
+//        solo.clickOnView(solo.getView(R.id.edit_instrument_editimage_iv));
+//        solo.clickOnImageButton(1);
+//        //TODO: I don't know how to test if we are in the gallery...
 
-        solo.finishOpenedActivities();
-        moveToActivity();
+//        solo.finishOpenedActivities();
+//        moveToActivity();
         /* test camera button */
-        solo.clickOnView(solo.getView(R.id.edit_instrument_editimage_iv));
-        solo.clickOnImageButton(2);
+//        solo.clickOnView(solo.getView(R.id.edit_instrument_editimage_iv));
+//        solo.clickOnImageButton(2);
         //TODO: I don't know how to test if we are in the camera...
-    }
+//    }
 
 
     //Todo: I don't know how to test the play sample button...

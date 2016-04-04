@@ -1,12 +1,14 @@
 package cmput301w16t08.scaling_pancake.UITest;
 
 import android.test.ActivityInstrumentationTestCase2;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import com.robotium.solo.Solo;
 
 import cmput301w16t08.scaling_pancake.R;
 import cmput301w16t08.scaling_pancake.activities.InstrumentListActivity;
+import cmput301w16t08.scaling_pancake.activities.MainActivity;
 import cmput301w16t08.scaling_pancake.activities.MenuActivity;
 import cmput301w16t08.scaling_pancake.activities.ViewInstrumentActivity;
 import cmput301w16t08.scaling_pancake.activities.ViewLocationActivity;
@@ -25,7 +27,7 @@ public class ViewBorrowedInstrumentUITest extends ActivityInstrumentationTestCas
     Instrument instrument;
 
     public ViewBorrowedInstrumentUITest() {
-        super(MenuActivity.class);
+        super(MainActivity.class);
     }
 
     @Override
@@ -37,6 +39,16 @@ public class ViewBorrowedInstrumentUITest extends ActivityInstrumentationTestCas
         createUsers();
 
         controller.login(first.getName());
+        solo.enterText((EditText) solo.getView(R.id.startscreen_username_et), first.getName());
+        solo.clickOnView(solo.getView(R.id.startscreen_login_button));
+
+        controller.login(first.getName());
+        controller.login(first.getName());
+        controller.login(first.getName());
+        controller.login(first.getName());
+        controller.login(first.getName());
+        controller.login(first.getName());
+
     }
 
 

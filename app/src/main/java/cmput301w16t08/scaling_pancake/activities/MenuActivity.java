@@ -40,20 +40,19 @@ public class MenuActivity extends AppCompatActivity {
         controller = (Controller) getApplicationContext();
     }
 
-    protected void onResume(){
+    protected void onResume() {
         super.onResume();
 
         View notif_button = findViewById(R.id.new_bid_notif_button);
         User current_user = controller.getCurrentUser();
         try {
-            if (!current_user.getNewBidFlag()){
+            if (!current_user.getNewBidFlag()) {
                 notif_button.setVisibility(View.INVISIBLE);
             }
-        } catch(NullPointerException e){
+        } catch (NullPointerException e) {
             Toast.makeText(controller, "Warning! You are not logged in!", Toast.LENGTH_SHORT).show();
             notif_button.setVisibility(View.INVISIBLE);
         }
-
     }
 
     /**

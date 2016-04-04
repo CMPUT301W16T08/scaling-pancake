@@ -1,9 +1,12 @@
 package cmput301w16t08.scaling_pancake.UITest;
 
 import android.test.ActivityInstrumentationTestCase2;
+import android.widget.EditText;
+
 import com.robotium.solo.Solo;
 import cmput301w16t08.scaling_pancake.R;
 import cmput301w16t08.scaling_pancake.activities.AddInstrumentActivity;
+import cmput301w16t08.scaling_pancake.activities.MainActivity;
 import cmput301w16t08.scaling_pancake.activities.MenuActivity;
 import cmput301w16t08.scaling_pancake.activities.RecordAudioActivity;
 import cmput301w16t08.scaling_pancake.controllers.Controller;
@@ -18,7 +21,7 @@ public class RecordAudioActivityUITest extends ActivityInstrumentationTestCase2 
     User user;
 
     public RecordAudioActivityUITest() {
-        super(MenuActivity.class);
+        super(MainActivity.class);
     }
 
     @Override
@@ -34,6 +37,8 @@ public class RecordAudioActivityUITest extends ActivityInstrumentationTestCase2 
         //login user and add an instrument
         user = controller.getUserByName("admin");
         controller.login(user.getName());
+        solo.enterText((EditText) solo.getView(R.id.startscreen_username_et), user.getName());
+        solo.clickOnView(solo.getView(R.id.startscreen_login_button));
 
         moveToActivity();
     }
@@ -56,9 +61,8 @@ public class RecordAudioActivityUITest extends ActivityInstrumentationTestCase2 
 
     /* test play button */
     public void testPlaylButton(){
-        solo.clickOnText("Start playing");
+        solo.clickOnText("Play recording");
         // TODO: don't know how to test if microphone is active
-        solo.clickOnText("Stop playing");
     }
 
     /* test save button */

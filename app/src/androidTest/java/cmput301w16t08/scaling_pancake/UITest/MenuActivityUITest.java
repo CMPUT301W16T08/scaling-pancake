@@ -3,16 +3,19 @@ package cmput301w16t08.scaling_pancake.UITest;
 import android.test.ActivityInstrumentationTestCase2;
 import android.test.UiThreadTest;
 import android.widget.Button;
+import android.widget.EditText;
 
 import com.robotium.solo.Solo;
 
 import cmput301w16t08.scaling_pancake.R;
 import cmput301w16t08.scaling_pancake.activities.AddInstrumentActivity;
 import cmput301w16t08.scaling_pancake.activities.InstrumentListActivity;
+import cmput301w16t08.scaling_pancake.activities.MainActivity;
 import cmput301w16t08.scaling_pancake.activities.MenuActivity;
 import cmput301w16t08.scaling_pancake.activities.SearchInstrumentsActivity;
 import cmput301w16t08.scaling_pancake.activities.ViewProfileActivity;
 import cmput301w16t08.scaling_pancake.controllers.Controller;
+import cmput301w16t08.scaling_pancake.models.Instrument;
 
 /**
  * Created by Aaron on 3/10/2016.
@@ -21,20 +24,28 @@ public class MenuActivityUITest extends ActivityInstrumentationTestCase2 {
     Solo solo;
 
     public MenuActivityUITest() {
-        super(MenuActivity.class);
+        super(MainActivity.class);
     }
 
     @Override
-    public void setUp() throws Exception{
+    public void setUp() {
         solo = new Solo(getInstrumentation(),getActivity());
         Controller controller = (Controller)getActivity().getApplicationContext();
-        controller.createUser("admin", "admin@test");
+
+        //create a user
+        if (! controller.createUser("admin","e1@123.com")){
+            controller.deleteUserById(controller.getUserByName("admin").getId());
+            controller.createUser("admin", "e1@123.com");
+        }
+        //login user
         controller.login("admin");
+        solo.enterText((EditText) solo.getView(R.id.startscreen_username_et),"admin");
+        solo.clickOnView(solo.getView(R.id.startscreen_login_button));
 
     }
 
     @Override
-    public void tearDown() throws Exception{
+    public void tearDown(){
         Controller controller = (Controller)getActivity().getApplicationContext();
         controller.deleteUserById(controller.getUserByName("admin").getId());
         solo.finishOpenedActivities();
@@ -76,17 +87,50 @@ public class MenuActivityUITest extends ActivityInstrumentationTestCase2 {
         solo.assertCurrentActivity("not switched to ViewProfileAcitivity", SearchInstrumentsActivity.class);
     }
 
-    @UiThreadTest
+    public void testNotificationButton(){
+        Controller controller = (Controller) getActivity().getApplicationContext();
+
+        // go back and make a bid
+        solo.clickOnView(solo.getView(R.id.menu_back_button));
+        bidOnOneInsturment(controller);
+
+        //login user
+        solo.enterText((EditText) solo.getView(R.id.startscreen_username_et), "admin2");
+        solo.clickOnView(solo.getView(R.id.startscreen_login_button));
+
+        solo.clickOnView(solo.getView(R.id.new_bid_notif_button));
+        solo.assertCurrentActivity("should have switched to instrumentlist",InstrumentListActivity.class);
+    }
+
     public void testBackButton(){
         Controller controller = (Controller) getActivity().getApplicationContext();
 
         //click on viewProfile
-        ((Button)getActivity().findViewById(R.id.menu_back_button)).performClick();
+        solo.clickOnView(solo.getView(R.id.menu_back_button));
 
         //check if activity ends
-        assertTrue(getActivity().isFinishing());
+       solo.assertCurrentActivity("should have gone back to start",MainActivity.class);
 
         //check if user logout
         assertNull(controller.getCurrentUser());
+    }
+
+    private void bidOnOneInsturment(Controller controller) {
+        controller.createUser("admin2","test");
+
+        // give admin2 an instrument
+        controller.logout();
+        controller.login("admin2");
+        controller.addInstrument("test instrument","test instrument");
+        Instrument instrument = controller.getCurrentUsersOwnedInstruments().getInstrument(0);
+        String instrumentDescription = instrument.getDescription();
+
+        // admin bid on admin2's instrument
+        controller.logout();
+        controller.login("admin");
+        controller.makeBidOnInstrument(instrument, 10);
+
+        controller.logout();
+        controller.login("admin2");
     }
 }

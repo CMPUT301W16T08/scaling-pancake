@@ -59,8 +59,8 @@ public class ViewProfileActivityUITest extends ActivityInstrumentationTestCase2 
         TextView emailTV = (TextView) solo.getView(R.id.view_profile_email_tv);
 
         /* Test correctness */
-        assertEquals(usernameTV.getText().toString(), "Username:"+controller.getCurrentUser().getName());
-        assertEquals(emailTV.getText().toString(), "Email:"+controller.getCurrentUser().getEmail());
+        assertEquals(usernameTV.getText().toString(), "Username: "+controller.getCurrentUser().getName());
+        assertEquals(emailTV.getText().toString(), "Email: "+controller.getCurrentUser().getEmail());
     }
 
 
