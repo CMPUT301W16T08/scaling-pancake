@@ -91,6 +91,7 @@ public class MainActivityUITest extends ActivityInstrumentationTestCase2 {
 
         //check we are switched to MenuActivity
         solo.assertCurrentActivity("not swithch to MenuActivity", MenuActivity.class);
+        assertNotNull(controller.getCurrentUser());
     }
 
 

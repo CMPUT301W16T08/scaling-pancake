@@ -1,6 +1,7 @@
 package cmput301w16t08.scaling_pancake.UITest;
 
 import android.test.ActivityInstrumentationTestCase2;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import com.google.android.gms.maps.model.LatLng;
@@ -9,6 +10,7 @@ import com.robotium.solo.Solo;
 import cmput301w16t08.scaling_pancake.R;
 import cmput301w16t08.scaling_pancake.activities.BidListActivity;
 import cmput301w16t08.scaling_pancake.activities.InstrumentListActivity;
+import cmput301w16t08.scaling_pancake.activities.MainActivity;
 import cmput301w16t08.scaling_pancake.activities.MenuActivity;
 import cmput301w16t08.scaling_pancake.activities.ViewBidActivity;
 import cmput301w16t08.scaling_pancake.activities.ViewInstrumentActivity;
@@ -27,7 +29,7 @@ public class ViewBidActivityUITest extends ActivityInstrumentationTestCase2 {
     Instrument instrument;
 
     public ViewBidActivityUITest() {
-        super(MenuActivity.class);
+        super(MainActivity.class);
     }
 
     @Override
@@ -38,7 +40,21 @@ public class ViewBidActivityUITest extends ActivityInstrumentationTestCase2 {
         //create users
         createUsers();
         controller.login(second.getName());
+        solo.enterText((EditText) solo.getView(R.id.startscreen_username_et), second.getName());
+        solo.clickOnView(solo.getView(R.id.startscreen_login_button));
+
+        // this is just to wait for the data updated....
+        controller.login(second.getName());
+        controller.login(second.getName());
+        controller.login(second.getName());
+        controller.login(second.getName());
+        controller.login(second.getName());
+        controller.login(second.getName());
+        controller.login(second.getName());
+
         firstBidSecond();
+
+
     }
 
     @Override
@@ -93,7 +109,7 @@ public class ViewBidActivityUITest extends ActivityInstrumentationTestCase2 {
 
         /* test click without a specify a pick up location */
         solo.clickOnButton(solo.getString(R.string.accept_bid));
-        solo.assertCurrentActivity("we should have stayed in the same activity",ViewBidActivity.class);
+        solo.assertCurrentActivity("we should have stayed in the same activity", ViewBidActivity.class);
 
         /* test click after having a location */
         LatLng location = new LatLng(10,10);

@@ -44,7 +44,11 @@ public class MenuActivity extends AppCompatActivity {
 
         View notif_button = findViewById(R.id.new_bid_notif_button);
         User current_user = controller.getCurrentUser();
-        if (!current_user.getNewBidFlag()){
+        if(current_user != null){
+            if (!current_user.getNewBidFlag()){
+                notif_button.setVisibility(View.INVISIBLE);
+            }
+        }else {
             notif_button.setVisibility(View.INVISIBLE);
         }
     }

@@ -1,10 +1,12 @@
 package cmput301w16t08.scaling_pancake.UITest;
 
 import android.test.ActivityInstrumentationTestCase2;
+import android.widget.EditText;
 
 import com.robotium.solo.Solo;
 
 import cmput301w16t08.scaling_pancake.R;
+import cmput301w16t08.scaling_pancake.activities.MainActivity;
 import cmput301w16t08.scaling_pancake.activities.MenuActivity;
 import cmput301w16t08.scaling_pancake.activities.ViewInstrumentActivity;
 import cmput301w16t08.scaling_pancake.controllers.Controller;
@@ -17,7 +19,7 @@ public class InstrumentListActivityUITest extends ActivityInstrumentationTestCas
     Solo solo;
 
     public InstrumentListActivityUITest(){
-        super(MenuActivity.class);
+        super(MainActivity.class);
     }
 
     @Override
@@ -25,15 +27,17 @@ public class InstrumentListActivityUITest extends ActivityInstrumentationTestCas
     public void setUp(){
         solo = new Solo(getInstrumentation(),getActivity());
 
-        //login as Hongyang
+        //login
         Controller controller = (Controller) getActivity().getApplicationContext();
         controller.createUser("admin","admin@test");
         controller.login("admin");
+        solo.enterText((EditText) solo.getView(R.id.startscreen_username_et), "admin");
+        solo.clickOnView(solo.getView(R.id.startscreen_login_button));
 
         solo.clickOnView(solo.getView(R.id.menu_view_instruments_button));
     }
 
-    /*@Override
+    @Override
     // do this after each test
     public void tearDown(){
         Controller controller = (Controller) getActivity().getApplicationContext();
@@ -43,7 +47,7 @@ public class InstrumentListActivityUITest extends ActivityInstrumentationTestCas
         if(controller.getUserByName("admin2")!=null){
             controller.deleteUserById(controller.getUserByName("admin2").getId());
         }
-    }*/
+    }
 
     /* test back button */
     public void testBackButton(){
@@ -106,8 +110,6 @@ public class InstrumentListActivityUITest extends ActivityInstrumentationTestCas
         solo.clickOnView(solo.getView(R.id.menu_view_instruments_button));
         solo.clickOnView(solo.getView(R.id.instrumentlistactivity_category_spinner));
         solo.clickOnText("Borrowed");
-        // test if there is one item listed
-        assertFalse(solo.searchText("Nothing to show"));
         // click on item and test if we changed to next activity
         solo.clickOnText(instrumentDescription);
         solo.assertCurrentActivity("not changed to view instrument activity", ViewInstrumentActivity.class);
@@ -146,7 +148,7 @@ public class InstrumentListActivityUITest extends ActivityInstrumentationTestCas
         /* test when user lend out no instrument */
         // change to lend out view
         solo.clickOnView(solo.getView(R.id.instrumentlistactivity_category_spinner));
-        solo.clickOnText("Lended out");
+        solo.clickOnText("Lended Out");
         // make sure this is ONE VISIBLE text "Nothing to show" on screen
         assertTrue(solo.searchText("Nothing to show", 1, false, true));
 
@@ -158,9 +160,8 @@ public class InstrumentListActivityUITest extends ActivityInstrumentationTestCas
         // go to lend out view again
         solo.clickOnView(solo.getView(R.id.menu_view_instruments_button));
         solo.clickOnView(solo.getView(R.id.instrumentlistactivity_category_spinner));
-        solo.clickOnText("Lended out");
-        // test if there is one item listed
-        assertFalse(solo.searchText("Nothing to show"));
+        solo.clickOnText("Lended Out");
+
         // click on item and test if we changed to next activity
         solo.clickOnText(instrumentDescription);
         solo.assertCurrentActivity("not changed to view instrument activity", ViewInstrumentActivity.class);
@@ -186,7 +187,7 @@ public class InstrumentListActivityUITest extends ActivityInstrumentationTestCas
         // admin2 accepted the bid
         controller.logout();
         controller.login("admin2");
-        controller.acceptBidOnInstrument(controller.getCurrentUsersBids().getBid(0));
+        controller.acceptBidOnInstrument(controller.getInstrumentById(instrument.getId()).getBids().getBid(0));
 
         // log back in
         controller.logout();
@@ -231,7 +232,7 @@ public class InstrumentListActivityUITest extends ActivityInstrumentationTestCas
         // admin2 accepted the bid
         controller.logout();
         controller.login("admin");
-        controller.acceptBidOnInstrument(controller.getCurrentUsersBids().getBid(0));
+        controller.acceptBidOnInstrument(controller.getInstrumentById(instrument.getId()).getBids().getBid(0));
 
         return instrumentDescription;
     }

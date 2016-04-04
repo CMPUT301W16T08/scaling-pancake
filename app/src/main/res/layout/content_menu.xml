@@ -86,5 +86,6 @@
         android:onClick="viewNotification"
         android:layout_above="@+id/linearLayout3"
         android:layout_alignRight="@+id/linearLayout3"
-        android:layout_alignEnd="@+id/linearLayout3" />
+        android:layout_alignEnd="@+id/linearLayout3"
+        android:nestedScrollingEnabled="true" />
 </RelativeLayout>

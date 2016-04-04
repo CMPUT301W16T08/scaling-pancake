@@ -76,15 +76,15 @@ public class ViewSearchInstrumentUITest extends ActivityInstrumentationTestCase2
 
         /* test the owner's name */
         TextView borrowerNameTV = (TextView) solo.getView(R.id.searched_instrument_view_owner_tv);
-        assertEquals("Owner:" + first.getName(), borrowerNameTV.getText().toString());
+        assertEquals("Owner: " + first.getName(), borrowerNameTV.getText().toString());
 
         /* test the description is right */
         TextView descriptionTV = (TextView) solo.getView(R.id.searched_instrument_view_description_tv);
-        assertEquals("Description:" + instrument.getDescription(), descriptionTV.getText().toString());
+        assertEquals("Description: " + instrument.getDescription(), descriptionTV.getText().toString());
 
         /* test the status displayed */
         TextView statusTV = (TextView) solo.getView(R.id.searched_instrument_view_status_tv);
-        assertEquals("Status:"+instrument.getStatus(), statusTV.getText().toString());
+        assertEquals("Status: "+instrument.getStatus(), statusTV.getText().toString());
 
     }
 

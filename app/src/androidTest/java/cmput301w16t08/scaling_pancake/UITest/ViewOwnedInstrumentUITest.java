@@ -79,11 +79,11 @@ public class ViewOwnedInstrumentUITest extends ActivityInstrumentationTestCase2 
 
         /* test the status is right */
         TextView statusTV = (TextView) solo.getView(R.id.owned_instrument_view_status_tv);
-        assertEquals("Status:"+instrument.getStatus(), statusTV.getText().toString());
+        assertEquals("Status: "+instrument.getStatus(), statusTV.getText().toString());
 
         /* test the description is right */
         TextView descriptionTV = (TextView) solo.getView(R.id.owned_instrument_view_description_tv);
-        assertEquals("Description:"+instrument.getDescription(), descriptionTV.getText().toString());
+        assertEquals("Description: "+instrument.getDescription(), descriptionTV.getText().toString());
     }
 
     /* test edit button */
