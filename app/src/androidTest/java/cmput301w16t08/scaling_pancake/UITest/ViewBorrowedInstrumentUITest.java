@@ -27,6 +27,7 @@ public class ViewBorrowedInstrumentUITest extends ActivityInstrumentationTestCas
     public ViewBorrowedInstrumentUITest() {
         super(MenuActivity.class);
     }
+
     @Override
     public void setUp(){
         solo = new Solo(getInstrumentation(),getActivity());

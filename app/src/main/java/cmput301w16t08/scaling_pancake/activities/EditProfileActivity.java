@@ -14,7 +14,7 @@ import cmput301w16t08.scaling_pancake.controllers.Controller;
 /**
  * Allows the user to modify their existing profile.
  *
- * @author cmput301w16t08
+ * @author tristan
  * @see cmput301w16t08.scaling_pancake.models.User
  * @see Controller
  */

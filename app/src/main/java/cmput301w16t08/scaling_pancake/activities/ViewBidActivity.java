@@ -22,6 +22,11 @@ import cmput301w16t08.scaling_pancake.R;
 import cmput301w16t08.scaling_pancake.controllers.Controller;
 import cmput301w16t08.scaling_pancake.models.Bid;
 
+/**
+ * Allows a user to view a bid, then decline or accept the bid
+ *
+ * @author dan
+ */
 public class ViewBidActivity extends Activity
 {
     private static Controller controller;

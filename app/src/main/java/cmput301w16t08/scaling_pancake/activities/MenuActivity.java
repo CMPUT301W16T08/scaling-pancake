@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Toast;
 
 import org.apache.commons.lang3.ObjectUtils;
 
@@ -44,27 +45,16 @@ public class MenuActivity extends AppCompatActivity {
 
         View notif_button = findViewById(R.id.new_bid_notif_button);
         User current_user = controller.getCurrentUser();
-        if (!current_user.getNewBidFlag()){
+        try {
+            if (!current_user.getNewBidFlag()){
+                notif_button.setVisibility(View.INVISIBLE);
+            }
+        } catch(NullPointerException e){
+            Toast.makeText(controller, "Warning! You are not logged in!", Toast.LENGTH_SHORT).show();
             notif_button.setVisibility(View.INVISIBLE);
         }
-    }
 
-//    protected Bid getUnseenBid(){
-//        User user = controller.getCurrentUser();
-//
-//        // Checks each of the owners instruments for an unseen bid.
-//        // Returns the first unseen bid that it finds.
-//        InstrumentList instruments = user.getOwnedInstruments();
-//        for (int i = 0; i < instruments.size(); i++){
-//            BidList bids = instruments.getInstrument(i).getBids();
-//            for (int j = 0; j< bids.size(); j++){
-//                if (!(bids.getBid(j).getSeen())){ //if bid.seen == false
-//                    return bids.getBid(j);
-//                }
-//            }
-//        }
-//        return null;
-//    }
+    }
 
     /**
      * Navigate to the <code>ViewProfileActivity</code>
@@ -97,11 +87,20 @@ public class MenuActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    /**
+     * Navigate to the <code>SearchInstrumentsActivity</code>
+     * @param view
+     */
     public void searchInstruments(View view){
         Intent intent = new Intent(this, SearchInstrumentsActivity.class);
         startActivity(intent);
     }
 
+    /**
+     * Navigate to the <code>InstrumentListActivity</code>, where the user
+     * can view the instruments which have new bids.
+     * @param view
+     */
     public void viewNotification(View view){
         Intent intent = new Intent(this, InstrumentListActivity.class);
         controller.resetNewBidFlag();
