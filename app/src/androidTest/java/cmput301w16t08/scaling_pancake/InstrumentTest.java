@@ -1,7 +1,16 @@
 
 package cmput301w16t08.scaling_pancake;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.test.ActivityInstrumentationTestCase2;
+import android.util.Base64;
+
+import com.google.android.gms.maps.model.LatLng;
+
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
 
 import cmput301w16t08.scaling_pancake.models.Bid;
 import cmput301w16t08.scaling_pancake.models.BidList;
@@ -174,7 +183,30 @@ public class InstrumentTest extends ActivityInstrumentationTestCase2 {
     public void testGetThumbnail() {
         User owner = new User("Owner", "Owner email");
         Instrument instrument = new Instrument(owner.getId(), "name", "Description");
-        //instrument.addThumbnail();
+        assertNull(instrument.getThumbnail());
+        assertNull(instrument.getThumbnailBase64());
+        InputStream stream = this.getClass().getClassLoader().getResourceAsStream("test_image.png");
+        byte[] bytes = new byte[400000];
+        try {
+            stream.read(bytes);
+            stream.close();
+        } catch (IOException e) {
+            new RuntimeException();
+        }
+        String base64string = Base64.encodeToString(bytes, Base64.NO_WRAP);
+        instrument.addThumbnail(base64string);
+        assertEquals(instrument.getThumbnailBase64(), base64string);
     }
+
+    // Use case US 10.02.01 View location
+    public void testGetLocation() {
+        User owner = new User("Owner", "Owner email");
+        Instrument instrument = new Instrument(owner.getId(), "name", "Description");
+        assertNull(instrument.getLocation());
+        instrument.setLocation(new LatLng(10, 5));
+        assertEquals(instrument.getLatitude(), 10.0);
+        assertEquals(instrument.getLongitude(), 5.0);
+    }
+
 }
 

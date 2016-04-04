@@ -7,9 +7,6 @@ import android.util.Base64;
 
 import com.google.android.gms.maps.model.LatLng;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -21,6 +18,7 @@ import cmput301w16t08.scaling_pancake.models.Instrument;
 import cmput301w16t08.scaling_pancake.models.InstrumentList;
 import cmput301w16t08.scaling_pancake.models.User;
 import cmput301w16t08.scaling_pancake.util.Deserializer;
+import cmput301w16t08.scaling_pancake.util.PrePostActionWrapper;
 
 
 public class ControllerTest extends ActivityInstrumentationTestCase2 {
@@ -405,37 +403,57 @@ public class ControllerTest extends ActivityInstrumentationTestCase2 {
 
     // Use case: US 04.01.01 Search instruments
     // Use case: US 04.02.01 Get search results
-//    public void testSearchInstruments() {
-//        Controller controller = new Controller();
-//        controller.createUser("user01", "email01");
-//        controller.createUser("user02", "email02");
-//        controller.createUser("user03", "email03");
-//        controller.login("user01");
-//        controller.addInstrument("name01", "description01");
-//        controller.logout();
-//        controller.login("user02");
-//        controller.addInstrument("name02", "description02");
-//        controller.logout();
-//        controller.login("user03");
-//        InstrumentList instruments = controller.searchInstruments(null,"hhfkdlsajfsajkfds");
-//        assertEquals(instruments.size(), 0);
-//        instruments = controller.searchInstruments(null,"description01");
-//        assertEquals(instruments.size(), 1);
-//        assertEquals(instruments.getInstrument(0).getName(), "name01");
-//        instruments = controller.searchInstruments(null,"name01");
-//        assertEquals(instruments.size(), 1);
-//        assertEquals(instruments.getInstrument(0).getName(), "name01");
-//        instruments = controller.searchInstruments(null,"description");
-//        assertEquals(instruments.size(), 2);
-//        instruments = controller.searchInstruments(null,"name");
-//        assertEquals(instruments.size(), 2);
-//
-//        controller.deleteUser();
-//        controller.login("user02");
-//        controller.deleteUser();
-//        controller.login("user01");
-//        controller.deleteUser();
-//    }
+    public void testSearchInstruments() {
+        // array used for 1 element because then the inner PrePostActionWrapper class can update the element
+        final int [] searchNumber = new int[1];
+        searchNumber[0] = 0;
+        PrePostActionWrapper wrapper = new PrePostActionWrapper() {
+            @Override
+            public void preAction() {
+
+            }
+
+            @Override
+            public void postAction(Object... objects) {
+                InstrumentList list = (InstrumentList) objects[0];
+                switch (searchNumber[0]) {
+                    case 0:
+                        assertEquals(list.size(), 0);
+                        break;
+                    case 1: case 2:
+                        assertEquals(list.size(), 1);
+                        assertEquals(list.getInstrument(0).getName(), "testname01");
+                        break;
+                    case 3: case 4:
+                        assertEquals(list.size(), 2);
+                        break;
+                }
+                searchNumber[0] = searchNumber[0] + 1;
+            }
+        };
+        Controller controller = new Controller();
+        controller.createUser("user01", "email01");
+        controller.createUser("user02", "email02");
+        controller.createUser("user03", "email03");
+        controller.login("user01");
+        controller.addInstrument("testname01", "testdescription01");
+        controller.logout();
+        controller.login("user02");
+        controller.addInstrument("testname02", "testdescription02");
+        controller.logout();
+        controller.login("user03");
+        controller.searchInstruments(wrapper, "hhfkdlsajfsajkfds");
+        controller.searchInstruments(wrapper,"testdescription01");
+        controller.searchInstruments(wrapper, "testname01");
+        controller.searchInstruments(wrapper, "testdescription");
+        controller.searchInstruments(wrapper, "testname");
+
+        controller.deleteUser();
+        controller.login("user02");
+        controller.deleteUser();
+        controller.login("user01");
+        controller.deleteUser();
+    }
 
     // Use case: US 05.01.01 Make bid on instrument
     public void testMakeBidOnInstrument() {
@@ -607,7 +625,17 @@ public class ControllerTest extends ActivityInstrumentationTestCase2 {
         User user = controller.getCurrentUser();
         Instrument instrument = new Instrument(user.getId(), "name", "description");
         controller.addInstrument(instrument);
-        Bitmap photo = BitmapFactory.decodeFile("cmput301w16t08/scaling_pancake/test_image.png");
+        InputStream stream = this.getClass().getClassLoader().getResourceAsStream("test_image.png");
+        byte[] bytes = new byte[400000];
+        try {
+            stream.read(bytes);
+            stream.close();
+        } catch (IOException e) {
+            new RuntimeException();
+        }
+        String base64string = Base64.encodeToString(bytes, Base64.NO_WRAP);
+        byte[] decodeString = Base64.decode(base64string, Base64.DEFAULT);
+        Bitmap photo = BitmapFactory.decodeByteArray(decodeString, 0, decodeString.length);
         controller.addPhotoToInstrument(instrument, photo);
 
         ElasticsearchController.GetUserTask getUserTask = new ElasticsearchController.GetUserTask();
@@ -634,7 +662,7 @@ public class ControllerTest extends ActivityInstrumentationTestCase2 {
         User user = controller.getCurrentUser();
         Instrument instrument = new Instrument(user.getId(), "name", "description");
         controller.addInstrument(instrument);
-        Bitmap photo = BitmapFactory.decodeFile("cmput301w16t08/scaling_pancake/test_image.png");
+        Bitmap photo = BitmapFactory.decodeFile("test_image.png");
         controller.addPhotoToInstrument(instrument, photo);
 
         ElasticsearchController.GetUserTask getUserTask = new ElasticsearchController.GetUserTask();
